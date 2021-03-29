@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "adxFvvOU384pZX42NoN28+8Du53gJ3yyI2uiwAWQ62AWTTwxMy+U0xfbEvSiFExn6ne+rOw1n9NYkUVO+eVlSg==",
   "success": true,
   "projectFilePath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
@@ -97,5 +98,11 @@
     "C:\\Users\\KORISNIK\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\KORISNIK\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "OcQHKV9MWAonXatxD3ABp+zxI/BjPGqum0889lbpZIBwsjWwEyazwCicr2uuP7ibhfrdieLK7tlFo18Eh4E5GA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> Stashed changes
   "logs": []
 }

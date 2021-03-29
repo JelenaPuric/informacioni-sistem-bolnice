@@ -1,5 +1,6 @@
 ﻿using HospitalApplication.Windows.Manager;
 ﻿
+using HospitalApplication.Windows.Doctor1;
 using HospitalApplication.Windows.Secretary;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,8 @@ namespace HospitalApplication
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
         {
-
+            Windows.Doctor1.DoctorWindow window = new DoctorWindow();
+            window.Show();
         }
 
         private void Secretary_Click(object sender, RoutedEventArgs e)
