@@ -16,5 +16,5 @@ C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\App.xaml
 197-1995734587
 MainWindow.xaml;Windows\Manager\Rooms\AddRoom.xaml;Windows\Manager\Rooms\AllRooms.xaml;Windows\Manager\Rooms\DeleteRoom.xaml;Windows\Manager\Rooms\WindowRooms.xaml;Windows\Manager\WindowsManager.xaml;Windows\Patient\WindowExaminationCancel.xaml;Windows\Patient\WindowExaminationSchedule.xaml;Windows\Patient\WindowPatient.xaml;
 
-False
+True
 

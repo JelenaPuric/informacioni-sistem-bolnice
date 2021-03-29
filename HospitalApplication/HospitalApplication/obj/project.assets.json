@@ -5663,19 +5663,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KORISNIK\\.nuget\\packages\\": {}
+    "C:\\Users\\ranin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectUniqueName": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
-      "projectPath": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "packagesPath": "C:\\Users\\KORISNIK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\obj\\",
+      "projectPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "packagesPath": "C:\\Users\\ranin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KORISNIK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ranin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

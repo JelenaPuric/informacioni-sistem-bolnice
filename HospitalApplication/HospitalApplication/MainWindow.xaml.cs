@@ -1,4 +1,6 @@
 ﻿using HospitalApplication.Windows.Manager;
+﻿
+using HospitalApplication.Windows.Secretary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,10 @@ namespace HospitalApplication
         public MainWindow()
         {
             InitializeComponent();
+
+            FilesPatients sp = FilesPatients.GetInstance();
+            sp.LoadPatient("patients.txt");
+
         }
 
         private void Patient_Click(object sender, RoutedEventArgs e)
@@ -42,6 +48,10 @@ namespace HospitalApplication
 
         private void Secretary_Click(object sender, RoutedEventArgs e)
         {
+            //FajloviZaRegistracijuNovogPacijenta sp = FajloviZaRegistracijuNovogPacijenta.GetInstance();
+            //sp.LoadPatient("patients.txt");
+            SecretaryWindow window = new SecretaryWindow();
+            window.Show();
 
         }
 
