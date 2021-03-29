@@ -1,25 +1,5 @@
 ﻿
 
-<<<<<<< Updated upstream
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\DoctorWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationCancel.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationSchedule.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowPatient.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\AllPatientsWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\DeletePatientWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditPatientWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditRegisterPatient.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterGuestPatient.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
-=======
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelOperationWindow.xaml;;
@@ -30,6 +10,11 @@ FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicat
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleOperationWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowOperationWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationCancel.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationSchedule.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowPatient.xaml;;
@@ -41,5 +26,4 @@ FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicat
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
 FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
->>>>>>> Stashed changes
 

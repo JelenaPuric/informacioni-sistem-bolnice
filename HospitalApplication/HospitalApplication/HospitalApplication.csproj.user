@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
+ 
     <Compile Update="Windows\Manager\Rooms\AddRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,8 +20,8 @@
     <Compile Update="Windows\Manager\Rooms\WindowRooms.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\WindowsManager.xaml.cs">
-=======
+    
+
     <Compile Update="Windows\Doctor1\CancelExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,7 +29,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Doctor1\DoctorWindow.xaml.cs">
->>>>>>> Stashed changes
+
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Doctor1\MoveExaminationWindow.xaml.cs">
@@ -88,7 +88,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-<<<<<<< Updated upstream
+
     <Page Update="Windows\Manager\Rooms\AddRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -101,17 +101,16 @@
     <Page Update="Windows\Manager\Rooms\WindowRooms.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\WindowsManager.xaml">
+    
 
-=======
-    <Page Update="Windows\Doctor1\CancelExaminationWindow.xaml">
+	<Page Update="Windows\Doctor1\CancelExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\CancelOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\DoctorWindow.xaml">
->>>>>>> Stashed changes
+
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\MoveExaminationWindow.xaml">
