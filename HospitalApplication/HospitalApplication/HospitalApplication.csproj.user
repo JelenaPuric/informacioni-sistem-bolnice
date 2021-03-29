@@ -20,8 +20,8 @@
     <Compile Update="Windows\Manager\Rooms\WindowRooms.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    
-
+ 
+ 
     <Compile Update="Windows\Doctor1\CancelExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,7 +29,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Doctor1\DoctorWindow.xaml.cs">
-
+ 
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Doctor1\MoveExaminationWindow.xaml.cs">
@@ -88,7 +88,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-
+ 
     <Page Update="Windows\Manager\Rooms\AddRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -101,8 +101,8 @@
     <Page Update="Windows\Manager\Rooms\WindowRooms.xaml">
       <SubType>Designer</SubType>
     </Page>
-    
-
+ 
+ 
 	<Page Update="Windows\Doctor1\CancelExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -110,7 +110,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\DoctorWindow.xaml">
-
+ 
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\MoveExaminationWindow.xaml">
