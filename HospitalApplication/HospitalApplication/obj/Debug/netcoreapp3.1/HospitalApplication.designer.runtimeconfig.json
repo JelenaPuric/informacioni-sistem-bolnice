@@ -6,15 +6,10 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-<<<<<<< Updated upstream
-      "C:\\Users\\KORISNIK\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\KORISNIK\\.nuget\\packages"
-=======
       "C:\\Users\\korisnik\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\korisnik\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
->>>>>>> Stashed changes
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
