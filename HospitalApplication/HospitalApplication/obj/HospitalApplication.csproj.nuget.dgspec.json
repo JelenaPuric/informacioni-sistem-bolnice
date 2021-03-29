@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
+    "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
   },
   "projects": {
-    "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
+    "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectUniqueName": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "projectName": "HospitalApplication",
-        "projectPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectPath": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "packagesPath": "C:\\Users\\KORISNIK\\.nuget\\packages\\",
-        "outputPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+        "outputPath": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\KORISNIK\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

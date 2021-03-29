@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\
 HospitalApplication
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\App.xaml
-41850606201
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\App.xaml
+91063484726
 
-30425031047
-192-1533232326
-MainWindow.xaml;Windows\Patient\WindowExaminationCancel.xaml;Windows\Patient\WindowExaminationSchedule.xaml;Windows\Patient\WindowPatient.xaml;
+35-797591204
+197-1995734587
+MainWindow.xaml;Windows\Manager\Rooms\AddRoom.xaml;Windows\Manager\Rooms\AllRooms.xaml;Windows\Manager\Rooms\DeleteRoom.xaml;Windows\Manager\Rooms\WindowRooms.xaml;Windows\Manager\WindowsManager.xaml;Windows\Patient\WindowExaminationCancel.xaml;Windows\Patient\WindowExaminationSchedule.xaml;Windows\Patient\WindowPatient.xaml;
 
 False
 

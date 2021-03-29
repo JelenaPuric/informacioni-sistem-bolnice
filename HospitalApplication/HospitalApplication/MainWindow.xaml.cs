@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalApplication.Windows.Manager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,8 @@ namespace HospitalApplication
 
         private void Manager_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowsManager window = new WindowsManager();
+            window.Show();
         }
     }
 }

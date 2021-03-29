@@ -7,6 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\Manager\Rooms\AddRoom.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Rooms\AllRooms.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Rooms\DeleteRoom.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Rooms\WindowRooms.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\WindowsManager.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Patient\WindowExaminationCancel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +34,21 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\AddRoom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\AllRooms.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\DeleteRoom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\WindowRooms.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\WindowsManager.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Patient\WindowExaminationCancel.xaml">

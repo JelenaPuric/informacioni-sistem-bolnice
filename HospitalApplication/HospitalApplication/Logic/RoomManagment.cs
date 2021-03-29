@@ -1,33 +1,46 @@
 using System;
 using System.Collections.Generic;
 using Model;
+using WorkWithFiles;
 
 namespace Logic
 {
    public class RoomManagment
    {
-      public void CreateRoom(string floor, string password, bool occupied, Model.RoomType type)
+        private List<Room> rooms;
+
+        public RoomManagment()
+        {
+            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+        }
+      public void CreateRoom(Room r)
+      {
+            rooms.Add(r);
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+      }
+      
+      public void RemoveRoom(int idroom )
+      {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId == idroom)
+                {
+                    rooms.RemoveAt(i);
+                }
+            }
+        }
+      
+      public void editRoom(string password)
       {
          // TODO: implement
       }
       
-      public void RemoveRoom(string password)
+      public List<Room> showAllRooms()
       {
-         // TODO: implement
+         return rooms;
       }
       
-      public void izmenaProstorije(string password)
-      {
-         // TODO: implement
-      }
-      
-      public List<Room> prikaziSveProsotrije()
-      {
-         // TODO: implement
-         return null;
-      }
-      
-      public void prikaziProstoriju()
+      public void showRoom()
       {
          // TODO: implement
       }

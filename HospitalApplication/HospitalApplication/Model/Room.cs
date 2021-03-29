@@ -5,15 +5,14 @@ namespace Model
 {
    public class Room
    {
-      public Renovation[] renovation;
-   
-      private int NumberOfFloors;
-      private int RoomNumber;
-      private int Capacity;
-      private int RoomId;
-      private OperatingRoomType OperationRoomType;
-      private RoomType RoomType;
-      private List<int> Zauzetost;
-   
-   }
+        public Renovation[] Renovation;
+        public int RoomId { get; set; }
+        public int NumberOfFloors { get; set; }
+        public int RoomNumber { get; set; }
+        public int Capacity { get; set; }
+        public OperatingRoomType OperationRoomType { get; set; }
+        public RoomType RoomType { get; set; }
+        public bool Occupied { get; set; }
+
+    }
 }

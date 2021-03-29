@@ -1,50 +1,80 @@
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csprojAssemblyReference.cache
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\App.g.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.cache
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.lref
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.exe
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.deps.json
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.json
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.dev.json
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.dll
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.pdb
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.baml
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.g.resources
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfoInputs.cache
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfo.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
-C:\Users\orz\source\repos\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.exe
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.deps.json
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.json
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.dev.json
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.dll
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.pdb
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csprojAssemblyReference.cache
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\App.g.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.cache
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.lref
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.baml
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.g.resources
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfoInputs.cache
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfo.cs
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
-D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AddRoom.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AllRooms.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\DeleteRoom.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\WindowRooms.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.cache
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.lref
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.exe
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.deps.json
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.json
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.dev.json
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Nancy.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AddRoom.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AllRooms.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\DeleteRoom.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\WindowRooms.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.g.resources
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfoInputs.cache
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfo.cs
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CopyComplete
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\srdja\OneDrive\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.exe
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.deps.json
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.json
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.dev.json
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Nancy.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AddRoom.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AllRooms.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\DeleteRoom.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\WindowRooms.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.cache
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.lref
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AddRoom.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\AllRooms.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\DeleteRoom.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\WindowRooms.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.g.resources
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfoInputs.cache
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfo.cs
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CopyComplete
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\KORISNIK\Desktop\xxx\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
