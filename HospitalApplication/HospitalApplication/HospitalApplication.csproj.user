@@ -19,6 +19,30 @@
     <Compile Update="Windows\Patient\WindowPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\DeletePatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\EditPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\EditRegisterPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\RegisterPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\RegistrationOptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\SecretaryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -34,6 +58,30 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Patient\WindowPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\AllPatientsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\DeletePatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\EditPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\EditRegisterPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\RegisterPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\RegistrationOptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\SecretaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

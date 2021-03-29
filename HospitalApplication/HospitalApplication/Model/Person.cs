@@ -10,109 +10,80 @@ namespace Model
 {
    public class Person : User
    {
-      private string Name
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      private string LastName
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      private string Id
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      /*private DateTime DateOfBirth
-      {
-         get
-         {
-            // TODO: implement
-            return (DateTime)null;
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }*/
-      
-      private string PhoneNumber
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      private string Email
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      private string PlaceOfResidance
-      {
-         get
-         {
-            // TODO: implement
-            return (string)"";
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      private TypeOfPerson TypeOfPerson
-      {
-         get
-         {
-            // TODO: implement
-            return (TypeOfPerson)null;
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-   
-   }
+        private string name;
+        private string lastName;
+        private string id;
+        private DateTime dateOfBirth;
+        private string phoneNumber;
+        private string email;
+        private string placeOfResidance;
+        private TypeOfPerson typeOfPerson;
+
+
+        public Person() { }
+        public Person(string namee, string lastnamee, string idd, DateTime dateOfBirthh, string phoneNumberr, string emaill, string placeOfResidancee,
+            TypeOfPerson typeOfPersonn, string usernameee, string passworddd) : base(usernameee, passworddd)
+        {
+            name = namee;
+            lastName = lastnamee;
+            id = idd;
+            dateOfBirth = dateOfBirthh;
+            phoneNumber = phoneNumberr;
+            email = emaill;
+            placeOfResidance = placeOfResidancee;
+            typeOfPerson = typeOfPersonn;
+
+
+        }
+
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
+        }
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public DateTime DateOfBirth
+        {
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
+        }
+
+        public string PhoneNumber
+        {
+            get { return phoneNumber; }
+            set { phoneNumber = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public string PlaceOfResidance
+        {
+            get { return placeOfResidance; }
+            set { placeOfResidance = value; }
+        }
+
+        public TypeOfPerson TypeOfPerson
+        {
+            get { return typeOfPerson; }
+            set { typeOfPerson = value; }
+        }
+
+    }
 }

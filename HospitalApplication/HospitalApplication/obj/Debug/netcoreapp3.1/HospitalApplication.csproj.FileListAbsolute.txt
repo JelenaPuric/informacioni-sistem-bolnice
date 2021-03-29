@@ -73,3 +73,46 @@ C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicati
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.exe
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.deps.json
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.json
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.runtimeconfig.dev.json
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csprojAssemblyReference.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Doctor1\DoctorWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication_MarkupCompile.lref
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Doctor1\DoctorWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.g.resources
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfoInputs.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.AssemblyInfo.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\SecretaryWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\SecretaryWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AllPatientsWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AllPatientsWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegistrationOptionWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegistrationOptionWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegisterGuestPatient.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegisterPatientWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegisterGuestPatient.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\RegisterPatientWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\DeletePatientWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditPatientWindow.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditRegisterPatient.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\DeletePatientWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditPatientWindow.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditRegisterPatient.baml
