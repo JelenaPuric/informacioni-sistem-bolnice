@@ -8,13 +8,13 @@ C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicati
 HospitalApplication
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\App.xaml
-4987127386
+5-1568481856
 
-301675666167
-1921654412462
-MainWindow.xaml;Windows\Patient\WindowExaminationCancel.xaml;Windows\Patient\WindowExaminationSchedule.xaml;Windows\Patient\WindowPatient.xaml;
+311315324371
+192-1533232326
+MainWindow.xaml;Windows\Doctor1\DoctorWindow.xaml;Windows\Patient\WindowExaminationCancel.xaml;Windows\Patient\WindowExaminationSchedule.xaml;Windows\Patient\WindowPatient.xaml;
 
 False
 
