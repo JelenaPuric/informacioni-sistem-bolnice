@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SpFyLjpbF6aElAmdpKQarBpElHPUMDbU24YZwWtCqdwq2e4jOv4xmpi7MnYsldFv13iJurkIU4HIsTRTkNDOWg==",
+  "dgSpecHash": "adxFvvOU384pZX42NoN28+8Du53gJ3yyI2uiwAWQ62AWTTwxMy+U0xfbEvSiFExn6ne+rOw1n9NYkUVO+eVlSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KORISNIK\\Desktop\\xxx\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "projectFilePath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KORISNIK\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\KORISNIK\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",

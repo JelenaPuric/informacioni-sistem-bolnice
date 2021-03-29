@@ -20,7 +20,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Manager\WindowsManager.xaml.cs">
-    <Compile Update="Windows\Doctor1\DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Patient\WindowExaminationCancel.xaml.cs">
@@ -74,7 +73,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\WindowsManager.xaml">
-    <Page Update="Windows\Doctor1\DoctorWindow.xaml">
+
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Patient\WindowExaminationCancel.xaml">
