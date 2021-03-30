@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Windows.Manager.Rooms;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             List<Room> p = rooms.showAllRooms();
 
             lvDataBinding.ItemsSource = p;
+           
         }
     }
 }

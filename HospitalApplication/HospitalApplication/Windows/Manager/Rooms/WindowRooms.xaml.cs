@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Windows.Manager.Rooms;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,7 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             DataContext = new AllRooms();
         }
 
-        private void Delete_Clicked(object sender, RoutedEventArgs e)
+        public void Delete_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new DeleteRoom();
         }
@@ -38,7 +39,12 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             DataContext = new AddRoom();
         }
 
-        private void Find_Clicked(object sender, RoutedEventArgs e)
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new EditRoom();
+        }
+
+        private void Show_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new ShowRoomi();
         }

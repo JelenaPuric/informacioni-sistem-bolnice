@@ -1,5 +1,4 @@
 ﻿using Logic;
-using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,24 +15,23 @@ using System.Windows.Shapes;
 namespace HospitalApplication.Windows.Manager.Rooms
 {
     /// <summary>
-    /// Interaction logic for ShowRoomi.xaml
+    /// Interaction logic for EditRoom.xaml
     /// </summary>
-    public partial class ShowRoomi : UserControl
+    public partial class EditRoom : UserControl
     {
         private int delete;
-        public ShowRoomi()
+        public EditRoom()
         {
             InitializeComponent();
         }
 
-        private void Submit_Clicked(object sender, RoutedEventArgs e)
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
         {
-            delete = int.Parse(forShw.Text);
-            RoomManagment mg = new RoomManagment();
-            Room roo = new Room();
-            roo = mg.showRoom(delete);
-
-            fallback.Text = roo.NumberOfFloors.ToString();
+            delete = Int32.Parse(forEdit.Text);
+            RoomManagment up = new RoomManagment();
+            //up.RemoveRoom(delete);
+            forEdit.Text = String.Empty;
+            DataContext = new EditR(delete);
         }
     }
 }

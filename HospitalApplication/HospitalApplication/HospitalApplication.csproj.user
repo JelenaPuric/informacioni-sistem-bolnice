@@ -16,6 +16,12 @@
     <Compile Update="Windows\Manager\Rooms\DeleteRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Manager\Rooms\EditR.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Rooms\EditRoom.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Manager\Rooms\ShowRoomi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +100,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Rooms\DeleteRoom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\EditR.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Rooms\EditRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Rooms\ShowRoomi.xaml">

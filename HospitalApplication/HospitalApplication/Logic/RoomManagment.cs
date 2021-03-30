@@ -30,7 +30,7 @@ namespace Logic
             }
         }
       
-      public void editRoom(string password)
+      public void editRoom(int password)
       {
          // TODO: implement
       }

@@ -10,7 +10,7 @@
 
         <Label Content="Enter the room code you want to show: " HorizontalAlignment="Left" Margin="217,46,0,0" VerticalAlignment="Top"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="218,77,0,0" Name="forShw" VerticalAlignment="Top" Width="222" />
-        <Button Content="Sumbit" Height="23" HorizontalAlignment="Left" Margin="293,115,0,0" Name="potvrdi" VerticalAlignment="Top" Width="70"  />
+        <Button Content="Sumbit" Height="23" HorizontalAlignment="Left" Margin="293,115,0,0" Name="potvrdi" VerticalAlignment="Top" Width="70" Click="Submit_Clicked"  />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="217,175,0,0" Name="fallback" VerticalAlignment="Top" Width="222" />
 
 
