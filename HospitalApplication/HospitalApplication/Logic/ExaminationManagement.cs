@@ -30,14 +30,25 @@ namespace Logic
             }
             f.WriteInFile(examinations);
         }
-      
-      public bool MoveExamination()
-      {
-         // TODO: implement
-         return false;
-      }
-   
-      private FilesExamination f = new FilesExamination();
+
+        public void MoveExamination(string id, DateTime date)
+        {
+            //prvo ga izbrisi, promeni datum pa vrati
+            Examination e = new Examination();
+            for (int i = 0; i < examinations.Count; i++)
+            {
+                if (examinations[i].ExaminationId == id)
+                {
+                    e = examinations[i];
+                    examinations.RemoveAt(i);
+                }
+            }
+            e.ExaminationStart = date;
+            examinations.Add(e);
+            f.WriteInFile(examinations);
+        }
+
+        private FilesExamination f = new FilesExamination();
       private List<Examination> examinations;
 
       public List<Examination> Examinations

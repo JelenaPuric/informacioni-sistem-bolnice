@@ -55,13 +55,16 @@
     <Compile Update="Windows\Doctor1\ShowOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient\WindowExaminationCancel.xaml.cs">
+    <Compile Update="Windows\Patient1\WindowExaminationCancel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient\WindowExaminationSchedule.xaml.cs">
+    <Compile Update="Windows\Patient1\WindowExaminationMove.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient\WindowPatient.xaml.cs">
+    <Compile Update="Windows\Patient1\WindowExaminationSchedule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
@@ -141,13 +144,16 @@
     <Page Update="Windows\Doctor1\ShowOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient\WindowExaminationCancel.xaml">
+    <Page Update="Windows\Patient1\WindowExaminationCancel.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient\WindowExaminationSchedule.xaml">
+    <Page Update="Windows\Patient1\WindowExaminationMove.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient\WindowPatient.xaml">
+    <Page Update="Windows\Patient1\WindowExaminationSchedule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Patient1\WindowPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\AllPatientsWindow.xaml">

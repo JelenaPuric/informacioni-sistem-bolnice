@@ -33,5 +33,11 @@ namespace HospitalApplication
             WindowExaminationCancel window = new WindowExaminationCancel();
             window.Show();
         }
+
+        private void MoveExamination_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Patient1.WindowExaminationMove window = new Windows.Patient1.WindowExaminationMove();
+            window.Show();
+        }
     }
 }

@@ -17,7 +17,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Margin="0 0 10 0" Grid.Column="0" Content="Schedule Examination" x:Name="ScheduleExamination" Click="ScheduleExamination_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="1" Content="Cancel Examination" x:Name="CancelExamination" Click="CancelExamination_Click"/>
-                <Button Margin="0 0 10 0" Grid.Column="2" Content="Move Examination"/>
+                <Button Margin="0 0 10 0" Grid.Column="2" Content="Move Examination" x:Name="MoveExamination" Click="MoveExamination_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="3" Content="Show Examination"/>
             </Grid>
         </StackPanel>
