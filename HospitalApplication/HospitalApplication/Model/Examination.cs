@@ -6,9 +6,11 @@ namespace Model
    {
       public Room room;
       public Patient[] pacient;
-   
-      private DateTime examinationStart;
-      private DateTime examinatonEnd;
+
+      private DateTime examinationDate;
+        private bool specialization;
+        private DateTime examinationStart;
+        private DateTime examinationEnd;
       private ExaminationType typeOfExamination;
       private Boolean urgentOperation = false;
       private String examinationId;
@@ -18,12 +20,16 @@ namespace Model
 
       public Examination() { }
 
-      public Examination(string patient, string doctor, string room, DateTime start, string id) {
+      public Examination(string patient, string doctor, string room, DateTime start, DateTime end, DateTime examDate, bool specialty , string id, ExaminationType typeExam) {
             patientsId = patient;
             doctorsId = doctor;
             roomId = room;
             examinationStart = start;
+            examinationEnd = end;
+            examinationDate = examDate;
+            specialization = specialty;
             examinationId = id;
+            typeOfExamination = typeExam;
         }
 
         public string PatientsId
@@ -46,10 +52,33 @@ namespace Model
             get { return examinationStart; }
             set { examinationStart = value; }
         }
+
+        public DateTime ExaminationEnd
+        {
+            get { return examinationEnd; }
+            set { examinationEnd = value; }
+        }
+
+        public bool Specialization
+        {
+            get { return specialization; }
+            set { specialization = value; }
+        }
         public string ExaminationId
         {
             get { return examinationId; }
             set { examinationId = value; }
+        }
+
+        public DateTime ExaminationDate
+        { 
+            get { return examinationDate; }
+            set { examinationDate = value; }
+        }
+        public ExaminationType TypeOfExamination
+        {
+            get { return typeOfExamination; }
+            set { typeOfExamination = value; }
         }
     }
 }

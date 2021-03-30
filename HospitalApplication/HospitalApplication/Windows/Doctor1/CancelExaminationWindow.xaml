@@ -9,10 +9,10 @@
     <Grid>
         <Grid>
             <Label Content="Examination Id" HorizontalAlignment="Left" Height="54" Margin="31,26,0,0" VerticalAlignment="Top" Width="191" FontSize="24" FontWeight="Bold"/>
-            <TextBox Text="Enter examination id" TextWrapping="Wrap" Margin="418,27,153,373" FontSize="22"/>
+            <TextBox Text="Enter examination id" Name="examinationIdTxt" TextWrapping="Wrap" Margin="418,27,153,354" FontSize="22"/>
             <Label Content="Are you shure you want to cancel an examinatopn ?" HorizontalAlignment="Center" Height="38" Margin="0,153,0,0" VerticalAlignment="Top" Width="587" FontSize="18" FontFamily="Arial Black"/>
-            <Button Content="Yes" HorizontalAlignment="Left" Height="43" Margin="77,286,0,0" VerticalAlignment="Top" Width="181" FontSize="24" FontWeight="Bold"/>
-            <Button Content="No" HorizontalAlignment="Left" Height="43" Margin="491,286,0,0" VerticalAlignment="Top" Width="180" FontSize="24" FontWeight="Bold"/>
+            <Button Content="Yes" Name="yesBtn" Click="yesBtn_Click" HorizontalAlignment="Left" Height="43" Margin="77,286,0,0" VerticalAlignment="Top" Width="181" FontSize="24" FontWeight="Bold"/>
+            <Button Content="No" Name="noBtn" Click="noBtn_Click" HorizontalAlignment="Left" Height="43" Margin="491,286,0,0" VerticalAlignment="Top" Width="180" FontSize="24" FontWeight="Bold"/>
 
         </Grid>
 

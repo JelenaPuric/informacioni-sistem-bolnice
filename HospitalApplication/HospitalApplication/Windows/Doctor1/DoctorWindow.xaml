@@ -8,14 +8,11 @@
         Title="DoctorWindow" Height="450" Width="800">
     <Grid>
         <Grid>
-            <Button Content="Schedule examination" x:Name="btnSchedule" Margin="36,30,555,339" Click="btnSchedule_Click" FontSize="18" FontWeight="Bold" Background="#FF54FF21"/>
-            <Button Content="Cancel examination" x:Name="btnCancel" Margin="434,30,147,339" Click="btnCancel_Click" FontSize="18" FontWeight="Bold" Background="#FF49FF13"/>
-            <Button Content="Show examinations" x:Name="btnShow"  Margin="36,130,555,249" Click="btnShow_Click" FontSize="18" FontWeight="Bold" Background="#FF4DFF19"/>
-            <Button Content="Move examination" x:Name="btnMove" Margin="434,130,147,249" Click="btnMove_Click" FontSize="18" FontWeight="Bold" Background="#FF4DFF19"/>
-            <Button Content="Schedule operation" x:Name="btnScheduleO" Margin="36,217,555,149" Click="btnScheduleO_Click" FontSize="18" FontWeight="Bold" Background="#FF5FFD15"/>
-            <Button Content="Cancel operation" x:Name="btnCancelO" Margin="434,214,147,146" Click="btnCancelO_Click" FontSize="18" FontWeight="Bold" Background="#FF61FF17"/>
-            <Button Content="Show operations" x:Name="btnShowO" Margin="36,330,555,33" Click="btnShowO_Click" FontSize="18" FontWeight="Bold" Background="#FF64FF1C"/>
-            <Button Content="Move operation" x:Name="btnMoveO" Margin="434,330,147,47" Click="btnMoveO_Click" FontSize="18" FontWeight="Bold" Background="#FF5FF718"/>
+            <Button Content="Schedule examination" x:Name="btnSchedule" Margin="59,177,532,192" Click="btnSchedule_Click" FontSize="18" FontWeight="Bold" Background="#FF54FF21" RenderTransformOrigin="0.536,1.815"/>
+            <Button Content="Cancel examination" x:Name="btnCancel" Margin="458,177,123,192" Click="btnCancel_Click" FontSize="18" FontWeight="Bold" Background="#FF49FF13" RenderTransformOrigin="0.521,1.507"/>
+            <Button Content="Show examinations" x:Name="btnShow"  Margin="59,296,532,73" Click="btnShow_Click" FontSize="18" FontWeight="Bold" Background="#FF4DFF19"/>
+            <Button Content="Move examination" x:Name="btnMove" Margin="458,296,123,73" Click="btnMove_Click" FontSize="18" FontWeight="Bold" Background="#FF4DFF19"/>
+            <Label Content="Examination or operation managment" Margin="140,44,100,336" FontSize="24" FontWeight="Bold"/>
 
 
 

@@ -1,5 +1,6 @@
 ﻿
 
+<<<<<<< Updated upstream
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelOperationWindow.xaml;;
@@ -30,4 +31,64 @@ FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplic
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
 FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
+=======
+
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\DoctorWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\MoveExaminationWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleExaminationWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditR.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditRoom.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\ShowRoomi.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationCancel.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowExaminationSchedule.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient\WindowPatient.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\AllPatientsWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\DeletePatientWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditPatientWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditRegisterPatient.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterGuestPatient.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
+FC:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
+
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\MainWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelOperationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\DoctorWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\MoveExaminationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\MoveOperationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleExaminationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleOperationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowOperationWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditR.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditRoom.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\ShowRoomi.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationCancel.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationMove.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationSchedule.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Patient1\WindowPatient.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\AllPatientsWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\DeletePatientWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\EditPatientWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\EditRegisterPatient.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterGuestPatient.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
+FC:\Users\orz\Desktop\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
+
+>>>>>>> Stashed changes
 

@@ -44,7 +44,7 @@ namespace HospitalApplication
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
         {
-            Windows.Doctor1.DoctorWindow window = new DoctorWindow();
+            DoctorWindow window = new DoctorWindow();
             window.Show();
         }
 

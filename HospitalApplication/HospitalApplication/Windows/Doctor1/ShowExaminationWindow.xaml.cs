@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Doctor1
 {
@@ -19,7 +20,10 @@ namespace HospitalApplication.Windows.Doctor1
     {
         public ShowExaminationWindow()
         {
+            
             InitializeComponent();
+            SerializationAndDeserilaizationOfExaminations sAd = SerializationAndDeserilaizationOfExaminations.GetInstance();
+            lvUsers.ItemsSource = sAd.LoadExaminations();
         }
     }
 }

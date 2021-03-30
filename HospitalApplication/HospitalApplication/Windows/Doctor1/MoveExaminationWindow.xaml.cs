@@ -21,5 +21,15 @@ namespace HospitalApplication.Windows.Doctor1
         {
             InitializeComponent();
         }
+
+        private void yesMoveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void noMoveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
