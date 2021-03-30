@@ -41,6 +41,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Doctor1\ShowExaminationWindow.xaml.cs">
@@ -85,6 +86,10 @@
       <SubType>Code</SubType>
     </Compile>
 >>>>>>> Stashed changes
+=======
+      <SubType>Code</SubType>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Update="Windows\Doctor1\ShowExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +102,7 @@
     </Compile>
     <Compile Update="Windows\Patient1\WindowExaminationCancel.xaml.cs">
 
+<<<<<<< Updated upstream
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Patient1\WindowExaminationMove.xaml.cs">
@@ -111,6 +117,16 @@
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowExaminationMove.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowExaminationSchedule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
 >>>>>>> Stashed changes
     <Compile Update="Windows\Patient1\WindowPatient.xaml.cs">
       <SubType>Code</SubType>
@@ -140,6 +156,7 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -240,6 +257,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	<ItemGroup>
 		<Page Update="MainWindow.xaml">
 			<SubType>Designer</SubType>
@@ -327,6 +346,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
