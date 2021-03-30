@@ -5664,8 +5664,11 @@
   },
   "packageFolders": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "C:\\Users\\ranin\\.nuget\\packages\\": {}
 =======
+=======
+>>>>>>> Stashed changes
 
     "C:\\Users\\korisnik\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
@@ -5673,11 +5676,15 @@
 
     "C:\\Users\\orz\\.nuget\\packages\\": {}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
@@ -5687,11 +5694,18 @@
 =======
       "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
+=======
+      "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectName": "HospitalApplication",
+>>>>>>> Stashed changes
       "projectPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
 
     
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -5700,8 +5714,11 @@
       ],
       "configFilePaths": [
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "C:\\Users\\ranin\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
+=======
+>>>>>>> Stashed changes
 
         "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -5709,6 +5726,9 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
 
         "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 

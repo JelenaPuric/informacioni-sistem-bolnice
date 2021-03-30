@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
@@ -20,6 +21,8 @@
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\ranin\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
   </PropertyGroup>
 =======
+=======
+>>>>>>> Stashed changes
 	<PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
 		<RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
 		<RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
@@ -52,5 +55,8 @@
 		<PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\orz\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
 
 	</PropertyGroup>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </Project>
