@@ -55,7 +55,7 @@ namespace Logic
          return false;
       }
    
-      private List<Examination> Examination;
+     // private List<Examination> Examination;
    
    }
 }

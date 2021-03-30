@@ -5663,135 +5663,28 @@
     ]
   },
   "packageFolders": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "C:\\Users\\ranin\\.nuget\\packages\\": {}
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
     "C:\\Users\\korisnik\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
-
-    "C:\\Users\\orz\\.nuget\\packages\\": {}
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "projectUniqueName": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "projectName": "HospitalApplication",
-      "projectPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "packagesPath": "C:\\Users\\ranin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
-=======
-      "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "projectName": "HospitalApplication",
->>>>>>> Stashed changes
-=======
-      "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "projectName": "HospitalApplication",
->>>>>>> Stashed changes
-=======
-      "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "projectName": "HospitalApplication",
->>>>>>> Stashed changes
-=======
-      "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "projectName": "HospitalApplication",
->>>>>>> Stashed changes
       "projectPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
-
-    
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        "C:\\Users\\ranin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
         "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-
-        "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5802,6 +5695,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5813,6 +5707,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Nancy": {
             "target": "Package",
@@ -5837,8 +5732,16 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

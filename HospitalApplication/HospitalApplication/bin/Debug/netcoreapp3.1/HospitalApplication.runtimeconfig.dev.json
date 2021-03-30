@@ -1,33 +1,10 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "C:\\Users\\ranin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ranin\\.nuget\\packages"
-=======
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
->>>>>>> Stashed changes
-=======
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
->>>>>>> Stashed changes
-=======
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
->>>>>>> Stashed changes
-=======
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
->>>>>>> Stashed changes
-=======
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
->>>>>>> Stashed changes
+      "C:\\Users\\korisnik\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\korisnik\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ]
   }
 }

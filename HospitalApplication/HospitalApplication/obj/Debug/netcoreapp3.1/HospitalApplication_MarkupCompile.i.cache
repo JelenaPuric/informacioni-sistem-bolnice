@@ -13,8 +13,8 @@ C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicati
 26-1562458668
 
 53-1533490389
-192-1533232326
+197-1690992786
 MainWindow.xaml;Windows\Doctor1\CancelExaminationWindow.xaml;Windows\Doctor1\DoctorWindow.xaml;Windows\Doctor1\MoveExaminationWindow.xaml;Windows\Doctor1\ScheduleExaminationWindow.xaml;Windows\Doctor1\ShowExaminationWindow.xaml;Windows\Manager\Rooms\AddRoom.xaml;Windows\Manager\Rooms\AllRooms.xaml;Windows\Manager\Rooms\DeleteRoom.xaml;Windows\Manager\Rooms\EditR.xaml;Windows\Manager\Rooms\EditRoom.xaml;Windows\Manager\Rooms\ShowRoomi.xaml;Windows\Manager\Rooms\WindowRooms.xaml;Windows\Manager\WindowsManager.xaml;Windows\Patient1\WindowExaminationCancel.xaml;Windows\Patient1\WindowExaminationMove.xaml;Windows\Patient1\WindowExaminationSchedule.xaml;Windows\Patient1\WindowPatient.xaml;Windows\Secretary\AllPatientsWindow.xaml;Windows\Secretary\DeletePatientWindow.xaml;Windows\Secretary\EditPatientWindow.xaml;Windows\Secretary\EditRegisterPatient.xaml;Windows\Secretary\RegisterGuestPatient.xaml;Windows\Secretary\RegisterPatientWindow.xaml;Windows\Secretary\RegistrationOptionWindow.xaml;Windows\Secretary\SecretaryWindow.xaml;
 
-False
+True
 
