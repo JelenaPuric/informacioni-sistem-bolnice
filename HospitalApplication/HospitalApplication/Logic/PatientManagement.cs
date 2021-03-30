@@ -36,9 +36,11 @@ namespace Logic
 
             for (int i = 0; i < patients.Count; i++)
             {
-                if (patients[i].Id == iDPatient)
+                
+                if (patients[i].Id == iDPatient) { 
                     p = patients[i];
-                break;
+                     break;
+                }
             }
             return p;
         }

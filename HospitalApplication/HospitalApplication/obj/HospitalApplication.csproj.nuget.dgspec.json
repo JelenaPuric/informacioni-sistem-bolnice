@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
+    "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
+    "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectUniqueName": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "projectName": "HospitalApplication",
-        "projectPath": "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-        "packagesPath": "C:\\Users\\orz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\obj\\",
+        "projectPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "packagesPath": "C:\\Users\\ranin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ranin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
