@@ -6,8 +6,8 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-   public class FilesPatients
-   {
+    public class FilesPatients
+    {
         private FilesPatients() { }
 
         private static FilesPatients _instance;
@@ -22,7 +22,14 @@ namespace WorkWithFiles
         }
 
 
-        List<Patient> patients = new List<Patient>();
+        private List<Patient> patients;
+
+
+        public List<Patient> Patients
+        {
+            get { return patients; }
+            set { patients = value; }
+        }
 
 
         public List<Patient> GetPatients()
@@ -32,6 +39,8 @@ namespace WorkWithFiles
 
         public void LoadPatient(string path)
         {
+            patients = new List<Patient>();
+
             List<String> lines = File.ReadAllLines(path).ToList();
             foreach (var line in lines)
             {
