@@ -3,6 +3,7 @@
   "restore": {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
   },
   "projects": {
@@ -35,6 +36,17 @@
         "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "projectName": "HospitalApplication",
 >>>>>>> Stashed changes
+=======
+
+    "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectName": "HospitalApplication",
+>>>>>>> Stashed changes
         "projectPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
@@ -52,6 +64,9 @@
         "outputPath": "C:\\Users\\orz\\Desktop\\HospitalApplication\\HospitalApplication\\obj\\",
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -63,8 +78,11 @@
         "configFilePaths": [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           "C:\\Users\\ranin\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -75,6 +93,9 @@
 
           "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

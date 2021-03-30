@@ -155,7 +155,10 @@ D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-s
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\EditR.baml
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -164,6 +167,9 @@ C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicati
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Rooms\ShowRoomi.g.cs
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -199,6 +205,12 @@ C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplica
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.g.cs
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.g.cs
+>>>>>>> Stashed changes
 =======
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.g.cs
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.g.cs
@@ -240,6 +252,12 @@ C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplica
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\WindowsManager.baml
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowPatient.baml
+>>>>>>> Stashed changes
 =======
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationCancel.baml
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient\WindowExaminationSchedule.baml
@@ -351,6 +369,7 @@ C:\Users\orz\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreap
 C:\Users\orz\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationCancel.g.cs
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationMove.g.cs
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationSchedule.g.cs
@@ -359,6 +378,9 @@ C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplica
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationMove.baml
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationSchedule.baml
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.baml
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

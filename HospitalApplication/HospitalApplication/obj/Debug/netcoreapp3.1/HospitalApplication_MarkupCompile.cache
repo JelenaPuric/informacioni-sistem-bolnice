@@ -6,8 +6,11 @@ C#
 .cs
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -25,6 +28,9 @@ MainWindow.xaml;Windows\Doctor1\CancelExaminationWindow.xaml;Windows\Doctor1\Doc
 
 C:\Users\orz\Desktop\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -32,6 +38,7 @@ HospitalApplication
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\App.xaml
@@ -43,6 +50,8 @@ MainWindow.xaml;Windows\Doctor1\CancelExaminationWindow.xaml;Windows\Doctor1\Can
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 C:\Users\orz\Desktop\HospitalApplication\HospitalApplication\App.xaml
 30364254830
 
@@ -51,6 +60,9 @@ C:\Users\orz\Desktop\HospitalApplication\HospitalApplication\App.xaml
 MainWindow.xaml;Windows\Doctor1\CancelExaminationWindow.xaml;Windows\Doctor1\CancelOperationWindow.xaml;Windows\Doctor1\DoctorWindow.xaml;Windows\Doctor1\MoveExaminationWindow.xaml;Windows\Doctor1\MoveOperationWindow.xaml;Windows\Doctor1\ScheduleExaminationWindow.xaml;Windows\Doctor1\ScheduleOperationWindow.xaml;Windows\Doctor1\ShowExaminationWindow.xaml;Windows\Doctor1\ShowOperationWindow.xaml;Windows\Manager\Rooms\AddRoom.xaml;Windows\Manager\Rooms\AllRooms.xaml;Windows\Manager\Rooms\DeleteRoom.xaml;Windows\Manager\Rooms\EditR.xaml;Windows\Manager\Rooms\EditRoom.xaml;Windows\Manager\Rooms\ShowRoomi.xaml;Windows\Manager\Rooms\WindowRooms.xaml;Windows\Manager\WindowsManager.xaml;Windows\Patient1\WindowExaminationCancel.xaml;Windows\Patient1\WindowExaminationMove.xaml;Windows\Patient1\WindowExaminationSchedule.xaml;Windows\Patient1\WindowPatient.xaml;Windows\Secretary\AllPatientsWindow.xaml;Windows\Secretary\DeletePatientWindow.xaml;Windows\Secretary\EditPatientWindow.xaml;Windows\Secretary\EditRegisterPatient.xaml;Windows\Secretary\RegisterGuestPatient.xaml;Windows\Secretary\RegisterPatientWindow.xaml;Windows\Secretary\RegistrationOptionWindow.xaml;Windows\Secretary\SecretaryWindow.xaml;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "AkU3Qn4toksN0lWEfZqbxUV+gkEzGbsvXv2RNPHngfGJIvZtcsq6MV3eGG4+mzVRcsPHsp4E1zEpbRaDZhHvVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ranin\\Desktop\\SiMS Projekat\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
@@ -104,6 +105,13 @@
   "success": true,
   "projectFilePath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
+=======
+
+  "dgSpecHash": "lE1z44KrvtTrgry+cAUwAWxV28iwFpaN8olGDfH4FMm/Ex3LhNxBnAHV2hO/1mbbDoZi9Mar6fQ69bozC8qpew==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\korisnik\\Documents\\GitHub\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "expectedPackageFiles": [
+>>>>>>> Stashed changes
 =======
 
   "dgSpecHash": "lE1z44KrvtTrgry+cAUwAWxV28iwFpaN8olGDfH4FMm/Ex3LhNxBnAHV2hO/1mbbDoZi9Mar6fQ69bozC8qpew==",
@@ -302,6 +310,9 @@
     "C:\\Users\\orz\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
