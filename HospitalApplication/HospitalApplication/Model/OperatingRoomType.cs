@@ -2,14 +2,14 @@ using System;
 
 namespace Model
 {
-   public class OperatingRoomType
+   public enum OperatingRoomType
    {
-      /*private EnumConstant OperatingRoomForMinorInterventions;
-      private EnumConstant OperatingRoomForGeneralSurgery;
-      private EnumConstant OperatingRoomForCardiacSurgery;
-      private EnumConstant OperatingRoomForNeuroSurgery;
-      private EnumConstant OperatingRoomForDentistry;
-      private EnumConstant OperatingRoomForGynecology;*/
+      OperatingRoomForMinorInterventions,
+      peratingRoomForGeneralSurgery,
+      OperatingRoomForCardiacSurgery,
+      OperatingRoomForNeuroSurgery,
+      OperatingRoomForDentistry,
+      OperatingRoomForGynecology
    
    }
 }

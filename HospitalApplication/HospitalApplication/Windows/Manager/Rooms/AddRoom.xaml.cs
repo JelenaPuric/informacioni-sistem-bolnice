@@ -34,6 +34,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 Occupied = (bool)checkBoxOccupied.IsChecked,
                 RoomId = Int16.Parse(textBoxRoomId.Text),
                 RoomNumber = Int16.Parse(textBoxRoomNumber.Text),
+                RoomType = (RoomType)comboBoxRoomType.SelectedIndex
             };
             RoomManagment mr = new RoomManagment();
             mr.CreateRoom(r);

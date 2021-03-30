@@ -2,11 +2,11 @@ using System;
 
 namespace Model
 {
-   public class RoomType
+   public enum RoomType
    {
-      /*private EnumConstant Office;
-      private EnumConstant RestRoom;
-      private EnumConstant OperatingRoom;*/
+      Office,
+      RestRoom,
+      OperatingRoom
    
    }
 }
