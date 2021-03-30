@@ -40,9 +40,16 @@ namespace Logic
          return rooms;
       }
       
-      public void showRoom()
+      public Room showRoom(int roomm)
       {
-         // TODO: implement
+            Room r = new Room();
+            for(int i=0; i<rooms.Count; i++)
+            {
+                if (rooms[i].RoomId == roomm)
+                { r = rooms[i]; break; }
+            }
+
+            return r;
       }
    
       public System.Collections.ArrayList room;

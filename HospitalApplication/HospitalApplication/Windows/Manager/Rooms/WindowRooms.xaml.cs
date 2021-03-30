@@ -37,5 +37,10 @@ namespace HospitalApplication.Windows.Manager.Prostorije
         {
             DataContext = new AddRoom();
         }
+
+        private void Find_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ShowRoomi();
+        }
     }
 }

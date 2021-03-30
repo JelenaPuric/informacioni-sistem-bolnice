@@ -1,5 +1,4 @@
-﻿using Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,22 +14,13 @@ using System.Windows.Shapes;
 namespace HospitalApplication.Windows.Manager.Rooms
 {
     /// <summary>
-    /// Interaction logic for DeleteRoom.xaml
+    /// Interaction logic for ShowRoomi.xaml
     /// </summary>
-    public partial class DeleteRoom : UserControl
+    public partial class ShowRoomi : UserControl
     {
-        private int delete;
-        public DeleteRoom()
+        public ShowRoomi()
         {
             InitializeComponent();
-        }
-
-        private void Deleted_Clicked(object sender, RoutedEventArgs e)
-        {
-            delete = Int32.Parse(forDelete.Text);
-            RoomManagment up = new RoomManagment();
-            up.RemoveRoom(delete);
-            forDelete.Text = String.Empty;
         }
     }
 }
