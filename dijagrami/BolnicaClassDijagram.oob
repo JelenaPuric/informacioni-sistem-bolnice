@@ -2,7 +2,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <?PowerDesigner AppLocale="UTF16" ID="{63A92EE5-80F0-40BE-B451-8CF9C5F12EE3}" Label="" LastModificationDate="1617141746" Name="ObjectOrientedModel_1" Objects="197" Symbols="38" Target="C#" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.0.0.2613"?>
+=======
+<?PowerDesigner AppLocale="UTF16" ID="{63A92EE5-80F0-40BE-B451-8CF9C5F12EE3}" Label="" LastModificationDate="1616950610" Name="ObjectOrientedModel_1" Objects="192" Symbols="38" Target="C#" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.0.0.2613"?>
+>>>>>>> Stashed changes
 =======
 <?PowerDesigner AppLocale="UTF16" ID="{63A92EE5-80F0-40BE-B451-8CF9C5F12EE3}" Label="" LastModificationDate="1616950610" Name="ObjectOrientedModel_1" Objects="192" Symbols="38" Target="C#" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.0.0.2613"?>
 >>>>>>> Stashed changes
@@ -5077,8 +5081,13 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:ModificationDate>1617140834</a:ModificationDate>
 <a:Modifier>ranin</a:Modifier>
+=======
+<a:ModificationDate>1616950610</a:ModificationDate>
+<a:Modifier>orz</a:Modifier>
+>>>>>>> Stashed changes
 =======
 <a:ModificationDate>1616950610</a:ModificationDate>
 <a:Modifier>orz</a:Modifier>
@@ -5102,8 +5111,13 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:ModificationDate>1617140834</a:ModificationDate>
 <a:Modifier>ranin</a:Modifier>
+=======
+<a:ModificationDate>1616940784</a:ModificationDate>
+<a:Modifier>korisnik</a:Modifier>
+>>>>>>> Stashed changes
 =======
 <a:ModificationDate>1616940784</a:ModificationDate>
 <a:Modifier>korisnik</a:Modifier>
@@ -5596,6 +5610,7 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:CreationDate>1617140834</a:CreationDate>
 <a:ModificationDate>1617140836</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
@@ -5608,6 +5623,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <a:CreationDate>1616940784</a:CreationDate>
 <a:ModificationDate>1616941175</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
@@ -5616,6 +5633,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:FillColor>16770222</a:FillColor>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -5762,6 +5782,7 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:ObjectID>175DFB57-5432-4AD2-A04A-D32BF79817FE</a:ObjectID>
 <a:Name>FilesPatients</a:Name>
 <a:Code>FilesPatients</a:Code>
@@ -5845,6 +5866,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <a:ObjectID>4E25BE2F-8D4F-4A71-BBA3-7C9DE6CD52DD</a:ObjectID>
 <a:Name>Class_4</a:Name>
 <a:Code>Class4</a:Code>
@@ -5855,6 +5878,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -5872,12 +5898,15 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:ModificationDate>1617140813</a:ModificationDate>
 <a:Modifier>ranin</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:ClassDiagrams>
 <o:ClassDiagram Id="o172">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -5889,6 +5918,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ClassDiagram Id="o167">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -5902,8 +5934,13 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <a:ModificationDate>1617140813</a:ModificationDate>
 <a:Modifier>ranin</a:Modifier>
+=======
+<a:ModificationDate>1616942498</a:ModificationDate>
+<a:Modifier>korisnik</a:Modifier>
+>>>>>>> Stashed changes
 =======
 <a:ModificationDate>1616942498</a:ModificationDate>
 <a:Modifier>korisnik</a:Modifier>
@@ -6322,7 +6359,11 @@ Shadow=0</a:DisplayPreferences>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:AssociationSymbol Id="o173">
+=======
+<o:AssociationSymbol Id="o168">
+>>>>>>> Stashed changes
 =======
 <o:AssociationSymbol Id="o168">
 >>>>>>> Stashed changes
@@ -6346,6 +6387,7 @@ MULA 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:ClassSymbol Ref="o174"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
@@ -6357,6 +6399,8 @@ MULA 0 Arial,8,N</a:FontList>
 </o:AssociationSymbol>
 <o:ClassSymbol Id="o177">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6373,6 +6417,9 @@ MULA 0 Arial,8,N</a:FontList>
 <o:ClassSymbol Id="o172">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6399,11 +6446,14 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Ref="o178"/>
 </c:Object>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o179">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6414,6 +6464,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ClassSymbol Id="o174">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6442,11 +6495,14 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Ref="o180"/>
 </c:Object>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o174">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6457,6 +6513,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ClassSymbol Id="o169">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6483,6 +6542,7 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Ref="o181"/>
 </c:Object>
 </o:ClassSymbol>
@@ -6494,6 +6554,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:LineColor>32768</a:LineColor>
 <a:FillColor>8454016</a:FillColor>
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6510,6 +6572,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:FillColor>16770222</a:FillColor>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6527,6 +6592,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -6545,6 +6611,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Class Ref="o178"/>
 </c:Object>
 </o:ClassSymbol>
@@ -6557,6 +6625,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:FillColor>8454016</a:FillColor>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6577,7 +6648,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Ref="o184"/>
+=======
+<o:Shortcut Ref="o179"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o179"/>
 >>>>>>> Stashed changes
@@ -6596,11 +6671,14 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:ClassDiagram Ref="o172"/>
 </c:DefaultDiagram>
 <c:Classes>
 <o:Class Id="o178">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6611,6 +6689,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Class Id="o173">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6637,7 +6718,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Attribute Id="o185">
+=======
+<o:Attribute Id="o180">
+>>>>>>> Stashed changes
 =======
 <o:Attribute Id="o180">
 >>>>>>> Stashed changes
@@ -6660,11 +6745,14 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o186"/>
 </c:ObjectDataType>
 </o:Attribute>
 <o:Attribute Id="o187">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6675,6 +6763,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Attribute Id="o182">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6695,7 +6786,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o188">
+=======
+<o:Operation Id="o183">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o183">
 >>>>>>> Stashed changes
@@ -6718,7 +6813,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o189">
+=======
+<o:Operation Id="o184">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o184">
 >>>>>>> Stashed changes
@@ -6741,7 +6840,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o190">
+=======
+<o:Operation Id="o185">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o185">
 >>>>>>> Stashed changes
@@ -6764,7 +6867,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o191">
+=======
+<o:Operation Id="o186">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o186">
 >>>>>>> Stashed changes
@@ -6789,7 +6896,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o192">
+=======
+<o:Shortcut Id="o187">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o187">
 >>>>>>> Stashed changes
@@ -6814,7 +6925,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o186">
+=======
+<o:Shortcut Id="o181">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o181">
 >>>>>>> Stashed changes
@@ -6839,7 +6954,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Id="o180">
+=======
+<o:Class Id="o175">
+>>>>>>> Stashed changes
 =======
 <o:Class Id="o175">
 >>>>>>> Stashed changes
@@ -6861,7 +6980,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Attribute Id="o193">
+=======
+<o:Attribute Id="o188">
+>>>>>>> Stashed changes
 =======
 <o:Attribute Id="o188">
 >>>>>>> Stashed changes
@@ -6886,7 +7009,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o194">
+=======
+<o:Operation Id="o189">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o189">
 >>>>>>> Stashed changes
@@ -6909,7 +7036,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o195">
+=======
+<o:Parameter Id="o190">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o190">
 >>>>>>> Stashed changes
@@ -6932,7 +7063,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o196"/>
+=======
+<o:Shortcut Ref="o191"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o191"/>
 >>>>>>> Stashed changes
@@ -6949,7 +7084,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o197">
+=======
+<o:Operation Id="o192">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o192">
 >>>>>>> Stashed changes
@@ -6972,7 +7111,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o198">
+=======
+<o:Parameter Id="o193">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o193">
 >>>>>>> Stashed changes
@@ -6997,7 +7140,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o199">
+=======
+<o:Operation Id="o194">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o194">
 >>>>>>> Stashed changes
@@ -7020,7 +7167,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o200">
+=======
+<o:Operation Id="o195">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o195">
 >>>>>>> Stashed changes
@@ -7043,7 +7194,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o201">
+=======
+<o:Parameter Id="o196">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o196">
 >>>>>>> Stashed changes
@@ -7068,7 +7223,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o202">
+=======
+<o:Operation Id="o197">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o197">
 >>>>>>> Stashed changes
@@ -7091,7 +7250,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o203">
+=======
+<o:Parameter Id="o198">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o198">
 >>>>>>> Stashed changes
@@ -7114,7 +7277,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o196"/>
+=======
+<o:Shortcut Ref="o191"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o191"/>
 >>>>>>> Stashed changes
@@ -7131,7 +7298,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o204">
+=======
+<o:Operation Id="o199">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o199">
 >>>>>>> Stashed changes
@@ -7154,7 +7325,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o205">
+=======
+<o:Parameter Id="o200">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o200">
 >>>>>>> Stashed changes
@@ -7179,7 +7354,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o206">
+=======
+<o:Operation Id="o201">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o201">
 >>>>>>> Stashed changes
@@ -7202,7 +7381,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o207">
+=======
+<o:Operation Id="o202">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o202">
 >>>>>>> Stashed changes
@@ -7225,7 +7408,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o208">
+=======
+<o:Parameter Id="o203">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o203">
 >>>>>>> Stashed changes
@@ -7252,7 +7439,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o196">
+=======
+<o:Shortcut Id="o191">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o191">
 >>>>>>> Stashed changes
@@ -7277,7 +7468,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Class Id="o181">
+=======
+<o:Class Id="o176">
+>>>>>>> Stashed changes
 =======
 <o:Class Id="o176">
 >>>>>>> Stashed changes
@@ -7299,7 +7494,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Attribute Id="o209">
+=======
+<o:Attribute Id="o204">
+>>>>>>> Stashed changes
 =======
 <o:Attribute Id="o204">
 >>>>>>> Stashed changes
@@ -7322,7 +7521,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o210"/>
+=======
+<o:Shortcut Ref="o205"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o205"/>
 >>>>>>> Stashed changes
@@ -7339,7 +7542,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o211">
+=======
+<o:Operation Id="o206">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o206">
 >>>>>>> Stashed changes
@@ -7362,7 +7569,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o212">
+=======
+<o:Parameter Id="o207">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o207">
 >>>>>>> Stashed changes
@@ -7386,7 +7597,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o213">
+=======
+<o:Parameter Id="o208">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o208">
 >>>>>>> Stashed changes
@@ -7410,7 +7625,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o214">
+=======
+<o:Parameter Id="o209">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o209">
 >>>>>>> Stashed changes
@@ -7434,7 +7653,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o215">
+=======
+<o:Parameter Id="o210">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o210">
 >>>>>>> Stashed changes
@@ -7458,7 +7681,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o216"/>
+=======
+<o:Shortcut Ref="o211"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o211"/>
 >>>>>>> Stashed changes
@@ -7475,7 +7702,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o217">
+=======
+<o:Operation Id="o212">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o212">
 >>>>>>> Stashed changes
@@ -7498,7 +7729,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o218">
+=======
+<o:Parameter Id="o213">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o213">
 >>>>>>> Stashed changes
@@ -7524,7 +7759,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o219">
+=======
+<o:Operation Id="o214">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o214">
 >>>>>>> Stashed changes
@@ -7547,7 +7786,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Parameter Id="o220">
+=======
+<o:Parameter Id="o215">
+>>>>>>> Stashed changes
 =======
 <o:Parameter Id="o215">
 >>>>>>> Stashed changes
@@ -7573,7 +7816,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o221">
+=======
+<o:Operation Id="o216">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o216">
 >>>>>>> Stashed changes
@@ -7596,7 +7843,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Operation Id="o222">
+=======
+<o:Operation Id="o217">
+>>>>>>> Stashed changes
 =======
 <o:Operation Id="o217">
 >>>>>>> Stashed changes
@@ -7621,7 +7872,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o223">
+=======
+<o:Shortcut Id="o218">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o218">
 >>>>>>> Stashed changes
@@ -7646,7 +7901,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o224">
+=======
+<o:Shortcut Id="o219">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o219">
 >>>>>>> Stashed changes
@@ -7671,7 +7930,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o210">
+=======
+<o:Shortcut Id="o205">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o205">
 >>>>>>> Stashed changes
@@ -7696,7 +7959,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Id="o216">
+=======
+<o:Shortcut Id="o211">
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Id="o211">
 >>>>>>> Stashed changes
@@ -7718,6 +7985,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TargetClassID>18112063-1A4B-11D1-83D9-444553540000</a:TargetClassID>
 <a:TargetPackagePath>&lt;Model&gt;::Model</a:TargetPackagePath>
 </o:Shortcut>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -7760,6 +8028,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Class Id="o178">
 <a:ObjectID>94E291AA-502A-4C56-963C-0EC44176E21E</a:ObjectID>
 <a:Name>Patient Management</a:Name>
@@ -7770,6 +8040,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>korisnik</a:Modifier>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7782,6 +8055,7 @@ LABL 0 Arial,8,N</a:FontList>
  * Purpose: Definition of the Class Logika.PatientManagement
  ***********************************************************************/</a:Classifier.Header>
 <c:Operations>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -7811,6 +8085,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Operation Id="o220">
 <a:ObjectID>BE02A7D8-94C6-4159-984F-06C8670892C8</a:ObjectID>
 <a:Name>deletePatient</a:Name>
@@ -7833,6 +8109,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>int</a:Parameter.DataType>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7842,6 +8121,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -7869,6 +8149,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Operation Id="o222">
 <a:ObjectID>54297ACC-E4EA-4694-96A8-8B33C21681D3</a:ObjectID>
 <a:Name>createPatient</a:Name>
@@ -7890,6 +8172,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>korisnik</a:Modifier>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7901,6 +8186,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -7930,6 +8216,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Operation Id="o224">
 <a:ObjectID>AEEEFF0F-A5B3-4329-9800-797F4B1BC9F3</a:ObjectID>
 <a:Name>editExistingPatient</a:Name>
@@ -7952,6 +8240,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>int</a:Parameter.DataType>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7961,6 +8252,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -7977,6 +8269,8 @@ LABL 0 Arial,8,N</a:FontList>
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 <o:Operation Id="o226">
 <a:ObjectID>2B82ADA2-C4A2-45F2-B10A-5358931C0C8C</a:ObjectID>
 <a:Name>getAllPatient</a:Name>
@@ -7987,6 +8281,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>korisnik</a:Modifier>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -8000,10 +8297,13 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 </c:Classes>
 <c:Associations>
 <o:Association Id="o176">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -8039,6 +8339,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Association Id="o171">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -8060,11 +8363,14 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o182"/>
 </c:Object1>
 <c:Object2>
 <o:Class Ref="o181"/>
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -8075,6 +8381,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Class Ref="o176"/>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -8092,7 +8401,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:TargetModel Id="o233">
+=======
+<o:TargetModel Id="o228">
+>>>>>>> Stashed changes
 =======
 <o:TargetModel Id="o228">
 >>>>>>> Stashed changes
@@ -8119,7 +8432,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:TargetModel Id="o234">
+=======
+<o:TargetModel Id="o229">
+>>>>>>> Stashed changes
 =======
 <o:TargetModel Id="o229">
 >>>>>>> Stashed changes
@@ -8146,7 +8463,11 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:TargetModel Id="o235">
+=======
+<o:TargetModel Id="o230">
+>>>>>>> Stashed changes
 =======
 <o:TargetModel Id="o230">
 >>>>>>> Stashed changes
@@ -8170,6 +8491,7 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o182"/>
 <o:Shortcut Ref="o225"/>
 <o:Shortcut Ref="o192"/>
@@ -8181,6 +8503,8 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TargetModel>
 <o:TargetModel Id="o236">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -8197,6 +8521,9 @@ LABL 0 Arial,8,N</a:FontList>
 <o:TargetModel Id="o231">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -8216,8 +8543,13 @@ LABL 0 Arial,8,N</a:FontList>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <o:Shortcut Ref="o224"/>
 <o:Shortcut Ref="o223"/>
+=======
+<o:Shortcut Ref="o219"/>
+<o:Shortcut Ref="o218"/>
+>>>>>>> Stashed changes
 =======
 <o:Shortcut Ref="o219"/>
 <o:Shortcut Ref="o218"/>
