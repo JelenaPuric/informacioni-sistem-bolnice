@@ -1,0 +1,35 @@
+﻿<Window x:Class="HospitalApplication.Windows.Secretary.AllPatientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
+        mc:Ignorable="d"
+        Title="AllPatientsWindow" Height="627" Width="1358">
+    <Grid Margin="10,52,88,0">
+        <ListView Margin="-11,-48,-77,10" Name="lvUsers" RenderTransformOrigin="0.5,0.5">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.161"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="TypeAccount" Width="120" DisplayMemberBinding="{Binding TypeAcc}" />
+                    <GridViewColumn Header="Name" Width="50" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="LastName" Width="150" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="DateOfBirth" Width="150" DisplayMemberBinding="{Binding DateOfBirth}" />
+                    <GridViewColumn Header="PhoneNumber" Width="150" DisplayMemberBinding="{Binding PhoneNumber}" />
+                    <GridViewColumn Header="Email" Width="150" DisplayMemberBinding="{Binding Email}" />
+                    <GridViewColumn Header="PlaceOfResidance" Width="150" DisplayMemberBinding="{Binding PlaceOfResidance}" />
+                    <GridViewColumn Header="TypeOfPerson" Width="150" DisplayMemberBinding="{Binding TypeOfPerson}" />
+                    <GridViewColumn Header="Username" Width="150" DisplayMemberBinding="{Binding Username}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
