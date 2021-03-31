@@ -61,7 +61,8 @@ namespace HospitalApplication.Windows.Patient1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/patient1/windowexaminationshow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/patient1/windowexaminationshow.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Patient1\WindowExaminationShow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

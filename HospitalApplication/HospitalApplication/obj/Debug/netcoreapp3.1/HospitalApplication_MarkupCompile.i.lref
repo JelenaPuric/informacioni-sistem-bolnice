@@ -1,29 +1,29 @@
-﻿C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.i.cs
+﻿D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.i.cs
 
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\DoctorWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\MoveExaminationWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleExaminationWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditR.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditRoom.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\ShowRoomi.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationCancel.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationMove.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationSchedule.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowPatient.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\AllPatientsWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\DeletePatientWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditPatientWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditRegisterPatient.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterGuestPatient.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
-FC:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\CancelExaminationWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\DoctorWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\MoveExaminationWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ScheduleExaminationWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AddRoom.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\AllRooms.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\DeleteRoom.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditR.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\EditRoom.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\ShowRoomi.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Rooms\WindowRooms.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\WindowsManager.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationCancel.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationMove.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowExaminationSchedule.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Patient1\WindowPatient.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\AllPatientsWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\DeletePatientWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditPatientWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\EditRegisterPatient.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterGuestPatient.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegisterPatientWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\RegistrationOptionWindow.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Secretary\SecretaryWindow.xaml;;
 
