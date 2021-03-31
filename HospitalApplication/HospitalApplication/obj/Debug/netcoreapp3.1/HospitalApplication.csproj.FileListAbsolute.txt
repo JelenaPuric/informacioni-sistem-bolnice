@@ -342,3 +342,13 @@ C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplicati
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationMove.baml
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationSchedule.baml
 C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csprojAssemblyReference.cache
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationCancel.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationMove.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationSchedule.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationCancel.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationMove.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationSchedule.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs

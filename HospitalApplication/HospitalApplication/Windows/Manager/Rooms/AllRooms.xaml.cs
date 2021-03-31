@@ -28,7 +28,6 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             List<Room> p = rooms.showAllRooms();
 
             lvDataBinding.ItemsSource = p;
-           
         }
     }
 }

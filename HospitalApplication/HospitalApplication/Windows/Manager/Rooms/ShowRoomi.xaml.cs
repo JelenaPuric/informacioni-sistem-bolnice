@@ -33,7 +33,8 @@ namespace HospitalApplication.Windows.Manager.Rooms
             Room roo = new Room();
             roo = mg.showRoom(delete);
 
-            fallback.Text = roo.NumberOfFloors.ToString();
+            String sobica = "Number of floors: " + roo.NumberOfFloors + "; Capacity: " +roo.Capacity + "; Occupied :" + roo.Occupied + "; Room id: " + roo.RoomId + ";Room type: " +roo.RoomType;
+            fallback.Text = sobica;
         }
     }
 }
