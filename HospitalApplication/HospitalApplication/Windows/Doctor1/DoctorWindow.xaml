@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="DoctorWindow" Height="450" Width="800">
     <Grid>
-        <Grid>
+        <Grid Margin="0,8,0,-8">
             <Button Content="Schedule examination" x:Name="btnSchedule" Margin="59,177,532,192" Click="btnSchedule_Click" FontSize="18" FontWeight="Bold" Background="#FF54FF21" RenderTransformOrigin="0.536,1.815"/>
             <Button Content="Cancel examination" x:Name="btnCancel" Margin="458,177,123,192" Click="btnCancel_Click" FontSize="18" FontWeight="Bold" Background="#FF49FF13" RenderTransformOrigin="0.521,1.507"/>
             <Button Content="Show examinations" x:Name="btnShow"  Margin="59,296,532,73" Click="btnShow_Click" FontSize="18" FontWeight="Bold" Background="#FF4DFF19"/>

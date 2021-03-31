@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +18,25 @@ namespace HospitalApplication.Windows.Doctor1
     /// </summary>
     public partial class CancelExaminationWindow : Window
     {
+        private ExaminationAndOperationCrud eAo = new ExaminationAndOperationCrud();
+        private string id;
         public CancelExaminationWindow()
         {
             InitializeComponent();
         }
+
+        private void yesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            id = examinationIdTxt.Text;
+            eAo.CancelScheduledExamination(id);
+            Close();
+        }
+
+        private void noBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+      
     }
 }
