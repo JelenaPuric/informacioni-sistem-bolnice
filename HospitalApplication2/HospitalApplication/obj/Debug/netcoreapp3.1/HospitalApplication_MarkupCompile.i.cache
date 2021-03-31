@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication2\HospitalApplication\obj\Debug\netcoreapp3.1\
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication2\HospitalApplication\obj\Debug\netcoreapp3.1\
 HospitalApplication
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\korisnik\Documents\GitHub\informacioni-sistem-bolnice\HospitalApplication2\HospitalApplication\App.xaml
+C:\Users\ranin\Desktop\SiMS Projekat\informacioni-sistem-bolnice\HospitalApplication2\HospitalApplication\App.xaml
 271753696346
 
 54-485227526
-197-1690992786
+197-1502948189
 MainWindow.xaml;Windows\Doctor1\CancelExaminationWindow.xaml;Windows\Doctor1\DoctorWindow.xaml;Windows\Doctor1\MoveExaminationWindow.xaml;Windows\Doctor1\ScheduleExaminationWindow.xaml;Windows\Doctor1\ShowExaminationWindow.xaml;Windows\Manager\Rooms\AddRoom.xaml;Windows\Manager\Rooms\AllRooms.xaml;Windows\Manager\Rooms\DeleteRoom.xaml;Windows\Manager\Rooms\EditR.xaml;Windows\Manager\Rooms\EditRoom.xaml;Windows\Manager\Rooms\ShowRoomi.xaml;Windows\Manager\Rooms\WindowRooms.xaml;Windows\Manager\WindowsManager.xaml;Windows\Patient1\WindowExaminationCancel.xaml;Windows\Patient1\WindowExaminationMove.xaml;Windows\Patient1\WindowExaminationSchedule.xaml;Windows\Patient1\WindowExaminationShow.xaml;Windows\Patient1\WindowPatient.xaml;Windows\Secretary\AllPatientsWindow.xaml;Windows\Secretary\DeletePatientWindow.xaml;Windows\Secretary\EditPatientWindow.xaml;Windows\Secretary\EditRegisterPatient.xaml;Windows\Secretary\RegisterGuestPatient.xaml;Windows\Secretary\RegisterPatientWindow.xaml;Windows\Secretary\RegistrationOptionWindow.xaml;Windows\Secretary\SecretaryWindow.xaml;
 
 True

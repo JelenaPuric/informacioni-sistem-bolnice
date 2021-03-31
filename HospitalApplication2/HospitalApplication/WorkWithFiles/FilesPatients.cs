@@ -22,7 +22,9 @@ namespace WorkWithFiles
         }
 
 
-        List<Patient> patients = new List<Patient>();
+        private List<Patient> patients;
+
+
 
 
         public List<Patient> GetPatients()
@@ -32,6 +34,7 @@ namespace WorkWithFiles
 
         public void LoadPatient(string path)
         {
+            patients = new List<Patient>();
             List<String> lines = File.ReadAllLines(path).ToList();
             foreach (var line in lines)
             {
@@ -64,6 +67,17 @@ namespace WorkWithFiles
                 File.AppendAllText(path, patients[i].TypeAcc + "," + patients[i].Name + "," + patients[i].LastName + "," + patients[i].Id + "," + patients[i].DateOfBirth + "," + patients[i].PhoneNumber + "," + patients[i].Email + "," + patients[i].PlaceOfResidance + "," + patients[i].TypeOfPerson + "," + patients[i].Username + "," + patients[i].Password + "\n"); ;
             }
         }
+
+
+
+
+
+        public List<Patient> Patients
+        {
+            get { return patients; }
+            set { patients = value; }
+        }
+
 
     }
 }
