@@ -45,11 +45,11 @@ namespace Logic
             Examination ex = new Examination();
             for (int i = 0; i < examinations.Count(); i++)
             {
-              //  if (examinations(i).ExaminationId == id)
-                //{
-                  //  ex = examinations[i];
-                   // examinations.RemoveAt(i);
-                //}
+                if (examinations[i].ExaminationId == id)
+                {
+                    ex = examinations[i];
+                    examinations.RemoveAt(i);
+                }
 
             }
             ex.ExaminationDate = date1;

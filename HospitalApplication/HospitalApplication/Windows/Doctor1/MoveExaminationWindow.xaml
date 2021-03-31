@@ -24,7 +24,7 @@
 
         </Grid>
         <Label Content="Examination date:" Margin="38,26,526,372"/>
-        <TextBox Text="hours" Name="hoursStartTxt" TextWrapping="Wrap" Margin="475,71,267,314" TextChanged="examStartTxt_TextChanged"/>
+        <TextBox Text="hours" Name="hoursStartTxt" TextWrapping="Wrap" Margin="475,71,267,314"/>
         <TextBox Text="hours" Name="hoursEndTxt" TextWrapping="Wrap" Margin="475,125,267,263"/>
     </Grid>
 </Window>
