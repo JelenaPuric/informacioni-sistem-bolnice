@@ -1,22 +1,34 @@
 using System;
 using System.Collections.Generic;
 using Model;
+using WorkWithFiles;
 
 namespace Logic
 {
    public class ExaminationAndOperationCrud
    {
-      public Boolean ScheduleExamunation(Model.Examination examination)
+        public ExaminationAndOperationCrud()
+        {
+            examinations = sAd.LoadExaminations();
+        }
+
+        public void ScheduleExamunation(Model.Examination examination)
       {
-         // TODO: implement
-         return false;
-      }
+            examinations.Add(examination);
+            sAd.EnterExaminations(examinations);
+        }
       
-      public Boolean CancelScheduledExamination(int iDexamination)
+      public void CancelScheduledExamination(String iDexamination)
       {
-         // TODO: implement
-         return false;
-      }
+            SerializationAndDeserilaizationOfExaminations sAd = SerializationAndDeserilaizationOfExaminations.GetInstance();
+
+
+            for (int i = 0; i < examinations.Count; i++)
+            {
+                if (examinations[i].ExaminationId == iDexamination) examinations.RemoveAt(i);
+            }
+            sAd.EnterExaminations(examinations);
+        }
       
       public List<Examination> ShowScheduledExaminations()
       {
@@ -24,38 +36,26 @@ namespace Logic
          List<Examination> e = new List<Examination>();
          return e;
       }
-      
-      public Boolean MoveScheduledExamination(int iDexamination)
+
+        
+
+        public Boolean MoveScheduledExamination(int iDexamination)
       {
          // TODO: implement
          return false;
       }
-      
-      public Boolean ScheduleOperation(Model.Examination operation)
-      {
-         // TODO: implement
-         return false;
-      }
-      
-      public Boolean CancelSchedyledOperation(int iDexamination)
-      {
-         // TODO: implement
-         return false;
-      }
-      
-      public List<Examination> ShowScheduledOperations()
-      {
-         // TODO: implement
-         return null;
-      }
-      
-      public Boolean MoveScheduledOperation(int iDexamination)
-      {
-         // TODO: implement
-         return false;
-      }
-   
-     // private List<Examination> Examination;
-   
-   }
+
+        private SerializationAndDeserilaizationOfExaminations sAd = new SerializationAndDeserilaizationOfExaminations();
+        private List<Examination> examinations;
+
+        public List<Examination> Examinations
+        {
+            get { return examinations; }
+            set { examinations = value; }
+        }
+
+
+        
+
+    }
 }
