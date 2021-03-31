@@ -14,13 +14,17 @@
             <Button Content="Give up" Name="noMoveBtn" Click="noMoveBtn_Click" Margin="476,385,110,22"/>
             <DatePicker Name="examDateTxt" Margin="476,28,110,368"/>
             <Label Content="Examination Id:" HorizontalAlignment="Left" Height="23" Margin="46,194,0,0" VerticalAlignment="Top" Width="141" RenderTransformOrigin="0.482,2.545"/>
-            <TextBox Text="Enter examination id" Name="examIdTxt" TextWrapping="Wrap" Margin="476,194,110,214" RenderTransformOrigin="0.495,2.133"/>
+            <TextBox Text="Enter examination id" Name="examIdTxt" TextWrapping="Wrap" Margin="476,194,110,198" RenderTransformOrigin="0.495,2.133"/>
             <Label Content="Are you shure you want to move an examination ?" Margin="134,256,66,134" FontSize="20" FontWeight="Bold"/>
+            <TextBox Text="minutes" Name="minutesStartTxt" TextWrapping="Wrap" Margin="547,79,175,307"/>
+            <TextBox Text="secundes" Name="secundesStartTxt" TextWrapping="Wrap" Margin="639,79,87,307"/>
+            <TextBox Text="minutes" Name="minutesEndTxt" TextWrapping="Wrap" Margin="547,132,175,254"/>
+            <TextBox Text="secundes" Name="secundesEndTxt" TextWrapping="Wrap" Margin="639,132,87,254"/>
 
 
         </Grid>
         <Label Content="Examination date:" Margin="38,26,526,372"/>
-        <TextBox Text="enter time" Name="examStartTxt" TextWrapping="Wrap" Margin="475,76,104,331"/>
-        <TextBox Text="enter time" Name="examEndTxt" TextWrapping="Wrap" Margin="475,124,104,275"/>
+        <TextBox Text="hours" Name="hoursStartTxt" TextWrapping="Wrap" Margin="475,71,267,314" TextChanged="examStartTxt_TextChanged"/>
+        <TextBox Text="hours" Name="hoursEndTxt" TextWrapping="Wrap" Margin="475,125,267,263"/>
     </Grid>
 </Window>

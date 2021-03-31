@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Model;
 using WorkWithFiles;
 
@@ -39,11 +40,24 @@ namespace Logic
 
         
 
-        public Boolean MoveScheduledExamination(int iDexamination)
+        public void MoveScheduledExamination(String id, DateTime date1, DateTime dateStart, DateTime dateEnd)
       {
-         // TODO: implement
-         return false;
-      }
+            Examination ex = new Examination();
+            for (int i = 0; i < examinations.Count(); i++)
+            {
+              //  if (examinations(i).ExaminationId == id)
+                //{
+                  //  ex = examinations[i];
+                   // examinations.RemoveAt(i);
+                //}
+
+            }
+            ex.ExaminationDate = date1;
+            ex.ExaminationStart = dateStart;
+            ex.ExaminationEnd = dateEnd;
+            examinations.Add(ex);
+            sAd.EnterExaminations(examinations);
+        }
 
         private SerializationAndDeserilaizationOfExaminations sAd = new SerializationAndDeserilaizationOfExaminations();
         private List<Examination> examinations;
