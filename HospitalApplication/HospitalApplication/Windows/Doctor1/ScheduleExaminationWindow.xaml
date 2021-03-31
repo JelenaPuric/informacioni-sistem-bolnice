@@ -5,29 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Doctor1"
         mc:Ignorable="d"
-        Title="ScheduleExaminationWindow" Height="450" Width="800">
+        Title="ScheduleExaminationWindow" Height="638" Width="800">
     <Grid>
-        <Grid Margin="0,-10,0,10">
-            <Label Content="Examination's date:" HorizontalAlignment="Left" Height="38" Margin="46,28,0,0" VerticalAlignment="Top" Width="177"/>
-            <Label Content="Examination start:" HorizontalAlignment="Left" Height="32" Margin="46,71,0,0" VerticalAlignment="Top" Width="129"/>
-            <Label Content="Doctor:" HorizontalAlignment="Left" Height="34" Margin="57,174,0,0" VerticalAlignment="Top" Width="104"/>
-            <Label Content="Patient:" HorizontalAlignment="Left" Height="31" Margin="57,213,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.495,1.356"/>
-            <Label Content="Room id" HorizontalAlignment="Left" Height="34" Margin="58,263,0,0" VerticalAlignment="Top" Width="129"/>
-            <Label Content="Specialization:" HorizontalAlignment="Left" Height="43" Margin="40,302,0,0" VerticalAlignment="Top" Width="130"/>
-            <TextBox Text="Enter name and last name" Name="doctorIdTxt" TextWrapping="Wrap" Margin="476,174,110,234" RenderTransformOrigin="0.514,1.307"/>
-            <TextBox Text="Enter name and last name" Name="patientIdTxt" TextWrapping="Wrap" Margin="476,211,110,190"/>
-            <CheckBox Content="Doctor specialist" Name="specialistTxt" Margin="476,315,110,98"/>
-            <Button Content="Confirm" Name="confirmBtn" Click="confirmBtn_Click" Margin="98,385,524,22"/>
-            <Button Content="Give up" Name="giveUpBtn" Click="giveUpBtn_Click" Margin="476,385,110,22"/>
-            <DatePicker Margin="476,28,110,368" Name="examDateTxt"/>
-            <Label Content="Examination Id:" HorizontalAlignment="Left" Height="23" Margin="46,347,0,0" VerticalAlignment="Top" Width="141"/>
-            <TextBox Text="Enter examination id" Name="examIdTxt" TextWrapping="Wrap" Margin="476,344,110,64"/>
-            <TextBox Text="Enter room's id"  Name="roomIdTxt" TextWrapping="Wrap" Margin="476,263,110,136"/>
-            <Label Content="Examination end:" Margin="50,103,639,300"/>
-            <Label Content="Examination type:" Margin="50,139,592,260"/>
-            <TextBox Text="enter start time" Name="examStartTxt" TextWrapping="Wrap" Margin="476,72,110,331"/>
-            <TextBox Text="enter end time" Name="examEndTxt" TextWrapping="Wrap" Margin="476,108,110,300"/>
-            <ComboBox Name="typeExamTxt" Margin="476,139,110,265"/>
+        <Grid Height="428" VerticalAlignment="Top">
+            <Label Content="Examination's date:" HorizontalAlignment="Left" Height="38" Margin="64,16,0,0" VerticalAlignment="Top" Width="178"/>
+            <Label Content="Examination start:" HorizontalAlignment="Left" Height="32" Margin="64,59,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.783,0.517"/>
+            <Label Content="Doctor:" HorizontalAlignment="Left" Height="30" Margin="71,194,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.529,1.401"/>
+            <Label Content="Patient:" HorizontalAlignment="Left" Height="38" Margin="68,242,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.495,1.356"/>
+            <Label Content="Room id" HorizontalAlignment="Left" Height="40" Margin="68,294,0,0" VerticalAlignment="Top" Width="129"/>
+            <Label Content="Specialization:" HorizontalAlignment="Left" Height="43" Margin="77,348,0,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.562,0.815"/>
+            <TextBox Text="Enter name and last name" Name="doctorIdTxt" TextWrapping="Wrap" Margin="476,182,110,204" RenderTransformOrigin="0.514,1.307"/>
+            <TextBox Text="Enter name and last name" Name="patientIdTxt" TextWrapping="Wrap" Margin="476,236,110,144"/>
+            <CheckBox Content="Doctor specialist" Name="specialistTxt" Margin="476,348,110,49" RenderTransformOrigin="0.477,1.816"/>
+            <Button Content="Confirm" Name="confirmBtn" Click="confirmBtn_Click" Margin="80,495,542,-126"/>
+            <Button Content="Give up" Name="giveUpBtn" Click="giveUpBtn_Click" Margin="476,495,110,-126"/>
+            <DatePicker Margin="476,10,110,370" Name="examDateTxt"/>
+            <Label Content="Examination Id:" HorizontalAlignment="Left" Height="42" Margin="71,406,0,0" VerticalAlignment="Top" Width="142"/>
+            <TextBox Text="Enter examination id" Name="examIdTxt" TextWrapping="Wrap" Margin="476,406,110,-23"/>
+            <TextBox Text="Enter room's id"  Name="roomIdTxt" TextWrapping="Wrap" Margin="476,294,110,87" RenderTransformOrigin="0.43,1.056"/>
+            <Label Content="Examination end:" Margin="64,96,625,293"/>
+            <Label Content="Examination type:" Margin="64,139,578,247"/>
+            <TextBox Text="hours" Name="hour1Txt" TextWrapping="Wrap" Margin="476,67,275,326"/>
+            <TextBox Text="hours" Name="hours2Txt" TextWrapping="Wrap" Margin="476,108,275,285"/>
+            <ComboBox Name="typeExamTxt" Margin="476,148,110,247">
+                <ComboBoxItem Content="operation"></ComboBoxItem>
+                <ComboBoxItem Content="regular examination"></ComboBoxItem>
+            </ComboBox>
+            <TextBox Text="minutes" Name="minutes1Txt" TextWrapping="Wrap" Margin="548,67,182,331"/>
+            <TextBox Text="secundes" Name="secundes1Txt" TextWrapping="Wrap" Margin="634,70,110,328"/>
+            <TextBox Text="minutes" Name="minutes2Txt" TextWrapping="Wrap" Margin="548,106,182,289" RenderTransformOrigin="0.486,0.213"/>
+            <TextBox Text="secundes" Name="secundes2Txt" TextWrapping="Wrap" Margin="634,110,110,286" RenderTransformOrigin="4.107,0.157"/>
 
 
         </Grid>

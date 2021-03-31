@@ -6,42 +6,10 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "C:\\Users\\ranin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ranin\\.nuget\\packages"
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       "C:\\Users\\korisnik\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\korisnik\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
-
-      "C:\\Users\\orz\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\orz\\.nuget\\packages"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
