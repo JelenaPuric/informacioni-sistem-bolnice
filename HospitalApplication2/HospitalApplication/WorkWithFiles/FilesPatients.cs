@@ -24,9 +24,6 @@ namespace WorkWithFiles
 
         private List<Patient> patients;
 
-
-
-
         public List<Patient> GetPatients()
         {
             return patients;

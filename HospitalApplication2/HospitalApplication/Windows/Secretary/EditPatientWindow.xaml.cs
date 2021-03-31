@@ -41,11 +41,6 @@ namespace HospitalApplication.Windows.Secretary
                     EditRegisterPatient window = new EditRegisterPatient(idPatient) { };
                     window.Show();
                 }
-                else
-                {
-                    MessageBox.Show("Patient doesnt exist!");
-                    return;
-                }
             }
 
             Close();

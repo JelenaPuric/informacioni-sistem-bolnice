@@ -1,0 +1,2 @@
+permanentAccount,Marko,Markovic,0,3/18/2021 12:00:00 AM,12124421,markovicmarko@gmail.com,Novi Sad,Patient,marko22,4321
+guestAccount,Pero,Perovic,1,10/10/1000 12:00:00 AM,Empty,Empty,Empty,Patient,pero11,54321
