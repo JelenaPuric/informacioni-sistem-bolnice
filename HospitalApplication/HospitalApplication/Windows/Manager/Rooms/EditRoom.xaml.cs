@@ -25,7 +25,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
             InitializeComponent();
         }
 
-        public void Edit_Clicked(object sender, RoutedEventArgs e)
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
         {
 
             delete = Int32.Parse(forEdit.Text);
