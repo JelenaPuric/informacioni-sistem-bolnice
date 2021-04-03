@@ -27,7 +27,6 @@ namespace HospitalApplication.Windows.Manager.Rooms
 
         private void Edit_Clicked(object sender, RoutedEventArgs e)
         {
-
             delete = Int32.Parse(forEdit.Text);
             RoomManagment up = new RoomManagment();
             //up.RemoveRoom(delete);

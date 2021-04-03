@@ -34,19 +34,20 @@ namespace HospitalApplication.Windows.Secretary
 
             List<Patient> patients = sp.GetPatients();
 
-
-           
-
             for (int i = 0; i < patients.Count; i++)
             {
                 if (patients[i].Id == idPatient)
                 {
-                    EditRegisterPatient window = new EditRegisterPatient(idPatient);
+                    EditRegisterPatient window = new EditRegisterPatient(idPatient) { };
                     window.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Patient doesnt exist!");
+                    return;
                 }
             }
 
-          
             Close();
         }
 

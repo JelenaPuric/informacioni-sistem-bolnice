@@ -13,13 +13,23 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Margin="0 0 10 0" Grid.Column="0" Content="Schedule Examination" x:Name="ScheduleExamination" Click="ScheduleExamination_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="1" Content="Cancel Examination" x:Name="CancelExamination" Click="CancelExamination_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="2" Content="Move Examination" x:Name="MoveExamination" Click="MoveExamination_Click"/>
-                <Button Margin="0 0 10 0" Grid.Column="3" Content="Show Examination"/>
             </Grid>
+            <ListView Margin="0 10" Name="lvUsers">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
+                        <GridViewColumn Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
+                        <GridViewColumn Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />
+                        <GridViewColumn Header="Room ID" DisplayMemberBinding="{Binding RoomId}" />
+                        <GridViewColumn Header="Examination ID" DisplayMemberBinding="{Binding ExaminationId}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="" Name="TestLabela"></Label>
         </StackPanel>
     </Grid>
 </Window>

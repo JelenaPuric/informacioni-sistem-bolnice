@@ -1,35 +1,22 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Model;
-using WorkWithFiles;
 
 namespace Logic
 {
    public class ExaminationAndOperationCrud
    {
-        public ExaminationAndOperationCrud()
-        {
-            examinations = sAd.LoadExaminations();
-        }
-
-        public void ScheduleExamunation(Model.Examination examination)
+      public Boolean ScheduleExamunation(Model.Examination examination)
       {
-            examinations.Add(examination);
-            sAd.EnterExaminations(examinations);
-        }
+         // TODO: implement
+         return false;
+      }
       
-      public void CancelScheduledExamination(String iDexamination)
+      public Boolean CancelScheduledExamination(int iDexamination)
       {
-            SerializationAndDeserilaizationOfExaminations sAd = SerializationAndDeserilaizationOfExaminations.GetInstance();
-
-
-            for (int i = 0; i < examinations.Count; i++)
-            {
-                if (examinations[i].ExaminationId == iDexamination) examinations.RemoveAt(i);
-            }
-            sAd.EnterExaminations(examinations);
-        }
+         // TODO: implement
+         return false;
+      }
       
       public List<Examination> ShowScheduledExaminations()
       {
@@ -37,39 +24,38 @@ namespace Logic
          List<Examination> e = new List<Examination>();
          return e;
       }
-
-        
-
-        public void MoveScheduledExamination(String id, DateTime date1, DateTime dateStart, DateTime dateEnd)
+      
+      public Boolean MoveScheduledExamination(int iDexamination)
       {
-            Examination ex = new Examination();
-            for (int i = 0; i < examinations.Count(); i++)
-            {
-                if (examinations[i].ExaminationId == id)
-                {
-                    ex = examinations[i];
-                    examinations.RemoveAt(i);
-                }
-
-            }
-            ex.ExaminationDate = date1;
-            ex.ExaminationStart = dateStart;
-            ex.ExaminationEnd = dateEnd;
-            examinations.Add(ex);
-            sAd.EnterExaminations(examinations);
-        }
-
-        private SerializationAndDeserilaizationOfExaminations sAd = new SerializationAndDeserilaizationOfExaminations();
-        private List<Examination> examinations;
-
-        public List<Examination> Examinations
-        {
-            get { return examinations; }
-            set { examinations = value; }
-        }
-
-
-        
-
-    }
+         // TODO: implement
+         return false;
+      }
+      
+      public Boolean ScheduleOperation(Model.Examination operation)
+      {
+         // TODO: implement
+         return false;
+      }
+      
+      public Boolean CancelSchedyledOperation(int iDexamination)
+      {
+         // TODO: implement
+         return false;
+      }
+      
+      public List<Examination> ShowScheduledOperations()
+      {
+         // TODO: implement
+         return null;
+      }
+      
+      public Boolean MoveScheduledOperation(int iDexamination)
+      {
+         // TODO: implement
+         return false;
+      }
+   
+      private List<Examination> Examination;
+   
+   }
 }

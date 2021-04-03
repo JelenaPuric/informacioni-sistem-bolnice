@@ -52,7 +52,34 @@ namespace HospitalApplication.Windows.Doctor1
 
         }
 
+        private void btnScheduleO_Click(object sender, RoutedEventArgs e)
+        {
 
-       
+            ScheduleOperationWindow window = new ScheduleOperationWindow();
+            window.Show();
+
+        }
+
+        private void btnCancelO_Click(object sender, RoutedEventArgs e)
+        {
+            CancelOperationWindow window = new CancelOperationWindow();
+            window.Show();
+
+        }
+
+        private void btnMoveO_Click(object sender, RoutedEventArgs e)
+        {
+
+            MoveOperationWindow window = new MoveOperationWindow();
+            window.Show();
+
+        }
+
+        private void btnShowO_Click(object sender, RoutedEventArgs e)
+        {
+            ShowOperationWindow window = new ShowOperationWindow();
+            window.Show();
+
+        }
     }
 }

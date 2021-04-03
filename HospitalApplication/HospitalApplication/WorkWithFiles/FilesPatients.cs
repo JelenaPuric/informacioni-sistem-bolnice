@@ -6,8 +6,8 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-    public class FilesPatients
-    {
+   public class FilesPatients
+   {
         private FilesPatients() { }
 
         private static FilesPatients _instance;
@@ -22,14 +22,7 @@ namespace WorkWithFiles
         }
 
 
-        private List<Patient> patients;
-
-
-        public List<Patient> Patients
-        {
-            get { return patients; }
-            set { patients = value; }
-        }
+        List<Patient> patients = new List<Patient>();
 
 
         public List<Patient> GetPatients()
@@ -39,8 +32,6 @@ namespace WorkWithFiles
 
         public void LoadPatient(string path)
         {
-            patients = new List<Patient>();
-
             List<String> lines = File.ReadAllLines(path).ToList();
             foreach (var line in lines)
             {
@@ -67,7 +58,7 @@ namespace WorkWithFiles
         public void WritePatient(string path)
         {
             System.IO.File.WriteAllText(path, string.Empty);
-
+            
             for (int i = 0; i < patients.Count; i++)
             {
                 File.AppendAllText(path, patients[i].TypeAcc + "," + patients[i].Name + "," + patients[i].LastName + "," + patients[i].Id + "," + patients[i].DateOfBirth + "," + patients[i].PhoneNumber + "," + patients[i].Email + "," + patients[i].PlaceOfResidance + "," + patients[i].TypeOfPerson + "," + patients[i].Username + "," + patients[i].Password + "\n"); ;

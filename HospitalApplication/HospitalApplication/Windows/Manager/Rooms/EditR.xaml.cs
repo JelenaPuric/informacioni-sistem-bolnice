@@ -23,14 +23,14 @@ namespace HospitalApplication.Windows.Manager.Rooms
         private Room romic;
         public EditR(int i)
         {
-            //RoomManagment rm = new RoomManagment();
-            //romic = rm.showRoom(i);
-            //textBoxNumberOfFloors.Text = romic.NumberOfFloors.ToString();
-            //textBoxRoomId.Text = romic.RoomId.ToString();
-            //textBoxRoomNumber.Text = romic.RoomNumber.ToString();
-            //textBoxCapacity.Text = romic.Capacity.ToString();
+            RoomManagment rm = new RoomManagment();
+            romic = rm.showRoom(i);
+            textBoxNumberOfFloors.Text = romic.NumberOfFloors.ToString();
+            textBoxRoomId.Text = romic.RoomId.ToString();
+            textBoxRoomNumber.Text = romic.RoomNumber.ToString();
+            textBoxCapacity.Text = romic.Capacity.ToString();
             
-            //checkBoxOccupied.IsChecked = (bool)romic.Occupied;
+            checkBoxOccupied.IsChecked = (bool)romic.Occupied;
             
             
             InitializeComponent();

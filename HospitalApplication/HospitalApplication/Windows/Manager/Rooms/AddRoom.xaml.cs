@@ -23,15 +23,10 @@ namespace HospitalApplication.Windows.Manager.Rooms
         public AddRoom()
         {
             InitializeComponent();
-            Random r = new Random();
-            int randomNumber = r.Next(1, 100000);
-            textBoxRoomId.Text = randomNumber.ToString();
-
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-
             Room r = new Room()
             {
                 Capacity = Int16.Parse(textBoxCapacity.Text),
@@ -41,7 +36,6 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 RoomNumber = Int16.Parse(textBoxRoomNumber.Text),
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex
             };
-            
             RoomManagment mr = new RoomManagment();
             mr.CreateRoom(r);
             textBoxCapacity.Text = String.Empty;

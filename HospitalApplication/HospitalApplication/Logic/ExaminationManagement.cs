@@ -7,13 +7,21 @@ namespace Logic
 {
    public class ExaminationManagement
    {
-      public ExaminationManagement() {
-          examinations = f.LoadFromFile();
-      }
+        private static ExaminationManagement instance;
+        public static ExaminationManagement Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new ExaminationManagement();
+                }
+                return instance;
+            }
+        }
 
-      public void ShowExaminations()
-      {
-         // TODO: implement
+        public ExaminationManagement() {
+          examinations = f.LoadFromFile();
       }
       
       public void ScheduleExamination(Examination e)
@@ -28,6 +36,22 @@ namespace Logic
             {
                 if (examinations[i].ExaminationId == id) examinations.RemoveAt(i);
             }
+            f.WriteInFile(examinations);
+        }
+
+        public void Cancel(int index)
+        {
+            examinations.RemoveAt(index);
+            f.WriteInFile(examinations);
+        }
+
+        public void Move(int index, DateTime date)
+        {
+            //prvo ga izbrisi, promeni datum pa vrati
+            Examination e = examinations[index];
+            examinations.RemoveAt(index);
+            e.ExaminationStart = date;
+            examinations.Add(e);
             f.WriteInFile(examinations);
         }
 
@@ -46,6 +70,18 @@ namespace Logic
             e.ExaminationStart = date;
             examinations.Add(e);
             f.WriteInFile(examinations);
+        }
+
+        public List<Examination> GetExaminations(String patientName) {
+            List<Examination> e = new List<Examination>();
+            for (int i = 0; i < examinations.Count; i++)
+            {
+                if (examinations[i].PatientsId == patientName)
+                {
+                    e.Add(examinations[i]);
+                }
+            }
+            return e;
         }
 
         private FilesExamination f = new FilesExamination();

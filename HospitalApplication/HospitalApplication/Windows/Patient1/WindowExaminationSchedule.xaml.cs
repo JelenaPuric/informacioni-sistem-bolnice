@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic;
 using Model;
+using WorkWithFiles;
 
 namespace HospitalApplication
 {
@@ -19,9 +20,9 @@ namespace HospitalApplication
     /// </summary>
     public partial class WindowExaminationSchedule : Window
     {
-        private ExaminationManagement m = new ExaminationManagement();
+        private ExaminationManagement m = ExaminationManagement.Instance;
         private string s1, s2;
-        private int d1, d2, d3, d4, d5, d6;
+        private WindowPatient w = WindowPatient.Instance;
         public WindowExaminationSchedule()
         {
             InitializeComponent();
@@ -31,23 +32,33 @@ namespace HospitalApplication
         {
             s1 = PatientId.Text;
             s2 = DoctorId.Text;
-            /*d1 = Int32.Parse(Goidna1.Text);
-            d2 = Int32.Parse(Mesec1.Text);
-            d3 = Int32.Parse(Dan1.Text);
-            d4 = Int32.Parse(Sat1.Text);
-            d5 = Int32.Parse(Sekund1.Text);*/
-            //DateTime date = new DateTime(d1, d2, d3, d4, d5, d6);
-            DateTime date = new DateTime(2020, 12, 30, 15, 10, 00);
+            DateTime date = Date.SelectedDate.Value.Date;
+            //TimeSpan time = new TimeSpan(Int32.Parse(Hour1.Text), Int32.Parse(Minute1.Text), Int32.Parse(Second1.Text));
+            
+            //DateTime date = new DateTime(2020, 12, 30, 15, 10, 00);
+            //DateTime date = new DateTime(d);
+            //DateTime date = new DateTime(Int32.Parse(Year1.Text), Int32.Parse(Month1.Text), Int32.Parse(Day1.Text), Int32.Parse(Hour1.Text), Int32.Parse(Minute1.Text), Int32.Parse(Second1.Text));
             //id svakog pregleda je unikatan
-            int idExamination;
-            int n = m.Examinations.Count;
-            if (n > 0)
-            {
-                idExamination = Int32.Parse(m.Examinations[n - 1].ExaminationId) + 1;
+            
+            //lista svih mogucih termina za pregled, kombijuje se sa date time pickerom
+            //trojke oznacavaju sat/min/sekund
+            List<(int, int, int)> appointment = new List<(int, int, int)>();
+            for (int i = 0; i < 13; i++) {
+                appointment.Add((7 + i, 0, 0));
+                appointment.Add((7 + i, 30, 0));
             }
-            else idExamination = 100000;
-            Examination ex = new Examination(s1, s2, "101", date, idExamination.ToString());
+            (int, int, int) a = appointment[Combo.SelectedIndex];
+            TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
+            DateTime d = date + time;
+
+            int idExamination = m.Examinations.Count + 100000;
+            Examination ex = new Examination(s1, s2, "101", d, idExamination.ToString());
             m.ScheduleExamination(ex);
+
+            
+            w.UpdateView();
+
+            Close();
         }
     }
 }

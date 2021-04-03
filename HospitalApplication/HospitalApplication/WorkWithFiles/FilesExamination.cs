@@ -29,7 +29,7 @@ namespace WorkWithFiles
             System.IO.File.WriteAllText(path, string.Empty);
             for (int i = 0; i < examinations.Count; i++)
             {
-                File.AppendAllText(path, examinations[i].PatientsId + "," + examinations[i].DoctorsId + "," + examinations[i].RoomId + "," + examinations[i].ExaminationStart + "," + examinations[i].ExaminationId + "\n"); ;
+                File.AppendAllText(path, examinations[i].PatientsId + "," + examinations[i].DoctorsId + "," + examinations[i].RoomId + "," + examinations[i].ExaminationStart + "," + examinations[i].ExaminationId +  "\n"); ;
             }
         }
    

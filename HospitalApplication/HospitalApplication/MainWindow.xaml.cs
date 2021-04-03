@@ -38,13 +38,13 @@ namespace HospitalApplication
 
         private void Patient_Click(object sender, RoutedEventArgs e)
         {
-            WindowPatient window = new WindowPatient();
+            Windows.Patient1.WindowPatientLogin window = new Windows.Patient1.WindowPatientLogin();
             window.Show();
         }
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
         {
-            DoctorWindow window = new DoctorWindow();
+            Windows.Doctor1.DoctorWindow window = new DoctorWindow();
             window.Show();
         }
 
