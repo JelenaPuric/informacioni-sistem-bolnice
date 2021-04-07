@@ -73,19 +73,22 @@
     <Compile Update="Windows\Secretary\EditPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\EditRegisterPatient.xaml.cs">
+    <Compile Update="Windows\Secretary\EditRegisterPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\IDViewPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\RegisterOptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\RegisterPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\RegistrationOptionWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\Secretary\SecretaryWindow.xaml.cs">
+    <Compile Update="Windows\Secretary\ViewPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -162,19 +165,22 @@
     <Page Update="Windows\Secretary\EditPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\EditRegisterPatient.xaml">
+    <Page Update="Windows\Secretary\EditRegisterPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\IDViewPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Secretary\RegisterOptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Secretary\RegisterPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\RegistrationOptionWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\Secretary\SecretaryWindow.xaml">
+    <Page Update="Windows\Secretary\ViewPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

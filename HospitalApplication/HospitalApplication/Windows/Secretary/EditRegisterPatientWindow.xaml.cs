@@ -16,16 +16,23 @@ using WorkWithFiles;
 namespace HospitalApplication.Windows.Secretary
 {
     /// <summary>
-    /// Interaction logic for EditRegisterPatient.xaml
+    /// Interaction logic for EditRegisterPatientWindow.xaml
     /// </summary>
-    public partial class EditRegisterPatient : Window
+    public partial class EditRegisterPatientWindow : Window
     {
-
         private Patient p;
+        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
 
-        public EditRegisterPatient(string value)
+
+        public EditRegisterPatientWindow(string value)
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
 
             FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
@@ -40,9 +47,8 @@ namespace HospitalApplication.Windows.Secretary
             textBoxPhoneNumber.Text = p.PhoneNumber;
             textBoxUsername.Text = p.Username;
             textBoxPassword.Text = p.Password;
+
         }
-
-
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
@@ -69,6 +75,8 @@ namespace HospitalApplication.Windows.Secretary
             p.Username = textBoxUsername.Text;
             p.Password = textBoxPassword.Text;
 
+            aPw.UpdateView();
+
             Close();
 
         }
@@ -77,7 +85,6 @@ namespace HospitalApplication.Windows.Secretary
         {
             Close();
         }
-
 
 
     }

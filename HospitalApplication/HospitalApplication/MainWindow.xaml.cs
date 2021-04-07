@@ -30,9 +30,15 @@ namespace HospitalApplication
         public MainWindow()
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-            FilesPatients sp = FilesPatients.GetInstance();
-            sp.LoadPatient("patients.txt");
+            FilesPatients fp = FilesPatients.GetInstance();
+            fp.LoadPatient(fp.Path);
 
         }
 
@@ -50,9 +56,7 @@ namespace HospitalApplication
 
         private void Secretary_Click(object sender, RoutedEventArgs e)
         {
-            //FajloviZaRegistracijuNovogPacijenta sp = FajloviZaRegistracijuNovogPacijenta.GetInstance();
-            //sp.LoadPatient("patients.txt");
-            SecretaryWindow window = new SecretaryWindow();
+            AllPatientsWindow window = new AllPatientsWindow();
             window.Show();
 
         }

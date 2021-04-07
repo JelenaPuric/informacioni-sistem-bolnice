@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,19 +16,87 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-
+    /// <summary>
+    /// Interaction logic for AllPatientsWindow.xaml
+    /// </summary>
     public partial class AllPatientsWindow : Window
     {
+
+        private static AllPatientsWindow _instance;
+
+        public static AllPatientsWindow GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new AllPatientsWindow();
+            }
+            return _instance;
+        }
+
+
+
         public AllPatientsWindow()
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+
+            _instance = this;
 
             FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
-            List<Patient> patients = pm.GetAllPatient();
-            lvUsers.ItemsSource = patients;
+
+            lvUsers.ItemsSource = pm.GetAllPatient();
 
         }
+
+        private void RegisterPatient_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterOptionWindow window = new RegisterOptionWindow();
+            window.Show();
+
+        }
+
+        private void DeletePatient_Click_1(object sender, RoutedEventArgs e)
+        {
+            DeletePatientWindow window = new DeletePatientWindow();
+            window.Show();
+        }
+
+        private void EditPatient_Click(object sender, RoutedEventArgs e)
+        {
+
+            EditPatientWindow window = new EditPatientWindow();
+            window.Show();
+
+        }
+
+        private void ViewPatient_Click(object sender, RoutedEventArgs e)
+        {
+            IDViewPatientWindow window = new IDViewPatientWindow();
+            window.Show();
+        }
+
+        private void RefreshList_Click(object sender, RoutedEventArgs e)
+        {
+            lvUsers.Items.Refresh();
+
+        }
+
+        public void UpdateView()
+        {
+            PatientManagement pm = new PatientManagement();
+            List<Patient> patients = pm.GetAllPatient();
+
+            ICollectionView view = CollectionViewSource.GetDefaultView(patients);
+            view.Refresh();
+        }
+
+
     }
 }

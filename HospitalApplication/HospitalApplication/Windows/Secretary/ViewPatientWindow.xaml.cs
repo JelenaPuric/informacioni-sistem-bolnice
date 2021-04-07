@@ -1,4 +1,5 @@
 ﻿using Logic;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,12 +15,13 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-
-    public partial class DeletePatientWindow : Window
+    /// <summary>
+    /// Interaction logic for ViewPatientWindow.xaml
+    /// </summary>
+    public partial class ViewPatientWindow : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
-
-        public DeletePatientWindow()
+        private Patient p;
+        public ViewPatientWindow(string value)
         {
             InitializeComponent();
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -29,22 +31,20 @@ namespace HospitalApplication.Windows.Secretary
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-        }
-
-        private void ButtonOk_Click(object sender, RoutedEventArgs e)
-        {
 
             FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
+            p = pm.EditExistingPatient(value);
 
-            string id = IdPatient.Text;
-
-            pm.DeletePatient(id);
-
-            aPw.UpdateView();
-
-
-            Close();
+            TypeAcc.Content = TypeAcc.Content + p.TypeAcc.ToString();
+            FirstName.Content = FirstName.Content + p.Name;
+            LastName.Content = LastName.Content + p.LastName;
+            DateOfBirth.Content = DateOfBirth.Content + p.DateOfBirth.ToString("dd.MM.yyyy.");
+            PlaceOfResidance.Content = PlaceOfResidance.Content + p.PlaceOfResidance;
+            Email.Content = Email.Content + p.Email;
+            PhoneNumber.Content = PhoneNumber.Content + p.PhoneNumber;
+            Username.Content = Username.Content + p.Username;
+            Password.Content = Password.Content + p.Password;
 
         }
     }

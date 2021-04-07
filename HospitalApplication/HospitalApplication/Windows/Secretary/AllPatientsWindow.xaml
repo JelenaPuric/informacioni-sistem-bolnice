@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
         mc:Ignorable="d"
-        Title="AllPatientsWindow" Height="627" Width="1358">
+        Title="AllPatientsWindow" Height="574" Width="1498">
     <Grid Margin="10,52,88,0">
-        <ListView Margin="-11,-48,-77,10" Name="lvUsers" RenderTransformOrigin="0.5,0.5">
+        <ListView Margin="-2,-26,0,0" Name="lvUsers" RenderTransformOrigin="0.5,0.5" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1364">
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,5 +31,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Register Patient" Click="RegisterPatient_Click"  HorizontalAlignment="Left" Margin="339,381,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
+        <Button Content="Delete Patient" Click="DeletePatient_Click_1" HorizontalAlignment="Left" Margin="477,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="View Patient" Click="ViewPatient_Click" HorizontalAlignment="Left" Margin="754,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Edit Patient" Click="EditPatient_Click" HorizontalAlignment="Left" Margin="614,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+
+        <Button Content="Refresh List" Click="RefreshList_Click" HorizontalAlignment="Left" Margin="896,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
     </Grid>
 </Window>

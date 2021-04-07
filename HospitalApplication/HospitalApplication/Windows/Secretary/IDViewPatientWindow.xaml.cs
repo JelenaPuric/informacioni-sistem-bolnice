@@ -1,4 +1,5 @@
 ﻿using Logic;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,12 +15,12 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-
-    public partial class DeletePatientWindow : Window
+    /// <summary>
+    /// Interaction logic for IDViewPatientWindow.xaml
+    /// </summary>
+    public partial class IDViewPatientWindow : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
-
-        public DeletePatientWindow()
+        public IDViewPatientWindow()
         {
             InitializeComponent();
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -28,21 +29,29 @@ namespace HospitalApplication.Windows.Secretary
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
 
+
+
             FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
-            string id = IdPatient.Text;
+            string idPatient = IdPatient.Text;
 
-            pm.DeletePatient(id);
+            List<Patient> patients = sp.Patients;
 
-            aPw.UpdateView();
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].Id == idPatient)
+                {
+                    ViewPatientWindow window = new ViewPatientWindow(idPatient) { };
+                    window.Show();
+                }
 
+            }
 
             Close();
 

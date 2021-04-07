@@ -1,5 +1,4 @@
-﻿using Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,16 +9,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-
-    public partial class DeletePatientWindow : Window
+    /// <summary>
+    /// Interaction logic for RegisterOptionWindow.xaml
+    /// </summary>
+    public partial class RegisterOptionWindow : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
-
-        public DeletePatientWindow()
+        public RegisterOptionWindow()
         {
             InitializeComponent();
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -28,24 +26,24 @@ namespace HospitalApplication.Windows.Secretary
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
         }
 
-        private void ButtonOk_Click(object sender, RoutedEventArgs e)
+        private void PermanentAccount_Click(object sender, RoutedEventArgs e)
         {
-
-            FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
-
-            string id = IdPatient.Text;
-
-            pm.DeletePatient(id);
-
-            aPw.UpdateView();
+            RegisterPatientWindow window = new RegisterPatientWindow();
+            window.Show();
 
 
             Close();
 
+        }
+
+        private void GuestAccount_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterGuestPatient window = new RegisterGuestPatient();
+            window.Show();
+
+            Close();
         }
     }
 }

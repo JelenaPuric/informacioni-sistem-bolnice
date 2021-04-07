@@ -22,16 +22,23 @@ namespace WorkWithFiles
         }
 
 
-        List<Patient> patients = new List<Patient>();
+
+        private string path = "patients.txt";
+        private List<Patient> patients;
 
 
-        public List<Patient> GetPatients()
+        public List<Patient> Patients
         {
-            return patients;
+            get { return patients; }
+            set { patients = value; }
         }
+
+
 
         public void LoadPatient(string path)
         {
+            patients = new List<Patient>();
+
             List<String> lines = File.ReadAllLines(path).ToList();
             foreach (var line in lines)
             {
@@ -52,18 +59,26 @@ namespace WorkWithFiles
 
                 patients.Add(p);
             }
-
         }
+
 
         public void WritePatient(string path)
         {
             System.IO.File.WriteAllText(path, string.Empty);
-            
+
             for (int i = 0; i < patients.Count; i++)
             {
                 File.AppendAllText(path, patients[i].TypeAcc + "," + patients[i].Name + "," + patients[i].LastName + "," + patients[i].Id + "," + patients[i].DateOfBirth + "," + patients[i].PhoneNumber + "," + patients[i].Email + "," + patients[i].PlaceOfResidance + "," + patients[i].TypeOfPerson + "," + patients[i].Username + "," + patients[i].Password + "\n"); ;
             }
         }
+
+
+        public string Path
+        {
+            get { return path; }
+            set { path = value; }
+        }
+
 
     }
 }

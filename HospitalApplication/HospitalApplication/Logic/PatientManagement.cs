@@ -10,46 +10,57 @@ namespace Logic
         public void DeletePatient(string iDPatient)
         {
             FilesPatients sp = FilesPatients.GetInstance();
-            List<Patient> patients = sp.GetPatients();
-
-            for (int i = 0; i < patients.Count; i++)
-            {
-                if (patients[i].Id == iDPatient) patients.RemoveAt(i);
-            }
-
-        }
-
-        public void CreatePatient(Patient newPatient)
-        {
-            FilesPatients sp = FilesPatients.GetInstance();
-
-            List<Patient> patients = sp.GetPatients();
-            patients.Add(newPatient);
-        }
-
-        public Patient EditExistingPatient(string iDPatient)
-        {
-            FilesPatients sp = FilesPatients.GetInstance();
-            List<Patient> patients = sp.GetPatients();
+            List<Patient> patients = sp.Patients;
 
             Patient p = new Patient();
 
             for (int i = 0; i < patients.Count; i++)
             {
+                if (patients[i].Id == iDPatient) patients.RemoveAt(i);
+
+            }
+            sp.WritePatient(sp.Path);
+        }
+
+
+        public void CreatePatient(Patient newPatient)
+        {
+            FilesPatients sp = FilesPatients.GetInstance();
+
+            List<Patient> patients = sp.Patients;
+            patients.Add(newPatient);
+        }
+
+
+
+        public Patient EditExistingPatient(string iDPatient)
+        {
+            FilesPatients sp = FilesPatients.GetInstance();
+            List<Patient> patients = sp.Patients;
+
+            Patient p = new Patient();
+
+            for (int i = 0; i < patients.Count; i++)
+            {
+
                 if (patients[i].Id == iDPatient)
+                {
                     p = patients[i];
-                break;
+                    break;
+                }
             }
             return p;
         }
+
 
 
         public List<Patient> GetAllPatient()
         {
             FilesPatients sp = FilesPatients.GetInstance();
 
-            return sp.GetPatients();
+            return sp.Patients;
         }
+
 
     }
 }
