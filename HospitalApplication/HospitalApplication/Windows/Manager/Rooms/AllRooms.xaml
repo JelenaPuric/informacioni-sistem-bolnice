@@ -21,11 +21,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add new room"   HorizontalAlignment="Left" Margin="48,419,0,0" VerticalAlignment="Top" Width="118" Height="45" Click="AddRoom_Clicked"/>
+        <Button Content="Add new room"   HorizontalAlignment="Left" Margin="50,419,0,0" VerticalAlignment="Top" Width="118" Height="45" Click="AddRoom_Clicked"/>
         <Button Content="Delete "  HorizontalAlignment="Left" Margin="180,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Deleted_Clicked"/>
-        <Button Content="Search "  HorizontalAlignment="Left" Margin="450,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Search_Clicked"/>
-        <Button Content="Edit"  HorizontalAlignment="Left" Margin="316,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Edit_Clicked"/>
+        <Button Content="Search "  HorizontalAlignment="Left" Margin="440,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Search_Clicked"/>
+        <Button Content="Edit"  HorizontalAlignment="Left" Margin="310,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Edit_Clicked"/>
 
-        <Button Content="Refresh List" HorizontalAlignment="Left" Margin="580,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Refresh_Clicked"/>
+        <Button Content="Refresh List" HorizontalAlignment="Left" Margin="570,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Refresh_Clicked"/>
     </Grid>
 </Window>
