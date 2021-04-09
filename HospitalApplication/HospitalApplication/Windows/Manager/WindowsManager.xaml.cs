@@ -25,7 +25,7 @@ namespace HospitalApplication.Windows.Manager
 
         private void Rooms_Clicked(object sender, RoutedEventArgs e)
         {
-            WindowRooms wr = new WindowRooms();
+            AllRooms wr = new AllRooms();
             wr.Show();
         }
     }

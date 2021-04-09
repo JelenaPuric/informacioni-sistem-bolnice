@@ -18,7 +18,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// <summary>
     /// Interaction logic for ShowRoomi.xaml
     /// </summary>
-    public partial class ShowRoomi : UserControl
+    public partial class ShowRoomi : Window
     {
         private int delete;
         public ShowRoomi()
@@ -32,8 +32,11 @@ namespace HospitalApplication.Windows.Manager.Rooms
             RoomManagment mg = new RoomManagment();
             Room roo = new Room();
             roo = mg.showRoom(delete);
+            forShw.Text = String.Empty;
 
-            fallback.Text = roo.NumberOfFloors.ToString();
+            string poruka = "     Room type: " + roo.RoomType + "        Capacity: " + roo.Capacity + "        Number of floors: " + roo.NumberOfFloors + "        Occupied: " + roo.Occupied + "        Room id: " + roo.RoomId + "        Room number: " + roo.RoomNumber  + "     ";
+
+            fallback.Text = poruka;
         }
     }
 }

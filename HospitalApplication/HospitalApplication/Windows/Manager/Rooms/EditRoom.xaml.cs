@@ -17,7 +17,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// <summary>
     /// Interaction logic for EditRoom.xaml
     /// </summary>
-    public partial class EditRoom : UserControl
+    public partial class EditRoom : Window
     {
         private int delete;
         public EditRoom()
@@ -28,10 +28,10 @@ namespace HospitalApplication.Windows.Manager.Rooms
         private void Edit_Clicked(object sender, RoutedEventArgs e)
         {
             delete = Int32.Parse(forEdit.Text);
-            RoomManagment up = new RoomManagment();
-            //up.RemoveRoom(delete);
-            forEdit.Text = String.Empty;
-            DataContext = new EditR(delete);
+            //RoomManagment up = new RoomManagment();
+            ////up.RemoveRoom(delete);
+            //forEdit.Text = String.Empty;
+            //DataContext = new EditR(delete);
         }
     }
 }

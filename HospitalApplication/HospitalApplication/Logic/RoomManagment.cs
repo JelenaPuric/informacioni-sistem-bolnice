@@ -19,18 +19,32 @@ namespace Logic
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
       }
       
-      public void RemoveRoom(int idroom )
+      public void RemoveRoom(Model.Room oldRoom)
       {
             for (int i = 0; i < rooms.Count; i++)
             {
-                if (rooms[i].RoomId == idroom)
+                if (rooms[i].RoomId == oldRoom.RoomId)
                 {
-                    rooms.RemoveAt(i);
+                    rooms.RemoveAt(i); break;
                 }
             }
+
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
-      
-      public void editRoom(int password)
+
+      public void RemoveById(int roomid)
+        {
+            for(int i = 0; i < rooms.Count; i++)
+            {
+                if(rooms[i].RoomId == roomid)
+                {
+                    rooms.RemoveAt(i); break;
+                }
+            }
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+        }
+
+        public void editRoom(int password)
       {
          // TODO: implement
       }
@@ -78,14 +92,14 @@ namespace Logic
             this.room.Add(newRoom);
       }
       
-      public void RemoveRoom(Model.Room oldRoom)
-      {
-         if (oldRoom == null)
-            return;
-         if (this.room != null)
-            if (this.room.Contains(oldRoom))
-               this.room.Remove(oldRoom);
-      }
+      //public void RemoveRoom(Model.Room oldRoom)
+      //{
+      //   if (oldRoom == null)
+      //      return;
+      //   if (this.room != null)
+      //      if (this.room.Contains(oldRoom))
+      //         this.room.Remove(oldRoom);
+      //}
       
       public void RemoveAllRoom()
       {

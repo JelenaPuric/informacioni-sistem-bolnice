@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Manager.Prostorije
     /// <summary>
     /// Interaction logic for AllRooms.xaml
     /// </summary>
-    public partial class AllRooms : UserControl
+    public partial class AllRooms : Window
     {
         public AllRooms()
         {
@@ -29,6 +29,54 @@ namespace HospitalApplication.Windows.Manager.Prostorije
 
             lvDataBinding.ItemsSource = p;
            
+        }
+
+        private void AddRoom_Clicked(object sender, RoutedEventArgs e)
+        {
+            AddRoom ar = new AddRoom();
+            ar.Show();
+        }
+
+        private void Refresh_Clicked(object sender, RoutedEventArgs e)
+        {
+            RoomManagment rooms = new RoomManagment();
+            List<Room> p = rooms.showAllRooms();
+            lvDataBinding.ItemsSource = p;
+        }
+
+        private void Search_Clicked(object sender, RoutedEventArgs e)
+        {
+            ShowRoomi sr = new ShowRoomi();
+            sr.Show();
+        }
+
+        private void Deleted_Clicked(object sender, RoutedEventArgs e)
+        {
+            Room selected = (Room)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                RoomManagment rm = new RoomManagment();
+                rm.RemoveRoom(selected);
+            }
+            else {
+                DeleteRoom dr = new DeleteRoom();
+                dr.Show();
+            }
+        }
+
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
+        {
+            Room selected = (Room)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                EditR er = new EditR(selected);
+                er.Show();
+                if (er.Submit.IsEnabled) {
+                    RoomManagment rm = new RoomManagment();
+                    rm.RemoveRoom(selected);
+                }
+            }
+
         }
     }
 }

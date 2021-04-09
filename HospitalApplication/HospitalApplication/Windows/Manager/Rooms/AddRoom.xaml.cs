@@ -18,22 +18,25 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// <summary>
     /// Interaction logic for AddRoom.xaml
     /// </summary>
-    public partial class AddRoom : UserControl
+    public partial class AddRoom : Window
     {
         public AddRoom()
         {
             InitializeComponent();
+            textBoxRoomId.Text = a.Next(1, 999999).ToString();
         }
 
-        private void Submit_Clicked(object sender, RoutedEventArgs e)
+        public Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+
+            private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
             Room r = new Room()
             {
-                Capacity = Int16.Parse(textBoxCapacity.Text),
-                NumberOfFloors = Int16.Parse(textBoxNumberOfFloors.Text),
+                Capacity = Int32.Parse(textBoxCapacity.Text),
+                NumberOfFloors = Int32.Parse(textBoxNumberOfFloors.Text),
                 Occupied = (bool)checkBoxOccupied.IsChecked,
-                RoomId = Int16.Parse(textBoxRoomId.Text),
-                RoomNumber = Int16.Parse(textBoxRoomNumber.Text),
+                RoomId = Int32.Parse(textBoxRoomId.Text),
+                RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex
             };
             RoomManagment mr = new RoomManagment();
@@ -42,6 +45,8 @@ namespace HospitalApplication.Windows.Manager.Rooms
             textBoxNumberOfFloors.Text = String.Empty;
             textBoxRoomId.Text = String.Empty;
             textBoxRoomNumber.Text = String.Empty;
+
+            Close();
         }
     }
 }

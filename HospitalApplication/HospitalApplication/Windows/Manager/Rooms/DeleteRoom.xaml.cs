@@ -17,7 +17,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// <summary>
     /// Interaction logic for DeleteRoom.xaml
     /// </summary>
-    public partial class DeleteRoom : UserControl
+    public partial class DeleteRoom : Window
     {
         private int delete;
         public DeleteRoom()
@@ -29,7 +29,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
         {
             delete = Int32.Parse(forDelete.Text);
             RoomManagment up = new RoomManagment();
-            up.RemoveRoom(delete);
+            up.RemoveById(delete);
             forDelete.Text = String.Empty;
         }
     }

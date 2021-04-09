@@ -18,22 +18,44 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// <summary>
     /// Interaction logic for EditR.xaml
     /// </summary>
-    public partial class EditR : UserControl
+    public partial class EditR : Window
     {
-        private Room romic;
-        public EditR(int i)
+        public EditR(Room ro)
         {
-            RoomManagment rm = new RoomManagment();
-            romic = rm.showRoom(i);
-            textBoxNumberOfFloors.Text = romic.NumberOfFloors.ToString();
-            textBoxRoomId.Text = romic.RoomId.ToString();
-            textBoxRoomNumber.Text = romic.RoomNumber.ToString();
-            textBoxCapacity.Text = romic.Capacity.ToString();
-            
-            checkBoxOccupied.IsChecked = (bool)romic.Occupied;
-            
-            
             InitializeComponent();
+
+            textBoxNumberOfFloors.Text = ro.NumberOfFloors.ToString();
+            textBoxRoomId.Text = ro.RoomId.ToString();
+            textBoxRoomNumber.Text = ro.RoomNumber.ToString();
+            textBoxCapacity.Text = ro.Capacity.ToString();
+            checkBoxOccupied.IsChecked = (bool)ro.Occupied;
+            comboBoxRoomType.SelectedItem = ro.RoomType;
+
+        }
+
+        private void Submit_Clicked(object sender, RoutedEventArgs e)
+        {
+            Room r = new Room()
+            {
+                Capacity = Int32.Parse(textBoxCapacity.Text),
+                NumberOfFloors = Int32.Parse(textBoxNumberOfFloors.Text),
+                Occupied = (bool)checkBoxOccupied.IsChecked,
+                RoomId = Int32.Parse(textBoxRoomId.Text),
+                RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
+                RoomType = (RoomType)comboBoxRoomType.SelectedIndex
+            };
+            RoomManagment mr = new RoomManagment();
+            mr.CreateRoom(r);
+            textBoxCapacity.Text = String.Empty;
+            textBoxNumberOfFloors.Text = String.Empty;
+            textBoxRoomId.Text = String.Empty;
+            textBoxRoomNumber.Text = String.Empty;
+            Close();
+        }
+
+        private void Cancel_Clicked(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
