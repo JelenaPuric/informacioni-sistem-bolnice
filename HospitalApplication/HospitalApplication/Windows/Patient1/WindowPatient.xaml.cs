@@ -14,6 +14,13 @@ using Logic;
 using WorkWithFiles;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+//da bih koristio forme morao sam u HospitalApplication.csproj da dodam:
+//<UseWindowsForms>true</UseWindowsForms>
+//using System.Windows.Forms;
+//using Tulpep.NotificationWindow;
+using System.Threading;
+using HospitalApplication.Model;
+using HospitalApplication.Logic;
 
 namespace HospitalApplication
 {
@@ -31,6 +38,7 @@ namespace HospitalApplication
         FilesExamination f = new FilesExamination();
         ExaminationManagement m = ExaminationManagement.Instance;
         Windows.Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
+        NotificationManagement ntf = NotificationManagement.Instance;
 
 
         private static WindowPatient instance;
@@ -51,13 +59,14 @@ namespace HospitalApplication
             InitializeComponent();
             instance = this;
 
-
             List<Examination> examinations = m.GetExaminations(l.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             lvUsers.ItemsSource = examinations;
+            Logic.PatientNotifications p = new Logic.PatientNotifications(l.Username.Text);
         }
 
-        public void UpdateView() {
+        public void UpdateView()
+        {
             List<Examination> examinations = m.GetExaminations(l.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             //lvUsers.ItemsSource = null;
@@ -74,6 +83,10 @@ namespace HospitalApplication
 
         private void ScheduleExamination_Click(object sender, RoutedEventArgs e)
         {
+            /*PopupNotifier popup = new PopupNotifier();
+            popup.TitleText = "info";
+            popup.ContentText = "popup";
+            popup.Popup();*/
             WindowExaminationSchedule window = new WindowExaminationSchedule();
             window.Show();
         }
@@ -93,7 +106,7 @@ namespace HospitalApplication
             Examination e2 = (Examination)lvUsers.SelectedItem;
             string id = e2.ExaminationId;
 
-            MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
+            MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -113,7 +126,7 @@ namespace HospitalApplication
                                     doctors[i].Scheduled.RemoveAt(j);
                                 }
                             }
-                            
+
                             doc.WriteInFile(doctors);
                             break;
                         }
@@ -131,6 +144,12 @@ namespace HospitalApplication
         private void MoveExamination_Click(object sender, RoutedEventArgs e)
         {
             Windows.Patient1.WindowExaminationMove window = new Windows.Patient1.WindowExaminationMove();
+            window.Show();
+        }
+
+        private void Notifications_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Patient1.WindowPatientNotifications window = new Windows.Patient1.WindowPatientNotifications();
             window.Show();
         }
     }

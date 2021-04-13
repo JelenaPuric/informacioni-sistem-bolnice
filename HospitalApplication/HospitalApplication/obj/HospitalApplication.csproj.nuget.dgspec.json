@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
+    "C:\\Users\\orz\\Desktop\\sve\\simsProj4\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
   },
   "projects": {
-    "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
+    "C:\\Users\\orz\\Desktop\\sve\\simsProj4\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\simsProj4\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "projectName": "HospitalApplication",
-        "projectPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-        "packagesPath": "C:\\Users\\KORISNIK\\.nuget\\packages\\",
-        "outputPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+        "projectPath": "C:\\Users\\orz\\Desktop\\sve\\simsProj4\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "packagesPath": "C:\\Users\\orz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\orz\\Desktop\\sve\\simsProj4\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KORISNIK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

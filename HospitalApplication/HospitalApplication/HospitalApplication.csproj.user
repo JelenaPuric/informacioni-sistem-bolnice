@@ -58,10 +58,22 @@
     <Compile Update="Windows\Patient1\WindowExaminationSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Patient1\WindowNotificationEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowNotificationInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowNotificationMake.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Patient1\WindowPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Patient1\WindowPatientLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Patient1\WindowPatientNotifications.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
@@ -150,10 +162,22 @@
     <Page Update="Windows\Patient1\WindowExaminationSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Patient1\WindowNotificationEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Patient1\WindowNotificationInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Patient1\WindowNotificationMake.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Patient1\WindowPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Patient1\WindowPatientLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Patient1\WindowPatientNotifications.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\AllPatientsWindow.xaml">
