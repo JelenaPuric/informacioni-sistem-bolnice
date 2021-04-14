@@ -39,6 +39,22 @@ namespace HospitalApplication.Windows.Patient1
             WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
             List<Doctor> doctors = doc.LoadFromFile();
             DateTime dt = e2.ExaminationStart;
+            DateTime date = Date.SelectedDate.Value.Date;
+
+            if ((dt - DateTime.Now).TotalDays < 1) { 
+                MessageBoxResult result = System.Windows.MessageBox.Show("You can not move examination that starts in less than 24h.", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if ((dt - date).TotalDays > 2) {
+                MessageBoxResult result = System.Windows.MessageBox.Show("You can not move examination start more than 2 days.", "Info", MessageBoxButton.OK);
+                return;
+            }
+            //ne radi provera da li je datum gde se pomera pregled isti kao i prvobitno zakazan
+            /*if (date.Date == dt.Date && date.TimeOfDay == dt.TimeOfDay) {
+                MessageBoxResult result = System.Windows.MessageBox.Show("Your examination is already scheduled at this time.", "Info", MessageBoxButton.OK);
+                return;
+            }*/
+
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].Username == e2.DoctorsId)
@@ -56,7 +72,6 @@ namespace HospitalApplication.Windows.Patient1
                 }
             }
 
-            DateTime date = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();
             for (int i = 0; i < 13; i++)
             {

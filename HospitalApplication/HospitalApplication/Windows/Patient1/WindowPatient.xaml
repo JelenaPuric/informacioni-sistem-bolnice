@@ -30,7 +30,7 @@
                 <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Notifications" x:Name="Notifications" Click="Notifications_Click"/>
             </Grid>
             <Label Content="Scheduled Examinations" HorizontalAlignment="Center" FontSize="30" Foreground="Green"/>
-            <ListView Margin="0 10" Name="lvUsers">
+            <ListView Margin="0 10" Name="lvUsers" ScrollViewer.CanContentScroll="True" Height="300">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
