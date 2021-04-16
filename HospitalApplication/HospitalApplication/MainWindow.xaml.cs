@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorkWithFiles;
+using Model;
+using Logic;
 
 namespace HospitalApplication
 {
@@ -27,9 +29,35 @@ namespace HospitalApplication
     {
         private FilesExamination f = new FilesExamination();
 
+        PatientManagement m = new PatientManagement();
+        string enteredUsername;
+        public String EnteredUsername
+        {
+            get { return enteredUsername; }
+            set { enteredUsername = value; }
+        }
+
+
+        private static MainWindow instance;
+        public static MainWindow Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new MainWindow();
+                }
+                return instance;
+            }
+        }
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
+            instance = this;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -39,9 +67,55 @@ namespace HospitalApplication
 
             FilesPatients fp = FilesPatients.GetInstance();
             fp.LoadPatient(fp.Path);
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Username.Text.Equals("sekretar") && Password.Password.Equals("123"))
+            {
+                AllPatientsWindow window = new AllPatientsWindow();
+                Close();
+                window.Show();
+            }
+            else if (Username.Text.Equals("upravnik") && Password.Password.Equals("123"))
+            {
+                WindowsManager window = new WindowsManager();
+                Close();
+                window.Show();
+            }
+            else if (Username.Text.Equals("lekar") && Password.Password.Equals("123"))
+            {
+                Windows.Doctor1.DoctorWindow window = new DoctorWindow();
+                Close();
+                window.Show();
+            }
+            else 
+            { 
+                    List<Patient> patients = m.GetAllPatient();
+                    string username;
+                    string password;
+                    enteredUsername = Username.Text;
+                    string enteredPassword = Password.Password;
+                    for (int i = 0; i < patients.Count; i++)
+                    {
+                        username = patients[i].Username;
+                        password = patients[i].Password;
+                        if (enteredUsername == username && enteredPassword == password)
+                        {
+                            WindowPatient window = new WindowPatient();
+                            Close();
+                            window.Show();
+                        }
+                    }
+                    InvalidInfoLabel.Content = "* invalid username or password";
+
+            }
 
         }
 
+
+        /*
         private void Patient_Click(object sender, RoutedEventArgs e)
         {
             Windows.Patient1.WindowPatientLogin window = new Windows.Patient1.WindowPatientLogin();
@@ -66,5 +140,10 @@ namespace HospitalApplication
             WindowsManager window = new WindowsManager();
             window.Show();
         }
+        */
+
+
+
+
     }
 }
