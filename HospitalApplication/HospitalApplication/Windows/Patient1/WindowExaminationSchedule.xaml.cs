@@ -43,6 +43,8 @@ namespace HospitalApplication
 
         private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
         {
+            //prvo ocisti predlog pregleda
+            Combo4.Items.Clear();
             //nacin zakazivanja za kt3
 
             //datum1
@@ -120,11 +122,52 @@ namespace HospitalApplication
             //altermativni termini u zavisnosti od prioriteta, samo ako nema nijedan termin u prvobitno izabranom opsegu za doktora
             if (newDates.Count == 0)
             {
+                //gleda 3 dana unapred i unazad od izabranog opsega i nudi te termine
                 if (priorityDoctor.IsChecked == true)
                 {
-
+                    //3 dana unapred
+                    for (int j = 0; j < 3; j++) {
+                        for (int i = 0; i < appointment1.Count; i++)
+                        {
+                            bool okDate = true;
+                            newDate = date2.Date.AddDays(j) + new TimeSpan(appointment1[i].Item1, appointment1[i].Item2, appointment1[i].Item3);
+                            //provera da li datum odgovara doktoru
+                            for (int k = 0; k < doctor.Scheduled.Count; k++)
+                            {
+                                if (newDate == doctor.Scheduled[k])
+                                {
+                                    okDate = false;
+                                }
+                            }
+                            if (okDate == true && newDate > date2) newDates.Add(newDate);
+                        }
+                    }
+                    //3 dana unazad
+                    for (int j = 0; j < 3; j++)
+                    {
+                        for (int i = 0; i < appointment1.Count; i++)
+                        {
+                            bool okDate = true;
+                            newDate = date2.Date.AddDays(-j) + new TimeSpan(appointment1[i].Item1, appointment1[i].Item2, appointment1[i].Item3);
+                            //provera da li datum odgovara doktoru
+                            for (int k = 0; k < doctor.Scheduled.Count; k++)
+                            {
+                                if (newDate == doctor.Scheduled[k])
+                                {
+                                    okDate = false;
+                                }
+                            }
+                            if (okDate == true && newDate < date1 && newDate > DateTime.Now) newDates.Add(newDate);
+                        }
+                    }
+                    newDates.Sort((x, y) => DateTime.Compare(x, y));
+                    //newDates = newDates.Sort((a, b) => a.CompareTo(b));
+                    for (int i = 0; i < newDates.Count; i++)
+                    {
+                        Combo4.Items.Add(newDates[i].ToString());
+                    }
                 }
-                if (priorityTime.IsChecked == true)
+                else if (priorityTime.IsChecked == true)
                 {
 
                 }
