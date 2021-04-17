@@ -65,8 +65,9 @@ namespace HospitalApplication
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-            FilesPatients fp = FilesPatients.GetInstance();
-            fp.LoadPatient(fp.Path);
+            //FilesPatients fp = FilesPatients.GetInstance();
+            //fp.LoadPatient(fp.Path);
+
         }
 
 
@@ -91,8 +92,8 @@ namespace HospitalApplication
                 window.Show();
             }
             else 
-            { 
-                    List<Patient> patients = m.GetAllPatient();
+            {
+                List<Patient> patients = m.Patients;
                     string username;
                     string password;
                     enteredUsername = Username.Text;

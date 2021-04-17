@@ -34,7 +34,7 @@ namespace HospitalApplication.Windows.Secretary
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
 
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
             string id = IdPatient.Text;

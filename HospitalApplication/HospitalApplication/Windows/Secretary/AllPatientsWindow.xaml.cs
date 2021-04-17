@@ -47,11 +47,11 @@ namespace HospitalApplication.Windows.Secretary
 
             _instance = this;
 
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
 
-            lvUsers.ItemsSource = pm.GetAllPatient();
+            lvUsers.ItemsSource = pm.Patients;
 
         }
 
@@ -91,10 +91,11 @@ namespace HospitalApplication.Windows.Secretary
         public void UpdateView()
         {
             PatientManagement pm = new PatientManagement();
-            List<Patient> patients = pm.GetAllPatient();
+            List<Patient> patients = pm.Patients;
+            lvUsers.ItemsSource = pm.Patients;
 
-            ICollectionView view = CollectionViewSource.GetDefaultView(patients);
-            view.Refresh();
+            //ICollectionView view = CollectionViewSource.GetDefaultView(patients);
+           // view.Refresh();
         }
 
 

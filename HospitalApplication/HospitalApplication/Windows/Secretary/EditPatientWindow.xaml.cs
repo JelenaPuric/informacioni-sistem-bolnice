@@ -35,12 +35,12 @@ namespace HospitalApplication.Windows.Secretary
         {
 
 
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
             string idPatient = IdPatient.Text;
 
-            List<Patient> patients = sp.Patients;
+            List<Patient> patients = pm.Patients;
 
             for (int i = 0; i < patients.Count; i++)
             {

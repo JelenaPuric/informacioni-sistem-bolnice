@@ -1,0 +1,45 @@
+[
+  {
+    "typeAcc": 1,
+    "name": "Marko",
+    "lastName": "Markovic",
+    "id": "1",
+    "dateOfBirth": "1000-10-09T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "marko23",
+    "password": "412214",
+    "examination": null
+  }
+  ,
+  {
+    "typeAcc": 0,
+    "name": "Perooooo",
+    "lastName": "Perovicccccccc",
+    "id": "2",
+    "dateOfBirth": "2019-03-06T00:00:00.0000000+01:00",
+    "phoneNumber": "14241212",
+    "email": "perovicpero@gmail.commm",
+    "placeOfResidance": "Novi Sadss",
+    "typeOfPerson": 1,
+    "username": "pero142",
+    "password": "125125",
+    "examination": null
+  },
+  {
+    "typeAcc": 1,
+    "name": "Ranko",
+    "lastName": "Rankovic",
+    "id": "3",
+    "dateOfBirth": "1000-10-09T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "ranko142",
+    "password": "512125",
+    "examination": null
+  }
+]

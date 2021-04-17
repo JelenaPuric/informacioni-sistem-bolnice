@@ -34,7 +34,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
 
             string firstName = textBoxFirstName.Text;
@@ -42,12 +42,12 @@ namespace HospitalApplication.Windows.Secretary
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
 
-            int n = sp.Patients.Count;
+            int n = pm.Patients.Count;
             int idPatient;
 
             if (n > 0)
             {
-                idPatient = Int32.Parse(sp.Patients[n - 1].Id) + 1;
+                idPatient = Int32.Parse(pm.Patients[n - 1].Id) + 1;
             }
             else idPatient = 0;
 
@@ -60,7 +60,7 @@ namespace HospitalApplication.Windows.Secretary
             Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), defaultBirthDay, "Empty", "Empty", "Empty", typeOfPerson, username, password);
 
             pm.CreatePatient(p);
-            sp.WritePatient(sp.Path);
+            //sp.WritePatient(sp.Path);
 
 
 

@@ -34,9 +34,9 @@ namespace HospitalApplication.Windows.Secretary
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
-            p = pm.EditExistingPatient(value);
+            p = pm.getPatient(value);
 
             ComboBox1.Text = p.TypeAcc.ToString();
             textBoxFirstName.Text = p.Name;
@@ -52,7 +52,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-
+            PatientManagement pm = new PatientManagement();
 
             AccountType typeAcc = (AccountType)Enum.Parse(typeof(AccountType), ComboBox1.Text);
             p.TypeAcc = typeAcc;
@@ -75,6 +75,7 @@ namespace HospitalApplication.Windows.Secretary
             p.Username = textBoxUsername.Text;
             p.Password = textBoxPassword.Text;
 
+            pm.Update(p);
             aPw.UpdateView();
 
             Close();

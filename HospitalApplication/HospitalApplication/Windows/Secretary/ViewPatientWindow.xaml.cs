@@ -32,9 +32,9 @@ namespace HospitalApplication.Windows.Secretary
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
 
-            FilesPatients sp = FilesPatients.GetInstance();
+            //FilesPatients sp = FilesPatients.GetInstance();
             PatientManagement pm = new PatientManagement();
-            p = pm.EditExistingPatient(value);
+            p = pm.getPatient(value);
 
             TypeAcc.Content = TypeAcc.Content + p.TypeAcc.ToString();
             FirstName.Content = FirstName.Content + p.Name;
