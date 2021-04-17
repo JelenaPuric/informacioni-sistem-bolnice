@@ -66,7 +66,62 @@
                 <ComboBoxItem Content="19:00"/>
                 <ComboBoxItem Content="19:30"/>
             </ComboBox>
+
+            <Label Content="Filters-----------------"/>
+            <Label Content="Select second date:"/>
+            <DatePicker Margin="0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date2">
+                <!--ne dozvoli da se izabere danasnji datum-->
+                <DatePicker.BlackoutDates>
+                    <CalendarDateRange End="{x:Static sys:DateTime.Today}" Start="{x:Static sys:DateTime.MinValue}" />
+                </DatePicker.BlackoutDates>
+                <!--ne dozvoli user input-->
+                <DatePicker.Resources>
+                    <Style TargetType="DatePickerTextBox">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+            <Label Content="Start time:"></Label>
+            <ComboBox Margin="0 10" Name="Combo2" SelectedIndex="0">
+                <ComboBoxItem Content="7:00"/>
+                <ComboBoxItem Content="7:30"/>
+                <ComboBoxItem Content="8:00"/>
+                <ComboBoxItem Content="8:30"/>
+                <ComboBoxItem Content="9:00"/>
+                <ComboBoxItem Content="9:30"/>
+                <ComboBoxItem Content="10:00"/>
+                <ComboBoxItem Content="10:30"/>
+                <ComboBoxItem Content="11:00"/>
+                <ComboBoxItem Content="11:30"/>
+                <ComboBoxItem Content="12:00"/>
+                <ComboBoxItem Content="12:30"/>
+                <ComboBoxItem Content="13:00"/>
+                <ComboBoxItem Content="13:30"/>
+                <ComboBoxItem Content="14:00"/>
+                <ComboBoxItem Content="14:30"/>
+                <ComboBoxItem Content="15:00"/>
+                <ComboBoxItem Content="15:30"/>
+                <ComboBoxItem Content="16:00"/>
+                <ComboBoxItem Content="16:30"/>
+                <ComboBoxItem Content="17:00"/>
+                <ComboBoxItem Content="17:30"/>
+                <ComboBoxItem Content="18:00"/>
+                <ComboBoxItem Content="18:30"/>
+                <ComboBoxItem Content="19:00"/>
+                <ComboBoxItem Content="19:30"/>
+            </ComboBox>
+
+            <Label Content="Choose doctor for examination."/>
+            <ComboBox Margin="0 10" Name="Combo3" SelectedIndex="0">
+            </ComboBox>
+            <Label Content="Choose priority for examination:"/>
+            <RadioButton Content="Doctor"  Name="priorityDoctor"/>
+            <RadioButton Content="Time" Name="priorityTime"/>
             <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click"></Button>
+            <Button Content="OK Filters" x:Name="ButtonOkFilters" Click="ButtonOkFilters_Click" Margin="0 10 0 0"/>
+
+            <ComboBox Margin="0 10" Name="Combo4" SelectedIndex="0">
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Window>

@@ -14,6 +14,8 @@ namespace Model
             set { scheduled = value; }
         }
 
+        public Doctor() { }
+
         public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd)
         {
             Username = usernameee;

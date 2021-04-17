@@ -21,6 +21,7 @@ using System.Collections.ObjectModel;
 using System.Threading;
 using HospitalApplication.Model;
 using HospitalApplication.Logic;
+using HospitalApplication.Windows.Patient1;
 
 namespace HospitalApplication
 {
@@ -38,8 +39,8 @@ namespace HospitalApplication
         FilesExamination f = new FilesExamination();
         ExaminationManagement m = ExaminationManagement.Instance;
         Windows.Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
+        MainWindow mw = MainWindow.Instance;
         NotificationManagement ntf = NotificationManagement.Instance;
-        MainWindow w = MainWindow.Instance;
 
 
         private static WindowPatient instance;
@@ -60,15 +61,15 @@ namespace HospitalApplication
             InitializeComponent();
             instance = this;
 
-            List<Examination> examinations = m.GetExaminations(w.EnteredUsername);
+            List<Examination> examinations = m.GetExaminations(mw.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             lvUsers.ItemsSource = examinations;
-            Logic.PatientNotifications p = new Logic.PatientNotifications(w.Username.Text);
+            Logic.PatientNotifications p = new Logic.PatientNotifications(mw.Username.Text);
         }
 
         public void UpdateView()
         {
-            List<Examination> examinations = m.GetExaminations(w.EnteredUsername);
+            List<Examination> examinations = m.GetExaminations(mw.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             //lvUsers.ItemsSource = null;
             //lvUsers.ItemsSource = examinations;
@@ -151,6 +152,12 @@ namespace HospitalApplication
         private void Notifications_Click(object sender, RoutedEventArgs e)
         {
             Windows.Patient1.WindowPatientNotifications window = new Windows.Patient1.WindowPatientNotifications();
+            window.Show();
+        }
+
+        private void EditExamination_Click(object sender, RoutedEventArgs e)
+        {
+            WindowExaminationEdit window = new WindowExaminationEdit();
             window.Show();
         }
     }

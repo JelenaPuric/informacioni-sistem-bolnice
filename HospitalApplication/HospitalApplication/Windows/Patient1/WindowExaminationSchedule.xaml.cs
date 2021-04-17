@@ -29,28 +29,142 @@ namespace HospitalApplication
         private MainWindow mw = MainWindow.Instance;
         private SerializationAndDeserilazationOfRooms r = new SerializationAndDeserilazationOfRooms();
         private WorkWithFiles.FilesDoctor fd = new WorkWithFiles.FilesDoctor();
+        private List<Doctor> doctors = new List<Doctor>();
 
         public WindowExaminationSchedule()
         {
             InitializeComponent();
+            doctors = fd.LoadFromFile();
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                Combo3.Items.Add(doctors[i].Username.ToString());
+            }
+        }
+
+        private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
+        {
+            //nacin zakazivanja za kt3
+
+            //datum1
+            DateTime date = Date.SelectedDate.Value.Date;
+            //trojke oznacavaju sat/min/sekund
+            List<(int, int, int)> appointment1 = new List<(int, int, int)>();
+            for (int i = 0; i < 13; i++)
+            {
+                appointment1.Add((7 + i, 0, 0));
+                appointment1.Add((7 + i, 30, 0));
+            }
+            (int, int, int) a1 = appointment1[Combo.SelectedIndex];
+            TimeSpan time1 = new TimeSpan(a1.Item1, a1.Item2, a1.Item3);
+            DateTime date1 = date + time1;
+
+
+            //datum2
+            DateTime datee = Date2.SelectedDate.Value.Date;
+            //trojke oznacavaju sat/min/sekund
+            List<(int, int, int)> appointment2 = new List<(int, int, int)>();
+            for (int i = 0; i < 13; i++)
+            {
+                appointment2.Add((7 + i, 0, 0));
+                appointment2.Add((7 + i, 30, 0));
+            }
+            (int, int, int) a2 = appointment2[Combo2.SelectedIndex];
+            TimeSpan time2 = new TimeSpan(a2.Item1, a2.Item2, a2.Item3);
+            DateTime date2 = datee + time2;
+
+            //izabrani doktor
+            string doctorUsername = Combo3.SelectedItem.ToString();
+            Doctor doctor = new Doctor();
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctorUsername == doctors[i].Username)
+                {
+                    doctor = doctors[i];
+                    break;
+                }
+            }
+
+            List<DateTime> newDates = new List<DateTime>();
+            DateTime newDate = new DateTime();
+            //DateTime dateee = new DateTime(2000, 12, 30, 15, 10, 00);
+
+            //prolazim kroz sve dane u opsegu
+            //newDates.Add(date1);
+            //newDates.Add(date2);
+            for (int j = 0; j < (date2 - date1).TotalDays + 1; j++)
+            {
+                //newDates.Add(dateee);
+                //prolazim kroz sve termine jednog dana
+                for (int i = 0; i < appointment1.Count; i++)
+                {
+                    bool okDate = true;
+                    newDate = date1.Date.AddDays(j) + new TimeSpan(appointment1[i].Item1, appointment1[i].Item2, appointment1[i].Item3);
+                    //provera da li datum odgovara doktoru
+                    for (int k = 0; k < doctor.Scheduled.Count; k++)
+                    {
+                        if (newDate == doctor.Scheduled[k])
+                        {
+                            okDate = false;
+                        }
+                    }
+                    if (okDate == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
+                }
+            }
+
+
+            for (int i = 0; i < newDates.Count; i++)
+            {
+                Combo4.Items.Add(newDates[i].ToString());
+            }
+
+            //altermativni termini u zavisnosti od prioriteta, samo ako nema nijedan termin u prvobitno izabranom opsegu za doktora
+            if (newDates.Count == 0)
+            {
+                if (priorityDoctor.IsChecked == true)
+                {
+
+                }
+                if (priorityTime.IsChecked == true)
+                {
+
+                }
+            }
+
+
+            //generisem unikatan id za pregled
+            //radi tako sto jednom ucitam sve preglede i nadjem najveci id pa nakon toga samo dodeljujem za po jedan br veci
+            List<Examination> examinations = m.Examinations;
+            if (ok == false)
+            {
+                ok = true;
+                for (int i = 0; i < examinations.Count; i++)
+                {
+                    if (Int32.Parse(examinations[i].ExaminationId) > idExamination)
+                    {
+                        idExamination = Int32.Parse(examinations[i].ExaminationId);
+                    }
+                }
+            }
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            //zakazivanje za kt2
             //s1 = PatientId.Text;
             //s2 = DoctorId.Text;
             DateTime date = Date.SelectedDate.Value.Date;
             //TimeSpan time = new TimeSpan(Int32.Parse(Hour1.Text), Int32.Parse(Minute1.Text), Int32.Parse(Second1.Text));
-            
+
             //DateTime date = new DateTime(2000, 12, 30, 15, 10, 00);
             //DateTime date = new DateTime(d);
             //DateTime date = new DateTime(Int32.Parse(Year1.Text), Int32.Parse(Month1.Text), Int32.Parse(Day1.Text), Int32.Parse(Hour1.Text), Int32.Parse(Minute1.Text), Int32.Parse(Second1.Text));
             //id svakog pregleda je unikatan
-            
+
             //lista svih mogucih termina za pregled, kombijuje se sa date time pickerom
             //trojke oznacavaju sat/min/sekund
             List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 13; i++) {
+            for (int i = 0; i < 13; i++)
+            {
                 appointment.Add((7 + i, 0, 0));
                 appointment.Add((7 + i, 30, 0));
             }
@@ -60,7 +174,7 @@ namespace HospitalApplication
 
             //generisem unikatan id za pregled
             //radi tako sto jednom ucitam sve preglede i nadjem najveci id pa nakon toga samo dodeljujem za po jedan br veci
-            List < Examination > examinations = m.Examinations;
+            List<Examination> examinations = m.Examinations;
             if (ok == false)
             {
                 ok = true;
@@ -93,16 +207,20 @@ namespace HospitalApplication
             bool sched = false;
             WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
             List<Doctor> doctors = doc.LoadFromFile();
-            for (int i = 0; i < doctors.Count; i++) {
+            for (int i = 0; i < doctors.Count; i++)
+            {
                 Random rnd = new Random();
                 int index = rnd.Next(0, doctors.Count);
                 isFree = true;
-                for (int j = 0; j < doctors[index].Scheduled.Count; j++) {
-                    if (doctors[index].Scheduled[j] == d) {
+                for (int j = 0; j < doctors[index].Scheduled.Count; j++)
+                {
+                    if (doctors[index].Scheduled[j] == d)
+                    {
                         isFree = false;
                     }
                 }
-                if (isFree) {
+                if (isFree)
+                {
                     s2 = doctors[index].Username;
                     doctors[index].Scheduled.Add(d);
                     doc.WriteInFile(doctors);
@@ -132,13 +250,14 @@ namespace HospitalApplication
                     break;
                 }
             }
-                
-            if (sched == false) {
+
+            if (sched == false)
+            {
                 MessageBox.Show("There is no free term. Choose another time.");
                 Close();
             }
 
-            Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination+1).ToString());
+            Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination + 1).ToString());
             m.ScheduleExamination(ex);
 
             w.UpdateView();

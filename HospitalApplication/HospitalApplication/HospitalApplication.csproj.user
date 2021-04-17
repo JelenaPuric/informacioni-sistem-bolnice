@@ -55,6 +55,9 @@
     <Compile Update="Windows\Doctor1\ShowOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Patient1\WindowExaminationEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Patient1\WindowExaminationSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,6 +157,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Doctor1\ShowOperationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Patient1\WindowExaminationEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Patient1\WindowExaminationMove.xaml">

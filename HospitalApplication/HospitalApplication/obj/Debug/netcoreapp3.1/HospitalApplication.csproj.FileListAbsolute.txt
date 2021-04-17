@@ -615,3 +615,5 @@ C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplicati
 C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationEdit.g.cs
+C:\Users\orz\Desktop\sve\proba bolnica app\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowExaminationEdit.baml

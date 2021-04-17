@@ -5,8 +5,8 @@ using WorkWithFiles;
 
 namespace Logic
 {
-   public class ExaminationManagement
-   {
+    public class ExaminationManagement
+    {
         private static ExaminationManagement instance;
         public static ExaminationManagement Instance
         {
@@ -20,18 +20,19 @@ namespace Logic
             }
         }
 
-        public ExaminationManagement() {
-          examinations = f.LoadFromFile();
-      }
-      
-      public void ScheduleExamination(Examination e)
-      {
+        public ExaminationManagement()
+        {
+            examinations = f.LoadFromFile();
+        }
+
+        public void ScheduleExamination(Examination e)
+        {
             examinations.Add(e);
             f.WriteInFile(examinations);
-      }
-      
-      public void CancelExamination(String id)
-      {
+        }
+
+        public void CancelExamination(String id)
+        {
             for (int i = 0; i < examinations.Count; i++)
             {
                 if (examinations[i].ExaminationId == id) examinations.RemoveAt(i);
@@ -72,7 +73,25 @@ namespace Logic
             f.WriteInFile(examinations);
         }
 
-        public List<Examination> GetExaminations(String patientName) {
+        public void EditExamination(string id, string doctor)
+        {
+            //prvo ga izbrisi, promeni doktora pa vrati
+            Examination e = new Examination();
+            for (int i = 0; i < examinations.Count; i++)
+            {
+                if (examinations[i].ExaminationId == id)
+                {
+                    e = examinations[i];
+                    examinations.RemoveAt(i);
+                }
+            }
+            e.DoctorsId = doctor;
+            examinations.Add(e);
+            f.WriteInFile(examinations);
+        }
+
+        public List<Examination> GetExaminations(String patientName)
+        {
             List<Examination> e = new List<Examination>();
             for (int i = 0; i < examinations.Count; i++)
             {
@@ -88,11 +107,11 @@ namespace Logic
         private List<Examination> examinations;
         private List<Doctor> doctors;
 
-      public List<Examination> Examinations
+        public List<Examination> Examinations
         {
             get { return examinations; }
             set { examinations = value; }
-      }
+        }
         public List<Doctor> Doctors
         {
             get { return doctors; }
