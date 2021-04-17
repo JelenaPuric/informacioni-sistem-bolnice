@@ -39,6 +39,7 @@ namespace HospitalApplication
         ExaminationManagement m = ExaminationManagement.Instance;
         Windows.Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
         NotificationManagement ntf = NotificationManagement.Instance;
+        MainWindow w = MainWindow.Instance;
 
 
         private static WindowPatient instance;
@@ -59,15 +60,15 @@ namespace HospitalApplication
             InitializeComponent();
             instance = this;
 
-            List<Examination> examinations = m.GetExaminations(l.EnteredUsername);
+            List<Examination> examinations = m.GetExaminations(w.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             lvUsers.ItemsSource = examinations;
-            Logic.PatientNotifications p = new Logic.PatientNotifications(l.Username.Text);
+            Logic.PatientNotifications p = new Logic.PatientNotifications(w.Username.Text);
         }
 
         public void UpdateView()
         {
-            List<Examination> examinations = m.GetExaminations(l.EnteredUsername);
+            List<Examination> examinations = m.GetExaminations(w.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             //lvUsers.ItemsSource = null;
             //lvUsers.ItemsSource = examinations;

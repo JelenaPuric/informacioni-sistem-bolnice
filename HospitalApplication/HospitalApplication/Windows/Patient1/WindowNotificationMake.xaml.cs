@@ -22,6 +22,7 @@ namespace HospitalApplication.Windows.Patient1
         private NotificationManagement ntf = NotificationManagement.Instance;
         private int idNotification = 100000;
         private WindowPatientNotifications w = WindowPatientNotifications.Instance;
+        private MainWindow mw = MainWindow.Instance;
 
         public WindowNotificationMake()
         {
@@ -60,7 +61,7 @@ namespace HospitalApplication.Windows.Patient1
                 }
             }
 
-            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), "m");
+            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mw.EnteredUsername);
             ntf.ScheduleNotification(n);
 
             w.UpdateView();

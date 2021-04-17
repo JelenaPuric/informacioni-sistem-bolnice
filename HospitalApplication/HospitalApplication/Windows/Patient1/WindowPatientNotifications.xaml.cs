@@ -21,6 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     {
         private NotificationManagement ntf = NotificationManagement.Instance;
         private Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
+        private MainWindow mw = MainWindow.Instance;
 
         private static WindowPatientNotifications instance;
         public static WindowPatientNotifications Instance
@@ -40,7 +41,7 @@ namespace HospitalApplication.Windows.Patient1
             instance = this;
 
             //List<Notification> notifications = m.GetExaminations(l.EnteredUsername);
-            List<Notification> notifications = ntf.GetNotifications(l.EnteredUsername);
+            List<Notification> notifications = ntf.GetNotifications(mw.EnteredUsername);
             //List<Examination> examinations = m.Examinations;
             lvUsers.ItemsSource = notifications;
             //Logic.PatientNotifications p = new Logic.PatientNotifications();
@@ -48,7 +49,7 @@ namespace HospitalApplication.Windows.Patient1
 
         public void UpdateView()
         {
-            List<Notification> notifications = ntf.GetNotifications(l.EnteredUsername);
+            List<Notification> notifications = ntf.GetNotifications(mw.EnteredUsername);
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = notifications;
         }

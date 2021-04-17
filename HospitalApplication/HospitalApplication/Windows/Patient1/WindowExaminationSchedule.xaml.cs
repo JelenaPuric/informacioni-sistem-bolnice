@@ -26,6 +26,7 @@ namespace HospitalApplication
         private bool ok = false;
         private int idExamination = 100000;
         private Windows.Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
+        private MainWindow mw = MainWindow.Instance;
         private SerializationAndDeserilazationOfRooms r = new SerializationAndDeserilazationOfRooms();
         private WorkWithFiles.FilesDoctor fd = new WorkWithFiles.FilesDoctor();
 
@@ -137,7 +138,7 @@ namespace HospitalApplication
                 Close();
             }
 
-            Examination ex = new Examination(l.EnteredUsername, s2, "101", d, (idExamination+1).ToString());
+            Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination+1).ToString());
             m.ScheduleExamination(ex);
 
             w.UpdateView();
