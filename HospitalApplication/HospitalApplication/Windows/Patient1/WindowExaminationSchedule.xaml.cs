@@ -169,7 +169,34 @@ namespace HospitalApplication
                 }
                 else if (priorityTime.IsChecked == true)
                 {
-
+                    for (int m = 0; m < doctors.Count; m++)
+                    {
+                        doctor = doctors[m];
+                        for (int j = 0; j < (date2 - date1).TotalDays + 1; j++)
+                        {
+                            //newDates.Add(dateee);
+                            //prolazim kroz sve termine jednog dana
+                            for (int i = 0; i < appointment1.Count; i++)
+                            {
+                                bool okDate = true;
+                                newDate = date1.Date.AddDays(j) + new TimeSpan(appointment1[i].Item1, appointment1[i].Item2, appointment1[i].Item3);
+                                //provera da li datum odgovara doktoru
+                                for (int k = 0; k < doctor.Scheduled.Count; k++)
+                                {
+                                    if (newDate == doctor.Scheduled[k])
+                                    {
+                                        okDate = false;
+                                    }
+                                }
+                                if (okDate == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
+                            }
+                        }
+                        if (newDates.Count > 0) break;
+                    }
+                    for (int i = 0; i < newDates.Count; i++)
+                    {
+                        Combo4.Items.Add(newDates[i].ToString() + ", " + doctor.Username);
+                    }
                 }
             }
 
@@ -247,10 +274,10 @@ namespace HospitalApplication
 
             //prolazim kroz zakazane preglede doktora i ako je on slobodan u tom terminu onda moze  da se zakaze
             bool isFree = true;
-            bool sched = false;
+            //bool sched = false;
             WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
             List<Doctor> doctors = doc.LoadFromFile();
-            for (int i = 0; i < doctors.Count; i++)
+            /*for (int i = 0; i < doctors.Count; i++)
             {
                 Random rnd = new Random();
                 int index = rnd.Next(0, doctors.Count);
@@ -292,12 +319,30 @@ namespace HospitalApplication
                     sched = true;
                     break;
                 }
+            }*/
+
+            //proveri da li je termin slobodan za izabranog lekara
+            int index = Combo3.SelectedIndex;
+            for (int j = 0; j < doctors[index].Scheduled.Count; j++)
+            {
+                if (doctors[index].Scheduled[j] == d)
+                {
+                    isFree = false;
+                }
             }
 
-            if (sched == false)
+            if (isFree)
+            {
+                s2 = doctors[index].Username;
+                doctors[index].Scheduled.Add(d);
+                doc.WriteInFile(doctors);
+            }
+
+            if (isFree == false)
             {
                 MessageBox.Show("There is no free term. Choose another time.");
                 Close();
+                return; 
             }
 
             Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination + 1).ToString());
