@@ -39,8 +39,21 @@ namespace HospitalApplication.Windows.Secretary
 
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
-            string username = textBoxUsername.Text;
-            string password = textBoxPassword.Text;
+            string jmbg = textBoxJMBG.Text;
+
+
+            string username = textBoxFirstName.Text + textBoxLastName.Text;
+            string password = "123";
+
+
+            string date = BoxDateTime.Text;
+            string[] entries = date.Split('/');
+            int year = Int32.Parse(entries[2]);
+            int month = Int32.Parse(entries[0]);
+            int day = Int32.Parse(entries[1]);
+            DateTime myDate = new DateTime(year, month, day);
+
+
 
             int n = pm.Patients.Count;
             int idPatient;
@@ -53,11 +66,11 @@ namespace HospitalApplication.Windows.Secretary
 
 
             TypeOfPerson typeOfPerson = (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient");
-            DateTime defaultBirthDay = new DateTime(1000, 10, 10);
+            
 
             AccountType typeAccc = (AccountType)Enum.Parse(typeof(AccountType), "guestAccount");
 
-            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), defaultBirthDay, "Empty", "Empty", "Empty", typeOfPerson, username, password);
+            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0);
 
             pm.CreatePatient(p);
             //sp.WritePatient(sp.Path);

@@ -40,6 +40,7 @@ namespace HospitalApplication.Windows.Secretary
 
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
+            string jmbg = textBoxJMBG.Text;
 
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
@@ -54,6 +55,16 @@ namespace HospitalApplication.Windows.Secretary
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
 
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked))
+            {
+                sex = SexType.male;
+            }
+            else if (Convert.ToBoolean(FSex.IsChecked))
+            {
+                sex = SexType.female;
+            }
+
             int n = pm.Patients.Count;
             int idPatient;
 
@@ -66,7 +77,7 @@ namespace HospitalApplication.Windows.Secretary
             TypeOfPerson typeOfPerson = (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient");
 
 
-            Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password);
+            Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex);
             
 
             pm.CreatePatient(p);
@@ -82,5 +93,7 @@ namespace HospitalApplication.Windows.Secretary
             Close();
 
         }
+
+
     }
 }

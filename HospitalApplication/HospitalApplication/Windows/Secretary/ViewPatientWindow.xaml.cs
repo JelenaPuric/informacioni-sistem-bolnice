@@ -39,6 +39,8 @@ namespace HospitalApplication.Windows.Secretary
             TypeAcc.Content = TypeAcc.Content + p.TypeAcc.ToString();
             FirstName.Content = FirstName.Content + p.Name;
             LastName.Content = LastName.Content + p.LastName;
+            Jmbg.Content = Jmbg.Content + p.Jmbg;
+            Sex.Content = Sex.Content + p.SexType.ToString();
             DateOfBirth.Content = DateOfBirth.Content + p.DateOfBirth.ToString("dd.MM.yyyy.");
             PlaceOfResidance.Content = PlaceOfResidance.Content + p.PlaceOfResidance;
             Email.Content = Email.Content + p.Email;

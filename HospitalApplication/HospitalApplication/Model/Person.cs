@@ -18,11 +18,13 @@ namespace Model
         private string email;
         private string placeOfResidance;
         private TypeOfPerson typeOfPerson;
+        private SexType sexType;
+        string jmbg;
 
 
         public Person() { }
         public Person(string namee, string lastnamee, string idd, DateTime dateOfBirthh, string phoneNumberr, string emaill, string placeOfResidancee,
-            TypeOfPerson typeOfPersonn, string usernameee, string passworddd) : base(usernameee, passworddd)
+            TypeOfPerson typeOfPersonn, string usernameee, string passworddd, string jmbgg, SexType sexTypee ) : base(usernameee, passworddd)
         {
             name = namee;
             lastName = lastnamee;
@@ -32,10 +34,23 @@ namespace Model
             email = emaill;
             placeOfResidance = placeOfResidancee;
             typeOfPerson = typeOfPersonn;
-
-
+            jmbg = jmbgg;
+            sexType = sexTypee;
         }
 
+
+
+        public SexType SexType
+        {
+            get { return sexType; }
+            set { sexType = value; }
+        }
+
+        public string Jmbg
+        {
+            get { return jmbg; }
+            set { jmbg = value; }
+        }
 
         public string Name
         {

@@ -18,18 +18,16 @@
 
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,111,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="1.054,0.562" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,139,0,0" Name="textBlockLastName" Text="Last Name:" VerticalAlignment="Top" Width="110" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,167,0,0" Name="textBlockJMBG" Text="JMBG:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.992,0.656" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,195,0,0" Name="textBlockDateOfBirth" Text="Date of birth:" VerticalAlignment="Top" Width="110" />
 
-
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,167,0,0" Name="textBlockUsername" Text="Username:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.5,-1.866" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="139,195,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
 
 
 
         <TextBox Height="23" HorizontalAlignment="Left" Margin="266,111,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="266,139,0,0" Name="textBoxLastName" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="266,167,0,0" Name="textBoxUsername" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="266,195,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4" />
-
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="266,167,0,0" Name="textBoxJMBG" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4" />
+        <DatePicker Margin="266,195,299,184" Name="BoxDateTime" Grid.ColumnSpan="4"/>
 
 
         <Button Content="Submit" Height="34" HorizontalAlignment="Left" Margin="281,268,0,0" Name="Submit" VerticalAlignment="Top" Width="79" Click="Submit_Click" RenderTransformOrigin="1,3.583" Grid.ColumnSpan="2" />

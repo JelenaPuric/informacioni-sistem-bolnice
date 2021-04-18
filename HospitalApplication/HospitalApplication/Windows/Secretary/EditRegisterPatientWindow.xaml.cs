@@ -41,6 +41,17 @@ namespace HospitalApplication.Windows.Secretary
             ComboBox1.Text = p.TypeAcc.ToString();
             textBoxFirstName.Text = p.Name;
             textBoxLastName.Text = p.LastName;
+            textBoxJMBG.Text = p.Jmbg;
+
+            if (p.SexType == SexType.male)
+            {
+                MSex.IsChecked = true;
+            }
+            else
+            {
+                FSex.IsChecked = true;
+            }
+
             BoxDateTime.Text = p.DateOfBirth.ToString();
             textBoxPlaceOfResidance.Text = p.PlaceOfResidance;
             textBoxEmail.Text = p.Email;
@@ -59,6 +70,20 @@ namespace HospitalApplication.Windows.Secretary
 
             p.Name = textBoxFirstName.Text;
             p.LastName = textBoxLastName.Text;
+            p.Jmbg = textBoxJMBG.Text;
+
+            SexType sex;
+            if (Convert.ToBoolean(MSex.IsChecked))
+            {
+                sex = SexType.male;
+                p.SexType = sex;
+            }
+            else if (Convert.ToBoolean(FSex.IsChecked))
+            {
+                sex = SexType.female;
+                p.SexType = sex;
+            }
+
 
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
