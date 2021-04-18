@@ -6,7 +6,8 @@ namespace Model
    {
       Office,
       RestRoom,
-      OperatingRoom
-   
-   }
+      OperatingRoom,
+      Warehouse
+
+    }
 }

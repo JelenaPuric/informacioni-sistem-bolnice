@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\Manager\Resources\Resources.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Resources\SearchRoom.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Manager\Rooms\AddRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Resources\SearchRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Rooms\AddRoom.xaml">

@@ -71,10 +71,10 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             {
                 EditR er = new EditR(selected);
                 er.Show();
-                if (er.Submit.IsEnabled) {
-                    RoomManagment rm = new RoomManagment();
-                    rm.RemoveRoom(selected);
-                }
+                //if (er.Submit.IsEnabled) {
+                //    RoomManagment rm = new RoomManagment();
+                //    rm.RemoveRoom(selected);
+                //}
             }
 
         }

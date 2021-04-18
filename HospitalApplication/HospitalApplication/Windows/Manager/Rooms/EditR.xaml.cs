@@ -30,7 +30,6 @@ namespace HospitalApplication.Windows.Manager.Rooms
             textBoxCapacity.Text = ro.Capacity.ToString();
             checkBoxOccupied.IsChecked = (bool)ro.Occupied;
             comboBoxRoomType.SelectedItem = ro.RoomType;
-
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
@@ -45,11 +44,9 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex
             };
             RoomManagment mr = new RoomManagment();
+            int s = Int32.Parse(textBoxRoomId.Text);
+            mr.RemoveById(s);
             mr.CreateRoom(r);
-            textBoxCapacity.Text = String.Empty;
-            textBoxNumberOfFloors.Text = String.Empty;
-            textBoxRoomId.Text = String.Empty;
-            textBoxRoomNumber.Text = String.Empty;
             Close();
         }
 

@@ -8,5 +8,6 @@
         Title="WindowsManager" Height="450" Width="800">
     <Grid>
         <Button Content="Rooms" Margin="367,10,352,377" RenderTransformOrigin="-4.416,1.667" Click="Rooms_Clicked"/>
+        <Button Content="Resources" Margin="477,10,242,377" RenderTransformOrigin="-4.416,1.667" Click="Resources_Clicked"/>
     </Grid>
 </Window>

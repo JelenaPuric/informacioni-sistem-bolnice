@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Windows.Manager.Prostorije;
+using HospitalApplication.Windows.Manager.Resources;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,14 @@ namespace HospitalApplication.Windows.Manager
         {
             AllRooms wr = new AllRooms();
             wr.Show();
+            Close();
+        }
+
+        private void Resources_Clicked(object sender, RoutedEventArgs e)
+        {
+            SearchRoom sr = new SearchRoom();
+            sr.Show();
+            Close();
         }
     }
 }
