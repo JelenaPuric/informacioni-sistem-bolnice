@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,9 @@ namespace HospitalApplication.Windows.Secretary
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
             //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
-            p = pm.getPatient(value);
+            // PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
+            p = sc.getPatient(value);
 
             ComboBox1.Text = p.TypeAcc.ToString();
             textBoxFirstName.Text = p.Name;
@@ -63,7 +65,8 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            PatientManagement pm = new PatientManagement();
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
 
             AccountType typeAcc = (AccountType)Enum.Parse(typeof(AccountType), ComboBox1.Text);
             p.TypeAcc = typeAcc;
@@ -100,7 +103,7 @@ namespace HospitalApplication.Windows.Secretary
             p.Username = textBoxUsername.Text;
             p.Password = textBoxPassword.Text;
 
-            pm.Update(p);
+            sc.Update(p);
             aPw.UpdateView();
 
             Close();

@@ -15,10 +15,10 @@ namespace Logic
             patients = FilesPatients.LoadPatients();
         }
 
-        public List<Patient> Patients
+        public List<Patient> GetAllPatients()
         {
-            get { return patients; }
-            set { patients = value; }
+            
+            return patients;
 
         }
 

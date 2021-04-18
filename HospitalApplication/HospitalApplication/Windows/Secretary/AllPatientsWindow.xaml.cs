@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -47,11 +48,12 @@ namespace HospitalApplication.Windows.Secretary
 
             _instance = this;
 
-            //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
+
+            // PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
 
 
-            lvUsers.ItemsSource = pm.Patients;
+            lvUsers.ItemsSource = sc.GetAllPatients();
 
         }
 
@@ -90,9 +92,10 @@ namespace HospitalApplication.Windows.Secretary
 
         public void UpdateView()
         {
-            PatientManagement pm = new PatientManagement();
-            List<Patient> patients = pm.Patients;
-            lvUsers.ItemsSource = pm.Patients;
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
+            List<Patient> patients = sc.GetAllPatients();
+            lvUsers.ItemsSource = sc.GetAllPatients();
 
             //ICollectionView view = CollectionViewSource.GetDefaultView(patients);
            // view.Refresh();

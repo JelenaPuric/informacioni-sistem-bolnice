@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using WorkWithFiles;
 using Model;
 using Logic;
+using HospitalApplication.Controller;
 
 namespace HospitalApplication
 {
@@ -29,7 +30,9 @@ namespace HospitalApplication
     {
         private FilesExamination f = new FilesExamination();
 
-        PatientManagement m = new PatientManagement();
+       // PatientManagement m = new PatientManagement();
+        SecretaryController sc = new SecretaryController();
+
         string enteredUsername;
         public String EnteredUsername
         {
@@ -65,8 +68,7 @@ namespace HospitalApplication
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-            //FilesPatients fp = FilesPatients.GetInstance();
-            //fp.LoadPatient(fp.Path);
+       
 
         }
 
@@ -93,7 +95,7 @@ namespace HospitalApplication
             }
             else 
             {
-                List<Patient> patients = m.Patients;
+                List<Patient> patients = sc.GetAllPatients();
                     string username;
                     string password;
                     enteredUsername = Username.Text;
@@ -114,35 +116,6 @@ namespace HospitalApplication
             }
 
         }
-
-
-        /*
-        private void Patient_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.Patient1.WindowPatientLogin window = new Windows.Patient1.WindowPatientLogin();
-            window.Show();
-        }
-
-        private void Doctor_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.Doctor1.DoctorWindow window = new DoctorWindow();
-            window.Show();
-        }
-
-        private void Secretary_Click(object sender, RoutedEventArgs e)
-        {
-            AllPatientsWindow window = new AllPatientsWindow();
-            window.Show();
-
-        }
-
-        private void Manager_Click(object sender, RoutedEventArgs e)
-        {
-            WindowsManager window = new WindowsManager();
-            window.Show();
-        }
-        */
-
 
 
 

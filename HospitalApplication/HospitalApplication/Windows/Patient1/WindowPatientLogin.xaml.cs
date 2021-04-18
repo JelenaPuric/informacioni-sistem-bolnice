@@ -49,7 +49,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Patient> patients = m.Patients;
+            List<Patient> patients = m.GetAllPatients();
             string username;
             string password;
             enteredUsername = Username.Text;

@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,12 +35,13 @@ namespace HospitalApplication.Windows.Secretary
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
 
-            //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
+
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
 
             string id = IdPatient.Text;
 
-            pm.DeletePatient(id);
+            sc.DeletePatient(id);
 
             aPw.UpdateView();
 

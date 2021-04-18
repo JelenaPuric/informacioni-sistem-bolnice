@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,9 @@ namespace HospitalApplication.Windows.Secretary
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
 
-            //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
-            p = pm.getPatient(value);
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
+            p = sc.getPatient(value);
 
             TypeAcc.Content = TypeAcc.Content + p.TypeAcc.ToString();
             FirstName.Content = FirstName.Content + p.Name;

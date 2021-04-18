@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -36,11 +37,12 @@ namespace HospitalApplication.Windows.Secretary
 
 
             //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
 
             string idPatient = IdPatient.Text;
 
-            List<Patient> patients = pm.Patients;
+            List<Patient> patients = sc.GetAllPatients();
 
             for (int i = 0; i < patients.Count; i++)
             {

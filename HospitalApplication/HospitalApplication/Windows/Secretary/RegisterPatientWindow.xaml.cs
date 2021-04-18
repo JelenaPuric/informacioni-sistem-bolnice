@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,9 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            //FilesPatients sp = FilesPatients.GetInstance();
-            PatientManagement pm = new PatientManagement();
+
+            //PatientManagement pm = new PatientManagement();
+            SecretaryController sc = new SecretaryController();
 
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
@@ -65,12 +67,12 @@ namespace HospitalApplication.Windows.Secretary
                 sex = SexType.female;
             }
 
-            int n = pm.Patients.Count;
+            int n = sc.GetAllPatients().Count;
             int idPatient;
 
             if (n > 0)
             {
-                idPatient = Int32.Parse(pm.Patients[n - 1].Id) + 1;
+                idPatient = Int32.Parse(sc.GetAllPatients()[n - 1].Id) + 1;
             }
             else idPatient = 0;
 
@@ -80,8 +82,8 @@ namespace HospitalApplication.Windows.Secretary
             Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex);
             
 
-            pm.CreatePatient(p);
-           // sp.WritePatient(sp.Path);
+            sc.CreatePatient(p);
+       
 
             aPw.UpdateView();
 
