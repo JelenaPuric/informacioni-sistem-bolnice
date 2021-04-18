@@ -101,6 +101,11 @@ namespace HospitalApplication.Windows.Secretary
            // view.Refresh();
         }
 
+        private void MedicalRecord_Click(object sender, RoutedEventArgs e)
+        {
+            MedicalRecordWindow window = new MedicalRecordWindow();
+            window.Show();
 
+        }
     }
 }

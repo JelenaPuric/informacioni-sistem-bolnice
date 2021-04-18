@@ -94,6 +94,9 @@
     <Compile Update="Windows\Secretary\IDViewPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\MedicalRecordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +202,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\IDViewPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">

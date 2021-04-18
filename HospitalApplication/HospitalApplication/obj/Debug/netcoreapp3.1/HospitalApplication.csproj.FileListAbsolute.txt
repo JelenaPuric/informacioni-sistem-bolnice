@@ -722,3 +722,5 @@ C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApp
 C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
 C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CopyComplete
 C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MedicalRecordWindow.g.cs
+C:\Users\ranin\Desktop\Sims_PROJEKATA_NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MedicalRecordWindow.baml

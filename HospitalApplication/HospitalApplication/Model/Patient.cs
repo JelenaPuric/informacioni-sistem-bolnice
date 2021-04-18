@@ -5,6 +5,7 @@ namespace Model
    public class Patient : Person
    {
       public Examination examination;
+      public MedicalRecord medicalRecord;
 
         private AccountType typeAcc;
 
