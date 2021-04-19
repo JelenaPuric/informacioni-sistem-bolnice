@@ -1,23 +1,41 @@
  using System;
 using System.Collections.Generic;
+using HospitalApplication.Model;
 using Model;
 using WorkWithFiles;
 
 namespace Logic
 {
-   public class RoomManagment
-   {
+    public class RoomManagment
+    {
         private List<Room> rooms;
 
         public RoomManagment()
         {
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+
+            
         }
-      public void CreateRoom(Room r)
-      {
+        public void CreateRoom(Room r)
+        {
             rooms.Add(r);
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
-      }
+        }
+
+
+        public void AddItem(Resource r) {
+            for (int i = 0; i < rooms.Count; i++) { 
+                if(rooms[i].RoomId == r.roomId)
+                {
+                    if (rooms[i].Resource == null)
+                    {
+                        rooms[i].Resource = new List<Resource>();
+                    }
+                    rooms[i].Resource.Add(r);
+                }
+            }
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+        }
       
       public void RemoveRoom(Model.Room oldRoom)
       {

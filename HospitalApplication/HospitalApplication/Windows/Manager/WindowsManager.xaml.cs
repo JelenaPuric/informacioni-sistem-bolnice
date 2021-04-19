@@ -28,14 +28,12 @@ namespace HospitalApplication.Windows.Manager
         {
             AllRooms wr = new AllRooms();
             wr.Show();
-            Close();
         }
 
         private void Resources_Clicked(object sender, RoutedEventArgs e)
         {
             SearchRoom sr = new SearchRoom();
             sr.Show();
-            Close();
         }
     }
 }

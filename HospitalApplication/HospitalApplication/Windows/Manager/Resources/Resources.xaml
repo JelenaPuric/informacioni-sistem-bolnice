@@ -7,25 +7,20 @@
         mc:Ignorable="d"
         Title="Resources" Height="530" Width="765">
     <Grid>
-        <ListView Margin="11,10,0,0" Name="lvDataBinding" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
+        <ListView Margin="52,10,0,0" Name="lvDataBinding" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
 
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Room type" Width="120" DisplayMemberBinding="{Binding RoomType}" />
-                    <GridViewColumn Header="Capacity" Width="120" DisplayMemberBinding="{Binding Capacity}" />
-                    <GridViewColumn Header="Number Of Floors" Width="120" DisplayMemberBinding="{Binding NumberOfFloors}" />
-                    <GridViewColumn Header="Occupied" Width="120" DisplayMemberBinding="{Binding Occupied}" />
-                    <GridViewColumn Header="Room Id" Width="120" DisplayMemberBinding="{Binding RoomId}" />
-                    <GridViewColumn Header="Room number" Width="120" DisplayMemberBinding="{Binding Resource}" />
-
+                    <GridViewColumn Header="Staticki/dinamicki" Width="240" DisplayMemberBinding="{Binding Resource [0]}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add"   HorizontalAlignment="Left" Margin="50,419,0,0" VerticalAlignment="Top" Width="118" Height="45" />
+        <Button Content="Add"   HorizontalAlignment="Left" Margin="50,419,0,0" VerticalAlignment="Top" Width="118" Height="45" Click="AddItem_Clicked" />
         <Button Content="Delete "  HorizontalAlignment="Left" Margin="180,419,0,0" VerticalAlignment="Top" Width="120" Height="45" />
         <Button Content="Search "  HorizontalAlignment="Left" Margin="440,419,0,0" VerticalAlignment="Top" Width="120" Height="45" />
         <Button Content="Edit"  HorizontalAlignment="Left" Margin="310,419,0,0" VerticalAlignment="Top" Width="120" Height="45" />
 
-        <Button Content="Refresh List" HorizontalAlignment="Left" Margin="570,419,0,0" VerticalAlignment="Top" Width="120" Height="45" />
+        <Button Content="Refresh List" HorizontalAlignment="Left" Margin="570,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Refresh_Clicked" />
     </Grid>
 </Window>

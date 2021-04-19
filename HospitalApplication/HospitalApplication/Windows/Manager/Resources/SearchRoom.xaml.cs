@@ -28,7 +28,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             s = int.Parse(forSearch.Text);
             Resources r = new Resources(s);
             r.Show();
-
+            Close();
         }
     }
 }

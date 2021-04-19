@@ -6,10 +6,10 @@ namespace HospitalApplication.Model
 {
     public class Resource
     {
-        public String id { get; set; }
-        public String naziv { get; set; }
-        public int kolicina { get; set; }
-        public String proizvodjac { get; set; }
-        public bool jeStaticka { get; set; }
+        public String name { get; set; }
+        public int quantity { get; set; }
+        public String manufacturer { get; set; }
+        public bool isStatic { get; set; }
+        public int roomId { get; set; }
     }
 }

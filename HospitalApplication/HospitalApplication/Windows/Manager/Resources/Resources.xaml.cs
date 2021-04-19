@@ -20,23 +20,30 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class Resources : Window
     {
+        private int ss;
         public Resources(int s)
         {
+            ss = s;
             InitializeComponent();
             RoomManagment rooms = new RoomManagment();
             List<Room> p = new List<Room>();
 
-            Resource re = new Resource();
-            re.id = "123";
-            re.jeStaticka = true;
-            re.kolicina = 5;
-            re.proizvodjac = "Markovic";
-
             Room ro = new Room();
             ro = rooms.showRoom(s);
-            ro.Resource.Add(re);
+
             p.Add(ro);
             lvDataBinding.ItemsSource = p;
+        }
+
+        private void Refresh_Clicked(object sender, RoutedEventArgs e)
+        {
+           this.Show();
+        }
+
+        private void AddItem_Clicked(object sender, RoutedEventArgs e)
+        {
+            AddResource ad = new AddResource(ss);
+            ad.Show();
         }
     }
 }
