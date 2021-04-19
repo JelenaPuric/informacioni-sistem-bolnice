@@ -79,6 +79,21 @@ namespace Logic
         }
 
 
+        public void updateAllergen(Patient p)
+        {
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].Id.Equals(p.Id))
+                {
+                    patients[i].ListAllergens = p.ListAllergens;
+                    
+                }
+            }
+            FilesPatients.EnterPatient(patients);
+
+        }
+
+
 
 
         public void UpdateMedicalRecord(Patient p)

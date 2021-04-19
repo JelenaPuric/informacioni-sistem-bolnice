@@ -1,1 +1,13 @@
-[{"id":"0","name":"Food"}]
+[
+  {
+    "id": "0",
+    "name": "Food",
+    "specName": null
+  },
+  {
+    "id": "1",
+    "name": "Drink",
+    "specName": null
+  }
+
+]

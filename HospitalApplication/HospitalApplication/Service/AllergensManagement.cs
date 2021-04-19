@@ -28,6 +28,21 @@ namespace Logic
         }
 
 
+        public string getID(string nameA)
+        {
+
+            string idA = new string("test");
+            for (int i = 0; i < allergens.Count; i++)
+            {
+                if (allergens[i].Name.Equals(nameA))
+                {
+                    idA = allergens[i].Id;
+                    break;
+                }
+            }
+            return idA;
+        }
+
 
 
     }

@@ -33,6 +33,13 @@ namespace Model
 
 
 
+        public List<Allergen> ListAllergens
+        {
+            get { return listAllergens; }
+            set { listAllergens = value; }
+        }
+
+
 
 
 

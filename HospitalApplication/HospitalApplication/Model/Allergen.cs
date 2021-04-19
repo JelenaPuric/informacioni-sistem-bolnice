@@ -37,5 +37,14 @@ namespace Model
             set { name = value; }
         }
 
+        public string SpecName
+        {
+            get { return specName; }
+            set { specName = value; }
+        }
+
+
+
+
     }
 }

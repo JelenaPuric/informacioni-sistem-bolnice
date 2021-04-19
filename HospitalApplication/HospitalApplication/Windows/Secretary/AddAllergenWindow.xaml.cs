@@ -51,15 +51,25 @@ namespace HospitalApplication.Windows.Secretary
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SecretaryController sc = new SecretaryController();
+            AllergensManagement am = new AllergensManagement();
+            PatientManagement pm = new PatientManagement();
 
+            Patient p;
             string cb = ComboBox1.Text;
             string specName = textBoxTypeAllergen.Text;
 
-            //sc.GetAllPatients();
+            List<Patient> patients = sc.GetAllPatients();
+            p = sc.getPatient(idP);
 
-           
+            string idAllergen = am.getID(cb);
+            Allergen a = new Allergen(idAllergen, cb, specName);
+
+            p.ListAllergens.Add(a);
+
+            pm.updateAllergen(p);
 
 
+            Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

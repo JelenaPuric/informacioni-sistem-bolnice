@@ -31,6 +31,7 @@ namespace HospitalApplication.Controller
             patientManagement.UpdateMedicalRecord(p);
         }
 
+
         public Patient getPatient(string iDPatient)
         {
             return patientManagement.getPatient(iDPatient);

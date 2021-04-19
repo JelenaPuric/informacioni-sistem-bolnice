@@ -89,16 +89,17 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding Id}" />
-                                <GridViewColumn Header="Type of allergen" Width="120" DisplayMemberBinding="{Binding TypeAcc}" />
-                                <GridViewColumn Header="Specific name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Type of allergen" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Specific name" Width="120" DisplayMemberBinding="{Binding SpecName}" />
 
                             </GridView>
                         </ListView.View>
                     </ListView>
 
 
-                    <Button Content="Add Allergen"  Click="Button_Click" HorizontalAlignment="Left" Margin="206,358,0,0" VerticalAlignment="Top" Width="118" Height="45" Grid.Column="3"/>
-                    <Button Content="Define allergens" Click="DefineAllergen_Click"  HorizontalAlignment="Left" Margin="377,358,0,0" VerticalAlignment="Top" Width="120" Height="45" Grid.Column="3"/>
+                    <Button Content="Add Allergen"  Click="Button_Click" HorizontalAlignment="Left" Margin="148,358,0,0" VerticalAlignment="Top" Width="118" Height="45" Grid.Column="3"/>
+                    <Button Content="Define allergens" Click="DefineAllergen_Click"  HorizontalAlignment="Left" Margin="292,358,0,0" VerticalAlignment="Top" Width="120" Height="45" Grid.Column="3"/>
+                    <Button Content="Refresh" Click="Refresh_Click_1"   HorizontalAlignment="Left" Margin="438,358,0,0" VerticalAlignment="Top" Width="120" Height="45" Grid.Column="3" RenderTransformOrigin="0.557,0.58"/>
 
                 </Grid>
 

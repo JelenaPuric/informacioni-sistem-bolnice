@@ -20,6 +20,8 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class MedicalRecordWindow : Window
     {
+
+
         List<string> cbListTypeAllergens = new List<string>();
         private Patient p;
         private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
@@ -34,16 +36,18 @@ namespace HospitalApplication.Windows.Secretary
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-            idPatient = value;
-
-
-            // cbListTypeAllergens.Add("nesto");
-            // ComboBoxTypeAllergens.Items.Add(cbListTypeAllergens[0]);
-
+            
 
             SecretaryController sc = new SecretaryController();
+            idPatient = value;
+
+            
             p = sc.getPatient(value);
+
+
+
+            lvUsers.ItemsSource = p.ListAllergens;
+
 
             ComboBox1.Text = p.TypeAcc.ToString();
             ComboBoxMartialStatus.Text = p.medicalRecord.MartialStatus.ToString();
@@ -154,6 +158,14 @@ namespace HospitalApplication.Windows.Secretary
              AddAllergenWindow window = new AddAllergenWindow(idPatient);
              window.Show();
 
+        }
+
+        private void Refresh_Click_1(object sender, RoutedEventArgs e)
+        {
+            SecretaryController sc = new SecretaryController();
+            p = sc.getPatient(idPatient);
+
+            lvUsers.ItemsSource = p.ListAllergens;
         }
     }
 }

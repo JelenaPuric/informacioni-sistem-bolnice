@@ -83,6 +83,7 @@ namespace HospitalApplication.Windows.Secretary
             Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex, mr, listAllergens);
 
             
+            
 
             sc.CreatePatient(p);
        
