@@ -15,32 +15,38 @@ using System.Windows.Shapes;
 namespace HospitalApplication.Windows.Manager.Resources
 {
     /// <summary>
-    /// Interaction logic for AddResource.xaml
+    /// Interaction logic for EditResource.xaml
     /// </summary>
-    public partial class AddResource : Window
+    public partial class EditResource : Window
     {
-        private int j;
-        private Random a = new Random(DateTime.Now.Ticks.GetHashCode());
-
-        public AddResource(int i)
+        private Resource priv;
+        public EditResource(Resource re)
         {
             InitializeComponent();
-            j = i;
+            textBoxName.Text = re.name;
+            textBoxQuantity.Text = re.quantity.ToString();
+            checkBoxIsStatic.IsChecked = (bool)re.isStatic;
+            textBoxManufacturer.Text = re.manufacturer;
+            priv = re;
+        }
+
+        private void Cancel_Clicked(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Resource r = new Resource()
-            {
-                idItem = a.Next(1, 999999),
+            Resource r = new Resource() {
+                idItem = priv.idItem,
                 name = textBoxName.Text,
                 quantity = int.Parse(textBoxQuantity.Text),
                 isStatic = (bool)checkBoxIsStatic.IsChecked,
                 manufacturer = textBoxManufacturer.Text,
-                roomId = j
+                roomId = priv.roomId
             };
-
             RoomManagment rm = new RoomManagment();
+            rm.RemoveItem(priv);
             rm.AddItem(r);
             Close();
         }

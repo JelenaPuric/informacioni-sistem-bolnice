@@ -26,24 +26,85 @@ namespace HospitalApplication.Windows.Manager.Resources
             ss = s;
             InitializeComponent();
             RoomManagment rooms = new RoomManagment();
-            List<Room> p = new List<Room>();
+            //List<Room> p = new List<Room>();
 
             Room ro = new Room();
             ro = rooms.showRoom(s);
 
-            p.Add(ro);
-            lvDataBinding.ItemsSource = p;
+            //p.Add(ro);
+            lvDataBinding.ItemsSource = ro.Resource;
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-           this.Show();
+            RoomManagment rooms = new RoomManagment();
+            Room ro = new Room();
+            ro = rooms.showRoom(ss);
+
+            lvDataBinding.ItemsSource = ro.Resource;
         }
 
         private void AddItem_Clicked(object sender, RoutedEventArgs e)
         {
             AddResource ad = new AddResource(ss);
             ad.Show();
+        }
+
+        private void Delete_Clicked(object sender, RoutedEventArgs e)
+        {
+            RoomManagment rm = new RoomManagment();
+            Resource selected = (Resource)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                rm.RemoveItem(selected);
+            }
+            Room ro = new Room();
+            ro = rm.showRoom(ss);
+
+            lvDataBinding.ItemsSource = ro.Resource;
+        }
+
+        private void EditResource_Clicked(object sender, RoutedEventArgs e)
+        {
+            Resource selected = (Resource)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                EditResource er = new EditResource(selected);
+                er.Show();
+            }
+            
+        }
+
+        private void Static_Clicked(object sender, RoutedEventArgs e)
+        {
+            RoomManagment rooms = new RoomManagment();
+            Room ro = new Room();
+            List<Resource> rs = new List<Resource>();
+            ro = rooms.showRoom(ss);
+            for(int i = 0; i < ro.Resource.Count; i++)
+            {
+                if(ro.Resource[i].isStatic == true)
+                {
+                    rs.Add(ro.Resource[i]);
+                }
+            }
+            lvDataBinding.ItemsSource = rs;
+        }
+
+        private void Dynamic_Clicked(object sender, RoutedEventArgs e)
+        {
+            RoomManagment rooms = new RoomManagment();
+            Room ro = new Room();
+            List<Resource> rs = new List<Resource>();
+            ro = rooms.showRoom(ss);
+            for (int i = 0; i < ro.Resource.Count; i++)
+            {
+                if (ro.Resource[i].isStatic != true)
+                {
+                    rs.Add(ro.Resource[i]);
+                }
+            }
+            lvDataBinding.ItemsSource = rs;
         }
     }
 }

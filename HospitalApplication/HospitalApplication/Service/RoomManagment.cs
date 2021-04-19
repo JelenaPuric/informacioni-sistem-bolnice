@@ -62,6 +62,24 @@ namespace Logic
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
 
+        public void RemoveItem(Resource re)
+        {
+            for(int i = 0; i < rooms.Count; i++)
+            {
+                if(rooms[i].RoomId == re.roomId)
+                {
+                    for(int j = 0; j < rooms[i].Resource.Count; j++)
+                    {
+                        if(rooms[i].Resource[j].idItem == re.idItem)
+                        {
+                            rooms[i].Resource.RemoveAt(j);
+                        }
+                    }
+                }
+            }
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+        }
+
         public void editRoom(int password)
       {
          // TODO: implement
