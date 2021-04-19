@@ -71,7 +71,9 @@ namespace HospitalApplication.Windows.Secretary
 
             AccountType typeAccc = (AccountType)Enum.Parse(typeof(AccountType), "guestAccount");
 
-            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0);
+            MedicalRecord mr = new MedicalRecord(idPatient.ToString(), typeAccc, 0, firstName, lastName, "empty", jmbg, myDate, "empty", "empty", "empty", 0);
+
+            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0, mr);
 
             sc.CreatePatient(p);
           

@@ -103,7 +103,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void MedicalRecord_Click(object sender, RoutedEventArgs e)
         {
-            MedicalRecordWindow window = new MedicalRecordWindow();
+            IDMedicalRecord window = new IDMedicalRecord();
             window.Show();
 
         }

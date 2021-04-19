@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Model
 {
-   public class MedicalRecord
-   {
+    public class MedicalRecord
+    {
         private string id;
         private AccountType typeAcc;
         private MaritalStatus martialStatus;
@@ -18,6 +18,9 @@ namespace Model
         private string phoneNumber;
         private SexType sexType;
         //public static List<string> listAllergens;
+
+
+        public MedicalRecord() { }
 
         public MedicalRecord(string idd, AccountType typeAccc, MaritalStatus martialStatuss, string firstNamee, string lastNamee, string nameParentt, string jmbgg, DateTime dateOfBirthh,
                             string numberOfHealthCardd, string placeOfResidancee, string phoneNumberr, SexType sexTypee)
@@ -36,7 +39,7 @@ namespace Model
             sexType = sexTypee;
         }
 
-        
+
         public string Id
         {
             get { return id; }
