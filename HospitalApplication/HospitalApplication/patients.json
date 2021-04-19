@@ -1,1 +1,33 @@
-[{"typeAcc":0,"sexType":0,"jmbg":"512125","name":"Jankooo","lastName":"Jankoviccc","id":"2","dateOfBirth":"2021-04-02T00:00:00.0000000+02:00","phoneNumber":"123456789","email":"Empty","placeOfResidance":"Novi Sad","typeOfPerson":1,"username":"JankoJankovic","password":"123","examination":null,"medicalRecord":{"id":"2","typeAcc":0,"martialStatus":1,"firstName":"Jankooo","lastName":"Jankoviccc","nameParent":"Marko","jmbg":"512125","dateOfBirth":"2021-04-02T00:00:00.0000000+02:00","numberOfHealthCard":"124124","placeOfResidance":"Novi Sad","phoneNumber":"123456789","sexType":0}}]
+[
+  {
+    "typeAcc": 0,
+    "sexType": 0,
+    "jmbg": "512125",
+    "name": "Jankooo",
+    "lastName": "Jankoviccc",
+    "id": "2",
+    "dateOfBirth": "2021-04-02T00:00:00.0000000+02:00",
+    "phoneNumber": "123456789",
+    "email": "Empty",
+    "placeOfResidance": "Novi Sad",
+    "typeOfPerson": 1,
+    "username": "JankoJankovic",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "2",
+      "typeAcc": 0,
+      "martialStatus": 1,
+      "firstName": "Jankooo",
+      "lastName": "Jankoviccc",
+      "nameParent": "Marko",
+      "jmbg": "512125",
+      "dateOfBirth": "2021-04-02T00:00:00.0000000+02:00",
+      "numberOfHealthCard": "124124",
+      "placeOfResidance": "Novi Sad",
+      "phoneNumber": "123456789",
+      "sexType": 0
+    }
+  }
+
+]

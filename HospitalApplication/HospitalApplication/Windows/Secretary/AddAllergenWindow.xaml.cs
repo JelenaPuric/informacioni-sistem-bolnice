@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,14 @@ using System.Windows.Shapes;
 namespace HospitalApplication.Windows.Secretary
 {
     /// <summary>
-    /// Interaction logic for DefineAllergenWindow.xaml
+    /// Interaction logic for AddAllergenWindow.xaml
     /// </summary>
-    public partial class DefineAllergenWindow : Window
+    public partial class AddAllergenWindow : Window
     {
 
-        public DefineAllergenWindow()
+        private string idP;
+
+        public AddAllergenWindow(string idPatient)
         {
             InitializeComponent();
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -30,29 +33,33 @@ namespace HospitalApplication.Windows.Secretary
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
-        }
+            idP = idPatient;
 
+            AllergensManagement am = new AllergensManagement();
+            List<Allergen> defAllergens = am.GetAllAllergens();
+
+
+            foreach (var item in defAllergens)
+            {
+                ComboBox1.Items.Add(item.Name);
+            }
+
+
+
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AllergensManagement am = new AllergensManagement();
+            SecretaryController sc = new SecretaryController();
 
-           string typeAllergen = textBoxTypeAllergen.Text;
+            string cb = ComboBox1.Text;
+            string specName = textBoxTypeAllergen.Text;
 
-            int n = am.GetAllAllergens().Count;
-            int idAllergen;
-            if (n > 0)
-            {
-                idAllergen = Int32.Parse(am.GetAllAllergens()[n - 1].Id) + 1;
-            }
-            else idAllergen = 0;
+            //sc.GetAllPatients();
 
-            Allergen a = new Allergen(idAllergen.ToString(), typeAllergen);
-
-            am.CreateAllergen(a);
+           
 
 
-            Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

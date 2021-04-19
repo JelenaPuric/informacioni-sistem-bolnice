@@ -48,8 +48,6 @@ namespace HospitalApplication.Windows.Secretary
 
             _instance = this;
 
-
-            // PatientManagement pm = new PatientManagement();
             SecretaryController sc = new SecretaryController();
 
 

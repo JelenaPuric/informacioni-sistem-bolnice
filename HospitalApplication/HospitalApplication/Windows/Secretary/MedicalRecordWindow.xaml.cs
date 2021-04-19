@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace HospitalApplication.Windows.Secretary
         List<string> cbListTypeAllergens = new List<string>();
         private Patient p;
         private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
+        private string idPatient;
 
         public MedicalRecordWindow(string value)
         {
@@ -33,9 +35,11 @@ namespace HospitalApplication.Windows.Secretary
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
+            idPatient = value;
 
-           // cbListTypeAllergens.Add("nesto");
-           // ComboBoxTypeAllergens.Items.Add(cbListTypeAllergens[0]);
+
+            // cbListTypeAllergens.Add("nesto");
+            // ComboBoxTypeAllergens.Items.Add(cbListTypeAllergens[0]);
 
 
             SecretaryController sc = new SecretaryController();
@@ -116,21 +120,39 @@ namespace HospitalApplication.Windows.Secretary
             Close();
         }
 
+        /*
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            myTabControl.SelectedIndex = 0;
+        //    myTabControl.SelectedIndex = 0;
         }
 
         private void DefineAllergens_Click_1(object sender, RoutedEventArgs e)
         {
-            DefineAllergenWindow window = new DefineAllergenWindow(ComboBoxTypeAllergens);
-            window.Show();
-       
 
+
+
+
+
+           // DefineAllergenWindow window = new DefineAllergenWindow(ComboBoxTypeAllergens);
+            //window.Show();
             //foreach (var item in Enum.GetValues(typeof(AllergensType)))
             //{
             //    ComboBoxTypeAllergens.Items.Add(item);
             //}
+
+        }
+        */
+
+        private void DefineAllergen_Click(object sender, RoutedEventArgs e)
+        {
+             DefineAllergenWindow window = new DefineAllergenWindow();
+             window.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             AddAllergenWindow window = new AddAllergenWindow(idPatient);
+             window.Show();
 
         }
     }

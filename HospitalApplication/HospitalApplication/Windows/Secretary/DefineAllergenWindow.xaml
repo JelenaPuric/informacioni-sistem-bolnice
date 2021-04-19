@@ -5,17 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
         mc:Ignorable="d"
-        Title="DefineAllergenWindow" Height="403" Width="770">
-    <Grid Margin="0,0,23,8">
-        <TextBlock Text="Type 1:" TextWrapping="Wrap" Margin="154,44,432,183"/>
-        <TextBlock TextWrapping="Wrap" Margin="154,79,432,142"><Run Text="Type 2:"/><LineBreak/><Run/></TextBlock>
-        <TextBlock Text="Type 3:" TextWrapping="Wrap" Margin="154,114,432,113"/>
+        Title="DefineAllergenWindow" Height="350" Width="490">
+    <Grid Margin="0,0,-30,5">
 
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="70,81,0,0" Name="textBlockTypeAllergen" Text="Type of allergen:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="1.054,0.562" />
 
-        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,43,0,0" Name="textBoxType1" VerticalAlignment="Top" Width="238" />
-        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,77,0,0" Name="textBoxType2" VerticalAlignment="Top" Width="238" />
-        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,109,0,0" Name="textBoxType3" VerticalAlignment="Top" Width="238" />
-        <Button Content="Ok" Click="Button_Click" HorizontalAlignment="Left" Margin="305,212,0,0" VerticalAlignment="Top" Height="28" Width="84"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="189,81,0,0" Name="textBoxTypeAllergen" VerticalAlignment="Top" Width="222" />
+
+        <Button Content="Ok" Click="Button_Click" HorizontalAlignment="Left" Margin="111,204,0,0" VerticalAlignment="Top" Height="28" Width="84"/>
+        <Button Content="Cancel" Click="Button_Click_1" HorizontalAlignment="Left" Margin="258,204,0,0" VerticalAlignment="Top" Height="28" Width="84" RenderTransformOrigin="0.45,1.475"/>
 
 
 

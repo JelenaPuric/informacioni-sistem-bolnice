@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MedicalRecordWindow" Height="579" Width="812">
     <Grid>
-        <TabControl x:Name="myTabControl" Margin="0,0,-39,-36">
+        <TabControl x:Name="myTabControl" Margin="0,0,0,-23">
             <TabItem Header="MedicalRecord">
                 <Grid Margin="3,0,7,3" Background="White" Height="475" VerticalAlignment="Bottom">
                     <Grid.ColumnDefinitions>
@@ -68,25 +68,37 @@
 
             </TabItem>
 
-            <TabItem Header="Allergens" >
+            <TabItem Header="Allergens" Height="20" VerticalAlignment="Top" >
 
-                <Grid Height="519">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="34*"/>
+                        <ColumnDefinition Width="755*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Margin="180,6,0,0" Name="lvUsers" RenderTransformOrigin="0.5,0.5" Height="239" VerticalAlignment="Top" HorizontalAlignment="Left" Width="373"  Grid.Column="3">
+                        <ListView.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.161"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ListView.RenderTransform>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding Id}" />
+                                <GridViewColumn Header="Type of allergen" Width="120" DisplayMemberBinding="{Binding TypeAcc}" />
+                                <GridViewColumn Header="Specific name" Width="120" DisplayMemberBinding="{Binding Name}" />
 
-                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,56,0,0" Name="textTypeAllergens" Text="Type of allergy:" VerticalAlignment="Top" Width="110" />
-                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,95,0,0" Name="textSpec" Text="Specific name:" VerticalAlignment="Top" Width="110" />
-                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,142,0,0" Name="textComment" Text="Comment:" VerticalAlignment="Top" Width="110" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
 
 
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="249,95,0,0" Name="textBoxSpec" VerticalAlignment="Top" Width="238" />
-                    <TextBox Height="187" HorizontalAlignment="Left" Margin="249,142,0,0" Name="textBoxComment" VerticalAlignment="Top" Width="238" />
-                    <ComboBox Margin="249,56,0,0" Name="ComboBoxTypeAllergens" HorizontalAlignment="Left" VerticalAlignment="Top" Width="238" Height="23">
-
-                    </ComboBox>
-
-                    <Button Content="Update" Margin="205,413,469,57"  Click="Button_Click" Width="124"/>
-
-                    <Button Content="Define allergens" Margin="368,413,326,57" Click="DefineAllergens_Click_1"  Width="124"/>
-
+                    <Button Content="Add Allergen"  Click="Button_Click" HorizontalAlignment="Left" Margin="206,358,0,0" VerticalAlignment="Top" Width="118" Height="45" Grid.Column="3"/>
+                    <Button Content="Define allergens" Click="DefineAllergen_Click"  HorizontalAlignment="Left" Margin="377,358,0,0" VerticalAlignment="Top" Width="120" Height="45" Grid.Column="3"/>
 
                 </Grid>
 
