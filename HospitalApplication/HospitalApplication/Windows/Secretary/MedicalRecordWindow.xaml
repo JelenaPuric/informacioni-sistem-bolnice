@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
         mc:Ignorable="d"
-        Title="MedicalRecordWindow" Height="570" Width="812">
+        Title="MedicalRecordWindow" Height="579" Width="812">
     <Grid>
-        <TabControl>
+        <TabControl x:Name="myTabControl" Margin="0,0,-39,-36">
             <TabItem Header="MedicalRecord">
                 <Grid Margin="3,0,7,3" Background="White" Height="475" VerticalAlignment="Bottom">
                     <Grid.ColumnDefinitions>
@@ -38,7 +38,7 @@
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="34,90,0,0" Name="textBoxLastName" VerticalAlignment="Top" Width="222" Grid.Column="1" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="34,121,0,0" Name="textBoxJMBG" VerticalAlignment="Top" Width="222" Grid.Column="1" />
 
-                    <DatePicker Margin="34,179,302,270" Name="BoxDateTime" Grid.Column="1"></DatePicker>
+                    <DatePicker Margin="34,179,333,270" Name="BoxDateTime" Grid.Column="1"></DatePicker>
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="34,288,0,0" Name="textBoxPhoneNumber" VerticalAlignment="Top" Width="222" Grid.Column="1" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="34,249,0,0" Name="textBoxPlaceOfResidance" VerticalAlignment="Top" Width="222" Grid.Column="1" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="34,57,0,0" Name="textBoxNameParent" VerticalAlignment="Top" Width="222" Grid.Column="1" />
@@ -69,8 +69,32 @@
             </TabItem>
 
             <TabItem Header="Allergens" >
-                <Label Content="Content goes here..." />
+
+                <Grid Height="519">
+
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,56,0,0" Name="textTypeAllergens" Text="Type of allergy:" VerticalAlignment="Top" Width="110" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,95,0,0" Name="textSpec" Text="Specific name:" VerticalAlignment="Top" Width="110" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="150,142,0,0" Name="textComment" Text="Comment:" VerticalAlignment="Top" Width="110" />
+
+
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="249,95,0,0" Name="textBoxSpec" VerticalAlignment="Top" Width="238" />
+                    <TextBox Height="187" HorizontalAlignment="Left" Margin="249,142,0,0" Name="textBoxComment" VerticalAlignment="Top" Width="238" />
+                    <ComboBox Margin="249,56,0,0" Name="ComboBoxTypeAllergens" HorizontalAlignment="Left" VerticalAlignment="Top" Width="238" Height="23">
+
+                    </ComboBox>
+
+                    <Button Content="Update" Margin="205,413,469,57"  Click="Button_Click" Width="124"/>
+
+                    <Button Content="Define allergens" Margin="368,413,326,57" Click="DefineAllergens_Click_1"  Width="124"/>
+
+
+                </Grid>
+
+
             </TabItem>
+
+
+
 
         </TabControl>
     </Grid>

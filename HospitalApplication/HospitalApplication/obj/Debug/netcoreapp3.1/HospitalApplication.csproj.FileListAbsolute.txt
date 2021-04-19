@@ -823,3 +823,5 @@ C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplicatio
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CoreCompileInputs.cache
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.CopyComplete
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\DefineAllergenWindow.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\DefineAllergenWindow.baml
