@@ -53,7 +53,8 @@ namespace HospitalApplication.Windows.Doctor1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/doctor1/cancelexaminationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/doctor1/cancelexaminationwindow.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Doctor1\CancelExaminationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

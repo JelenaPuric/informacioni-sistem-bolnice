@@ -53,7 +53,7 @@ namespace HospitalApplication.Windows.Doctor1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/doctor1/moveoperationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/doctor1/moveoperationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Doctor1\MoveOperationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

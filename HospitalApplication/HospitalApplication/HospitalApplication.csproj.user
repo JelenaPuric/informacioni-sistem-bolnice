@@ -91,7 +91,13 @@
     <Compile Update="Windows\Patient1\WindowPatientNotifications.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\AddAllergenWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\DefineAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\DeletePatientWindow.xaml.cs">
@@ -103,7 +109,13 @@
     <Compile Update="Windows\Secretary\EditRegisterPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\IDMedicalRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\IDViewPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
@@ -210,7 +222,13 @@
     <Page Update="Windows\Patient1\WindowPatientNotifications.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Secretary\AddAllergenWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Secretary\AllPatientsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\DefineAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\DeletePatientWindow.xaml">
@@ -222,7 +240,13 @@
     <Page Update="Windows\Secretary\EditRegisterPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Secretary\IDMedicalRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Secretary\IDViewPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">

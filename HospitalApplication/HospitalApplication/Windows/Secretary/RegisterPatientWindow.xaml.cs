@@ -78,8 +78,11 @@ namespace HospitalApplication.Windows.Secretary
 
             TypeOfPerson typeOfPerson = (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient");
 
+            List<Allergen> listAllergens = new List<Allergen>();
+            MedicalRecord mr = new MedicalRecord(idPatient.ToString(), 0, 0, firstName, lastName, "empty", jmbg, myDate, "empty", placeOfResidance, phoneNumber, sex);
+            Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex, mr, listAllergens);
 
-            Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex);
+            
             
 
             sc.CreatePatient(p);

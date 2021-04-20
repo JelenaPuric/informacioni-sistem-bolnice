@@ -48,8 +48,6 @@ namespace HospitalApplication.Windows.Secretary
 
             _instance = this;
 
-
-            // PatientManagement pm = new PatientManagement();
             SecretaryController sc = new SecretaryController();
 
 
@@ -101,6 +99,11 @@ namespace HospitalApplication.Windows.Secretary
            // view.Refresh();
         }
 
+        private void MedicalRecord_Click(object sender, RoutedEventArgs e)
+        {
+            IDMedicalRecord window = new IDMedicalRecord();
+            window.Show();
 
+        }
     }
 }
