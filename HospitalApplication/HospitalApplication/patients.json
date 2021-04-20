@@ -1,0 +1,112 @@
+[
+  {
+    "typeAcc": 1,
+    "listAllergens": [
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "nekaHrana"
+      },
+      {
+        "id": "1",
+        "name": "Drink",
+        "specName": "cola"
+      },
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "hrana000"
+      },
+      {
+        "id": "1",
+        "name": "Drink",
+        "specName": "drink111"
+      },
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "food124124"
+      }
+    ],
+    "sexType": 0,
+    "jmbg": "512512125",
+    "name": "Pero",
+    "lastName": "Perovic",
+    "id": "0",
+    "dateOfBirth": "2021-04-08T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "PeroPerovic",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "0",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "Pero",
+      "lastName": "Perovic",
+      "nameParent": "empty",
+      "jmbg": "512512125",
+      "dateOfBirth": "2021-04-08T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "empty",
+      "phoneNumber": "empty",
+      "sexType": 0
+    }
+  },
+  {
+    "typeAcc": 0,
+    "listAllergens": [
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "fooooodd111"
+      },
+      {
+        "id": "1",
+        "name": "Drink",
+        "specName": "aaa"
+      },
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "foodness"
+      },
+      {
+        "id": "0",
+        "name": "Food",
+        "specName": "aaaaa"
+      }
+    ],
+    "sexType": 0,
+    "jmbg": "152521125",
+    "name": "Marko",
+    "lastName": "Markovic",
+    "id": "1",
+    "dateOfBirth": "2021-03-30T22:00:00.0000000Z",
+    "phoneNumber": "afs",
+    "email": "asfsaf",
+    "placeOfResidance": "as",
+    "typeOfPerson": 1,
+    "username": "afs",
+    "password": "142",
+    "examination": null,
+    "medicalRecord": {
+      "id": "1",
+      "typeAcc": 0,
+      "martialStatus": 0,
+      "firstName": "Marko",
+      "lastName": "Markovic",
+      "nameParent": "empty",
+      "jmbg": "152521125",
+      "dateOfBirth": "2021-03-30T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "as",
+      "phoneNumber": "afs",
+      "sexType": 0
+    }
+  }
+
+]
