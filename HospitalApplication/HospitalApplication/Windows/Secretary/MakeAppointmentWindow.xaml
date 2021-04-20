@@ -10,19 +10,20 @@
 
 
         <Label Content="Scheduled appointments" HorizontalAlignment="Left" FontSize="30" Foreground="Black" Margin="230,183,0,508"/>
-        <ListView Margin="115,277,40,239" Name="lvUsers" ScrollViewer.CanContentScroll="True" >
+        <ListView Margin="35,277,-40,239" Name="lvUsers" ScrollViewer.CanContentScroll="True" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="35" Header="ID" DisplayMemberBinding="{Binding DoctorsId}" />
-                    <GridViewColumn Width="120" Header="Type Appointment" DisplayMemberBinding="{Binding DoctorsId}" />
-                    <GridViewColumn Width="200" Header="Doctor Name" DisplayMemberBinding="{Binding DoctorsId}" />
-                    <GridViewColumn Width="120" Header="Start Time" DisplayMemberBinding="{Binding PatientsId}" />
-                    <GridViewColumn Width="120" Header="Room" DisplayMemberBinding="{Binding RoomId}" />
+                    <GridViewColumn Width="120" Header="Type Appointment" DisplayMemberBinding="{Binding ExaminationType}" />
+                    <GridViewColumn Width="120" Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
+                    <GridViewColumn Width="120" Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
+                    <GridViewColumn Width="120" Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />
+                    <GridViewColumn Width="120" Header="Room ID" DisplayMemberBinding="{Binding RoomId}" />
+                    <GridViewColumn Width="120" Header="Examination ID" DisplayMemberBinding="{Binding ExaminationId}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button Click="MakeAppointment_Click" Content="Make appointment" HorizontalAlignment="Left" Margin="81,46,0,0" VerticalAlignment="Top" Height="70" Width="132"/>
+        <Button Click="AddAppointment_Click" Content="Add appointment" HorizontalAlignment="Left" Margin="81,46,0,0" VerticalAlignment="Top" Height="70" Width="132"/>
         <Button Click="MoveAppointment_Click" Content="Move appointment" HorizontalAlignment="Left" Margin="247,46,0,0" VerticalAlignment="Top" Height="70" Width="132"/>
         <Button Click="CancelAppointment_Click" Content="Cancel appointment" Margin="413,46,180,0" VerticalAlignment="Top" Height="70"/>
         <Button Click="Refresh_Click" Content="Refresh List" HorizontalAlignment="Left" Margin="573,46,0,0" VerticalAlignment="Top" Height="70" Width="130"/>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HospitalApplication.Controller;
+using Logic;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,6 +20,11 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class MakeAppointmentWindow : Window
     {
+
+        ExaminationManagement m = ExaminationManagement.Instance;
+        SecretaryController sc = new SecretaryController();
+        string idP;
+        string usernamePatient;
         public MakeAppointmentWindow(string idPatient)
         {
             InitializeComponent();
@@ -27,13 +35,19 @@ namespace HospitalApplication.Windows.Secretary
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
 
+          
+            idP = idPatient;
+            usernamePatient = sc.getPatient(idP).Username;
 
+
+            List<Examination> examinations = m.GetExaminations(sc.getPatient(idP).Username);
+            lvUsers.ItemsSource = examinations;
 
         }
 
-        private void MakeAppointment_Click(object sender, RoutedEventArgs e)
+        private void AddAppointment_Click(object sender, RoutedEventArgs e)
         {
-            AddAppointment window = new AddAppointment();
+            AddAppointment window = new AddAppointment(usernamePatient);
             window.Show();
         }
 
@@ -50,7 +64,8 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-
+            List<Examination> examinations = m.GetExaminations(sc.getPatient(idP).Username);
+            lvUsers.ItemsSource = examinations;
         }
     }
 }

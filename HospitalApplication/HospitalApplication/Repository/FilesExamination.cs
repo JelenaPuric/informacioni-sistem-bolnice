@@ -18,6 +18,8 @@ namespace WorkWithFiles
                 string[] examination = line.Split(",");
                 //DateTime myDate = DateTime.ParseExact(pregled[3], "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime myDate = DateTime.Parse(examination[3]);
+
+
                 Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4]);
                 examinations.Add(pr);
             }

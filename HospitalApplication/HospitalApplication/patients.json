@@ -1,1 +1,82 @@
-[{"typeAcc":1,"listAllergens":[{"id":"0","name":"food","specName":"food1111"},{"id":"0","name":"food","specName":"fsafsaf"}],"sexType":0,"jmbg":"52152152","name":"Markooo","lastName":"Markovicc","id":"0","dateOfBirth":"2021-04-05T22:00:00.0000000Z","phoneNumber":"Empty","email":"Empty","placeOfResidance":"Empty","typeOfPerson":1,"username":"MarkoMarkovic","password":"123","examination":null,"medicalRecord":{"id":"0","typeAcc":1,"martialStatus":0,"firstName":"Markooo","lastName":"Markovicc","nameParent":"empty","jmbg":"52152152","dateOfBirth":"2021-04-05T22:00:00.0000000Z","numberOfHealthCard":"empty","placeOfResidance":"Empty","phoneNumber":"Empty","sexType":0}},{"typeAcc":1,"listAllergens":[],"sexType":0,"jmbg":"321564","name":"Jovan","lastName":"Jovanovic","id":"1","dateOfBirth":"2021-04-14T00:00:00.0000000+02:00","phoneNumber":"Empty","email":"Empty","placeOfResidance":"Empty","typeOfPerson":1,"username":"JovanJovanovic","password":"123","examination":null,"medicalRecord":{"id":"1","typeAcc":1,"martialStatus":0,"firstName":"Jovan","lastName":"Jovanovic","nameParent":"empty","jmbg":"321564","dateOfBirth":"2021-04-14T00:00:00.0000000+02:00","numberOfHealthCard":"empty","placeOfResidance":"empty","phoneNumber":"empty","sexType":0}}]
+[
+  {
+    "typeAcc": 1,
+    "listAllergens": [
+      {
+        "id": "0",
+        "name": "food",
+        "specName": "food1111"
+      },
+      {
+        "id": "0",
+        "name": "food",
+        "specName": "fsafsaf"
+      }
+    ],
+    "sexType": 0,
+    "jmbg": "52152152",
+    "name": "Markooo",
+    "lastName": "Markovicc",
+    "id": "0",
+    "dateOfBirth": "2021-04-05T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "MarkoMarkovic",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "0",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "Markooo",
+      "lastName": "Markovicc",
+      "nameParent": "empty",
+      "jmbg": "52152152",
+      "dateOfBirth": "2021-04-05T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "Empty",
+      "phoneNumber": "Empty",
+      "sexType": 0
+    }
+  },
+  {
+    "typeAcc": 1,
+    "listAllergens": [
+      {
+        "id": "0",
+        "name": "food",
+        "specName": "hrana"
+      }
+    ],
+    "sexType": 0,
+    "jmbg": "321564",
+    "name": "Jovan",
+    "lastName": "Jovanovic",
+    "id": "1",
+    "dateOfBirth": "2021-04-13T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "JovanJovanovic",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "1",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "Jovan",
+      "lastName": "Jovanovic",
+      "nameParent": "empty",
+      "jmbg": "321564",
+      "dateOfBirth": "2021-04-13T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "empty",
+      "phoneNumber": "empty",
+      "sexType": 0
+    }
+  }
+
+]
