@@ -224,3 +224,11 @@ C:\Users\orz\Desktop\sve\simsProj9\informacioni-sistem-bolnice\HospitalApplicati
 C:\Users\orz\Desktop\sve\simsProj9\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\orz\Desktop\sve\simsProj9\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\orz\Desktop\sve\simsProj9\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AddAppointment.g.cs
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\IDMakeAppointment.g.cs
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MakeAppointmentWindow.g.cs
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MoveAppointment.g.cs
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AddAppointment.baml
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\IDMakeAppointment.baml
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MakeAppointmentWindow.baml
+C:\Users\Olgica\Desktop\SIMS-NN\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\MoveAppointment.baml
