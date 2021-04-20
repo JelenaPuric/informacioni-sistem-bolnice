@@ -5663,19 +5663,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Olgica\\.nuget\\packages\\": {}
+    "C:\\Users\\KORISNIK\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Olgica\\Desktop\\SIMS-NN\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectUniqueName": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
-      "projectPath": "C:\\Users\\Olgica\\Desktop\\SIMS-NN\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "packagesPath": "C:\\Users\\Olgica\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Olgica\\Desktop\\SIMS-NN\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+      "projectPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "packagesPath": "C:\\Users\\KORISNIK\\.nuget\\packages\\",
+      "outputPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Olgica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KORISNIK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5727,13 +5727,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Olgica\\Desktop\\SIMS-NN\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
