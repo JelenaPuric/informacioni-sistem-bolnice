@@ -32,6 +32,8 @@ namespace HospitalApplication
         private SerializationAndDeserilazationOfRooms r = new SerializationAndDeserilazationOfRooms();
         private WorkWithFiles.FilesDoctor fd = new WorkWithFiles.FilesDoctor();
         private List<Doctor> doctors = new List<Doctor>();
+        private List<Room> rooms = new List<Room>();
+        private int roomIndex = 0;
 
         public WindowExaminationSchedule()
         {
@@ -41,6 +43,8 @@ namespace HospitalApplication
             {
                 Combo3.Items.Add(doctors[i].Username.ToString());
             }
+            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+            debagLabel.Content = rooms[0].Scheduled[rooms[0].Scheduled.Count-1].ToString();
         }
 
         private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
@@ -111,7 +115,32 @@ namespace HospitalApplication
                             okDate = false;
                         }
                     }
-                    if (okDate == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
+                    //proveri da li datum odgovara sobi
+                    bool roomIsFree = true;
+                    rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                    for (int ii = 0; ii < rooms.Count; ii++)
+                    {
+                        roomIsFree = true;
+                        //ako je null znaci da je slobodna i izadji iz petlje
+                        if (rooms[ii].Scheduled == null)
+                        {
+                            roomIndex = ii;
+                            break;
+                        }
+                        for (int jj = 0; jj < rooms[ii].Scheduled.Count; jj++)
+                        {
+                            if (rooms[ii].Scheduled[jj] == newDate)
+                            {
+                                roomIsFree = false;
+                            }
+                        }
+                        if (roomIsFree == true)
+                        {
+                            roomIndex = ii;
+                            break;
+                        }
+                    }
+                    if (okDate == true && roomIsFree == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
                 }
             }
 
@@ -142,7 +171,32 @@ namespace HospitalApplication
                                     okDate = false;
                                 }
                             }
-                            if (okDate == true && newDate > date2) newDates.Add(newDate);
+                            //proveri da li datum odgovara sobi
+                            bool roomIsFree = true;
+                            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                            for (int ii = 0; ii < rooms.Count; ii++)
+                            {
+                                roomIsFree = true;
+                                //ako je null znaci da je slobodna i izadji iz petlje
+                                if (rooms[ii].Scheduled == null)
+                                {
+                                    roomIndex = ii;
+                                    break;
+                                }
+                                for (int jj = 0; jj < rooms[ii].Scheduled.Count; jj++)
+                                {
+                                    if (rooms[ii].Scheduled[jj] == newDate)
+                                    {
+                                        roomIsFree = false;
+                                    }
+                                }
+                                if (roomIsFree == true)
+                                {
+                                    roomIndex = ii;
+                                    break;
+                                }
+                            }
+                            if (okDate == true && roomIsFree == true && newDate > date2) newDates.Add(newDate);
                         }
                     }
                     //3 dana unazad
@@ -160,7 +214,32 @@ namespace HospitalApplication
                                     okDate = false;
                                 }
                             }
-                            if (okDate == true && newDate < date1 && newDate > DateTime.Now) newDates.Add(newDate);
+                            //proveri da li datum odgovara sobi
+                            bool roomIsFree = true;
+                            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                            for (int ii = 0; ii < rooms.Count; ii++)
+                            {
+                                roomIsFree = true;
+                                //ako je null znaci da je slobodna i izadji iz petlje
+                                if (rooms[ii].Scheduled == null)
+                                {
+                                    roomIndex = ii;
+                                    break;
+                                }
+                                for (int jj = 0; jj < rooms[ii].Scheduled.Count; jj++)
+                                {
+                                    if (rooms[ii].Scheduled[jj] == newDate)
+                                    {
+                                        roomIsFree = false;
+                                    }
+                                }
+                                if (roomIsFree == true)
+                                {
+                                    roomIndex = ii;
+                                    break;
+                                }
+                            }
+                            if (okDate == true && roomIsFree == true && newDate < date1 && newDate > DateTime.Now) newDates.Add(newDate);
                         }
                     }
                     newDates.Sort((x, y) => DateTime.Compare(x, y));
@@ -191,7 +270,32 @@ namespace HospitalApplication
                                         okDate = false;
                                     }
                                 }
-                                if (okDate == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
+                                //proveri da li datum odgovara sobi
+                                bool roomIsFree = true;
+                                rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                                for (int ii = 0; ii < rooms.Count; ii++)
+                                {
+                                    roomIsFree = true;
+                                    //ako je null znaci da je slobodna i izadji iz petlje
+                                    if (rooms[ii].Scheduled == null)
+                                    {
+                                        roomIndex = ii;
+                                        break;
+                                    }
+                                    for (int jj = 0; jj < rooms[ii].Scheduled.Count; jj++)
+                                    {
+                                        if (rooms[ii].Scheduled[jj] == newDate)
+                                        {
+                                            roomIsFree = false;
+                                        }
+                                    }
+                                    if (roomIsFree == true)
+                                    {
+                                        roomIndex = ii;
+                                        break;
+                                    }
+                                }
+                                if (okDate == true && roomIsFree == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
                             }
                         }
                         if (newDates.Count > 0) break;
@@ -343,6 +447,17 @@ namespace HospitalApplication
                 }
             }*/
 
+            //provera da li je termin slobodan za pacijenta
+            /*FilesExamination fe = new FilesExamination();
+            List<Examination> examinationss = fe.LoadFromFile();
+            bool patientIsFree = true;
+            for (int i = 0; i < examinationss.Count; i++) {
+                if (examinationss[i].PatientsId == l.Username.Text && examinationss[i].ExaminationStart == d) {
+                    patientIsFree = false;
+                    break;
+                }
+            }*/
+
             //proveri da li je termin slobodan za izabranog lekara
             int index = Combo3.SelectedIndex;
             for (int j = 0; j < doctors[index].Scheduled.Count; j++)
@@ -353,12 +468,46 @@ namespace HospitalApplication
                 }
             }
 
-            if (isFree)
+            bool roomIsFree = false;
+            int roomIndex = 0;
+            //proveri da li postoji slobodna soba
+            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+            for (int i = 0; i < rooms.Count; i++) {
+                //ako je null znaci da je slobodna i izadji iz petlje
+                if (rooms[i].Scheduled == null) {
+                    roomIsFree = true;
+                    roomIndex = i;
+                    break;
+                }
+                bool ok = true;
+                for (int j = 0; j < rooms[i].Scheduled.Count; j++) {
+                    if (rooms[i].Scheduled[j] == d) {
+                        ok = false;
+                    }
+                }
+                if (ok == true) {
+                    roomIsFree = true;
+                    roomIndex = i;
+                    break;
+                }
+            }
+
+            if (isFree && roomIsFree)
             {
+                //dodavanje termina doktoru
                 s2 = doctors[index].Username;
                 doctors[index].Scheduled.Add(d);
                 doc.WriteInFile(doctors);
-                Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination + 1).ToString());
+                //dodavanje termina sobi, ako je null prvo inicijalizovati niz datuma
+                if (rooms[roomIndex].Scheduled == null)
+                {
+                    rooms[roomIndex].Scheduled = new List<DateTime>();
+                }
+                //ne znam zasto ali kad se datum doda u Listu datetime u json za rooms, datum se pomeri za 2 sata unazad, pa moram rucno da dodam sate
+                rooms[roomIndex].Scheduled.Add(d.AddHours(2));
+                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+                //dodavanje pregleda
+                Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString());
                 controller.ScheduleExamination(ex);
                 w.UpdateView();
             }

@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using HospitalApplication.Controller;
 using Logic;
 using Model;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -102,14 +103,58 @@ namespace HospitalApplication.Windows.Patient1
                 }
             }*/
 
+            List<Room> rooms = new List<Room>();
+            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+
+            bool roomIsFree = true;
+            string roomId = e2.RoomId;
+            //proveri da li postoji slobodna soba
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId.ToString() == roomId) {
+                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                    {
+                        if (rooms[i].Scheduled[j] == newDate)
+                        {
+                            roomIsFree = false;
+                        }
+                    }
+                    break;
+                }
+            }
 
             //ako je nov termin slobodan za doktora, onda mu skloni stari a doda nov termin, promeni datum pregleda
             controller.updateDoctors();
-            if (controller.doctorsExaminationExists(e2.DoctorsId, newDate) == false)
+            if (controller.doctorsExaminationExists(e2.DoctorsId, newDate) == false && roomIsFree == true)
             {
                 controller.removeExaminationFromDoctor(e2.DoctorsId, oldDate);
                 controller.addExaminationToDoctor(e2.DoctorsId, newDate);
                 controller.MoveExamination(e2.ExaminationId, newDate);
+                //skloni stari datum sobi
+                for (int i = 0; i < rooms.Count; i++)
+                {
+                    if (rooms[i].RoomId.ToString() == roomId)
+                    {
+                        for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                        {
+                            if (rooms[i].Scheduled[j] == oldDate)
+                            {
+                                rooms[i].Scheduled.RemoveAt(j);
+                            }
+                        }
+                        break;
+                    }
+                }
+                //dodaj nov datum sobi
+                for (int i = 0; i < rooms.Count; i++)
+                {
+                    if (rooms[i].RoomId.ToString() == roomId)
+                    {
+                        rooms[i].Scheduled.Add(newDate.AddHours(2));
+                        break;
+                    }
+                }
+                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
                 w.UpdateView();
             }
 

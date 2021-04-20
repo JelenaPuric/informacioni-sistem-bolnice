@@ -122,7 +122,7 @@ namespace HospitalApplication
                     WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
                     List<Doctor> doctors = doc.LoadFromFile();
                     DateTime dt = e2.ExaminationStart;
-
+                    //skloni datum lekaru
                     for (int i = 0; i < doctors.Count; i++)
                     {
                         if (doctors[i].Username == e2.DoctorsId)
@@ -137,6 +137,23 @@ namespace HospitalApplication
 
                             doc.WriteInFile(doctors);
                             break;
+                        }
+                    }
+                    //skloni datum sobi
+                    List<Room> rooms = new List<Room>();
+                    rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                    for (int i = 0; i < rooms.Count; i++) {
+                        if (rooms[i].Scheduled == null) continue;
+                        if (rooms[i].RoomId.ToString() == e2.RoomId)
+                        {
+                            for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                            {
+                                if (rooms[i].Scheduled[j] == dt) {
+                                    rooms[i].Scheduled.RemoveAt(j);
+                                    break;
+                                }
+                            }
+                            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
                         }
                     }
 
