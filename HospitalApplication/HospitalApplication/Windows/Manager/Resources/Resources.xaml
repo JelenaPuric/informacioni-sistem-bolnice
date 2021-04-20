@@ -22,6 +22,7 @@
         <Button Content="Delete "  HorizontalAlignment="Left" Margin="180,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Delete_Clicked" />
         <Button Content="Static "  HorizontalAlignment="Left" Margin="570,50,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Static_Clicked" />
         <Button Content="Dynamic "  HorizontalAlignment="Left" Margin="570,105,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Dynamic_Clicked" />
+        <Button Content="Switching "  HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Switching_Clicked" />
         <Button Content="Edit"  HorizontalAlignment="Left" Margin="310,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="EditResource_Clicked" />
 
         <Button Content="Refresh List" HorizontalAlignment="Left" Margin="570,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Refresh_Clicked" />

@@ -21,6 +21,7 @@ namespace HospitalApplication.Windows.Manager.Resources
     public partial class Resources : Window
     {
         private int ss;
+        private bool ddd;
         public Resources(int s)
         {
             ss = s;
@@ -89,6 +90,7 @@ namespace HospitalApplication.Windows.Manager.Resources
                 }
             }
             lvDataBinding.ItemsSource = rs;
+            ddd = true;
         }
 
         private void Dynamic_Clicked(object sender, RoutedEventArgs e)
@@ -105,6 +107,15 @@ namespace HospitalApplication.Windows.Manager.Resources
                 }
             }
             lvDataBinding.ItemsSource = rs;
+            ddd = false;
+        }
+
+        private void Switching_Clicked(object sender, RoutedEventArgs e)
+        {
+            if(ddd != true)
+            {
+
+            }
         }
     }
 }

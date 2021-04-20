@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Manager.Resources"
         mc:Ignorable="d"
-        Title="SearchRoom" Height="450" Width="800">
+        Title="SearchRoom" Height="220" Width="650">
     <Grid>
-        <Label Content="Enter the room id you want to search: " HorizontalAlignment="Left" Margin="217,46,0,0" VerticalAlignment="Top"/>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="218,77,0,0" Name="forSearch" VerticalAlignment="Top" Width="222" />
-        <Button Content="Search" Height="23" HorizontalAlignment="Left" Margin="293,115,0,0" Name="edit" VerticalAlignment="Top" Width="70" Click="Search_Clicked" />
+        <Label Content="Enter the room id you want to search: " HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,77,0,0" Name="forSearch" VerticalAlignment="Top" Width="222" />
+        <Button Content="Search" Height="23" HorizontalAlignment="Center" Margin="0,116,0,0" Name="edit" VerticalAlignment="Top" Width="70" Click="Search_Clicked" />
     </Grid>
 </Window>

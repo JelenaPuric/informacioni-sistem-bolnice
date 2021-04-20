@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:HospitalApplication.Windows.Manager.Rooms"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:mocal="clr-namespace:Model" 
-             Title="Edit room" Height="450" Width="550">
+             Title="Edit room" Height="350" Width="510">
     <Window.Resources>
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
                         ObjectType="{x:Type sys:Enum}">
@@ -36,8 +36,8 @@
 
         <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}}" Height="23" HorizontalAlignment="Left" Margin="183,170,0,66" Name="comboBoxRoomType" VerticalAlignment="Top" Width="222"/>
 
-        <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="250,210,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="Submit_Clicked"/>
-        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="340,210,0,0" Name="Cancel" VerticalAlignment="Top" Width="70" Click="Cancel_Clicked" />
+        <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="180,230,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="Submit_Clicked"/>
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="270,230,0,0" Name="Cancel" VerticalAlignment="Top" Width="70" Click="Cancel_Clicked" />
 
     </Grid>
 </Window>
