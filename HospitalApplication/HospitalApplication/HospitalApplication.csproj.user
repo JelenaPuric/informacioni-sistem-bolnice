@@ -13,6 +13,9 @@
     <Compile Update="Windows\Manager\Resources\EditResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Manager\Resources\MoveResource.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Manager\Resources\Resources.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -127,6 +130,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Resources\EditResource.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Resources\MoveResource.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Resources\Resources.xaml">

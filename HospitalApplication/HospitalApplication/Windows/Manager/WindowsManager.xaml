@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Manager"
         mc:Ignorable="d"
         Title="WindowsManager" Height="450" Width="800">
-    <Grid>
-        <Button Content="Rooms" Margin="367,10,352,377" RenderTransformOrigin="-4.416,1.667" Click="Rooms_Clicked"/>
-        <Button Content="Resources" Margin="477,10,242,377" RenderTransformOrigin="-4.416,1.667" Click="Resources_Clicked"/>
+    <Grid RenderTransformOrigin="0.283,0.488" Height="434" VerticalAlignment="Center" HorizontalAlignment="Left" Width="800">
+        <Button Content="Rooms" Height="40" Width="120" Click="Rooms_Clicked" Margin="245,44,434,350" />
+        <Button Content="Resources" Height="40" Width="120"  Click="Resources_Clicked" Margin="444,44,235,350"/>
     </Grid>
 </Window>
