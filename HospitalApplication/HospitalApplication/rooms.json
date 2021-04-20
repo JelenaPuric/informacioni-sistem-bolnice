@@ -1,1 +1,58 @@
-[{"roomId":1955,"numberOfFloors":12,"roomNumber":2,"capacity":12,"operationRoomType":0,"roomType":0,"occupied":false,"scheduled":null,"resource":[{"idItem":542148,"name":"Stolica","quantity":2,"manufacturer":"Stolica","isStatic":true,"roomId":1955},{"idItem":184407,"name":"Nesto","quantity":12,"manufacturer":"afafs","isStatic":true,"roomId":1955},{"idItem":25081,"name":"Stoow","quantity":21,"manufacturer":"Jovicxx","isStatic":true,"roomId":1955},{"idItem":243253,"name":"fsaasf","quantity":100,"manufacturer":"afsafs","isStatic":false,"roomId":1955}]},{"roomId":1905,"numberOfFloors":2,"roomNumber":2,"capacity":5,"operationRoomType":0,"roomType":3,"occupied":false,"scheduled":null,"resource":[{"idItem":243253,"name":"fsaasf","quantity":99,"manufacturer":"afsafs","isStatic":false,"roomId":1905}]}]
+[
+  {
+    "roomId": 1955,
+    "numberOfFloors": 12,
+    "roomNumber": 2,
+    "capacity": 12,
+    "operationRoomType": 0,
+    "roomType": 0,
+    "occupied": false,
+    "scheduled": null,
+    "resource": [
+      {
+        "idItem": 982755,
+        "name": "Aspirin",
+        "quantity": 45,
+        "manufacturer": "Kuzman",
+        "isStatic": false,
+        "roomId": 1955
+      },
+      {
+        "idItem": 734739,
+        "name": "Respiratori",
+        "quantity": 5,
+        "manufacturer": "Vucic",
+        "isStatic": true,
+        "roomId": 1955
+      }
+    ]
+  },
+  {
+    "roomId": 1905,
+    "numberOfFloors": 2,
+    "roomNumber": 2,
+    "capacity": 5,
+    "operationRoomType": 0,
+    "roomType": 3,
+    "occupied": false,
+    "scheduled": null,
+    "resource": [
+      {
+        "idItem": 184407,
+        "name": "Nesto",
+        "quantity": 12,
+        "manufacturer": "afafs",
+        "isStatic": true,
+        "roomId": 1955
+      },
+      {
+        "idItem": 734739,
+        "name": "Respiratori",
+        "quantity": 5,
+        "manufacturer": "Vucic",
+        "isStatic": true,
+        "roomId": 1955
+      }
+    ]
+  }
+]

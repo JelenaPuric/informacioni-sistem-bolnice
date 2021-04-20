@@ -37,27 +37,25 @@ namespace HospitalApplication.Windows.Manager.Resources
         {
             Resource re = new Resource();
             re.roomId = int.Parse(textBoxRoomId.Text);
-
-            if (int.Parse(textBoxQuantity.Text) > int.Parse(textBoxKolicina.Text)) {
-                re.quantity = int.Parse(textBoxKolicina.Text);
-            }
-            else {
-                MessageBox.Show(" You don't have that many resources " );
-            }
             re.name = rebus.name;
             re.isStatic = rebus.isStatic;
             re.manufacturer = rebus.manufacturer;
             re.idItem = rebus.idItem;
 
-
             RoomManagment rm = new RoomManagment();
-            rm.TransferDynamicItem(re, int.Parse(textBoxKolicina.Text));
-            rm.RemoveQuantity(rebus, int.Parse(textBoxKolicina.Text));
 
-            if (rebus.quantity == 0)
-                rm.RemoveItem(rebus);
+            if (int.Parse(textBoxQuantity.Text) > int.Parse(textBoxKolicina.Text)) {
+                re.quantity = int.Parse(textBoxKolicina.Text);
+                rm.TransferDynamicItem(re, int.Parse(textBoxKolicina.Text));
+                rm.RemoveQuantity(rebus, int.Parse(textBoxKolicina.Text));
 
-            Close();
+                if (rebus.quantity == 0)
+                    rm.RemoveItem(rebus);
+                Close();
+            }
+            else {
+                MessageBox.Show(" You don't have that many resources " );
+            }
         }
     }
 }

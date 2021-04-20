@@ -120,6 +120,11 @@ namespace HospitalApplication.Windows.Manager.Resources
                     MoveDynamicResource mdr = new MoveDynamicResource(selected);
                     mdr.Show();
                 }
+                else
+                {
+                    MoveStaticResource msr = new MoveStaticResource(selected);
+                    msr.Show();
+                }
             }
             
         }
