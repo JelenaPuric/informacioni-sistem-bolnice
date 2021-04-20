@@ -105,6 +105,12 @@ namespace HospitalApplication
             //string id = (string)lvUsers.SelectedItems[0];
             //string id = (string)lvUsers.SelectedItem;
 
+            //ako nista nije selektovano zavrsi funkciju
+            if (!(lvUsers.SelectedIndex > -1))
+            {
+                return;
+            }
+
             Examination e2 = (Examination)lvUsers.SelectedItem;
             string id = e2.ExaminationId;
 
@@ -145,6 +151,11 @@ namespace HospitalApplication
 
         private void MoveExamination_Click(object sender, RoutedEventArgs e)
         {
+            //ako nista nije selektovano zavrsi funkciju
+            if (!(lvUsers.SelectedIndex > -1))
+            {
+                return;
+            }
             Windows.Patient1.WindowExaminationMove window = new Windows.Patient1.WindowExaminationMove();
             window.Show();
         }
@@ -157,6 +168,11 @@ namespace HospitalApplication
 
         private void EditExamination_Click(object sender, RoutedEventArgs e)
         {
+            //ako nista nije selektovano zavrsi funkciju
+            if (!(lvUsers.SelectedIndex > -1))
+            {
+                return;
+            }
             WindowExaminationEdit window = new WindowExaminationEdit();
             window.Show();
         }

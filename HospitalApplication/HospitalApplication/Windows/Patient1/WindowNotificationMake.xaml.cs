@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Model;
 using HospitalApplication.Logic;
+using HospitalApplication.Controller;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -23,6 +24,7 @@ namespace HospitalApplication.Windows.Patient1
         private int idNotification = 100000;
         private WindowPatientNotifications w = WindowPatientNotifications.Instance;
         private MainWindow mw = MainWindow.Instance;
+        private PatientController controller = new PatientController();
 
         public WindowNotificationMake()
         {
@@ -33,10 +35,10 @@ namespace HospitalApplication.Windows.Patient1
         {
             DateTime date = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 24; i++)
             {
-                appointment.Add((7 + i, 0, 0));
-                appointment.Add((7 + i, 30, 0));
+                appointment.Add((i, 0, 0));
+                appointment.Add((i, 30, 0));
             }
             (int, int, int) a = appointment[Combo.SelectedIndex];
             TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
@@ -52,6 +54,7 @@ namespace HospitalApplication.Windows.Patient1
             string comment = Description.Text;
             string repeat = Days.Text;
 
+            //pravi se unikatan id za notifikacije
             List<Notification> notifications = ntf.Notifications;
             for (int i = 0; i < notifications.Count; i++)
             {
@@ -62,7 +65,7 @@ namespace HospitalApplication.Windows.Patient1
             }
 
             Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mw.EnteredUsername);
-            ntf.ScheduleNotification(n);
+            controller.ScheduleNotification(n);
 
             w.UpdateView();
             Close();

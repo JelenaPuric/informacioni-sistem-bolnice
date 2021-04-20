@@ -90,7 +90,7 @@ namespace HospitalApplication.Logic
             f.WriteInFile(notifications);
         }
 
-        public List<DateTime> GetDates(string username)
+        /*public List<DateTime> GetDates(string username)
         {
             List<DateTime> dates = new List<DateTime>();
             DateTime date = new DateTime(2021, 4, 13, 10, 42, 0);
@@ -107,7 +107,7 @@ namespace HospitalApplication.Logic
                 }
             }
             return dates;
-        }
+        }*/
 
         /*public List<Examination> GetExaminations(String patientName)
         {

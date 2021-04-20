@@ -52,6 +52,8 @@
                 <ComboBoxItem Content="19:30"/>
             </ComboBox>
             <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 50"></Button>
+            <Label Content="" Name="oldDateLabel"/>
+            <Label Content="" Name="newDateLabel"/>
         </StackPanel>
     </Grid>
 </Window>

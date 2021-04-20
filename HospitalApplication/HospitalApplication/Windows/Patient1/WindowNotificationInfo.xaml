@@ -36,14 +36,12 @@
                 <Label Content="Description:" Grid.Column="0"/>
                 <TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="Description" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
             </Grid>
-            <Label Content="* optional" HorizontalAlignment="Right" Foreground="Red"/>
 
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                 <Label Content="Repeat next  "/>
                 <TextBox x:Name="Days" Width="40" ToolTip="number of days" IsReadOnly="True"/>
                 <Label Content="  days."/>
             </StackPanel>
-            <Label Content="* optional" Foreground="red"/>
             <Button Background="green" Foreground="white" Content="Close" x:Name="ButtonClose" Click="ButtonClose_Click" Width="80" Margin="0 50"></Button>
         </StackPanel>
     </Grid>

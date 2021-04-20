@@ -10,7 +10,7 @@ namespace HospitalApplication.WorkWithFiles
     class FilesDoctor
     {
         private string path = "doctors.txt";
-        private ExaminationManagement m = ExaminationManagement.Instance;
+        //private ExaminationManagement m = ExaminationManagement.Instance;
 
         public List<Doctor> LoadFromFile()
         {

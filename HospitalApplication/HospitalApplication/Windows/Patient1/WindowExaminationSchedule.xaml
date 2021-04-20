@@ -67,7 +67,6 @@
                 <ComboBoxItem Content="19:30"/>
             </ComboBox>
 
-            <Label Content="Filters-----------------"/>
             <Label Content="Select second date:"/>
             <DatePicker Margin="0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date2">
                 <!--ne dozvoli da se izabere danasnji datum-->
@@ -117,11 +116,13 @@
             <Label Content="Choose priority for examination:"/>
             <RadioButton Content="Doctor"  Name="priorityDoctor"/>
             <RadioButton Content="Time" Name="priorityTime"/>
-            <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click"></Button>
-            <Button Content="OK Filters" x:Name="ButtonOkFilters" Click="ButtonOkFilters_Click" Margin="0 10 0 0"/>
-
             <ComboBox Margin="0 10" Name="Combo4" SelectedIndex="0">
             </ComboBox>
+            <Button Content="Refresh Combo" x:Name="ButtonOkFilters" Click="ButtonOkFilters_Click" Margin="0 10 0 0"/>
+            <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Margin="0 10 0 0"></Button>
+            <Button Content="OK Combo" x:Name="ButtonOkCombo" Click="ButtonOkCombo_Click" Margin="0 10 0 0"/>
+
+
         </StackPanel>
     </Grid>
 </Window>

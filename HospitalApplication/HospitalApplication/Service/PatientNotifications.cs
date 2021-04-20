@@ -11,7 +11,7 @@ namespace HospitalApplication.Logic
     class PatientNotifications
     {
         private string username;
-        private List<DateTime> dates;
+        //private List<DateTime> dates;
         private List<Notification> notifications;
         private NotificationManagement ntf = NotificationManagement.Instance;
 
@@ -23,9 +23,18 @@ namespace HospitalApplication.Logic
 
         public PatientNotifications(string usernamee)
         {
+
+
             username = usernamee;
-            dates = ntf.GetDates(username);
+            //dates = ntf.GetDates(username);
             notifications = ntf.GetNotifications(username);
+            //test notifikacija
+            /*List<DateTime> dates = new List<DateTime>();
+            DateTime date = new DateTime(2021, 4, 19, 19, 14, 0);
+            dates.Add(date);
+            Notification nt = new Notification(dates, "hello", "world", "1", "100050", "m");
+            notifications.Add(nt);*/
+
             Thread workerThread = new Thread(new ThreadStart(notification));
             workerThread.SetApartmentState(ApartmentState.STA);
             workerThread.Start();
@@ -40,18 +49,21 @@ namespace HospitalApplication.Logic
             while (true)
             {
                 System.Threading.Thread.Sleep(1000);
-                for (int i = 0; i < notifications.Count; i++) {
+                for (int i = 0; i < notifications.Count; i++)
+                {
                     string now = DateTime.Now.ToString("HH:mm");
                     string notify;
-                    for (int j = 0; j < notifications[i].Dates.Count; j++) {
+                    for (int j = 0; j < notifications[i].Dates.Count; j++)
+                    {
                         notify = notifications[i].Dates[j].ToString("HH:mm");
-                        if (notify == now) {
+                        if (notify == now)
+                        {
                             MessageBoxResult info = System.Windows.MessageBox.Show(notifications[i].Description, notifications[i].Title);
                             System.Threading.Thread.Sleep(60000);
                         }
                     }
                 }
-                
+
                 /*for (int i = 0; i < dates.Count; i++) {
                     string now = DateTime.Now.ToString("HH:mm");
                     string notify = dates[i].ToString("HH:mm");
@@ -76,13 +88,13 @@ namespace HospitalApplication.Logic
                 //string notify = date.ToString("HH:mm");
                 //if (notify == now)
                 //{
-                    /*PopupNotifier popup = new PopupNotifier();
-                    popup.TitleText = "info";
-                    popup.ContentText = "popup";
-                    popup.Popup();*/
+                /*PopupNotifier popup = new PopupNotifier();
+                popup.TitleText = "info";
+                popup.ContentText = "popup";
+                popup.Popup();*/
                 //    MessageBoxResult info = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Drug remainder");
-                    //WindowExaminationSchedule window = new WindowExaminationSchedule();
-                    //window.Show();
+                //WindowExaminationSchedule window = new WindowExaminationSchedule();
+                //window.Show();
                 //}
             }
         }

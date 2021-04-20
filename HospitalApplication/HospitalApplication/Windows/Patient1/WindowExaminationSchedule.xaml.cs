@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HospitalApplication.Controller;
 using Logic;
 using Model;
 using WorkWithFiles;
@@ -21,6 +22,7 @@ namespace HospitalApplication
     public partial class WindowExaminationSchedule : Window
     {
         private ExaminationManagement m = ExaminationManagement.Instance;
+        private PatientController controller = new PatientController();
         private string s1, s2;
         private WindowPatient w = WindowPatient.Instance;
         private bool ok = false;
@@ -126,7 +128,8 @@ namespace HospitalApplication
                 if (priorityDoctor.IsChecked == true)
                 {
                     //3 dana unapred
-                    for (int j = 0; j < 3; j++) {
+                    for (int j = 0; j < 3; j++)
+                    {
                         for (int i = 0; i < appointment1.Count; i++)
                         {
                             bool okDate = true;
@@ -195,11 +198,17 @@ namespace HospitalApplication
                     }
                     for (int i = 0; i < newDates.Count; i++)
                     {
-                        Combo4.Items.Add(newDates[i].ToString() + ", " + doctor.Username);
+                        Combo4.Items.Add(newDates[i].ToString());
+                        //Combo4.Items.Add(newDates[i].ToString() + ", " + doctor.Username);
                     }
                 }
             }
+        }
 
+        private void ButtonOkCombo_Click(object sender, RoutedEventArgs e)
+        {
+            String stringDate = Combo4.SelectedItem.ToString();
+            DateTime dateForExamination = DateTime.Parse(stringDate);
 
             //generisem unikatan id za pregled
             //radi tako sto jednom ucitam sve preglede i nadjem najveci id pa nakon toga samo dodeljujem za po jedan br veci
@@ -215,6 +224,19 @@ namespace HospitalApplication
                     }
                 }
             }
+
+            //bool isFree = true;
+            WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
+            //List<Doctor> doctors = doc.LoadFromFile();
+            int index = Combo3.SelectedIndex;
+
+            s2 = doctors[index].Username;
+            doctors[index].Scheduled.Add(dateForExamination);
+            doc.WriteInFile(doctors);
+            Examination ex = new Examination(mw.EnteredUsername, s2, "101", dateForExamination, (idExamination + 1).ToString());
+            controller.ScheduleExamination(ex);
+            w.UpdateView();
+            Close();
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
@@ -336,19 +358,17 @@ namespace HospitalApplication
                 s2 = doctors[index].Username;
                 doctors[index].Scheduled.Add(d);
                 doc.WriteInFile(doctors);
+                Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination + 1).ToString());
+                controller.ScheduleExamination(ex);
+                w.UpdateView();
             }
-
-            if (isFree == false)
+            else
             {
                 MessageBox.Show("There is no free term. Choose another time.");
                 Close();
-                return; 
+                return;
             }
 
-            Examination ex = new Examination(mw.EnteredUsername, s2, "101", d, (idExamination + 1).ToString());
-            m.ScheduleExamination(ex);
-
-            w.UpdateView();
             Close();
         }
     }
