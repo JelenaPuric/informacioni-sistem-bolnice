@@ -29,11 +29,11 @@ namespace HospitalApplication.Logic
             //dates = ntf.GetDates(username);
             notifications = ntf.GetNotifications(username);
             //test notifikacija
-            /*List<DateTime> dates = new List<DateTime>();
-            DateTime date = new DateTime(2021, 4, 19, 19, 14, 0);
+            List<DateTime> dates = new List<DateTime>();
+            DateTime date = new DateTime(2021, 4, 21, 13, 9, 0);
             dates.Add(date);
             Notification nt = new Notification(dates, "hello", "world", "1", "100050", "m");
-            notifications.Add(nt);*/
+            notifications.Add(nt);
 
             Thread workerThread = new Thread(new ThreadStart(notification));
             workerThread.SetApartmentState(ApartmentState.STA);

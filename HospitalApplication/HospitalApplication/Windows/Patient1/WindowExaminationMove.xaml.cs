@@ -150,7 +150,7 @@ namespace HospitalApplication.Windows.Patient1
                 {
                     if (rooms[i].RoomId.ToString() == roomId)
                     {
-                        rooms[i].Scheduled.Add(newDate.AddHours(2));
+                        rooms[i].Scheduled.Add(newDate);
                         break;
                     }
                 }
