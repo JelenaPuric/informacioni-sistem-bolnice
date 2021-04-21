@@ -25,6 +25,8 @@ namespace Logic
         {
             examinations = f.LoadFromFile();
             doctors = fd.LoadFromFile();
+            rooms = SerializationAndDeserilazationOfRooms.LoadRoom(); 
+
         }
 
         public void ScheduleExamination(Examination e)
@@ -41,6 +43,111 @@ namespace Logic
             }
             f.WriteInFile(examinations);
         }
+
+
+
+
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        {
+
+            bool isFree = DoctorIsFree(docIndex, date);
+
+            if ( isFree == false)
+            {
+                return false;
+
+            }
+            else
+            {
+
+
+
+              bool roomIsFree = RoomIsFree(date);
+
+
+                if( roomIsFree == false)
+                {
+
+                    return false;
+                }
+                else
+                {
+                    roomId = roomIndx;
+                    doctors[docIndex].Scheduled.Add(date);
+                    fd.WriteInFile(doctors);
+
+                    if (rooms[roomId].Scheduled == null)
+                    {
+                        rooms[roomId].Scheduled = new List<DateTime>();
+                    }
+
+                    rooms[roomId].Scheduled.Add(date.AddHours(2));
+                    SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+
+
+                    Examination examination = new Examination(usernamePatient, usernameDoctor, rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam);
+                    ScheduleExamination(examination);
+
+                    return true;
+                }
+
+            }
+
+        }
+
+
+
+
+        public bool DoctorIsFree(int docIndex, DateTime date)
+        {
+            List<Doctor> listDoctor = fd.LoadFromFile();
+            for (int j = 0; j < listDoctor[docIndex].Scheduled.Count; j++)
+            {
+                if (listDoctor[docIndex].Scheduled[j] == date)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public bool RoomIsFree(DateTime d)
+        {
+            bool roomIsFree = false;
+
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                
+                //ako je null znaci da je slobodna i izadji iz petlje
+                if (rooms[i].Scheduled == null)
+                {
+                    roomIsFree = true;
+                    roomIndx = i;
+                    break;
+                }
+
+                bool ok = true;
+                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                {
+                    if (rooms[i].Scheduled[j] == d)
+                    {
+                        ok = false;
+                    }
+                }
+                if (ok == true)
+                {
+                    roomIsFree = true;
+                    roomIndx = i;
+                    break;
+                }
+            }
+            return roomIsFree;
+        }
+
+
+      
+
 
         /*public void Cancel(int index)
         {
@@ -164,18 +271,38 @@ namespace Logic
 
         private FilesExamination f = new FilesExamination();
         private FilesDoctor fd = new FilesDoctor();
+        private SerializationAndDeserilazationOfRooms rs = new SerializationAndDeserilazationOfRooms();
         private List<Examination> examinations;
         private List<Doctor> doctors;
+        private List<Room> rooms;
+        private int roomIndx;
 
+
+
+
+
+        public int RoomIndx
+        {
+            get { return roomIndx; }
+            set { roomIndx = value; }
+        }
+
+        public List<Room> Rooms
+        {
+            get { return rooms; }
+            set { rooms = value; }
+        }
+        
         public List<Examination> Examinations
         {
             get { return examinations; }
             set { examinations = value; }
         }
-        /*public List<Doctor> Doctors
+        
+        public List<Doctor> Doctors
         {
             get { return doctors; }
             set { doctors = value; }
-        }*/
+        }
     }
 }

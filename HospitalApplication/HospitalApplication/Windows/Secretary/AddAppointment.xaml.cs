@@ -82,8 +82,6 @@ namespace HospitalApplication.Windows.Secretary
 
 
 
-
-
             List<Examination> examinations = m.Examinations;
             if (ok == false)
             {
@@ -99,93 +97,21 @@ namespace HospitalApplication.Windows.Secretary
 
 
 
+            int docIndex = Combo3.SelectedIndex;
+            s2 = doctors[docIndex].Username;
+            int roomID = 0;
+            bool sucessMakeApp = m.MakeAppointment(docIndex, d, userNP, s2, roomID, (idExamination + 1).ToString(), examType);
 
-            bool isFree = true;
-
-            WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
-            List<Doctor> doctors = doc.LoadFromFile();
-
-            int index = Combo3.SelectedIndex;
-            for (int j = 0; j < doctors[index].Scheduled.Count; j++)
-            {
-                if (doctors[index].Scheduled[j] == d)
-                {
-                    isFree = false;
-                }
-            }
-
-
-
-
-
-
-
-            bool roomIsFree = false;
-            int roomIndex = 0;
-            //proveri da li postoji slobodna soba
-            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                //ako je null znaci da je slobodna i izadji iz petlje
-                if (rooms[i].Scheduled == null)
-                {
-                    roomIsFree = true;
-                    roomIndex = i;
-                    break;
-                }
-
-                bool ok = true;
-                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                {
-                    if (rooms[i].Scheduled[j] == d)
-                    {
-                        ok = false;
-                    }
-                }
-                if (ok == true)
-                {
-                    roomIsFree = true;
-                    roomIndex = i;
-                    break;
-                }
-            }
-
-
-
-            if (isFree && roomIsFree)
-            {
-                //dodavanje termina doktoru
-                s2 = doctors[index].Username;
-                doctors[index].Scheduled.Add(d);
-                doc.WriteInFile(doctors);
-                //dodavanje termina sobi, ako je null prvo inicijalizovati niz datuma
-                if (rooms[roomIndex].Scheduled == null)
-                {
-                    rooms[roomIndex].Scheduled = new List<DateTime>();
-                }
-                //ne znam zasto ali kad se datum doda u Listu datetime u json za rooms, datum se pomeri za 2 sata unazad, pa moram rucno da dodam sate
-                rooms[roomIndex].Scheduled.Add(d.AddHours(2));
-                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
-                //dodavanje pregleda
-                Examination ex = new Examination(userNP, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString(), examType);
-                PatientController controller = new PatientController();
-                controller.ScheduleExamination(ex);
-            }
-            else
+            if ( sucessMakeApp == false)
             {
                 MessageBox.Show("There is no free term. Choose another time.");
                 Close();
                 return;
             }
 
+
+         
             Close();
-
-
-
-
-
-
-
         }
     }
 }
