@@ -143,13 +143,14 @@ namespace HospitalApplication {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.5.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/patient1/windowexaminationschedule.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/patient1/windowexaminationschedul" +
+                    "e.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Patient1\WindowExaminationSchedule.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -159,7 +160,7 @@ namespace HospitalApplication {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.5.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
