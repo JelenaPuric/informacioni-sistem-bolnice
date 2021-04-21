@@ -337,7 +337,7 @@ namespace HospitalApplication
             s2 = doctors[index].Username;
             doctors[index].Scheduled.Add(dateForExamination);
             doc.WriteInFile(doctors);
-            Examination ex = new Examination(mw.EnteredUsername, s2, "101", dateForExamination, (idExamination + 1).ToString());
+            Examination ex = new Examination(mw.EnteredUsername, s2, "101", dateForExamination, (idExamination + 1).ToString(), 0);
             controller.ScheduleExamination(ex);
             w.UpdateView();
             Close();
@@ -468,6 +468,8 @@ namespace HospitalApplication
                 }
             }
 
+
+
             bool roomIsFree = false;
             int roomIndex = 0;
             //proveri da li postoji slobodna soba
@@ -479,6 +481,7 @@ namespace HospitalApplication
                     roomIndex = i;
                     break;
                 }
+
                 bool ok = true;
                 for (int j = 0; j < rooms[i].Scheduled.Count; j++) {
                     if (rooms[i].Scheduled[j] == d) {
@@ -491,6 +494,10 @@ namespace HospitalApplication
                     break;
                 }
             }
+
+
+
+
 
             if (isFree && roomIsFree)
             {
@@ -507,7 +514,7 @@ namespace HospitalApplication
                 rooms[roomIndex].Scheduled.Add(d.AddHours(2));
                 SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
                 //dodavanje pregleda
-                Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString());
+                Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString(), 0);
                 controller.ScheduleExamination(ex);
                 w.UpdateView();
             }

@@ -17,7 +17,7 @@ namespace Model
         private string placeOfResidance;
         private string phoneNumber;
         private SexType sexType;
-        //public static List<string> listAllergens;
+      
 
 
         public MedicalRecord() { }

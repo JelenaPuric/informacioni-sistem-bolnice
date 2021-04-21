@@ -2,10 +2,10 @@ using System;
 
 namespace Model
 {
-   public class ExaminationType
+   public enum ExaminationType
    {
-      //private EnumConstant Operation;
-      //private EnumConstant RegularExamination;
-   
-   }
+         RegularExamination,
+         Operation
+
+    }
 }

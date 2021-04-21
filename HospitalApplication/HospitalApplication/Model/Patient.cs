@@ -11,6 +11,7 @@ namespace Model
 
         private AccountType typeAcc;
         private List<Allergen> listAllergens;
+        
 
         public Patient() { }
 
@@ -24,6 +25,10 @@ namespace Model
         }
 
 
+
+
+
+       
 
         public Model.AccountType TypeAcc
         {

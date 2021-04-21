@@ -8,6 +8,7 @@ namespace Model
       public System.Collections.ArrayList examination;
         private List<DateTime> scheduled;
 
+        // !!!!!!!!!!!!!!!!!!!!!!!!
         public List<DateTime> Scheduled
         {
             get { return scheduled; }
@@ -70,31 +71,7 @@ namespace Model
          return requestToTheManager;
       }
       
-      public void SetRequestToTheManager(System.Collections.ArrayList newRequestToTheManager)
-      {
-         RemoveAllRequestToTheManager();
-         foreach (RequestToTheManager oRequestToTheManager in newRequestToTheManager)
-            AddRequestToTheManager(oRequestToTheManager);
-      }
-      
-      public void AddRequestToTheManager(RequestToTheManager newRequestToTheManager)
-      {
-         if (newRequestToTheManager == null)
-            return;
-         if (this.requestToTheManager == null)
-            this.requestToTheManager = new System.Collections.ArrayList();
-         if (!this.requestToTheManager.Contains(newRequestToTheManager))
-            this.requestToTheManager.Add(newRequestToTheManager);
-      }
-      
-      public void RemoveRequestToTheManager(RequestToTheManager oldRequestToTheManager)
-      {
-         if (oldRequestToTheManager == null)
-            return;
-         if (this.requestToTheManager != null)
-            if (this.requestToTheManager.Contains(oldRequestToTheManager))
-               this.requestToTheManager.Remove(oldRequestToTheManager);
-      }
+
       
       public void RemoveAllRequestToTheManager()
       {
