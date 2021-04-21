@@ -34,6 +34,9 @@ namespace HospitalApplication
         private List<Doctor> doctors = new List<Doctor>();
         private List<Room> rooms = new List<Room>();
         private int roomIndex = 0;
+        private string doctorFilter = "";
+        private bool okFilter = false;
+        private string roomIdFilters = "";
 
         public WindowExaminationSchedule()
         {
@@ -44,7 +47,7 @@ namespace HospitalApplication
                 Combo3.Items.Add(doctors[i].Username.ToString());
             }
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-            debagLabel.Content = rooms[0].Scheduled[rooms[0].Scheduled.Count-1].ToString();
+            debagLabel.Content = rooms[0].Scheduled[rooms[0].Scheduled.Count - 1].ToString();
         }
 
         private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
@@ -295,10 +298,18 @@ namespace HospitalApplication
                                         break;
                                     }
                                 }
-                                if (okDate == true && roomIsFree == true && newDate <= date2 && newDate >= date1) newDates.Add(newDate);
+                                if (okDate == true && roomIsFree == true && newDate <= date2 && newDate >= date1)
+                                {
+                                    newDates.Add(newDate);
+                                    doctorFilter = doctor.Username;
+                                }
                             }
                         }
-                        if (newDates.Count > 0) break;
+                        if (newDates.Count > 0)
+                        {
+                            okFilter = true;
+                            break;
+                        }
                     }
                     for (int i = 0; i < newDates.Count; i++)
                     {
@@ -335,9 +346,13 @@ namespace HospitalApplication
             int index = Combo3.SelectedIndex;
 
             s2 = doctors[index].Username;
+            if (okFilter)
+            {
+                s2 = doctorFilter;
+            }
             doctors[index].Scheduled.Add(dateForExamination);
             doc.WriteInFile(doctors);
-            Examination ex = new Examination(mw.EnteredUsername, s2, "101", dateForExamination, (idExamination + 1).ToString(), 0);
+            Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), dateForExamination, (idExamination + 1).ToString());
             controller.ScheduleExamination(ex);
             w.UpdateView();
             Close();
@@ -448,15 +463,17 @@ namespace HospitalApplication
             }*/
 
             //provera da li je termin slobodan za pacijenta
-            /*FilesExamination fe = new FilesExamination();
+            FilesExamination fe = new FilesExamination();
             List<Examination> examinationss = fe.LoadFromFile();
             bool patientIsFree = true;
-            for (int i = 0; i < examinationss.Count; i++) {
-                if (examinationss[i].PatientsId == l.Username.Text && examinationss[i].ExaminationStart == d) {
+            for (int i = 0; i < examinationss.Count; i++)
+            {
+                if (examinationss[i].PatientsId == l.Username.Text && examinationss[i].ExaminationStart == d)
+                {
                     patientIsFree = false;
                     break;
                 }
-            }*/
+            }
 
             //proveri da li je termin slobodan za izabranog lekara
             int index = Combo3.SelectedIndex;
@@ -468,36 +485,34 @@ namespace HospitalApplication
                 }
             }
 
-
-
             bool roomIsFree = false;
             int roomIndex = 0;
             //proveri da li postoji slobodna soba
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-            for (int i = 0; i < rooms.Count; i++) {
+            for (int i = 0; i < rooms.Count; i++)
+            {
                 //ako je null znaci da je slobodna i izadji iz petlje
-                if (rooms[i].Scheduled == null) {
+                if (rooms[i].Scheduled == null)
+                {
                     roomIsFree = true;
                     roomIndex = i;
                     break;
                 }
-
                 bool ok = true;
-                for (int j = 0; j < rooms[i].Scheduled.Count; j++) {
-                    if (rooms[i].Scheduled[j] == d) {
+                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                {
+                    if (rooms[i].Scheduled[j] == d)
+                    {
                         ok = false;
                     }
                 }
-                if (ok == true) {
+                if (ok == true)
+                {
                     roomIsFree = true;
                     roomIndex = i;
                     break;
                 }
             }
-
-
-
-
 
             if (isFree && roomIsFree)
             {
@@ -514,7 +529,7 @@ namespace HospitalApplication
                 rooms[roomIndex].Scheduled.Add(d.AddHours(2));
                 SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
                 //dodavanje pregleda
-                Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString(), 0);
+                Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString());
                 controller.ScheduleExamination(ex);
                 w.UpdateView();
             }
