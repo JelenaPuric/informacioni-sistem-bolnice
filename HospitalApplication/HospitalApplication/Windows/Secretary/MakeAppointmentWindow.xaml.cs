@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
@@ -59,6 +60,69 @@ namespace HospitalApplication.Windows.Secretary
 
         private void CancelAppointment_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!(lvUsers.SelectedIndex > -1))
+            {
+                return;
+            }
+
+            Examination e2 = (Examination)lvUsers.SelectedItem;
+            string id = e2.ExaminationId;
+
+            MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    int index = lvUsers.SelectedIndex;
+                    WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
+                    List<Doctor> doctors = doc.LoadFromFile();
+                    DateTime dt = e2.ExaminationStart;
+                    //skloni datum lekaru
+                    for (int i = 0; i < doctors.Count; i++)
+                    {
+                        if (doctors[i].Username == e2.DoctorsId)
+                        {
+                            for (int j = 0; j < doctors[i].Scheduled.Count; j++)
+                            {
+                                if (doctors[i].Scheduled[j] == dt)
+                                {
+                                    doctors[i].Scheduled.RemoveAt(j);
+                                }
+                            }
+
+                            doc.WriteInFile(doctors);
+                            break;
+                        }
+                    }
+                    //skloni datum sobi
+                    List<Room> rooms = new List<Room>();
+                    rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+                    for (int i = 0; i < rooms.Count; i++)
+                    {
+                        if (rooms[i].Scheduled == null) continue;
+                        if (rooms[i].RoomId.ToString() == e2.RoomId)
+                        {
+                            for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                            {
+                                if (rooms[i].Scheduled[j] == dt)
+                                {
+                                    rooms[i].Scheduled.RemoveAt(j);
+                                    break;
+                                }
+                            }
+                            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+                        }
+                    }
+
+                    m.CancelExamination(id);
+                    //m.Cancel(index);
+                  
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+
+
 
         }
 

@@ -17,6 +17,13 @@ namespace HospitalApplication.Controller
             m.ScheduleExamination(e);
         }
 
+
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        {
+            return m.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
+        }
+
+
         public void CancelExamination(String id)
         {
             m.CancelExamination(id);
