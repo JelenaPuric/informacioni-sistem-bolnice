@@ -1,0 +1,46 @@
+SEKRETAR
+
+Funkcionalnosti:
+KT2
+a)Pregled zdravstvenog kartona --> URADJENO
+b)Azuriranje alergena pacijentu --> URADJENO
+c)Definisanje koji alergeni postoje --> URADJENO
+
+KT3
+a)Zakazivanje pregleda ili operacija --> URADJENO
+b)Otkazivanje pregleda ili operacija --> URADJENO
+c)Diagram sekvenci za zakazivanje pregleda/operacija --> URADJENO
+d)Pomeranje pregleda ili operacija --> NIJE URADJENO
+e)Login sistem --> URADJEN
+
+Pregled dijagrama aktivnosti kod pacijenta:
+-Dodati na diagram da se vidi ko je zaduzen za koje aktivnost,tj. da se 
+organizuje po kolonama.
+
+
+PACIJENT
+
+Pregled Sekvencijalnog dijagrama sekretara:
+Dijagram se mogao implementirati na jednostavniji nacin. Neki kombinovani fragmenti su se mogli izbeci drugacijom implementacijom. Takodje period aktivnosti uloga i objekata treba da se zavrsi poslednjom porukom sto na dijagramu nije slucaj. Kad se pregled zakaze on treba da se vrati do wpfa radi prikaza pregleda u tabeli.
+
+Funkcionalnosti:
+KT2
+a) Zakazivanje pregleda --> URADJENO
+b) Otkazivanje pregleda --> URADJENO
+c) Izmena pregleda --> URADJENO
+d) Prikaz pregleda --> URADJENO
+e) Class dijagram --> URADJEN
+
+KT3
+a) Notifikacije za pacijenta --> URADJENO
+b) Zakazivanje pregleda - ponudjeni pregledi i alternative--> URADJENO
+c) Pomeranje pregleda --> URADJENO
+d) Login sistem --> URADJEN
+e) Dijagram aktivnosti i class dijagram --> URADJEN
+
+
+UPRAVNIK
+
+Ispravljene funkcionalnosti sa prethodne kontrolne tacke (dodavanje, editovanje, prikaz jedne sobe, brisanje). Implementiranje sve neophodne funkcionalnosti
+za ovu kontrolnu tacku. Crud operacije staticke i dinamicke opreme. Kao i prebacivanje staticke i dinamicke opreme (poseban prozor za svaku). 
+Omoguceno zakazivanje prebacivanja staticke opreme i da se uklone iz liste za prenos nakon sto dodje vreme za prebacivanje (u izabranom trenutku se smatra da je oprema premestena i zato se brise iz liste)
