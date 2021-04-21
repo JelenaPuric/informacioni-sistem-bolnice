@@ -11,5 +11,6 @@ namespace HospitalApplication.Model
         public int idRoomTo { get; set; }
         public List<Resource> Res { get; set; }
         public DateTime dat { get; set; }
+        public int kolicina { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             RelocationResource rr = new RelocationResource();
             
             List<Transfer> tr = rr.showAllTransfers();
-            rr.CheckTransfers(tr);
+            rr.CheckTransfers();
             lvDataBinding.ItemsSource = tr;
             re = r;
         }
@@ -42,7 +42,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         {
             RelocationResource rr = new RelocationResource();
             List<Transfer> tr = rr.showAllTransfers();
-            rr.CheckTransfers(tr);
+            rr.CheckTransfers();
             lvDataBinding.ItemsSource = tr;
         }
 

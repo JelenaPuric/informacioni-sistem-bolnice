@@ -67,7 +67,7 @@ namespace HospitalApplication.Service
             ScheduledTransfers.EnterTransfer(transfers);
         }
 
-        public void CheckTransfers(List<Transfer> listica)
+        public void CheckTransfers()
         {
             if (transfers == null)
             {
@@ -83,49 +83,56 @@ namespace HospitalApplication.Service
                     {
                         for (int j = 0; j < rooms.Count; j++)
                         {
-                            for (int k = 0; k < rooms[i].Resource.Count; k++)
+                            if (transfers[i].idRoomFrom == rooms[j].RoomId)
                             {
-                                if (transfers[i].idRoomFrom == rooms[j].RoomId)
+                                for (int k = 0; k < rooms[j].Resource.Count; k++)
                                 {
-                                    rooms[j].Resource[k].quantity -= transfers[i].Res[l].quantity;
-                                    // transfers.RemoveAt(i);
-                                    break;
+                                    if (transfers[i].Res[l].idItem == rooms[j].Resource[k].idItem)
+                                    {
+                                        rooms[j].Resource[k].quantity -= transfers[i].kolicina;
+                                        // transfers.RemoveAt(i);
+                                        break;
+                                    }
+                                    
                                 }
                             }
                         }
-                        for(int j=0; j<rooms.Count; j++) 
+                        for(int z=0; z<rooms.Count; z++) 
                         {
-                            if (transfers[i].idRoomTo == rooms[j].RoomId)
+                            if (transfers[i].idRoomTo == rooms[z].RoomId)
                             {
-                                for (int k = 0; k < rooms[i].Resource.Count; k++)
-                                { 
-                                    if (rooms[j].Resource[k].idItem == transfers[i].Res[l].idItem)
+                                if (rooms[z].Resource.Count != 0)
+                                {
+                                    for (int k = 0; k < rooms[z].Resource.Count; k++)
                                     {
-                                        transfers[i].Res.RemoveAt(l);
-                                        rooms[j].Resource[k].quantity += transfers[i].Res[l].quantity;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        rooms[j].Resource.Add(transfers[i].Res[l]);
-                                        transfers[i].Res.RemoveAt(l);
-                                        break;
+                                        if (rooms[z].Resource[k].idItem == transfers[i].Res[l].idItem)
+                                        {
+
+                                            rooms[z].Resource[k].quantity += transfers[i].kolicina;
+                                            transfers[i].Res[k].quantity++;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            rooms[z].Resource.Add(transfers[i].Res[l]);
+                                            transfers[i].Res[k].quantity++;
+                                            break;
+                                        }
                                     }
                                 }
+                                else
+                                {
+                                    rooms[z].Resource.Add(transfers[i].Res[l]);
+                                    transfers[i].kolicina++;
+                                }
+                                
                             }   
                             
                         }
                     }
+
+                    transfers.RemoveAt(i);
                 }
-            }
-            for(int i=0; i<transfers.Count; i++)
-            {
-                for(int j=0; j<listica.Count; j++)
-                {
-                    if (transfers[i].Res != listica[j].Res)
-                        transfers.RemoveAt(i);
-                }
-                
             }
             
             ScheduledTransfers.EnterTransfer(transfers);

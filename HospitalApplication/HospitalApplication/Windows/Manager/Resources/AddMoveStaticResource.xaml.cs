@@ -40,8 +40,13 @@ namespace HospitalApplication.Windows.Manager.Resources
                 idTransfer = a.Next(),
                 idRoomFrom = re.roomId,
                 idRoomTo = int.Parse(textBoxRoomId.Text),
-                dat = DateTime.Parse(selectedDate.Text)
+                dat = DateTime.Parse(selectedDate.Text),
+                kolicina = int.Parse(textBoxManufacturer.Text)
             };
+
+            //t.dat.AddHours(4);
+            re.roomId = t.idRoomTo;
+            re.quantity = t.kolicina;
 
             if(t.Res == null)
             {
