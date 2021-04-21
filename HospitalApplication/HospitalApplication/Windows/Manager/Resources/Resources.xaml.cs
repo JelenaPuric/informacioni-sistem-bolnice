@@ -112,10 +112,21 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Switching_Clicked(object sender, RoutedEventArgs e)
         {
-            if(ddd != true)
+            Resource selected = (Resource)lvDataBinding.SelectedItem;
+            if (selected != null)
             {
-
+                if (ddd != true)
+                {
+                    MoveDynamicResource mdr = new MoveDynamicResource(selected);
+                    mdr.Show();
+                }
+                else
+                {
+                    MoveStaticResource msr = new MoveStaticResource(selected);
+                    msr.Show();
+                }
             }
+            
         }
     }
 }
