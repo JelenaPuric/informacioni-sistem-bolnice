@@ -16,14 +16,37 @@ namespace Model
       private String doctorsId;
       private String roomId;
 
+        private ExaminationType examinationType;
+
       public Examination() { }
 
-      public Examination(string patient, string doctor, string room, DateTime start, string id) {
+
+        public Examination(string patient, string doctor, string room, DateTime start, string id)
+        {
             patientsId = patient;
             doctorsId = doctor;
             roomId = room;
             examinationStart = start;
             examinationId = id;
+        }
+
+
+        public Examination(string patient, string doctor, string room, DateTime start, string id, ExaminationType examType) {
+            patientsId = patient;
+            doctorsId = doctor;
+            roomId = room;
+            examinationStart = start;
+            examinationId = id;
+            examinationType = examType;
+        }
+
+
+
+
+        public ExaminationType ExaminationType
+        {
+            get { return examinationType; }
+            set { examinationType = value; }
         }
 
         public string PatientsId

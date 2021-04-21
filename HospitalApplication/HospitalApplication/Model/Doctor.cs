@@ -8,6 +8,7 @@ namespace Model
       public System.Collections.ArrayList examination;
         private List<DateTime> scheduled;
 
+        // !!!!!!!!!!!!!!!!!!!!!!!!
         public List<DateTime> Scheduled
         {
             get { return scheduled; }

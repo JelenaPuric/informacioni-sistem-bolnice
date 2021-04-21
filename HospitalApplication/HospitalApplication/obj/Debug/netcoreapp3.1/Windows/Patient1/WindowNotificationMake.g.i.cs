@@ -101,7 +101,8 @@ namespace HospitalApplication.Windows.Patient1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/patient1/windownotificationmake.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/patient1/windownotificationmake.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Patient1\WindowNotificationMake.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

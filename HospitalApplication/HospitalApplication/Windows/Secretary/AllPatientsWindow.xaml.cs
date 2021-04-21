@@ -82,9 +82,10 @@ namespace HospitalApplication.Windows.Secretary
             window.Show();
         }
 
-        private void RefreshList_Click(object sender, RoutedEventArgs e)
+        private void MakeAppointment_Click(object sender, RoutedEventArgs e)
         {
-            lvUsers.Items.Refresh();
+            IDMakeAppointment window = new IDMakeAppointment();
+            window.Show();
 
         }
 

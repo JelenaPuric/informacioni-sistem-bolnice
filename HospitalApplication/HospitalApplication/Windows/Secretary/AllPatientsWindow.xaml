@@ -36,7 +36,7 @@
         <Button Content="View Patient" Click="ViewPatient_Click" HorizontalAlignment="Left" Margin="720,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
         <Button Content="Edit Patient" Click="EditPatient_Click" HorizontalAlignment="Left" Margin="580,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
 
-        <Button Content="Refresh List" Click="RefreshList_Click" HorizontalAlignment="Left" Margin="995,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Make appointment" Click="MakeAppointment_Click" HorizontalAlignment="Left" Margin="995,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
         <Button Content="Medical Record" Click="MedicalRecord_Click"  HorizontalAlignment="Left" Margin="857,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
 
     </Grid>
