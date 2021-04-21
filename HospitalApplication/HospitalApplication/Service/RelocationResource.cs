@@ -68,47 +68,55 @@ namespace HospitalApplication.Service
                         {
                             if (transfers[i].idRoomFrom == rooms[j].RoomId)
                             {
-                                for (int k = 0; k < rooms[j].Resource.Count; k++)
-                                {
-                                    if (transfers[i].Res[l].idItem == rooms[j].Resource[k].idItem)
+                                if(rooms[j].Resource != null) 
+                                { 
+                                    for (int k = 0; k < rooms[j].Resource.Count; k++)
                                     {
-                                        rooms[j].Resource[k].quantity -= transfers[i].kolicina;
-                                        // transfers.RemoveAt(i);
-                                        break;
-                                    }
+                                        if (transfers[i].Res[l].idItem == rooms[j].Resource[k].idItem)
+                                        {
+                                            rooms[j].Resource[k].quantity -= transfers[i].kolicina;
+                                            // transfers.RemoveAt(i);
+                                            break;
+                                        }
                                     
+                                    }
                                 }
+                                else { rooms[j].Resource = new List<Resource>(); }
                             }
                         }
                         for(int z=0; z<rooms.Count; z++) 
                         {
                             if (transfers[i].idRoomTo == rooms[z].RoomId)
                             {
-                                if (rooms[z].Resource.Count != 0)
-                                {
-                                    for (int k = 0; k < rooms[z].Resource.Count; k++)
+                                if(rooms[z].Resource != null) 
+                                { 
+                                    if (rooms[z].Resource.Count != 0)
                                     {
-                                        if (rooms[z].Resource[k].idItem == transfers[i].Res[l].idItem)
+                                        for (int k = 0; k < rooms[z].Resource.Count; k++)
                                         {
+                                            if (rooms[z].Resource[k].idItem == transfers[i].Res[l].idItem)
+                                            {
 
-                                            rooms[z].Resource[k].quantity += transfers[i].kolicina;
-                                            transfers[i].Res[k].quantity++;
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            rooms[z].Resource.Add(transfers[i].Res[l]);
-                                            transfers[i].Res[k].quantity++;
-                                            break;
+                                                rooms[z].Resource[k].quantity += transfers[i].kolicina;
+                                                transfers[i].Res[k].quantity++;
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                rooms[z].Resource.Add(transfers[i].Res[l]);
+                                                transfers[i].Res[k].quantity++;
+                                                break;
+                                            }
                                         }
                                     }
+                                    else
+                                    {
+                                        rooms[z].Resource.Add(transfers[i].Res[l]);
+                                        transfers[i].kolicina++;
+                                    }
                                 }
-                                else
-                                {
-                                    rooms[z].Resource.Add(transfers[i].Res[l]);
-                                    transfers[i].kolicina++;
-                                }
-                                
+                                else { rooms[z].Resource = new List<Resource>(); }
+
                             }   
                             
                         }
