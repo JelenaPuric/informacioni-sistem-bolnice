@@ -526,7 +526,7 @@ namespace HospitalApplication
                     rooms[roomIndex].Scheduled = new List<DateTime>();
                 }
                 //ne znam zasto ali kad se datum doda u Listu datetime u json za rooms, datum se pomeri za 2 sata unazad, pa moram rucno da dodam sate
-                rooms[roomIndex].Scheduled.Add(d.AddHours(2));
+                rooms[roomIndex].Scheduled.Add(d);
                 SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
                 //dodavanje pregleda
                 Examination ex = new Examination(mw.EnteredUsername, s2, rooms[roomIndex].RoomId.ToString(), d, (idExamination + 1).ToString());
