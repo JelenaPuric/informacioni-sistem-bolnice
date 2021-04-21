@@ -81,7 +81,7 @@ namespace Logic
                         rooms[roomId].Scheduled = new List<DateTime>();
                     }
 
-                    rooms[roomId].Scheduled.Add(date.AddHours(2));
+                    rooms[roomId].Scheduled.Add(date);
                     SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
 
 
