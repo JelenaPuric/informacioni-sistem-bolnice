@@ -9,7 +9,6 @@ namespace Model
    
       private DateTime examinationStart;
       private DateTime examinatonEnd;
-      private ExaminationType typeOfExamination;
       private Boolean urgentOperation = false;
       private String examinationId;
       private String patientsId;

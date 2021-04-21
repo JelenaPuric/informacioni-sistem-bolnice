@@ -11,7 +11,7 @@ namespace Model
 
         private AccountType typeAcc;
         private List<Allergen> listAllergens;
-        private List<DateTime> scheduleAppointment;
+        
 
         public Patient() { }
 
@@ -28,11 +28,7 @@ namespace Model
 
 
 
-        public List<DateTime> ScheduleAppointment
-        {
-            get { return scheduleAppointment; }
-            set { scheduleAppointment = value; }
-        }
+       
 
         public Model.AccountType TypeAcc
         {
