@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Model;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Model;
 using Logic;
 using System;
 using System.Collections.Generic;
@@ -42,15 +43,15 @@ namespace HospitalApplication.Windows.Manager.Resources
             re.manufacturer = rebus.manufacturer;
             re.idItem = rebus.idItem;
 
-            RoomManagment rm = new RoomManagment();
+            ManagerController mc = new ManagerController();
 
             if (int.Parse(textBoxQuantity.Text) > int.Parse(textBoxKolicina.Text)) {
                 re.quantity = int.Parse(textBoxKolicina.Text);
-                rm.TransferDynamicItem(re, int.Parse(textBoxKolicina.Text));
-                rm.RemoveQuantity(rebus, int.Parse(textBoxKolicina.Text));
+                mc.TransferDynamicItem(re, int.Parse(textBoxKolicina.Text));
+                mc.RemoveQuantity(rebus, int.Parse(textBoxKolicina.Text));
 
                 if (rebus.quantity == 0)
-                    rm.RemoveItem(rebus);
+                    mc.RemoveItem(rebus);
                 Close();
             }
             else {

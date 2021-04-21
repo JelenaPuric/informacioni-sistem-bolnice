@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Model;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Model;
 using HospitalApplication.Service;
 using Model;
 using System;
@@ -55,10 +56,11 @@ namespace HospitalApplication.Windows.Manager.Resources
             }
             else { t.Res.Add(re); }
 
+            ManagerController mc = new ManagerController();
             RelocationResource rr = new RelocationResource();
             if (rr.CheckRoom(t) == true)
             {
-                rr.TransStatic(t);
+                mc.TransStatic(t);
                 Close();
             }
             else { MessageBox.Show("Room id does not exist", "Error"); }

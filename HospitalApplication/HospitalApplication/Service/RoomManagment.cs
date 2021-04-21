@@ -126,12 +126,7 @@ namespace Logic
             }
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
-
-        public void editRoom(int password)
-      {
-         // TODO: implement
-      }
-      
+    
       public List<Room> showAllRooms()
       {
          return rooms;

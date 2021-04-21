@@ -20,23 +20,6 @@ namespace HospitalApplication.Service
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
         }
 
-        public List<Transfer> showAllTransfers()
-        {
-            return transfers;
-        }
-
-        public bool CheckRoom(Transfer t) {
-            int ok = 0;
-            for(int i=0; i<rooms.Count; i++)
-            {
-                if (rooms[i].RoomId == t.idRoomTo)
-                    ok++;
-            }
-            if (ok != 0)
-                return true;
-            return false;
-        }
-
         public void DeleteTransfer(Transfer t)
         {
             for(int i=0; i < transfers.Count; i++)
@@ -139,7 +122,23 @@ namespace HospitalApplication.Service
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
 
+        public List<Transfer> showAllTransfers()
+        {
+            return transfers;
+        }
 
+        public bool CheckRoom(Transfer t)
+        {
+            int ok = 0;
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId == t.idRoomTo)
+                    ok++;
+            }
+            if (ok != 0)
+                return true;
+            return false;
+        }
 
     }
 }

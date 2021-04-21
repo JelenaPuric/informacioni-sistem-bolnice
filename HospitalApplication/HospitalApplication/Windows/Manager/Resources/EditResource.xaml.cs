@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Model;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Model;
 using Logic;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,9 @@ namespace HospitalApplication.Windows.Manager.Resources
                 manufacturer = textBoxManufacturer.Text,
                 roomId = priv.roomId
             };
-            RoomManagment rm = new RoomManagment();
-            rm.RemoveItem(priv);
-            rm.AddItem(r);
+            ManagerController mc = new ManagerController();
+            mc.RemoveItem(priv);
+            mc.AddItem(r);
             Close();
         }
     }
