@@ -35,6 +35,10 @@ namespace HospitalApplication.Windows.Manager.Prostorije
         {
             AddRoom ar = new AddRoom();
             ar.Show();
+            RoomManagment rooms = new RoomManagment();
+            List<Room> p = rooms.showAllRooms();
+
+            lvDataBinding.ItemsSource = p;
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
@@ -62,6 +66,10 @@ namespace HospitalApplication.Windows.Manager.Prostorije
                 DeleteRoom dr = new DeleteRoom();
                 dr.Show();
             }
+            RoomManagment rooms = new RoomManagment();
+            List<Room> p = rooms.showAllRooms();
+
+            lvDataBinding.ItemsSource = p;
         }
 
         private void Edit_Clicked(object sender, RoutedEventArgs e)

@@ -41,7 +41,7 @@ namespace HospitalApplication.Windows.Manager.Resources
                 idTransfer = a.Next(),
                 idRoomFrom = re.roomId,
                 idRoomTo = int.Parse(textBoxRoomId.Text),
-                dat = DateTime.Parse(selectedDate.Text),
+                dat = DateTime.Parse(selectedDate.Text).AddHours(2),
                 kolicina = int.Parse(textBoxManufacturer.Text)
             };
 
