@@ -32,8 +32,8 @@ namespace HospitalApplication.Windows.Manager
 
         private void Resources_Clicked(object sender, RoutedEventArgs e)
         {
-            SearchRoom sr = new SearchRoom();
-            sr.Show();
+            Resources.Menu m = new Resources.Menu();
+            m.Show();
         }
     }
 }

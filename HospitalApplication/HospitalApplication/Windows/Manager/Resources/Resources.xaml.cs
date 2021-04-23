@@ -33,6 +33,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             ro = rooms.showRoom(s);
 
             //p.Add(ro);
+            rooms.CheckIfZero(ro);
             lvDataBinding.ItemsSource = ro.Resource;
         }
 
@@ -41,7 +42,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             RoomManagment rooms = new RoomManagment();
             Room ro = new Room();
             ro = rooms.showRoom(ss);
-
+            rooms.CheckIfZero(ro);
             lvDataBinding.ItemsSource = ro.Resource;
         }
 
@@ -113,19 +114,17 @@ namespace HospitalApplication.Windows.Manager.Resources
         private void Switching_Clicked(object sender, RoutedEventArgs e)
         {
             Resource selected = (Resource)lvDataBinding.SelectedItem;
-            if (selected != null)
+            if (selected.isStatic == true)
             {
-                if (ddd != true)
+
+                    MoveStaticResource msr = new MoveStaticResource(selected);
+                    msr.Show();
+            }
+            else
                 {
                     MoveDynamicResource mdr = new MoveDynamicResource(selected);
                     mdr.Show();
                 }
-                else
-                {
-                    MoveStaticResource msr = new MoveStaticResource(selected);
-                    msr.Show();
-                }
-            }
             
         }
     }

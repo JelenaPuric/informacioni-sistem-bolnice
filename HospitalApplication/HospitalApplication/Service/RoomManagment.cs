@@ -22,6 +22,38 @@ namespace Logic
             SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
 
+        public void CheckIfZero(Room r)
+        {
+            for(int i=0; i<rooms.Count; i++)
+            {
+                if(rooms[i].RoomId == r.RoomId)
+                {
+                    for(int j=0; j<rooms[i].Resource.Count; j++)
+                    {
+                        if (rooms[i].Resource[j].quantity == 0)
+                            rooms[i].Resource.RemoveAt(j);
+                    }
+                }
+            }
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+        }
+
+        public List<Resource> FindItem(string s, int i)
+        {
+            List<Resource> roo = new List<Resource>();
+            for (int k=0; k < rooms.Count; k++)
+            {
+                for(int j=0; j<rooms[k].Resource.Count; j++)
+                {
+                    if (rooms[k].Resource[j].name.Equals(s))
+                    {
+                        if (rooms[k].Resource[j].quantity >= i)
+                            roo.Add(rooms[k].Resource[j]);
+                    }
+                }
+            }
+            return roo;
+        }
 
         public void AddItem(Resource r) {
             for (int i = 0; i < rooms.Count; i++) { 

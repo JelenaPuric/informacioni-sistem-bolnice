@@ -46,27 +46,32 @@ namespace HospitalApplication.Windows.Manager.Resources
             };
 
             //t.dat.AddHours(4);
-            re.roomId = t.idRoomTo;
-            re.quantity = t.kolicina;
-
-            if(t.Res == null)
-            {
-                t.Res = new List<Resource>();
-                t.Res.Add(re);
-            }
-            else { t.Res.Add(re); }
-
-            ManagerController mc = new ManagerController();
-            RelocationResource rr = new RelocationResource();
-            if (rr.CheckRoom(t) == true)
-            {
-                mc.TransStatic(t);
-                Close();
-            }
-            else { MessageBox.Show("Room id does not exist", "Error"); }
-
             
-            
+            if(t.kolicina > re.quantity)
+            {
+                MessageBox.Show("That resource does not have that amount", "Error");
+            }
+            else
+            {
+                re.roomId = t.idRoomTo;
+                re.quantity = t.kolicina;
+                if (t.Res == null)
+                {
+                    t.Res = new List<Resource>();
+                    t.Res.Add(re);
+                }
+                else { t.Res.Add(re); }
+
+                ManagerController mc = new ManagerController();
+                RelocationResource rr = new RelocationResource();
+                if (rr.CheckRoom(t) == true)
+                {
+                    mc.TransStatic(t);
+                    Close();
+                }
+                else { MessageBox.Show("Room id does not exist", "Error"); }
+            }
+
         }
     }
 }

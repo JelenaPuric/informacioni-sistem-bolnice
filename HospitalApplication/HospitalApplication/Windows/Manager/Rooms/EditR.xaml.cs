@@ -20,10 +20,11 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// </summary>
     public partial class EditR : Window
     {
+        private Room rs;
         public EditR(Room ro)
         {
             InitializeComponent();
-
+            rs = ro;
             textBoxNumberOfFloors.Text = ro.NumberOfFloors.ToString();
             textBoxRoomId.Text = ro.RoomId.ToString();
             textBoxRoomNumber.Text = ro.RoomNumber.ToString();
@@ -41,10 +42,14 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 Occupied = (bool)checkBoxOccupied.IsChecked,
                 RoomId = Int32.Parse(textBoxRoomId.Text),
                 RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
-                RoomType = (RoomType)comboBoxRoomType.SelectedIndex
+                RoomType = (RoomType)comboBoxRoomType.SelectedIndex,
+                Resource = rs.Resource,
+                Scheduled = rs.Scheduled
             };
             RoomManagment mr = new RoomManagment();
-            int s = Int32.Parse(textBoxRoomId.Text);
+
+            int s = rs.RoomId;
+            //int s = Int32.Parse(textBoxRoomId.Text);
             mr.RemoveById(s);
             mr.CreateRoom(r);
             Close();
