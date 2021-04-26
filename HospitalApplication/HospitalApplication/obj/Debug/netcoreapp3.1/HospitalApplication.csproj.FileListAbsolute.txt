@@ -379,3 +379,11 @@ D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-s
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\Menu.baml
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchedResource.g.cs
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchedResource.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\Menu.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchedResource.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchResource.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\Menu.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchedResource.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\SearchResource.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\FunMoveAppointmentWindow.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\FunMoveAppointmentWindow.baml

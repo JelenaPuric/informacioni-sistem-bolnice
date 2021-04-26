@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
         mc:Ignorable="d"
-        Title="MoveAppointment" Height="450" Width="800">
-    <Grid>
-        
+        Title="MoveAppointment" Height="926" Width="844">
+    <Grid Margin="0,0,149,111">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="293*"/>
+            <ColumnDefinition Width="507*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="All scheduled appointments" HorizontalAlignment="Left" FontSize="30" Foreground="Black" Margin="219,226,0,493" Grid.ColumnSpan="2"/>
+        <ListView Margin="45,329,-91,105" Name="lvUsers" ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="2" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="120" Header="Type Appointment" DisplayMemberBinding="{Binding ExaminationType}" />
+                    <GridViewColumn Width="120" Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
+                    <GridViewColumn Width="120" Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
+                    <GridViewColumn Width="120" Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />
+                    <GridViewColumn Width="120" Header="Room ID" DisplayMemberBinding="{Binding RoomId}" />
+                    <GridViewColumn Width="120" Header="Examination ID" DisplayMemberBinding="{Binding ExaminationId}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Click="MoveAppointment_Click" Content="Move appointment" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Height="70" Width="132" Grid.Column="1"/>
+        <Button Click="RefreshList_Click" Content="Refresh List" HorizontalAlignment="Left" Margin="190,53,0,0" VerticalAlignment="Top" Height="70" Width="132" Grid.Column="1"/>
+
     </Grid>
 </Window>

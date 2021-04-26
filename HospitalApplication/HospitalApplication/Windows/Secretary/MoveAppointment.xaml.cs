@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
@@ -17,6 +18,23 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class MoveAppointment : Window
     {
+
+        FilesExamination fx = new FilesExamination();
+
+
+        private static MoveAppointment instance;
+        public static MoveAppointment Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new MoveAppointment();
+                }
+                return instance;
+            }
+        }
+
         public MoveAppointment()
         {
             InitializeComponent();
@@ -26,8 +44,20 @@ namespace HospitalApplication.Windows.Secretary
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
+            instance = this;
 
+            lvUsers.ItemsSource = fx.LoadFromFile();
+        }
 
+        private void MoveAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            FunMoveAppointmentWindow window = new FunMoveAppointmentWindow();
+            window.Show();
+        }
+        
+        private void RefreshList_Click(object sender, RoutedEventArgs e)
+        {
+            lvUsers.ItemsSource = fx.LoadFromFile();
         }
     }
 }
