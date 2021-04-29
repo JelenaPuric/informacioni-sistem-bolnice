@@ -31,13 +31,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Register Patient" Click="RegisterPatient_Click"  HorizontalAlignment="Left" Margin="305,381,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
-        <Button Content="Delete Patient" Click="DeletePatient_Click_1" HorizontalAlignment="Left" Margin="443,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-        <Button Content="View Patient" Click="ViewPatient_Click" HorizontalAlignment="Left" Margin="720,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-        <Button Content="Edit Patient" Click="EditPatient_Click" HorizontalAlignment="Left" Margin="580,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Register Patient" Click="RegisterPatient_Click"  HorizontalAlignment="Left" Margin="250,381,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
+        <Button Content="Delete Patient" Click="DeletePatient_Click_1" HorizontalAlignment="Left" Margin="388,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="View Patient" Click="ViewPatient_Click" HorizontalAlignment="Left" Margin="665,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Edit Patient" Click="EditPatient_Click" HorizontalAlignment="Left" Margin="525,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
 
-        <Button Content="Make appointment" Click="MakeAppointment_Click" HorizontalAlignment="Left" Margin="995,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-        <Button Content="Medical Record" Click="MedicalRecord_Click"  HorizontalAlignment="Left" Margin="857,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Make appointment" Click="MakeAppointment_Click" HorizontalAlignment="Left" Margin="940,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="News" HorizontalAlignment="Left" Click="News_Click" Margin="1078,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Button Content="Medical Record" Click="MedicalRecord_Click"  HorizontalAlignment="Left" Margin="802,381,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
 
     </Grid>
 </Window>

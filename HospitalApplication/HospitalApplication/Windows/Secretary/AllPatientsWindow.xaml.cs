@@ -106,5 +106,11 @@ namespace HospitalApplication.Windows.Secretary
             window.Show();
 
         }
+
+        private void News_Click(object sender, RoutedEventArgs e)
+        {
+            NewsWindow window = new NewsWindow();
+            window.Show();
+        }
     }
 }

@@ -115,6 +115,9 @@
     <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\CreateNewsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\DefineAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -137,6 +140,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\MedicalRecordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\NewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
@@ -267,6 +273,9 @@
     <Page Update="Windows\Secretary\AllPatientsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Secretary\CreateNewsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Secretary\DefineAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -289,6 +298,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\MedicalRecordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\NewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">
