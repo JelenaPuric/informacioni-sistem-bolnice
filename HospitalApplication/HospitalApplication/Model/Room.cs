@@ -6,7 +6,7 @@ namespace Model
 {
     public class Room
     {
-        //public Renovation[] Renovation;
+        public List<Renovation> Renovation { get; set; }
         public int RoomId { get; set; }
         public int NumberOfFloors { get; set; }
         public int RoomNumber { get; set; }

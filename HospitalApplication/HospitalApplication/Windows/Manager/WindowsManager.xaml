@@ -9,7 +9,7 @@
     <Grid  Height="434" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
         <Button Content="Rooms" Height="40" Width="120" Click="Rooms_Clicked" Margin="114,44,566,350" />
         <Button Content="Resources" Height="40" Width="120"  Click="Resources_Clicked" Margin="265,44,415,350"/>
-        <Button Content="Renovation" Height="40" Width="120"   Margin="419,44,261,350"/>
+        <Button Content="Renovation" Height="40" Width="120"   Margin="419,44,261,350" Click="Renovation_Clicked"/>
         <Button Content="Medicines" Height="40" Width="120"   Margin="568,44,112,350"/>
     </Grid>
 </Window>

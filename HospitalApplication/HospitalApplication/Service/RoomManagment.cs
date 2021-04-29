@@ -13,7 +13,15 @@ namespace Logic
         public RoomManagment()
         {
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-
+            for(int i=0; i<rooms.Count; i++)
+            {
+                if (rooms[i].Resource == null)
+                    rooms[i].Resource = new List<Resource>();
+                if (rooms[i].Scheduled == null)
+                    rooms[i].Scheduled = new List<DateTime>();
+                if (rooms[i].Renovation == null)
+                    rooms[i].Renovation = new List<Renovation>();
+            }
             
         }
         public void CreateRoom(Room r)
