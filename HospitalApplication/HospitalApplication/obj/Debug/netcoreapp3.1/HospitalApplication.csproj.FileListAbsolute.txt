@@ -391,3 +391,7 @@ C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplicatio
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\NewsWindow.baml
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\CreateNewsWindow.g.cs
 C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\CreateNewsWindow.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditNewsWindow.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\EditNewsWindow.baml
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\ViewNewsWindow.g.cs
+C:\Users\ranin\Desktop\NNN_SIMSSS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\ViewNewsWindow.baml

@@ -1,5 +1,4 @@
 ﻿using HospitalApplication.Controller;
-using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,39 +11,46 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    public partial class CreateNewsWindow : Window
+    /// <summary>
+    /// Interaction logic for EditNewsWindow.xaml
+    /// </summary>
+    public partial class EditNewsWindow : Window
     {
         private NewsController newsController = new NewsController();
         private NewsWindow newsWindow = NewsWindow.Instance;
+        private News currentSelectedNews;
 
-        public CreateNewsWindow()
+        public EditNewsWindow(global::Model.News selectedNews)
         {
             InitializeComponent();
             CenterWindow();
+            currentSelectedNews = selectedNews;
+            SetValuesFields(selectedNews);
+        }
+
+        private void SetValuesFields(global::Model.News selectedNews)
+        {
+            textBoxTypeNews.Text = selectedNews.TypeNews;
+            textBoxTitle.Text = selectedNews.Title;
+            textBoxDescription.Text = selectedNews.Description;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text);
-            newsController.CreateNews(newNews);
+            SetValues();
+            newsController.UpdateNews(currentSelectedNews);
             newsWindow.UpdateNews();
             Close();
         }
 
-        private string IdGenerator()
+        private void SetValues()
         {
-            int n = newsController.GetAllNews().Count;
-            int idNews;
-            if (n > 0)
-            {
-                idNews = Int32.Parse(newsController.GetAllNews()[n - 1].Id) + 1;
-            }
-            else idNews = 0;
-            return idNews.ToString();
+            currentSelectedNews.TypeNews = textBoxTypeNews.Text;
+            currentSelectedNews.Title = textBoxTitle.Text;
+            currentSelectedNews.Description = textBoxDescription.Text;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

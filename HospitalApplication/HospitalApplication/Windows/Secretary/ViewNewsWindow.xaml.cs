@@ -1,5 +1,4 @@
 ﻿using HospitalApplication.Controller;
-using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,42 +11,34 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    public partial class CreateNewsWindow : Window
+    /// <summary>
+    /// Interaction logic for ViewNewsWindow.xaml
+    /// </summary>
+    public partial class ViewNewsWindow : Window
     {
         private NewsController newsController = new NewsController();
         private NewsWindow newsWindow = NewsWindow.Instance;
+        private News currentSelectedNews;
 
-        public CreateNewsWindow()
+        public ViewNewsWindow(global::Model.News selectedNews)
         {
             InitializeComponent();
             CenterWindow();
+            currentSelectedNews = selectedNews;
+            SetValuesFromNews();
+        }
+
+        private void SetValuesFromNews()
+        {
+            textBoxTypeNews.Text = currentSelectedNews.TypeNews;
+            textBoxTitle.Text = currentSelectedNews.Title;
+            textBoxDescription.Text = currentSelectedNews.Description;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
-        {
-            News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text);
-            newsController.CreateNews(newNews);
-            newsWindow.UpdateNews();
-            Close();
-        }
-
-        private string IdGenerator()
-        {
-            int n = newsController.GetAllNews().Count;
-            int idNews;
-            if (n > 0)
-            {
-                idNews = Int32.Parse(newsController.GetAllNews()[n - 1].Id) + 1;
-            }
-            else idNews = 0;
-            return idNews.ToString();
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

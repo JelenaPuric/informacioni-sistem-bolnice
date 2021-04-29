@@ -9,8 +9,22 @@ namespace Logic
    {
         private List<News> news;
 
+        private static NewsManagement instance;
+        public static NewsManagement Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new NewsManagement();
+                }
+                return instance;
+            }
+        }
+
         public NewsManagement()
         {
+            instance = this;
             news = FilesNews.LoadNews();
         }
 
@@ -36,6 +50,22 @@ namespace Logic
             }
             FilesNews.EnterNews(news);
         }
+
+        public void UpdateNews(News currentNews)
+        {
+            for (int i = 0; i < news.Count; i++)
+            {
+                if (news[i].Id.Equals(currentNews.Id))
+                {
+                    news[i].TypeNews = currentNews.TypeNews;
+                    news[i].Title = currentNews.Title;
+                    news[i].Description = currentNews.Description;
+                }
+            }
+            FilesNews.EnterNews(news);
+        }
+
+
 
         public News getNews(string iDNews)
         {

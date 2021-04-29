@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class NewsWindow : Window
     {
-        private NewsManagement newsManagement = new NewsManagement();
+        private NewsController newsController = new NewsController();
 
         private static NewsWindow instance;
         public static NewsWindow Instance
@@ -42,7 +43,7 @@ namespace HospitalApplication.Windows.Secretary
         public void UpdateNews()
         {
             lvUsers.ItemsSource = null;
-            lvUsers.ItemsSource = newsManagement.GetAllNews();
+            lvUsers.ItemsSource = newsController.GetAllNews();
         }
 
         private void CenterWindow()
@@ -65,17 +66,24 @@ namespace HospitalApplication.Windows.Secretary
         {
             if (!(lvUsers.SelectedIndex > -1)) { return; }
             News selectedNews = (News)lvUsers.SelectedItem;
-            newsManagement.DeleteNews(selectedNews.Id);
+            newsController.DeleteNews(selectedNews.Id);
             UpdateNews();
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            ViewNewsWindow window = new ViewNewsWindow(selectedNews);
+            window.Show();
         }
+
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            EditNewsWindow window = new EditNewsWindow(selectedNews);
+            window.Show();
         }
     }
 }
