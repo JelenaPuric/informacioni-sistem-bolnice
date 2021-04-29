@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logic;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -12,21 +14,36 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for NewsWindow.xaml
-    /// </summary>
     public partial class NewsWindow : Window
     {
+        private NewsManagement newsManagement = new NewsManagement();
+
+        private static NewsWindow instance;
+        public static NewsWindow Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new NewsWindow();
+                }
+                return instance;
+            }
+        }
+
         public NewsWindow()
         {
             InitializeComponent();
             CenterWindow();
+            instance = this;
+            UpdateNews();
         }
 
-
-
-
-
+        public void UpdateNews()
+        {
+            lvUsers.ItemsSource = null;
+            lvUsers.ItemsSource = newsManagement.GetAllNews();
+        }
 
         private void CenterWindow()
         {
@@ -42,6 +59,23 @@ namespace HospitalApplication.Windows.Secretary
         {
             CreateNewsWindow window = new CreateNewsWindow();
             window.Show();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            newsManagement.DeleteNews(selectedNews.Id);
+            UpdateNews();
+        }
+
+        private void ViewButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

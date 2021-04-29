@@ -7,21 +7,19 @@
         mc:Ignorable="d"
         Title="NewsWindow" Height="466" Width="890">
     <Grid Margin="0,0,25,-34">
-        <ListView Margin="140,51,158,178" Name="lvUsers" ScrollViewer.CanContentScroll="True" >
+        <ListView Margin="248,49,247,180" Name="lvUsers" ScrollViewer.CanContentScroll="True" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="120" Header="ID" DisplayMemberBinding="{Binding ExaminationType}" />
-                    <GridViewColumn Width="120" Header="Type News" DisplayMemberBinding="{Binding DoctorsId}" />
-                    <GridViewColumn Width="120" Header="Title" DisplayMemberBinding="{Binding PatientsId}" />
-                    <GridViewColumn Width="200" Header="Short Description" DisplayMemberBinding="{Binding ExaminationStart}" />
+                    <GridViewColumn Width="120" Header="ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Width="120" Header="Type News" DisplayMemberBinding="{Binding TypeNews}" />
+                    <GridViewColumn Width="120" Header="Title" DisplayMemberBinding="{Binding Title}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button Content="Create News" Click="CreateNews_Click"  HorizontalAlignment="Left" Margin="156,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
-        <Button Content="View News"   HorizontalAlignment="Left" Margin="298,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
-        <Button Content="Edit News"  HorizontalAlignment="Left" Margin="436,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
-        <Button Content="Delete News"   HorizontalAlignment="Left" Margin="571,350,0,0" VerticalAlignment="Top" Width="118" Height="46"/>
-
+        <Button Content="Create News" Click="CreateNews_Click"  HorizontalAlignment="Left" Margin="172,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
+        <Button Content="View News" Click="ViewButton_Click"   HorizontalAlignment="Left" Margin="314,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
+        <Button Content="Edit News" Click="EditButton_Click" HorizontalAlignment="Left" Margin="451,351,0,0" VerticalAlignment="Top" Width="118" Height="45"/>
+        <Button Content="Delete News" Click="DeleteButton_Click" HorizontalAlignment="Left" Margin="586,350,0,0" VerticalAlignment="Top" Width="118" Height="46"/>
     </Grid>
 </Window>

@@ -7,7 +7,6 @@ namespace Logic
 {
    public class NewsManagement
    {
-
         private List<News> news;
 
         public NewsManagement()

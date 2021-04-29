@@ -52,7 +52,6 @@ namespace HospitalApplication.Windows.Secretary
 
 
             lvUsers.ItemsSource = sc.GetAllPatients();
-
         }
 
         private void RegisterPatient_Click(object sender, RoutedEventArgs e)
