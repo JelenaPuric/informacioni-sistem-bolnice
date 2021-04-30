@@ -6,22 +6,22 @@ using System.Text;
 
 namespace HospitalApplication.Logic
 {
-    class NotificationManagement
+    class NotificationService
     {
-        private static NotificationManagement instance;
-        public static NotificationManagement Instance
+        private static NotificationService instance;
+        public static NotificationService Instance
         {
             get
             {
                 if (null == instance)
                 {
-                    instance = new NotificationManagement();
+                    instance = new NotificationService();
                 }
                 return instance;
             }
         }
 
-        public NotificationManagement()
+        public NotificationService()
         {
             notifications = f.LoadFromFile();
         }

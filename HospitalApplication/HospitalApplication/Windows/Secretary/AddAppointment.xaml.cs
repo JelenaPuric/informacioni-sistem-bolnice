@@ -27,7 +27,7 @@ namespace HospitalApplication.Windows.Secretary
         private MainWindow mw = MainWindow.Instance;
         private PatientController patientController = new PatientController();
 
-        private ExaminationManagement m = ExaminationManagement.Instance;
+        private ExaminationService m = ExaminationService.Instance;
         private SerializationAndDeserilazationOfRooms r = new SerializationAndDeserilazationOfRooms();
         private WorkWithFiles.FilesDoctor fd = new WorkWithFiles.FilesDoctor();
 

@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationEdit : Window
     {
-        private NotificationManagement ntf = NotificationManagement.Instance;
+        private NotificationService ntf = NotificationService.Instance;
         private WindowPatientNotifications w = WindowPatientNotifications.Instance;
         private PatientController controller = new PatientController();
 

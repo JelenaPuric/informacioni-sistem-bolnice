@@ -13,7 +13,7 @@ namespace HospitalApplication.Logic
         private string username;
         //private List<DateTime> dates;
         private List<Notification> notifications;
-        private NotificationManagement ntf = NotificationManagement.Instance;
+        private NotificationService ntf = NotificationService.Instance;
 
         public string Username
         {

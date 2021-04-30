@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowPatientNotifications : Window
     {
-        private NotificationManagement ntf = NotificationManagement.Instance;
+        private NotificationService ntf = NotificationService.Instance;
         private Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
         private MainWindow mw = MainWindow.Instance;
 

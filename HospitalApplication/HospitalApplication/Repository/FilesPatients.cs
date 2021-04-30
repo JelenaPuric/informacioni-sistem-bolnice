@@ -10,7 +10,7 @@ namespace WorkWithFiles
    public class FilesPatients
    {
 
-        public static string FilePatient = "../../../patients.json";
+        public static string FilePatient = "../../../Data/patients.json";
 
         public static List<Patient> LoadPatients()
         {

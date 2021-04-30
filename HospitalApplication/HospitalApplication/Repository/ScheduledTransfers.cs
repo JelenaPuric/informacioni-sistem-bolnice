@@ -9,7 +9,7 @@ namespace HospitalApplication.Repository
 {
     public class ScheduledTransfers
     {
-        public static string FileTransfers = "../../../transfers.json";
+        public static string FileTransfers = "../../../Data/transfers.json";
 
         public static List<Transfer> LoadTransfers()
         {

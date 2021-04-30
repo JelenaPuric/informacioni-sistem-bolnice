@@ -10,8 +10,8 @@ namespace HospitalApplication.Controller
 {
     class PatientController
     {
-        private ExaminationManagement examinationManagement = ExaminationManagement.Instance;
-        private NotificationManagement ntf = NotificationManagement.Instance;
+        private ExaminationService examinationManagement = ExaminationService.Instance;
+        private NotificationService ntf = NotificationService.Instance;
 
         public void ScheduleExamination(Examination e) {
             examinationManagement.ScheduleExamination(e);

@@ -33,7 +33,7 @@ namespace HospitalApplication
         //generisanje id za pregled ne radi, ako skontas kako da resis bagove mozes crud raditi preko tog id-a
         //uradjen prikaz pregleda ulogovanog pacijenta
         //dodaj da se ne unosi ime pacijenta pri zakazivanju
-        private ExaminationManagement examinationManagement = ExaminationManagement.Instance;
+        private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private PatientController controller = new PatientController();
         public ICollectionView ExaminationsCollectionView { get; }

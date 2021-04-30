@@ -9,7 +9,7 @@ namespace WorkWithFiles
 {
    public class SerializationAndDeserilazationOfRooms
    {
-        public static string FileRoom = "../../../rooms.json";
+        public static string FileRoom = "../../../Data/rooms.json";
 
         public static List<Room> LoadRoom()
       {

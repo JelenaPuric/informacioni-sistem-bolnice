@@ -20,7 +20,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationMake : Window
     {
-        private NotificationManagement ntf = NotificationManagement.Instance;
+        private NotificationService ntf = NotificationService.Instance;
         private int idNotification = 100000;
         private WindowPatientNotifications w = WindowPatientNotifications.Instance;
         private MainWindow mw = MainWindow.Instance;

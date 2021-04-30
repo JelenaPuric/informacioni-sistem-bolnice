@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class MakeAppointmentWindow : Window
     {
 
-        ExaminationManagement m = ExaminationManagement.Instance;
+        ExaminationService m = ExaminationService.Instance;
         SecretaryController sc = new SecretaryController();
         string idP;
         string usernamePatient;

@@ -10,7 +10,7 @@ namespace WorkWithFiles
    public class FilesAllergens
    {
 
-        public static string FileAllergen = "../../../allergens.json";
+        public static string FileAllergen = "../../../Data/allergens.json";
 
         public static List<Allergen> LoadAllergens()
         {

@@ -21,7 +21,7 @@ namespace HospitalApplication
     /// </summary>
     public partial class WindowExaminationSchedule : Window
     {
-        private ExaminationManagement m = ExaminationManagement.Instance;
+        private ExaminationService m = ExaminationService.Instance;
         private PatientController controller = new PatientController();
         private string doctorsUsername;
         private WindowPatient windowPatient = WindowPatient.Instance;

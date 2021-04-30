@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class FunMoveAppointmentWindow : Window
     {
-        private ExaminationManagement m = ExaminationManagement.Instance;
+        private ExaminationService m = ExaminationService.Instance;
         private MoveAppointment w = MoveAppointment.Instance;
         private string id;
         private PatientController controller = new PatientController();

@@ -10,7 +10,7 @@ namespace HospitalApplication.Repository
 {
     class FilesSurvey
     {
-        public static string path = "../../../surveys.json";
+        public static string path = "../../../Data/surveys.json";
 
         public List<Survey> ReadSurveys()
         {

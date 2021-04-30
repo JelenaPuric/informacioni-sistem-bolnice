@@ -10,7 +10,7 @@ namespace WorkWithFiles
    public class FilesNews
    {
 
-        public static string FileNews = "../../../news.json";
+        public static string FileNews = "../../../Data/news.json";
 
         public static List<News> LoadNews()
         {
