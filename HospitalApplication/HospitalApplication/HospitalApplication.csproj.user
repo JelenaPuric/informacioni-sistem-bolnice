@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\Manager\Medicines\main.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Renovationn\AddRenovation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Renovationn\EditRenovation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Renovationn\Renovations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Manager\Resources\AddMoveStaticResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -166,6 +178,18 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Medicines\main.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Renovationn\AddRenovation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Renovationn\EditRenovation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Renovationn\Renovations.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Resources\AddMoveStaticResource.xaml">

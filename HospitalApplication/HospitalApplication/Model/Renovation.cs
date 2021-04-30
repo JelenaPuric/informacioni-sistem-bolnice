@@ -1,88 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.Windows.Controls;
 
 namespace Model
 {
-   public class Renovation
-   {
-      public System.Collections.ArrayList room;
-      
-      public System.Collections.ArrayList GetRoom()
-      {
-         if (room == null)
-            room = new System.Collections.ArrayList();
-         return room;
-      }
-      
-      public void SetRoom(System.Collections.ArrayList newRoom)
-      {
-         RemoveAllRoom();
-         foreach (Room oRoom in newRoom)
-            AddRoom(oRoom);
-      }
-      
-      public void AddRoom(Room newRoom)
-      {
-         if (newRoom == null)
-            return;
-         if (this.room == null)
-            this.room = new System.Collections.ArrayList();
-         if (!this.room.Contains(newRoom))
-            this.room.Add(newRoom);
-      }
-      
-      public void RemoveRoom(Room oldRoom)
-      {
-         if (oldRoom == null)
-            return;
-         if (this.room != null)
-            if (this.room.Contains(oldRoom))
-               this.room.Remove(oldRoom);
-      }
-      
-      public void RemoveAllRoom()
-      {
-         if (room != null)
-            room.Clear();
-      }
-   
-      public bool IsForRenovation
-      {
-         get
-         {
-            // TODO: implement
-            return (bool)true;
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      
-      /*public DateTime DateOfConstruction
-      {
-         get
-         {
-            // TODO: implement
-            return (DateTime)null;
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }
-      */
-      /*public DateTime LastTimeRenovated
-      {
-         get
-         {
-            // TODO: implement
-            return (DateTime)null;
-         }
-         set
-         {
-            // TODO: implement
-         }
-      }*/
-   
-   }
+    public class Renovation
+    {
+        //public int Duration { get; set; }
+        public int RoomId { get; set; }
+        public DateTime StartDay { get; set; } 
+        public DateTime EndDay { get; set; }
+        public List<DateTime> Days { get; set; }
+        public int IdRenovation { get; set; }
+    }
 }

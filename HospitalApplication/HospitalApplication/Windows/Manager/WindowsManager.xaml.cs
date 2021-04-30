@@ -35,5 +35,11 @@ namespace HospitalApplication.Windows.Manager
             Resources.Menu m = new Resources.Menu();
             m.Show();
         }
+
+        private void Renovation_Clicked(object sender, RoutedEventArgs e)
+        {
+            Renovationn.Renovations r = new Renovationn.Renovations();
+            r.Show();
+        }
     }
 }
