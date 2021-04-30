@@ -132,6 +132,7 @@ namespace HospitalApplication
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
+            surveys = filesSurvey.ReadSurveys();
             for (int i = 0; i < surveys.Count; i++)
             {
                 if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30)

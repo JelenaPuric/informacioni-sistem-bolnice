@@ -54,9 +54,7 @@ namespace HospitalApplication.Windows.Patient1
             Question1.Text = "1. How easy was it to schedule an appointment at our facility?";
             Question2.Text = "2. If you used the patient portal prior to your appointment, was it easy to use?";
             Question3.Text = "3. How easy is it to navigate our facility?";
-            Question3.Text = "za doktore 3. Were the ambulatory staff quick to respond to your medical care request ?";
             Question4.Text = "4. Were we able to answer all your questions?";
-            Question4.Text = "za doktore 4. How often did the staff at this hospital describe possible side effects before administering your medicine?";
             Question5.Text = "5. During last stay at this hospital, how clean was your room kept?";
             Question6.Text = "6. Overall, how hygienic do you feel this hospital is?";
             Question7.Text = "7. How noisy was your room or sleeping place at this hospital?";

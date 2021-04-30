@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
+    "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
+    "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "projectName": "HospitalApplication",
-        "projectPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+        "projectPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
         "packagesPath": "C:\\Users\\orz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+        "outputPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+qJYlKSFdKoxR1qZlmnBDEPiQ1W4MAGibSod145jef+joalWQGui3Lns8GVmGBEvzAAx77lEq13Pt4r8MaygFg==",
+  "dgSpecHash": "L7zzcAqeOskNkw9MAdeHk12QFSfRietTKAEeKucdt/DC8Yl263zetmrlutwEEl255Dm1yBy6rsMJi+Pqv2g2Dw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj19\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "projectFilePath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj20\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\orz\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\orz\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
