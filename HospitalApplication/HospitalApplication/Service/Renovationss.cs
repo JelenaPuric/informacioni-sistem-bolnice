@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Model;
+using HospitalApplication.Repository;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,12 @@ namespace HospitalApplication.Service
    public class Renovationss
     {
         private List<Room> rooms;
+        private List<Transfer> transfers;
         
         public Renovationss()
         {
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+            transfers = ScheduledTransfers.LoadTransfers();
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].Resource == null)
@@ -74,24 +77,65 @@ namespace HospitalApplication.Service
 
         public bool CheckRenovation(Renovation newRenovation)
         {
+            int roomExist = 0;
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                for (int j = 0; j < rooms[i].Renovation.Count; j++)
+                {
+                    if (rooms[i].Renovation[j].RoomId == newRenovation.RoomId)
+                        for (int d = 0; d < rooms[i].Renovation[j].Days.Count; d++)
+                        {
+                            for (int nd = 0; nd < newRenovation.Days.Count; nd++)
+                            {
+                                if (rooms[i].Renovation[j].Days[d].Date == newRenovation.Days[nd].Date)
+                                {
+                                    MessageBox.Show("That room is already busy", "Error");
+                                    return false;
+                                }
+                            }
+                        }
+                }
+                if (rooms[i].RoomId == newRenovation.RoomId)
+                {
+                    roomExist++;
+                }
+            }
+            if (roomExist == 0)
+            {
+                MessageBox.Show("That room does not exist", "Error");
+                return false;
+            }
+            if (transfers.Count != 0)
+            {
+                for (int t = 0; t < transfers.Count; t++)
+                {
+                    if (newRenovation.RoomId == transfers[t].idRoomFrom || newRenovation.RoomId == transfers[t].idRoomTo)
+                    {
+                        for (int daysforcheck = 0; daysforcheck < newRenovation.Days.Count; daysforcheck++)
+                        {
+                            if (newRenovation.Days[daysforcheck].Date == transfers[t].dat.Date)
+                            {
+                                MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        public void IsFinishRenovation()
+        {
             for(int i=0; i<rooms.Count; i++)
             {
                 for(int j=0; j<rooms[i].Renovation.Count; j++)
                 {
-                    if (rooms[i].Renovation[j].RoomId == newRenovation.RoomId)
-                        if (rooms[i].Renovation[j].Days.Equals(newRenovation.Days))
-                        {
-                            MessageBox.Show("That room is already busy", "Error");
-                            return false;
-                        }
-                }
-                if (newRenovation.Days.Equals(rooms[i].Scheduled))
-                {
-                    MessageBox.Show("That room is already busy", "Error");
-                    return false;
+                    if (rooms[i].Renovation[j].EndDay <= DateTime.Now)
+                        rooms[i].Renovation.RemoveAt(j);
                 }
             }
-            return true;
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
     }
 }

@@ -23,6 +23,7 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         {
             InitializeComponent();
             Renovationss rs = new Renovationss();
+            rs.IsFinishRenovation();
             List<Renovation> rv = rs.GetList();
             lvDataBinding.ItemsSource = rv;
         }
@@ -50,7 +51,15 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         {
             Renovationss rs = new Renovationss();
             List<Renovation> rv = rs.GetList();
+            rs.IsFinishRenovation();
             lvDataBinding.ItemsSource = rv;
+        }
+
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
+        {
+            Renovation selected = (Renovation)lvDataBinding.SelectedItem;
+            EditRenovation edit = new EditRenovation(selected);
+            edit.Show();
         }
     }
 }
