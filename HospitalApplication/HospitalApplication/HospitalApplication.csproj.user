@@ -97,28 +97,28 @@
     <Compile Update="Windows\Doctor1\ShowOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowExaminationEdit.xaml.cs">
+    <Compile Update="Windows\PatientWindows\ExaminationEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowExaminationSchedule.xaml.cs">
+    <Compile Update="Windows\PatientWindows\ExaminationSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowNotificationEdit.xaml.cs">
+    <Compile Update="Windows\PatientWindows\NotificationEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowNotificationInfo.xaml.cs">
+    <Compile Update="Windows\PatientWindows\NotificationInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowNotificationMake.xaml.cs">
+    <Compile Update="Windows\PatientWindows\NotificationMake.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowPatient.xaml.cs">
+    <Compile Update="Windows\PatientWindows\Patient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowPatientNotifications.xaml.cs">
+    <Compile Update="Windows\PatientWindows\PatientNotifications.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Patient1\WindowSurveyOfHospital.xaml.cs">
+    <Compile Update="Windows\PatientWindows\HospitalSurvey.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\AddAllergenWindow.xaml.cs">
@@ -270,31 +270,31 @@
     <Page Update="Windows\Doctor1\ShowOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowExaminationEdit.xaml">
+    <Page Update="Windows\PatientWindows\ExaminationEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowExaminationMove.xaml">
+    <Page Update="Windows\PatientWindows\ExaminationMove.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowExaminationSchedule.xaml">
+    <Page Update="Windows\PatientWindows\ExaminationSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowNotificationEdit.xaml">
+    <Page Update="Windows\PatientWindows\NotificationEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowNotificationInfo.xaml">
+    <Page Update="Windows\PatientWindows\NotificationInfo.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowNotificationMake.xaml">
+    <Page Update="Windows\PatientWindows\NotificationMake.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowPatient.xaml">
+    <Page Update="Windows\PatientWindows\Patient.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowPatientNotifications.xaml">
+    <Page Update="Windows\PatientWindows\PatientNotifications.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Patient1\WindowSurveyOfHospital.xaml">
+    <Page Update="Windows\PatientWindows\HospitalSurvey.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\AddAllergenWindow.xaml">
