@@ -21,27 +21,33 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationEdit : Window
     {
-        private NotificationService ntf = NotificationService.Instance;
-        private WindowPatientNotifications w = WindowPatientNotifications.Instance;
+        private NotificationService notificationService = NotificationService.Instance;
+        private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
         private PatientController controller = new PatientController();
 
         public WindowNotificationEdit()
         {
             InitializeComponent();
-            Notification n = (Notification)w.lvUsers.SelectedItem;
-            DateTime date = n.Dates[0];
+            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
+            DateTime date = notification.Dates[0];
             Date.SelectedDate = date;
-            DrugName.Text = n.Title;
-            Description.Text = n.Description;
-            Days.Text = n.Repeat;
+            Title.Text = notification.Title;
+            Description.Text = notification.Description;
+            Repeat.Text = notification.Repeat;
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Notification n = (Notification)w.lvUsers.SelectedItem;
-            string id = n.NotificationsId;
-
+            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
             DateTime date = Date.SelectedDate.Value.Date;
+            DateTime newDate = GetDateAndTimeFromForm(date);
+            controller.EditNotification(notification.NotificationsId, Title.Text, Description.Text, Repeat.Text, newDate);
+            windowNotifications.UpdateView();
+            Close();
+        }
+
+        private DateTime GetDateAndTimeFromForm(DateTime date)
+        {
             List<(int, int, int)> appointment = new List<(int, int, int)>();
             for (int i = 0; i < 24; i++)
             {
@@ -50,11 +56,7 @@ namespace HospitalApplication.Windows.Patient1
             }
             (int, int, int) a = appointment[Combo.SelectedIndex];
             TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            DateTime d = date + time;
-
-            controller.EditNotification(id, DrugName.Text, Description.Text, Days.Text, d);
-            w.UpdateView();
-            Close();
+            return date + time;
         }
     }
 }

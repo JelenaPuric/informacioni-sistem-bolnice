@@ -18,17 +18,17 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationInfo : Window
     {
-        private WindowPatientNotifications w = WindowPatientNotifications.Instance;
+        private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
 
         public WindowNotificationInfo()
         {
             InitializeComponent();
-            Notification n = (Notification)w.lvUsers.SelectedItem;
-            DateTime date = n.Dates[0];
+            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
+            DateTime date = notification.Dates[0];
             Date.Text = date.ToString();
-            DrugName.Text = n.Title;
-            Description.Text = n.Description;
-            Days.Text = n.Repeat;
+            DrugName.Text = notification.Title;
+            Description.Text = notification.Description;
+            Days.Text = notification.Repeat;
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)

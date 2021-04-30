@@ -112,10 +112,10 @@
     <Compile Update="Windows\PatientWindows\NotificationMake.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\PatientWindows\Patient.xaml.cs">
+    <Compile Update="Windows\PatientWindows\Patients.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\PatientWindows\PatientNotifications.xaml.cs">
+    <Compile Update="Windows\PatientWindows\Notifications.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\PatientWindows\HospitalSurvey.xaml.cs">
@@ -288,10 +288,10 @@
     <Page Update="Windows\PatientWindows\NotificationMake.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\PatientWindows\Patient.xaml">
+    <Page Update="Windows\PatientWindows\Patients.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\PatientWindows\PatientNotifications.xaml">
+    <Page Update="Windows\PatientWindows\Notifications.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\HospitalSurvey.xaml">

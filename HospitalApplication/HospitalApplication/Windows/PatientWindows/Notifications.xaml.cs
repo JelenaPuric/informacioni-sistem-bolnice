@@ -19,8 +19,8 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowPatientNotifications : Window
     {
-        private NotificationService ntf = NotificationService.Instance;
-        private MainWindow mainWIndow = MainWindow.Instance;
+        private NotificationService notificationService = NotificationService.Instance;
+        private MainWindow mainWindow = MainWindow.Instance;
 
         private static WindowPatientNotifications instance;
         public static WindowPatientNotifications Instance
@@ -34,22 +34,18 @@ namespace HospitalApplication.Windows.Patient1
                 return instance;
             }
         }
+
         public WindowPatientNotifications()
         {
             InitializeComponent();
             instance = this;
-
-            //List<Notification> notifications = m.GetExaminations(l.EnteredUsername);
-            List<Notification> notifications = ntf.GetNotifications(mainWIndow.PatientsUsername);
-            //List<Examination> examinations = m.Examinations;
+            List<Notification> notifications = notificationService.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = notifications;
-            //Logic.PatientNotifications p = new Logic.PatientNotifications();
-            //TestLabela.Content = mainWIndow.PatientsUsername;
         }
 
         public void UpdateView()
         {
-            List<Notification> notifications = ntf.GetNotifications(mainWIndow.PatientsUsername);
+            List<Notification> notifications = notificationService.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = notifications;
         }
@@ -62,41 +58,32 @@ namespace HospitalApplication.Windows.Patient1
 
         private void Information_Click(object sender, RoutedEventArgs e)
         {
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
             WindowNotificationInfo window = new WindowNotificationInfo();
             window.Show();
         }
 
         private void EditNotification_Click(object sender, RoutedEventArgs e)
         {
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
             WindowNotificationEdit window = new WindowNotificationEdit();
             window.Show();
         }
 
         private void CancelNotification_Click(object sender, RoutedEventArgs e)
         {
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
-            Notification n = (Notification)lvUsers.SelectedItem;
-            string id = n.NotificationsId;
+            Notification notification = (Notification)lvUsers.SelectedItem;
+            string notificationId = notification.NotificationsId;
 
             MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to delete notification?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    ntf.CancelNotification(id);
+                    notificationService.CancelNotification(notificationId);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:

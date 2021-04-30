@@ -12,7 +12,6 @@ using System.Windows.Shapes;
 using HospitalApplication.Model;
 using HospitalApplication.Logic;
 using HospitalApplication.Controller;
-
 namespace HospitalApplication.Windows.Patient1
 {
     /// <summary>
@@ -21,19 +20,49 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowNotificationMake : Window
     {
         private NotificationService notificationService = NotificationService.Instance;
-        private int idNotification = 100000;
-        private WindowPatientNotifications w = WindowPatientNotifications.Instance;
+        private int notificationId = 100000;
+        private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private PatientController controller = new PatientController();
+        List<Notification> notifications = new List<Notification>();
 
         public WindowNotificationMake()
         {
             InitializeComponent();
+            notifications = notificationService.Notifications;
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             DateTime date = Date.SelectedDate.Value.Date;
+            DateTime newDate = GetDateAndTimeFromForm(date);
+            List<DateTime> dates = new List<DateTime>();
+            dates.Add(newDate);
+            for (int i = 0; i < Int32.Parse(Repeat.Text); i++)
+            {
+                newDate = newDate.AddDays(1);
+                dates.Add(newDate);
+            }
+            GenerateNotificationId();
+            Notification notification = new Notification(dates, Title.Text, Description.Text, Repeat.Text, (notificationId + 1).ToString(), mainWindow.PatientsUsername);
+            controller.ScheduleNotification(notification);
+            windowPatients.UpdateView();
+            Close();
+        }
+
+        private int GenerateNotificationId()
+        {
+            if (notificationId == 100000)
+            {
+                for (int i = 0; i < notifications.Count; i++)
+                    if (Int32.Parse(notifications[i].NotificationsId) > notificationId)
+                        notificationId = Int32.Parse(notifications[i].NotificationsId);
+            }
+            return notificationId;
+        }
+
+        private DateTime GetDateAndTimeFromForm(DateTime date)
+        {
             List<(int, int, int)> appointment = new List<(int, int, int)>();
             for (int i = 0; i < 24; i++)
             {
@@ -42,33 +71,7 @@ namespace HospitalApplication.Windows.Patient1
             }
             (int, int, int) a = appointment[Combo.SelectedIndex];
             TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            DateTime d = date + time;
-            List<DateTime> dates = new List<DateTime>();
-            dates.Add(d);
-            for (int i = 0; i < Int32.Parse(Days.Text); i++)
-            {
-                d = d.AddDays(1);
-                dates.Add(d);
-            }
-            string title = DrugName.Text;
-            string comment = Description.Text;
-            string repeat = Days.Text;
-
-            //pravi se unikatan id za notifikacije
-            List<Notification> notifications = notificationService.Notifications;
-            for (int i = 0; i < notifications.Count; i++)
-            {
-                if (Int32.Parse(notifications[i].NotificationsId) > idNotification)
-                {
-                    idNotification = Int32.Parse(notifications[i].NotificationsId);
-                }
-            }
-
-            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mainWindow.PatientsUsername);
-            controller.ScheduleNotification(n);
-
-            w.UpdateView();
-            Close();
+            return date + time;
         }
     }
 }
