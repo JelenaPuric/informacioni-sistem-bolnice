@@ -19,6 +19,8 @@ using HospitalApplication.Model;
 using HospitalApplication.Logic;
 using HospitalApplication.Windows.Patient1;
 using HospitalApplication.Controller;
+using HospitalApplication.Repository;
+using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication
 {
@@ -27,15 +29,13 @@ namespace HospitalApplication
     /// </summary>
     public partial class WindowPatient : Window
     {
-        //ideje sta kako treba uraditi
-        //da bih prikazao preglede samo ulogovanog pacijenta treba da drugacije implementiram funkcije za crud pregleda
-        //mogao bih porediti objekte Examination a ne da radim preko id-a ili selected itema
-        //generisanje id za pregled ne radi, ako skontas kako da resis bagove mozes crud raditi preko tog id-a
-        //uradjen prikaz pregleda ulogovanog pacijenta
-        //dodaj da se ne unosi ime pacijenta pri zakazivanju
         private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private PatientController controller = new PatientController();
+        private FilesSurvey filesSurvey = new FilesSurvey();
+        private List<Examination> allExaminations = new List<Examination>();
+        private FilesExamination filesExamination = new FilesExamination();
+        List<Survey> surveys = new List<Survey>();
         public ICollectionView ExaminationsCollectionView { get; }
 
         private static WindowPatient instance;
@@ -59,6 +59,9 @@ namespace HospitalApplication
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
             PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
+            allExaminations = filesExamination.LoadFromFile();
+            surveys = filesSurvey.ReadSurveys();
+            if (surveys == null) surveys = new List<Survey>();
         }
 
         public void UpdateView()
@@ -129,7 +132,41 @@ namespace HospitalApplication
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < surveys.Count; i++)
+            {
+                if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30)
+                {
+                    MessageBox.Show("You can rate hospital only once in 30 days.");
+                    return;
+                }
+            }
             WindowRateHospital window = new WindowRateHospital();
+            window.Show();
+        }
+
+        //provera da li pacijent moze da oceni doktora radi na ovaj nacin
+        //da bi se mogao oceniti doktor, pacijent mora da je u proslosti bio kod njega na pregledu
+        //takodje ako je pacijent ocenio doktora, ne moze da ga ponovo oceni sve dok ne ode kod njega na pregled
+        private void RateDoctor_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> doctorUsernames = new List<String>();
+            surveys = filesSurvey.ReadSurveys();
+            for (int i = 0; i < allExaminations.Count; i++) {
+                if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now) {
+                    bool ok = true;
+                    for (int j = 0; j < surveys.Count; j++)
+                    {
+                        if (surveys[j].PatientsUsername == mainWindow.PatientsUsername && surveys[j].SurveyIsAbout == allExaminations[i].DoctorsId && surveys[j].DateOfTheSurvey > allExaminations[i].ExaminationStart)
+                            ok = false;
+                    }
+                    if(ok) doctorUsernames.Add(allExaminations[i].DoctorsId);
+                }
+            }
+            if (doctorUsernames.Count < 1) {
+                MessageBox.Show("You must attend examination before rating doctor.");
+                return;
+            }
+            DoctorSurvey window = new DoctorSurvey(doctorUsernames);
             window.Show();
         }
     }

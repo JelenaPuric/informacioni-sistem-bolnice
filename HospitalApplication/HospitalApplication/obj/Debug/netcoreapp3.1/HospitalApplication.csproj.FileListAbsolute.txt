@@ -695,3 +695,5 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\Patients.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\Notifications.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\Patients.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\DoctorSurvey.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\DoctorSurvey.baml
