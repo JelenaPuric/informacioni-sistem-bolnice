@@ -47,7 +47,7 @@ namespace HospitalApplication.WorkWithFiles
                     }
                 }
                 File.AppendAllText(path, ",");
-                File.AppendAllText(path, notifications[i].Title + "," + notifications[i].Description + "," + notifications[i].Repeat + "," + notifications[i].Id + "," + notifications[i].PatientId);
+                File.AppendAllText(path, notifications[i].Title + "," + notifications[i].Description + "," + notifications[i].Repeat + "," + notifications[i].NotificationsId + "," + notifications[i].PatientsId);
                 File.AppendAllText(path, "\n");
             }
         }

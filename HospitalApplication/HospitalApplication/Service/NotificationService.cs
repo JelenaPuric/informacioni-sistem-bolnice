@@ -8,6 +8,8 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
+        private FilesNotification filesNotification = new FilesNotification();
+        public List<Notification> Notifications { get; set; }
         private static NotificationService instance;
         public static NotificationService Instance
         {
@@ -23,23 +25,23 @@ namespace HospitalApplication.Logic
 
         public NotificationService()
         {
-            notifications = f.LoadFromFile();
+            Notifications = filesNotification.LoadFromFile();
         }
 
         public void ScheduleNotification(Notification n)
         {
-            notifications.Add(n);
-            f.WriteInFile(notifications);
+            Notifications.Add(n);
+            filesNotification.WriteInFile(Notifications);
         }
 
         public List<Notification> GetNotifications(string id)
         {
             List<Notification> n = new List<Notification>();
-            for (int i = 0; i < notifications.Count; i++)
+            for (int i = 0; i < Notifications.Count; i++)
             {
-                if (notifications[i].PatientId == id && notifications[i].Dates[notifications[i].Dates.Count - 1] > DateTime.Now)
+                if (Notifications[i].PatientsId == id && Notifications[i].Dates[Notifications[i].Dates.Count - 1] > DateTime.Now)
                 {
-                    n.Add(notifications[i]);
+                    n.Add(Notifications[i]);
                 }
             }
             return n;
@@ -47,23 +49,23 @@ namespace HospitalApplication.Logic
 
         public void CancelNotification(String id)
         {
-            for (int i = 0; i < notifications.Count; i++)
+            for (int i = 0; i < Notifications.Count; i++)
             {
-                if (notifications[i].Id == id) notifications.RemoveAt(i);
+                if (Notifications[i].NotificationsId == id) Notifications.RemoveAt(i);
             }
-            f.WriteInFile(notifications);
+            filesNotification.WriteInFile(Notifications);
         }
 
         public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
         {
             //prvo ga izbrisi, promeni datum pa vrati
             Notification n = new Notification();
-            for (int i = 0; i < notifications.Count; i++)
+            for (int i = 0; i < Notifications.Count; i++)
             {
-                if (notifications[i].Id == id)
+                if (Notifications[i].NotificationsId == id)
                 {
-                    n = notifications[i];
-                    notifications.RemoveAt(i);
+                    n = Notifications[i];
+                    Notifications.RemoveAt(i);
                 }
             }
             n.Title = title;
@@ -78,17 +80,8 @@ namespace HospitalApplication.Logic
                 dates.Add(date);
             }
             n.Dates = dates;
-            notifications.Add(n);
-            f.WriteInFile(notifications);
-        }
-
-        private FilesNotification f = new FilesNotification();
-        private List<Notification> notifications;
-
-        public List<Notification> Notifications
-        {
-            get { return notifications; }
-            set { notifications = value; }
+            Notifications.Add(n);
+            filesNotification.WriteInFile(Notifications);
         }
     }
 }

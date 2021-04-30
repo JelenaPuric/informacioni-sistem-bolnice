@@ -39,7 +39,7 @@ namespace HospitalApplication.Windows.Patient1
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             Notification n = (Notification)w.lvUsers.SelectedItem;
-            string id = n.Id;
+            string id = n.NotificationsId;
 
             DateTime date = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();

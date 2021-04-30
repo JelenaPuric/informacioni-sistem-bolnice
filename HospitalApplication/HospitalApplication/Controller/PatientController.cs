@@ -10,93 +10,91 @@ namespace HospitalApplication.Controller
 {
     class PatientController
     {
-        private ExaminationService examinationManagement = ExaminationService.Instance;
-        private NotificationService ntf = NotificationService.Instance;
+        private ExaminationService examinationService = ExaminationService.Instance;
+        private NotificationService notificationService = NotificationService.Instance;
 
         public void ScheduleExamination(Examination e) {
-            examinationManagement.ScheduleExamination(e);
+            examinationService.ScheduleExamination(e);
         }
-
 
         public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
         {
-            return examinationManagement.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
+            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
         }
-
 
         public void CancelExamination(String id)
         {
-            examinationManagement.CancelExamination(id);
+            examinationService.CancelExamination(id);
         }
 
         public void MoveExamination(string id, DateTime date, int roomIndex)
         {
-            examinationManagement.MoveExamination(id, date, roomIndex);
+            examinationService.MoveExamination(id, date, roomIndex);
         }
 
         public void EditExamination(string id, string doctor)
         {
-            examinationManagement.EditExamination(id, doctor);
+            examinationService.EditExamination(id, doctor);
         }
 
         public List<Examination> GetExaminations(String patientName)
         {
-            return examinationManagement.GetExaminations(patientName);
+            return examinationService.GetExaminations(patientName);
         }
 
         public void AddExaminationToDoctor(String doctorUsername, DateTime date)
         {
-            examinationManagement.addExaminationToDoctor(doctorUsername, date);
+            examinationService.addExaminationToDoctor(doctorUsername, date);
         }
 
         public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
         {
-            examinationManagement.removeExaminationFromDoctor(doctorUsername, date);
+            examinationService.removeExaminationFromDoctor(doctorUsername, date);
         }
 
         public bool DoctorIsFree(String doctorUsername, DateTime date)
         {
-            return examinationManagement.doctorIsFree(doctorUsername, date);
+            return examinationService.doctorIsFree(doctorUsername, date);
         }
 
         public void AddExaminationToRoom(int roomIndex, DateTime date)
         {
-            examinationManagement.addExaminationToRoom(roomIndex, date);
+            examinationService.addExaminationToRoom(roomIndex, date);
         }
 
         public void RemoveExaminationFromRoom(String roomId, DateTime date)
         {
-            examinationManagement.removeExaminationFromRoom(roomId, date);
+            examinationService.removeExaminationFromRoom(roomId, date);
         }
 
         public Tuple<bool, int> RoomIsFree(DateTime date)
         {
-            return examinationManagement.roomIsFree(date);
+            return examinationService.roomIsFree(date);
         }
 
         public void UpdateDoctors()
         {
-            examinationManagement.updateDoctors();
+            examinationService.updateDoctors();
         }
 
         public void ScheduleNotification(Notification n)
         {
-            ntf.ScheduleNotification(n);
+            notificationService.ScheduleNotification(n);
         }
 
         public List<Notification> GetNotifications(string id)
         {
-            return ntf.GetNotifications(id);
+            return notificationService.GetNotifications(id);
         }
 
         public void CancelNotification(String id)
         {
-            ntf.CancelNotification(id);
+            notificationService.CancelNotification(id);
         }
 
         public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
         {
-            ntf.EditNotification(id, title, descriptioin, repeat, date);
+            notificationService.EditNotification(id, title, descriptioin, repeat, date);
         }
     }
 }

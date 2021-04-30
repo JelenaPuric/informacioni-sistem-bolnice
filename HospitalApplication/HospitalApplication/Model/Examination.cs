@@ -2,76 +2,36 @@ using System;
 
 namespace Model
 {
-   public class Examination
-   {
-      public Room room;
-      public Patient[] pacient;
-   
-      private DateTime examinationStart;
-      private DateTime examinatonEnd;
-      private Boolean urgentOperation = false;
-      private String examinationId;
-      private String patientsId;
-      private String doctorsId;
-      private String roomId;
+    public class Examination
+    {
+        public Room room;
+        public Patient[] pacient;
+        private Boolean urgentOperation = false;
+        public String ExaminationId { get; set; }
+        public DateTime ExaminationStart { get; set; }
+        public String PatientsId { get; set; }
+        public String DoctorsId { get; set; }
+        public String RoomId { get; set; }
+        public ExaminationType ExaminationType { get; set; }
 
-        private ExaminationType examinationType;
-
-      public Examination() { }
-
+        public Examination() { }
 
         public Examination(string patient, string doctor, string room, DateTime start, string id)
         {
-            patientsId = patient;
-            doctorsId = doctor;
-            roomId = room;
-            examinationStart = start;
-            examinationId = id;
+            PatientsId = patient;
+            DoctorsId = doctor;
+            RoomId = room;
+            ExaminationStart = start;
+            ExaminationId = id;
         }
-
 
         public Examination(string patient, string doctor, string room, DateTime start, string id, ExaminationType examType) {
-            patientsId = patient;
-            doctorsId = doctor;
-            roomId = room;
-            examinationStart = start;
-            examinationId = id;
-            examinationType = examType;
-        }
-
-
-
-
-        public ExaminationType ExaminationType
-        {
-            get { return examinationType; }
-            set { examinationType = value; }
-        }
-
-        public string PatientsId
-        {
-            get { return patientsId; }
-            set { patientsId = value; }
-        }
-        public string DoctorsId
-        {
-            get { return doctorsId; }
-            set { doctorsId = value; }
-        }
-        public string RoomId
-        {
-            get { return roomId; }
-            set { roomId = value; }
-        }
-        public DateTime ExaminationStart
-        {
-            get { return examinationStart; }
-            set { examinationStart = value; }
-        }
-        public string ExaminationId
-        {
-            get { return examinationId; }
-            set { examinationId = value; }
+            PatientsId = patient;
+            DoctorsId = doctor;
+            RoomId = room;
+            ExaminationStart = start;
+            ExaminationId = id;
+            ExaminationType = examType;
         }
     }
 }

@@ -20,8 +20,7 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowPatientNotifications : Window
     {
         private NotificationService ntf = NotificationService.Instance;
-        private Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
-        private MainWindow mw = MainWindow.Instance;
+        private MainWindow mainWIndow = MainWindow.Instance;
 
         private static WindowPatientNotifications instance;
         public static WindowPatientNotifications Instance
@@ -41,15 +40,16 @@ namespace HospitalApplication.Windows.Patient1
             instance = this;
 
             //List<Notification> notifications = m.GetExaminations(l.EnteredUsername);
-            List<Notification> notifications = ntf.GetNotifications(mw.PatientsUsername);
+            List<Notification> notifications = ntf.GetNotifications(mainWIndow.PatientsUsername);
             //List<Examination> examinations = m.Examinations;
             lvUsers.ItemsSource = notifications;
             //Logic.PatientNotifications p = new Logic.PatientNotifications();
+            //TestLabela.Content = mainWIndow.PatientsUsername;
         }
 
         public void UpdateView()
         {
-            List<Notification> notifications = ntf.GetNotifications(mw.PatientsUsername);
+            List<Notification> notifications = ntf.GetNotifications(mainWIndow.PatientsUsername);
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = notifications;
         }
@@ -90,7 +90,7 @@ namespace HospitalApplication.Windows.Patient1
                 return;
             }
             Notification n = (Notification)lvUsers.SelectedItem;
-            string id = n.Id;
+            string id = n.NotificationsId;
 
             MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to delete notification?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)

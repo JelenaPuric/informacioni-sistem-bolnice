@@ -8,6 +8,12 @@ namespace Logic
 {
     public class ExaminationService
     {
+        private FilesExamination filesExamination = new FilesExamination();
+        private FilesDoctor filesDoctor = new FilesDoctor();
+        public List<Examination> Examinations { get; set; }
+        public List<Doctor> Doctors { get; set; }
+        public List<Room> Rooms { get; set; }
+        public int RoomIndx { get; set; }
         private static ExaminationService instance;
         public static ExaminationService Instance
         {
@@ -283,12 +289,5 @@ namespace Logic
         {
             Doctors = filesDoctor.LoadFromFile();
         }
-
-        private FilesExamination filesExamination = new FilesExamination();
-        private FilesDoctor filesDoctor = new FilesDoctor();
-        public List<Examination> Examinations { get; set; }
-        public List<Doctor> Doctors { get; set; }
-        public List<Room> Rooms { get; set; }
-        public int RoomIndx { get; set; }
     }
 }

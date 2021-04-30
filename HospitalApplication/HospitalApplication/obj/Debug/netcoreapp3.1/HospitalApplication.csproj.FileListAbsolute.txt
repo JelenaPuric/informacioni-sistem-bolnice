@@ -598,7 +598,6 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowNotificationInfo.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowNotificationMake.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.g.cs
-C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatientLogin.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatientNotifications.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowSurveyOfHospital.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AddAllergenWindow.g.cs
@@ -665,7 +664,6 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowNotificationInfo.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowNotificationMake.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatient.baml
-C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatientLogin.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowPatientNotifications.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Patient1\WindowSurveyOfHospital.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj19\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Secretary\AddAllergenWindow.baml

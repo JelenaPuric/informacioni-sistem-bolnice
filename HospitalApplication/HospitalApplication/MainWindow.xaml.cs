@@ -28,18 +28,7 @@ namespace HospitalApplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        private FilesExamination f = new FilesExamination();
-
-       // PatientManagement m = new PatientManagement();
-        SecretaryController sc = new SecretaryController();
-
-        string enteredUsername;
-        public String PatientsUsername
-        {
-            get { return enteredUsername; }
-            set { enteredUsername = value; }
-        }
-
+        public String PatientsUsername { get; set; }
 
         private static MainWindow instance;
         public static MainWindow Instance
@@ -54,9 +43,6 @@ namespace HospitalApplication
             }
         }
 
-
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -67,11 +53,7 @@ namespace HospitalApplication
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-       
-
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -89,35 +71,30 @@ namespace HospitalApplication
             }
             else if (Username.Text.Equals("lekar") && Password.Password.Equals("123"))
             {
-                Windows.Doctor1.DoctorWindow window = new DoctorWindow();
+                DoctorWindow window = new DoctorWindow();
                 Close();
                 window.Show();
             }
             else 
             {
-                List<Patient> patients = sc.GetAllPatients();
-                    string username;
-                    string password;
-                    enteredUsername = Username.Text;
-                    string enteredPassword = Password.Password;
-                    for (int i = 0; i < patients.Count; i++)
+                List<Patient> patients = FilesPatients.LoadPatients();
+                string username;
+                string password;
+                PatientsUsername = Username.Text;
+                string enteredPassword = Password.Password;
+                for (int i = 0; i < patients.Count; i++)
+                {
+                    username = patients[i].Username;
+                    password = patients[i].Password;
+                    if (PatientsUsername == username && enteredPassword == password)
                     {
-                        username = patients[i].Username;
-                        password = patients[i].Password;
-                        if (enteredUsername == username && enteredPassword == password)
-                        {
-                            WindowPatient window = new WindowPatient();
-                            Close();
-                            window.Show();
-                        }
+                        WindowPatient window = new WindowPatient();
+                        Close();
+                        window.Show();
                     }
-                    InvalidInfoLabel.Content = "* invalid username or password";
-
+                }
+                InvalidInfoLabel.Content = "* invalid username or password";
             }
-
         }
-
-
-
     }
 }

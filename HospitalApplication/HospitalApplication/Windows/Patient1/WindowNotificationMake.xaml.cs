@@ -20,10 +20,10 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationMake : Window
     {
-        private NotificationService ntf = NotificationService.Instance;
+        private NotificationService notificationService = NotificationService.Instance;
         private int idNotification = 100000;
         private WindowPatientNotifications w = WindowPatientNotifications.Instance;
-        private MainWindow mw = MainWindow.Instance;
+        private MainWindow mainWindow = MainWindow.Instance;
         private PatientController controller = new PatientController();
 
         public WindowNotificationMake()
@@ -55,16 +55,16 @@ namespace HospitalApplication.Windows.Patient1
             string repeat = Days.Text;
 
             //pravi se unikatan id za notifikacije
-            List<Notification> notifications = ntf.Notifications;
+            List<Notification> notifications = notificationService.Notifications;
             for (int i = 0; i < notifications.Count; i++)
             {
-                if (Int32.Parse(notifications[i].Id) > idNotification)
+                if (Int32.Parse(notifications[i].NotificationsId) > idNotification)
                 {
-                    idNotification = Int32.Parse(notifications[i].Id);
+                    idNotification = Int32.Parse(notifications[i].NotificationsId);
                 }
             }
 
-            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mw.PatientsUsername);
+            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mainWindow.PatientsUsername);
             controller.ScheduleNotification(n);
 
             w.UpdateView();

@@ -31,11 +31,12 @@
                         <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
                         <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" />
                         <GridViewColumn Header="Repeat" DisplayMemberBinding="{Binding Repeat}" />
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientId}" />
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" />
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding NotificationsId}" />
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Label Name="TestLabela" Content=""/>
         </StackPanel>
     </Grid>
 </Window>
