@@ -14,14 +14,11 @@ using Logic;
 using WorkWithFiles;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
-//da bih koristio forme morao sam u HospitalApplication.csproj da dodam:
-//<UseWindowsForms>true</UseWindowsForms>
-//using System.Windows.Forms;
-//using Tulpep.NotificationWindow;
 using System.Threading;
 using HospitalApplication.Model;
 using HospitalApplication.Logic;
 using HospitalApplication.Windows.Patient1;
+using HospitalApplication.Controller;
 
 namespace HospitalApplication
 {
@@ -36,12 +33,10 @@ namespace HospitalApplication
         //generisanje id za pregled ne radi, ako skontas kako da resis bagove mozes crud raditi preko tog id-a
         //uradjen prikaz pregleda ulogovanog pacijenta
         //dodaj da se ne unosi ime pacijenta pri zakazivanju
-        FilesExamination f = new FilesExamination();
-        ExaminationManagement m = ExaminationManagement.Instance;
-        Windows.Patient1.WindowPatientLogin l = Windows.Patient1.WindowPatientLogin.Instance;
-        MainWindow mw = MainWindow.Instance;
-        NotificationManagement ntf = NotificationManagement.Instance;
-
+        private ExaminationManagement examinationManagement = ExaminationManagement.Instance;
+        private MainWindow mainWindow = MainWindow.Instance;
+        private PatientController controller = new PatientController();
+        public ICollectionView ExaminationsCollectionView { get; }
 
         private static WindowPatient instance;
         public static WindowPatient Instance
@@ -60,16 +55,16 @@ namespace HospitalApplication
         {
             InitializeComponent();
             instance = this;
-
-            List<Examination> examinations = m.GetExaminations(mw.EnteredUsername);
-            //List<Examination> examinations = m.Examinations;
+            List<Examination> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
-            Logic.PatientNotifications p = new Logic.PatientNotifications(mw.Username.Text);
+            PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
         }
 
         public void UpdateView()
         {
-            List<Examination> examinations = m.GetExaminations(mw.EnteredUsername);
+            List<Examination> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             //List<Examination> examinations = m.Examinations;
             //lvUsers.ItemsSource = null;
             //lvUsers.ItemsSource = examinations;
@@ -85,80 +80,24 @@ namespace HospitalApplication
 
         private void ScheduleExamination_Click(object sender, RoutedEventArgs e)
         {
-            /*PopupNotifier popup = new PopupNotifier();
-            popup.TitleText = "info";
-            popup.ContentText = "popup";
-            popup.Popup();*/
             WindowExaminationSchedule window = new WindowExaminationSchedule();
             window.Show();
         }
 
-        //trenutno otkazujem pregled preko id pregleda
-        //uradjeno da kad se pregled otkaze onda se ukloni pregled i doktoru
         private void CancelExamination_Click(object sender, RoutedEventArgs e)
         {
-            //WindowExaminationCancel window = new WindowExaminationCancel();
-            //window.Show();
-            //string id = (string)lvUsers.SelectedItems[lvUsers.SelectedIndex];
-            //ListViewItem item = lvUsers.SelectedItems[1];
-            //string name = lvUsers.SelectedItems[0].SubItems[0].Text;
-            //string id = (string)lvUsers.SelectedItems[0];
-            //string id = (string)lvUsers.SelectedItem;
-
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
-
-            Examination e2 = (Examination)lvUsers.SelectedItem;
-            string id = e2.ExaminationId;
-
+            Examination examination = (Examination)lvUsers.SelectedItem;
             MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    int index = lvUsers.SelectedIndex;
-                    WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
-                    List<Doctor> doctors = doc.LoadFromFile();
-                    DateTime dt = e2.ExaminationStart;
-                    //skloni datum lekaru
-                    for (int i = 0; i < doctors.Count; i++)
-                    {
-                        if (doctors[i].Username == e2.DoctorsId)
-                        {
-                            for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                            {
-                                if (doctors[i].Scheduled[j] == dt)
-                                {
-                                    doctors[i].Scheduled.RemoveAt(j);
-                                }
-                            }
-
-                            doc.WriteInFile(doctors);
-                            break;
-                        }
-                    }
-                    //skloni datum sobi
-                    List<Room> rooms = new List<Room>();
-                    rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-                    for (int i = 0; i < rooms.Count; i++) {
-                        if (rooms[i].Scheduled == null) continue;
-                        if (rooms[i].RoomId.ToString() == e2.RoomId)
-                        {
-                            for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                            {
-                                if (rooms[i].Scheduled[j] == dt) {
-                                    rooms[i].Scheduled.RemoveAt(j);
-                                    break;
-                                }
-                            }
-                            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
-                        }
-                    }
-
-                    m.CancelExamination(id);
-                    //m.Cancel(index);
+                    DateTime date = examination.ExaminationStart;
+                    //ukloni pregled lekaru i sobi
+                    controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
+                    controller.RemoveExaminationFromRoom(examination.RoomId, date);
+                    controller.CancelExamination(examination.ExaminationId);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:
@@ -168,29 +107,29 @@ namespace HospitalApplication
 
         private void MoveExamination_Click(object sender, RoutedEventArgs e)
         {
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
-            Windows.Patient1.WindowExaminationMove window = new Windows.Patient1.WindowExaminationMove();
+            WindowExaminationMove window = new WindowExaminationMove();
             window.Show();
         }
 
         private void Notifications_Click(object sender, RoutedEventArgs e)
         {
-            Windows.Patient1.WindowPatientNotifications window = new Windows.Patient1.WindowPatientNotifications();
+            WindowPatientNotifications window = new WindowPatientNotifications();
             window.Show();
         }
 
         private void EditExamination_Click(object sender, RoutedEventArgs e)
         {
-            //ako nista nije selektovano zavrsi funkciju
             if (!(lvUsers.SelectedIndex > -1))
-            {
                 return;
-            }
             WindowExaminationEdit window = new WindowExaminationEdit();
+            window.Show();
+        }
+
+        private void RateHospital_Click(object sender, RoutedEventArgs e)
+        {
+            WindowRateHospital window = new WindowRateHospital();
             window.Show();
         }
     }

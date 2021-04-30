@@ -35,17 +35,9 @@ namespace HospitalApplication.Logic
         public List<Notification> GetNotifications(string id)
         {
             List<Notification> n = new List<Notification>();
-
-            //notifikacija koja sluzi da demonstrira rad treda za notifikacije
-            /*List<DateTime> dates = new List<DateTime>();
-            DateTime date = new DateTime(2021, 4, 13, 10, 57, 0);
-            dates.Add(date);
-            Notification nt = new Notification(dates, "vucicu", "pederu", "1", "100050", "m");
-            n.Add(nt);*/
-
             for (int i = 0; i < notifications.Count; i++)
             {
-                if (notifications[i].PatientId == id)
+                if (notifications[i].PatientId == id && notifications[i].Dates[notifications[i].Dates.Count - 1] > DateTime.Now)
                 {
                     n.Add(notifications[i]);
                 }
@@ -89,38 +81,6 @@ namespace HospitalApplication.Logic
             notifications.Add(n);
             f.WriteInFile(notifications);
         }
-
-        /*public List<DateTime> GetDates(string username)
-        {
-            List<DateTime> dates = new List<DateTime>();
-            DateTime date = new DateTime(2021, 4, 13, 10, 42, 0);
-            dates.Add(date);
-            for (int i = 0; i < notifications.Count; i++)
-            {
-                //uzimam samo notifikacije za ulogovanog pacijenta
-                if (notifications[i].PatientId != username) continue;
-                for (int j = 0; j < notifications[i].Dates.Count; j++)
-                {
-                    //ne trebaju mi prosli datumi
-                    if (notifications[i].Dates[j] >= DateTime.Now)
-                        dates.Add(notifications[i].Dates[j]);
-                }
-            }
-            return dates;
-        }*/
-
-        /*public List<Examination> GetExaminations(String patientName)
-        {
-            List<Examination> e = new List<Examination>();
-            for (int i = 0; i < examinations.Count; i++)
-            {
-                if (examinations[i].PatientsId == patientName)
-                {
-                    e.Add(examinations[i]);
-                }
-            }
-            return e;
-        }*/
 
         private FilesNotification f = new FilesNotification();
         private List<Notification> notifications;

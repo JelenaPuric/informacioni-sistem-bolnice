@@ -1,0 +1,63 @@
+﻿<Window x:Class="HospitalApplication.Windows.Patient1.WindowRateHospital"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
+        mc:Ignorable="d"
+        Title="WindowRateHospital" Height="800" Width="500">
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="Hospital Survey" HorizontalAlignment="Center" Foreground="green" FontSize="30" Margin="0 10 0 10"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Text="1. Based on your complete experience with our medical care facility, how likely are you to recommend us to a friend or colleague?"/>
+            <Grid Margin="0 20 0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton GroupName="Group1" x:Name="RadioButton1" Grid.Column="0" Content="1" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton2" Grid.Column="1" Content="2" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton3" Grid.Column="2" Content="3" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton4" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton5" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+            </Grid>
+            <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Text="2. How would you rate the professionalism of our staff? "/>
+            <Grid Margin="0 20 0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton GroupName="Group2" x:Name="RadioButton6" Grid.Column="0" Content="1" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group2" x:Name="RadioButton7" Grid.Column="1" Content="2" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group2" x:Name="RadioButton8" Grid.Column="2" Content="3" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group2" x:Name="RadioButton9" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group2" x:Name="RadioButton10" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+            </Grid>
+            <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Text="3. Were the ambulatory staff quick to respond to your medical care request?"/>
+            <Grid Margin="0 20 0 20" x:Name="Grid3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton GroupName="Group3" x:Name="RadioButton11" Grid.Column="0" Content="1" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group3" x:Name="RadioButton12" Grid.Column="1" Content="2" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group3" x:Name="RadioButton13" Grid.Column="2" Content="3" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group3" x:Name="RadioButton14" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+                <RadioButton GroupName="Group3" x:Name="RadioButton15" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
+            </Grid>
+            <Button Background="green" Foreground="white" Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 50"></Button>
+            <Label Name="TestLabel" Content=""/>
+        </StackPanel>
+    </Grid>
+</Window>

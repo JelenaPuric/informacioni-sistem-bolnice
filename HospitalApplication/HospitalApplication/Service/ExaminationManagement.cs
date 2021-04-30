@@ -145,27 +145,7 @@ namespace Logic
             return roomIsFree;
         }
 
-
-      
-
-
-        /*public void Cancel(int index)
-        {
-            examinations.RemoveAt(index);
-            f.WriteInFile(examinations);
-        }*/
-
-        /*public void Move(int index, DateTime date)
-        {
-            //prvo ga izbrisi, promeni datum pa vrati
-            Examination e = examinations[index];
-            examinations.RemoveAt(index);
-            e.ExaminationStart = date;
-            examinations.Add(e);
-            f.WriteInFile(examinations);
-        }*/
-
-        public void MoveExamination(string id, DateTime date)
+        public void MoveExamination(string id, DateTime date, int roomIndex)
         {
             //prvo ga izbrisi, promeni datum pa vrati
             Examination e = new Examination();
@@ -178,6 +158,7 @@ namespace Logic
                 }
             }
             e.ExaminationStart = date;
+            e.RoomId = rooms[roomIndex].RoomId.ToString();
             examinations.Add(e);
             f.WriteInFile(examinations);
         }
@@ -246,7 +227,7 @@ namespace Logic
             }
         }
 
-        public bool doctorsExaminationExists(String doctorUsername, DateTime date)
+        public bool doctorIsFree(String doctorUsername, DateTime date)
         {
             for (int i = 0; i < doctors.Count; i++)
             {
@@ -255,13 +236,54 @@ namespace Logic
                     for (int j = 0; j < doctors[i].Scheduled.Count; j++)
                     {
                         if (doctors[i].Scheduled[j] == date)
-                        {
-                            return true;
-                        }
+                            return false;
                     }
                 }
             }
-            return false;
+            return true;
+        }
+
+        //vraca da li je soba slobodna i index sobe ako jeste
+        public Tuple<bool, int> roomIsFree(DateTime date)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                bool roomIsFree = true;
+                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                {
+                    if (rooms[i].Scheduled[j] == date)
+                        roomIsFree = false;
+                }
+                if (roomIsFree)
+                    return new Tuple<bool, int>(true, i);
+            }
+            return new Tuple<bool, int>(false, -1);
+        }
+
+        public void removeExaminationFromRoom(String roomId, DateTime date)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId.ToString() == roomId)
+                {
+                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                    {
+                        if (rooms[i].Scheduled[j] == date)
+                        {
+                            rooms[i].Scheduled.RemoveAt(j);
+                            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        public void addExaminationToRoom(int roomIndex, DateTime date)
+        {
+            rooms[roomIndex].Scheduled.Add(date);
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
         }
 
         public void updateDoctors()
@@ -276,10 +298,6 @@ namespace Logic
         private List<Doctor> doctors;
         private List<Room> rooms;
         private int roomIndx;
-
-
-
-
 
         public int RoomIndx
         {

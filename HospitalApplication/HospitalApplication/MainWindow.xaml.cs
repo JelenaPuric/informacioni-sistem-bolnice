@@ -34,7 +34,7 @@ namespace HospitalApplication
         SecretaryController sc = new SecretaryController();
 
         string enteredUsername;
-        public String EnteredUsername
+        public String PatientsUsername
         {
             get { return enteredUsername; }
             set { enteredUsername = value; }

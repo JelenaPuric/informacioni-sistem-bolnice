@@ -10,58 +10,73 @@ namespace HospitalApplication.Controller
 {
     class PatientController
     {
-        private ExaminationManagement m = ExaminationManagement.Instance;
+        private ExaminationManagement examinationManagement = ExaminationManagement.Instance;
         private NotificationManagement ntf = NotificationManagement.Instance;
 
         public void ScheduleExamination(Examination e) {
-            m.ScheduleExamination(e);
+            examinationManagement.ScheduleExamination(e);
         }
 
 
         public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
         {
-            return m.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
+            return examinationManagement.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
         }
 
 
         public void CancelExamination(String id)
         {
-            m.CancelExamination(id);
+            examinationManagement.CancelExamination(id);
         }
 
-        public void MoveExamination(string id, DateTime date)
+        public void MoveExamination(string id, DateTime date, int roomIndex)
         {
-            m.MoveExamination(id, date);
+            examinationManagement.MoveExamination(id, date, roomIndex);
         }
 
         public void EditExamination(string id, string doctor)
         {
-            m.EditExamination(id, doctor);
+            examinationManagement.EditExamination(id, doctor);
         }
 
         public List<Examination> GetExaminations(String patientName)
         {
-            return m.GetExaminations(patientName);
+            return examinationManagement.GetExaminations(patientName);
         }
 
-        public void addExaminationToDoctor(String doctorUsername, DateTime date)
+        public void AddExaminationToDoctor(String doctorUsername, DateTime date)
         {
-            m.addExaminationToDoctor(doctorUsername, date);
+            examinationManagement.addExaminationToDoctor(doctorUsername, date);
         }
 
-        public void removeExaminationFromDoctor(String doctorUsername, DateTime date)
+        public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
         {
-            m.removeExaminationFromDoctor(doctorUsername, date);
+            examinationManagement.removeExaminationFromDoctor(doctorUsername, date);
         }
 
-        public bool doctorsExaminationExists(String doctorUsername, DateTime date)
+        public bool DoctorIsFree(String doctorUsername, DateTime date)
         {
-            return m.doctorsExaminationExists(doctorUsername, date);
+            return examinationManagement.doctorIsFree(doctorUsername, date);
         }
 
-        public void updateDoctors()
+        public void AddExaminationToRoom(int roomIndex, DateTime date)
         {
-            m.updateDoctors();
+            examinationManagement.addExaminationToRoom(roomIndex, date);
+        }
+
+        public void RemoveExaminationFromRoom(String roomId, DateTime date)
+        {
+            examinationManagement.removeExaminationFromRoom(roomId, date);
+        }
+
+        public Tuple<bool, int> RoomIsFree(DateTime date)
+        {
+            return examinationManagement.roomIsFree(date);
+        }
+
+        public void UpdateDoctors()
+        {
+            examinationManagement.updateDoctors();
         }
 
         public void ScheduleNotification(Notification n)

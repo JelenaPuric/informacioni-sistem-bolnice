@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="Edit examination" x:Name="EditExamination" Click="EditExamination_Click"/>
-                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="..."/>
+                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Rate Hospital" x:Name="RateHospital" Click="RateHospital_Click"/>
             </Grid>
             <Label Content="Scheduled Examinations" HorizontalAlignment="Center" FontSize="30" Foreground="Green"/>
             <ListView Margin="0 10" Name="lvUsers" ScrollViewer.CanContentScroll="True" Height="300">

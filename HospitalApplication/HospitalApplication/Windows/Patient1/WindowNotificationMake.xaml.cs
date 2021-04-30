@@ -64,7 +64,7 @@ namespace HospitalApplication.Windows.Patient1
                 }
             }
 
-            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mw.EnteredUsername);
+            Notification n = new Notification(dates, title, comment, repeat, (idNotification + 1).ToString(), mw.PatientsUsername);
             controller.ScheduleNotification(n);
 
             w.UpdateView();

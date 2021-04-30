@@ -79,12 +79,13 @@ namespace HospitalApplication.Windows.Secretary
             }
 
             //ako je nov termin slobodan za doktora, onda mu skloni stari a doda nov termin, promeni datum pregleda
-            controller.updateDoctors();
-            if (controller.doctorsExaminationExists(e2.DoctorsId, newDate) == false && roomIsFree == true)
+            controller.UpdateDoctors();
+            if (controller.DoctorIsFree(e2.DoctorsId, newDate) == false && roomIsFree == true)
             {
-                controller.removeExaminationFromDoctor(e2.DoctorsId, oldDate);
-                controller.addExaminationToDoctor(e2.DoctorsId, newDate);
-                controller.MoveExamination(e2.ExaminationId, newDate);
+                controller.RemoveExaminationFromDoctor(e2.DoctorsId, oldDate);
+                controller.AddExaminationToDoctor(e2.DoctorsId, newDate);
+                //Ratko, dodao sam ti treci parametar jer ga ja koristim u mojoj funkciji, tebi ne menja nista
+                controller.MoveExamination(e2.ExaminationId, newDate, 2);
                 //skloni stari datum sobi
                 for (int i = 0; i < rooms.Count; i++)
                 {

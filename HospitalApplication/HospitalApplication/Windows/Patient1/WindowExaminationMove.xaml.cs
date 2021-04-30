@@ -21,9 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationMove : Window
     {
-        private ExaminationManagement m = ExaminationManagement.Instance;
         private WindowPatient w = WindowPatient.Instance;
-        private string id;
         private PatientController controller = new PatientController();
 
         public WindowExaminationMove()
@@ -33,15 +31,8 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            //int index = w.lvUsers.SelectedIndex;
-
-            Examination e2 = (Examination)w.lvUsers.SelectedItem;
-            //string id = e2.ExaminationId;
-
-            //izbrisi termin kod doktora
-            //WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
-            //List<Doctor> doctors = doc.LoadFromFile();
-            DateTime oldDate = e2.ExaminationStart;
+            Examination examination = (Examination)w.lvUsers.SelectedItem;
+            DateTime oldDate = examination.ExaminationStart;
             DateTime comboDate = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();
             for (int i = 0; i < 13; i++)
@@ -53,34 +44,11 @@ namespace HospitalApplication.Windows.Patient1
             TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
             DateTime newDate = comboDate + time;
 
-
-            //ne radi provera da li je datum gde se pomera pregled isti kao i prvobitno zakazan
-            /*if (date.Date == dt.Date && date.TimeOfDay == dt.TimeOfDay) {
+            if (oldDate == newDate)
+            {
                 MessageBoxResult result = System.Windows.MessageBox.Show("Your examination is already scheduled at this time.", "Info", MessageBoxButton.OK);
                 return;
-            }*/
-
-            /*for (int i = 0; i < doctors.Count; i++)
-            {
-                if (doctors[i].Username == e2.DoctorsId)
-                {
-                    for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                    {
-                        if (doctors[i].Scheduled[j] == dt)
-                        {
-                            doctors[i].Scheduled.RemoveAt(j);
-                        }
-                    }
-
-                    doc.WriteInFile(doctors);
-                    break;
-                }
-            }*/
-
-
-            //oldDateLabel.Content = oldDate.ToString();
-            //newDateLabel.Content = newDate.ToString();
-
+            }
             if ((oldDate - DateTime.Now).TotalDays < 1)
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("You can not move examination that starts in less than 24h.", "Info", MessageBoxButton.OK);
@@ -92,91 +60,24 @@ namespace HospitalApplication.Windows.Patient1
                 return;
             }
 
-            //dodajem nov termin doktoru
-            /*for (int i = 0; i < doctors.Count; i++)
+            //prilikom provere da li je soba slobodna, ako takva postoji, vrati se index slobodne sobe
+            Tuple<bool, int> roomIsFree = controller.RoomIsFree(newDate);
+            controller.UpdateDoctors();
+            if (controller.DoctorIsFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
             {
-                if (doctors[i].Username == e2.DoctorsId)
-                {
-                    doctors[i].Scheduled.Add(d);
-                    doc.WriteInFile(doctors);
-                    break;
-                }
-            }*/
-
-            List<Room> rooms = new List<Room>();
-            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-
-            bool roomIsFree = true;
-            string roomId = e2.RoomId;
-            //proveri da li postoji slobodna soba
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                if (rooms[i].RoomId.ToString() == roomId) {
-                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                    {
-                        if (rooms[i].Scheduled[j] == newDate)
-                        {
-                            roomIsFree = false;
-                        }
-                    }
-                    break;
-                }
-            }
-
-            //ako je nov termin slobodan za doktora, onda mu skloni stari a doda nov termin, promeni datum pregleda
-            controller.updateDoctors();
-            if (controller.doctorsExaminationExists(e2.DoctorsId, newDate) == false && roomIsFree == true)
-            {
-                controller.removeExaminationFromDoctor(e2.DoctorsId, oldDate);
-                controller.addExaminationToDoctor(e2.DoctorsId, newDate);
-                controller.MoveExamination(e2.ExaminationId, newDate);
-                //skloni stari datum sobi
-                for (int i = 0; i < rooms.Count; i++)
-                {
-                    if (rooms[i].RoomId.ToString() == roomId)
-                    {
-                        for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                        {
-                            if (rooms[i].Scheduled[j] == oldDate)
-                            {
-                                rooms[i].Scheduled.RemoveAt(j);
-                            }
-                        }
-                        break;
-                    }
-                }
-                //dodaj nov datum sobi
-                for (int i = 0; i < rooms.Count; i++)
-                {
-                    if (rooms[i].RoomId.ToString() == roomId)
-                    {
-                        rooms[i].Scheduled.Add(newDate);
-                        break;
-                    }
-                }
-                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+                controller.RemoveExaminationFromDoctor(examination.DoctorsId, oldDate);
+                controller.AddExaminationToDoctor(examination.DoctorsId, newDate);
+                controller.RemoveExaminationFromRoom(examination.RoomId, oldDate);
+                controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
+                controller.MoveExamination(examination.ExaminationId, newDate, roomIsFree.Item2);
                 w.UpdateView();
             }
-
-            //ako je nov termin slobodan za doktora, onda mu skloni stari a doda nov termin, promeni datum pregleda
-            /*m.updateDoctors();
-            if (m.doctorsExaminationExists(e2.DoctorsId, newDate) == false)
-            {
-                m.removeExaminationFromDoctor(e2.DoctorsId, oldDate);
-                m.addExaminationToDoctor(e2.DoctorsId, newDate);
-                m.MoveExamination(e2.ExaminationId, newDate);
-                w.UpdateView();
-            }*/
-
             else
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
                 return;
             }
 
-            //m.Move(index, d);
-            //m.MoveExamination(id, newDate);
-            //w.UpdateView();
             Close();
         }
     }

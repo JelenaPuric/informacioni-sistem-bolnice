@@ -23,16 +23,15 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationEdit : Window
     {
-        private FilesDoctor f = new FilesDoctor();
+        private FilesDoctor filesDoctor = new FilesDoctor();
         private List<Doctor> doctors = new List<Doctor>();
         private WindowPatient w = WindowPatient.Instance;
-        private ExaminationManagement m = ExaminationManagement.Instance;
         private PatientController controller = new PatientController();
 
         public WindowExaminationEdit()
         {
             InitializeComponent();
-            doctors = f.LoadFromFile();
+            doctors = filesDoctor.LoadFromFile();
             for (int i = 0; i < doctors.Count; i++)
             {
                 Combo.Items.Add(doctors[i].Username.ToString());
@@ -41,48 +40,18 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Examination n = (Examination)w.lvUsers.SelectedItem;
-            DateTime date = n.ExaminationStart;
-            //bool notFree = true;
+            Examination examination = (Examination)w.lvUsers.SelectedItem;
+            DateTime date = examination.ExaminationStart;
             string username = Combo.SelectedItem.ToString();
-            //notFree = m.doctorsExaminationExists(username, date);
-            //provera da li je novom izabranom doktoru slobodan termin
-            /*for (int i = 0; i < doctors.Count; i++)
+
+            controller.UpdateDoctors();
+            if (controller.DoctorIsFree(username, date) == true)
             {
-                if (username == doctors[i].Username)
-                {
-                    for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                    {
-                        if (doctors[i].Scheduled[j] == date)
-                        {
-                            isFree = false;
-                        }
-                    }
-                }
-            }
-            isFree = true;*/
-
-            oldDoctor.Content = n.DoctorsId;
-            newDoctor.Content = username;
-
-
-            controller.updateDoctors();
-            if (controller.doctorsExaminationExists(username, date) == false)
-            {
-                controller.addExaminationToDoctor(username, date);
-                controller.removeExaminationFromDoctor(n.DoctorsId, date);
-                controller.EditExamination(n.ExaminationId, username);
+                controller.AddExaminationToDoctor(username, date);
+                controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
+                controller.EditExamination(examination.ExaminationId, username);
                 w.UpdateView();
             }
-
-            /*m.updateDoctors();
-            if (m.doctorsExaminationExists(username, date) == false)
-            {
-                m.addExaminationToDoctor(username, date);
-                m.removeExaminationFromDoctor(n.DoctorsId, date);
-                m.EditExamination(n.ExaminationId, username);
-                w.UpdateView();
-            }*/
             else
             {
                 MessageBox.Show("There is no free term. Choose another time.");
