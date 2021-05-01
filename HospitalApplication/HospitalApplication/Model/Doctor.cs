@@ -7,21 +7,28 @@ namespace Model
    {
       public System.Collections.ArrayList examination;
         private List<DateTime> scheduled;
+        private DoctorType doctorType;
 
-        // !!!!!!!!!!!!!!!!!!!!!!!!
-        public List<DateTime> Scheduled
-        {
-            get { return scheduled; }
-            set { scheduled = value; }
-        }
 
         public Doctor() { }
 
-        public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd)
+        public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee)
         {
             Username = usernameee;
             Password = passworddd;
             Scheduled = scheduledd;
+            doctorType = doctorTypee;
+        }
+        public DoctorType DoctorType
+        {
+            get { return doctorType; }
+            set { doctorType = value; }
+        }
+
+        public List<DateTime> Scheduled
+        {
+            get { return scheduled; }
+            set { scheduled = value; }
         }
 
         public System.Collections.ArrayList GetExamination()
