@@ -50,7 +50,7 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
         {
 
             bool isFree = DoctorIsFree(docIndex, date);
@@ -87,8 +87,8 @@ namespace Logic
                     Rooms[roomId].Scheduled.Add(date);
                     SerializationAndDeserilazationOfRooms.EnterRoom(Rooms);
 
-
-                    Examination examination = new Examination(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam);
+                    //Napraviti jos jedan parametar za odlaganje termina
+                    Examination examination = new Examination(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
                     ScheduleExamination(examination);
 
                     return true;

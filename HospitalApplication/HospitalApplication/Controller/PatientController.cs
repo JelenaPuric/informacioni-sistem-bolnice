@@ -17,9 +17,9 @@ namespace HospitalApplication.Controller
             examinationService.ScheduleExamination(e);
         }
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
         {
-            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
+            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam, postponeAppointment);
         }
 
         public void CancelExamination(String id)

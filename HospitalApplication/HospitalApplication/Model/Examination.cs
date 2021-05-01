@@ -12,11 +12,13 @@ namespace Model
         public String PatientsId { get; set; }
         public String DoctorsId { get; set; }
         public String RoomId { get; set; }
+
+        public string PostponeAppointment { get; set; }
+
         public ExaminationType ExaminationType { get; set; }
 
         public Examination() { }
-
-        public Examination(string patient, string doctor, string room, DateTime start, string id)
+     public Examination(string patient, string doctor, string room, DateTime start, string id)
         {
             PatientsId = patient;
             DoctorsId = doctor;
@@ -24,14 +26,16 @@ namespace Model
             ExaminationStart = start;
             ExaminationId = id;
         }
+   
 
-        public Examination(string patient, string doctor, string room, DateTime start, string id, ExaminationType examType) {
+        public Examination(string patient, string doctor, string room, DateTime start, string id, ExaminationType examType, string postponeAppointment) {
             PatientsId = patient;
             DoctorsId = doctor;
             RoomId = room;
             ExaminationStart = start;
             ExaminationId = id;
             ExaminationType = examType;
+            PostponeAppointment = postponeAppointment;
         }
     }
 }
