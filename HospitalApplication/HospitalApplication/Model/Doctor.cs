@@ -8,17 +8,25 @@ namespace Model
       public System.Collections.ArrayList examination;
         private List<DateTime> scheduled;
         private DoctorType doctorType;
-
+        private String doctorId;
 
         public Doctor() { }
 
-        public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee)
+        public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee, string idDoctor)
         {
             Username = usernameee;
             Password = passworddd;
             Scheduled = scheduledd;
             doctorType = doctorTypee;
+            doctorId = idDoctor;
         }
+
+        public string DoctorId
+        {
+            get { return doctorId; }
+            set { doctorId = value; }
+        }
+
         public DoctorType DoctorType
         {
             get { return doctorType; }
@@ -86,7 +94,7 @@ namespace Model
             requestToTheManager.Clear();
       }
    
-      private String DoctorId;
+
       private Boolean Specialization;
    
    }

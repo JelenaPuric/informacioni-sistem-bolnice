@@ -50,6 +50,18 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }
 
+        public bool MakeEmergencyAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, 
+                                             int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
+        {
+            bool isFree = DoctorIsFree(docIndex, date);
+
+
+
+            return false;
+        }
+
+
+
         public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
         {
 
@@ -58,19 +70,13 @@ namespace Logic
             if ( isFree == false)
             {
                 return false;
-
             }
             else
             {
-
-
-
               bool roomIsFree = RoomIsFree(date);
-
 
                 if( roomIsFree == false)
                 {
-
                     return false;
                 }
                 else
