@@ -29,6 +29,7 @@ namespace HospitalApplication.Windows.Secretary
         private int idExamination = 100000;
         Tuple<bool, int> isFreeRoom;
 
+
         public EmergencyWindow(string idPatient)
         {
             InitializeComponent();
@@ -52,18 +53,17 @@ namespace HospitalApplication.Windows.Secretary
 
         private DateTime TimeForAppointment()
         {
-            DateTime dateAndTimeAppointment;
             if (DateTime.Now.Minute < 30)
             {
                 // dodaj +30 minuta
                 TimeSpan timeAppointment = new TimeSpan(DateTime.Now.Hour, 30, 0);
-                return dateAndTimeAppointment = DateTime.Today + timeAppointment;
+                return DateTime.Today + timeAppointment;
             }
             else
             {
                 // povecaj hour za 1
                 TimeSpan timeAppointment = new TimeSpan(DateTime.Now.Hour + 1, 0, 0);
-                return dateAndTimeAppointment = DateTime.Today + timeAppointment;
+                return DateTime.Today + timeAppointment;
             }
         }
 
@@ -73,6 +73,7 @@ namespace HospitalApplication.Windows.Secretary
             doctors = filesDoctor.LoadFromFile();
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
             examinations = examinationService.Examinations;
+            examinations.Sort();
         }
 
         private void CenterWindow()
@@ -89,41 +90,57 @@ namespace HospitalApplication.Windows.Secretary
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             SheduleAppointment();
+
+
             Close();
         }
 
         private void SheduleAppointment()
         {
-            doctors[Int32.Parse(getDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(TimeForAppointment());
-            filesDoctor.WriteInFile(doctors);
+                doctors[Int32.Parse(getDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(TimeForAppointment());
+                filesDoctor.WriteInFile(doctors);
 
-            // pitati kako da izbegnem ovaj if
-            if (rooms[isFreeRoom.Item2].Scheduled == null)
-            {
-                rooms[isFreeRoom.Item2].Scheduled = new List<DateTime>();
-            }
+                // pitati kako da izbegnem ovaj if
+                if (rooms[isFreeRoom.Item2].Scheduled == null)
+                {
+                    rooms[isFreeRoom.Item2].Scheduled = new List<DateTime>();
+                }
 
-            rooms[isFreeRoom.Item2].Scheduled.Add(TimeForAppointment());
-            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+                rooms[isFreeRoom.Item2].Scheduled.Add(TimeForAppointment());
+                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
 
-            Examination examination = new Examination(patient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
-                                                      TimeForAppointment(), GenerateExaminationId().ToString(), 0, "");
-            examinationService.ScheduleExamination(examination);
+                Examination examination = new Examination(patient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
+                                                          TimeForAppointment(), GenerateExaminationId().ToString(), 0, 1000);
+                examinationService.ScheduleExamination(examination);
         }
 
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
-            isFreeRoom = roomIsFree();
-            if(isFreeRoom.Item1)
+            //isFreeRoam je stalno true, iako ne bi trebao da bude
+            isFreeRoom = roomIsFree(); 
+            if ( isFreeRoom.Item1 && FilterDoctors() ){ return; }
+            else
             {
-                FilterDoctors();
+                ComboAvailableDoctors.Items.Clear();
+                ComboFreeTerms.Items.Clear();
+                ComboSheduledTerms.Items.Clear();
+                DoctorType typeDoctor = (DoctorType)Enum.Parse(typeof(DoctorType), ComboTypeDoctor.Text);
+                for (int i = 0; i < examinations.Count; i++)
+                {
+                    ComboSheduledTerms.Items.Add(examinations[i].ExaminationStart.ToString());
+                    if ( !ComboAvailableDoctors.Items.Contains(examinations[i].DoctorsId) && getDoctor(examinations[i].DoctorsId).DoctorType.Equals(typeDoctor) ) {
+                            ComboAvailableDoctors.Items.Add(examinations[i].DoctorsId);
+                    }
+                }
+              
             }
         }
 
-        private void FilterDoctors()
+        private bool FilterDoctors()
         {
             ComboAvailableDoctors.Items.Clear();
             ComboFreeTerms.Items.Clear();
+            ComboSheduledTerms.Items.Clear();
             if (ComboTypeDoctor.Text == DoctorType.cardiology.ToString())
             {
                 for (int i = 0; i < doctors.Count; i++)
@@ -132,9 +149,15 @@ namespace HospitalApplication.Windows.Secretary
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); // nije potrebno ali neka ih za sada
-                        ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
+                       // ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
+                       ComboFreeTerms.Items.Add(TimeForAppointment());
                     }
                 }
+                if(filteredDoctors.Count == 0)
+                {
+                    return false;
+                }
+                return true;
             }
             else if (ComboTypeDoctor.Text == DoctorType.surgery.ToString())
             {
@@ -144,11 +167,17 @@ namespace HospitalApplication.Windows.Secretary
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); // nije potrebno ali neka ih za sada
-                        ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
+                        //ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
+                        ComboFreeTerms.Items.Add(TimeForAppointment());
                     }
                 }
+                if (filteredDoctors.Count == 0)
+                {
+                    return false;
+                }
+                return true;
             }
-           // return filteredDoctors; // nije potrebno ali neka ih za sada
+            return true;
         }
 
         private bool IsAvailableFiltredDoctors(int idDoctor)
@@ -172,6 +201,8 @@ namespace HospitalApplication.Windows.Secretary
                 {
                     if (rooms[i].Scheduled[j] == TimeForAppointment())
                         roomIsFree = false;
+       
+                    //debug.Content += rooms[i].Scheduled[j].ToString() + TimeForAppointment().ToString() + "\n";
                 }
                 if (roomIsFree)
                     return new Tuple<bool, int>(true, i);
@@ -192,10 +223,22 @@ namespace HospitalApplication.Windows.Secretary
             return idDoctor;
         }
 
+        private Doctor getDoctor(string idDoctor)
+        {
+            Doctor doctor = new Doctor();
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].Username.Equals(idDoctor))
+                {
+                    return doctor = doctors[i];
+                }
+            }
+            return doctor;
+        }
+
+
         private int GenerateExaminationId()
         {
-            //radi tako sto jednom ucitam sve preglede i nadjem najveci id pa nakon toga samo dodeljujem za po jedan br veci
-            //ako je idExamination 100000 znaci da ili ne postoji zakazan pregled ili nije nasao najveci id pregleda koji postoji
             if (idExamination == 100000)
             {
                 for (int i = 0; i < examinations.Count; i++)
@@ -206,6 +249,5 @@ namespace HospitalApplication.Windows.Secretary
             }
             return idExamination;
         }
-
     }
 }

@@ -21,7 +21,9 @@ namespace WorkWithFiles
 
                 ExaminationType examinationType = (ExaminationType)Enum.Parse(typeof(ExaminationType), examination[5]);
 
-                Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4], examinationType, examination[6]);
+                
+
+                Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4], examinationType, Int16.Parse(examination[6]));
                 examinations.Add(pr);
             }
             return examinations;
@@ -34,7 +36,7 @@ namespace WorkWithFiles
             {
                 File.AppendAllText(path, examinations[i].PatientsId + "," + examinations[i].DoctorsId + "," + examinations[i].RoomId + "," 
                     + examinations[i].ExaminationStart + "," + examinations[i].ExaminationId + ","
-                    + examinations[i].ExaminationType + "," + examinations[i].PostponeAppointment + "\n"); ;
+                    + examinations[i].ExaminationType + "," + examinations[i].PostponeAppointment.ToString() + "\n"); ;
             }
         }
    

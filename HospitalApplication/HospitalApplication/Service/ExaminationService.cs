@@ -62,7 +62,7 @@ namespace Logic
 
 
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
         {
 
             bool isFree = DoctorIsFree(docIndex, date);
