@@ -42,9 +42,8 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Examination e2 = (Examination)w.lvUsers.SelectedItem;
-
-            DateTime oldDate = e2.ExaminationStart;
+            Examination examination = (Examination)w.lvUsers.SelectedItem;
+            DateTime oldDate = examination.ExaminationStart;
             DateTime comboDate = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();
             for (int i = 0; i < 13; i++)
@@ -57,61 +56,17 @@ namespace HospitalApplication.Windows.Secretary
             DateTime newDate = comboDate + time;
 
 
-            List<Room> rooms = new List<Room>();
-            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-
-            bool roomIsFree = true;
-            string roomId = e2.RoomId;
-            //proveri da li postoji slobodna soba
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                if (rooms[i].RoomId.ToString() == roomId)
-                {
-                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                    {
-                        if (rooms[i].Scheduled[j] == newDate)
-                        {
-                            roomIsFree = false;
-                        }
-                    }
-                    break;
-                }
-            }
-
-            //ako je nov termin slobodan za doktora, onda mu skloni stari a doda nov termin, promeni datum pregleda
+            //prilikom provere da li je soba slobodna, ako takva postoji, vrati se index slobodne sobe
+            Tuple<bool, int> roomIsFree = controller.RoomIsFree(newDate);
             controller.UpdateDoctors();
-            if (controller.DoctorIsFree(e2.DoctorsId, newDate) == false && roomIsFree == true)
+            if (controller.DoctorIsFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
             {
-                controller.RemoveExaminationFromDoctor(e2.DoctorsId, oldDate);
-                controller.AddExaminationToDoctor(e2.DoctorsId, newDate);
-                //Ratko, dodao sam ti treci parametar jer ga ja koristim u mojoj funkciji, tebi ne menja nista
-                controller.MoveExamination(e2.ExaminationId, newDate, 2);
-                //skloni stari datum sobi
-                for (int i = 0; i < rooms.Count; i++)
-                {
-                    if (rooms[i].RoomId.ToString() == roomId)
-                    {
-                        for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                        {
-                            if (rooms[i].Scheduled[j] == oldDate)
-                            {
-                                rooms[i].Scheduled.RemoveAt(j);
-                            }
-                        }
-                        break;
-                    }
-                }
-                //dodaj nov datum sobi
-                for (int i = 0; i < rooms.Count; i++)
-                {
-                    if (rooms[i].RoomId.ToString() == roomId)
-                    {
-                        rooms[i].Scheduled.Add(newDate);
-                        break;
-                    }
-                }
-                SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
-                //w.UpdateView();
+                controller.RemoveExaminationFromDoctor(examination.DoctorsId, oldDate);
+                controller.AddExaminationToDoctor(examination.DoctorsId, newDate);
+                controller.RemoveExaminationFromRoom(examination.RoomId, oldDate);
+                controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
+                controller.MoveExamination(examination.ExaminationId, newDate, roomIsFree.Item2);
+              //  w.UpdateView();
             }
             else
             {

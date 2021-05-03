@@ -18,7 +18,8 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class EmergencyWindow : Window
     {
-        private SecretaryController sc = new SecretaryController();
+        private SecretaryController secretaryController = new SecretaryController();
+        private PatientController patientController = new PatientController();
         private WorkWithFiles.FilesDoctor filesDoctor = new WorkWithFiles.FilesDoctor();
         private ExaminationService examinationService = ExaminationService.Instance;
         private List<Doctor> doctors = new List<Doctor>();
@@ -35,20 +36,6 @@ namespace HospitalApplication.Windows.Secretary
             InitializeComponent();
             CenterWindow();
             LoadPatientDoctorsAndRooms(idPatient);
-
-            //     DateTime today = DateTime.Today;
-            // ComboTypeDoctor.Text = "cardiology";
-
-            //DoctorType doctorType = (DoctorType)Enum.Parse(typeof(DoctorType), ComboTypeDoctor.Text);
-
-            //DateTime d = DateTime.Now;
-
-
-            // TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            // DateTime d = date + time;
-
-
-
         }
 
         private DateTime TimeForAppointment()
@@ -69,7 +56,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void LoadPatientDoctorsAndRooms(string idPatient)
         {
-            patient = sc.getPatient(idPatient);
+            patient = secretaryController.getPatient(idPatient);
             doctors = filesDoctor.LoadFromFile();
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
             examinations = examinationService.Examinations;
@@ -89,13 +76,69 @@ namespace HospitalApplication.Windows.Secretary
         //Uraditi da pacijent ne moze da zakaze u isto vrijeme kod 2 ili vise doktora!!!!!!!!!!!!!!!!!!!!!!!!!!
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            SheduleAppointment();
-
+            if (ComboFreeTerms.SelectedIndex == -1) {
+                SheduleOnBusyAppointment();
+                Close();
+            }
+            else
+            {
+                SheduleFreeAppointment();
+                Close();
+            }
 
             Close();
         }
 
-        private void SheduleAppointment()
+        private void SheduleOnBusyAppointment()
+        {
+            DateTime selectedSheduledDate = DateTime.Parse(ComboSheduledTerms.SelectedItem.ToString());
+            //Examination e = GetExamination(selectedSheduledDate);
+            MoveExamination(GetExamination(selectedSheduledDate), selectedSheduledDate);
+            RoomIsFree(selectedSheduledDate);
+
+            doctors[Int32.Parse(getDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(selectedSheduledDate);
+            filesDoctor.WriteInFile(doctors);
+
+            // pitati kako da izbegnem ovaj if
+            if (rooms[isFreeRoom.Item2].Scheduled == null)
+            {
+                rooms[isFreeRoom.Item2].Scheduled = new List<DateTime>();
+            }
+          
+            rooms[isFreeRoom.Item2].Scheduled.Add(selectedSheduledDate);
+            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+          
+            Examination examination = new Examination(patient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
+                                                        selectedSheduledDate, GenerateExaminationId().ToString(), 0, 1000);
+            examinationService.ScheduleExamination(examination);
+            Close();
+        }
+
+        private void MoveExamination(Examination examination, DateTime selectedDateTime)
+        {
+            DateTime oldDate = examination.ExaminationStart;
+            DateTime newDate = selectedDateTime.AddDays(examination.PostponeAppointment);
+            examination.PostponeAppointment = 1000;
+
+            Tuple<bool, int> roomIsFree = patientController.RoomIsFree(newDate);
+            patientController.UpdateDoctors();
+            if (patientController.DoctorIsFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
+            {
+                patientController.RemoveExaminationFromDoctor(examination.DoctorsId, oldDate);
+                patientController.AddExaminationToDoctor(examination.DoctorsId, newDate);
+                patientController.RemoveExaminationFromRoom(examination.RoomId, oldDate);
+                patientController.AddExaminationToRoom(roomIsFree.Item2, newDate);
+                patientController.MoveExamination(examination.ExaminationId, newDate, roomIsFree.Item2);
+            }
+            else
+            {
+                MessageBox("Choosen term is not free. Choose another one.");
+                return;
+            }
+            Close();
+        }
+
+        private void SheduleFreeAppointment()
         {
                 doctors[Int32.Parse(getDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(TimeForAppointment());
                 filesDoctor.WriteInFile(doctors);
@@ -117,30 +160,44 @@ namespace HospitalApplication.Windows.Secretary
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
             //isFreeRoam je stalno true, iako ne bi trebao da bude
-            isFreeRoom = roomIsFree(); 
-            if ( isFreeRoom.Item1 && FilterDoctors() ){ return; }
+            isFreeRoom = RoomIsFree(TimeForAppointment()); 
+            if ( isFreeRoom.Item1 && FilterDoctors() ){ MessageBox("Imamo slobodan termin u najblizem roku!"); } 
             else
             {
-                ComboAvailableDoctors.Items.Clear();
-                ComboFreeTerms.Items.Clear();
-                ComboSheduledTerms.Items.Clear();
+                if(isFreeRoom.Item1 == false) { MessageBox("Soba je zauzeta!!!"); };
+                if(FilterDoctors() == false) { MessageBox("Nema slobodnih doktora za taj termin!!!") };
+
+
+                ClearComboBoxes();
                 DoctorType typeDoctor = (DoctorType)Enum.Parse(typeof(DoctorType), ComboTypeDoctor.Text);
                 for (int i = 0; i < examinations.Count; i++)
                 {
                     ComboSheduledTerms.Items.Add(examinations[i].ExaminationStart.ToString());
-                    if ( !ComboAvailableDoctors.Items.Contains(examinations[i].DoctorsId) && getDoctor(examinations[i].DoctorsId).DoctorType.Equals(typeDoctor) ) {
-                            ComboAvailableDoctors.Items.Add(examinations[i].DoctorsId);
+                    if (!ComboAvailableDoctors.Items.Contains(examinations[i].DoctorsId) && getDoctor(examinations[i].DoctorsId).DoctorType.Equals(typeDoctor))
+                    {
+                        ComboAvailableDoctors.Items.Add(examinations[i].DoctorsId);
                     }
                 }
-              
             }
         }
 
-        private bool FilterDoctors()
+        private System.Windows.MessageBoxResult MessageBox(string str)
+        {
+            return System.Windows.MessageBox.Show(str, "Info", MessageBoxButton.OK);
+        }
+
+
+        private void ClearComboBoxes()
         {
             ComboAvailableDoctors.Items.Clear();
             ComboFreeTerms.Items.Clear();
             ComboSheduledTerms.Items.Clear();
+        }
+
+        private bool FilterDoctors()
+        {
+            ClearComboBoxes();
+            filteredDoctors.Clear();
             if (ComboTypeDoctor.Text == DoctorType.cardiology.ToString())
             {
                 for (int i = 0; i < doctors.Count; i++)
@@ -148,16 +205,11 @@ namespace HospitalApplication.Windows.Secretary
                     if (doctors[i].DoctorType.Equals(DoctorType.cardiology) && IsAvailableFiltredDoctors(Int32.Parse(doctors[i].DoctorId)))
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
-                        filteredDoctors.Add(doctors[i]); // nije potrebno ali neka ih za sada
-                       // ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
-                       ComboFreeTerms.Items.Add(TimeForAppointment());
+                        filteredDoctors.Add(doctors[i]); 
+                        ComboFreeTerms.Items.Add(TimeForAppointment());
                     }
                 }
-                if(filteredDoctors.Count == 0)
-                {
-                    return false;
-                }
-                return true;
+                return IsEmptyFiltredDoctors();
             }
             else if (ComboTypeDoctor.Text == DoctorType.surgery.ToString())
             {
@@ -166,16 +218,20 @@ namespace HospitalApplication.Windows.Secretary
                     if (doctors[i].DoctorType.Equals(DoctorType.surgery) && IsAvailableFiltredDoctors(Int32.Parse(doctors[i].DoctorId)))
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
-                        filteredDoctors.Add(doctors[i]); // nije potrebno ali neka ih za sada
-                        //ComboFreeTerms.Items.Add(TimeForAppointment().Hour + ":" + TimeForAppointment().Minute);
+                        filteredDoctors.Add(doctors[i]); 
                         ComboFreeTerms.Items.Add(TimeForAppointment());
                     }
                 }
-                if (filteredDoctors.Count == 0)
-                {
-                    return false;
-                }
-                return true;
+                return IsEmptyFiltredDoctors();
+            }
+            return true;
+        }
+
+        private bool IsEmptyFiltredDoctors()
+        {
+            if (filteredDoctors.Count == 0)
+            {
+                return false;
             }
             return true;
         }
@@ -192,17 +248,15 @@ namespace HospitalApplication.Windows.Secretary
             return true;
         }
 
-        private Tuple<bool, int> roomIsFree()
+        private Tuple<bool, int> RoomIsFree(DateTime dateTime)
         {
             for (int i = 0; i < rooms.Count; i++)
             {
                 bool roomIsFree = true;
                 for (int j = 0; j < rooms[i].Scheduled.Count; j++)
                 {
-                    if (rooms[i].Scheduled[j] == TimeForAppointment())
+                    if (rooms[i].Scheduled[j] == dateTime)
                         roomIsFree = false;
-       
-                    //debug.Content += rooms[i].Scheduled[j].ToString() + TimeForAppointment().ToString() + "\n";
                 }
                 if (roomIsFree)
                     return new Tuple<bool, int>(true, i);
@@ -236,6 +290,18 @@ namespace HospitalApplication.Windows.Secretary
             return doctor;
         }
 
+        private Examination GetExamination(DateTime dateTime)
+        {
+            Examination examination = new Examination();
+            for(int i=0; i < examinations.Count; i++)
+            {
+                if (examinations[i].ExaminationStart.Equals(dateTime))
+                {
+                    return examination = examinations[i];
+                }
+            }
+            return examination;
+        }
 
         private int GenerateExaminationId()
         {
