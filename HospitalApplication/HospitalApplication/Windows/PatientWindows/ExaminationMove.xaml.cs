@@ -69,7 +69,7 @@ namespace HospitalApplication.Windows.Patient1
                 controller.AddExaminationToDoctor(examination.DoctorsId, newDate);
                 controller.RemoveExaminationFromRoom(examination.RoomId, oldDate);
                 controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
-                controller.MoveExamination(examination.ExaminationId, newDate, roomIsFree.Item2);
+                controller.MoveExamination(examination, newDate, roomIsFree.Item2);
                 w.UpdateView();
             }
             else

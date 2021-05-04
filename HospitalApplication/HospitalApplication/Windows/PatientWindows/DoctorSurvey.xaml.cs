@@ -33,7 +33,7 @@ namespace HospitalApplication.Windows.PatientWindows
             for (int i = 0; i < doctorUsernames.Count; i++) {
                 ComboDoctors.Items.Add(doctorUsernames[i]);
             }
-            surveys = filesSurvey.ReadSurveys();
+            surveys = filesSurvey.LoadFromFile();
             if (surveys == null) surveys = new List<Survey>();
         }
 
@@ -50,7 +50,7 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, ComboDoctors.SelectedItem.ToString());
             surveys.Add(survey);
-            filesSurvey.WriteSurveys(surveys);
+            filesSurvey.WriteInFile(surveys);
             Close();
         }
 

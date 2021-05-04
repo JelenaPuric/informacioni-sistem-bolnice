@@ -12,7 +12,7 @@ namespace HospitalApplication.Repository
     {
         public static string path = "../../../Data/surveys.json";
 
-        public List<Survey> ReadSurveys()
+        public List<Survey> LoadFromFile()
         {
             if (!File.Exists(path))
                 return new List<Survey>();
@@ -32,7 +32,7 @@ namespace HospitalApplication.Repository
             return surveys;
         }
 
-        public void WriteSurveys(List<Survey> input)
+        public void WriteInFile(List<Survey> input)
         {
             JsonSerializer jsonSerializer = new JsonSerializer();
             StreamWriter sw = new StreamWriter(path);

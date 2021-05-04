@@ -22,19 +22,19 @@ namespace HospitalApplication.Controller
             return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
         }
 
-        public void CancelExamination(String id)
+        public void CancelExamination(Examination examination)
         {
-            examinationService.CancelExamination(id);
+            examinationService.CancelExamination(examination);
         }
 
-        public void MoveExamination(string id, DateTime date, int roomIndex)
+        public void MoveExamination(Examination examination, DateTime date, int roomIndex)
         {
-            examinationService.MoveExamination(id, date, roomIndex);
+            examinationService.MoveExamination(examination, date, roomIndex);
         }
 
-        public void EditExamination(string id, string doctor)
+        public void EditExamination(Examination examination, string doctor)
         {
-            examinationService.EditExamination(id, doctor);
+            examinationService.EditExamination(examination, doctor);
         }
 
         public List<Examination> GetExaminations(String patientName)

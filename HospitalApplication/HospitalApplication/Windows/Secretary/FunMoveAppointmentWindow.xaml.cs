@@ -85,7 +85,7 @@ namespace HospitalApplication.Windows.Secretary
                 controller.RemoveExaminationFromDoctor(e2.DoctorsId, oldDate);
                 controller.AddExaminationToDoctor(e2.DoctorsId, newDate);
                 //Ratko, dodao sam ti treci parametar jer ga ja koristim u mojoj funkciji, tebi ne menja nista
-                controller.MoveExamination(e2.ExaminationId, newDate, 2);
+                controller.MoveExamination(e2, newDate, 2);
                 //skloni stari datum sobi
                 for (int i = 0; i < rooms.Count; i++)
                 {

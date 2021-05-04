@@ -29,7 +29,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             InitializeComponent();
             setQuestions();
-            surveys = filesSurvey.ReadSurveys();
+            surveys = filesSurvey.LoadFromFile();
             if (surveys == null) surveys = new List<Survey>();
         }
 
@@ -46,7 +46,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, "Hospital");
             surveys.Add(survey);
-            filesSurvey.WriteSurveys(surveys);
+            filesSurvey.WriteInFile(surveys);
             Close();
         }
 

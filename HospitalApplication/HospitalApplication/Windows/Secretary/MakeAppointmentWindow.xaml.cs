@@ -114,7 +114,7 @@ namespace HospitalApplication.Windows.Secretary
                         }
                     }
 
-                    m.CancelExamination(id);
+                    m.CancelExamination(e2);
                     //m.Cancel(index);
                   
                     break;

@@ -49,7 +49,7 @@ namespace HospitalApplication.Windows.Patient1
             {
                 controller.AddExaminationToDoctor(username, date);
                 controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
-                controller.EditExamination(examination.ExaminationId, username);
+                controller.EditExamination(examination, username);
                 w.UpdateView();
             }
             else

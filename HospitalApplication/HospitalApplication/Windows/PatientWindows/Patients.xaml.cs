@@ -21,6 +21,9 @@ using HospitalApplication.Windows.Patient1;
 using HospitalApplication.Controller;
 using HospitalApplication.Repository;
 using HospitalApplication.Windows.PatientWindows;
+using System.IO;
+using Nancy.Json;
+using System.Linq;
 
 namespace HospitalApplication
 {
@@ -60,7 +63,7 @@ namespace HospitalApplication
             lvUsers.ItemsSource = examinations;
             PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
             allExaminations = filesExamination.LoadFromFile();
-            surveys = filesSurvey.ReadSurveys();
+            surveys = filesSurvey.LoadFromFile();
             if (surveys == null) surveys = new List<Survey>();
         }
 
@@ -100,7 +103,7 @@ namespace HospitalApplication
                     //ukloni pregled lekaru i sobi
                     controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
                     controller.RemoveExaminationFromRoom(examination.RoomId, date);
-                    controller.CancelExamination(examination.ExaminationId);
+                    controller.CancelExamination(examination);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:
@@ -132,7 +135,7 @@ namespace HospitalApplication
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
-            surveys = filesSurvey.ReadSurveys();
+            surveys = filesSurvey.LoadFromFile();
             for (int i = 0; i < surveys.Count; i++)
             {
                 if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30)
@@ -151,7 +154,7 @@ namespace HospitalApplication
         private void RateDoctor_Click(object sender, RoutedEventArgs e)
         {
             List<string> doctorUsernames = new List<String>();
-            surveys = filesSurvey.ReadSurveys();
+            surveys = filesSurvey.LoadFromFile();
             for (int i = 0; i < allExaminations.Count; i++) {
                 if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now) {
                     bool ok = true;
@@ -167,7 +170,7 @@ namespace HospitalApplication
                 MessageBox.Show("You must attend examination before rating doctor.");
                 return;
             }
-            DoctorSurvey window = new DoctorSurvey(doctorUsernames);
+            DoctorSurvey window = new DoctorSurvey(doctorUsernames.Distinct().ToList());
             window.Show();
         }
     }

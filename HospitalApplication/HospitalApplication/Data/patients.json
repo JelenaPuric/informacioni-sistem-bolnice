@@ -1,6 +1,10 @@
 [
-  
   {
+    "penalty": {
+      "item1": 20,
+      "item2": "2021-05-03T21:50:21.4766210+02:00",
+      "item3": false
+    },
     "typeAcc": 1,
     "listAllergens": [
       {
@@ -43,6 +47,11 @@
     }
   },
   {
+    "penalty": {
+      "item1": 0,
+      "item2": "2021-05-03T21:50:21.4766210+02:00",
+      "item3": false
+    },
     "typeAcc": 1,
     "listAllergens": [
       {
@@ -88,5 +97,114 @@
       "phoneNumber": "empty",
       "sexType": 0
     }
+  },
+  {
+    "penalty": {
+      "item1": 0,
+      "item2": "2021-05-03T21:50:21.4766210+02:00",
+      "item3": false
+    },
+    "typeAcc": 1,
+    "listAllergens": [],
+    "sexType": 0,
+    "jmbg": "123",
+    "name": "Darko",
+    "lastName": "Darko",
+    "id": "2",
+    "dateOfBirth": "2021-04-24T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "DarkoDarko",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "2",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "Darko",
+      "lastName": "Darko",
+      "nameParent": "empty",
+      "jmbg": "123",
+      "dateOfBirth": "2021-04-24T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "empty",
+      "phoneNumber": "empty",
+      "sexType": 0
+    }
+  },
+  {
+    "penalty": {
+      "item1": 0,
+      "item2": "2021-05-03T21:50:21.4766210+02:00",
+      "item3": false
+    },
+    "typeAcc": 1,
+    "listAllergens": [],
+    "sexType": 0,
+    "jmbg": "354",
+    "name": "a",
+    "lastName": "a",
+    "id": "3",
+    "dateOfBirth": "2021-05-09T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "aa",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "3",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "a",
+      "lastName": "a",
+      "nameParent": "empty",
+      "jmbg": "354",
+      "dateOfBirth": "2021-05-09T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "empty",
+      "phoneNumber": "empty",
+      "sexType": 0
+    }
+  },
+  {
+    "penalty": {
+      "item1": 60,
+      "item2": "2021-05-03T21:50:21.4766210+02:00",
+      "item3": false
+    },
+    "typeAcc": 1,
+    "listAllergens": [],
+    "sexType": 0,
+    "jmbg": "123",
+    "name": "s",
+    "lastName": "s",
+    "id": "4",
+    "dateOfBirth": "2021-05-02T22:00:00.0000000Z",
+    "phoneNumber": "Empty",
+    "email": "Empty",
+    "placeOfResidance": "Empty",
+    "typeOfPerson": 1,
+    "username": "ss",
+    "password": "123",
+    "examination": null,
+    "medicalRecord": {
+      "id": "4",
+      "typeAcc": 1,
+      "martialStatus": 0,
+      "firstName": "s",
+      "lastName": "s",
+      "nameParent": "empty",
+      "jmbg": "123",
+      "dateOfBirth": "2021-05-02T22:00:00.0000000Z",
+      "numberOfHealthCard": "empty",
+      "placeOfResidance": "empty",
+      "phoneNumber": "empty",
+      "sexType": 0
+    }
   }
+
 ]

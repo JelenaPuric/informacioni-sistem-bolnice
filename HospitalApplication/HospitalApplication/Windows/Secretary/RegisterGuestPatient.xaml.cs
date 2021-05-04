@@ -75,7 +75,9 @@ namespace HospitalApplication.Windows.Secretary
 
             MedicalRecord mr = new MedicalRecord(idPatient.ToString(), typeAccc, 0, firstName, lastName, "empty", jmbg, myDate, "empty", "empty", "empty", 0);
 
-            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0, mr, listAllergens);
+            Tuple<int, DateTime, bool> penalty = new Tuple<int, DateTime, bool>(0, DateTime.Now, false);
+
+            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0, mr, listAllergens, penalty);
 
             sc.CreatePatient(p);
           
