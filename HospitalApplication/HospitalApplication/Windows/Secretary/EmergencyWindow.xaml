@@ -9,25 +9,13 @@
         Title="EmergencyWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
+            <Label Content="Type of doctor:"/>
             <ComboBox x:Name="ComboTypeDoctor" Width="786" Height="23">
                 <ComboBoxItem Content="cardiology"/>
                 <ComboBoxItem Content="surgery"/>
             </ComboBox>
 
-            <DatePicker Margin="0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" x:Name="Date">
-                <!--ne dozvoli user input-->
-                <DatePicker.Resources>
-                    <Style TargetType="{x:Type DatePickerTextBox}">
-                        <Setter Property="IsReadOnly" Value="True"/>
-                    </Style>
-                </DatePicker.Resources>
-                <!--ne dozvoli da se izabere danasnji datum-->
-                <DatePicker.BlackoutDates>
-                    <CalendarDateRange End="{x:Static sys:DateTime.Today}" Start="{x:Static sys:DateTime.MinValue}" />
-                </DatePicker.BlackoutDates>
-            </DatePicker>
-
-            <Label Content="Free terms ( 30min / 60min ):"/>
+            <Label Content="Free terms:"/>
             <ComboBox Margin="0 10" x:Name="ComboFreeTerms" SelectedIndex="0">
             </ComboBox>
 

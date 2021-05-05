@@ -248,7 +248,6 @@ namespace Logic
             return true;
         }
 
-        //vraca da li je soba slobodna i index sobe ako jeste
         public Tuple<bool, int> roomIsFree(DateTime date)
         {
             for (int i = 0; i < Rooms.Count; i++)

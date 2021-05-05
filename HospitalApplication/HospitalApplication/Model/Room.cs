@@ -14,9 +14,9 @@ namespace Model
         public OperatingRoomType OperationRoomType { get; set; }
         public RoomType RoomType { get; set; }
         public bool Occupied { get; set; }
-       // public string staticEquipment { get; set; }
-       // public string dynamicEquipment { get; set; }
-        public List<DateTime> Scheduled { get; set; }
+        // public string staticEquipment { get; set; }
+        // public string dynamicEquipment { get; set; }
+        public List<DateTime> Scheduled { get; set; } = new List<DateTime>();
         public List<Resource> Resource { get; set; }
     }
 }
