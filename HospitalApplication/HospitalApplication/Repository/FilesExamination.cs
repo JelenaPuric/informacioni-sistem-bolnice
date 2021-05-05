@@ -19,8 +19,11 @@ namespace WorkWithFiles
                 //DateTime myDate = DateTime.ParseExact(pregled[3], "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime myDate = DateTime.Parse(examination[3]);
 
+                ExaminationType examinationType = (ExaminationType)Enum.Parse(typeof(ExaminationType), examination[5]);
 
-                Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4]);
+                
+
+                Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4], examinationType, Int16.Parse(examination[6]));
                 examinations.Add(pr);
             }
             return examinations;
@@ -31,7 +34,9 @@ namespace WorkWithFiles
             System.IO.File.WriteAllText(path, string.Empty);
             for (int i = 0; i < examinations.Count; i++)
             {
-                File.AppendAllText(path, examinations[i].PatientsId + "," + examinations[i].DoctorsId + "," + examinations[i].RoomId + "," + examinations[i].ExaminationStart + "," + examinations[i].ExaminationId +  "\n"); ;
+                File.AppendAllText(path, examinations[i].PatientsId + "," + examinations[i].DoctorsId + "," + examinations[i].RoomId + "," 
+                    + examinations[i].ExaminationStart + "," + examinations[i].ExaminationId + ","
+                    + examinations[i].ExaminationType + "," + examinations[i].PostponeAppointment.ToString() + "\n"); ;
             }
         }
    

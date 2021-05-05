@@ -29,7 +29,9 @@ namespace HospitalApplication.WorkWithFiles
                     DateTime myDate = DateTime.Parse(term[i]);
                     terms.Add(myDate);
                 }
-                Doctor dr = new Doctor(doctor[0], doctor[1], terms);
+                DoctorType doctorType = (DoctorType)Enum.Parse(typeof(DoctorType), doctor[3]);
+
+                Doctor dr = new Doctor(doctor[0], doctor[1], terms, doctorType, doctor[4]);
                 doctors.Add(dr);
             }
             return doctors;
@@ -47,7 +49,7 @@ namespace HospitalApplication.WorkWithFiles
                         File.AppendAllText(path, "~");
                     }
                 }
-                File.AppendAllText(path, "\n");
+                File.AppendAllText(path, "," + doctors[i].DoctorType + "," + doctors[i].DoctorId + "\n");
             }
         }
     }

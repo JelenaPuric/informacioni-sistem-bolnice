@@ -111,5 +111,11 @@ namespace HospitalApplication.Windows.Secretary
             NewsWindow window = new NewsWindow();
             window.Show();
         }
+
+        private void EmergencyButton_Click(object sender, RoutedEventArgs e)
+        {
+            IDEmergencyWindow window = new IDEmergencyWindow();
+            window.Show();
+        }
     }
 }

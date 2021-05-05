@@ -160,7 +160,13 @@
     <Compile Update="Windows\Secretary\EditRegisterPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\EmergencyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\FunMoveAppointmentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Secretary\IDEmergencyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Secretary\IDMedicalRecord.xaml.cs">
@@ -351,7 +357,13 @@
     <Page Update="Windows\Secretary\EditRegisterPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Secretary\EmergencyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Secretary\FunMoveAppointmentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\IDEmergencyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\IDMedicalRecord.xaml">
