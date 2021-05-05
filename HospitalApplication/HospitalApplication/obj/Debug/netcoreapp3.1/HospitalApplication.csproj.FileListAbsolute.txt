@@ -15,9 +15,6 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\InfoDrug.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\main.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\ReportedDrugs.g.cs
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\AddRenovation.g.cs
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\EditRenovation.g.cs
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\Renovations.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\AddMoveStaticResource.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\AddResource.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\EditResource.g.cs
@@ -99,9 +96,6 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\InfoDrug.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\main.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Medicines\ReportedDrugs.baml
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\AddRenovation.baml
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\EditRenovation.baml
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovationn\Renovations.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\AddMoveStaticResource.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\AddResource.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Resources\EditResource.baml
@@ -161,3 +155,9 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\AddRenovation.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\EditRenovation.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\Renovations.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\AddRenovation.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\EditRenovation.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\Manager\Renovations\Renovations.baml

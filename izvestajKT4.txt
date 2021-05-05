@@ -1,0 +1,32 @@
+SEKRETAR
+
+Funkcionalnosti:
+1) CRUD Vesti --> URADJENO
+2) Zakazivanje hitnih slucajeva ukljucujuci pomeranje --> URADJENO
+
+ISPRAVKA SA KT3:
+1) Pomeranje pregleda implementirano
+2) Dodata povratna vrednost sekretaru u diagramu sekvence
+
+Nema zamerki kod diagrama.
+
+PACIJENT
+
+Pregled dijagrama aktivnosti sekretara:
+Treba dodati pinove.
+
+Funkcionalnosti:
+a) Ocena lekara i bolnice --> URADJENO
+b) Antitroll sistem --> URADJEN
+
+
+UPRAVNIK
+
+Pregledan dijagram sekvence pacijentu:
+Deluje ok.
+Funkcionalnosti:
+a)Zakazivanje renoviranja sobe --> URADJENO
+b)Pretraga i filtrisanje roba --> URADJENO
+c)CRUD lekova, svaki lek ima sastojke i zamenu za taj lek --> URADJENO
+
+Prepravljen dijagram sekvence sa prethodne KT.
