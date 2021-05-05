@@ -61,8 +61,7 @@ namespace HospitalApplication.Windows.Manager.Medicines {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/manager/medicines/reporteddrugs.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/manager/medicines/reporteddrugs.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\Manager\Medicines\ReportedDrugs.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -167,7 +167,7 @@ namespace HospitalApplication
             GenerateExaminationId();
             controller.AddExaminationToDoctor(doctorsUsername, newDate);
             controller.AddExaminationToRoom(roomIndex, newDate);
-            Examination ex = new Examination(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString());
+            Examination ex = new Examination(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleExamination(ex);
             windowPatient.UpdateView();
             Close();
@@ -185,7 +185,7 @@ namespace HospitalApplication
             {
                 controller.AddExaminationToDoctor(doctors[selectedDoctorsIndex].Username, newDate);
                 controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
-                Examination ex = new Examination(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, rooms[roomIsFree.Item2].RoomId.ToString(), newDate, (idExamination + 1).ToString());
+                Examination ex = new Examination(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, rooms[roomIsFree.Item2].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
                 controller.ScheduleExamination(ex);
                 windowPatient.UpdateView();
                 Close();

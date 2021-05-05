@@ -17,9 +17,9 @@ namespace HospitalApplication.Controller
             examinationService.ScheduleExamination(e);
         }
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
         {
-            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam);
+            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam, postponeAppointment);
         }
 
         public void CancelExamination(Examination examination)
@@ -95,6 +95,11 @@ namespace HospitalApplication.Controller
         public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
         {
             notificationService.EditNotification(id, title, descriptioin, repeat, date);
+        }
+
+        public void MoveAppointment(string id, DateTime date, int roomIndex)
+        {
+            examinationService.MoveAppointment(id, date, roomIndex);
         }
     }
 }

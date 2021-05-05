@@ -97,10 +97,10 @@ namespace HospitalApplication.Windows.Secretary
 
 
 
-            int docIndex = Combo3.SelectedIndex;
+            int docIndex = Combo3.SelectedIndex; 
             s2 = doctors[docIndex].Username;
             int roomID = 0;
-            bool sucessMakeApp = patientController.MakeAppointment(docIndex, d, userNP, s2, roomID, (idExamination + 1).ToString(), examType); 
+            bool sucessMakeApp = patientController.MakeAppointment(docIndex, d, userNP, s2, roomID, (idExamination + 1).ToString(), examType, Int32.Parse(textBox111.Text)); 
 
             if ( sucessMakeApp == false)
             {

@@ -69,7 +69,19 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam)
+        public bool MakeEmergencyAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, 
+                                             int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
+        {
+            bool isFree = DoctorIsFree(docIndex, date);
+
+
+
+            return false;
+        }
+
+
+
+        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
         {
 
             bool isFree = DoctorIsFree(docIndex, date);
@@ -77,19 +89,13 @@ namespace Logic
             if ( isFree == false)
             {
                 return false;
-
             }
             else
             {
-
-
-
               bool roomIsFree = RoomIsFree(date);
-
 
                 if( roomIsFree == false)
                 {
-
                     return false;
                 }
                 else
@@ -106,8 +112,8 @@ namespace Logic
                     Rooms[roomId].Scheduled.Add(date);
                     SerializationAndDeserilazationOfRooms.EnterRoom(Rooms);
 
-
-                    Examination examination = new Examination(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam);
+                    //Napraviti jos jedan parametar za odlaganje termina
+                    Examination examination = new Examination(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
                     ScheduleExamination(examination);
 
                     return true;
@@ -207,6 +213,26 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }
 
+
+        public void MoveAppointment(string id, DateTime date, int roomIndex)
+        {
+            Examination e = new Examination();
+            for (int i = 0; i < Examinations.Count; i++)
+            {
+                if (Examinations[i].ExaminationId == id)
+                {
+                    e = Examinations[i];
+                    Examinations.RemoveAt(i);
+                }
+            }
+            e.ExaminationStart = date;
+            e.RoomId = Rooms[roomIndex].RoomId.ToString();
+            Examinations.Add(e);
+            filesExamination.WriteInFile(Examinations);
+        }
+
+
+
         public List<Examination> GetExaminations(String patientName)
         {
             List<Examination> e = new List<Examination>();
@@ -270,7 +296,6 @@ namespace Logic
             return true;
         }
 
-        //vraca da li je soba slobodna i index sobe ako jeste
         public Tuple<bool, int> roomIsFree(DateTime date)
         {
             for (int i = 0; i < Rooms.Count; i++)
