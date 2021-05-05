@@ -58,8 +58,11 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         private void Edit_Clicked(object sender, RoutedEventArgs e)
         {
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
-            EditRenovation edit = new EditRenovation(selected);
-            edit.Show();
+            if (selected != null)
+            {
+                EditRenovation edit = new EditRenovation(selected);
+                edit.Show();
+            }
         }
     }
 }

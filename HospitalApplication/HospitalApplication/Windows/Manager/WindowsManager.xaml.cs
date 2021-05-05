@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Windows.Manager.Prostorije;
+﻿using HospitalApplication.Windows.Manager.Medicines;
+using HospitalApplication.Windows.Manager.Prostorije;
 using HospitalApplication.Windows.Manager.Resources;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,12 @@ namespace HospitalApplication.Windows.Manager
         {
             Renovationn.Renovations r = new Renovationn.Renovations();
             r.Show();
+        }
+
+        private void Medicines_Clicked(object sender, RoutedEventArgs e)
+        {
+            Medicines.main m = new main();
+            m.Show();
         }
     }
 }

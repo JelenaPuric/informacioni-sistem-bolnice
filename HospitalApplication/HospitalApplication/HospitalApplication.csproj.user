@@ -7,7 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\Manager\Medicines\AddDrug.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Medicines\EditDrug.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Medicines\InfoDrug.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Manager\Medicines\main.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Manager\Medicines\ReportedDrugs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Manager\Renovationn\AddRenovation.xaml.cs">
@@ -183,7 +195,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Manager\Medicines\AddDrug.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Medicines\EditDrug.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Medicines\InfoDrug.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Manager\Medicines\main.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Manager\Medicines\ReportedDrugs.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Renovationn\AddRenovation.xaml">

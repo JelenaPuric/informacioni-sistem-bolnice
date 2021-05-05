@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalApplication.Model;
+using HospitalApplication.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +22,63 @@ namespace HospitalApplication.Windows.Manager.Medicines
         public main()
         {
             InitializeComponent();
+            MedicinesManagment logic = new MedicinesManagment();
+            List<Drugs> list = logic.GetList();
+            lvDataBinding.ItemsSource = list;
+        }
+
+        private void Add_Clicked(object sender, RoutedEventArgs e)
+        {
+            AddDrug add = new AddDrug();
+            add.Show();
+        }
+
+        private void Refresh_Clicked(object sender, RoutedEventArgs e)
+        {
+            MedicinesManagment logic = new MedicinesManagment();
+            List<Drugs> list = logic.GetList();
+            lvDataBinding.ItemsSource = list;
+        }
+
+        private void Delete_Clicked(object sender, RoutedEventArgs e)
+        {
+            MedicinesManagment logic = new MedicinesManagment();
+            Drugs selected = (Drugs)lvDataBinding.SelectedItem;
+            if(selected != null)
+            {
+                logic.DeleteDrug(selected);
+            }
+            List<Drugs> list = logic.GetList();
+            lvDataBinding.ItemsSource = list;
+        }
+
+        private void Edit_Clicked(object sender, RoutedEventArgs e)
+        {
+            Drugs selected = (Drugs)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                EditDrug edit = new EditDrug(selected);
+                edit.Show();
+            }
+            MedicinesManagment logic = new MedicinesManagment();
+            List<Drugs> list = logic.GetList();
+            lvDataBinding.ItemsSource = list;
+        }
+
+        private void Info_Clicked(object sender, RoutedEventArgs e)
+        {
+            Drugs selected = (Drugs)lvDataBinding.SelectedItem;
+            if (selected != null)
+            {
+                InfoDrug edit = new InfoDrug(selected);
+                edit.Show();
+            }
+        }
+
+        private void Problems_Clicked(object sender, RoutedEventArgs e)
+        {
+            ReportedDrugs allReports = new ReportedDrugs();
+            allReports.Show();
         }
     }
 }
