@@ -11,9 +11,6 @@ FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowExaminationWindow.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Doctor1\ShowOperationWindow.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Medicines\main.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovationn\AddRenovation.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovationn\EditRenovation.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovationn\Renovations.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Resources\AddMoveStaticResource.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Resources\AddResource.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Resources\EditResource.xaml;;
@@ -67,4 +64,7 @@ FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Medicines\EditDrug.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Medicines\InfoDrug.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Medicines\ReportedDrugs.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovations\AddRenovation.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovations\EditRenovation.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\Manager\Renovations\Renovations.xaml;;
 

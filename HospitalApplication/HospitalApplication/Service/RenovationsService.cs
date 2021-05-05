@@ -10,15 +10,20 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Service
 {
-   public class Renovationss
+   public class RenovationsService
     {
         private List<Room> rooms;
         private List<Transfer> transfers;
         
-        public Renovationss()
+        public RenovationsService()
         {
             rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
             transfers = ScheduledTransfers.LoadTransfers();
+            CheckIfNullList();
+        }
+
+        private void CheckIfNullList()
+        {
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].Resource == null)
@@ -48,15 +53,15 @@ namespace HospitalApplication.Service
             return vrati;
         }
 
-        public void RemoveRenovation(Renovation rv)
+        public void RemoveRenovation(Renovation renovation)
         {
             for(int i=0; i < rooms.Count; i++)
             {
-                if(rooms[i].RoomId == rv.RoomId)
+                if(rooms[i].RoomId == renovation.RoomId)
                 {
                     for(int j=0; j < rooms[i].Renovation.Count; j++)
                     {
-                        if (rooms[i].Renovation[j].IdRenovation == rv.IdRenovation)
+                        if (rooms[i].Renovation[j].IdRenovation == renovation.IdRenovation)
                             rooms[i].Renovation.RemoveAt(j);
                     }
                 }
@@ -76,6 +81,34 @@ namespace HospitalApplication.Service
         }
 
         public bool CheckRenovation(Renovation newRenovation)
+        {
+            return CheckDoesRoomExistAndIsFree(newRenovation);
+            return DoesRoomHaveTransfers(newRenovation);
+        }
+
+        private bool DoesRoomHaveTransfers(Renovation newRenovation)
+        {
+            if (transfers.Count != 0)
+            {
+                for (int t = 0; t < transfers.Count; t++)
+                {
+                    if (newRenovation.RoomId == transfers[t].idRoomFrom || newRenovation.RoomId == transfers[t].idRoomTo)
+                    {
+                        for (int daysforcheck = 0; daysforcheck < newRenovation.Days.Count; daysforcheck++)
+                        {
+                            if (newRenovation.Days[daysforcheck].Date == transfers[t].dat.Date)
+                            {
+                                MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        private bool CheckDoesRoomExistAndIsFree(Renovation newRenovation)
         {
             int roomExist = 0;
             for (int i = 0; i < rooms.Count; i++)
@@ -104,23 +137,6 @@ namespace HospitalApplication.Service
             {
                 MessageBox.Show("That room does not exist", "Error");
                 return false;
-            }
-            if (transfers.Count != 0)
-            {
-                for (int t = 0; t < transfers.Count; t++)
-                {
-                    if (newRenovation.RoomId == transfers[t].idRoomFrom || newRenovation.RoomId == transfers[t].idRoomTo)
-                    {
-                        for (int daysforcheck = 0; daysforcheck < newRenovation.Days.Count; daysforcheck++)
-                        {
-                            if (newRenovation.Days[daysforcheck].Date == transfers[t].dat.Date)
-                            {
-                                MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
-                                return false;
-                            }
-                        }
-                    }
-                }
             }
             return true;
         }

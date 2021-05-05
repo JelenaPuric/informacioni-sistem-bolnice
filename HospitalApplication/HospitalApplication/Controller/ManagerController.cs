@@ -10,60 +10,79 @@ namespace HospitalApplication.Controller
 {
     public class ManagerController
     {
-        private RoomManagment rm = new RoomManagment();
-        private RelocationResource rr = new RelocationResource();
+        private RoomManagment RoomManagment = new RoomManagment();
+        private RelocationResource RelocationResource = new RelocationResource();
+        private RenovationsService RenovationService = new RenovationsService();
 
-        public void CreateRoom(Room r)
+        public void CreateRoom(Room room)
         {
-            rm.CreateRoom(r);
+            RoomManagment.CreateRoom(room);
         }
 
-        public void AddItem(Resource r)
+        public void AddItem(Resource resource)
         {
-            rm.AddItem(r);
+            RoomManagment.AddItem(resource);
         }
 
-        public void TransferDynamicItem(Resource r, int kk)
+        public void TransferDynamicItem(Resource resource, int quantity)
         {
-            rm.TransferDynamicItem(r, kk);
+            RoomManagment.TransferDynamicItem(resource, quantity);
         }
 
         public void RemoveRoom(Room oldRoom)
         {
-            rm.RemoveRoom(oldRoom);
+            RoomManagment.RemoveRoom(oldRoom);
         }
 
         public void RemoveById(int roomid)
         {
-            rm.RemoveById(roomid);
+            RoomManagment.RemoveById(roomid);
         }
 
-        public void RemoveItem(Resource re)
+        public void RemoveItem(Resource resource)
         {
-            rm.RemoveItem(re);
+            RoomManagment.RemoveItem(resource);
         }
 
-        public void RemoveQuantity(Resource r, int k)
+        public void RemoveQuantity(Resource resource, int quantity)
         {
-            rm.RemoveQuantity(r, k);
+            RoomManagment.RemoveQuantity(resource, quantity);
         }
 
-        public void DeleteTransfer(Transfer t)
+        public void DeleteTransfer(Transfer transfer)
         {
-            rr.DeleteTransfer(t);
+            RelocationResource.DeleteTransfer(transfer);
         }
 
-        public void TransStatic(Transfer te)
+        public void TransStatic(Transfer transfer)
         {
-            rr.TransStatic(te);
+            RelocationResource.TransStatic(transfer);
         }
 
         public void CheckTransfers()
         {
-            rr.CheckTransfers();
+            RelocationResource.CheckTransfers();
         }
 
+        public void RemoveRenovation(Renovation renovation)
+        {
+            RenovationService.RemoveRenovation(renovation);
+        }
 
+        public void AddRenovation(Renovation renovation)
+        {
+            RenovationService.AddRenovation(renovation);
+        }
+
+        public void CheckRenovation(Renovation renovation)
+        {
+            RenovationService.CheckRenovation(renovation);
+        }
+
+        public void IsFinishRenovation()
+        {
+            RenovationService.IsFinishRenovation();
+        }
 
     }
 }

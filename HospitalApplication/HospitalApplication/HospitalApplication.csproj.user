@@ -22,13 +22,13 @@
     <Compile Update="Windows\Manager\Medicines\ReportedDrugs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovationn\AddRenovation.xaml.cs">
+    <Compile Update="Windows\Manager\Renovations\AddRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovationn\EditRenovation.xaml.cs">
+    <Compile Update="Windows\Manager\Renovations\EditRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovationn\Renovations.xaml.cs">
+    <Compile Update="Windows\Manager\Renovations\Renovations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Manager\Resources\AddMoveStaticResource.xaml.cs">
@@ -210,13 +210,13 @@
     <Page Update="Windows\Manager\Medicines\ReportedDrugs.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovationn\AddRenovation.xaml">
+    <Page Update="Windows\Manager\Renovations\AddRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovationn\EditRenovation.xaml">
+    <Page Update="Windows\Manager\Renovations\EditRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovationn\Renovations.xaml">
+    <Page Update="Windows\Manager\Renovations\Renovations.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Manager\Resources\AddMoveStaticResource.xaml">

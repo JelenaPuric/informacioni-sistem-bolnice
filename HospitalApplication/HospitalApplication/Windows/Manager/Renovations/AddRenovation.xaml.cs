@@ -25,21 +25,21 @@ namespace HospitalApplication.Windows.Manager.Renovationn
             InitializeComponent();
         }
 
-        public Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+        public Random number = new Random(DateTime.Now.Ticks.GetHashCode());
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
             int roomId = int.Parse(textBoxRoomId.Text);
             List<DateTime> daysBetween = new List<DateTime>();
 
-            DateTime date1 = PickStartDate.SelectedDate.Value.Date;
-            DateTime date2 = PickEndDate.SelectedDate.Value.Date;
+            DateTime startDayDate = PickStartDate.SelectedDate.Value.Date;
+            DateTime endDayDate = PickEndDate.SelectedDate.Value.Date;
 
             DateTime newDate = new DateTime();
 
-            for (int i=0; i<(date2-date1).TotalDays + 1; i++)
+            for (int i=0; i<(endDayDate-startDayDate).TotalDays + 1; i++)
             {
-                newDate = date1.Date.AddDays(i);
+                newDate = startDayDate.Date.AddDays(i);
                 daysBetween.Add(newDate);
             }
 
@@ -49,10 +49,10 @@ namespace HospitalApplication.Windows.Manager.Renovationn
                 StartDay = (DateTime)PickStartDate.SelectedDate,
                 EndDay = (DateTime)PickEndDate.SelectedDate,
                 Days = daysBetween,
-                IdRenovation = a.Next()
+                IdRenovation = number.Next()
             };
 
-            Renovationss logic = new Renovationss();
+            RenovationsService logic = new RenovationsService();
             if (logic.CheckRenovation(newRenovation))
             {
                 logic.AddRenovation(newRenovation);

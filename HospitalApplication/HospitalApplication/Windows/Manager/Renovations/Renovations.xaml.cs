@@ -22,37 +22,37 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         public Renovations()
         {
             InitializeComponent();
-            Renovationss rs = new Renovationss();
-            rs.IsFinishRenovation();
-            List<Renovation> rv = rs.GetList();
-            lvDataBinding.ItemsSource = rv;
+            RenovationsService logic = new RenovationsService();
+            logic.IsFinishRenovation();
+            List<Renovation> renovations = logic.GetList();
+            lvDataBinding.ItemsSource = renovations;
         }
 
         private void Delete_Clicked(object sender, RoutedEventArgs e)
         {
-            Renovationss rs = new Renovationss();
+            RenovationsService logic = new RenovationsService();
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
             if(selected != null)
             {
-                rs.RemoveRenovation(selected);
+                logic.RemoveRenovation(selected);
             }
 
-            List<Renovation> rv = rs.GetList();
-            lvDataBinding.ItemsSource = rv;
+            List<Renovation> renovations = logic.GetList();
+            lvDataBinding.ItemsSource = renovations;
         }
 
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
-            AddRenovation ar = new AddRenovation();
-            ar.Show();
+            AddRenovation addWindow = new AddRenovation();
+            addWindow.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            Renovationss rs = new Renovationss();
-            List<Renovation> rv = rs.GetList();
-            rs.IsFinishRenovation();
-            lvDataBinding.ItemsSource = rv;
+            RenovationsService logic = new RenovationsService();
+            List<Renovation> renovations = logic.GetList();
+            logic.IsFinishRenovation();
+            lvDataBinding.ItemsSource = renovations;
         }
 
         private void Edit_Clicked(object sender, RoutedEventArgs e)
@@ -60,8 +60,8 @@ namespace HospitalApplication.Windows.Manager.Renovationn
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
             if (selected != null)
             {
-                EditRenovation edit = new EditRenovation(selected);
-                edit.Show();
+                EditRenovation editWindow = new EditRenovation(selected);
+                editWindow.Show();
             }
         }
     }

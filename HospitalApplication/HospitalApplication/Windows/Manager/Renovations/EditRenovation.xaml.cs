@@ -37,7 +37,7 @@ namespace HospitalApplication.Windows.Manager.Renovationn
                 EndDay = (DateTime)PickEndDate.SelectedDate,
                 Days = editedRenovation.Days
             };
-            Renovationss logic = new Renovationss();
+            RenovationsService logic = new RenovationsService();
             logic.RemoveRenovation(editedRenovation);
             if (logic.CheckRenovation(newRenovatioin))
             {
