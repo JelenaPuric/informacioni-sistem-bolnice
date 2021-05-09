@@ -166,6 +166,9 @@
     <Compile Update="Windows\Secretary\FunMoveAppointmentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Secretary\HomeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Secretary\IDEmergencyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -361,6 +364,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\FunMoveAppointmentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Secretary\HomeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Secretary\IDEmergencyWindow.xaml">

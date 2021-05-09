@@ -59,7 +59,8 @@ namespace HospitalApplication
         {
             if (Username.Text.Equals("sekretar") && Password.Password.Equals("123"))
             {
-                AllPatientsWindow window = new AllPatientsWindow();
+                //AllPatientsWindow window = new AllPatientsWindow();
+                HomeWindow window = new HomeWindow();
                 Close();
                 window.Show();
             }

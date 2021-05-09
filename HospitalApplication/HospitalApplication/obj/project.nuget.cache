@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2CFoRZetUczEeHcL01NB9Sl1GJyqCOgUwMBsiDCeByA3CB7fBqkutgcK+0C50LGA4HlR+cqOryOGZT0/eGpf7w==",
+  "dgSpecHash": "ekZ9XediCvJLgSFPeD9/D0AJozcLV8aEUqFHtyRrsdHTO6SUsSGeY4T3Fhzdf2AMhLkwLT4IuGyDJWX02kO6qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ranin\\Desktop\\NN_SIMS\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ranin\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\ranin\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
     "C:\\Users\\ranin\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\ranin\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
     "C:\\Users\\ranin\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.0.4\\microsoft.extensions.dependencymodel.2.0.4.nupkg.sha512",
