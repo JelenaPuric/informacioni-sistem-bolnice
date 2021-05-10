@@ -117,5 +117,12 @@ namespace HospitalApplication.Windows.Secretary
             IDEmergencyWindow window = new IDEmergencyWindow();
             window.Show();
         }
+
+        private void BackHome_Click(object sender, RoutedEventArgs e)
+        {
+            HomeWindow window = new HomeWindow();
+            this.Close();
+            window.Show();
+        }
     }
 }

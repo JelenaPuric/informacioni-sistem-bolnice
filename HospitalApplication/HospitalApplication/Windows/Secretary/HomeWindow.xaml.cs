@@ -20,6 +20,17 @@ namespace HospitalApplication.Windows.Secretary
         public HomeWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
         private void SignOut_Click(object sender, RoutedEventArgs e)
@@ -35,5 +46,15 @@ namespace HospitalApplication.Windows.Secretary
             this.Close();
             window.Show();
         }
+
+        private void EmergencyButton_Click(object sender, RoutedEventArgs e)
+        {
+            IDEmergencyWindow window = new IDEmergencyWindow();
+            AllPatientsWindow window1 = new AllPatientsWindow();
+            this.Close();
+            window1.Show();
+            window.Show();
+        }
+
     }
 }

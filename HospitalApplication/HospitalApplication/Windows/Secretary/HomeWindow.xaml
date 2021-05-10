@@ -6,8 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:local="clr-namespace:HospitalApplication.Windows.Secretary"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="450" Width="800">
-    
+        Title="HomeWindow" Height="574" Width="940">
+
     <Window.Resources>
         <ResourceDictionary>
 
@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid>
+    <Grid Height="550" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
@@ -69,7 +69,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FFF" BorderBrush="#00cc66">
+                <Button Click="EmergencyButton_Click" Margin="10" Background="#FFF" BorderBrush="#00cc66">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Bullhorn" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="Emergency" FontFamily="Champagne &amp; Limousines"/>
