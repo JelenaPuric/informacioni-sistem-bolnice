@@ -23,11 +23,17 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
 
 
+            <Button Click="MedicalRecord_Click" Grid.Column="4" Margin="10,10,10,10" Background="#FFE6E6E6" BorderBrush="#FFF">
+                <Grid Width="83" Height="48">
+                    <materialDesign:PackIcon Kind="FileDocument" Height="48" Width="84" VerticalAlignment="Center" Margin="-6,0,0,0"/>
+                </Grid>
+            </Button>
 
             <Button Click="BackHome_Click" Grid.Column="6" Margin="10,10,10,10" Background="#FFE6E6E6" BorderBrush="#FFF">
                 <Grid Width="83" Height="48">
@@ -89,12 +95,14 @@
             <Button Content="Delete Patient" Click="DeletePatient_Click_1" HorizontalAlignment="Left" Margin="111,437,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
             <Button Content="View Patient" Click="ViewPatient_Click" HorizontalAlignment="Left" Margin="405,437,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
             <Button Content="Edit Patient" Click="EditPatient_Click" HorizontalAlignment="Left" Margin="250,437,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-            -->
+            
 
             <Button Content="Make appointment" Click="MakeAppointment_Click" HorizontalAlignment="Left" Margin="734,410,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-            <Button Content="News" HorizontalAlignment="Left" Click="News_Click" Margin="244,409,0,0" VerticalAlignment="Top" Width="120" Height="46"/>
             <Button Content="Emergency" Click="EmergencyButton_Click" HorizontalAlignment="Center"  Margin="0,409,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
             <Button Content="Medical Record" Click="MedicalRecord_Click"  HorizontalAlignment="Left" Margin="569,410,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+            -->
+
+            <Button Content="News" HorizontalAlignment="Left" Click="News_Click" Margin="772,403,0,0" VerticalAlignment="Top" Width="120" Height="46"/>
 
         </Grid>
     </DockPanel>

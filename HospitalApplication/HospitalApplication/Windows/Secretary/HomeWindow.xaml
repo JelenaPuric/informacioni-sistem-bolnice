@@ -55,7 +55,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FFF" BorderBrush="#00cc66">
+                <Button Click="MakeAppointment_Click" Margin="10" Background="#FFF" BorderBrush="#00cc66">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Table" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="Make an appointment" FontFamily="Champagne &amp; Limousines"/>

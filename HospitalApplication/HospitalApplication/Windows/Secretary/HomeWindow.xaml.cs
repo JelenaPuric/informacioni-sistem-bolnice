@@ -56,5 +56,10 @@ namespace HospitalApplication.Windows.Secretary
             window.Show();
         }
 
+        private void MakeAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            IDMakeAppointment window = new IDMakeAppointment();
+            window.Show();
+        }
     }
 }

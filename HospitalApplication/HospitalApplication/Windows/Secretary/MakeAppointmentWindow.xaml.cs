@@ -131,5 +131,12 @@ namespace HospitalApplication.Windows.Secretary
             List<Examination> examinations = m.GetExaminations(sc.getPatient(idP).Username);
             lvUsers.ItemsSource = examinations;
         }
+
+        private void BackHome_Click(object sender, RoutedEventArgs e)
+        {
+            HomeWindow window = new HomeWindow();
+            this.Close();
+            window.Show();
+        }
     }
 }
