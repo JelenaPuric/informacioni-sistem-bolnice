@@ -9,7 +9,7 @@ namespace HospitalApplication.Controller
 {
     public class NewsController
     {
-        private NewsManagement newsManagement = NewsManagement.Instance;
+        private NewsService newsManagement = NewsService.Instance;
 
         public void CreateNews(News newNews)
         {

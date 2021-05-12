@@ -8,7 +8,7 @@ namespace HospitalApplication.Controller
 {
     public class SecretaryController
     {
-        public PatientManagement patientManagement = new PatientManagement();
+        public PatientService patientManagement = new PatientService();
 
         public void CreatePatient(Patient newPatient)
         {

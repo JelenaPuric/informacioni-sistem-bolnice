@@ -26,7 +26,7 @@ namespace HospitalApplication.Windows.Patient1
         private FilesDoctor filesDoctor = new FilesDoctor();
         private List<Doctor> doctors = new List<Doctor>();
         private WindowPatient w = WindowPatient.Instance;
-        private PatientController controller = new PatientController();
+        private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
         {
@@ -40,7 +40,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Examination examination = (Examination)w.lvUsers.SelectedItem;
+            Appointment examination = (Appointment)w.lvUsers.SelectedItem;
             DateTime date = examination.ExaminationStart;
             string username = Combo.SelectedItem.ToString();
 

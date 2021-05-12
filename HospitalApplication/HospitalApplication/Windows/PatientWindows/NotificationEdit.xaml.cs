@@ -23,7 +23,7 @@ namespace HospitalApplication.Windows.Patient1
     {
         private NotificationService notificationService = NotificationService.Instance;
         private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
-        private PatientController controller = new PatientController();
+        private AppointmentController controller = new AppointmentController();
 
         public WindowNotificationEdit()
         {

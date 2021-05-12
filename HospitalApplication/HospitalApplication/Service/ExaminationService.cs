@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using HospitalApplication.Model;
 using HospitalApplication.WorkWithFiles;
 using Model;
 using WorkWithFiles;
@@ -9,15 +10,9 @@ namespace Logic
 {
     public class ExaminationService
     {
-        private const int SUBSTRACT_PENALTY_EVERY_DAY = 30;
-        private const int PENALTY_SCHEDULE = 20;
-        private const int PENALTY_CANCEL = 15;
-        private const int PENALTY_EDIT = 15;
-        private const int PENALTY_MOVE = 15;
-        private const int MAX_ALLOWED_PENALTY = 70;
         private FilesExamination filesExamination = new FilesExamination();
         private FilesDoctor filesDoctor = new FilesDoctor();
-        public List<Examination> Examinations { get; set; }
+        public List<Appointment> Examinations { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         public List<Patient> Patients { get; set; }
@@ -39,11 +34,11 @@ namespace Logic
         {
             Examinations = filesExamination.LoadFromFile();
             Doctors = filesDoctor.LoadFromFile();
-            Rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
+            Rooms = FilesRoom.LoadRoom();
             Patients = FilesPatients.LoadPatients();
         }
 
-        public void ScheduleExamination(Examination examination)
+        public void ScheduleExamination(Appointment examination)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient))
@@ -51,12 +46,12 @@ namespace Logic
                 MessageBox.Show("You can not schedule examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            SetPatientsPenalty(patient, PENALTY_SCHEDULE);
+            SetPatientsPenalty(patient, Constants.PENALTY_SCHEDULE);
             Examinations.Add(examination);
             filesExamination.WriteInFile(Examinations);
         }
 
-        public void CancelExamination(Examination examination)
+        public void CancelExamination(Appointment examination)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient))
@@ -64,7 +59,7 @@ namespace Logic
                 MessageBox.Show("You can not cancel examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            SetPatientsPenalty(patient, PENALTY_CANCEL);
+            SetPatientsPenalty(patient, Constants.PENALTY_CANCEL);
             Examinations.RemoveAt(GetExaminationsIndex(examination));
             filesExamination.WriteInFile(Examinations);
         }
@@ -110,10 +105,10 @@ namespace Logic
                     }
 
                     Rooms[roomId].Scheduled.Add(date);
-                    SerializationAndDeserilazationOfRooms.EnterRoom(Rooms);
+                    FilesRoom.EnterRoom(Rooms);
 
                     //Napraviti jos jedan parametar za odlaganje termina
-                    Examination examination = new Examination(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
+                    Appointment examination = new Appointment(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
                     ScheduleExamination(examination);
 
                     return true;
@@ -186,7 +181,7 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }*/
 
-        public void MoveExamination(Examination examination, DateTime date, int roomIndex)
+        public void MoveExamination(Appointment examination, DateTime date, int roomIndex)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient))
@@ -194,13 +189,13 @@ namespace Logic
                 MessageBox.Show("You can not move examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            SetPatientsPenalty(patient, PENALTY_MOVE);
+            SetPatientsPenalty(patient, Constants.PENALTY_MOVE);
             examination.ExaminationStart = date;
             examination.RoomId = Rooms[roomIndex].RoomId.ToString();
             filesExamination.WriteInFile(Examinations);
         }
 
-        public void EditExamination(Examination examination, string doctorsId)
+        public void EditExamination(Appointment examination, string doctorsId)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient))
@@ -208,7 +203,7 @@ namespace Logic
                 MessageBox.Show("You can not edit examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            SetPatientsPenalty(patient, PENALTY_EDIT);
+            SetPatientsPenalty(patient, Constants.PENALTY_EDIT);
             examination.DoctorsId = doctorsId;
             filesExamination.WriteInFile(Examinations);
         }
@@ -216,7 +211,7 @@ namespace Logic
 
         public void MoveAppointment(string id, DateTime date, int roomIndex)
         {
-            Examination e = new Examination();
+            Appointment e = new Appointment();
             for (int i = 0; i < Examinations.Count; i++)
             {
                 if (Examinations[i].ExaminationId == id)
@@ -233,9 +228,9 @@ namespace Logic
 
 
 
-        public List<Examination> GetExaminations(String patientName)
+        public List<Appointment> GetExaminations(String patientName)
         {
-            List<Examination> e = new List<Examination>();
+            List<Appointment> e = new List<Appointment>();
             for (int i = 0; i < Examinations.Count; i++)
             {
                 //dodaje preglede za pacijenta patientName i to samo one koji nisu prosli
@@ -323,7 +318,7 @@ namespace Logic
                         if (Rooms[i].Scheduled[j] == date)
                         {
                             Rooms[i].Scheduled.RemoveAt(j);
-                            SerializationAndDeserilazationOfRooms.EnterRoom(Rooms);
+                            FilesRoom.EnterRoom(Rooms);
                             break;
                         }
                     }
@@ -335,7 +330,7 @@ namespace Logic
         public void addExaminationToRoom(int roomIndex, DateTime date)
         {
             Rooms[roomIndex].Scheduled.Add(date);
-            SerializationAndDeserilazationOfRooms.EnterRoom(Rooms);
+            FilesRoom.EnterRoom(Rooms);
         }
 
         private void SetPatientsPenalty(Patient patient, int earnedPenalty) {
@@ -348,9 +343,9 @@ namespace Logic
 
         private Tuple<int, DateTime, bool> GetPenaltyItemsNewValue(int currentPenalty, DateTime dateOfLastActivity, bool isPenaltyGreaterThanAllowed)
         {
-            currentPenalty = Math.Max(0, currentPenalty - (int)(DateTime.Now - dateOfLastActivity).TotalDays * SUBSTRACT_PENALTY_EVERY_DAY);
+            currentPenalty = Math.Max(0, currentPenalty - (int)(DateTime.Now - dateOfLastActivity).TotalDays * Constants.SUBSTRACT_PENALTY_EVERY_DAY);
             dateOfLastActivity = DateTime.Now;
-            if (currentPenalty > MAX_ALLOWED_PENALTY) isPenaltyGreaterThanAllowed = true;
+            if (currentPenalty > Constants.MAX_ALLOWED_PENALTY) isPenaltyGreaterThanAllowed = true;
             return new Tuple<int, DateTime, bool>(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
         }
 
@@ -359,7 +354,7 @@ namespace Logic
             return patient.Penalty.Item3;
         }
 
-        private int GetExaminationsIndex(Examination examination) {
+        private int GetExaminationsIndex(Appointment examination) {
             for (int i = 0; i < Examinations.Count; i++)
                 if (Examinations[i] == examination) return i;
             return 0;

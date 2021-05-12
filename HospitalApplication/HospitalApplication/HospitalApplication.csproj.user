@@ -7,106 +7,106 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Windows\Manager\Medicines\AddDrug.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Medicines\AddDrug.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Medicines\EditDrug.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Medicines\EditDrug.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Medicines\InfoDrug.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Medicines\InfoDrug.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Medicines\main.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Medicines\main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Medicines\ReportedDrugs.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovations\AddRenovation.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovations\EditRenovation.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Renovations\Renovations.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Renovations\Renovations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\AddMoveStaticResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\AddMoveStaticResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\AddResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\AddResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\EditResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\EditResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\Menu.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\MoveDynamicResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\MoveDynamicResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\MoveStaticResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\MoveStaticResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\Resources.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\Resources.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\SearchedResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\SearchedResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\SearchResource.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\SearchResource.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Resources\SearchRoom.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Resources\SearchRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\AddRoom.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\AddRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\AllRooms.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\AllRooms.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\DeleteRoom.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\DeleteRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\EditR.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\EditR.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\EditRoom.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\EditRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\ShowRoomi.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\ShowRoomi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Manager\Rooms\WindowRooms.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\WindowRooms.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\CancelExaminationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\CancelExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\CancelOperationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\CancelOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\DoctorWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\MoveExaminationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\MoveExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\MoveOperationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\MoveOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\ScheduleExaminationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\ScheduleExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\ScheduleOperationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\ScheduleOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\ShowExaminationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\ShowExaminationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Doctor1\ShowOperationWindow.xaml.cs">
+    <Compile Update="Windows\DoctorWindows\ShowOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\PatientWindows\DoctorSurvey.xaml.cs">
@@ -136,67 +136,67 @@
     <Compile Update="Windows\PatientWindows\HospitalSurvey.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\AddAllergenWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\AddAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\AllPatientsWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\AllPatientsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\CreateNewsWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\CreateNewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\DefineAllergenWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\DefineAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\DeletePatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\DeletePatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\EditNewsWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\EditNewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\EditPatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\EditPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\EditRegisterPatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\EditRegisterPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\EmergencyWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\EmergencyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\FunMoveAppointmentWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\FunMoveAppointmentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\HomeWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\HomeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\IDEmergencyWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\IDEmergencyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\IDMedicalRecord.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\IDMedicalRecord.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\IDViewPatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\IDViewPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\MedicalRecordWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\NewsWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\NewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\RegisterGuestPatient.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\RegisterOptionWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\RegisterOptionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\RegisterPatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\ViewNewsWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\ViewNewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\Secretary\ViewPatientWindow.xaml.cs">
+    <Compile Update="Windows\SecretaryWindows\ViewPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -204,106 +204,106 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Medicines\AddDrug.xaml">
+    <Page Update="Windows\ManagerWindows\Medicines\AddDrug.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Medicines\EditDrug.xaml">
+    <Page Update="Windows\ManagerWindows\Medicines\EditDrug.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Medicines\InfoDrug.xaml">
+    <Page Update="Windows\ManagerWindows\Medicines\InfoDrug.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Medicines\main.xaml">
+    <Page Update="Windows\ManagerWindows\Medicines\main.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Medicines\ReportedDrugs.xaml">
+    <Page Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovations\AddRenovation.xaml">
+    <Page Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovations\EditRenovation.xaml">
+    <Page Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Renovations\Renovations.xaml">
+    <Page Update="Windows\ManagerWindows\Renovations\Renovations.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\AddMoveStaticResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\AddMoveStaticResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\AddResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\AddResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\EditResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\EditResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\Menu.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\Menu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\MoveDynamicResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\MoveDynamicResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\MoveStaticResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\MoveStaticResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\Resources.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\Resources.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\SearchedResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\SearchedResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\SearchResource.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\SearchResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Resources\SearchRoom.xaml">
+    <Page Update="Windows\ManagerWindows\Resources\SearchRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\AddRoom.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\AddRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\AllRooms.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\AllRooms.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\DeleteRoom.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\DeleteRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\EditR.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\EditR.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\EditRoom.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\EditRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\ShowRoomi.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\ShowRoomi.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Manager\Rooms\WindowRooms.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\WindowRooms.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\CancelExaminationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\CancelExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\CancelOperationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\CancelOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\DoctorWindow.xaml">
+    <Page Update="Windows\DoctorWindows\DoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\MoveExaminationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\MoveExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\MoveOperationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\MoveOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\ScheduleExaminationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\ScheduleExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\ScheduleOperationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\ScheduleOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\ShowExaminationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\ShowExaminationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Doctor1\ShowOperationWindow.xaml">
+    <Page Update="Windows\DoctorWindows\ShowOperationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\DoctorSurvey.xaml">
@@ -336,67 +336,67 @@
     <Page Update="Windows\PatientWindows\HospitalSurvey.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\AddAllergenWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\AddAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\AllPatientsWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\AllPatientsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\CreateNewsWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\CreateNewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\DefineAllergenWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\DefineAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\DeletePatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\DeletePatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\EditNewsWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\EditNewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\EditPatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\EditPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\EditRegisterPatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\EditRegisterPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\EmergencyWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\EmergencyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\FunMoveAppointmentWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\FunMoveAppointmentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\HomeWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\HomeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\IDEmergencyWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\IDEmergencyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\IDMedicalRecord.xaml">
+    <Page Update="Windows\SecretaryWindows\IDMedicalRecord.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\IDViewPatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\IDViewPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\MedicalRecordWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\NewsWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\NewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\RegisterGuestPatient.xaml">
+    <Page Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\RegisterOptionWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\RegisterOptionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\RegisterPatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\ViewNewsWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\ViewNewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\Secretary\ViewPatientWindow.xaml">
+    <Page Update="Windows\SecretaryWindows\ViewPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

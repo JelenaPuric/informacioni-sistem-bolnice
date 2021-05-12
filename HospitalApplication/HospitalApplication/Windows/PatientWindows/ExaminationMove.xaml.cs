@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowExaminationMove : Window
     {
         private WindowPatient w = WindowPatient.Instance;
-        private PatientController controller = new PatientController();
+        private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationMove()
         {
@@ -31,7 +31,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Examination examination = (Examination)w.lvUsers.SelectedItem;
+            Appointment examination = (Appointment)w.lvUsers.SelectedItem;
             DateTime oldDate = examination.ExaminationStart;
             DateTime comboDate = Date.SelectedDate.Value.Date;
             List<(int, int, int)> appointment = new List<(int, int, int)>();

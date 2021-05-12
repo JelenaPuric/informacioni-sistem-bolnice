@@ -10,8 +10,8 @@ namespace HospitalApplication.Controller
 {
     public class ManagerController
     {
-        private RoomManagment RoomManagment = new RoomManagment();
-        private RelocationResource RelocationResource = new RelocationResource();
+        private RoomService RoomManagment = new RoomService();
+        private RelocationResourceService RelocationResource = new RelocationResourceService();
         private RenovationsService RenovationService = new RenovationsService();
 
         public void CreateRoom(Room room)
@@ -81,7 +81,7 @@ namespace HospitalApplication.Controller
 
         public void IsFinishRenovation()
         {
-            RenovationService.IsFinishRenovation();
+            RenovationService.DeleteOldRenovations();
         }
 
     }

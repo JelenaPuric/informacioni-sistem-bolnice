@@ -5,7 +5,7 @@ namespace Model
 {
    public class Patient : Person
    {
-      public Examination examination;
+      public Appointment examination;
       public MedicalRecord medicalRecord;
 
 

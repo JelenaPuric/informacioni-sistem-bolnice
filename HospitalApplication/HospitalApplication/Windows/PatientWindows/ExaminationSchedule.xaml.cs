@@ -22,14 +22,14 @@ namespace HospitalApplication
     public partial class WindowExaminationSchedule : Window
     {
         private ExaminationService m = ExaminationService.Instance;
-        private PatientController controller = new PatientController();
+        private AppointmentController controller = new AppointmentController();
         private string doctorsUsername;
         private WindowPatient windowPatient = WindowPatient.Instance;
         private int idExamination = 100000;
         private MainWindow mainWindow = MainWindow.Instance;
         private List<Doctor> doctors = new List<Doctor>();
         private List<Room> rooms = new List<Room>();
-        private List<Examination> examinations = new List<Examination>();
+        private List<Appointment> examinations = new List<Appointment>();
         private int roomIndex = 0;
 
         public WindowExaminationSchedule()
@@ -167,7 +167,7 @@ namespace HospitalApplication
             GenerateExaminationId();
             controller.AddExaminationToDoctor(doctorsUsername, newDate);
             controller.AddExaminationToRoom(roomIndex, newDate);
-            Examination ex = new Examination(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
+            Appointment ex = new Appointment(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleExamination(ex);
             windowPatient.UpdateView();
             Close();
@@ -185,7 +185,7 @@ namespace HospitalApplication
             {
                 controller.AddExaminationToDoctor(doctors[selectedDoctorsIndex].Username, newDate);
                 controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
-                Examination ex = new Examination(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, rooms[roomIsFree.Item2].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
+                Appointment ex = new Appointment(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, rooms[roomIsFree.Item2].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
                 controller.ScheduleExamination(ex);
                 windowPatient.UpdateView();
                 Close();

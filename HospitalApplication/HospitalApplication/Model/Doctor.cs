@@ -49,11 +49,11 @@ namespace Model
       public void SetExamination(System.Collections.ArrayList newExamination)
       {
          RemoveAllExamination();
-         foreach (Examination oExamination in newExamination)
+         foreach (Appointment oExamination in newExamination)
             AddExamination(oExamination);
       }
       
-      public void AddExamination(Examination newExamination)
+      public void AddExamination(Appointment newExamination)
       {
          if (newExamination == null)
             return;
@@ -63,7 +63,7 @@ namespace Model
             this.examination.Add(newExamination);
       }
       
-      public void RemoveExamination(Examination oldExamination)
+      public void RemoveExamination(Appointment oldExamination)
       {
          if (oldExamination == null)
             return;

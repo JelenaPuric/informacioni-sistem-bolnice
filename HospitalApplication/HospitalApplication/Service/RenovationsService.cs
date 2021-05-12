@@ -17,8 +17,8 @@ namespace HospitalApplication.Service
         
         public RenovationsService()
         {
-            rooms = SerializationAndDeserilazationOfRooms.LoadRoom();
-            transfers = ScheduledTransfers.LoadTransfers();
+            rooms = FilesRoom.LoadRoom();
+            transfers = FilesScheduledTransfers.LoadTransfers();
             CheckIfNullList();
         }
 
@@ -26,12 +26,9 @@ namespace HospitalApplication.Service
         {
             for (int i = 0; i < rooms.Count; i++)
             {
-                if (rooms[i].Resource == null)
-                    rooms[i].Resource = new List<Resource>();
-                if (rooms[i].Scheduled == null)
-                    rooms[i].Scheduled = new List<DateTime>();
-                if (rooms[i].Renovation == null)
-                    rooms[i].Renovation = new List<Renovation>();
+                if (rooms[i].Resource == null) rooms[i].Resource = new List<Resource>();
+                if (rooms[i].Scheduled == null) rooms[i].Scheduled = new List<DateTime>();
+                if (rooms[i].Renovation == null) rooms[i].Renovation = new List<Renovation>();
                 for (int j = 0; j < rooms[i].Renovation.Count; j++)
                 {
                     if (rooms[i].Renovation[j].Days == null)
@@ -46,9 +43,7 @@ namespace HospitalApplication.Service
             for (int  i=0; i<rooms.Count; i++)
             {
                 for(int j=0; j<rooms[i].Renovation.Count; j++)
-                {
                     vrati.Add(rooms[i].Renovation[j]);
-                }
             }
             return vrati;
         }
@@ -66,7 +61,7 @@ namespace HospitalApplication.Service
                     }
                 }
             }
-            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+            FilesRoom.EnterRoom(rooms);
         }
 
         public void AddRenovation(Renovation newRenovation)
@@ -76,31 +71,26 @@ namespace HospitalApplication.Service
                 if(rooms[i].RoomId == newRenovation.RoomId)
                     rooms[i].Renovation.Add(newRenovation);
             }
-
-            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+            FilesRoom.EnterRoom(rooms);
         }
 
         public bool CheckRenovation(Renovation newRenovation)
         {
-            return CheckDoesRoomExistAndIsFree(newRenovation);
-            return DoesRoomHaveTransfers(newRenovation);
+            return (CheckDoesRoomExistAndIsFree(newRenovation) && DoesRoomHaveTransfers(newRenovation));
         }
 
         private bool DoesRoomHaveTransfers(Renovation newRenovation)
         {
-            if (transfers.Count != 0)
+            for (int i = 0; i < transfers.Count; i++)
             {
-                for (int t = 0; t < transfers.Count; t++)
+                if (newRenovation.RoomId == transfers[i].idRoomFrom || newRenovation.RoomId == transfers[i].idRoomTo)
                 {
-                    if (newRenovation.RoomId == transfers[t].idRoomFrom || newRenovation.RoomId == transfers[t].idRoomTo)
+                    for (int j = 0; j < newRenovation.Days.Count; j++)
                     {
-                        for (int daysforcheck = 0; daysforcheck < newRenovation.Days.Count; daysforcheck++)
+                        if (newRenovation.Days[j].Date == transfers[i].dat.Date)
                         {
-                            if (newRenovation.Days[daysforcheck].Date == transfers[t].dat.Date)
-                            {
-                                MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
-                                return false;
-                            }
+                            MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
+                            return false;
                         }
                     }
                 }
@@ -129,9 +119,7 @@ namespace HospitalApplication.Service
                         }
                 }
                 if (rooms[i].RoomId == newRenovation.RoomId)
-                {
                     roomExist++;
-                }
             }
             if (roomExist == 0)
             {
@@ -141,7 +129,7 @@ namespace HospitalApplication.Service
             return true;
         }
 
-        public void IsFinishRenovation()
+        public void DeleteOldRenovations()
         {
             for(int i=0; i<rooms.Count; i++)
             {
@@ -151,7 +139,7 @@ namespace HospitalApplication.Service
                         rooms[i].Renovation.RemoveAt(j);
                 }
             }
-            SerializationAndDeserilazationOfRooms.EnterRoom(rooms);
+            FilesRoom.EnterRoom(rooms);
         }
     }
 }

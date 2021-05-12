@@ -8,9 +8,9 @@ namespace WorkWithFiles
    public class FilesExamination
    {
         private string path = "examinations.txt";
-        public List<Examination> LoadFromFile()
+        public List<Appointment> LoadFromFile()
       {
-            List<Examination> examinations = new List<Examination>();
+            List<Appointment> examinations = new List<Appointment>();
             string[] lines = File.ReadAllLines(path);
 
             foreach (string line in lines)
@@ -23,13 +23,13 @@ namespace WorkWithFiles
 
                 
 
-                Examination pr = new Examination(examination[0], examination[1], examination[2], myDate, examination[4], examinationType, Int16.Parse(examination[6]));
+                Appointment pr = new Appointment(examination[0], examination[1], examination[2], myDate, examination[4], examinationType, Int16.Parse(examination[6]));
                 examinations.Add(pr);
             }
             return examinations;
         }
       
-      public void WriteInFile(List<Examination> examinations)
+      public void WriteInFile(List<Appointment> examinations)
       {
             System.IO.File.WriteAllText(path, string.Empty);
             for (int i = 0; i < examinations.Count; i++)

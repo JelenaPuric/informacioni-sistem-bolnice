@@ -34,9 +34,9 @@ namespace HospitalApplication
     {
         private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
-        private PatientController controller = new PatientController();
+        private AppointmentController controller = new AppointmentController();
         private FilesSurvey filesSurvey = new FilesSurvey();
-        private List<Examination> allExaminations = new List<Examination>();
+        private List<Appointment> allExaminations = new List<Appointment>();
         private FilesExamination filesExamination = new FilesExamination();
         List<Survey> surveys = new List<Survey>();
         public ICollectionView ExaminationsCollectionView { get; }
@@ -58,7 +58,7 @@ namespace HospitalApplication
         {
             InitializeComponent();
             instance = this;
-            List<Examination> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
             PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
@@ -69,7 +69,7 @@ namespace HospitalApplication
 
         public void UpdateView()
         {
-            List<Examination> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             //List<Examination> examinations = m.Examinations;
             //lvUsers.ItemsSource = null;
@@ -94,7 +94,7 @@ namespace HospitalApplication
         {
             if (!(lvUsers.SelectedIndex > -1))
                 return;
-            Examination examination = (Examination)lvUsers.SelectedItem;
+            Appointment examination = (Appointment)lvUsers.SelectedItem;
             MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
