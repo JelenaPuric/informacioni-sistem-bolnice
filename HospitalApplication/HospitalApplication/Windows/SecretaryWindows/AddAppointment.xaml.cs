@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
 using System;
@@ -52,7 +53,7 @@ namespace HospitalApplication.Windows.Secretary
 
             userNP = usernamePatient;
 
-            doctors = fd.LoadFromFile();
+            doctors = FilesDoctor.GetDoctors();
             for (int i = 0; i < doctors.Count; i++)
             {
                 Combo3.Items.Add(doctors[i].Username.ToString());

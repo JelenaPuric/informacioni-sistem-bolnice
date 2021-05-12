@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
 using WorkWithFiles;
@@ -45,9 +46,8 @@ namespace HospitalApplication
         private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
         {
             Combo4.Items.Clear();
-            //ovde ima jedan bug, uvek ce uzimati time iz prvog comba
-            DateTime date1 = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date);
-            DateTime date2 = GetDateAndTimeFromForm(Date2.SelectedDate.Value.Date);
+            DateTime date1 = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            DateTime date2 = GetDateAndTimeFromForm(Date2.SelectedDate.Value.Date, Combo2);
 
             List<(int, int, int)> time = new List<(int, int, int)>();
             for (int i = 0; i < 13; i++)
@@ -55,21 +55,12 @@ namespace HospitalApplication
                 time.Add((7 + i, 0, 0));
                 time.Add((7 + i, 30, 0));
             }
-
-            string selectedDoctorUsername = Combo3.SelectedItem.ToString();
-            Doctor selectedDoctor = new Doctor();
-            for (int i = 0; i < doctors.Count; i++)
-            {
-                if (selectedDoctorUsername == doctors[i].Username)
-                {
-                    selectedDoctor = doctors[i];
-                    break;
-                }
-            }
+            Doctor selectedDoctor = FilesDoctor.GetDoctor(Combo3.SelectedItem.ToString());
 
             List<DateTime> newDates = new List<DateTime>();
             DateTime newDate = new DateTime();
 
+            //PREDLOG - prvo dodaj sve termine koji su u opsegu a kasnije vrsi provere i izbaci ove koji ne valjaju
             //prolazim kroz sve dane u opsegu
             for (int i = 0; i < (date2 - date1).TotalDays + 1; i++)
             {
@@ -165,64 +156,41 @@ namespace HospitalApplication
             }
             DateTime newDate = DateTime.Parse(stringDate);
             GenerateExaminationId();
-            controller.AddExaminationToDoctor(doctorsUsername, newDate);
-            controller.AddExaminationToRoom(roomIndex, newDate);
-            Appointment ex = new Appointment(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
-            controller.ScheduleExamination(ex);
+            Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
+            controller.ScheduleExamination(appointment);
             windowPatient.UpdateView();
             Close();
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date);
+            DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             int selectedDoctorsIndex = Combo3.SelectedIndex;
             GenerateExaminationId();
-
-            Tuple<bool, int> roomIsFree = controller.RoomIsFree(newDate);
-            controller.UpdateDoctors();
-            if (controller.DoctorIsFree(doctors[selectedDoctorsIndex].Username, newDate) && roomIsFree.Item1)
-            {
-                controller.AddExaminationToDoctor(doctors[selectedDoctorsIndex].Username, newDate);
-                controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
-                Appointment ex = new Appointment(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, rooms[roomIsFree.Item2].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
-                controller.ScheduleExamination(ex);
-                windowPatient.UpdateView();
-                Close();
-            }
-            else
-            {
-                MessageBoxResult result = System.Windows.MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
-                return;
-            }
+            Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctors[selectedDoctorsIndex].Username, "0", newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
+            controller.ScheduleExamination(appointment);
+            windowPatient.UpdateView();
+            Close();
         }
 
-        private DateTime GetDateAndTimeFromForm(DateTime date)
+        private DateTime GetDateAndTimeFromForm(DateTime date, ComboBox Combo)
         {
-            //lista svih mogucih termina za pregled, kombijuje se sa date time pickerom, trojke oznacavaju sat/min/sekund
-            List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 13; i++)
-            {
-                appointment.Add((7 + i, 0, 0));
-                appointment.Add((7 + i, 30, 0));
+            List<(int, int, int)> times = new List<(int, int, int)>();
+            for (int i = 0; i < 13; i++){
+                times.Add((7 + i, 0, 0)); 
+                times.Add((7 + i, 30, 0));
             }
-            (int, int, int) a = appointment[Combo.SelectedIndex];
-            TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            return date + time;
+            (int, int, int) time = times[Combo.SelectedIndex];
+            TimeSpan timeSpan = new TimeSpan(time.Item1, time.Item2, time.Item3);
+            return date + timeSpan;
         }
 
         private int GenerateExaminationId()
         {
-            //radi tako sto jednom ucitam sve preglede i nadjem najveci id pa nakon toga samo dodeljujem za po jedan br veci
-            //ako je idExamination 100000 znaci da ili ne postoji zakazan pregled ili nije nasao najveci id pregleda koji postoji
             if (idExamination == 100000)
-            {
                 for (int i = 0; i < examinations.Count; i++)
-                {
                     if (Int32.Parse(examinations[i].ExaminationId) > idExamination)
                         idExamination = Int32.Parse(examinations[i].ExaminationId);
-                }
-            }
             return idExamination;
         }
     }

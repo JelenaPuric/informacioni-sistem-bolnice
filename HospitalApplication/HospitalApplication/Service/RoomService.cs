@@ -167,13 +167,13 @@ namespace Logic
             FilesRoom.EnterRoom(rooms);
         }
     
-      public List<Room> showAllRooms()
-      {
-         return rooms;
-      }
+        public List<Room> showAllRooms()
+        {
+            return rooms;
+        }
       
-      public Room showRoom(int roomm)
-      {
+        public Room showRoom(int roomm)
+        {
             Room r = new Room();
             for(int i=0; i<rooms.Count; i++)
             {
@@ -182,6 +182,49 @@ namespace Logic
             }
 
             return r;
-      }
-   }
+        }
+
+        //Ratko dodao, ove funkcije pozivam u ExaminationService
+        public Tuple<bool, int> IsRoomFree(DateTime date)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                bool roomIsFree = true;
+                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                {
+                    if (rooms[i].Scheduled[j] == date)
+                        roomIsFree = false;
+                }
+                if (roomIsFree)
+                    return new Tuple<bool, int>(true, i);
+            }
+            return new Tuple<bool, int>(false, -1);
+        }
+
+        public void AddExaminationToRoom(int roomIndex, DateTime date)
+        {
+            rooms[roomIndex].Scheduled.Add(date);
+            FilesRoom.EnterRoom(rooms);
+        }
+
+        public void RemoveExaminationFromRoom(String roomId, DateTime date)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId.ToString() == roomId)
+                {
+                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
+                    {
+                        if (rooms[i].Scheduled[j] == date)
+                        {
+                            rooms[i].Scheduled.RemoveAt(j);
+                            FilesRoom.EnterRoom(rooms);
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+    }
 }

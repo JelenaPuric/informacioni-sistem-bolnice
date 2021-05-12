@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
 using System;
@@ -105,7 +106,7 @@ namespace HospitalApplication.Windows.Secretary
         private void LoadPatientsDoctorsRoomsAndExaminations(string idPatient)
         {
             selectedPatient = secretaryController.getPatient(idPatient);
-            doctors = filesDoctor.LoadFromFile();
+            doctors = FilesDoctor.GetDoctors();
             rooms = FilesRoom.LoadRoom();
             examinations = examinationService.Examinations;
         }
@@ -140,7 +141,7 @@ namespace HospitalApplication.Windows.Secretary
         private void AddDateTimeInSheduleDoctorAndRoom(DateTime selectedDateTime)
         {
             doctors[Int32.Parse(GetDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(selectedDateTime);
-            filesDoctor.WriteInFile(doctors);
+            FilesDoctor.Write();
             rooms[isFreeRoom.Item2].Scheduled.Add(selectedDateTime);
             FilesRoom.EnterRoom(rooms);
         }

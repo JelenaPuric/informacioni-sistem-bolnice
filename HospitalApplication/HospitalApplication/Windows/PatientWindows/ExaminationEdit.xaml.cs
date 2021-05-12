@@ -23,39 +23,22 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationEdit : Window
     {
-        private FilesDoctor filesDoctor = new FilesDoctor();
-        private List<Doctor> doctors = new List<Doctor>();
-        private WindowPatient w = WindowPatient.Instance;
+        private List<Doctor> doctors = FilesDoctor.GetDoctors();
+        private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
         {
             InitializeComponent();
-            doctors = filesDoctor.LoadFromFile();
             for (int i = 0; i < doctors.Count; i++)
-            {
                 Combo.Items.Add(doctors[i].Username.ToString());
-            }
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment examination = (Appointment)w.lvUsers.SelectedItem;
-            DateTime date = examination.ExaminationStart;
-            string username = Combo.SelectedItem.ToString();
-
-            controller.UpdateDoctors();
-            if (controller.DoctorIsFree(username, date) == true)
-            {
-                controller.AddExaminationToDoctor(username, date);
-                controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
-                controller.EditExamination(examination, username);
-                w.UpdateView();
-            }
-            else
-            {
-                MessageBox.Show("There is no free term. Choose another time.");
-            }
+            Appointment appointment = (Appointment)windowPatient.lvUsers.SelectedItem;
+            controller.EditExamination(appointment, Combo.SelectedItem.ToString());
+            windowPatient.UpdateView();
             Close();
         }
     }

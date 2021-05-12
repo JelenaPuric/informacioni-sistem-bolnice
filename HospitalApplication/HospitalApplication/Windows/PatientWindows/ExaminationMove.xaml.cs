@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationMove : Window
     {
-        private WindowPatient w = WindowPatient.Instance;
+        private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationMove()
@@ -31,54 +31,34 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment examination = (Appointment)w.lvUsers.SelectedItem;
+            Appointment examination = (Appointment)windowPatient.lvUsers.SelectedItem;
             DateTime oldDate = examination.ExaminationStart;
-            DateTime comboDate = Date.SelectedDate.Value.Date;
-            List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 13; i++)
-            {
-                appointment.Add((7 + i, 0, 0));
-                appointment.Add((7 + i, 30, 0));
-            }
-            (int, int, int) a = appointment[Combo.SelectedIndex];
-            TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            DateTime newDate = comboDate + time;
-
-            if (oldDate == newDate)
-            {
-                MessageBoxResult result = System.Windows.MessageBox.Show("Your examination is already scheduled at this time.", "Info", MessageBoxButton.OK);
-                return;
-            }
-            if ((oldDate - DateTime.Now).TotalDays < 1)
-            {
-                MessageBoxResult result = System.Windows.MessageBox.Show("You can not move examination that starts in less than 24h.", "Info", MessageBoxButton.OK);
-                return;
-            }
-            if (Math.Abs((oldDate - newDate).TotalDays) > 2)
-            {
-                MessageBoxResult result = System.Windows.MessageBox.Show("You can not move examination start more than 2 days.", "Info", MessageBoxButton.OK);
-                return;
-            }
-
-            //prilikom provere da li je soba slobodna, ako takva postoji, vrati se index slobodne sobe
-            Tuple<bool, int> roomIsFree = controller.RoomIsFree(newDate);
-            controller.UpdateDoctors();
-            if (controller.DoctorIsFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
-            {
-                controller.RemoveExaminationFromDoctor(examination.DoctorsId, oldDate);
-                controller.AddExaminationToDoctor(examination.DoctorsId, newDate);
-                controller.RemoveExaminationFromRoom(examination.RoomId, oldDate);
-                controller.AddExaminationToRoom(roomIsFree.Item2, newDate);
-                controller.MoveExamination(examination, newDate, roomIsFree.Item2);
-                w.UpdateView();
-            }
-            else
-            {
-                MessageBoxResult result = System.Windows.MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
-                return;
-            }
-
+            DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            if (!IsNewDateValid(oldDate, newDate)) return;
+            controller.MoveExamination(examination, newDate);
+            windowPatient.UpdateView();
             Close();
+        }
+
+        private bool IsNewDateValid(DateTime oldDate, DateTime newDate)
+        {
+            if (oldDate == newDate) MessageBox.Show("Your examination is already scheduled at this time.", "Info", MessageBoxButton.OK);
+            else if ((oldDate - DateTime.Now).TotalDays < 1) MessageBox.Show("You can not move examination that starts in less than 24h.", "Info", MessageBoxButton.OK);
+            else if (Math.Abs((oldDate - newDate).TotalDays) > 2) MessageBox.Show("You can not move examination start more than 2 days.", "Info", MessageBoxButton.OK);
+            else return true;
+            return false;
+        }
+
+        private DateTime GetDateAndTimeFromForm(DateTime date, ComboBox Combo)
+        {
+            List<(int, int, int)> times = new List<(int, int, int)>();
+            for (int i = 0; i < 13; i++){
+                times.Add((7 + i, 0, 0));
+                times.Add((7 + i, 30, 0));
+            }
+            (int, int, int) time = times[Combo.SelectedIndex];
+            TimeSpan timeSpan = new TimeSpan(time.Item1, time.Item2, time.Item3);
+            return date + timeSpan;
         }
     }
 }

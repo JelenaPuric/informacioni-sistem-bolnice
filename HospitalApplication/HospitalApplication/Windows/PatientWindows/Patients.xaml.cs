@@ -24,6 +24,7 @@ using HospitalApplication.Windows.PatientWindows;
 using System.IO;
 using Nancy.Json;
 using System.Linq;
+using HospitalApplication.WorkWithFiles;
 
 namespace HospitalApplication
 {
@@ -71,17 +72,8 @@ namespace HospitalApplication
         {
             List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
-            //List<Examination> examinations = m.Examinations;
-            //lvUsers.ItemsSource = null;
-            //lvUsers.ItemsSource = examinations;
-            //lvUsers.Items.Refresh();
-            //ICollectionView view = CollectionViewSource.GetDefaultView(examinations);
-            //view.Refresh();
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = examinations;
-            // Update the List containing your elements (lets call it x)
-            //lvUsers.ItemsSource = examinations;
-            //TestLabela.Content = "vucicupederu";
         }
 
         private void ScheduleExamination_Click(object sender, RoutedEventArgs e)
@@ -95,14 +87,10 @@ namespace HospitalApplication
             if (!(lvUsers.SelectedIndex > -1))
                 return;
             Appointment examination = (Appointment)lvUsers.SelectedItem;
-            MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    DateTime date = examination.ExaminationStart;
-                    //ukloni pregled lekaru i sobi
-                    controller.RemoveExaminationFromDoctor(examination.DoctorsId, date);
-                    controller.RemoveExaminationFromRoom(examination.RoomId, date);
                     controller.CancelExamination(examination);
                     UpdateView();
                     break;

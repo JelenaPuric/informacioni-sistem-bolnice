@@ -5,10 +5,9 @@ namespace Model
 {
    public class Doctor : Person
    {
-      public System.Collections.ArrayList examination;
-        private List<DateTime> scheduled;
-        private DoctorType doctorType;
         private String doctorId;
+        private DoctorType doctorType;
+        private List<DateTime> scheduled;
 
         public Doctor() { }
 
@@ -38,64 +37,5 @@ namespace Model
             get { return scheduled; }
             set { scheduled = value; }
         }
-
-        public System.Collections.ArrayList GetExamination()
-      {
-         if (examination == null)
-            examination = new System.Collections.ArrayList();
-         return examination;
-      }
-      
-      public void SetExamination(System.Collections.ArrayList newExamination)
-      {
-         RemoveAllExamination();
-         foreach (Appointment oExamination in newExamination)
-            AddExamination(oExamination);
-      }
-      
-      public void AddExamination(Appointment newExamination)
-      {
-         if (newExamination == null)
-            return;
-         if (this.examination == null)
-            this.examination = new System.Collections.ArrayList();
-         if (!this.examination.Contains(newExamination))
-            this.examination.Add(newExamination);
-      }
-      
-      public void RemoveExamination(Appointment oldExamination)
-      {
-         if (oldExamination == null)
-            return;
-         if (this.examination != null)
-            if (this.examination.Contains(oldExamination))
-               this.examination.Remove(oldExamination);
-      }
-      
-      public void RemoveAllExamination()
-      {
-         if (examination != null)
-            examination.Clear();
-      }
-      public System.Collections.ArrayList requestToTheManager;
-      
-      public System.Collections.ArrayList GetRequestToTheManager()
-      {
-         if (requestToTheManager == null)
-            requestToTheManager = new System.Collections.ArrayList();
-         return requestToTheManager;
-      }
-      
-
-      
-      public void RemoveAllRequestToTheManager()
-      {
-         if (requestToTheManager != null)
-            requestToTheManager.Clear();
-      }
-   
-
-      private Boolean Specialization;
-   
    }
 }

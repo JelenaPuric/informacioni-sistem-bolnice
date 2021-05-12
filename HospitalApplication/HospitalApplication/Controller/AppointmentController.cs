@@ -27,9 +27,9 @@ namespace HospitalApplication.Controller
             examinationService.CancelExamination(examination);
         }
 
-        public void MoveExamination(Appointment examination, DateTime date, int roomIndex)
+        public void MoveExamination(Appointment examination, DateTime date)
         {
-            examinationService.MoveExamination(examination, date, roomIndex);
+            examinationService.MoveExamination(examination, date);
         }
 
         public void EditExamination(Appointment examination, string doctor)

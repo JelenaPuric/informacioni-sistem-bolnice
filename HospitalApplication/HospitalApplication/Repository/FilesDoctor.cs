@@ -4,53 +4,43 @@ using System.IO;
 using System.Text;
 using Model;
 using Logic;
+using Nancy.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
     class FilesDoctor
     {
-        private string path = "doctors.txt";
-        //private ExaminationManagement m = ExaminationManagement.Instance;
+        private static string path = "../../../Data/doctors.json";
+        private static List<Doctor> doctors;
 
-        public List<Doctor> LoadFromFile()
+        public FilesDoctor() {
+            Read();
+        }
+
+        public static void Read()
         {
-            List<Doctor> doctors = new List<Doctor>();
-            string[] lines = File.ReadAllLines(path);
+            string json = File.ReadAllText(path);
+            doctors = new JavaScriptSerializer().Deserialize<List<Doctor>>(json);
+        }
 
-            foreach (string line in lines)
-            {
-                string[] doctor = line.Split(",");
-                //DateTime myDate = DateTime.ParseExact(pregled[3], "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                //DateTime myDate = DateTime.Parse(examination[3]);
-                List<DateTime> terms = new List<DateTime>();
-                string[] term = doctor[2].Split("~");
-                //ovaj and u foru je tu da ne bi pokusao da prazan string pretvori u date
-                for(int i=0; i<term.Length && term[i] != ""; i++){
-                    DateTime myDate = DateTime.Parse(term[i]);
-                    terms.Add(myDate);
-                }
-                DoctorType doctorType = (DoctorType)Enum.Parse(typeof(DoctorType), doctor[3]);
+        public static void Write()
+        {
+            string json = new JavaScriptSerializer().Serialize(doctors);
+            File.WriteAllText(path, json);
+        }
 
-                Doctor dr = new Doctor(doctor[0], doctor[1], terms, doctorType, doctor[4]);
-                doctors.Add(dr);
-            }
+        public static List<Doctor> GetDoctors() {
+            Read();
+            if (doctors == null) doctors = new List<Doctor>();
             return doctors;
         }
 
-        public void WriteInFile(List<Doctor> doctors)
-        {
-            System.IO.File.WriteAllText(path, string.Empty);
+        public static Doctor GetDoctor(string doctorUsername) {
+            Read();
             for (int i = 0; i < doctors.Count; i++)
-            {
-                File.AppendAllText(path, doctors[i].Username + "," + doctors[i].Password + ",");
-                for (int j = 0; j < doctors[i].Scheduled.Count; j++) { 
-                    File.AppendAllText(path, doctors[i].Scheduled[j] + "");
-                    if (j < doctors[i].Scheduled.Count-1) {
-                        File.AppendAllText(path, "~");
-                    }
-                }
-                File.AppendAllText(path, "," + doctors[i].DoctorType + "," + doctors[i].DoctorId + "\n");
-            }
+                if (doctorUsername == doctors[i].Username)
+                    return doctors[i];
+            return null;
         }
     }
 }

@@ -11,6 +11,6 @@ namespace HospitalApplication.Model
         public const int PENALTY_CANCEL = 15;
         public const int PENALTY_EDIT = 15;
         public const int PENALTY_MOVE = 15;
-        public const int MAX_ALLOWED_PENALTY = 70;
+        public const int MAX_ALLOWED_PENALTY = 7000;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
 using System;
@@ -75,7 +76,7 @@ namespace HospitalApplication.Windows.Secretary
                 case MessageBoxResult.Yes:
                     int index = lvUsers.SelectedIndex;
                     WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
-                    List<Doctor> doctors = doc.LoadFromFile();
+                    List<Doctor> doctors = FilesDoctor.GetDoctors();
                     DateTime dt = e2.ExaminationStart;
                     //skloni datum lekaru
                     for (int i = 0; i < doctors.Count; i++)
@@ -90,7 +91,7 @@ namespace HospitalApplication.Windows.Secretary
                                 }
                             }
 
-                            doc.WriteInFile(doctors);
+                            FilesDoctor.Write();
                             break;
                         }
                     }
