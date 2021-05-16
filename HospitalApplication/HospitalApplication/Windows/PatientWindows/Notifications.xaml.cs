@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Logic;
+using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -19,8 +21,9 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowPatientNotifications : Window
     {
-        private NotificationService notificationService = new NotificationService();
+        private NotificationController notificationController = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
+        private FileNotification fileNotification = FileNotification.Instance;
 
         private static WindowPatientNotifications instance;
         public static WindowPatientNotifications Instance
@@ -39,13 +42,13 @@ namespace HospitalApplication.Windows.Patient1
         {
             InitializeComponent();
             instance = this;
-            List<Notification> notifications = notificationService.GetNotifications(mainWindow.PatientsUsername);
+            List<Notification> notifications = fileNotification.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = notifications;
         }
 
         public void UpdateView()
         {
-            List<Notification> notifications = notificationService.GetNotifications(mainWindow.PatientsUsername);
+            List<Notification> notifications = fileNotification.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = notifications;
         }
@@ -74,13 +77,11 @@ namespace HospitalApplication.Windows.Patient1
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             Notification notification = (Notification)lvUsers.SelectedItem;
-            string notificationId = notification.NotificationsId;
-
-            MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to delete notification?", "Confirmation", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Do you want to delete notification?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    notificationService.CancelNotification(notificationId);
+                    notificationController.CancelNotification(notification);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:

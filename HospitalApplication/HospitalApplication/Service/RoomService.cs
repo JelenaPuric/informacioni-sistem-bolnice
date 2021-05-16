@@ -1,5 +1,6 @@
  using System;
 using System.Collections.Generic;
+using System.Windows;
 using HospitalApplication.Model;
 using Model;
 using WorkWithFiles;
@@ -9,6 +10,8 @@ namespace Logic
     public class RoomService
     {
         private List<Room> rooms;
+        private List<Appointment> appointments;
+        private FilesAppointments filesAppointments = new FilesAppointments();
 
         public RoomService()
         {
@@ -22,7 +25,7 @@ namespace Logic
                 if (rooms[i].Renovation == null)
                     rooms[i].Renovation = new List<Renovation>();
             }
-            
+            appointments = filesAppointments.LoadFromFile();
         }
         public void CreateRoom(Room r)
         {
@@ -115,7 +118,9 @@ namespace Logic
                     rooms.RemoveAt(i); break;
                 }
             }
-
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i].RoomId == oldRoom.RoomId.ToString()) appointments.RemoveAt(i);
+            filesAppointments.WriteInFile(appointments);
             FilesRooms.EnterRoom(rooms);
         }
 
@@ -128,6 +133,9 @@ namespace Logic
                     rooms.RemoveAt(i); break;
                 }
             }
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i].RoomId == roomid.ToString()) appointments.RemoveAt(i);
+            filesAppointments.WriteInFile(appointments);
             FilesRooms.EnterRoom(rooms);
         }
 

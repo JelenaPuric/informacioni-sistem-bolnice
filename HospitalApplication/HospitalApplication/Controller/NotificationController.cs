@@ -10,24 +10,19 @@ namespace HospitalApplication.Controller
     {
         private NotificationService notificationService = new NotificationService();
 
-        public void ScheduleNotification(Notification n)
+        public void ScheduleNotification(Notification notification)
         {
-            notificationService.ScheduleNotification(n);
+            notificationService.ScheduleNotification(notification);
         }
 
-        public List<Notification> GetNotifications(string id)
+        public void CancelNotification(Notification notification)
         {
-            return notificationService.GetNotifications(id);
+            notificationService.CancelNotification(notification);
         }
 
-        public void CancelNotification(String id)
+        public void EditNotification(Notification notification, string title, string descriptioin, string repeat, DateTime date)
         {
-            notificationService.CancelNotification(id);
-        }
-
-        public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
-        {
-            notificationService.EditNotification(id, title, descriptioin, repeat, date);
+            notificationService.EditNotification(notification, title, descriptioin, repeat, date);
         }
     }
 }

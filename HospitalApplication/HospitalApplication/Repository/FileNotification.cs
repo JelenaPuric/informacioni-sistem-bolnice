@@ -43,5 +43,14 @@ namespace HospitalApplication.WorkWithFiles
         public List<Notification> GetNotifications() {
             return notifications;
         }
+
+        public List<Notification> GetNotifications(string patientsId)
+        {
+            List<Notification> patientsNotifications = new List<Notification>();
+            for (int i = 0; i < notifications.Count; i++)
+                if (notifications[i].PatientsId == patientsId && notifications[i].Dates[notifications[i].Dates.Count - 1] > DateTime.Now)
+                    patientsNotifications.Add(notifications[i]);
+            return patientsNotifications;
+        }
     }
 }

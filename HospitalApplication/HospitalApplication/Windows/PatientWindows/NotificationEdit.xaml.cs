@@ -28,8 +28,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             InitializeComponent();
             Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
-            DateTime date = notification.Dates[0];
-            Date.SelectedDate = date;
+            Date.SelectedDate = notification.Dates[0];
             Title.Text = notification.Title;
             Description.Text = notification.Description;
             Repeat.Text = notification.Repeat;
@@ -40,7 +39,7 @@ namespace HospitalApplication.Windows.Patient1
             Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
             DateTime date = Date.SelectedDate.Value.Date;
             DateTime newDate = GetDateAndTimeFromForm(date);
-            controller.EditNotification(notification.NotificationsId, Title.Text, Description.Text, Repeat.Text, newDate);
+            controller.EditNotification(notification, Title.Text, Description.Text, Repeat.Text, newDate);
             windowNotifications.UpdateView();
             Close();
         }

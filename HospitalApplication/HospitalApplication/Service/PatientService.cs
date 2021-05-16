@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using Model;
 using WorkWithFiles;
 
@@ -9,10 +10,13 @@ namespace Logic
    {
 
         private List<Patient> patients;
+        private List<Appointment> appointments;
+        private FilesAppointments filesAppointments = new FilesAppointments();
 
         public PatientService()
         {
             patients = FilesPatients.LoadPatients();
+            appointments = filesAppointments.LoadFromFile();
         }
 
         public List<Patient> GetAllPatients()
@@ -31,13 +35,18 @@ namespace Logic
 
         public void DeletePatient(string iDPatient)
         {
+            string patientsUsername = "";
             for (int i = 0; i < patients.Count; i++)
             {
                 if (patients[i].Id == iDPatient)
                 {
+                    patientsUsername = patients[i].Username;
                     patients.RemoveAt(i); break;
                 }
             }
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i].PatientsId == patientsUsername) appointments.RemoveAt(i);
+            filesAppointments.WriteInFile(appointments);
             FilesPatients.EnterPatient(patients);
         }
 
