@@ -36,7 +36,7 @@ namespace HospitalApplication
         private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FilesSurveys filesSurvey = FilesSurveys.Instance;
+        private FileSurvey filesSurvey = FileSurvey.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
         private FilesAppointments filesExamination = new FilesAppointments();
         List<Survey> surveys = new List<Survey>();
@@ -63,7 +63,7 @@ namespace HospitalApplication
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
             //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
-            NotificationService notificationService = NotificationService.Instance;
+            NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
             allExaminations = filesExamination.LoadFromFile();
             surveys = filesSurvey.GetSurveys();
@@ -125,7 +125,6 @@ namespace HospitalApplication
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
-            surveys = filesSurvey.GetSurveys();
             for (int i = 0; i < surveys.Count; i++)
             {
                 if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30)
@@ -149,10 +148,8 @@ namespace HospitalApplication
                 if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now) {
                     bool ok = true;
                     for (int j = 0; j < surveys.Count; j++)
-                    {
                         if (surveys[j].PatientsUsername == mainWindow.PatientsUsername && surveys[j].SurveyIsAbout == allExaminations[i].DoctorsId && surveys[j].DateOfTheSurvey > allExaminations[i].ExaminationStart)
                             ok = false;
-                    }
                     if(ok) doctorUsernames.Add(allExaminations[i].DoctorsId);
                 }
             }
@@ -166,8 +163,7 @@ namespace HospitalApplication
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            NotificationService n = NotificationService.Instance;
-            n.FlagIsMarked = true;
+            NotificationService.FlagIsMarked = true;
         }
     }
 }

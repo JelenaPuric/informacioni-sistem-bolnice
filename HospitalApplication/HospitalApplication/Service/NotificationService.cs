@@ -10,26 +10,14 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
-        private FilesNotifications filesNotification = new FilesNotifications();
-        public List<Notification> Notifications { get; set; }
+        private FileNotification filesNotification = FileNotification.Instance;
+        public List<Notification> notifications;
         private List<Notification> notificationsForLoggedInPatient;
-        private static NotificationService instance;
-        public bool FlagIsMarked { get; set; } = false;
-        public static NotificationService Instance
-        {
-            get
-            {
-                if (null == instance)
-                {
-                    instance = new NotificationService();
-                }
-                return instance;
-            }
-        }
-
+        public static bool FlagIsMarked { get; set; } = false;
+        
         public NotificationService()
         {
-            Notifications = filesNotification.LoadFromFile();
+            notifications = filesNotification.GetNotifications();
         }
 
         public void StartNotificationThread(string usernamee)
@@ -49,19 +37,19 @@ namespace HospitalApplication.Logic
 
         public void ScheduleNotification(Notification n)
         {
-            Notifications.Add(n);
-            filesNotification.WriteInFile(Notifications);
+            notifications.Add(n);
+            filesNotification.Write();
         }
 
         public List<Notification> GetNotifications(string id)
         {
             List<Notification> n = new List<Notification>();
-            if (Notifications == null) return n;
-            for (int i = 0; i < Notifications.Count; i++)
+            if (notifications == null) return n;
+            for (int i = 0; i < notifications.Count; i++)
             {
-                if (Notifications[i].PatientsId == id && Notifications[i].Dates[Notifications[i].Dates.Count - 1] > DateTime.Now)
+                if (notifications[i].PatientsId == id && notifications[i].Dates[notifications[i].Dates.Count - 1] > DateTime.Now)
                 {
-                    n.Add(Notifications[i]);
+                    n.Add(notifications[i]);
                 }
             }
             return n;
@@ -69,23 +57,23 @@ namespace HospitalApplication.Logic
 
         public void CancelNotification(String id)
         {
-            for (int i = 0; i < Notifications.Count; i++)
+            for (int i = 0; i < notifications.Count; i++)
             {
-                if (Notifications[i].NotificationsId == id) Notifications.RemoveAt(i);
+                if (notifications[i].NotificationsId == id) notifications.RemoveAt(i);
             }
-            filesNotification.WriteInFile(Notifications);
+            filesNotification.Write();
         }
 
         public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
         {
             //prvo ga izbrisi, promeni datum pa vrati
             Notification n = new Notification();
-            for (int i = 0; i < Notifications.Count; i++)
+            for (int i = 0; i < notifications.Count; i++)
             {
-                if (Notifications[i].NotificationsId == id)
+                if (notifications[i].NotificationsId == id)
                 {
-                    n = Notifications[i];
-                    Notifications.RemoveAt(i);
+                    n = notifications[i];
+                    notifications.RemoveAt(i);
                 }
             }
             n.Title = title;
@@ -100,8 +88,8 @@ namespace HospitalApplication.Logic
                 dates.Add(date);
             }
             n.Dates = dates;
-            Notifications.Add(n);
-            filesNotification.WriteInFile(Notifications);
+            notifications.Add(n);
+            filesNotification.Write();
         }
 
         private void AnnounceNotification()

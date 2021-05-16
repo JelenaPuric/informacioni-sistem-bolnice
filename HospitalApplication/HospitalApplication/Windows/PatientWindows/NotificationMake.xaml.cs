@@ -12,6 +12,8 @@ using System.Windows.Shapes;
 using HospitalApplication.Model;
 using HospitalApplication.Logic;
 using HospitalApplication.Controller;
+using HospitalApplication.WorkWithFiles;
+
 namespace HospitalApplication.Windows.Patient1
 {
     /// <summary>
@@ -19,7 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationMake : Window
     {
-        private NotificationService notificationService = NotificationService.Instance;
+        private FileNotification fileNotification = FileNotification.Instance;
         private int notificationId = 100000;
         private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
@@ -29,7 +31,7 @@ namespace HospitalApplication.Windows.Patient1
         public WindowNotificationMake()
         {
             InitializeComponent();
-            notifications = notificationService.Notifications;
+            notifications = fileNotification.GetNotifications();
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)

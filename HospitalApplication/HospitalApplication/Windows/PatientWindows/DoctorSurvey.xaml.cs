@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class DoctorSurvey : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FilesSurveys filesSurvey = FilesSurveys.Instance;
+        private FileSurvey fileSurvey = FileSurvey.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private int[] numericalAnswers = new int[100];
 
@@ -32,13 +32,12 @@ namespace HospitalApplication.Windows.PatientWindows
             setQuestions();
             for (int i = 0; i < doctorsUsernames.Count; i++)
                 ComboDoctors.Items.Add(doctorsUsernames[i]);
-            surveys = filesSurvey.GetSurveys();
+            surveys = fileSurvey.GetSurveys();
         }
 
         private void RadioButtonChecked(object sender, RoutedEventArgs e)
         {
             RadioButton radioButton = (RadioButton)sender;
-            //ukloni RadioButton iz imena da bih dobio samo broj, delim ga sa 5 da bih znao koje je to pitanje po redu
             int key = (Int32.Parse(radioButton.Name.ToString().Remove(0, 11)) + 4) / 5;
             int value = Int32.Parse(radioButton.Content.ToString());
             numericalAnswers[key] = value;
@@ -48,7 +47,7 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, ComboDoctors.SelectedItem.ToString());
             surveys.Add(survey);
-            filesSurvey.Write();
+            fileSurvey.Write();
             Close();
         }
 

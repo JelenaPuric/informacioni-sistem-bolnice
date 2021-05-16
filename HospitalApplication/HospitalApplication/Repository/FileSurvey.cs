@@ -8,29 +8,29 @@ using Newtonsoft.Json;
 
 namespace HospitalApplication.Repository
 {
-    class FilesSurveys : IFile
+    class FileSurvey : IFile
     {
-        public string path = "../../../Data/surveys.json";
-        public List<Survey> surveys = new List<Survey>();
-        private static FilesSurveys instance;
-        public static FilesSurveys Instance
+        private string path = "../../../Data/surveys.json";
+        private List<Survey> surveys;
+        private static FileSurvey instance;
+        public static FileSurvey Instance
         {
             get
             {
                 if (null == instance)
-                    instance = new FilesSurveys();
+                    instance = new FileSurvey();
                 return instance;
             }
         }
 
-        private FilesSurveys() {
+        private FileSurvey() {
             Read();
         }
 
         public void Read()
         {
-            string jsonFIle = File.ReadAllText(path);
-            surveys = JsonConvert.DeserializeObject<List<Survey>>(jsonFIle);
+            string json = File.ReadAllText(path);
+            surveys = JsonConvert.DeserializeObject<List<Survey>>(json);
         }
 
         public void Write()

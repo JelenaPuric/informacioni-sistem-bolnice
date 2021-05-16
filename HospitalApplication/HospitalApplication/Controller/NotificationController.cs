@@ -8,7 +8,7 @@ namespace HospitalApplication.Controller
 {
     class NotificationController
     {
-        private NotificationService notificationService = NotificationService.Instance;
+        private NotificationService notificationService = new NotificationService();
 
         public void ScheduleNotification(Notification n)
         {
