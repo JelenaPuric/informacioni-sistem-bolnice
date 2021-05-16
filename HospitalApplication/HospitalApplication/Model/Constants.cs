@@ -12,5 +12,7 @@ namespace HospitalApplication.Model
         public const int PENALTY_EDIT = 15;
         public const int PENALTY_MOVE = 15;
         public const int MAX_ALLOWED_PENALTY = 7000;
+        //mozda da iskoristis ovu konstantu
+        public const int GENERATE_ID_sTART = 1000;
     }
 }

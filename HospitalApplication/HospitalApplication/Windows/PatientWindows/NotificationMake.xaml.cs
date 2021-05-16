@@ -53,11 +53,9 @@ namespace HospitalApplication.Windows.Patient1
         private int GenerateNotificationId()
         {
             if (notificationId == 100000)
-            {
                 for (int i = 0; i < notifications.Count; i++)
                     if (Int32.Parse(notifications[i].NotificationsId) > notificationId)
                         notificationId = Int32.Parse(notifications[i].NotificationsId);
-            }
             return notificationId;
         }
 

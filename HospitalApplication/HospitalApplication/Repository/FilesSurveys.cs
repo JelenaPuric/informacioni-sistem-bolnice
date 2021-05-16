@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace HospitalApplication.Repository
 {
-    class FilesSurvey
+    class FilesSurveys
     {
         public static string path = "../../../Data/surveys.json";
 

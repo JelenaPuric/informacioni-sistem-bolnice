@@ -55,7 +55,7 @@ namespace HospitalApplication
                 time.Add((7 + i, 0, 0));
                 time.Add((7 + i, 30, 0));
             }
-            Doctor selectedDoctor = FilesDoctor.GetDoctor(Combo3.SelectedItem.ToString());
+            Doctor selectedDoctor = FilesDoctors.GetDoctor(Combo3.SelectedItem.ToString());
 
             List<DateTime> newDates = new List<DateTime>();
             DateTime newDate = new DateTime();

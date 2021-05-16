@@ -8,7 +8,7 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
-        private FilesNotification filesNotification = new FilesNotification();
+        private FilesNotifications filesNotification = new FilesNotifications();
         public List<Notification> Notifications { get; set; }
         private static NotificationService instance;
         public static NotificationService Instance

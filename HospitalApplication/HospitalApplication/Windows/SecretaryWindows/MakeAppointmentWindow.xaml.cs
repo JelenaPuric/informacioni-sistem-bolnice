@@ -75,8 +75,8 @@ namespace HospitalApplication.Windows.Secretary
             {
                 case MessageBoxResult.Yes:
                     int index = lvUsers.SelectedIndex;
-                    WorkWithFiles.FilesDoctor doc = new WorkWithFiles.FilesDoctor();
-                    List<Doctor> doctors = FilesDoctor.GetDoctors();
+                    WorkWithFiles.FilesDoctors doc = new WorkWithFiles.FilesDoctors();
+                    List<Doctor> doctors = FilesDoctors.GetDoctors();
                     DateTime dt = e2.ExaminationStart;
                     //skloni datum lekaru
                     for (int i = 0; i < doctors.Count; i++)
@@ -91,13 +91,13 @@ namespace HospitalApplication.Windows.Secretary
                                 }
                             }
 
-                            FilesDoctor.Write();
+                            FilesDoctors.Write();
                             break;
                         }
                     }
                     //skloni datum sobi
                     List<Room> rooms = new List<Room>();
-                    rooms = FilesRoom.LoadRoom();
+                    rooms = FilesRooms.LoadRoom();
                     for (int i = 0; i < rooms.Count; i++)
                     {
                         if (rooms[i].Scheduled == null) continue;
@@ -111,7 +111,7 @@ namespace HospitalApplication.Windows.Secretary
                                     break;
                                 }
                             }
-                            FilesRoom.EnterRoom(rooms);
+                            FilesRooms.EnterRoom(rooms);
                         }
                     }
 

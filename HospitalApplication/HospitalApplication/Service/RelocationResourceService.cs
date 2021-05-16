@@ -17,7 +17,7 @@ namespace HospitalApplication.Service
         public RelocationResourceService()
         {
             transfers = FilesScheduledTransfers.LoadTransfers();
-            rooms = FilesRoom.LoadRoom();
+            rooms = FilesRooms.LoadRoom();
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].Resource == null)
@@ -136,7 +136,7 @@ namespace HospitalApplication.Service
             }
             
             FilesScheduledTransfers.EnterTransfer(transfers);
-            FilesRoom.EnterRoom(rooms);
+            FilesRooms.EnterRoom(rooms);
         }
 
         public List<Transfer> showAllTransfers()

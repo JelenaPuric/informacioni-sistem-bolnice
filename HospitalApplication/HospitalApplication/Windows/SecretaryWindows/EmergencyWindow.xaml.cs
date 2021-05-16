@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Secretary
     {
         private SecretaryController secretaryController = new SecretaryController();
         private AppointmentController patientController = new AppointmentController();
-        private WorkWithFiles.FilesDoctor filesDoctor = new WorkWithFiles.FilesDoctor();
+        private WorkWithFiles.FilesDoctors filesDoctor = new WorkWithFiles.FilesDoctors();
         private ExaminationService examinationService = ExaminationService.Instance;
         private List<Doctor> doctors = new List<Doctor>();
         private List<Doctor> filteredDoctors = new List<Doctor>();
@@ -106,8 +106,8 @@ namespace HospitalApplication.Windows.Secretary
         private void LoadPatientsDoctorsRoomsAndExaminations(string idPatient)
         {
             selectedPatient = secretaryController.getPatient(idPatient);
-            doctors = FilesDoctor.GetDoctors();
-            rooms = FilesRoom.LoadRoom();
+            doctors = FilesDoctors.GetDoctors();
+            rooms = FilesRooms.LoadRoom();
             examinations = examinationService.Examinations;
         }
 
@@ -141,9 +141,9 @@ namespace HospitalApplication.Windows.Secretary
         private void AddDateTimeInSheduleDoctorAndRoom(DateTime selectedDateTime)
         {
             doctors[Int32.Parse(GetDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(selectedDateTime);
-            FilesDoctor.Write();
+            FilesDoctors.Write();
             rooms[isFreeRoom.Item2].Scheduled.Add(selectedDateTime);
-            FilesRoom.EnterRoom(rooms);
+            FilesRooms.EnterRoom(rooms);
         }
 
         private void MoveAppointment(Appointment examination, DateTime selectedDateTime)

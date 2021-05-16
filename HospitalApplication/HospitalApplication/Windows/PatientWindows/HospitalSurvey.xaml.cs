@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowRateHospital : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FilesSurvey filesSurvey = new FilesSurvey();
+        private FilesSurveys filesSurvey = new FilesSurveys();
         private MainWindow mainWindow = MainWindow.Instance;
         int[] numericalAnswers = new int[100]; //nece sigurno biti vise od 100 pitanja
 

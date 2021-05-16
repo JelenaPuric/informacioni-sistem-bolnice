@@ -29,8 +29,8 @@ namespace HospitalApplication.Windows.Secretary
         private AppointmentController patientController = new AppointmentController();
 
         private ExaminationService m = ExaminationService.Instance;
-        private FilesRoom r = new FilesRoom();
-        private WorkWithFiles.FilesDoctor fd = new WorkWithFiles.FilesDoctor();
+        private FilesRooms r = new FilesRooms();
+        private WorkWithFiles.FilesDoctors fd = new WorkWithFiles.FilesDoctors();
 
         private List<Doctor> doctors = new List<Doctor>();
         private List<Room> rooms = new List<Room>();
@@ -53,12 +53,12 @@ namespace HospitalApplication.Windows.Secretary
 
             userNP = usernamePatient;
 
-            doctors = FilesDoctor.GetDoctors();
+            doctors = FilesDoctors.GetDoctors();
             for (int i = 0; i < doctors.Count; i++)
             {
                 Combo3.Items.Add(doctors[i].Username.ToString());
             }
-            rooms = FilesRoom.LoadRoom();
+            rooms = FilesRooms.LoadRoom();
 
 
         }

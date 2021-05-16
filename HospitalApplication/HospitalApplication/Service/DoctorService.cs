@@ -11,7 +11,7 @@ namespace HospitalApplication.Service
         private List<Doctor> doctors;
 
         public DoctorService() {
-            doctors = FilesDoctor.GetDoctors();
+            doctors = FilesDoctors.GetDoctors();
         }
 
         public bool IsDoctorFree(String doctorUsername, DateTime date)
@@ -37,7 +37,7 @@ namespace HospitalApplication.Service
                 if (doctors[i].Username == doctorUsername)
                 {
                     doctors[i].Scheduled.Add(date);
-                    FilesDoctor.Write();
+                    FilesDoctors.Write();
                     break;
                 }
             }
@@ -57,7 +57,7 @@ namespace HospitalApplication.Service
                             break;
                         }
                     }
-                    FilesDoctor.Write();
+                    FilesDoctors.Write();
                     break;
                 }
             }

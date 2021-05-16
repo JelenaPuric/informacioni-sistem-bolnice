@@ -11,7 +11,7 @@ namespace Logic
 {
     public class ExaminationService
     {
-        private FilesExamination filesExamination = new FilesExamination();
+        private FilesAppointments filesExamination = new FilesAppointments();
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
         public List<Appointment> Examinations { get; set; }
@@ -35,15 +35,15 @@ namespace Logic
         public ExaminationService()
         {
             Examinations = filesExamination.LoadFromFile();
-            Doctors = FilesDoctor.GetDoctors();
-            Rooms = FilesRoom.LoadRoom();
+            Doctors = FilesDoctors.GetDoctors();
+            Rooms = FilesRooms.LoadRoom();
             Patients = FilesPatients.LoadPatients();
         }
 
         public void ScheduleExamination(Appointment appointment)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(appointment.ExaminationStart);
-            appointment.RoomId = FilesRoom.GetRoomId(roomIsFree.Item2);
+            appointment.RoomId = FilesRooms.GetRoomId(roomIsFree.Item2);
             Patient patient = GetPatient(appointment.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)) {
                 MessageBox.Show("You can not schedule examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
@@ -146,7 +146,7 @@ namespace Logic
                 {
                     roomId = RoomIndx;
                     Doctors[docIndex].Scheduled.Add(date);
-                    FilesDoctor.Write();
+                    FilesDoctors.Write();
 
                     if (Rooms[roomId].Scheduled == null)
                     {
@@ -154,7 +154,7 @@ namespace Logic
                     }
 
                     Rooms[roomId].Scheduled.Add(date);
-                    FilesRoom.EnterRoom(Rooms);
+                    FilesRooms.EnterRoom(Rooms);
 
                     //Napraviti jos jedan parametar za odlaganje termina
                     Appointment examination = new Appointment(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
@@ -169,7 +169,7 @@ namespace Logic
 
         public bool DoctorIsFree(int docIndex, DateTime date)
         {
-            List<Doctor> listDoctor = FilesDoctor.GetDoctors();
+            List<Doctor> listDoctor = FilesDoctors.GetDoctors();
             for (int j = 0; j < listDoctor[docIndex].Scheduled.Count; j++)
             {
                 if (listDoctor[docIndex].Scheduled[j] == date)
@@ -253,7 +253,7 @@ namespace Logic
                 if (Doctors[i].Username == doctorUsername)
                 {
                     Doctors[i].Scheduled.Add(date);
-                    FilesDoctor.Write();
+                    FilesDoctors.Write();
                     break;
                 }
             }
@@ -273,7 +273,7 @@ namespace Logic
                             break;
                         }
                     }
-                    FilesDoctor.Write();
+                    FilesDoctors.Write();
                     break;
                 }
             }
@@ -322,7 +322,7 @@ namespace Logic
                         if (Rooms[i].Scheduled[j] == date)
                         {
                             Rooms[i].Scheduled.RemoveAt(j);
-                            FilesRoom.EnterRoom(Rooms);
+                            FilesRooms.EnterRoom(Rooms);
                             break;
                         }
                     }
@@ -334,7 +334,7 @@ namespace Logic
         public void addExaminationToRoom(int roomIndex, DateTime date)
         {
             Rooms[roomIndex].Scheduled.Add(date);
-            FilesRoom.EnterRoom(Rooms);
+            FilesRooms.EnterRoom(Rooms);
         }
 
         private void SetPatientsPenalty(Patient patient, int earnedPenalty) {
@@ -372,7 +372,7 @@ namespace Logic
 
         public void updateDoctors()
         {
-            Doctors = FilesDoctor.GetDoctors();
+            Doctors = FilesDoctors.GetDoctors();
         }
     }
 }

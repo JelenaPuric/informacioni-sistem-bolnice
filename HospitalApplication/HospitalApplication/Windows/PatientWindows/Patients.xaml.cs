@@ -36,9 +36,9 @@ namespace HospitalApplication
         private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FilesSurvey filesSurvey = new FilesSurvey();
+        private FilesSurveys filesSurvey = new FilesSurveys();
         private List<Appointment> allExaminations = new List<Appointment>();
-        private FilesExamination filesExamination = new FilesExamination();
+        private FilesAppointments filesExamination = new FilesAppointments();
         List<Survey> surveys = new List<Survey>();
         public ICollectionView ExaminationsCollectionView { get; }
 

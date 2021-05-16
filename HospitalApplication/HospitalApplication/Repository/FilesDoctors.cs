@@ -8,12 +8,12 @@ using Nancy.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
-    class FilesDoctor
+    class FilesDoctors
     {
         private static string path = "../../../Data/doctors.json";
         private static List<Doctor> doctors;
 
-        public FilesDoctor() {
+        public FilesDoctors() {
             Read();
         }
 

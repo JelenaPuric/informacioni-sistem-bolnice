@@ -58,24 +58,21 @@ namespace HospitalApplication.Windows.Patient1
 
         private void Information_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowNotificationInfo window = new WindowNotificationInfo();
             window.Show();
         }
 
         private void EditNotification_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowNotificationEdit window = new WindowNotificationEdit();
             window.Show();
         }
 
         private void CancelNotification_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             Notification notification = (Notification)lvUsers.SelectedItem;
             string notificationId = notification.NotificationsId;
 
