@@ -3,6 +3,8 @@ using HospitalApplication.WorkWithFiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Windows;
 
 namespace HospitalApplication.Logic
 {
@@ -10,7 +12,9 @@ namespace HospitalApplication.Logic
     {
         private FilesNotifications filesNotification = new FilesNotifications();
         public List<Notification> Notifications { get; set; }
+        private List<Notification> notificationsForLoggedInPatient;
         private static NotificationService instance;
+        public bool FlagIsMarked { get; set; } = false;
         public static NotificationService Instance
         {
             get
@@ -28,6 +32,21 @@ namespace HospitalApplication.Logic
             Notifications = filesNotification.LoadFromFile();
         }
 
+        public NotificationService(string usernamee)
+        {
+            notificationsForLoggedInPatient = GetNotifications(usernamee);
+            //test notifikacija
+            List<DateTime> dates = new List<DateTime>();
+            DateTime date = new DateTime(2021, 5, 16, 15, 14, 0);
+            dates.Add(date);
+            Notification nt = new Notification(dates, "hello", "world", "1", "100050", "m");
+            notificationsForLoggedInPatient.Add(nt);
+
+            Thread workerThread = new Thread(new ThreadStart(AnnounceNotification));
+            workerThread.SetApartmentState(ApartmentState.STA);
+            workerThread.Start();
+        }
+
         public void ScheduleNotification(Notification n)
         {
             Notifications.Add(n);
@@ -37,6 +56,7 @@ namespace HospitalApplication.Logic
         public List<Notification> GetNotifications(string id)
         {
             List<Notification> n = new List<Notification>();
+            if (Notifications == null) return n;
             for (int i = 0; i < Notifications.Count; i++)
             {
                 if (Notifications[i].PatientsId == id && Notifications[i].Dates[Notifications[i].Dates.Count - 1] > DateTime.Now)
@@ -82,6 +102,29 @@ namespace HospitalApplication.Logic
             n.Dates = dates;
             Notifications.Add(n);
             filesNotification.WriteInFile(Notifications);
+        }
+
+        private void AnnounceNotification()
+        {
+            while (true)
+            {
+                Thread.Sleep(1000);
+                for (int i = 0; i < notificationsForLoggedInPatient.Count; i++)
+                {
+                    string now = DateTime.Now.ToString("HH:mm");
+                    string notify;
+                    for (int j = 0; j < notificationsForLoggedInPatient[i].Dates.Count; j++)
+                    {
+                        notify = notificationsForLoggedInPatient[i].Dates[j].ToString("HH:mm");
+                        if (notify == now)
+                        {
+                            MessageBoxResult info = MessageBox.Show(notificationsForLoggedInPatient[i].Description, notificationsForLoggedInPatient[i].Title);
+                            Thread.Sleep(60000);
+                        }
+                    }
+                }
+                if (FlagIsMarked) break;
+            }
         }
     }
 }

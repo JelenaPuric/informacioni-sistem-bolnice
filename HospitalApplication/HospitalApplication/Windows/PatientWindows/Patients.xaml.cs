@@ -62,7 +62,8 @@ namespace HospitalApplication
             List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
-            PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
+            //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
+            NotificationService notificationService = new NotificationService(mainWindow.Username.Text);
             allExaminations = filesExamination.LoadFromFile();
             surveys = filesSurvey.LoadFromFile();
             if (surveys == null) surveys = new List<Survey>();
@@ -161,5 +162,11 @@ namespace HospitalApplication
             DoctorSurvey window = new DoctorSurvey(doctorUsernames.Distinct().ToList());
             window.Show();
         }
+
+        /*private void Window_Closed(object sender, EventArgs e)
+        {
+            NotificationService n = new NotificationService();
+            n.FlagIsMarked = true;
+        }*/
     }
 }

@@ -1,16 +1,6 @@
 ﻿
 
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\MainWindow.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\DoctorSurvey.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationEdit.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationMove.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationSchedule.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\HospitalSurvey.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationEdit.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationInfo.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationMake.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\Notifications.xaml;;
-FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\Patients.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\DoctorWindows\CancelExaminationWindow.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\DoctorWindows\CancelOperationWindow.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\DoctorWindows\DoctorWindow.xaml;;
@@ -46,6 +36,16 @@ FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\Hos
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\ShowRoomi.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\WindowRooms.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\WindowsManager.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\DoctorSurvey.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationEdit.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationMove.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\ExaminationSchedule.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\HospitalSurvey.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationEdit.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationInfo.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\NotificationMake.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\Notifications.xaml;;
+FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\Patients.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\SecretaryWindows\AddAllergenWindow.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\SecretaryWindows\AllPatientsWindow.xaml;;
 FC:\Users\orz\Desktop\sve\simsProject\simsProj24\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\SecretaryWindows\CreateNewsWindow.xaml;;
