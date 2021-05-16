@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowRateHospital : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FilesSurveys filesSurvey = new FilesSurveys();
+        private FilesSurveys filesSurvey = FilesSurveys.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         int[] numericalAnswers = new int[100]; //nece sigurno biti vise od 100 pitanja
 
@@ -29,7 +29,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             InitializeComponent();
             setQuestions();
-            surveys = filesSurvey.LoadFromFile();
+            surveys = filesSurvey.GetSurveys();
             if (surveys == null) surveys = new List<Survey>();
         }
 
@@ -46,7 +46,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, "Hospital");
             surveys.Add(survey);
-            filesSurvey.WriteInFile(surveys);
+            filesSurvey.Write();
             Close();
         }
 

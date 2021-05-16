@@ -36,7 +36,7 @@ namespace HospitalApplication
         private ExaminationService examinationManagement = ExaminationService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FilesSurveys filesSurvey = new FilesSurveys();
+        private FilesSurveys filesSurvey = FilesSurveys.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
         private FilesAppointments filesExamination = new FilesAppointments();
         List<Survey> surveys = new List<Survey>();
@@ -66,7 +66,7 @@ namespace HospitalApplication
             NotificationService notificationService = NotificationService.Instance;
             notificationService.StartNotificationThread(mainWindow.Username.Text);
             allExaminations = filesExamination.LoadFromFile();
-            surveys = filesSurvey.LoadFromFile();
+            surveys = filesSurvey.GetSurveys();
             if (surveys == null) surveys = new List<Survey>();
         }
 
@@ -125,7 +125,7 @@ namespace HospitalApplication
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
-            surveys = filesSurvey.LoadFromFile();
+            surveys = filesSurvey.GetSurveys();
             for (int i = 0; i < surveys.Count; i++)
             {
                 if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30)
@@ -144,7 +144,7 @@ namespace HospitalApplication
         private void RateDoctor_Click(object sender, RoutedEventArgs e)
         {
             List<string> doctorUsernames = new List<String>();
-            surveys = filesSurvey.LoadFromFile();
+            surveys = filesSurvey.GetSurveys();
             for (int i = 0; i < allExaminations.Count; i++) {
                 if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now) {
                     bool ok = true;
