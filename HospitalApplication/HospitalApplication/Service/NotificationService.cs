@@ -32,7 +32,7 @@ namespace HospitalApplication.Logic
             Notifications = filesNotification.LoadFromFile();
         }
 
-        public NotificationService(string usernamee)
+        public void StartNotificationThread(string usernamee)
         {
             notificationsForLoggedInPatient = GetNotifications(usernamee);
             //test notifikacija

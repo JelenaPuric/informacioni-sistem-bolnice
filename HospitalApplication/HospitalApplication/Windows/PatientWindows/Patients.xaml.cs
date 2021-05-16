@@ -63,7 +63,8 @@ namespace HospitalApplication
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
             //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
-            NotificationService notificationService = new NotificationService(mainWindow.Username.Text);
+            NotificationService notificationService = NotificationService.Instance;
+            notificationService.StartNotificationThread(mainWindow.Username.Text);
             allExaminations = filesExamination.LoadFromFile();
             surveys = filesSurvey.LoadFromFile();
             if (surveys == null) surveys = new List<Survey>();
@@ -163,10 +164,10 @@ namespace HospitalApplication
             window.Show();
         }
 
-        /*private void Window_Closed(object sender, EventArgs e)
+        private void Window_Closed(object sender, EventArgs e)
         {
-            NotificationService n = new NotificationService();
+            NotificationService n = NotificationService.Instance;
             n.FlagIsMarked = true;
-        }*/
+        }
     }
 }

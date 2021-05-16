@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication"
         mc:Ignorable="d"
-        Title="WindowPatient" Height="800" Width="500">
+        Title="WindowPatient" Height="800" Width="500"
+        Closed="Window_Closed">
     <!--
     <Window.Background>
         <ImageBrush ImageSource="/wallpaper2.jpg"></ImageBrush>
@@ -13,7 +14,6 @@
     -->
     <Grid Margin="10">
         <StackPanel>
-            
             <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
