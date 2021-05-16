@@ -11,7 +11,6 @@ namespace HospitalApplication.Controller
     class AppointmentController
     {
         private ExaminationService examinationService = ExaminationService.Instance;
-        private NotificationService notificationService = NotificationService.Instance;
 
         public void ScheduleExamination(Appointment e) {
             examinationService.ScheduleExamination(e);
@@ -75,26 +74,6 @@ namespace HospitalApplication.Controller
         public void UpdateDoctors()
         {
             examinationService.updateDoctors();
-        }
-
-        public void ScheduleNotification(Notification n)
-        {
-            notificationService.ScheduleNotification(n);
-        }
-
-        public List<Notification> GetNotifications(string id)
-        {
-            return notificationService.GetNotifications(id);
-        }
-
-        public void CancelNotification(String id)
-        {
-            notificationService.CancelNotification(id);
-        }
-
-        public void EditNotification(string id, string title, string descriptioin, string repeat, DateTime date)
-        {
-            notificationService.EditNotification(id, title, descriptioin, repeat, date);
         }
 
         public void MoveAppointment(string id, DateTime date, int roomIndex)

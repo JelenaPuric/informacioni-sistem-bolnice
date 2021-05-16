@@ -23,7 +23,7 @@ namespace HospitalApplication.Windows.Patient1
         private int notificationId = 100000;
         private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
-        private AppointmentController controller = new AppointmentController();
+        private NotificationController controller = new NotificationController();
         List<Notification> notifications = new List<Notification>();
 
         public WindowNotificationMake()
