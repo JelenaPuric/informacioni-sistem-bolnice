@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class MakeAppointmentWindow : Window
     {
-
+        FileDoctors fileDoctors = FileDoctors.Instance;
         AppointmentService m = AppointmentService.Instance;
         SecretaryController sc = new SecretaryController();
         string idP;
@@ -42,7 +42,7 @@ namespace HospitalApplication.Windows.Secretary
             usernamePatient = sc.getPatient(idP).Username;
 
 
-            List<Appointment> examinations = m.GetExaminations(sc.getPatient(idP).Username);
+            List<Appointment> examinations = m.GetAppointments(sc.getPatient(idP).Username);
             lvUsers.ItemsSource = examinations;
 
         }
@@ -75,8 +75,8 @@ namespace HospitalApplication.Windows.Secretary
             {
                 case MessageBoxResult.Yes:
                     int index = lvUsers.SelectedIndex;
-                    WorkWithFiles.FileDoctors doc = new WorkWithFiles.FileDoctors();
-                    List<Doctor> doctors = FileDoctors.GetDoctors();
+                    WorkWithFiles.FileDoctors doc = WorkWithFiles.FileDoctors.Instance;
+                    List<Doctor> doctors = fileDoctors.GetDoctors();
                     DateTime dt = e2.ExaminationStart;
                     //skloni datum lekaru
                     for (int i = 0; i < doctors.Count; i++)
@@ -91,7 +91,7 @@ namespace HospitalApplication.Windows.Secretary
                                 }
                             }
 
-                            FileDoctors.Write();
+                            fileDoctors.Write();
                             break;
                         }
                     }
@@ -129,7 +129,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            List<Appointment> examinations = m.GetExaminations(sc.getPatient(idP).Username);
+            List<Appointment> examinations = m.GetAppointments(sc.getPatient(idP).Username);
             lvUsers.ItemsSource = examinations;
         }
 

@@ -59,7 +59,7 @@ namespace HospitalApplication
         {
             InitializeComponent();
             instance = this;
-            List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            List<Appointment> examinations = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = examinations;
             //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
@@ -72,7 +72,7 @@ namespace HospitalApplication
 
         public void UpdateView()
         {
-            List<Appointment> examinations = examinationManagement.GetExaminations(mainWindow.PatientsUsername);
+            List<Appointment> examinations = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = examinations;

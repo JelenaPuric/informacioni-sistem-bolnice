@@ -23,13 +23,15 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationEdit : Window
     {
-        private List<Doctor> doctors = FileDoctors.GetDoctors();
+        private FileDoctors fileDoctors = FileDoctors.Instance;
+        private List<Doctor> doctors;
         private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
         {
             InitializeComponent();
+            doctors = fileDoctors.GetDoctors();
             for (int i = 0; i < doctors.Count; i++)
                 Combo.Items.Add(doctors[i].Username.ToString());
         }

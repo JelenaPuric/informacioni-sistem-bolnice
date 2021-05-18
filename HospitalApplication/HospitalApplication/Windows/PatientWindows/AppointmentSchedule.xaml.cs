@@ -34,6 +34,7 @@ namespace HospitalApplication
         private int roomIndex = 0;
         private List<DateTime> newDates = new List<DateTime>();
         private List<(int, int, int)> term = new List<(int, int, int)>();
+        private FileDoctors fileDoctors = FileDoctors.Instance;
 
         public WindowExaminationSchedule()
         {
@@ -107,7 +108,7 @@ namespace HospitalApplication
         }
 
         private void GetFreeAppointments(DateTime date1, DateTime date2, List<(int, int, int)> term) {
-            Doctor selectedDoctor = FileDoctors.GetDoctor(Combo3.SelectedItem.ToString());
+            Doctor selectedDoctor = fileDoctors.GetDoctor(Combo3.SelectedItem.ToString());
             DateTime newDate;
             for (int i = 0; i < (date2 - date1).TotalDays + 1; i++)
             {
@@ -126,7 +127,7 @@ namespace HospitalApplication
         }
 
         private void GetAlternativeAppointmentsForDoctor(DateTime date1, DateTime date2, List<(int, int, int)> term) {
-            Doctor selectedDoctor = FileDoctors.GetDoctor(Combo3.SelectedItem.ToString());
+            Doctor selectedDoctor = fileDoctors.GetDoctor(Combo3.SelectedItem.ToString());
             if (priorityDoctor.IsChecked == true)
             {
                 DateTime newDate = new DateTime();

@@ -9,24 +9,19 @@ namespace HospitalApplication.Service
     class DoctorService
     {
         private List<Doctor> doctors;
+        private FileDoctors fileDoctors = FileDoctors.Instance;
 
         public DoctorService() {
-            doctors = FileDoctors.GetDoctors();
+            doctors = fileDoctors.GetDoctors();
         }
 
         public bool IsDoctorFree(String doctorUsername, DateTime date)
         {
             for (int i = 0; i < doctors.Count; i++)
-            {
                 if (doctors[i].Username == doctorUsername)
-                {
                     for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                    {
                         if (doctors[i].Scheduled[j] == date)
                             return false;
-                    }
-                }
-            }
             return true;
         }
 
@@ -37,7 +32,7 @@ namespace HospitalApplication.Service
                 if (doctors[i].Username == doctorUsername)
                 {
                     doctors[i].Scheduled.Add(date);
-                    FileDoctors.Write();
+                    fileDoctors.Write();
                     break;
                 }
             }
@@ -57,7 +52,7 @@ namespace HospitalApplication.Service
                             break;
                         }
                     }
-                    FileDoctors.Write();
+                    fileDoctors.Write();
                     break;
                 }
             }

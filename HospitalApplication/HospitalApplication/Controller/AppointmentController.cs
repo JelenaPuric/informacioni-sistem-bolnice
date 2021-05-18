@@ -38,17 +38,17 @@ namespace HospitalApplication.Controller
 
         public List<Appointment> GetExaminations(String patientName)
         {
-            return examinationService.GetExaminations(patientName);
+            return examinationService.GetAppointments(patientName);
         }
 
         public void AddExaminationToDoctor(String doctorUsername, DateTime date)
         {
-            examinationService.addExaminationToDoctor(doctorUsername, date);
+            examinationService.AddAppointmentToDoctor(doctorUsername, date);
         }
 
         public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
         {
-            examinationService.removeExaminationFromDoctor(doctorUsername, date);
+            examinationService.RemoveAppointmentFromDoctor(doctorUsername, date);
         }
 
         public bool IsDoctorFree(String doctorUsername, DateTime date)
@@ -58,12 +58,12 @@ namespace HospitalApplication.Controller
 
         public void AddExaminationToRoom(int roomIndex, DateTime date)
         {
-            examinationService.addExaminationToRoom(roomIndex, date);
+            examinationService.AddAppointmentToRoom(roomIndex, date);
         }
 
         public void RemoveExaminationFromRoom(String roomId, DateTime date)
         {
-            examinationService.removeExaminationFromRoom(roomId, date);
+            examinationService.RemoveAppointmentFromRoom(roomId, date);
         }
 
         public Tuple<bool, int> IsRoomFree(DateTime date)
@@ -73,7 +73,7 @@ namespace HospitalApplication.Controller
 
         public void UpdateDoctors()
         {
-            examinationService.updateDoctors();
+            examinationService.UpdateDoctors();
         }
 
         public void MoveAppointment(string id, DateTime date, int roomIndex)

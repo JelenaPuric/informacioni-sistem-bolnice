@@ -14,6 +14,7 @@ namespace Logic
         private FileAppointments filesExamination = new FileAppointments();
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
+        private FileDoctors fileDoctors = FileDoctors.Instance;
         public List<Appointment> Examinations { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
@@ -35,7 +36,7 @@ namespace Logic
         public AppointmentService()
         {
             Examinations = filesExamination.LoadFromFile();
-            Doctors = FileDoctors.GetDoctors();
+            Doctors = fileDoctors.GetDoctors();
             Rooms = FileRooms.LoadRoom();
             Patients = FilePatients.LoadPatients();
         }
@@ -122,8 +123,6 @@ namespace Logic
             return false;
         }
 
-
-
         public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
         {
 
@@ -145,7 +144,7 @@ namespace Logic
                 {
                     roomId = RoomIndx;
                     Doctors[docIndex].Scheduled.Add(date);
-                    FileDoctors.Write();
+                    fileDoctors.Write();
 
                     if (Rooms[roomId].Scheduled == null)
                     {
@@ -168,7 +167,7 @@ namespace Logic
 
         public bool DoctorIsFree(int docIndex, DateTime date)
         {
-            List<Doctor> listDoctor = FileDoctors.GetDoctors();
+            List<Doctor> listDoctor = fileDoctors.GetDoctors();
             for (int j = 0; j < listDoctor[docIndex].Scheduled.Count; j++)
             {
                 if (listDoctor[docIndex].Scheduled[j] == date)
@@ -229,36 +228,29 @@ namespace Logic
             filesExamination.WriteInFile(Examinations);
         }
 
-
-
-        public List<Appointment> GetExaminations(String patientName)
+        public List<Appointment> GetAppointments(String patientName)
         {
-            List<Appointment> e = new List<Appointment>();
+            List<Appointment> appointments = new List<Appointment>();
             for (int i = 0; i < Examinations.Count; i++)
-            {
-                //dodaje preglede za pacijenta patientName i to samo one koji nisu prosli
                 if (Examinations[i].PatientsId == patientName && Examinations[i].ExaminationStart >= DateTime.Now)
-                {
-                    e.Add(Examinations[i]);
-                }
-            }
-            return e;
+                    appointments.Add(Examinations[i]);
+            return appointments;
         }
 
-        public void addExaminationToDoctor(String doctorUsername, DateTime date)
+        public void AddAppointmentToDoctor(String doctorUsername, DateTime date)
         {
             for (int i = 0; i < Doctors.Count; i++)
             {
                 if (Doctors[i].Username == doctorUsername)
                 {
                     Doctors[i].Scheduled.Add(date);
-                    FileDoctors.Write();
+                    fileDoctors.Write();
                     break;
                 }
             }
         }
 
-        public void removeExaminationFromDoctor(String doctorUsername, DateTime date)
+        public void RemoveAppointmentFromDoctor(String doctorUsername, DateTime date)
         {
             for (int i = 0; i < Doctors.Count; i++)
             {
@@ -272,7 +264,7 @@ namespace Logic
                             break;
                         }
                     }
-                    FileDoctors.Write();
+                    fileDoctors.Write();
                     break;
                 }
             }
@@ -306,7 +298,7 @@ namespace Logic
             return new Tuple<bool, int>(false, -1);
         }
 
-        public void removeExaminationFromRoom(String roomId, DateTime date)
+        public void RemoveAppointmentFromRoom(String roomId, DateTime date)
         {
             for (int i = 0; i < Rooms.Count; i++)
             {
@@ -326,7 +318,7 @@ namespace Logic
             }
         }
 
-        public void addExaminationToRoom(int roomIndex, DateTime date)
+        public void AddAppointmentToRoom(int roomIndex, DateTime date)
         {
             Rooms[roomIndex].Scheduled.Add(date);
             FileRooms.EnterRoom(Rooms);
@@ -365,9 +357,9 @@ namespace Logic
             return null;
         }
 
-        public void updateDoctors()
+        public void UpdateDoctors()
         {
-            Doctors = FileDoctors.GetDoctors();
+            Doctors = fileDoctors.GetDoctors();
         }
     }
 }
