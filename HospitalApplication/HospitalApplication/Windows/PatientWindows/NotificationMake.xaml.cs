@@ -26,12 +26,10 @@ namespace HospitalApplication.Windows.Patient1
         private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();
-        List<Notification> notifications = new List<Notification>();
 
         public WindowNotificationMake()
         {
             InitializeComponent();
-            notifications = fileNotification.GetNotifications();
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
@@ -45,20 +43,11 @@ namespace HospitalApplication.Windows.Patient1
                 newDate = newDate.AddDays(1);
                 dates.Add(newDate);
             }
-            GenerateNotificationId();
+            notificationId = fileNotification.GenerateNotificationId(notificationId);
             Notification notification = new Notification(dates, Title.Text, Description.Text, Repeat.Text, (notificationId + 1).ToString(), mainWindow.PatientsUsername);
             controller.ScheduleNotification(notification);
             windowPatients.UpdateView();
             Close();
-        }
-
-        private int GenerateNotificationId()
-        {
-            if (notificationId == 100000)
-                for (int i = 0; i < notifications.Count; i++)
-                    if (Int32.Parse(notifications[i].NotificationsId) > notificationId)
-                        notificationId = Int32.Parse(notifications[i].NotificationsId);
-            return notificationId;
         }
 
         private DateTime GetDateAndTimeFromForm(DateTime date)

@@ -9,9 +9,9 @@ using WorkWithFiles;
 
 namespace Logic
 {
-    public class ExaminationService
+    public class AppointmentService
     {
-        private FilesAppointments filesExamination = new FilesAppointments();
+        private FileAppointments filesExamination = new FileAppointments();
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
         public List<Appointment> Examinations { get; set; }
@@ -19,39 +19,38 @@ namespace Logic
         public List<Room> Rooms { get; set; }
         public List<Patient> Patients { get; set; }
         public int RoomIndx { get; set; }
-        private static ExaminationService instance;
-        public static ExaminationService Instance
+        private static AppointmentService instance;
+        public static AppointmentService Instance
         {
             get
             {
                 if (null == instance)
                 {
-                    instance = new ExaminationService();
+                    instance = new AppointmentService();
                 }
                 return instance;
             }
         }
 
-        public ExaminationService()
+        public AppointmentService()
         {
             Examinations = filesExamination.LoadFromFile();
-            Doctors = FilesDoctors.GetDoctors();
-            Rooms = FilesRooms.LoadRoom();
-            Patients = FilesPatients.LoadPatients();
+            Doctors = FileDoctors.GetDoctors();
+            Rooms = FileRooms.LoadRoom();
+            Patients = FilePatients.LoadPatients();
         }
 
         public void ScheduleExamination(Appointment appointment)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(appointment.ExaminationStart);
-            appointment.RoomId = FilesRooms.GetRoomId(roomIsFree.Item2);
+            appointment.RoomId = FileRooms.GetRoomId(roomIsFree.Item2);
             Patient patient = GetPatient(appointment.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)) {
                 MessageBox.Show("You can not schedule examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            if (doctorService.IsDoctorFree(appointment.DoctorsId, appointment.ExaminationStart) == false || roomIsFree.Item1 == false) {
+            if (doctorService.IsDoctorFree(appointment.DoctorsId, appointment.ExaminationStart) == false || roomIsFree.Item1 == false)
                 MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
-            }
             SetPatientsPenalty(patient, Constants.PENALTY_SCHEDULE);
             doctorService.AddExaminationToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
             roomService.AddExaminationToRoom(roomIsFree.Item2, appointment.ExaminationStart);
@@ -146,7 +145,7 @@ namespace Logic
                 {
                     roomId = RoomIndx;
                     Doctors[docIndex].Scheduled.Add(date);
-                    FilesDoctors.Write();
+                    FileDoctors.Write();
 
                     if (Rooms[roomId].Scheduled == null)
                     {
@@ -154,7 +153,7 @@ namespace Logic
                     }
 
                     Rooms[roomId].Scheduled.Add(date);
-                    FilesRooms.EnterRoom(Rooms);
+                    FileRooms.EnterRoom(Rooms);
 
                     //Napraviti jos jedan parametar za odlaganje termina
                     Appointment examination = new Appointment(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
@@ -169,7 +168,7 @@ namespace Logic
 
         public bool DoctorIsFree(int docIndex, DateTime date)
         {
-            List<Doctor> listDoctor = FilesDoctors.GetDoctors();
+            List<Doctor> listDoctor = FileDoctors.GetDoctors();
             for (int j = 0; j < listDoctor[docIndex].Scheduled.Count; j++)
             {
                 if (listDoctor[docIndex].Scheduled[j] == date)
@@ -253,7 +252,7 @@ namespace Logic
                 if (Doctors[i].Username == doctorUsername)
                 {
                     Doctors[i].Scheduled.Add(date);
-                    FilesDoctors.Write();
+                    FileDoctors.Write();
                     break;
                 }
             }
@@ -273,38 +272,34 @@ namespace Logic
                             break;
                         }
                     }
-                    FilesDoctors.Write();
+                    FileDoctors.Write();
                     break;
                 }
             }
         }
 
-        public bool doctorIsFree(String doctorUsername, DateTime date)
+        public bool IsDoctorFree(String doctorUsername, DateTime date)
         {
             for (int i = 0; i < Doctors.Count; i++)
-            {
                 if (Doctors[i].Username == doctorUsername)
-                {
                     for (int j = 0; j < Doctors[i].Scheduled.Count; j++)
-                    {
                         if (Doctors[i].Scheduled[j] == date)
                             return false;
-                    }
-                }
-            }
             return true;
         }
 
-        public Tuple<bool, int> roomIsFree(DateTime date)
+        public Tuple<bool, int> IsRoomFree(DateTime date)
         {
             for (int i = 0; i < Rooms.Count; i++)
             {
                 bool roomIsFree = true;
                 for (int j = 0; j < Rooms[i].Scheduled.Count; j++)
-                {
                     if (Rooms[i].Scheduled[j] == date)
                         roomIsFree = false;
-                }
+                for (int j = 0; j < Rooms[i].Renovation.Count; j++)
+                    for(int k=0; k< Rooms[i].Renovation[j].Days.Count; k++)
+                        if (Rooms[i].Renovation[j].Days[k] == date)
+                            roomIsFree = false;
                 if (roomIsFree)
                     return new Tuple<bool, int>(true, i);
             }
@@ -322,7 +317,7 @@ namespace Logic
                         if (Rooms[i].Scheduled[j] == date)
                         {
                             Rooms[i].Scheduled.RemoveAt(j);
-                            FilesRooms.EnterRoom(Rooms);
+                            FileRooms.EnterRoom(Rooms);
                             break;
                         }
                     }
@@ -334,7 +329,7 @@ namespace Logic
         public void addExaminationToRoom(int roomIndex, DateTime date)
         {
             Rooms[roomIndex].Scheduled.Add(date);
-            FilesRooms.EnterRoom(Rooms);
+            FileRooms.EnterRoom(Rooms);
         }
 
         private void SetPatientsPenalty(Patient patient, int earnedPenalty) {
@@ -342,7 +337,7 @@ namespace Logic
             DateTime dateOfLastActivity = patient.Penalty.Item2;
             bool isPenaltyGreaterThanAllowed = patient.Penalty.Item3;
             patient.Penalty = GetPenaltyItemsNewValue(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
-            FilesPatients.EnterPatient(Patients);
+            FilePatients.EnterPatient(Patients);
         }
 
         private Tuple<int, DateTime, bool> GetPenaltyItemsNewValue(int currentPenalty, DateTime dateOfLastActivity, bool isPenaltyGreaterThanAllowed)
@@ -372,7 +367,7 @@ namespace Logic
 
         public void updateDoctors()
         {
-            Doctors = FilesDoctors.GetDoctors();
+            Doctors = FileDoctors.GetDoctors();
         }
     }
 }

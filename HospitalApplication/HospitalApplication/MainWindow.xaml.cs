@@ -78,7 +78,7 @@ namespace HospitalApplication
             }
             else 
             {
-                List<Patient> patients = FilesPatients.LoadPatients();
+                List<Patient> patients = FilePatients.LoadPatients();
                 string username;
                 string password;
                 PatientsUsername = Username.Text;

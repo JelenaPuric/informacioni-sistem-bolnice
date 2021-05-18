@@ -17,8 +17,8 @@ namespace HospitalApplication.Service
         
         public RenovationsService()
         {
-            rooms = FilesRooms.LoadRoom();
-            transfers = FilesScheduledTransfers.LoadTransfers();
+            rooms = FileRooms.LoadRoom();
+            transfers = FileScheduledTransfers.LoadTransfers();
             CheckIfNullList();
         }
 
@@ -61,7 +61,7 @@ namespace HospitalApplication.Service
                     }
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void AddRenovation(Renovation newRenovation)
@@ -71,7 +71,7 @@ namespace HospitalApplication.Service
                 if(rooms[i].RoomId == newRenovation.RoomId)
                     rooms[i].Renovation.Add(newRenovation);
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public bool CheckRenovation(Renovation newRenovation)
@@ -139,7 +139,7 @@ namespace HospitalApplication.Service
                         rooms[i].Renovation.RemoveAt(j);
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
     }
 }

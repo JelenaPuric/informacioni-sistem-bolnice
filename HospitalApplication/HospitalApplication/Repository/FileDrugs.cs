@@ -7,17 +7,17 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    class FilesDrugs
+    class FileDrugs
     {
-        public static string FileDrugs = "../../../Data/drugs.json";
+        public static string path = "../../../Data/drugs.json";
 
         public static List<Drugs> LoadDrugs()
         {
             //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(FileDrugs))
+            if (!File.Exists(path))
                 return new List<Drugs>();
 
-            string json = File.ReadAllText(FileDrugs);
+            string json = File.ReadAllText(path);
             List<Drugs> drugs = new JavaScriptSerializer().Deserialize<List<Drugs>>(json);
 
             return drugs;
@@ -26,7 +26,7 @@ namespace HospitalApplication.Repository
         public static void EnterDrug(List<Drugs> input)
         {
             string json = new JavaScriptSerializer().Serialize(input);
-            File.WriteAllText(FileDrugs, json);
+            File.WriteAllText(path, json);
         }
 
     }

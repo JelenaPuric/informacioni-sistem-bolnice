@@ -23,7 +23,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationEdit : Window
     {
-        private List<Doctor> doctors = FilesDoctors.GetDoctors();
+        private List<Doctor> doctors = FileDoctors.GetDoctors();
         private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 

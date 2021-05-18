@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    public class FilesScheduledTransfers
+    public class FileScheduledTransfers
     {
         public static string FileTransfers = "../../../Data/transfers.json";
 

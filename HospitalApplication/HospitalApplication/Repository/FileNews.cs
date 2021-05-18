@@ -7,18 +7,18 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-   public class FilesNews
+   public class FileNews
    {
 
-        public static string FileNews = "../../../Data/news.json";
+        public static string path = "../../../Data/news.json";
 
         public static List<News> LoadNews()
         {
             //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(FileNews))
+            if (!File.Exists(path))
                 return new List<News>();
 
-            string json = File.ReadAllText(FileNews);
+            string json = File.ReadAllText(path);
             List<News> news = new JavaScriptSerializer().Deserialize<List<News>>(json);
 
             return news;
@@ -27,7 +27,7 @@ namespace WorkWithFiles
         public static void EnterNews(List<News> input)
         {
             string json = new JavaScriptSerializer().Serialize(input);
-            File.WriteAllText(FileNews, json);
+            File.WriteAllText(path, json);
         }
 
     }

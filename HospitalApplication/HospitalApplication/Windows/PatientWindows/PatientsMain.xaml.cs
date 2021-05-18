@@ -33,12 +33,12 @@ namespace HospitalApplication
     /// </summary>
     public partial class WindowPatient : Window
     {
-        private ExaminationService examinationManagement = ExaminationService.Instance;
+        private AppointmentService examinationManagement = AppointmentService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
         private FileSurvey filesSurvey = FileSurvey.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
-        private FilesAppointments filesExamination = new FilesAppointments();
+        private FileAppointments filesExamination = new FileAppointments();
         List<Survey> surveys = new List<Survey>();
         public ICollectionView ExaminationsCollectionView { get; }
 

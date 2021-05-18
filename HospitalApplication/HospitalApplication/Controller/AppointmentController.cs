@@ -10,7 +10,7 @@ namespace HospitalApplication.Controller
 {
     class AppointmentController
     {
-        private ExaminationService examinationService = ExaminationService.Instance;
+        private AppointmentService examinationService = AppointmentService.Instance;
 
         public void ScheduleExamination(Appointment e) {
             examinationService.ScheduleExamination(e);
@@ -51,9 +51,9 @@ namespace HospitalApplication.Controller
             examinationService.removeExaminationFromDoctor(doctorUsername, date);
         }
 
-        public bool DoctorIsFree(String doctorUsername, DateTime date)
+        public bool IsDoctorFree(String doctorUsername, DateTime date)
         {
-            return examinationService.doctorIsFree(doctorUsername, date);
+            return examinationService.IsDoctorFree(doctorUsername, date);
         }
 
         public void AddExaminationToRoom(int roomIndex, DateTime date)
@@ -66,9 +66,9 @@ namespace HospitalApplication.Controller
             examinationService.removeExaminationFromRoom(roomId, date);
         }
 
-        public Tuple<bool, int> RoomIsFree(DateTime date)
+        public Tuple<bool, int> IsRoomFree(DateTime date)
         {
-            return examinationService.roomIsFree(date);
+            return examinationService.IsRoomFree(date);
         }
 
         public void UpdateDoctors()

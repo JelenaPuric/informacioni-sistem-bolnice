@@ -11,11 +11,11 @@ namespace Logic
 
         private List<Patient> patients;
         private List<Appointment> appointments;
-        private FilesAppointments filesAppointments = new FilesAppointments();
+        private FileAppointments filesAppointments = new FileAppointments();
 
         public PatientService()
         {
-            patients = FilesPatients.LoadPatients();
+            patients = FilePatients.LoadPatients();
             appointments = filesAppointments.LoadFromFile();
         }
 
@@ -29,7 +29,7 @@ namespace Logic
         public void CreatePatient(Patient newPatient)
         {
             patients.Add(newPatient);
-            FilesPatients.EnterPatient(patients);
+            FilePatients.EnterPatient(patients);
         }
 
 
@@ -47,7 +47,7 @@ namespace Logic
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].PatientsId == patientsUsername) appointments.RemoveAt(i);
             filesAppointments.WriteInFile(appointments);
-            FilesPatients.EnterPatient(patients);
+            FilePatients.EnterPatient(patients);
         }
 
 
@@ -83,7 +83,7 @@ namespace Logic
 
                 }
             }
-            FilesPatients.EnterPatient(patients);
+            FilePatients.EnterPatient(patients);
 
         }
 
@@ -98,7 +98,7 @@ namespace Logic
                     
                 }
             }
-            FilesPatients.EnterPatient(patients);
+            FilePatients.EnterPatient(patients);
 
         }
 
@@ -135,7 +135,7 @@ namespace Logic
 
                 }
             }
-            FilesPatients.EnterPatient(patients);
+            FilePatients.EnterPatient(patients);
 
         }
 

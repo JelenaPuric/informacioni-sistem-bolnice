@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ybzbGOGjWb2oGQUfLsLdgmZZuHvllpk8mY4tD2FU0j9YJNbE67AsF74cQ378zqQghbGHWH/LhsTLSfPjUFxpdQ==",
+  "dgSpecHash": "yok043tA+9inuz4d7L12tSqpa/oF+mqgMeO5RmjB8/mWsqyFxxpjNQ/zUrGzwsyWanHdngAofKXJlsI2QgYuhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj24\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "projectFilePath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj25\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\orz\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
     "C:\\Users\\orz\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",

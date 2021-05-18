@@ -7,7 +7,7 @@ using System.Web;
 
 namespace WorkWithFiles
 {
-   public class FilesRooms
+   public class FileRooms
    {
         public static string FileRoom = "../../../Data/rooms.json";
 

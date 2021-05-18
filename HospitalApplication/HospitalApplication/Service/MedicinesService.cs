@@ -13,7 +13,7 @@ namespace HospitalApplication.Service
 
         public MedicinesService()
         {
-            allMedicines = FilesDrugs.LoadDrugs();
+            allMedicines = FileDrugs.LoadDrugs();
         }
 
         public void CreateDrug (Drugs newDrug)
@@ -32,7 +32,7 @@ namespace HospitalApplication.Service
             else
                 MessageBox.Show("That Medicines already exist", "Error");
 
-            FilesDrugs.EnterDrug(allMedicines);
+            FileDrugs.EnterDrug(allMedicines);
         }
 
         public List<Drugs> GetList()
@@ -47,7 +47,7 @@ namespace HospitalApplication.Service
                 if (forDelete.ItemId == allMedicines[i].ItemId)
                     allMedicines.RemoveAt(i);
             }
-            FilesDrugs.EnterDrug(allMedicines);
+            FileDrugs.EnterDrug(allMedicines);
         }
 
     }

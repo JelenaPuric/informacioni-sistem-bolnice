@@ -12,7 +12,7 @@ namespace HospitalApplication.Service
 
         public ReportService()
         {
-            reports = FilesReportedDrugs.LoadReports();
+            reports = FileReportedDrugs.LoadReports();
         }
 
         public void DeleteReport(ReportedDrugs forDelete)
@@ -22,13 +22,13 @@ namespace HospitalApplication.Service
                 if (forDelete.IdReportedItem == reports[i].IdReportedItem)
                     reports.RemoveAt(i);
             }
-            FilesReportedDrugs.EnterReport(reports);
+            FileReportedDrugs.EnterReport(reports);
         }
         
         public void AddReport(ReportedDrugs newReport)
         {
             reports.Add(newReport);
-            FilesReportedDrugs.EnterReport(reports);
+            FileReportedDrugs.EnterReport(reports);
         }
 
         public List<ReportedDrugs> getAllReports()

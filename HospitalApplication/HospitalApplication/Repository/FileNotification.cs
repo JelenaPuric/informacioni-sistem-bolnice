@@ -52,5 +52,13 @@ namespace HospitalApplication.WorkWithFiles
                     patientsNotifications.Add(notifications[i]);
             return patientsNotifications;
         }
+
+        public int GenerateNotificationId(int notificationId)
+        {
+            if (notificationId == 100000)
+                for (int i = 0; i < notifications.Count; i++)
+                    notificationId = Math.Max(notificationId, Int32.Parse(notifications[i].NotificationsId));
+            return notificationId;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Logic
 
         public AllergensService()
         {
-            allergens = FilesAllergens.LoadAllergens();
+            allergens = FileAllergens.LoadAllergens();
         }
 
         public List<Allergen> GetAllAllergens()
@@ -24,7 +24,7 @@ namespace Logic
         public void CreateAllergen(Allergen newAllergen)
         {
             allergens.Add(newAllergen);
-            FilesAllergens.EnterAllergen(allergens);
+            FileAllergens.EnterAllergen(allergens);
         }
 
 

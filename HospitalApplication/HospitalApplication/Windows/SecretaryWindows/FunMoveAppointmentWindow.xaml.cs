@@ -21,7 +21,7 @@ namespace HospitalApplication.Windows.Secretary
     /// </summary>
     public partial class FunMoveAppointmentWindow : Window
     {
-        private ExaminationService m = ExaminationService.Instance;
+        private AppointmentService m = AppointmentService.Instance;
         private MoveAppointment w = MoveAppointment.Instance;
         private string id;
         private AppointmentController controller = new AppointmentController();
@@ -57,9 +57,9 @@ namespace HospitalApplication.Windows.Secretary
 
 
             //prilikom provere da li je soba slobodna, ako takva postoji, vrati se index slobodne sobe
-            Tuple<bool, int> roomIsFree = controller.RoomIsFree(newDate);
+            Tuple<bool, int> roomIsFree = controller.IsRoomFree(newDate);
             controller.UpdateDoctors();
-            if (controller.DoctorIsFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
+            if (controller.IsDoctorFree(examination.DoctorsId, newDate) == true && roomIsFree.Item1 == true)
             {
                 controller.RemoveExaminationFromDoctor(examination.DoctorsId, oldDate);
                 controller.AddExaminationToDoctor(examination.DoctorsId, newDate);

@@ -23,7 +23,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class MakeAppointmentWindow : Window
     {
 
-        ExaminationService m = ExaminationService.Instance;
+        AppointmentService m = AppointmentService.Instance;
         SecretaryController sc = new SecretaryController();
         string idP;
         string usernamePatient;
@@ -75,8 +75,8 @@ namespace HospitalApplication.Windows.Secretary
             {
                 case MessageBoxResult.Yes:
                     int index = lvUsers.SelectedIndex;
-                    WorkWithFiles.FilesDoctors doc = new WorkWithFiles.FilesDoctors();
-                    List<Doctor> doctors = FilesDoctors.GetDoctors();
+                    WorkWithFiles.FileDoctors doc = new WorkWithFiles.FileDoctors();
+                    List<Doctor> doctors = FileDoctors.GetDoctors();
                     DateTime dt = e2.ExaminationStart;
                     //skloni datum lekaru
                     for (int i = 0; i < doctors.Count; i++)
@@ -91,13 +91,13 @@ namespace HospitalApplication.Windows.Secretary
                                 }
                             }
 
-                            FilesDoctors.Write();
+                            FileDoctors.Write();
                             break;
                         }
                     }
                     //skloni datum sobi
                     List<Room> rooms = new List<Room>();
-                    rooms = FilesRooms.LoadRoom();
+                    rooms = FileRooms.LoadRoom();
                     for (int i = 0; i < rooms.Count; i++)
                     {
                         if (rooms[i].Scheduled == null) continue;
@@ -111,7 +111,7 @@ namespace HospitalApplication.Windows.Secretary
                                     break;
                                 }
                             }
-                            FilesRooms.EnterRoom(rooms);
+                            FileRooms.EnterRoom(rooms);
                         }
                     }
 

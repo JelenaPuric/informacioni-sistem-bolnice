@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-   public class FilesPatients
+   public class FilePatients
    {
 
         public static string FilePatient = "../../../Data/patients.json";

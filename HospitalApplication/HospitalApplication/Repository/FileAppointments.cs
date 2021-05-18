@@ -6,7 +6,7 @@ using Nancy.Json;
 
 namespace WorkWithFiles
 {
-   public class FilesAppointments
+   public class FileAppointments
    {
         private string path = "../../../Data/appointments.json";
 

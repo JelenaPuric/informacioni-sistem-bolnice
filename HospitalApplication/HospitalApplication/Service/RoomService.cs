@@ -11,11 +11,11 @@ namespace Logic
     {
         private List<Room> rooms;
         private List<Appointment> appointments;
-        private FilesAppointments filesAppointments = new FilesAppointments();
+        private FileAppointments filesAppointments = new FileAppointments();
 
         public RoomService()
         {
-            rooms = FilesRooms.LoadRoom();
+            rooms = FileRooms.LoadRoom();
             for(int i=0; i<rooms.Count; i++)
             {
                 if (rooms[i].Resource == null)
@@ -30,7 +30,7 @@ namespace Logic
         public void CreateRoom(Room r)
         {
             rooms.Add(r);
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void CheckIfZero(Room r)
@@ -46,7 +46,7 @@ namespace Logic
                     }
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public List<Resource> FindItem(string s, int i)
@@ -77,7 +77,7 @@ namespace Logic
                     rooms[i].Resource.Add(r);
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void TransferDynamicItem(Resource r, int kk)
@@ -106,7 +106,7 @@ namespace Logic
                     }
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void RemoveRoom(Model.Room oldRoom)
@@ -121,7 +121,7 @@ namespace Logic
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].RoomId == oldRoom.RoomId.ToString()) appointments.RemoveAt(i);
             filesAppointments.WriteInFile(appointments);
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
       public void RemoveById(int roomid)
@@ -136,7 +136,7 @@ namespace Logic
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].RoomId == roomid.ToString()) appointments.RemoveAt(i);
             filesAppointments.WriteInFile(appointments);
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void RemoveItem(Resource re)
@@ -154,7 +154,7 @@ namespace Logic
                     }
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void RemoveQuantity(Resource r, int k)
@@ -172,7 +172,7 @@ namespace Logic
                     }
                 }
             }
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
     
         public List<Room> showAllRooms()
@@ -212,7 +212,7 @@ namespace Logic
         public void AddExaminationToRoom(int roomIndex, DateTime date)
         {
             rooms[roomIndex].Scheduled.Add(date);
-            FilesRooms.EnterRoom(rooms);
+            FileRooms.EnterRoom(rooms);
         }
 
         public void RemoveExaminationFromRoom(String roomId, DateTime date)
@@ -226,7 +226,7 @@ namespace Logic
                         if (rooms[i].Scheduled[j] == date)
                         {
                             rooms[i].Scheduled.RemoveAt(j);
-                            FilesRooms.EnterRoom(rooms);
+                            FileRooms.EnterRoom(rooms);
                             break;
                         }
                     }

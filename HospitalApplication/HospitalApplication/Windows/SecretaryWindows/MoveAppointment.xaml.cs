@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class MoveAppointment : Window
     {
 
-        FilesAppointments fx = new FilesAppointments();
+        FileAppointments fx = new FileAppointments();
 
 
         private static MoveAppointment instance;

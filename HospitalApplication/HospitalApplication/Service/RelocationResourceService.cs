@@ -16,8 +16,8 @@ namespace HospitalApplication.Service
 
         public RelocationResourceService()
         {
-            transfers = FilesScheduledTransfers.LoadTransfers();
-            rooms = FilesRooms.LoadRoom();
+            transfers = FileScheduledTransfers.LoadTransfers();
+            rooms = FileRooms.LoadRoom();
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].Resource == null)
@@ -38,7 +38,7 @@ namespace HospitalApplication.Service
                     transfers.RemoveAt(i);
                 }
             }
-            FilesScheduledTransfers.EnterTransfer(transfers);
+            FileScheduledTransfers.EnterTransfer(transfers);
         }
 
         public void TransStatic(Transfer te)
@@ -56,7 +56,7 @@ namespace HospitalApplication.Service
             }
             if(ok == 0)
                 transfers.Add(te);
-            FilesScheduledTransfers.EnterTransfer(transfers);
+            FileScheduledTransfers.EnterTransfer(transfers);
         }
 
         public void CheckTransfers()
@@ -135,8 +135,8 @@ namespace HospitalApplication.Service
                 }
             }
             
-            FilesScheduledTransfers.EnterTransfer(transfers);
-            FilesRooms.EnterRoom(rooms);
+            FileScheduledTransfers.EnterTransfer(transfers);
+            FileRooms.EnterRoom(rooms);
         }
 
         public List<Transfer> showAllTransfers()
