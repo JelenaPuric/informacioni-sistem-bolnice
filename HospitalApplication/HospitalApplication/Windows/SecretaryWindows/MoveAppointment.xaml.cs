@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class MoveAppointment : Window
     {
 
-        FileAppointments fx = new FileAppointments();
+        FileAppointments fx = FileAppointments.Instance;
 
 
         private static MoveAppointment instance;
@@ -46,7 +46,7 @@ namespace HospitalApplication.Windows.Secretary
             this.Top = (screenHeight / 2) - (windowHeight / 2);
             instance = this;
 
-            lvUsers.ItemsSource = fx.LoadFromFile();
+            lvUsers.ItemsSource = fx.GetAppointments();
         }
 
         private void MoveAppointment_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace HospitalApplication.Windows.Secretary
         
         private void RefreshList_Click(object sender, RoutedEventArgs e)
         {
-            lvUsers.ItemsSource = fx.LoadFromFile();
+            lvUsers.ItemsSource = fx.GetAppointments();
         }
     }
 }

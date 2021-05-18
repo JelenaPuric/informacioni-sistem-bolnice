@@ -11,7 +11,7 @@ namespace Logic
     {
         private List<Room> rooms;
         private List<Appointment> appointments;
-        private FileAppointments filesAppointments = new FileAppointments();
+        private FileAppointments filesAppointments = FileAppointments.Instance;
 
         public RoomService()
         {
@@ -25,7 +25,7 @@ namespace Logic
                 if (rooms[i].Renovation == null)
                     rooms[i].Renovation = new List<Renovation>();
             }
-            appointments = filesAppointments.LoadFromFile();
+            appointments = filesAppointments.GetAppointments();
         }
         public void CreateRoom(Room r)
         {
@@ -120,7 +120,7 @@ namespace Logic
             }
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].RoomId == oldRoom.RoomId.ToString()) appointments.RemoveAt(i);
-            filesAppointments.WriteInFile(appointments);
+            filesAppointments.Write();
             FileRooms.EnterRoom(rooms);
         }
 
@@ -135,7 +135,7 @@ namespace Logic
             }
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].RoomId == roomid.ToString()) appointments.RemoveAt(i);
-            filesAppointments.WriteInFile(appointments);
+            filesAppointments.Write();
             FileRooms.EnterRoom(rooms);
         }
 

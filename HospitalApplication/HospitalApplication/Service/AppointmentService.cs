@@ -11,7 +11,7 @@ namespace Logic
 {
     public class AppointmentService
     {
-        private FileAppointments filesExamination = new FileAppointments();
+        private FileAppointments filesAppointment = FileAppointments.Instance;
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
         private FileDoctors fileDoctors = FileDoctors.Instance;
@@ -35,7 +35,7 @@ namespace Logic
 
         public AppointmentService()
         {
-            Examinations = filesExamination.LoadFromFile();
+            Examinations = filesAppointment.GetAppointments();
             Doctors = fileDoctors.GetDoctors();
             Rooms = FileRooms.LoadRoom();
             Patients = FilePatients.LoadPatients();
@@ -56,7 +56,7 @@ namespace Logic
             doctorService.AddExaminationToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
             roomService.AddExaminationToRoom(roomIsFree.Item2, appointment.ExaminationStart);
             Examinations.Add(appointment);
-            filesExamination.WriteInFile(Examinations);
+            filesAppointment.Write();
         }
 
         public void CancelExamination(Appointment examination)
@@ -70,14 +70,13 @@ namespace Logic
             doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
             roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
             Examinations.RemoveAt(GetExaminationsIndex(examination));
-            filesExamination.WriteInFile(Examinations);
+            filesAppointment.Write();
         }
 
         public void EditExamination(Appointment examination, string newDoctorsId)
         {
             Patient patient = GetPatient(examination.PatientsId);
-            if (PenaltyIsGreaterThanAllowed(patient))
-            {
+            if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not edit examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
@@ -88,15 +87,14 @@ namespace Logic
             doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
             doctorService.AddExaminationToDoctor(newDoctorsId, examination.ExaminationStart);
             examination.DoctorsId = newDoctorsId;
-            filesExamination.WriteInFile(Examinations);
+            filesAppointment.Write();
         }
 
         public void MoveExamination(Appointment examination, DateTime newDate)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(examination.ExaminationStart);
             Patient patient = GetPatient(examination.PatientsId);
-            if (PenaltyIsGreaterThanAllowed(patient))
-            {
+            if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not move examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
@@ -110,7 +108,7 @@ namespace Logic
             roomService.AddExaminationToRoom(roomIsFree.Item2, newDate);
             examination.ExaminationStart = newDate;
             examination.RoomId = Rooms[roomIsFree.Item2].RoomId.ToString();
-            filesExamination.WriteInFile(Examinations);
+            filesAppointment.Write();
         }
 
         public bool MakeEmergencyAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, 
@@ -225,7 +223,7 @@ namespace Logic
             e.ExaminationStart = date;
             e.RoomId = Rooms[roomIndex].RoomId.ToString();
             Examinations.Add(e);
-            filesExamination.WriteInFile(Examinations);
+            filesAppointment.Write();
         }
 
         public List<Appointment> GetAppointments(String patientName)

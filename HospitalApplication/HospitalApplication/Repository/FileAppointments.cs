@@ -1,31 +1,46 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using HospitalApplication.Repository;
 using Model;
 using Nancy.Json;
 
 namespace WorkWithFiles
 {
-   public class FileAppointments
+   public class FileAppointments : IFile
    {
         private string path = "../../../Data/appointments.json";
-
-        public List<Appointment> LoadFromFile()
+        private List<Appointment> appointments;
+        private static FileAppointments instance;
+        public static FileAppointments Instance
         {
-            //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(path))
-                return new List<Appointment>();
-
-            string json = File.ReadAllText(path);
-            List<Appointment> appointments = new JavaScriptSerializer().Deserialize<List<Appointment>>(json);
-
-            return appointments;
+            get
+            {
+                if (null == instance)
+                    instance = new FileAppointments();
+                return instance;
+            }
         }
 
-        public void WriteInFile(List<Appointment> appointments)
+        private FileAppointments()
+        {
+            Read();
+        }
+
+        public void Read()
+        {
+            string json = File.ReadAllText(path);
+            appointments = new JavaScriptSerializer().Deserialize<List<Appointment>>(json);
+        }
+
+        public void Write()
         {
             string json = new JavaScriptSerializer().Serialize(appointments);
             File.WriteAllText(path, json);
+        }
+
+        public List<Appointment> GetAppointments() {
+            return appointments;
         }
    }
 }

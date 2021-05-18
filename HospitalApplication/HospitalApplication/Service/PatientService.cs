@@ -11,12 +11,12 @@ namespace Logic
 
         private List<Patient> patients;
         private List<Appointment> appointments;
-        private FileAppointments filesAppointments = new FileAppointments();
+        private FileAppointments fileAppointments = FileAppointments.Instance;
 
         public PatientService()
         {
             patients = FilePatients.LoadPatients();
-            appointments = filesAppointments.LoadFromFile();
+            appointments = fileAppointments.GetAppointments();
         }
 
         public List<Patient> GetAllPatients()
@@ -46,7 +46,7 @@ namespace Logic
             }
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].PatientsId == patientsUsername) appointments.RemoveAt(i);
-            filesAppointments.WriteInFile(appointments);
+            fileAppointments.Write();
             FilePatients.EnterPatient(patients);
         }
 

@@ -38,7 +38,7 @@ namespace HospitalApplication
         private AppointmentController controller = new AppointmentController();
         private FileSurvey filesSurvey = FileSurvey.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
-        private FileAppointments filesExamination = new FileAppointments();
+        private FileAppointments filesExamination = FileAppointments.Instance;
         List<Survey> surveys = new List<Survey>();
         public ICollectionView ExaminationsCollectionView { get; }
 
@@ -65,7 +65,7 @@ namespace HospitalApplication
             //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
-            allExaminations = filesExamination.LoadFromFile();
+            allExaminations = filesExamination.GetAppointments();
             surveys = filesSurvey.GetSurveys();
             if (surveys == null) surveys = new List<Survey>();
         }
