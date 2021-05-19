@@ -11,12 +11,12 @@
         WindowStartupLocation="CenterScreen"
         Closed="Window_Closed">
     <Grid>
-        <Grid x:Name="panelHeader" MouseDown="panelHeader_MouseDown" VerticalAlignment="Top" Height="50" Background="Gray">
+        <Grid x:Name="panelHeader" MouseDown="panelHeader_MouseDown" VerticalAlignment="Top" Height="50" Background="#014546">
             <TextBlock Text="Zdravo Hospital" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
         </Grid>
-        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="200" Background="Gray" Panel.ZIndex="10">
+        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="200" Background="#014546" Panel.ZIndex="10">
             <StackPanel>
-                <Grid Height="50" Background="Gray">
+                <Grid Height="50">
                     <Button HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Height="50" Width="57" BorderBrush="Transparent" x:Name="HamburgerButton" Click="HamburgerButton_Click">
                         <Image Source="Images/hamburger.png"/>
                     </Button>

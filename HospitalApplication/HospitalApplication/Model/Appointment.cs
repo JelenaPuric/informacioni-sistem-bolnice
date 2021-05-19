@@ -7,7 +7,6 @@ namespace Model
     {
         public Room room;
         public Patient[] pacient;
-        private Boolean urgentOperation = false;
         public String ExaminationId { get; set; }
         public DateTime ExaminationStart { get; set; }
         public String PatientsId { get; set; }
@@ -16,29 +15,19 @@ namespace Model
 
         public int PostponeAppointment { get; set; }
 
-        public ExaminationType ExaminationType { get; set; }
+        public ExaminationType AppointmentType { get; set; }
 
         public Appointment() { }
-     public Appointment(string patient, string doctor, string room, DateTime start, string id)
-        {
-            PatientsId = patient;
-            DoctorsId = doctor;
-            RoomId = room;
-            ExaminationStart = start;
-            ExaminationId = id;
-        }
-   
 
-        public Appointment(string patient, string doctor, string room, DateTime start, string id, ExaminationType examType, int postponeAppointment) {
-            PatientsId = patient;
-            DoctorsId = doctor;
-            RoomId = room;
+        public Appointment(string patientsId, string doctorsId, string roomId, DateTime start, string examinationId, ExaminationType appointmentType, int postponeAppointment) {
+            PatientsId = patientsId;
+            DoctorsId = doctorsId;
+            RoomId = roomId;
             ExaminationStart = start;
-            ExaminationId = id;
-            ExaminationType = examType;
+            ExaminationId = examinationId;
+            AppointmentType = appointmentType;
             PostponeAppointment = postponeAppointment;
         }
-
         
         public int CompareTo([AllowNull] Appointment other)
         {
@@ -49,6 +38,5 @@ namespace Model
             else
                 return 0;
         }
-        
     }
 }
