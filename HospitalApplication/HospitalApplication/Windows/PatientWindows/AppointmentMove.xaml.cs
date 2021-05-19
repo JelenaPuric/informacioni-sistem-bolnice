@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
+using HospitalApplication.Windows.PatientWindows;
 using Logic;
 using Model;
 using WorkWithFiles;
@@ -21,7 +22,8 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowExaminationMove : Window
     {
-        private WindowPatient windowPatient = WindowPatient.Instance;
+        private PatientsPage pagePatients = PatientsPage.Instance;
+        //private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationMove()
@@ -31,12 +33,12 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment examination = (Appointment)windowPatient.lvUsers.SelectedItem;
+            Appointment examination = (Appointment)pagePatients.lvUsers.SelectedItem;
             DateTime oldDate = examination.ExaminationStart;
             DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             if (!IsNewDateValid(oldDate, newDate)) return;
             controller.MoveExamination(examination, newDate);
-            windowPatient.UpdateView();
+            pagePatients.UpdateView();
             Close();
         }
 

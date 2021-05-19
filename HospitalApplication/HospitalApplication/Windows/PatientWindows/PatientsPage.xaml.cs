@@ -1,5 +1,13 @@
-﻿using System;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Logic;
+using HospitalApplication.Model;
+using HospitalApplication.Repository;
+using HospitalApplication.Windows.Patient1;
+using Logic;
+using Model;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,30 +16,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
-using Logic;
 using WorkWithFiles;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using System.Threading;
-using HospitalApplication.Model;
-using HospitalApplication.Logic;
-using HospitalApplication.Windows.Patient1;
-using HospitalApplication.Controller;
-using HospitalApplication.Repository;
-using HospitalApplication.Windows.PatientWindows;
-using System.IO;
-using Nancy.Json;
-using System.Linq;
-using HospitalApplication.WorkWithFiles;
 
-namespace HospitalApplication
+namespace HospitalApplication.Windows.PatientWindows
 {
     /// <summary>
-    /// Interaction logic for WindowPatient.xaml
+    /// Interaction logic for PatientsPage.xaml
     /// </summary>
-    public partial class WindowPatient : Window
+    public partial class PatientsPage : Page
     {
         private AppointmentService examinationManagement = AppointmentService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
@@ -40,34 +34,31 @@ namespace HospitalApplication
         private List<Appointment> allExaminations = new List<Appointment>();
         private FileAppointments filesExamination = FileAppointments.Instance;
         List<Survey> surveys = new List<Survey>();
-        public ICollectionView ExaminationsCollectionView { get; }
 
-        private static WindowPatient instance;
-        public static WindowPatient Instance
+        private static PatientsPage instance;
+        public static PatientsPage Instance
         {
             get
             {
                 if (null == instance)
                 {
-                    instance = new WindowPatient();
+                    instance = new PatientsPage();
                 }
                 return instance;
             }
         }
 
-        public WindowPatient()
+        public PatientsPage()
         {
             InitializeComponent();
             instance = this;
-            List<Appointment> examinations = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
-            examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
-            lvUsers.ItemsSource = examinations;
-            //PatientNotifications p = new PatientNotifications(mainWindow.Username.Text);
+            List<Appointment> appointments = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
+            appointments.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
+            lvUsers.ItemsSource = appointments;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
             allExaminations = filesExamination.GetAppointments();
             surveys = filesSurvey.GetSurveys();
-            if (surveys == null) surveys = new List<Survey>();
         }
 
         public void UpdateView()
@@ -88,12 +79,12 @@ namespace HospitalApplication
         {
             if (!(lvUsers.SelectedIndex > -1))
                 return;
-            Appointment examination = (Appointment)lvUsers.SelectedItem;
+            Appointment appointment = (Appointment)lvUsers.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    controller.CancelExamination(examination);
+                    controller.CancelExamination(appointment);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:
@@ -106,12 +97,6 @@ namespace HospitalApplication
             if (!(lvUsers.SelectedIndex > -1))
                 return;
             WindowExaminationMove window = new WindowExaminationMove();
-            window.Show();
-        }
-
-        private void Notifications_Click(object sender, RoutedEventArgs e)
-        {
-            WindowPatientNotifications window = new WindowPatientNotifications();
             window.Show();
         }
 
@@ -144,26 +129,24 @@ namespace HospitalApplication
         {
             List<string> doctorUsernames = new List<String>();
             surveys = filesSurvey.GetSurveys();
-            for (int i = 0; i < allExaminations.Count; i++) {
-                if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now) {
+            for (int i = 0; i < allExaminations.Count; i++)
+            {
+                if (allExaminations[i].PatientsId == mainWindow.PatientsUsername && allExaminations[i].ExaminationStart < DateTime.Now)
+                {
                     bool ok = true;
                     for (int j = 0; j < surveys.Count; j++)
                         if (surveys[j].PatientsUsername == mainWindow.PatientsUsername && surveys[j].SurveyIsAbout == allExaminations[i].DoctorsId && surveys[j].DateOfTheSurvey > allExaminations[i].ExaminationStart)
                             ok = false;
-                    if(ok) doctorUsernames.Add(allExaminations[i].DoctorsId);
+                    if (ok) doctorUsernames.Add(allExaminations[i].DoctorsId);
                 }
             }
-            if (doctorUsernames.Count < 1) {
+            if (doctorUsernames.Count < 1)
+            {
                 MessageBox.Show("You must attend examination before rating doctor.");
                 return;
             }
             DoctorSurvey window = new DoctorSurvey(doctorUsernames.Distinct().ToList());
             window.Show();
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            NotificationService.FlagIsMarked = true;
         }
     }
 }

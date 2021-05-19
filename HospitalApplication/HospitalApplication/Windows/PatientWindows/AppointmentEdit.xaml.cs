@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
 using HospitalApplication.Logic;
+using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
@@ -25,7 +26,8 @@ namespace HospitalApplication.Windows.Patient1
     {
         private FileDoctors fileDoctors = FileDoctors.Instance;
         private List<Doctor> doctors;
-        private WindowPatient windowPatient = WindowPatient.Instance;
+        private PatientsPage pagePatients = PatientsPage.Instance;
+        //private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
@@ -38,9 +40,9 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment appointment = (Appointment)windowPatient.lvUsers.SelectedItem;
+            Appointment appointment = (Appointment)pagePatients.lvUsers.SelectedItem;
             controller.EditExamination(appointment, Combo.SelectedItem.ToString());
-            windowPatient.UpdateView();
+            pagePatients.UpdateView();
             Close();
         }
     }

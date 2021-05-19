@@ -13,6 +13,7 @@ using HospitalApplication.Controller;
 using HospitalApplication.Logic;
 using HospitalApplication.Model;
 using HospitalApplication.Windows;
+using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -21,13 +22,14 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationEdit : Window
     {
-        private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
+        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        //private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
         private NotificationController controller = new NotificationController();
 
         public WindowNotificationEdit()
         {
             InitializeComponent();
-            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
+            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
             Date.SelectedDate = notification.Dates[0];
             Title.Text = notification.Title;
             Description.Text = notification.Description;
@@ -36,11 +38,11 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
+            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
             DateTime date = Date.SelectedDate.Value.Date;
             DateTime newDate = GetDateAndTimeFromForm(date);
             controller.EditNotification(notification, Title.Text, Description.Text, Repeat.Text, newDate);
-            windowNotifications.UpdateView();
+            pageNotifications.UpdateView();
             Close();
         }
 

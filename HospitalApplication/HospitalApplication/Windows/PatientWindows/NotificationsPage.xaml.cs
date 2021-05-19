@@ -1,4 +1,7 @@
-﻿using HospitalApplication.Model;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Model;
+using HospitalApplication.Windows.Patient1;
+using HospitalApplication.WorkWithFiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,36 +12,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HospitalApplication.Logic;
-using HospitalApplication.Controller;
-using HospitalApplication.WorkWithFiles;
 
-namespace HospitalApplication.Windows.Patient1
+namespace HospitalApplication.Windows.PatientWindows
 {
     /// <summary>
-    /// Interaction logic for WindowPatientNotifications.xaml
+    /// Interaction logic for NotificationsPage.xaml
     /// </summary>
-    public partial class WindowPatientNotifications : Window
+    public partial class NotificationsPage : Page
     {
         private NotificationController notificationController = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
         private FileNotification fileNotification = FileNotification.Instance;
 
-        private static WindowPatientNotifications instance;
-        public static WindowPatientNotifications Instance
+        private static NotificationsPage instance;
+        public static NotificationsPage Instance
         {
             get
             {
                 if (null == instance)
                 {
-                    instance = new WindowPatientNotifications();
+                    instance = new NotificationsPage();
                 }
                 return instance;
             }
         }
 
-        public WindowPatientNotifications()
+        public NotificationsPage()
         {
             InitializeComponent();
             instance = this;

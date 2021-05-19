@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Model;
+using HospitalApplication.Windows.PatientWindows;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,12 +19,13 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationInfo : Window
     {
-        private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
+        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        //private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
 
         public WindowNotificationInfo()
         {
             InitializeComponent();
-            Notification notification = (Notification)windowNotifications.lvUsers.SelectedItem;
+            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
             DateTime date = notification.Dates[0];
             Date.Text = date.ToString();
             DrugName.Text = notification.Title;

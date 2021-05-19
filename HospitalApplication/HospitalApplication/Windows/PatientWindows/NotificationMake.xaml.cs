@@ -13,6 +13,7 @@ using HospitalApplication.Model;
 using HospitalApplication.Logic;
 using HospitalApplication.Controller;
 using HospitalApplication.WorkWithFiles;
+using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -23,7 +24,8 @@ namespace HospitalApplication.Windows.Patient1
     {
         private FileNotification fileNotification = FileNotification.Instance;
         private int notificationId = 100000;
-        private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
+        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        //private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();
 
@@ -46,7 +48,7 @@ namespace HospitalApplication.Windows.Patient1
             notificationId = fileNotification.GenerateNotificationId(notificationId);
             Notification notification = new Notification(dates, Title.Text, Description.Text, Repeat.Text, (notificationId + 1).ToString(), mainWindow.PatientsUsername);
             controller.ScheduleNotification(notification);
-            windowPatients.UpdateView();
+            pageNotifications.UpdateView();
             Close();
         }
 

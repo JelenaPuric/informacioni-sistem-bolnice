@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
+using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
@@ -25,7 +26,8 @@ namespace HospitalApplication
         private AppointmentService examinationService = AppointmentService.Instance;
         private AppointmentController controller = new AppointmentController();
         private string doctorsUsername;
-        private WindowPatient windowPatient = WindowPatient.Instance;
+        private PatientsPage pagePatients = PatientsPage.Instance;
+        //private WindowPatient windowPatient = WindowPatient.Instance;
         private int idExamination = 100000;
         private MainWindow mainWindow = MainWindow.Instance;
         private List<Doctor> doctors = new List<Doctor>();
@@ -72,7 +74,7 @@ namespace HospitalApplication
             GenerateExaminationId();
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleExamination(appointment);
-            windowPatient.UpdateView();
+            pagePatients.UpdateView();
             Close();
         }
 
@@ -82,7 +84,7 @@ namespace HospitalApplication
             GenerateExaminationId();
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctors[Combo3.SelectedIndex].Username, "0", newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleExamination(appointment);
-            windowPatient.UpdateView();
+            pagePatients.UpdateView();
             Close();
         }
 

@@ -42,5 +42,12 @@ namespace WorkWithFiles
         public List<Appointment> GetAppointments() {
             return appointments;
         }
-   }
+
+        public int GetExaminationsIndex(Appointment appointment)
+        {
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i] == appointment) return i;
+            return 0;
+        }
+    }
 }

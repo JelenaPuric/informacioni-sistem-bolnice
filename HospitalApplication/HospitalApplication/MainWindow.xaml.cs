@@ -20,6 +20,7 @@ using WorkWithFiles;
 using Model;
 using Logic;
 using HospitalApplication.Controller;
+using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication
 {
@@ -89,7 +90,8 @@ namespace HospitalApplication
                     password = patients[i].Password;
                     if (PatientsUsername == username && enteredPassword == password)
                     {
-                        WindowPatient window = new WindowPatient();
+                        Home window = new Home();
+                        //WindowPatient window = new WindowPatient();
                         Close();
                         window.Show();
                     }

@@ -69,7 +69,7 @@ namespace Logic
             SetPatientsPenalty(patient, Constants.PENALTY_CANCEL);
             doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
             roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
-            Examinations.RemoveAt(GetExaminationsIndex(examination));
+            Examinations.RemoveAt(filesAppointment.GetExaminationsIndex(examination));
             filesAppointment.Write();
         }
 
@@ -341,12 +341,6 @@ namespace Logic
         private bool PenaltyIsGreaterThanAllowed(Patient patient)
         {
             return patient.Penalty.Item3;
-        }
-
-        private int GetExaminationsIndex(Appointment examination) {
-            for (int i = 0; i < Examinations.Count; i++)
-                if (Examinations[i] == examination) return i;
-            return 0;
         }
 
         private Patient GetPatient(string patientsUsername) {
