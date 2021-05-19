@@ -501,3 +501,5 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientsPage.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\NotificationsPage.g.cs
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\NotificationsPage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\SurveysPage.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\SurveysPage.baml

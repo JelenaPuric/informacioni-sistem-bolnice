@@ -32,14 +32,6 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="Edit examination" x:Name="EditExamination" Click="EditExamination_Click"/>
-                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Rate Hospital" x:Name="RateHospital" Click="RateHospital_Click"/>
-            </Grid>
-            <Grid Margin="0 0 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="Rate Doctor" x:Name="RateDoctor" Click="RateDoctor_Click"/>
                 <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="..."/>
             </Grid>
             <Label Content="Scheduled Examinations" HorizontalAlignment="Center" FontSize="30" Foreground="Green"/>

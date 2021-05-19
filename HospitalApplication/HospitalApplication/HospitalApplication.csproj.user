@@ -139,6 +139,9 @@
     <Compile Update="Windows\PatientWindows\SurveyHospital.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\PatientWindows\SurveysPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\SecretaryWindows\AddAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -340,6 +343,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\SurveyHospital.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\SurveysPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\AddAllergenWindow.xaml">

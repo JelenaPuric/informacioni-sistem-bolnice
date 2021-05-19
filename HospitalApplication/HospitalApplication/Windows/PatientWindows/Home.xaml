@@ -34,6 +34,12 @@
                             <TextBlock Text="Notifications" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuSurvey" Selected="MenuSurvey_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/survey.jpg" Margin="0 0 10 0"/>
+                            <TextBlock Text="Survey" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
