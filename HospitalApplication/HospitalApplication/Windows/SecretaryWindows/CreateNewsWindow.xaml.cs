@@ -29,7 +29,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text);
+            News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now);
             newsController.CreateNews(newNews);
             newsWindow.UpdateNews();
             Close();

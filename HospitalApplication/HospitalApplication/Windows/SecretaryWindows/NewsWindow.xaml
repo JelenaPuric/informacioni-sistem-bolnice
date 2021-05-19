@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="NewsWindow" Height="466" Width="890">
     <Grid Margin="0,0,25,-34">
-        <ListView Margin="248,49,247,180" Name="lvUsers" ScrollViewer.CanContentScroll="True" >
+        <ListView Margin="188,51,189,178" Name="lvUsers" ScrollViewer.CanContentScroll="True" SelectionChanged="lvUsers_SelectionChanged" >
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Width="120" Header="Publication Date" DisplayMemberBinding="{Binding PublicationDate}" />
                     <GridViewColumn Width="120" Header="ID" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Width="120" Header="Type News" DisplayMemberBinding="{Binding TypeNews}" />
                     <GridViewColumn Width="120" Header="Title" DisplayMemberBinding="{Binding Title}" />
