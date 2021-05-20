@@ -6,13 +6,61 @@ using System.Text;
 
 namespace HospitalApplication.Service
 {
-    class DoctorService
+    public class DoctorService
     {
         private List<Doctor> doctors;
         private FileDoctors fileDoctors = FileDoctors.Instance;
 
+
+        private static DoctorService instance;
+        public static DoctorService Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new DoctorService();
+                }
+                return instance;
+            }
+        }
+
         public DoctorService() {
+            instance = this;
             doctors = fileDoctors.GetDoctors();
+        }
+
+
+        public void CreateDoctor(Doctor newDoctor)
+        {
+            doctors.Add(newDoctor);
+            fileDoctors.Write();
+        }
+
+        public void DeleteDoctor(string idDoctor)
+        {
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].DoctorId == idDoctor)
+                {
+                    doctors.RemoveAt(i); break;
+                }
+            }
+            fileDoctors.Write();
+        }
+
+        public void UpdateDoctor(Doctor currentDoctor)
+        {
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].DoctorId.Equals(currentDoctor.DoctorId))
+                {
+                    doctors[i].DoctorType = currentDoctor.DoctorType;
+                    doctors[i].Username = currentDoctor.Username;
+                    doctors[i].Password = currentDoctor.Password;
+                }
+            }
+            fileDoctors.Write();
         }
 
         public bool IsDoctorFree(String doctorUsername, DateTime date)
@@ -24,6 +72,7 @@ namespace HospitalApplication.Service
                             return false;
             return true;
         }
+
 
         public void AddExaminationToDoctor(String doctorUsername, DateTime date)
         {

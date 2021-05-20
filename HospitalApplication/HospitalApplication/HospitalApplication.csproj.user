@@ -145,6 +145,12 @@
     <Compile Update="Windows\SecretaryWindows\AddAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SecretaryWindows\AddNewDoctorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SecretaryWindows\AllDoctorsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\SecretaryWindows\AllPatientsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -155,6 +161,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\DeletePatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SecretaryWindows\EditDoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\EditNewsWindow.xaml.cs">
@@ -197,6 +206,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SecretaryWindows\ViewDoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\ViewNewsWindow.xaml.cs">
@@ -351,6 +363,12 @@
     <Page Update="Windows\SecretaryWindows\AddAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\SecretaryWindows\AddNewDoctorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SecretaryWindows\AllDoctorsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\SecretaryWindows\AllPatientsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -361,6 +379,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\DeletePatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SecretaryWindows\EditDoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\EditNewsWindow.xaml">
@@ -403,6 +424,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SecretaryWindows\ViewDoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\ViewNewsWindow.xaml">

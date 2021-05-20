@@ -1,0 +1,30 @@
+﻿<Window x:Class="HospitalApplication.Windows.SecretaryWindows.EditDoctorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalApplication.Windows.SecretaryWindows"
+        mc:Ignorable="d"
+        Title="EditDoctorWindow" Height="450" Width="800">
+    <Grid >
+        <Label FontSize="20"  Foreground="Green" FontWeight="Bold"  Content="EDIT DOCTOR" HorizontalAlignment="Left" Margin="318,27,0,0" VerticalAlignment="Top" Width="234" Height="36"/>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="212,142,0,0" Name="textBlockDoctorType" Text="Type Doctor:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.5,-1.866" />
+        <ComboBox Margin="343,142,0,0" Name="ComboBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Height="23">
+            <ComboBoxItem Content="cardiology"></ComboBoxItem>
+            <ComboBoxItem Content="surgery"></ComboBoxItem>
+        </ComboBox>
+
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="212,178,0,0" Name="textBlockUsername" Text="Username:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.5,-1.866" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="212,216,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="343,178,0,0" Name="textBoxUsername" VerticalAlignment="Top" Width="222" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="343,217,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" />
+
+        <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="283,306,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="Submit_Click" RenderTransformOrigin="1,3.583" />
+        <Button Content="Cancel" Height="22" HorizontalAlignment="Left" Margin="419,307,0,0" Name="button2" VerticalAlignment="Top" Width="70" Click="Cancel_Click" RenderTransformOrigin="1.352,4.222" />
+
+
+    </Grid>
+</Window>

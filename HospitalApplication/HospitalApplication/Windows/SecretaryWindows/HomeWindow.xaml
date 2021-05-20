@@ -62,7 +62,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FFF" BorderBrush="#00cc66">
+                <Button Click="Doctors_Click" Margin="10" Background="#FFF" BorderBrush="#00cc66">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Doctor" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="Doctors" FontFamily="Champagne &amp; Limousines"/>

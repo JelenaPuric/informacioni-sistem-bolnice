@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalApplication.Windows.SecretaryWindows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -59,6 +60,13 @@ namespace HospitalApplication.Windows.Secretary
         private void MakeAppointment_Click(object sender, RoutedEventArgs e)
         {
             IDMakeAppointment window = new IDMakeAppointment();
+            window.Show();
+        }
+
+        private void Doctors_Click(object sender, RoutedEventArgs e)
+        {
+            AllDoctorsWindow window = new AllDoctorsWindow();
+            this.Close();
             window.Show();
         }
     }
