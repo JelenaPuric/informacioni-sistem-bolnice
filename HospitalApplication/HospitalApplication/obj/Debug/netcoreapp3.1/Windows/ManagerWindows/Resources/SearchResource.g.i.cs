@@ -77,8 +77,8 @@ namespace HospitalApplication.Windows.Manager.Resources {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/managerwindows/resources/searchresource.xa" +
-                    "ml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/managerwindows/resources/searchre" +
+                    "source.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\ManagerWindows\Resources\SearchResource.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

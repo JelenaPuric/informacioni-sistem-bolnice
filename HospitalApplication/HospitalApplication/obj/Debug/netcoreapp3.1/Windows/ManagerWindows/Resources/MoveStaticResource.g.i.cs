@@ -61,8 +61,8 @@ namespace HospitalApplication.Windows.Manager.Resources {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/managerwindows/resources/movestaticresourc" +
-                    "e.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/managerwindows/resources/movestat" +
+                    "icresource.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\ManagerWindows\Resources\MoveStaticResource.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

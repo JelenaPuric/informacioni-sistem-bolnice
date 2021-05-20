@@ -40,6 +40,12 @@
                             <TextBlock Text="Survey" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuAnamnesis" Selected="MenuAnamnesis_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/anamnesis.png" Margin="0 0 10 0"/>
+                            <TextBlock Text="Anamnesis" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
