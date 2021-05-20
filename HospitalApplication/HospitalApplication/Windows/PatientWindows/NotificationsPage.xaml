@@ -29,7 +29,7 @@
                         <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="140" />
                         <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="120" />
                         <GridViewColumn Header="Repeat" DisplayMemberBinding="{Binding Repeat}" Width="50" />
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="70" />
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="140" />
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding NotificationsId}" Width="50" />
                     </GridView>
                 </ListView.View>

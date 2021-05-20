@@ -30,10 +30,6 @@ namespace HospitalApplication.Windows.PatientWindows
         private AppointmentService examinationManagement = AppointmentService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FileSurvey filesSurvey = FileSurvey.Instance;
-        private List<Appointment> allExaminations = new List<Appointment>();
-        private FileAppointments filesExamination = FileAppointments.Instance;
-        List<Survey> surveys = new List<Survey>();
 
         private static PatientsPage instance;
         public static PatientsPage Instance
@@ -57,8 +53,6 @@ namespace HospitalApplication.Windows.PatientWindows
             lvUsers.ItemsSource = appointments;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
-            allExaminations = filesExamination.GetAppointments();
-            surveys = filesSurvey.GetSurveys();
         }
 
         public void UpdateView()
@@ -77,8 +71,7 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void CancelExamination_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             Appointment appointment = (Appointment)lvUsers.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
@@ -94,16 +87,14 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void MoveExamination_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationMove window = new WindowExaminationMove();
             window.Show();
         }
 
         private void EditExamination_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationEdit window = new WindowExaminationEdit();
             window.Show();
         }

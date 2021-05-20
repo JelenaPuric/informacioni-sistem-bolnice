@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\PatientWindows\AnamnesisInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Medicines\AddDrug.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +110,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\DoctorWindows\ShowOperationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\PatientWindows\AnamnesisPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\PatientWindows\Home.xaml.cs">
@@ -222,6 +228,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\PatientWindows\AnamnesisInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ManagerWindows\Medicines\AddDrug.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -322,6 +331,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\DoctorWindows\ShowOperationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\AnamnesisPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\Home.xaml">

@@ -523,3 +523,7 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\AllDoctorsWindow.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\EditDoctorWindow.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\ViewDoctorWindow.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\AnamnesisPage.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\AnamnesisPage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\AnamnesisInfo.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj25\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\AnamnesisInfo.baml

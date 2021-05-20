@@ -9,7 +9,6 @@ namespace Model
         private DoctorType doctorType;
         private List<DateTime> scheduled;
 
-
         public Doctor() { }
 
         public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee, string idDoctor)
