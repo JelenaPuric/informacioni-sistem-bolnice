@@ -199,7 +199,7 @@ namespace HospitalApplication.Windows.Secretary
             {
                 for (int i = 0; i < doctors.Count; i++)
                 {
-                    if (doctors[i].DoctorType.Equals(DoctorType.cardiology) && IsAvailableFiltredDoctors(Int32.Parse(doctors[i].DoctorId)))
+                    if (doctors[i].DoctorType.Equals(DoctorType.cardiology) && IsAvailableFiltredDoctors(doctors[i])) // Int32.Parse(doctors[i].DoctorId))
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); 
@@ -212,7 +212,7 @@ namespace HospitalApplication.Windows.Secretary
             {
                 for (int i = 0; i < doctors.Count; i++)
                 {
-                    if (doctors[i].DoctorType.Equals(DoctorType.surgery) && IsAvailableFiltredDoctors(Int32.Parse(doctors[i].DoctorId)))
+                    if (doctors[i].DoctorType.Equals(DoctorType.surgery) && IsAvailableFiltredDoctors(doctors[i]))//Int32.Parse(doctors[i].DoctorId))
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); 
@@ -229,11 +229,11 @@ namespace HospitalApplication.Windows.Secretary
             return !(filteredDoctors.Count == 0);
         }
 
-        private bool IsAvailableFiltredDoctors(int idDoctor)
+        private bool IsAvailableFiltredDoctors(Doctor selectedDoctor)
         {
-            for (int i = 0; i < doctors[idDoctor].Scheduled.Count; i++)
+            for (int i = 0; i < selectedDoctor.Scheduled.Count; i++)
             {
-                if (doctors[idDoctor].Scheduled[i] == GetTheClosestAppointment()) {
+                if (selectedDoctor.Scheduled[i] == GetTheClosestAppointment()) {
                     return false;
                 }
             }
@@ -246,7 +246,7 @@ namespace HospitalApplication.Windows.Secretary
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].Username.Equals(doctorUsername)){
-                    return idDoctor = doctors[i].DoctorId;
+                    return idDoctor = i.ToString(); //doctors[i].DoctorId;
                 }
             }
             return idDoctor;

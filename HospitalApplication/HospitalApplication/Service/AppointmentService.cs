@@ -226,7 +226,7 @@ namespace Logic
             filesAppointment.Write();
         }
 
-        public List<Appointment> GetAppointments(String patientName)
+        public List<Appointment> GetAppointments(String patientName) 
         {
             List<Appointment> appointments = new List<Appointment>();
             for (int i = 0; i < Examinations.Count; i++)
