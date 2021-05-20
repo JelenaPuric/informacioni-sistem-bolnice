@@ -1,5 +1,6 @@
 ﻿using HospitalApplication.Model;
 using HospitalApplication.Repository;
+using HospitalApplication.Windows.Patient1;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -60,6 +61,12 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             AnamnesisInfo window = new AnamnesisInfo();
+            window.Show();
+        }
+
+        private void CustomNotification_Click(object sender, RoutedEventArgs e)
+        {
+            WindowNotificationMake window = new WindowNotificationMake();
             window.Show();
         }
     }

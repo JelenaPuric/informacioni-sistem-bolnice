@@ -34,7 +34,8 @@
                 <Label Content="Anamnese comment:" Grid.Column="0"/>
                 <TextBox VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="AnamnesisComment" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
             </Grid>
-            <Button Content="Submit Comment" Width="130" Margin="20" x:Name="SubmitComment" Click="SubmitComment_Click" Background="#014546" Foreground="white" Height="25"/>
+            <Button Content="Submit Comment" Width="170" Margin="20" x:Name="SubmitComment" Click="SubmitComment_Click" Background="#014546" Foreground="white" Height="25"/>
+            <Button Content="Create Custom Notification" Width="170" x:Name="CustomNotification" Click="CustomNotification_Click" Background="#014546" Foreground="white" Height="25"/>
         </StackPanel>
     </Grid>
 </Page>
