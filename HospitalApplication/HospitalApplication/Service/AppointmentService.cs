@@ -326,16 +326,11 @@ namespace Logic
             int currentPenalty = patient.Penalty.Item1 + earnedPenalty;
             DateTime dateOfLastActivity = patient.Penalty.Item2;
             bool isPenaltyGreaterThanAllowed = patient.Penalty.Item3;
-            patient.Penalty = GetPenaltyItemsNewValue(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
-            FilePatients.EnterPatient(Patients);
-        }
-
-        private Tuple<int, DateTime, bool> GetPenaltyItemsNewValue(int currentPenalty, DateTime dateOfLastActivity, bool isPenaltyGreaterThanAllowed)
-        {
             currentPenalty = Math.Max(0, currentPenalty - (int)(DateTime.Now - dateOfLastActivity).TotalDays * Constants.SUBSTRACT_PENALTY_EVERY_DAY);
             dateOfLastActivity = DateTime.Now;
             if (currentPenalty > Constants.MAX_ALLOWED_PENALTY) isPenaltyGreaterThanAllowed = true;
-            return new Tuple<int, DateTime, bool>(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
+            patient.Penalty = new Tuple<int, DateTime, bool>(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
+            FilePatients.EnterPatient(Patients);
         }
 
         private bool PenaltyIsGreaterThanAllowed(Patient patient)

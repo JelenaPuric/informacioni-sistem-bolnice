@@ -10,13 +10,14 @@
 
     <Grid Margin="10">
         <StackPanel>
+            <Label Content="Surveys" HorizontalAlignment="Center" FontSize="30"/>
             <Grid HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
-                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="Rate Doctor" x:Name="RateDoctor" Click="RateDoctor_Click"/>
-                <Button Background="Green" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Rate Hospital" x:Name="RateHospital" Click="RateHospital_Click"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="Rate Doctor" x:Name="RateDoctor" Click="RateDoctor_Click" Height="25"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Rate Hospital" x:Name="RateHospital" Click="RateHospital_Click"/>
             </Grid>
         </StackPanel>
     </Grid>

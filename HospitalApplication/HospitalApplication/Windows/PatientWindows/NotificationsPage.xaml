@@ -10,30 +10,27 @@
 
     <Grid Margin="10">
         <StackPanel>
-            <Grid>
+            <Label Content="Notifications" HorizontalAlignment="Center" FontSize="30"/>
+            <Grid Margin="50 10 50 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Content="Make Notification" x:Name="MakeNotification" Click="MakeNotification_Click" Grid.Column="0" Foreground="White" Background="Green" Margin="0 0 10 0"/>
-                <Button Content="Information" x:Name="Information" Click="Information_Click" Grid.Column="1" Foreground="White" Background="Green" Margin="10 0 0 0"/>
-            </Grid>
-            <Grid Margin="0 10 0 0">
-                <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Content="Edit Notification" x:Name="EditNotification" Click="EditNotification_Click" Grid.Column="0" Foreground="White" Background="Green" Margin="0 0 10 0"/>
-                <Button Content="Cancel Notification" x:Name="CancelNotification" Click="CancelNotification_Click" Grid.Column="1" Foreground="White" Background="Green" Margin="10 0 0 0"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Content="New" x:Name="MakeNotification" Click="MakeNotification_Click" Grid.Column="0" Height="25"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Content="Info" x:Name="Information" Click="Information_Click" Grid.Column="1"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Content="Edit" x:Name="EditNotification" Click="EditNotification_Click" Grid.Column="2"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Content="Cancel" x:Name="CancelNotification" Click="CancelNotification_Click" Grid.Column="3"/>
             </Grid>
-            <ListView Margin="0 10" Name="lvUsers">
+            <ListView Margin="0 10" Name="lvUsers" Background="#A9A9A9" Height="200" HorizontalAlignment="Center">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
-                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" />
-                        <GridViewColumn Header="Repeat" DisplayMemberBinding="{Binding Repeat}" />
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" />
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding NotificationsId}" />
+                        <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="140" />
+                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="120" />
+                        <GridViewColumn Header="Repeat" DisplayMemberBinding="{Binding Repeat}" Width="50" />
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="70" />
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding NotificationsId}" Width="50" />
                     </GridView>
                 </ListView.View>
             </ListView>
