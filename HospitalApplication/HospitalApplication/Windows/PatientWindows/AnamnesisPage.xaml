@@ -1,0 +1,40 @@
+﻿<Page x:Class="HospitalApplication.Windows.PatientWindows.AnamnesisPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="AnamnesisPage">
+
+    <Grid>
+        <StackPanel Margin="10">
+            <Label Content="Anamnesis" HorizontalAlignment="Center" FontSize="30"/>
+            <Button Content="Info" Width="100" Foreground="white" x:Name="AnamneseInformation" Click="AnamneseInformation_Click" Background="#014546" Height="25"/>
+            <ListView Margin="0 10" Name="lvUsers" ScrollViewer.CanContentScroll="True" Height="150" Background="#A9A9A9" HorizontalAlignment="Center">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="120" />
+                        <GridViewColumn Header="Examination" DisplayMemberBinding="{Binding ExaminationId}" Width="120" />
+                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="150" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Grid Margin="150 20 150 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Anamnese comment:" Grid.Column="0"/>
+                <TextBox VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="AnamnesisComment" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
+            </Grid>
+            <Button Content="Submit Comment" Width="130" Margin="20" x:Name="SubmitComment" Click="SubmitComment_Click" Background="#014546" Foreground="white" Height="25"/>
+        </StackPanel>
+    </Grid>
+</Page>

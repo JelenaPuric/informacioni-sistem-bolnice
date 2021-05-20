@@ -81,6 +81,11 @@ namespace HospitalApplication.Windows.PatientWindows
             Main.Content = new SurveysPage();
         }
 
+        private void MenuAnamnesis_Selected(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AnamnesisPage();
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             NotificationService.FlagIsMarked = true;

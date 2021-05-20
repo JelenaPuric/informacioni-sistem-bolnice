@@ -109,9 +109,6 @@
     <Compile Update="Windows\DoctorWindows\ShowOperationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\PatientWindows\Home.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Windows\PatientWindows\NotificationsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -322,6 +319,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\DoctorWindows\ShowOperationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\AnamnesisInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\AnamnesisPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\Home.xaml">
