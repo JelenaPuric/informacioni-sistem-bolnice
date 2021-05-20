@@ -50,8 +50,10 @@ namespace Logic
                 MessageBox.Show("You can not schedule examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            if (doctorService.IsDoctorFree(appointment.DoctorsId, appointment.ExaminationStart) == false || roomIsFree.Item1 == false)
+            if (doctorService.IsDoctorFree(appointment.DoctorsId, appointment.ExaminationStart) == false || roomIsFree.Item1 == false){
                 MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
+                return;
+            }
             SetPatientsPenalty(patient, Constants.PENALTY_SCHEDULE);
             doctorService.AddExaminationToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
             roomService.AddExaminationToRoom(roomIsFree.Item2, appointment.ExaminationStart);
@@ -82,6 +84,7 @@ namespace Logic
             }
             if (doctorService.IsDoctorFree(newDoctorsId, examination.ExaminationStart) == false){
                 MessageBox.Show("There is no free term. Choose another time.");
+                return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_EDIT);
             doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
@@ -100,6 +103,7 @@ namespace Logic
             }
             if (doctorService.IsDoctorFree(examination.DoctorsId, newDate) == false || roomIsFree.Item1 == false){
                 MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
+                return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_MOVE);
             doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
