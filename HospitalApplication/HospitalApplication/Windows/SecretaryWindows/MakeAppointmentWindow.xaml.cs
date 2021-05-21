@@ -24,6 +24,8 @@ namespace HospitalApplication.Windows.Secretary
     {
         FileDoctors fileDoctors = FileDoctors.Instance;
         AppointmentService m = AppointmentService.Instance;
+
+        private AppointmentController controller = new AppointmentController();
         SecretaryController sc = new SecretaryController();
         string idP;
         string usernamePatient;
@@ -61,6 +63,22 @@ namespace HospitalApplication.Windows.Secretary
 
         private void CancelAppointment_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!(lvUsers.SelectedIndex > -1))
+                return;
+            Appointment appointment = (Appointment)lvUsers.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    controller.CancelExamination(appointment);
+                   // UpdateView();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+
+           /*
 
             if (!(lvUsers.SelectedIndex > -1))
             {
@@ -122,7 +140,7 @@ namespace HospitalApplication.Windows.Secretary
                 case MessageBoxResult.No:
                     break;
             }
-
+           */
 
 
         }

@@ -36,6 +36,14 @@ namespace HospitalApplication.Windows.SecretaryWindows
         private void SetValuesFields(Doctor selectedDoctor)
         {
             ComboBox1.Text = selectedDoctor.DoctorType.ToString();
+            textBoxFirstName.Text = selectedDoctor.Name;
+            textBoxLastName.Text = selectedDoctor.LastName;
+            textBoxJMBG.Text = selectedDoctor.Jmbg;
+            textBoxSex.Text = selectedDoctor.SexType.ToString();
+            textBoxDateOfBirth.Text = selectedDoctor.DateOfBirth.ToString();
+            textBoxPlaceOfResidance.Text = selectedDoctor.PlaceOfResidance;
+            textBoxPhoneNumber.Text = selectedDoctor.PhoneNumber;
+            textBoxEmail.Text = selectedDoctor.Email;
             textBoxUsername.Text = selectedDoctor.Username;
             textBoxPassword.Text = selectedDoctor.Password;
         }

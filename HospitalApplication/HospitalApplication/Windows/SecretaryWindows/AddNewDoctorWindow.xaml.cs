@@ -45,16 +45,35 @@ namespace HospitalApplication.Windows.SecretaryWindows
         {
             DoctorType doctorType = (DoctorType)Enum.Parse(typeof(DoctorType), ComboBox1.Text);
 
+            string date = BoxDateTime.Text;
+            string[] entries = date.Split('/');
+            int year = Int32.Parse(entries[2]);
+            int month = Int32.Parse(entries[0]);
+            int day = Int32.Parse(entries[1]);
+            DateTime myDate = new DateTime(year, month, day);
+
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked))
+            {
+                sex = SexType.male;
+            }
+            else if (Convert.ToBoolean(FSex.IsChecked))
+            {
+                sex = SexType.female;
+            }
+
             int n = fileDoctors.GetDoctors().Count;
             int idDoctor;
-
+            
             if (n > 0)
             {
-                idDoctor = Int32.Parse(fileDoctors.GetDoctors()[n - 1].DoctorId) + 1;
+                idDoctor = Int32.Parse(fileDoctors.GetDoctors()[n - 1].Id) + 1;
             }
             else idDoctor = 0;
 
-            Doctor newDoctor = new Doctor(textBoxUsername.Text, textBoxPassword.Text, new List<DateTime>(), doctorType, idDoctor.ToString());
+            //Doctor newDoctor = new Doctor(textBoxUsername.Text, textBoxPassword.Text, new List<DateTime>(), doctorType, idDoctor.ToString());
+            Doctor newDoctor = new Doctor(doctorType, new List<DateTime>(), textBoxFirstName.Text, textBoxLastName.Text, idDoctor.ToString(), myDate, textBoxPhoneNumber.Text, textBoxEmail.Text,
+                                         textBoxPlaceOfResidance.Text, 0, textBoxUsername.Text, textBoxPassword.Text, textBoxJMBG.Text, sex);
 
             doctorService.CreateDoctor(newDoctor);
             allDoctorsWindow.UpdateDoctors();

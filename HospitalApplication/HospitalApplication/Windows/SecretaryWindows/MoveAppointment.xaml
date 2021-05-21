@@ -16,7 +16,7 @@
         <ListView Margin="45,329,-91,105" Name="lvUsers" ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="2" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="120" Header="Type Appointment" DisplayMemberBinding="{Binding ExaminationType}" />
+                    <GridViewColumn Width="120" Header="Type Appointment" DisplayMemberBinding="{Binding AppointmentType}" />
                     <GridViewColumn Width="120" Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
                     <GridViewColumn Width="120" Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
                     <GridViewColumn Width="120" Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />

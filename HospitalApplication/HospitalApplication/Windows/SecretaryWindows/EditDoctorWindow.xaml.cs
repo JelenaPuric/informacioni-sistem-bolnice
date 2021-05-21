@@ -45,6 +45,23 @@ namespace HospitalApplication.Windows.SecretaryWindows
         private void SetValuesFields(Doctor selectedDoctor)
         {
             ComboBox1.Text = selectedDoctor.DoctorType.ToString();
+            textBoxFirstName.Text = selectedDoctor.Name;
+            textBoxLastName.Text = selectedDoctor.LastName;
+            textBoxJMBG.Text = selectedDoctor.Jmbg;
+
+            if (selectedDoctor.SexType == SexType.male)
+            {
+                MSex.IsChecked = true;
+            }
+            else
+            {
+                FSex.IsChecked = true;
+            }
+
+            BoxDateTime.Text = selectedDoctor.DateOfBirth.ToString();
+            textBoxPlaceOfResidance.Text = selectedDoctor.PlaceOfResidance;
+            textBoxPhoneNumber.Text = selectedDoctor.PhoneNumber;
+            textBoxEmail.Text = selectedDoctor.Email;
             textBoxUsername.Text = selectedDoctor.Username;
             textBoxPassword.Text = selectedDoctor.Password;
         }
@@ -52,6 +69,33 @@ namespace HospitalApplication.Windows.SecretaryWindows
         private void SetValues()
         {
             currentSelectedDoctor.DoctorType = (DoctorType)Enum.Parse(typeof(DoctorType), ComboBox1.Text);
+            currentSelectedDoctor.Name = textBoxFirstName.Text;
+            currentSelectedDoctor.LastName = textBoxLastName.Text;
+            currentSelectedDoctor.Jmbg = textBoxJMBG.Text;
+
+            SexType sex;
+            if (Convert.ToBoolean(MSex.IsChecked))
+            {
+                sex = SexType.male;
+                currentSelectedDoctor.SexType = sex;
+            }
+            else if (Convert.ToBoolean(FSex.IsChecked))
+            {
+                sex = SexType.female;
+                currentSelectedDoctor.SexType = sex;
+            }
+
+            string date = BoxDateTime.Text;
+            string[] entries = date.Split('/');
+            int year = Int32.Parse(entries[2]);
+            int month = Int32.Parse(entries[0]);
+            int day = Int32.Parse(entries[1]);
+            DateTime myDate = new DateTime(year, month, day);
+
+            currentSelectedDoctor.DateOfBirth = myDate;
+            currentSelectedDoctor.PlaceOfResidance = textBoxPlaceOfResidance.Text;
+            currentSelectedDoctor.PhoneNumber = textBoxPhoneNumber.Text;
+            currentSelectedDoctor.Email = textBoxEmail.Text;
             currentSelectedDoctor.Username = textBoxUsername.Text;
             currentSelectedDoctor.Password = textBoxPassword.Text;
         }

@@ -117,7 +117,7 @@ namespace HospitalApplication.Windows.Doctor1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/doctorwindows/doctorwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/doctorwindows/doctorwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\DoctorWindows\DoctorWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

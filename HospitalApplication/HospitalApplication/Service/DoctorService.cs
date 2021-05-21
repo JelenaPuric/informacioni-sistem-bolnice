@@ -53,7 +53,7 @@ namespace HospitalApplication.Service
         {
             for (int i = 0; i < doctors.Count; i++)
             {
-                if (doctors[i].DoctorId.Equals(currentDoctor.DoctorId))
+                if (doctors[i].Id.Equals(currentDoctor.Id))
                 {
                     doctors[i].DoctorType = currentDoctor.DoctorType;
                     doctors[i].Username = currentDoctor.Username;

@@ -74,7 +74,7 @@
                 <ListView  x:Name="lvUsers" RenderTransformOrigin="0.5,0.5" Height="574" Width="920"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="150" Header="Type Appointment" DisplayMemberBinding="{Binding ExaminationType}" />
+                            <GridViewColumn Width="150" Header="Type Appointment" DisplayMemberBinding="{Binding AppointmentType}" />
                             <GridViewColumn Width="150" Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
                             <GridViewColumn Width="150" Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
                             <GridViewColumn Width="150" Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />

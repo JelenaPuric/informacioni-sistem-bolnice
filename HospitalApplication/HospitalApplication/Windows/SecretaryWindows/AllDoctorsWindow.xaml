@@ -70,9 +70,13 @@
                 <ListView  x:Name="lvUsers" RenderTransformOrigin="0.5,0.5" Height="574" Width="920"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding DoctorId}" />
-                            <GridViewColumn Header="Type doctor" Width="120" DisplayMemberBinding="{Binding DoctorType}" />
-                            <GridViewColumn Header="First name" Width="90" DisplayMemberBinding="{Binding Username}" />
+                            <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding Id}" />
+                            <GridViewColumn Header="Doctor Type" Width="120" DisplayMemberBinding="{Binding DoctorType}" />
+                            <GridViewColumn Header="First name" Width="90" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Last name" Width="130" DisplayMemberBinding="{Binding LastName}" />
+                            <GridViewColumn Header="Date of birth" Width="150" DisplayMemberBinding="{Binding DateOfBirth}" />
+                            <GridViewColumn Header="Phone number" Width="150" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Email" Width="150" DisplayMemberBinding="{Binding Email}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

@@ -12,6 +12,7 @@ namespace Model
 
         public Doctor() { }
 
+        /*
         public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee, string idDoctor)
         {
             Username = usernameee;
@@ -20,6 +21,16 @@ namespace Model
             doctorType = doctorTypee;
             doctorId = idDoctor;
         }
+        */
+
+        public Doctor(DoctorType doctorTypee, List<DateTime> scheduledd, string namee, string lastnamee, string idd, DateTime dateOfBirthh, string phoneNumberr, string emaill, string placeOfResidancee,
+                     TypeOfPerson typeOfPersonn, string usernameee, string passworddd, string jmbggg, SexType sexTypeee) : base(namee, lastnamee, idd, dateOfBirthh, phoneNumberr, emaill, placeOfResidancee,
+                     typeOfPersonn, usernameee, passworddd, jmbggg, sexTypeee)
+        {
+            doctorType = doctorTypee;
+            scheduled = scheduledd;
+        }
+
 
         public string DoctorId
         {

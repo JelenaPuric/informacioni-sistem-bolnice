@@ -19,6 +19,7 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class EmergencyWindow : Window
     {
+        private RoomService roomService = new RoomService();
         private SecretaryController secretaryController = new SecretaryController();
         private AppointmentController patientController = new AppointmentController();
         private WorkWithFiles.FileDoctors fileDoctors = FileDoctors.Instance;
@@ -69,7 +70,8 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
-            isFreeRoom = patientController.IsRoomFree(GetTheClosestAppointment());
+            // isFreeRoom = patientController.IsRoomFree(GetTheClosestAppointment());
+            isFreeRoom = roomService.IsRoomFree(GetTheClosestAppointment());
             if (isFreeRoom.Item1 && FilterDoctors()) {
                 MessageBox("Imamo slobodan termin u najblizem roku!"); 
             }
@@ -173,10 +175,12 @@ namespace HospitalApplication.Windows.Secretary
 
         private void SheduleFreeAppointment()
         {
-            AddDateTimeInSheduleDoctorAndRoom(GetTheClosestAppointment());
+           // AddDateTimeInSheduleDoctorAndRoom(GetTheClosestAppointment()); STAROOO
             Appointment examination = new Appointment(selectedPatient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
                                                       GetTheClosestAppointment(), (GenerateExaminationId() + 1).ToString(), 0, defaultValueOfPostpone);
-            examinationService.ScheduleExamination(examination);
+
+            patientController.ScheduleExamination(examination); // NOVOOOO
+           // examinationService.ScheduleExamination(examination); STAROOO
         }
 
         private System.Windows.MessageBoxResult MessageBox(string str)

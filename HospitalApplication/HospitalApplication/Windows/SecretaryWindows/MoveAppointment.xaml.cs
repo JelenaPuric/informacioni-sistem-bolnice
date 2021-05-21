@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalApplication.Controller;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,7 @@ namespace HospitalApplication.Windows.Secretary
     {
 
         FileAppointments fx = FileAppointments.Instance;
+        private AppointmentController controller = new AppointmentController();
 
 
         private static MoveAppointment instance;

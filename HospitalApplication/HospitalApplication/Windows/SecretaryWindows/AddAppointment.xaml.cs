@@ -45,12 +45,7 @@ namespace HospitalApplication.Windows.Secretary
         public AddAppointment(string usernamePatient)
         {
             InitializeComponent();
-            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-            double windowWidth = this.Width;
-            double windowHeight = this.Height;
-            this.Left = (screenWidth / 2) - (windowWidth / 2);
-            this.Top = (screenHeight / 2) - (windowHeight / 2);
+            CenterWindow();
 
             userNP = usernamePatient;
 
@@ -62,6 +57,16 @@ namespace HospitalApplication.Windows.Secretary
             rooms = FileRooms.LoadRoom();
 
 
+        }
+
+        private void CenterWindow()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
@@ -80,7 +85,7 @@ namespace HospitalApplication.Windows.Secretary
             }
             (int, int, int) a = appointment[Combo.SelectedIndex];
             TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            DateTime d = date + time;
+            DateTime pickedDate = date + time;
 
 
 
@@ -102,7 +107,9 @@ namespace HospitalApplication.Windows.Secretary
             int docIndex = Combo3.SelectedIndex; 
             s2 = doctors[docIndex].Username;
             int roomID = 0;
-            bool sucessMakeApp = patientController.MakeAppointment(docIndex, d, userNP, s2, roomID, (idExamination + 1).ToString(), examType, Int32.Parse(textBox111.Text)); 
+
+            /*
+            bool sucessMakeApp = patientController.MakeAppointment(docIndex, pickedDate, userNP, s2, roomID, (idExamination + 1).ToString(), examType, Int32.Parse(textBox111.Text)); 
 
             if ( sucessMakeApp == false)
             {
@@ -110,9 +117,11 @@ namespace HospitalApplication.Windows.Secretary
                 Close();
                 return;
             }
+            */
 
+            Appointment newAppointment = new Appointment(userNP, doctors[Combo3.SelectedIndex].Username, "0", pickedDate, (idExamination + 1).ToString(), examType, Int32.Parse(textBox111.Text));
+            patientController.ScheduleExamination(newAppointment);
 
-         
             Close();
         }
     }
