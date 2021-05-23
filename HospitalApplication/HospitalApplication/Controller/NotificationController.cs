@@ -20,9 +20,9 @@ namespace HospitalApplication.Controller
             notificationService.CancelNotification(notification);
         }
 
-        public void EditNotification(Notification notification, string title, string descriptioin, string repeat, DateTime date)
+        public void EditNotification(Notification notification, string title, string descriptioin, string repForNextDays, DateTime date)
         {
-            notificationService.EditNotification(notification, title, descriptioin, repeat, date);
+            notificationService.EditNotification(notification, title, descriptioin, repForNextDays, date);
         }
     }
 }

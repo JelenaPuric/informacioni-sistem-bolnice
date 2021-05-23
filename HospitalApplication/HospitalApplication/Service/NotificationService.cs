@@ -10,7 +10,7 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
-        private FileNotification fileNotifications = FileNotification.Instance;
+        private FileNotifications fileNotifications = FileNotifications.Instance;
         private List<Notification> notifications;
         private List<Notification> patientsNotifications;
         public static bool FlagIsMarked { get; set; } = false;
@@ -46,9 +46,9 @@ namespace HospitalApplication.Logic
             fileNotifications.Write();
         }
 
-        public void StartNotificationThread(string usernamee)
+        public void StartNotificationThread(string patientsUsername)
         {
-            patientsNotifications = fileNotifications.GetNotifications(usernamee);
+            patientsNotifications = fileNotifications.GetNotifications(patientsUsername);
             //test notifikacija
             /*List<DateTime> dates = new List<DateTime>();
             DateTime date = new DateTime(2021, 5, 16, 15, 14, 0);

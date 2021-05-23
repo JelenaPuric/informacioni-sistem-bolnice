@@ -24,7 +24,7 @@ namespace HospitalApplication.Windows.PatientWindows
     {
         private NotificationController notificationController = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileNotification fileNotification = FileNotification.Instance;
+        private FileNotifications fileNotification = FileNotifications.Instance;
 
         private static NotificationsPage instance;
         public static NotificationsPage Instance

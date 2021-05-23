@@ -5,14 +5,11 @@ namespace Model
 {
    public class Patient : Person
    {
-      public Appointment examination;
-      public MedicalRecord medicalRecord;
-
-
+        public Appointment examination;
+        public MedicalRecord medicalRecord;
         private AccountType typeAcc;
         private List<Allergen> listAllergens;
         public Tuple<int, DateTime, bool> Penalty { get; set; }
-        
 
         public Patient() { }
 
@@ -26,31 +23,16 @@ namespace Model
             Penalty = penalty;
         }
 
-
-
-
-
-       
-
         public Model.AccountType TypeAcc
         {
             get { return typeAcc; }
             set { typeAcc = value; }
         }
 
-
-
         public List<Allergen> ListAllergens
         {
             get { return listAllergens; }
             set { listAllergens = value; }
         }
-
-
-
-
-
-
-
     }
 }

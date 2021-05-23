@@ -195,36 +195,27 @@ namespace Logic
         //Ratko dodao, ove funkcije pozivam u ExaminationService
         public Tuple<bool, int> IsRoomFree(DateTime date)
         {
-            for (int i = 0; i < rooms.Count; i++)
-            {
+            for (int i = 0; i < rooms.Count; i++){
                 bool roomIsFree = true;
                 for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                {
-                    if (rooms[i].Scheduled[j] == date)
-                        roomIsFree = false;
-                }
-                if (roomIsFree)
-                    return new Tuple<bool, int>(true, i);
+                    if (rooms[i].Scheduled[j] == date) roomIsFree = false;
+                if (roomIsFree) return new Tuple<bool, int>(true, i);
             }
             return new Tuple<bool, int>(false, -1);
         }
 
-        public void AddExaminationToRoom(int roomIndex, DateTime date)
+        public void AddAppointmentToRoom(int roomIndex, DateTime date)
         {
             rooms[roomIndex].Scheduled.Add(date);
             FileRooms.EnterRoom(rooms);
         }
 
-        public void RemoveExaminationFromRoom(String roomId, DateTime date)
+        public void RemoveAppointmentFromRoom(string roomId, DateTime date)
         {
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                if (rooms[i].RoomId.ToString() == roomId)
-                {
-                    for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                    {
-                        if (rooms[i].Scheduled[j] == date)
-                        {
+            for (int i = 0; i < rooms.Count; i++){
+                if (rooms[i].RoomId.ToString() == roomId){
+                    for (int j = 0; j < rooms[i].Scheduled.Count; j++){
+                        if (rooms[i].Scheduled[j] == date){
                             rooms[i].Scheduled.RemoveAt(j);
                             FileRooms.EnterRoom(rooms);
                             break;

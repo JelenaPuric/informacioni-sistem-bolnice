@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class DoctorSurvey : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FileSurvey fileSurvey = FileSurvey.Instance;
+        private FileSurveys fileSurvey = FileSurveys.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private int[] numericalAnswers = new int[100];
 

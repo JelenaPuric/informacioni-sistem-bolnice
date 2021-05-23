@@ -7,11 +7,11 @@ namespace Model
     {
         public Room room;
         public Patient[] pacient;
-        public String ExaminationId { get; set; }
+        public string ExaminationId { get; set; }
         public DateTime ExaminationStart { get; set; }
-        public String PatientsId { get; set; }
-        public String DoctorsId { get; set; }
-        public String RoomId { get; set; }
+        public string PatientsId { get; set; }
+        public string DoctorsId { get; set; }
+        public string RoomId { get; set; }
         public int PostponeAppointment { get; set; }
         public ExaminationType AppointmentType { get; set; }
 

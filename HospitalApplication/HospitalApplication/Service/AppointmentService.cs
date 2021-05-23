@@ -56,62 +56,62 @@ namespace Logic
             }
             SetPatientsPenalty(patient, Constants.PENALTY_SCHEDULE);
             doctorService.AddAppointmentToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
-            roomService.AddExaminationToRoom(roomIsFree.Item2, appointment.ExaminationStart);
+            roomService.AddAppointmentToRoom(roomIsFree.Item2, appointment.ExaminationStart);
             Appointments.Add(appointment);
             fileAppointments.Write();
         }
 
-        public void CancelAppointment(Appointment examination)
+        public void CancelAppointment(Appointment appointment)
         {
-            Patient patient = GetPatient(examination.PatientsId);
+            Patient patient = GetPatient(appointment.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not cancel examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_CANCEL);
-            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
-            Appointments.RemoveAt(fileAppointments.GetAppointmentsIndex(examination));
+            doctorService.RemoveAppointmentFromDoctor(appointment.DoctorsId, appointment.ExaminationStart);
+            roomService.RemoveAppointmentFromRoom(appointment.RoomId, appointment.ExaminationStart);
+            Appointments.RemoveAt(fileAppointments.GetAppointmentsIndex(appointment));
             fileAppointments.Write();
         }
 
-        public void EditAppointment(Appointment examination, string newDoctorsId)
+        public void EditAppointment(Appointment appointment, string doctorsId)
         {
-            Patient patient = GetPatient(examination.PatientsId);
+            Patient patient = GetPatient(appointment.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not edit examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            if (doctorService.IsDoctorFree(newDoctorsId, examination.ExaminationStart) == false){
+            if (doctorService.IsDoctorFree(doctorsId, appointment.ExaminationStart) == false){
                 MessageBox.Show("There is no free term. Choose another time.");
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_EDIT);
-            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            doctorService.AddAppointmentToDoctor(newDoctorsId, examination.ExaminationStart);
-            examination.DoctorsId = newDoctorsId;
+            doctorService.RemoveAppointmentFromDoctor(appointment.DoctorsId, appointment.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(doctorsId, appointment.ExaminationStart);
+            appointment.DoctorsId = doctorsId;
             fileAppointments.Write();
         }
 
-        public void MoveAppointment(Appointment examination, DateTime newDate)
+        public void MoveAppointment(Appointment appointment, DateTime newDate)
         {
-            Tuple<bool, int> roomIsFree = roomService.IsRoomFree(examination.ExaminationStart);
-            Patient patient = GetPatient(examination.PatientsId);
+            Tuple<bool, int> roomIsFree = roomService.IsRoomFree(appointment.ExaminationStart);
+            Patient patient = GetPatient(appointment.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not move examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
             }
-            if (doctorService.IsDoctorFree(examination.DoctorsId, newDate) == false || roomIsFree.Item1 == false){
+            if (doctorService.IsDoctorFree(appointment.DoctorsId, newDate) == false || roomIsFree.Item1 == false){
                 MessageBox.Show("Choosen term is not free. Choose another one.", "Info", MessageBoxButton.OK);
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_MOVE);
-            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            doctorService.AddAppointmentToDoctor(examination.DoctorsId, newDate);
-            roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
-            roomService.AddExaminationToRoom(roomIsFree.Item2, newDate);
-            examination.ExaminationStart = newDate;
-            examination.RoomId = Rooms[roomIsFree.Item2].RoomId.ToString();
+            doctorService.RemoveAppointmentFromDoctor(appointment.DoctorsId, appointment.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(appointment.DoctorsId, newDate);
+            roomService.RemoveAppointmentFromRoom(appointment.RoomId, appointment.ExaminationStart);
+            roomService.AddAppointmentToRoom(roomIsFree.Item2, newDate);
+            appointment.ExaminationStart = newDate;
+            appointment.RoomId = Rooms[roomIsFree.Item2].RoomId.ToString();
             fileAppointments.Write();
         }
 

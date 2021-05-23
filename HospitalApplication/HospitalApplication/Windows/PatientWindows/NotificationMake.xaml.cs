@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationMake : Window
     {
-        private FileNotification fileNotification = FileNotification.Instance;
+        private FileNotifications fileNotification = FileNotifications.Instance;
         private int notificationId = 100000;
         private NotificationsPage pageNotifications = NotificationsPage.Instance;
         private MainWindow mainWindow = MainWindow.Instance;

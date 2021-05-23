@@ -27,7 +27,7 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class SurveysPage : Page
     {
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileSurvey filesSurvey = FileSurvey.Instance;
+        private FileSurveys filesSurvey = FileSurveys.Instance;
         private List<Appointment> appointments = new List<Appointment>();
         List<Survey> surveys = new List<Survey>();
         private FileAppointments filesExamination = FileAppointments.Instance;

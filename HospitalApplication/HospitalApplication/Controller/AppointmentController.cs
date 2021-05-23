@@ -12,38 +12,38 @@ namespace HospitalApplication.Controller
     {
         private AppointmentService appointmentService = AppointmentService.Instance;
 
-        public void ScheduleAppointment(Appointment e) {
-            appointmentService.ScheduleAppointment(e);
+        public void ScheduleAppointment(Appointment appointment) {
+            appointmentService.ScheduleAppointment(appointment);
         }
 
-        public void CancelAppointment(Appointment examination)
+        public void CancelAppointment(Appointment appointment)
         {
-            appointmentService.CancelAppointment(examination);
+            appointmentService.CancelAppointment(appointment);
         }
 
-        public void MoveAppointment(Appointment examination, DateTime date)
+        public void MoveAppointment(Appointment appointment, DateTime date)
         {
-            appointmentService.MoveAppointment(examination, date);
+            appointmentService.MoveAppointment(appointment, date);
         }
 
-        public void EditAppointment(Appointment examination, string doctor)
+        public void EditAppointment(Appointment appointment, string doctorsId   )
         {
-            appointmentService.EditAppointment(examination, doctor);
+            appointmentService.EditAppointment(appointment, doctorsId);
         }
 
-        public void AddExaminationToDoctor(String doctorUsername, DateTime date)
+        public void AddExaminationToDoctor(String doctorsUsername, DateTime date)
         {
-            appointmentService.AddAppointmentToDoctor(doctorUsername, date);
+            appointmentService.AddAppointmentToDoctor(doctorsUsername, date);
         }
 
-        public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
+        public void RemoveExaminationFromDoctor(String doctorsUsername, DateTime date)
         {
-            appointmentService.RemoveAppointmentFromDoctor(doctorUsername, date);
+            appointmentService.RemoveAppointmentFromDoctor(doctorsUsername, date);
         }
 
-        public bool IsDoctorFree(String doctorUsername, DateTime date)
+        public bool IsDoctorFree(String doctorsUsername, DateTime date)
         {
-            return appointmentService.IsDoctorFree(doctorUsername, date);
+            return appointmentService.IsDoctorFree(doctorsUsername, date);
         }
 
         public void AddExaminationToRoom(int roomIndex, DateTime date)

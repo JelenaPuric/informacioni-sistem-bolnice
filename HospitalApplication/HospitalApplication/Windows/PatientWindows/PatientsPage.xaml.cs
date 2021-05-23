@@ -30,7 +30,7 @@ namespace HospitalApplication.Windows.PatientWindows
         private AppointmentService examinationManagement = AppointmentService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FileSurvey filesSurvey = FileSurvey.Instance;
+        private FileSurveys filesSurvey = FileSurveys.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
         private FileAppointments fileAppointments = FileAppointments.Instance;
         List<Survey> surveys = new List<Survey>();

@@ -44,9 +44,9 @@ namespace HospitalApplication.WorkWithFiles
             return doctors;
         }
 
-        public Doctor GetDoctor(string doctorUsername) {
+        public Doctor GetDoctor(string doctorsUsername) {
             for (int i = 0; i < doctors.Count; i++)
-                if (doctorUsername == doctors[i].Username) return doctors[i];
+                if (doctorsUsername == doctors[i].Username) return doctors[i];
             return null;
         }
     }

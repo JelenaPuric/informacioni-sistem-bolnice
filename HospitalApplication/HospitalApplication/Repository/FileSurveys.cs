@@ -8,22 +8,22 @@ using Newtonsoft.Json;
 
 namespace HospitalApplication.Repository
 {
-    class FileSurvey : IFile
+    class FileSurveys : IFile
     {
         private string path = "../../../Data/surveys.json";
         private List<Survey> surveys;
-        private static FileSurvey instance;
-        public static FileSurvey Instance
+        private static FileSurveys instance;
+        public static FileSurveys Instance
         {
             get
             {
                 if (null == instance)
-                    instance = new FileSurvey();
+                    instance = new FileSurveys();
                 return instance;
             }
         }
 
-        private FileSurvey() {
+        private FileSurveys() {
             Read();
         }
 

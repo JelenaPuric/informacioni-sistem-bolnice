@@ -9,22 +9,22 @@ using Nancy.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
-    class FileNotification : IFile
+    class FileNotifications : IFile
     {
         private string path = "../../../Data/notifications.json";
         private List<Notification> notifications;
-        private static FileNotification instance;
-        public static FileNotification Instance
+        private static FileNotifications instance;
+        public static FileNotifications Instance
         {
             get
             {
                 if (null == instance)
-                    instance = new FileNotification();
+                    instance = new FileNotifications();
                 return instance;
             }
         }
 
-        private FileNotification() {
+        private FileNotifications() {
             Read();
         }
 
