@@ -330,7 +330,7 @@ namespace Logic
 
         private bool PenaltyIsGreaterThanAllowed(Patient patient)
         {
-            return patient.Penalty.Item3;
+            return patient.Penalty.Item3; 
         }
 
         private Patient GetPatient(string patientsUsername) {
