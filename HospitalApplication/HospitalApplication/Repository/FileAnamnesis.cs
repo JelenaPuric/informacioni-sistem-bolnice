@@ -40,16 +40,11 @@ namespace HospitalApplication.Repository
             File.WriteAllText(path, json);
         }
 
-        public List<Anamnesis> GetAnamnesis() {
-            return anamnesis;
-        }
-
         public List<Anamnesis> GetAnamnesis(string patientsId)
         {
             List<Anamnesis> patientAnamnesis = new List<Anamnesis>();
-            for (int i = 0; i < anamnesis.Count; i++) {
+            for (int i = 0; i < anamnesis.Count; i++)
                 if (anamnesis[i].PatientsId == patientsId) patientAnamnesis.Add(anamnesis[i]);
-            }
             return patientAnamnesis;
         }
     }

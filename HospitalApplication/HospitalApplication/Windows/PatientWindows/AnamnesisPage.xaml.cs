@@ -44,8 +44,6 @@ namespace HospitalApplication.Windows.PatientWindows
             instance = this;
             anamnesis = fileAnamnesis.GetAnamnesis(mainWindow.Username.Text.ToString());
             lvUsers.ItemsSource = anamnesis;
-            //anamnesis.Add(new Anamnesis("a", "b", "c", "d", "e", "f", DateTime.Now));
-            //fileAnamnesis.Write();
         }
 
         private void SubmitComment_Click(object sender, RoutedEventArgs e)

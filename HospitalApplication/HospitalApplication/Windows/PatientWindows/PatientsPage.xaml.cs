@@ -32,7 +32,7 @@ namespace HospitalApplication.Windows.PatientWindows
         private AppointmentController controller = new AppointmentController();
         private FileSurvey filesSurvey = FileSurvey.Instance;
         private List<Appointment> allExaminations = new List<Appointment>();
-        private FileAppointments filesExamination = FileAppointments.Instance;
+        private FileAppointments fileAppointments = FileAppointments.Instance;
         List<Survey> surveys = new List<Survey>();
 
         private static PatientsPage instance;
@@ -52,18 +52,18 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             InitializeComponent();
             instance = this;
-            List<Appointment> appointments = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
+            List<Appointment> appointments = fileAppointments.GetAppointments(mainWindow.PatientsUsername);
             appointments.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = appointments;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
-            allExaminations = filesExamination.GetAppointments();
+            allExaminations = fileAppointments.GetAppointments();
             surveys = filesSurvey.GetSurveys();
         }
 
         public void UpdateView()
         {
-            List<Appointment> examinations = examinationManagement.GetAppointments(mainWindow.PatientsUsername);
+            List<Appointment> examinations = fileAppointments.GetAppointments(mainWindow.PatientsUsername);
             examinations.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = examinations;
@@ -84,7 +84,7 @@ namespace HospitalApplication.Windows.PatientWindows
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    controller.CancelExamination(appointment);
+                    controller.CancelAppointment(appointment);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:

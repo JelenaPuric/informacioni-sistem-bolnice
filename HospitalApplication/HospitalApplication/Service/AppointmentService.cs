@@ -11,11 +11,11 @@ namespace Logic
 {
     public class AppointmentService
     {
-        private FileAppointments filesAppointment = FileAppointments.Instance;
+        private FileAppointments fileAppointments = FileAppointments.Instance;
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
         private FileDoctors fileDoctors = FileDoctors.Instance;
-        public List<Appointment> Examinations { get; set; }
+        public List<Appointment> Appointments { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         public List<Patient> Patients { get; set; }
@@ -35,13 +35,13 @@ namespace Logic
 
         public AppointmentService()
         {
-            Examinations = filesAppointment.GetAppointments();
+            Appointments = fileAppointments.GetAppointments();
             Doctors = fileDoctors.GetDoctors();
             Rooms = FileRooms.LoadRoom();
             Patients = FilePatients.LoadPatients();
         }
 
-        public void ScheduleExamination(Appointment appointment)
+        public void ScheduleAppointment(Appointment appointment)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(appointment.ExaminationStart);
             appointment.RoomId = FileRooms.GetRoomId(roomIsFree.Item2);
@@ -55,13 +55,13 @@ namespace Logic
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_SCHEDULE);
-            doctorService.AddExaminationToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(appointment.DoctorsId, appointment.ExaminationStart);
             roomService.AddExaminationToRoom(roomIsFree.Item2, appointment.ExaminationStart);
-            Examinations.Add(appointment);
-            filesAppointment.Write();
+            Appointments.Add(appointment);
+            fileAppointments.Write();
         }
 
-        public void CancelExamination(Appointment examination)
+        public void CancelAppointment(Appointment examination)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)){
@@ -69,13 +69,13 @@ namespace Logic
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_CANCEL);
-            doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
+            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
             roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
-            Examinations.RemoveAt(filesAppointment.GetExaminationsIndex(examination));
-            filesAppointment.Write();
+            Appointments.RemoveAt(fileAppointments.GetAppointmentsIndex(examination));
+            fileAppointments.Write();
         }
 
-        public void EditExamination(Appointment examination, string newDoctorsId)
+        public void EditAppointment(Appointment examination, string newDoctorsId)
         {
             Patient patient = GetPatient(examination.PatientsId);
             if (PenaltyIsGreaterThanAllowed(patient)){
@@ -87,13 +87,13 @@ namespace Logic
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_EDIT);
-            doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            doctorService.AddExaminationToDoctor(newDoctorsId, examination.ExaminationStart);
+            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(newDoctorsId, examination.ExaminationStart);
             examination.DoctorsId = newDoctorsId;
-            filesAppointment.Write();
+            fileAppointments.Write();
         }
 
-        public void MoveExamination(Appointment examination, DateTime newDate)
+        public void MoveAppointment(Appointment examination, DateTime newDate)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(examination.ExaminationStart);
             Patient patient = GetPatient(examination.PatientsId);
@@ -106,13 +106,13 @@ namespace Logic
                 return;
             }
             SetPatientsPenalty(patient, Constants.PENALTY_MOVE);
-            doctorService.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            doctorService.AddExaminationToDoctor(examination.DoctorsId, newDate);
+            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(examination.DoctorsId, newDate);
             roomService.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
             roomService.AddExaminationToRoom(roomIsFree.Item2, newDate);
             examination.ExaminationStart = newDate;
             examination.RoomId = Rooms[roomIsFree.Item2].RoomId.ToString();
-            filesAppointment.Write();
+            fileAppointments.Write();
         }
 
         public bool MakeEmergencyAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, 
@@ -158,7 +158,7 @@ namespace Logic
 
                     //Napraviti jos jedan parametar za odlaganje termina
                     Appointment examination = new Appointment(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
-                    ScheduleExamination(examination);
+                    ScheduleAppointment(examination);
 
                     return true;
                 }
@@ -216,27 +216,18 @@ namespace Logic
         public void MoveAppointment(string id, DateTime date, int roomIndex)
         {
             Appointment e = new Appointment();
-            for (int i = 0; i < Examinations.Count; i++)
+            for (int i = 0; i < Appointments.Count; i++)
             {
-                if (Examinations[i].ExaminationId == id)
+                if (Appointments[i].ExaminationId == id)
                 {
-                    e = Examinations[i];
-                    Examinations.RemoveAt(i);
+                    e = Appointments[i];
+                    Appointments.RemoveAt(i);
                 }
             }
             e.ExaminationStart = date;
             e.RoomId = Rooms[roomIndex].RoomId.ToString();
-            Examinations.Add(e);
-            filesAppointment.Write();
-        }
-
-        public List<Appointment> GetAppointments(String patientName) 
-        {
-            List<Appointment> appointments = new List<Appointment>();
-            for (int i = 0; i < Examinations.Count; i++)
-                if (Examinations[i].PatientsId == patientName && Examinations[i].ExaminationStart >= DateTime.Now)
-                    appointments.Add(Examinations[i]);
-            return appointments;
+            Appointments.Add(e);
+            fileAppointments.Write();
         }
 
         public void AddAppointmentToDoctor(String doctorUsername, DateTime date)
@@ -346,11 +337,6 @@ namespace Logic
             for (int i = 0; i < Patients.Count; i++)
                 if (Patients[i].Username == patientsUsername) return Patients[i];
             return null;
-        }
-
-        public void UpdateDoctors()
-        {
-            Doctors = fileDoctors.GetDoctors();
         }
     }
 }

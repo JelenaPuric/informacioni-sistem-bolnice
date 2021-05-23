@@ -89,7 +89,7 @@ namespace HospitalApplication.Windows.Secretary
 
 
 
-            List<Appointment> examinations = m.Examinations;
+            List<Appointment> examinations = m.Appointments;
             if (ok == false)
             {
                 ok = true;
@@ -120,7 +120,7 @@ namespace HospitalApplication.Windows.Secretary
             */
 
             Appointment newAppointment = new Appointment(userNP, doctors[Combo3.SelectedIndex].Username, "0", pickedDate, (idExamination + 1).ToString(), examType, Int32.Parse(textBox111.Text));
-            patientController.ScheduleExamination(newAppointment);
+            patientController.ScheduleAppointment(newAppointment);
 
             Close();
         }

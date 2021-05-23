@@ -27,7 +27,6 @@ namespace HospitalApplication
         private AppointmentController controller = new AppointmentController();
         private string doctorsUsername;
         private PatientsPage pagePatients = PatientsPage.Instance;
-        //private WindowPatient windowPatient = WindowPatient.Instance;
         private int idExamination = 100000;
         private MainWindow mainWindow = MainWindow.Instance;
         private List<Doctor> doctors = new List<Doctor>();
@@ -44,7 +43,7 @@ namespace HospitalApplication
             GenerateTerms();
             doctors = examinationService.Doctors;
             rooms = examinationService.Rooms;
-            examinations = examinationService.Examinations;
+            examinations = examinationService.Appointments;
             for (int i = 0; i < doctors.Count; i++)
                 Combo3.Items.Add(doctors[i].Username.ToString());
         }
@@ -73,7 +72,7 @@ namespace HospitalApplication
             DateTime newDate = DateTime.Parse(stringDate);
             GenerateExaminationId();
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctorsUsername, rooms[roomIndex].RoomId.ToString(), newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
-            controller.ScheduleExamination(appointment);
+            controller.ScheduleAppointment(appointment);
             pagePatients.UpdateView();
             Close();
         }
@@ -83,7 +82,7 @@ namespace HospitalApplication
             DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             GenerateExaminationId();
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctors[Combo3.SelectedIndex].Username, "0", newDate, (idExamination + 1).ToString(), 0, Int32.Parse(textBox111.Text));
-            controller.ScheduleExamination(appointment);
+            controller.ScheduleAppointment(appointment);
             pagePatients.UpdateView();
             Close();
         }
@@ -119,7 +118,6 @@ namespace HospitalApplication
                     newDate = date1.Date.AddDays(i) + new TimeSpan(term[j].Item1, term[j].Item2, term[j].Item3);
                     Tuple<bool, int> roomIsFree = controller.IsRoomFree(newDate);
                     roomIndex = roomIsFree.Item2;
-                    controller.UpdateDoctors();
                     if (controller.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= date2 && newDate >= date1){
                         newDates.Add(newDate);
                         Combo4.Items.Add(newDates[i].ToString());
@@ -141,7 +139,6 @@ namespace HospitalApplication
                         newDate = date2.Date.AddDays(j) + new TimeSpan(term[i].Item1, term[i].Item2, term[i].Item3);
                         Tuple<bool, int> roomIsFree = controller.IsRoomFree(newDate);
                         roomIndex = roomIsFree.Item2;
-                        controller.UpdateDoctors();
                         if (controller.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate > date2)
                             newDates.Add(newDate);
                     }
@@ -154,7 +151,6 @@ namespace HospitalApplication
                         newDate = date2.Date.AddDays(-j) + new TimeSpan(term[i].Item1, term[i].Item2, term[i].Item3);
                         Tuple<bool, int> roomIsFree = controller.IsRoomFree(newDate);
                         roomIndex = roomIsFree.Item2;
-                        controller.UpdateDoctors();
                         if (controller.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate < date1 && newDate > DateTime.Now)
                             newDates.Add(newDate);
                     }
@@ -178,7 +174,6 @@ namespace HospitalApplication
                         newDate = date1.Date.AddDays(j) + new TimeSpan(time[i].Item1, time[i].Item2, time[i].Item3);
                         Tuple<bool, int> roomIsFree = controller.IsRoomFree(newDate);
                         roomIndex = roomIsFree.Item2;
-                        controller.UpdateDoctors();
                         if (controller.IsDoctorFree(doctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= date2 && newDate >= date1)
                         {
                             newDates.Add(newDate);

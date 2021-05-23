@@ -63,23 +63,19 @@ namespace HospitalApplication.Service
             fileDoctors.Write();
         }
 
-        public bool IsDoctorFree(String doctorUsername, DateTime date)
+        public bool IsDoctorFree(string doctorUsername, DateTime date)
         {
             for (int i = 0; i < doctors.Count; i++)
                 if (doctors[i].Username == doctorUsername)
                     for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                        if (doctors[i].Scheduled[j] == date)
-                            return false;
+                        if (doctors[i].Scheduled[j] == date) return false;
             return true;
         }
 
-
-        public void AddExaminationToDoctor(String doctorUsername, DateTime date)
+        public void AddAppointmentToDoctor(string doctorUsername, DateTime date)
         {
-            for (int i = 0; i < doctors.Count; i++)
-            {
-                if (doctors[i].Username == doctorUsername)
-                {
+            for (int i = 0; i < doctors.Count; i++){
+                if (doctors[i].Username == doctorUsername){
                     doctors[i].Scheduled.Add(date);
                     fileDoctors.Write();
                     break;
@@ -87,16 +83,12 @@ namespace HospitalApplication.Service
             }
         }
 
-        public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
+        public void RemoveAppointmentFromDoctor(string doctorUsername, DateTime date)
         {
-            for (int i = 0; i < doctors.Count; i++)
-            {
-                if (doctors[i].Username == doctorUsername)
-                {
-                    for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                    {
-                        if (doctors[i].Scheduled[j] == date)
-                        {
+            for (int i = 0; i < doctors.Count; i++){
+                if (doctors[i].Username == doctorUsername){
+                    for (int j = 0; j < doctors[i].Scheduled.Count; j++){
+                        if (doctors[i].Scheduled[j] == date){
                             doctors[i].Scheduled.RemoveAt(j);
                             break;
                         }
@@ -106,6 +98,5 @@ namespace HospitalApplication.Service
                 }
             }
         }
-
     }
 }

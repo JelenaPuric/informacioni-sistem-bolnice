@@ -10,75 +10,60 @@ namespace HospitalApplication.Controller
 {
     class AppointmentController
     {
-        private AppointmentService examinationService = AppointmentService.Instance;
+        private AppointmentService appointmentService = AppointmentService.Instance;
 
-        public void ScheduleExamination(Appointment e) {
-            examinationService.ScheduleExamination(e);
+        public void ScheduleAppointment(Appointment e) {
+            appointmentService.ScheduleAppointment(e);
         }
 
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
+        public void CancelAppointment(Appointment examination)
         {
-            return examinationService.MakeAppointment( docIndex,  date,  usernamePatient,  usernameDoctor,  roomId,  idExaminatin,  typeExam, postponeAppointment);
+            appointmentService.CancelAppointment(examination);
         }
 
-        public void CancelExamination(Appointment examination)
+        public void MoveAppointment(Appointment examination, DateTime date)
         {
-            examinationService.CancelExamination(examination);
+            appointmentService.MoveAppointment(examination, date);
         }
 
-        public void MoveExamination(Appointment examination, DateTime date)
+        public void EditAppointment(Appointment examination, string doctor)
         {
-            examinationService.MoveExamination(examination, date);
-        }
-
-        public void EditExamination(Appointment examination, string doctor)
-        {
-            examinationService.EditExamination(examination, doctor);
-        }
-
-        public List<Appointment> GetExaminations(String patientName)
-        {
-            return examinationService.GetAppointments(patientName);
+            appointmentService.EditAppointment(examination, doctor);
         }
 
         public void AddExaminationToDoctor(String doctorUsername, DateTime date)
         {
-            examinationService.AddAppointmentToDoctor(doctorUsername, date);
+            appointmentService.AddAppointmentToDoctor(doctorUsername, date);
         }
 
         public void RemoveExaminationFromDoctor(String doctorUsername, DateTime date)
         {
-            examinationService.RemoveAppointmentFromDoctor(doctorUsername, date);
+            appointmentService.RemoveAppointmentFromDoctor(doctorUsername, date);
         }
 
         public bool IsDoctorFree(String doctorUsername, DateTime date)
         {
-            return examinationService.IsDoctorFree(doctorUsername, date);
+            return appointmentService.IsDoctorFree(doctorUsername, date);
         }
 
         public void AddExaminationToRoom(int roomIndex, DateTime date)
         {
-            examinationService.AddAppointmentToRoom(roomIndex, date);
+            appointmentService.AddAppointmentToRoom(roomIndex, date);
         }
 
         public void RemoveExaminationFromRoom(String roomId, DateTime date)
         {
-            examinationService.RemoveAppointmentFromRoom(roomId, date);
+            appointmentService.RemoveAppointmentFromRoom(roomId, date);
         }
 
         public Tuple<bool, int> IsRoomFree(DateTime date)
         {
-            return examinationService.IsRoomFree(date);
-        }
-
-        public void UpdateDoctors()
-        {
-            examinationService.UpdateDoctors();
+            return appointmentService.IsRoomFree(date);
         }
 
         public void MoveAppointment(string id, DateTime date, int roomIndex)
         {
-            examinationService.MoveAppointment(id, date, roomIndex);
+            appointmentService.MoveAppointment(id, date, roomIndex);
         }
     }
 }

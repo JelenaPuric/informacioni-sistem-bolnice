@@ -9,19 +9,7 @@ namespace Model
         private DoctorType doctorType;
         private List<DateTime> scheduled;
 
-
         public Doctor() { }
-
-        /*
-        public Doctor(string usernameee, string passworddd, List<DateTime> scheduledd, DoctorType doctorTypee, string idDoctor)
-        {
-            Username = usernameee;
-            Password = passworddd;
-            Scheduled = scheduledd;
-            doctorType = doctorTypee;
-            doctorId = idDoctor;
-        }
-        */
 
         public Doctor(DoctorType doctorTypee, List<DateTime> scheduledd, string namee, string lastnamee, string idd, DateTime dateOfBirthh, string phoneNumberr, string emaill, string placeOfResidancee,
                      TypeOfPerson typeOfPersonn, string usernameee, string passworddd, string jmbggg, SexType sexTypeee) : base(namee, lastnamee, idd, dateOfBirthh, phoneNumberr, emaill, placeOfResidancee,
@@ -30,7 +18,6 @@ namespace Model
             doctorType = doctorTypee;
             scheduled = scheduledd;
         }
-
 
         public string DoctorId
         {

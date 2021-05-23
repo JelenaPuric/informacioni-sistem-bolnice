@@ -24,6 +24,7 @@ namespace HospitalApplication.Windows.Secretary
     {
         FileDoctors fileDoctors = FileDoctors.Instance;
         AppointmentService m = AppointmentService.Instance;
+        private FileAppointments fileAppointments = FileAppointments.Instance;
 
         private AppointmentController controller = new AppointmentController();
         SecretaryController sc = new SecretaryController();
@@ -44,7 +45,7 @@ namespace HospitalApplication.Windows.Secretary
             usernamePatient = sc.getPatient(idP).Username;
 
 
-            List<Appointment> examinations = m.GetAppointments(sc.getPatient(idP).Username);
+            List<Appointment> examinations = fileAppointments.GetAppointments(sc.getPatient(idP).Username);
             lvUsers.ItemsSource = examinations;
 
         }
@@ -71,7 +72,7 @@ namespace HospitalApplication.Windows.Secretary
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    controller.CancelExamination(appointment);
+                    controller.CancelAppointment(appointment);
                    // UpdateView();
                     break;
                 case MessageBoxResult.No:
@@ -147,7 +148,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            List<Appointment> examinations = m.GetAppointments(sc.getPatient(idP).Username);
+            List<Appointment> examinations = fileAppointments.GetAppointments(sc.getPatient(idP).Username);
             lvUsers.ItemsSource = examinations;
         }
 

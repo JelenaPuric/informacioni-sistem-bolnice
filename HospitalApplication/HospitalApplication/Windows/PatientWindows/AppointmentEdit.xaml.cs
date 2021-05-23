@@ -27,7 +27,6 @@ namespace HospitalApplication.Windows.Patient1
         private FileDoctors fileDoctors = FileDoctors.Instance;
         private List<Doctor> doctors;
         private PatientsPage pagePatients = PatientsPage.Instance;
-        //private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
@@ -41,7 +40,7 @@ namespace HospitalApplication.Windows.Patient1
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             Appointment appointment = (Appointment)pagePatients.lvUsers.SelectedItem;
-            controller.EditExamination(appointment, Combo.SelectedItem.ToString());
+            controller.EditAppointment(appointment, Combo.SelectedItem.ToString());
             pagePatients.UpdateView();
             Close();
         }

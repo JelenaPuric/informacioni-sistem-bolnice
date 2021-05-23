@@ -39,15 +39,24 @@ namespace WorkWithFiles
             File.WriteAllText(path, json);
         }
 
-        public List<Appointment> GetAppointments() {
+        public List<Appointment> GetAppointments(){
             return appointments;
         }
 
-        public int GetExaminationsIndex(Appointment appointment)
+        public int GetAppointmentsIndex(Appointment appointment)
         {
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i] == appointment) return i;
             return 0;
+        }
+
+        public List<Appointment> GetAppointments(string patientsId)
+        {
+            List<Appointment> patientsAppointments = new List<Appointment>();
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i].PatientsId == patientsId && appointments[i].ExaminationStart >= DateTime.Now)
+                    patientsAppointments.Add(appointments[i]);
+            return patientsAppointments;
         }
     }
 }

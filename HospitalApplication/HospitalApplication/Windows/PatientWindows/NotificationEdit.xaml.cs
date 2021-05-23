@@ -23,7 +23,6 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowNotificationEdit : Window
     {
         private NotificationsPage pageNotifications = NotificationsPage.Instance;
-        //private WindowPatientNotifications windowNotifications = WindowPatientNotifications.Instance;
         private NotificationController controller = new NotificationController();
 
         public WindowNotificationEdit()

@@ -10,57 +10,51 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
-        private FileNotification filesNotification = FileNotification.Instance;
+        private FileNotification fileNotifications = FileNotification.Instance;
         private List<Notification> notifications;
-        private List<Notification> notificationsForLoggedInPatient;
-        private FileNotification fileNotification = FileNotification.Instance;
+        private List<Notification> patientsNotifications;
         public static bool FlagIsMarked { get; set; } = false;
         
         public NotificationService()
         {
-            notifications = filesNotification.GetNotifications();
+            notifications = fileNotifications.GetNotifications();
         }
 
         public void ScheduleNotification(Notification notification)
         {
             notifications.Add(notification);
-            filesNotification.Write();
+            fileNotifications.Write();
         }
 
         public void CancelNotification(Notification notification)
         {
             for (int i = 0; i < notifications.Count; i++)
                 if (notifications[i].NotificationsId == notification.NotificationsId) notifications.RemoveAt(i);
-            filesNotification.Write();
+            fileNotifications.Write();
         }
 
-        public void EditNotification(Notification notification, string title, string descriptioin, string repeat, DateTime newDates)
+        public void EditNotification(Notification notification, string title, string descriptioin, string repeatForNextDays, DateTime newDate)
         {
             notification.Title = title;
             notification.Description = descriptioin;
-            notification.Repeat = repeat;
+            notification.Repeat = repeatForNextDays;
             List<DateTime> dates = new List<DateTime>();
-            dates.Add(newDates);
-            for (int i = 0; i < Int32.Parse(repeat); i++)
-            {
-                newDates = newDates.AddDays(1);
-                dates.Add(newDates);
-            }
+            dates.Add(newDate);
+            for (int i = 0; i < Int32.Parse(repeatForNextDays); i++)
+                dates.Add(newDate.AddDays(1));
             notification.Dates = dates;
-            notifications.Add(notification);
-            filesNotification.Write();
+            fileNotifications.Write();
         }
 
         public void StartNotificationThread(string usernamee)
         {
-            notificationsForLoggedInPatient = fileNotification.GetNotifications(usernamee);
+            patientsNotifications = fileNotifications.GetNotifications(usernamee);
             //test notifikacija
-            List<DateTime> dates = new List<DateTime>();
+            /*List<DateTime> dates = new List<DateTime>();
             DateTime date = new DateTime(2021, 5, 16, 15, 14, 0);
             dates.Add(date);
             Notification nt = new Notification(dates, "hello", "world", "1", "100050", "m");
-            notificationsForLoggedInPatient.Add(nt);
-
+            patientsNotifications.Add(nt);*/
             Thread workerThread = new Thread(new ThreadStart(NotificationThread));
             workerThread.SetApartmentState(ApartmentState.STA);
             workerThread.Start();
@@ -68,16 +62,12 @@ namespace HospitalApplication.Logic
 
         private void NotificationThread()
         {
-            while (true)
-            {
+            while (true){
                 Thread.Sleep(1000);
-                for (int i = 0; i < notificationsForLoggedInPatient.Count; i++)
-                {
-                    for (int j = 0; j < notificationsForLoggedInPatient[i].Dates.Count; j++)
-                    {
-                        if (notificationsForLoggedInPatient[i].Dates[j].ToString("HH:mm") == DateTime.Now.ToString("HH:mm"))
-                        {
-                            MessageBox.Show(notificationsForLoggedInPatient[i].Description, notificationsForLoggedInPatient[i].Title);
+                for (int i = 0; i < patientsNotifications.Count; i++){
+                    for (int j = 0; j < patientsNotifications[i].Dates.Count; j++){
+                        if (patientsNotifications[i].Dates[j].ToString("HH:mm") == DateTime.Now.ToString("HH:mm")){
+                            MessageBox.Show(patientsNotifications[i].Description, patientsNotifications[i].Title);
                             Thread.Sleep(60000);
                         }
                     }

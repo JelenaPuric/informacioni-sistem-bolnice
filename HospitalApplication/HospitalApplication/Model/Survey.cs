@@ -6,7 +6,6 @@ namespace HospitalApplication.Model
 {
     class Survey
     {
-        //key je pitanje a value je odgovor (od 1 do 5)
         public string WrittenAnswer { get; set; }
         public int[] NumericalAnswers { get; set; }
         public string PatientsUsername { get; set; }

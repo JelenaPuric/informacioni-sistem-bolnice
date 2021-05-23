@@ -110,7 +110,7 @@ namespace HospitalApplication.Windows.Secretary
             selectedPatient = secretaryController.getPatient(idPatient);
             doctors = fileDoctors.GetDoctors();
             rooms = FileRooms.LoadRoom();
-            examinations = examinationService.Examinations;
+            examinations = examinationService.Appointments;
         }
 
         private void CenterWindow()
@@ -137,7 +137,7 @@ namespace HospitalApplication.Windows.Secretary
             AddDateTimeInSheduleDoctorAndRoom(selectedSheduledDateTime);
             Appointment examination = new Appointment(selectedPatient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
                                                       selectedSheduledDateTime, (GenerateExaminationId() + 1).ToString(), 0, defaultValueOfPostpone);
-            examinationService.ScheduleExamination(examination);
+            examinationService.ScheduleAppointment(examination);
         }
 
         private void AddDateTimeInSheduleDoctorAndRoom(DateTime selectedDateTime)
@@ -153,7 +153,6 @@ namespace HospitalApplication.Windows.Secretary
             DateTime newDate = selectedDateTime.AddDays(examination.PostponeAppointment);
             examination.PostponeAppointment = defaultValueOfPostpone;
             isFreeRoom = patientController.IsRoomFree(newDate);
-            patientController.UpdateDoctors();
             if (IsFreeDoctorAndRoom(examination, newDate)){
                 AddAndDeleteExaminationFromDoctorAndRoom(examination, newDate);
                 patientController.MoveAppointment(examination.ExaminationId, newDate, isFreeRoom.Item2);
@@ -179,7 +178,7 @@ namespace HospitalApplication.Windows.Secretary
             Appointment examination = new Appointment(selectedPatient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
                                                       GetTheClosestAppointment(), (GenerateExaminationId() + 1).ToString(), 0, defaultValueOfPostpone);
 
-            patientController.ScheduleExamination(examination); // NOVOOOO
+            patientController.ScheduleAppointment(examination); // NOVOOOO
            // examinationService.ScheduleExamination(examination); STAROOO
         }
 

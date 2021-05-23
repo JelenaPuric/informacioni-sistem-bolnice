@@ -31,12 +31,12 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Doctor" DisplayMemberBinding="{Binding DoctorsId}" Width="80" />
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="80" />
-                        <GridViewColumn Header="Start time" DisplayMemberBinding="{Binding ExaminationStart}" Width="150" />
-                        <GridViewColumn Header="Room" DisplayMemberBinding="{Binding RoomId}" Width="50" />
-                        <GridViewColumn Header="Appointment" DisplayMemberBinding="{Binding ExaminationId}" Width="80" />
-                        <GridViewColumn Header="Appointment type" DisplayMemberBinding="{Binding AppointmentType}" Width="130" />
+                        <GridViewColumn Header="Doctor" DisplayMemberBinding="{Binding DoctorsId}"/>
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}"/>
+                        <GridViewColumn Header="Start time" DisplayMemberBinding="{Binding ExaminationStart}"/>
+                        <GridViewColumn Header="Room" DisplayMemberBinding="{Binding RoomId}"/>
+                        <GridViewColumn Header="Appointment" DisplayMemberBinding="{Binding ExaminationId}"/>
+                        <GridViewColumn Header="Appointment type" DisplayMemberBinding="{Binding AppointmentType}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

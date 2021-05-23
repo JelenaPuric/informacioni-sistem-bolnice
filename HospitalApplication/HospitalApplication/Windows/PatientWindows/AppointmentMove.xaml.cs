@@ -23,7 +23,6 @@ namespace HospitalApplication.Windows.Patient1
     public partial class WindowExaminationMove : Window
     {
         private PatientsPage pagePatients = PatientsPage.Instance;
-        //private WindowPatient windowPatient = WindowPatient.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationMove()
@@ -37,7 +36,7 @@ namespace HospitalApplication.Windows.Patient1
             DateTime oldDate = examination.ExaminationStart;
             DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             if (!IsNewDateValid(oldDate, newDate)) return;
-            controller.MoveExamination(examination, newDate);
+            controller.MoveAppointment(examination, newDate);
             pagePatients.UpdateView();
             Close();
         }

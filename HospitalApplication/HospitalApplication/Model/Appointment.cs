@@ -12,9 +12,7 @@ namespace Model
         public String PatientsId { get; set; }
         public String DoctorsId { get; set; }
         public String RoomId { get; set; }
-
         public int PostponeAppointment { get; set; }
-
         public ExaminationType AppointmentType { get; set; }
 
         public Appointment() { }

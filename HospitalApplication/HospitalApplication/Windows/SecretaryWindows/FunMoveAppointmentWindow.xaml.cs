@@ -53,7 +53,7 @@ namespace HospitalApplication.Windows.Secretary
             DateTime oldDate = examination.ExaminationStart;
             DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             if (!IsNewDateValid(oldDate, newDate)) return;
-            controller.MoveExamination(examination, newDate);
+            controller.MoveAppointment(examination, newDate);
             //w.UpdateView();
             Close();
         }

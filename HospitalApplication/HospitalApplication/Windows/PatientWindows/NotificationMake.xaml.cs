@@ -25,7 +25,6 @@ namespace HospitalApplication.Windows.Patient1
         private FileNotification fileNotification = FileNotification.Instance;
         private int notificationId = 100000;
         private NotificationsPage pageNotifications = NotificationsPage.Instance;
-        //private WindowPatientNotifications windowPatients = WindowPatientNotifications.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();
 
@@ -40,8 +39,7 @@ namespace HospitalApplication.Windows.Patient1
             DateTime newDate = GetDateAndTimeFromForm(date);
             List<DateTime> dates = new List<DateTime>();
             dates.Add(newDate);
-            for (int i = 0; i < Int32.Parse(Repeat.Text); i++)
-            {
+            for (int i = 0; i < Int32.Parse(Repeat.Text); i++){
                 newDate = newDate.AddDays(1);
                 dates.Add(newDate);
             }
