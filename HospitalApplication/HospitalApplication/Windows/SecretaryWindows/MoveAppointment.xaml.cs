@@ -14,14 +14,10 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for MoveAppointment.xaml
-    /// </summary>
     public partial class MoveAppointment : Window
     {
 
-        FileAppointments fx = FileAppointments.Instance;
-        private AppointmentController controller = new AppointmentController();
+       private FileAppointments fileAppointments = FileAppointments.Instance;
 
 
         private static MoveAppointment instance;
@@ -40,15 +36,19 @@ namespace HospitalApplication.Windows.Secretary
         public MoveAppointment()
         {
             InitializeComponent();
+            CenterWindow();
+            instance = this;
+            lvUsers.ItemsSource = fileAppointments.GetAppointments();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-            instance = this;
-
-            lvUsers.ItemsSource = fx.GetAppointments();
         }
 
         private void MoveAppointment_Click(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace HospitalApplication.Windows.Secretary
         
         private void RefreshList_Click(object sender, RoutedEventArgs e)
         {
-            lvUsers.ItemsSource = fx.GetAppointments();
+            lvUsers.ItemsSource = fileAppointments.GetAppointments();
         }
     }
 }

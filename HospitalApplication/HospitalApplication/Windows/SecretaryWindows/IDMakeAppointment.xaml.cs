@@ -14,14 +14,18 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for IDMakeAppointment.xaml
-    /// </summary>
     public partial class IDMakeAppointment : Window
     {
+        private SecretaryController secretaryController = new SecretaryController();
+
         public IDMakeAppointment()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -32,26 +36,16 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryController sc = new SecretaryController();
-
-            string idPatient = IdPatient.Text;
-
-            List<Patient> patients = sc.GetAllPatients();
+            List<Patient> patients = secretaryController.GetAllPatients();
 
             for (int i = 0; i < patients.Count; i++)
             {
-                if (patients[i].Id == idPatient)
-                {
-                   MakeAppointmentWindow  window = new  MakeAppointmentWindow(idPatient) { };
+                if (patients[i].Id == IdPatient.Text){
+                   MakeAppointmentWindow  window = new  MakeAppointmentWindow(IdPatient.Text) { };
                    window.Show();
                 }
-
             }
-
             Close();
-
-
-
         }
     }
 }
