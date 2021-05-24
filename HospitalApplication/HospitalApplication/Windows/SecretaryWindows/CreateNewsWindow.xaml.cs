@@ -39,8 +39,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             int n = newsController.GetAllNews().Count;
             int idNews;
-            if (n > 0)
-            {
+            if (n > 0){
                 idNews = Int32.Parse(newsController.GetAllNews()[n - 1].Id) + 1;
             }
             else idNews = 0;

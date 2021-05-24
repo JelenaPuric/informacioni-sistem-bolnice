@@ -14,16 +14,13 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for EditNewsWindow.xaml
-    /// </summary>
     public partial class EditNewsWindow : Window
     {
         private NewsController newsController = new NewsController();
         private NewsWindow newsWindow = NewsWindow.Instance;
         private News currentSelectedNews;
 
-        public EditNewsWindow(global::Model.News selectedNews)
+        public EditNewsWindow(News selectedNews)
         {
             InitializeComponent();
             CenterWindow();
@@ -31,7 +28,7 @@ namespace HospitalApplication.Windows.Secretary
             SetValuesFields(selectedNews);
         }
 
-        private void SetValuesFields(global::Model.News selectedNews)
+        private void SetValuesFields(News selectedNews)
         {
             textBoxTypeNews.Text = selectedNews.TypeNews;
             textBoxTitle.Text = selectedNews.Title;

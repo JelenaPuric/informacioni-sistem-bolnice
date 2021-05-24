@@ -14,16 +14,11 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for ViewNewsWindow.xaml
-    /// </summary>
     public partial class ViewNewsWindow : Window
     {
-        private NewsController newsController = new NewsController();
-        private NewsWindow newsWindow = NewsWindow.Instance;
         private News currentSelectedNews;
 
-        public ViewNewsWindow(global::Model.News selectedNews)
+        public ViewNewsWindow(News selectedNews)
         {
             InitializeComponent();
             CenterWindow();

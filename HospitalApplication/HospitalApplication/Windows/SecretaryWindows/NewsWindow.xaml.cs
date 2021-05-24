@@ -85,10 +85,5 @@ namespace HospitalApplication.Windows.Secretary
             EditNewsWindow window = new EditNewsWindow(selectedNews);
             window.Show();
         }
-
-        private void lvUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
