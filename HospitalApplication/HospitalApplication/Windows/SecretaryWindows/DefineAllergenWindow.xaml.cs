@@ -14,45 +14,42 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for DefineAllergenWindow.xaml
-    /// </summary>
     public partial class DefineAllergenWindow : Window
     {
+        private AllergensService allergenService = new AllergensService();
 
         public DefineAllergenWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AllergensService am = new AllergensService();
+            Allergen newAllergen = new Allergen(GenerateIdForNewAllergen(), textBoxTypeAllergen.Text);
+            allergenService.CreateAllergen(newAllergen);
+            Close();
+        }
 
-           string typeAllergen = textBoxTypeAllergen.Text;
-
-            int n = am.GetAllAllergens().Count;
+        private string GenerateIdForNewAllergen()
+        {
+            int n = allergenService.GetAllAllergens().Count;
             int idAllergen;
-            if (n > 0)
-            {
-                idAllergen = Int32.Parse(am.GetAllAllergens()[n - 1].Id) + 1;
+            if (n > 0){
+                idAllergen = Int32.Parse(allergenService.GetAllAllergens()[n - 1].Id) + 1;
             }
             else idAllergen = 0;
-
-            Allergen a = new Allergen(idAllergen.ToString(), typeAllergen);
-
-            am.CreateAllergen(a);
-
-
-            Close();
+            return idAllergen.ToString();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

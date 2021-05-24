@@ -15,60 +15,44 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for AddAllergenWindow.xaml
-    /// </summary>
     public partial class AddAllergenWindow : Window
     {
-
-        private string idP;
+        private Patient patient;
+        private SecretaryController secretaryController = new SecretaryController();
+        private AllergensService allergenService = new AllergensService();
+        private PatientService patientService = new PatientService();
+       
 
         public AddAllergenWindow(string idPatient)
         {
             InitializeComponent();
+            CenterWindow();
+            patient = secretaryController.getPatient(idPatient);
+            AddExistingTypeAllergensInComboBox();
+        }
+
+        private void AddExistingTypeAllergensInComboBox()
+        {
+            foreach (var item in allergenService.GetAllAllergens()){
+                ComboBox1.Items.Add(item.Name);
+            }
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-            idP = idPatient;
-
-            AllergensService am = new AllergensService();
-            List<Allergen> defAllergens = am.GetAllAllergens();
-
-
-            foreach (var item in defAllergens)
-            {
-                ComboBox1.Items.Add(item.Name);
-            }
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryController sc = new SecretaryController();
-            AllergensService am = new AllergensService();
-            PatientService pm = new PatientService();
-
-            Patient p;
-            string cb = ComboBox1.Text;
-            string specName = textBoxTypeAllergen.Text;
-
-            List<Patient> patients = sc.GetAllPatients();
-            p = sc.getPatient(idP);
-
-            string idAllergen = am.getID(cb);
-            Allergen a = new Allergen(idAllergen, cb, specName);
-
-            p.ListAllergens.Add(a);
-
-            pm.updateAllergen(p);
-
-
+            Allergen newAlergen = new Allergen(allergenService.getID(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
+            patient.ListAllergens.Add(newAlergen);
+            patientService.updateAllergen(patient);
             Close();
         }
 
