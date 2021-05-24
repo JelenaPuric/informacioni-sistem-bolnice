@@ -16,39 +16,42 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for ViewPatientWindow.xaml
-    /// </summary>
     public partial class ViewPatientWindow : Window
     {
-        private Patient p;
-        public ViewPatientWindow(string value)
+        private SecretaryController secretaryController = new SecretaryController();
+        private Patient selectedPatient;
+
+        public ViewPatientWindow(string idPatient)
         {
             InitializeComponent();
+            CenterWindow();
+            selectedPatient = secretaryController.getPatient(idPatient);
+            DisplayValuesFromSelectedPatient();
+        }
+
+        private void DisplayValuesFromSelectedPatient()
+        {
+            TypeAcc.Content = TypeAcc.Content + selectedPatient.TypeAcc.ToString();
+            FirstName.Content = FirstName.Content + selectedPatient.Name;
+            LastName.Content = LastName.Content + selectedPatient.LastName;
+            Jmbg.Content = Jmbg.Content + selectedPatient.Jmbg;
+            Sex.Content = Sex.Content + selectedPatient.SexType.ToString();
+            DateOfBirth.Content = DateOfBirth.Content + selectedPatient.DateOfBirth.ToString("dd.MM.yyyy.");
+            PlaceOfResidance.Content = PlaceOfResidance.Content + selectedPatient.PlaceOfResidance;
+            Email.Content = Email.Content + selectedPatient.Email;
+            PhoneNumber.Content = PhoneNumber.Content + selectedPatient.PhoneNumber;
+            Username.Content = Username.Content + selectedPatient.Username;
+            Password.Content = Password.Content + selectedPatient.Password;
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
-            p = sc.getPatient(value);
-
-            TypeAcc.Content = TypeAcc.Content + p.TypeAcc.ToString();
-            FirstName.Content = FirstName.Content + p.Name;
-            LastName.Content = LastName.Content + p.LastName;
-            Jmbg.Content = Jmbg.Content + p.Jmbg;
-            Sex.Content = Sex.Content + p.SexType.ToString();
-            DateOfBirth.Content = DateOfBirth.Content + p.DateOfBirth.ToString("dd.MM.yyyy.");
-            PlaceOfResidance.Content = PlaceOfResidance.Content + p.PlaceOfResidance;
-            Email.Content = Email.Content + p.Email;
-            PhoneNumber.Content = PhoneNumber.Content + p.PhoneNumber;
-            Username.Content = Username.Content + p.Username;
-            Password.Content = Password.Content + p.Password;
-
         }
     }
 }

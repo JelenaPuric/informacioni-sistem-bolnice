@@ -16,105 +16,100 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for EditRegisterPatientWindow.xaml
-    /// </summary>
     public partial class EditRegisterPatientWindow : Window
     {
-        private Patient p;
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
+        private Patient selectedPatient;
+        private AllPatientsWindow allPatientWindow = AllPatientsWindow.GetInstance();
+        private SecretaryController secretaryController = new SecretaryController();
 
-
-        public EditRegisterPatientWindow(string value)
+        public EditRegisterPatientWindow(string idPatient)
         {
             InitializeComponent();
+            CenterWindow();
+            selectedPatient = secretaryController.getPatient(idPatient);
+            DisplayValuesFromSelectedPatient();
+        }
+
+        private void DisplayValuesFromSelectedPatient()
+        {
+            ComboBox1.Text = selectedPatient.TypeAcc.ToString();
+            textBoxFirstName.Text = selectedPatient.Name;
+            textBoxLastName.Text = selectedPatient.LastName;
+            textBoxJMBG.Text = selectedPatient.Jmbg;
+
+            if (selectedPatient.SexType == SexType.male){
+                MSex.IsChecked = true;
+            }
+            else{
+                FSex.IsChecked = true;
+            }
+
+            BoxDateTime.Text = selectedPatient.DateOfBirth.ToString();
+            textBoxPlaceOfResidance.Text = selectedPatient.PlaceOfResidance;
+            textBoxEmail.Text = selectedPatient.Email;
+            textBoxPhoneNumber.Text = selectedPatient.PhoneNumber;
+            textBoxUsername.Text = selectedPatient.Username;
+            textBoxPassword.Text = selectedPatient.Password;
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-            //FilesPatients sp = FilesPatients.GetInstance();
-            // PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
-            p = sc.getPatient(value);
-
-            ComboBox1.Text = p.TypeAcc.ToString();
-            textBoxFirstName.Text = p.Name;
-            textBoxLastName.Text = p.LastName;
-            textBoxJMBG.Text = p.Jmbg;
-
-            if (p.SexType == SexType.male)
-            {
-                MSex.IsChecked = true;
-            }
-            else
-            {
-                FSex.IsChecked = true;
-            }
-
-            BoxDateTime.Text = p.DateOfBirth.ToString();
-            textBoxPlaceOfResidance.Text = p.PlaceOfResidance;
-            textBoxEmail.Text = p.Email;
-            textBoxPhoneNumber.Text = p.PhoneNumber;
-            textBoxUsername.Text = p.Username;
-            textBoxPassword.Text = p.Password;
-
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
+            SetNewValuesToSelectedPatient();
+            secretaryController.Update(selectedPatient); // promeniti ime update u updatePatient i staviti to u repozitorijum
+            allPatientWindow.UpdateView();
+            Close();
+        }
 
-            AccountType typeAcc = (AccountType)Enum.Parse(typeof(AccountType), ComboBox1.Text);
-            p.TypeAcc = typeAcc;
-
-            p.Name = textBoxFirstName.Text;
-            p.LastName = textBoxLastName.Text;
-            p.Jmbg = textBoxJMBG.Text;
+        private void SetNewValuesToSelectedPatient()
+        {
+            selectedPatient.TypeAcc = (AccountType)Enum.Parse(typeof(AccountType), ComboBox1.Text);
+            selectedPatient.Name = textBoxFirstName.Text;
+            selectedPatient.LastName = textBoxLastName.Text;
+            selectedPatient.Jmbg = textBoxJMBG.Text;
 
             SexType sex;
             if (Convert.ToBoolean(MSex.IsChecked))
             {
                 sex = SexType.male;
-                p.SexType = sex;
+                selectedPatient.SexType = sex;
             }
             else if (Convert.ToBoolean(FSex.IsChecked))
             {
                 sex = SexType.female;
-                p.SexType = sex;
+                selectedPatient.SexType = sex;
             }
 
+            selectedPatient.DateOfBirth = GetNewSelectedDate();
+            selectedPatient.PlaceOfResidance = textBoxPlaceOfResidance.Text;
+            selectedPatient.Email = textBoxEmail.Text;
+            selectedPatient.PhoneNumber = textBoxPhoneNumber.Text;
+            selectedPatient.Username = textBoxUsername.Text;
+            selectedPatient.Password = textBoxPassword.Text;
+        }
 
+        private DateTime GetNewSelectedDate()
+        {
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
             int year = Int32.Parse(entries[2]);
             int month = Int32.Parse(entries[0]);
             int day = Int32.Parse(entries[1]);
-            DateTime myDate = new DateTime(year, month, day);
-
-            p.DateOfBirth = myDate;
-
-            p.PlaceOfResidance = textBoxPlaceOfResidance.Text;
-            p.Email = textBoxEmail.Text;
-            p.PhoneNumber = textBoxPhoneNumber.Text;
-            p.Username = textBoxUsername.Text;
-            p.Password = textBoxPassword.Text;
-
-            sc.Update(p);
-            aPw.UpdateView();
-
-            Close();
-
+            return new DateTime(year, month, day);
         }
 
         private void Cancle_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-
     }
 }

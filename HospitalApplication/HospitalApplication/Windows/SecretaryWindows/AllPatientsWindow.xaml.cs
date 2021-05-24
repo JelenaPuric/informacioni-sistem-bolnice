@@ -17,12 +17,9 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for AllPatientsWindow.xaml
-    /// </summary>
     public partial class AllPatientsWindow : Window
     {
-
+        private SecretaryController secretaryController = new SecretaryController();
         private static AllPatientsWindow _instance;
 
         public static AllPatientsWindow GetInstance()
@@ -34,31 +31,28 @@ namespace HospitalApplication.Windows.Secretary
             return _instance;
         }
 
-
-
         public AllPatientsWindow()
         {
             InitializeComponent();
+            CenterWindow();
+            _instance = this;
+            lvUsers.ItemsSource = secretaryController.GetAllPatients();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
-            _instance = this;
-
-            SecretaryController sc = new SecretaryController();
-
-
-            lvUsers.ItemsSource = sc.GetAllPatients();
         }
 
         private void RegisterPatient_Click(object sender, RoutedEventArgs e)
         {
             RegisterOptionWindow window = new RegisterOptionWindow();
             window.Show();
-
         }
 
         private void DeletePatient_Click_1(object sender, RoutedEventArgs e)
@@ -69,10 +63,8 @@ namespace HospitalApplication.Windows.Secretary
 
         private void EditPatient_Click(object sender, RoutedEventArgs e)
         {
-
             EditPatientWindow window = new EditPatientWindow();
             window.Show();
-
         }
 
         private void ViewPatient_Click(object sender, RoutedEventArgs e)
@@ -85,18 +77,12 @@ namespace HospitalApplication.Windows.Secretary
         {
             IDMakeAppointment window = new IDMakeAppointment();
             window.Show();
-
         }
 
         public void UpdateView()
         {
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
-            List<Patient> patients = sc.GetAllPatients();
-            lvUsers.ItemsSource = sc.GetAllPatients();
-
-            //ICollectionView view = CollectionViewSource.GetDefaultView(patients);
-           // view.Refresh();
+            List<Patient> patients = secretaryController.GetAllPatients();
+            lvUsers.ItemsSource = secretaryController.GetAllPatients();
         }
 
         private void MedicalRecord_Click(object sender, RoutedEventArgs e)

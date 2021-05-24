@@ -18,36 +18,30 @@ namespace HospitalApplication.Windows.Secretary
 
     public partial class DeletePatientWindow : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
+        private AllPatientsWindow allPatientWindow = AllPatientsWindow.GetInstance();
+        private SecretaryController secretaryController = new SecretaryController();
 
         public DeletePatientWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-
-
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
-
-            string id = IdPatient.Text;
-
-            sc.DeletePatient(id);
-
-            aPw.UpdateView();
-
-
+            secretaryController.DeletePatient(IdPatient.Text);
+            allPatientWindow.UpdateView();
             Close();
-
         }
     }
 }

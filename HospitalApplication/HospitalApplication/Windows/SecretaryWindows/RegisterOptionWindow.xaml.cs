@@ -12,14 +12,16 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for RegisterOptionWindow.xaml
-    /// </summary>
     public partial class RegisterOptionWindow : Window
     {
         public RegisterOptionWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -32,17 +34,13 @@ namespace HospitalApplication.Windows.Secretary
         {
             RegisterPatientWindow window = new RegisterPatientWindow();
             window.Show();
-
-
             Close();
-
         }
 
         private void GuestAccount_Click(object sender, RoutedEventArgs e)
         {
             RegisterGuestPatient window = new RegisterGuestPatient();
             window.Show();
-
             Close();
         }
     }

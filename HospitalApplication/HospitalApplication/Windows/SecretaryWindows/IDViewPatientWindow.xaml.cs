@@ -16,14 +16,18 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for IDViewPatientWindow.xaml
-    /// </summary>
     public partial class IDViewPatientWindow : Window
     {
+        private SecretaryController secretaryController = new SecretaryController();
+
         public IDViewPatientWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -34,29 +38,16 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
-
-            string idPatient = IdPatient.Text;
-
-            List<Patient> patients = sc.GetAllPatients();
+            List<Patient> patients = secretaryController.GetAllPatients();
 
             for (int i = 0; i < patients.Count; i++)
             {
-                if (patients[i].Id == idPatient)
-                {
-                    ViewPatientWindow window = new ViewPatientWindow(idPatient) { };
+                if (patients[i].Id == IdPatient.Text){
+                    ViewPatientWindow window = new ViewPatientWindow(IdPatient.Text) { };
                     window.Show();
                 }
-
             }
-
             Close();
-
         }
     }
 }

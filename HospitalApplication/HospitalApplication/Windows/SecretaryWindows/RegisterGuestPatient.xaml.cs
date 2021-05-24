@@ -16,15 +16,18 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for RegisterGuestPatient.xaml
-    /// </summary>
     public partial class RegisterGuestPatient : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
+        private SecretaryController secretaryController = new SecretaryController();
+        private AllPatientsWindow allPatientsWindow = AllPatientsWindow.GetInstance();
         public RegisterGuestPatient()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -35,66 +38,43 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
+            MedicalRecord newMedicalRecord = new MedicalRecord(GenerateIdForNewPatient(), (AccountType)Enum.Parse(typeof(AccountType), "guestAccount"), 0, textBoxFirstName.Text, textBoxLastName.Text, 
+                                                               "empty", textBoxJMBG.Text, GetSelectedDate(), "empty", "empty", "empty", 0);
 
-            string firstName = textBoxFirstName.Text;
-            string lastName = textBoxLastName.Text;
-            string jmbg = textBoxJMBG.Text;
+            Patient newPatient = new Patient((AccountType)Enum.Parse(typeof(AccountType), "guestAccount"), textBoxFirstName.Text, textBoxLastName.Text, GenerateIdForNewPatient(), GetSelectedDate(), "Empty",
+                                    "Empty", "Empty", (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient"), textBoxFirstName.Text + textBoxLastName.Text, "123", textBoxJMBG.Text, 0, 
+                                    newMedicalRecord, new List<Allergen>(), new Tuple<int, DateTime, bool>(0, DateTime.Now, false));
 
+            secretaryController.CreatePatient(newPatient);
+            allPatientsWindow.UpdateView();
+            Close();
+        }
 
-            string username = textBoxFirstName.Text + textBoxLastName.Text;
-            string password = "123";
+        private string GenerateIdForNewPatient()
+        {
+            int n = secretaryController.GetAllPatients().Count;
+            int idPatient;
+            if (n > 0)
+            {
+                idPatient = Int32.Parse(secretaryController.GetAllPatients()[n - 1].Id) + 1;
+            }
+            else idPatient = 0;
+            return idPatient.ToString();
+        }
 
-
+        private DateTime GetSelectedDate()
+        {
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
             int year = Int32.Parse(entries[2]);
             int month = Int32.Parse(entries[0]);
             int day = Int32.Parse(entries[1]);
-            DateTime myDate = new DateTime(year, month, day);
-
-
-
-            int n = sc.GetAllPatients().Count;
-            int idPatient;
-
-            if (n > 0)
-            {
-                idPatient = Int32.Parse(sc.GetAllPatients()[n - 1].Id) + 1;
-            }
-            else idPatient = 0;
-
-
-            TypeOfPerson typeOfPerson = (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient");
-            
-
-            AccountType typeAccc = (AccountType)Enum.Parse(typeof(AccountType), "guestAccount");
-
-            List<Allergen> listAllergens = new List<Allergen>();
-
-            MedicalRecord mr = new MedicalRecord(idPatient.ToString(), typeAccc, 0, firstName, lastName, "empty", jmbg, myDate, "empty", "empty", "empty", 0);
-
-            Tuple<int, DateTime, bool> penalty = new Tuple<int, DateTime, bool>(0, DateTime.Now, false);
-
-            Patient p = new Patient(typeAccc, firstName, lastName, idPatient.ToString(), myDate, "Empty", "Empty", "Empty", typeOfPerson, username, password, jmbg, 0, mr, listAllergens, penalty);
-
-            sc.CreatePatient(p);
-          
-
-
-
-            aPw.UpdateView();
-
-            Close();
-
-
+            return new DateTime(year, month, day);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
-
         }
     }
 }

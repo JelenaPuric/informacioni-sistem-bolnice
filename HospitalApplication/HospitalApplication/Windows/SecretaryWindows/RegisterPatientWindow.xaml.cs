@@ -16,16 +16,19 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for RegisterPatientWindow.xaml
-    /// </summary>
     public partial class RegisterPatientWindow : Window
     {
-        private AllPatientsWindow aPw = AllPatientsWindow.GetInstance();
+        private SecretaryController secretaryController = new SecretaryController();
+        private AllPatientsWindow allPatientsWindow = AllPatientsWindow.GetInstance();
 
         public RegisterPatientWindow()
         {
             InitializeComponent();
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -36,70 +39,55 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
+            MedicalRecord newMedicalRecord = new MedicalRecord(GenerateIdForNewPatient(), 0, 0, textBoxFirstName.Text, textBoxLastName.Text, "empty", textBoxJMBG.Text, GetSelectedDate(), "empty", 
+                                                               textBoxPlaceOfResidance.Text, textBoxPhoneNumber.Text, GetSelectedSexType());
 
-            //PatientManagement pm = new PatientManagement();
-            SecretaryController sc = new SecretaryController();
+            Patient newPatient = new Patient(0, textBoxFirstName.Text, textBoxLastName.Text, GenerateIdForNewPatient(), GetSelectedDate(), textBoxPhoneNumber.Text, textBoxEmail.Text, textBoxPlaceOfResidance.Text, 
+                                            (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient"), textBoxUsername.Text, textBoxPassword.Text, textBoxJMBG.Text, GetSelectedSexType(), newMedicalRecord, 
+                                            new List<Allergen>(), new Tuple<int, DateTime, bool>(0, DateTime.Now, false));
 
-            string firstName = textBoxFirstName.Text;
-            string lastName = textBoxLastName.Text;
-            string jmbg = textBoxJMBG.Text;
+            secretaryController.CreatePatient(newPatient);
+            allPatientsWindow.UpdateView();
+            Close();
+        }
 
+        private SexType GetSelectedSexType()
+        {
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked)){
+                sex = SexType.male;
+            }
+            else if (Convert.ToBoolean(FSex.IsChecked)){
+                sex = SexType.female;
+            }
+            return sex;
+        }
+
+        private string GenerateIdForNewPatient()
+        {
+            int n = secretaryController.GetAllPatients().Count;
+            int idPatient;
+            if (n > 0)
+            {
+                idPatient = Int32.Parse(secretaryController.GetAllPatients()[n - 1].Id) + 1;
+            }
+            else idPatient = 0;
+            return idPatient.ToString();
+        }
+
+        private DateTime GetSelectedDate()
+        {
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
             int year = Int32.Parse(entries[2]);
             int month = Int32.Parse(entries[0]);
             int day = Int32.Parse(entries[1]);
-            DateTime myDate = new DateTime(year, month, day);
-
-            string placeOfResidance = textBoxPlaceOfResidance.Text;
-            string email = textBoxEmail.Text;
-            string phoneNumber = textBoxPhoneNumber.Text;
-            string username = textBoxUsername.Text;
-            string password = textBoxPassword.Text;
-
-            SexType sex = SexType.male;
-            if (Convert.ToBoolean(MSex.IsChecked))
-            {
-                sex = SexType.male;
-            }
-            else if (Convert.ToBoolean(FSex.IsChecked))
-            {
-                sex = SexType.female;
-            }
-
-            int n = sc.GetAllPatients().Count;
-            int idPatient;
-
-            if (n > 0)
-            {
-                idPatient = Int32.Parse(sc.GetAllPatients()[n - 1].Id) + 1;
-            }
-            else idPatient = 0;
-
-            TypeOfPerson typeOfPerson = (TypeOfPerson)Enum.Parse(typeof(TypeOfPerson), "Patient");
-
-            List<Allergen> listAllergens = new List<Allergen>();
-            MedicalRecord mr = new MedicalRecord(idPatient.ToString(), 0, 0, firstName, lastName, "empty", jmbg, myDate, "empty", placeOfResidance, phoneNumber, sex);
-            Tuple<int, DateTime, bool> penalty = new Tuple<int, DateTime, bool>(0, DateTime.Now, false);
-            Patient p = new Patient(0, firstName, lastName, idPatient.ToString(), myDate, phoneNumber, email, placeOfResidance, typeOfPerson, username, password, jmbg, sex, mr, listAllergens, penalty);
-
-            
-            
-
-            sc.CreatePatient(p);
-       
-
-            aPw.UpdateView();
-
-            Close();
+            return new DateTime(year, month, day);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
-
         }
-
-
     }
 }
