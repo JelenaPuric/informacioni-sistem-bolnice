@@ -8,8 +8,9 @@ namespace Logic
    public class NewsService
    {
         private List<News> news;
-
+        private FileNews fileNews = FileNews.Instance;
         private static NewsService instance;
+
         public static NewsService Instance
         {
             get
@@ -25,7 +26,7 @@ namespace Logic
         public NewsService()
         {
             instance = this;
-            news = FileNews.LoadNews();
+            news = fileNews.GetNews();
         }
 
         public List<News> GetAllNews()
@@ -36,7 +37,7 @@ namespace Logic
         public void CreateNews(News newNews)
         {
             news.Add(newNews);
-            FileNews.EnterNews(news);
+            fileNews.Write();
         }
 
         public void DeleteNews(string iDNews)
@@ -48,7 +49,7 @@ namespace Logic
                     news.RemoveAt(i); break;
                 }
             }
-            FileNews.EnterNews(news);
+            fileNews.Write();
         }
 
         public void UpdateNews(News currentNews)
@@ -62,7 +63,7 @@ namespace Logic
                     news[i].Description = currentNews.Description;
                 }
             }
-            FileNews.EnterNews(news);
+            fileNews.Write();
         }
 
 

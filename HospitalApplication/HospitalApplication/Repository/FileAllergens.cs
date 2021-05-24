@@ -1,3 +1,4 @@
+using HospitalApplication.Repository;
 using Model;
 using Nancy.Json;
 using System;
@@ -7,28 +8,42 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-   public class FileAllergens
+   public class FileAllergens : IFile
    {
+        private static string path = "../../../Data/allergens.json";
+        private static List<Allergen> allergens;
+        private static FileAllergens instance;
 
-        public static string FileAllergen = "../../../Data/allergens.json";
-
-        public static List<Allergen> LoadAllergens()
+        public static FileAllergens Instance
         {
-            //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(FileAllergen))
-                return new List<Allergen>();
+            get
+            {
+                if (null == instance)
+                    instance = new FileAllergens();
+                return instance;
+            }
+        }
 
-            string json = File.ReadAllText(FileAllergen);
-            List<Allergen> allergens = new JavaScriptSerializer().Deserialize<List<Allergen>>(json);
+        private FileAllergens()
+        {
+            Read();
+        }
 
+        public void Read()
+        {
+            string json = File.ReadAllText(path);
+            allergens = new JavaScriptSerializer().Deserialize<List<Allergen>>(json);
+        }
+
+        public void Write()
+        {
+            string json = new JavaScriptSerializer().Serialize(allergens);
+            File.WriteAllText(path, json);
+        }
+
+        public List<Allergen> GetAllergens()
+        {
             return allergens;
         }
-
-        public static void EnterAllergen(List<Allergen> input)
-        {
-            string json = new JavaScriptSerializer().Serialize(input);
-            File.WriteAllText(FileAllergen, json);
-        }
-
     }
 }

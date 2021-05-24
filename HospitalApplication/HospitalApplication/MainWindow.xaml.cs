@@ -24,12 +24,10 @@ using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public String PatientsUsername { get; set; }
+        private FilePatients filePatients = FilePatients.Instance;
 
         private static MainWindow instance;
         public static MainWindow Instance
@@ -79,7 +77,7 @@ namespace HospitalApplication
             }
             else 
             {
-                List<Patient> patients = FilePatients.LoadPatients();
+                List<Patient> patients = filePatients.GetPatients();
                 string username;
                 string password;
                 PatientsUsername = Username.Text;

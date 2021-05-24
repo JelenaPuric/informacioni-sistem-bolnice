@@ -7,12 +7,12 @@ namespace Logic
 {
    public class AllergensService
    {
-
+        private FileAllergens fileAllergens = FileAllergens.Instance;
         private List<Allergen> allergens;
 
         public AllergensService()
         {
-            allergens = FileAllergens.LoadAllergens();
+            allergens = fileAllergens.GetAllergens();
         }
 
         public List<Allergen> GetAllAllergens()
@@ -20,13 +20,11 @@ namespace Logic
             return allergens;
         }
 
-
         public void CreateAllergen(Allergen newAllergen)
         {
             allergens.Add(newAllergen);
-            FileAllergens.EnterAllergen(allergens);
+            fileAllergens.Write();
         }
-
 
         public string getID(string nameA)
         {
@@ -42,8 +40,5 @@ namespace Logic
             }
             return idA;
         }
-
-
-
     }
 }

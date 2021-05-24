@@ -15,6 +15,7 @@ namespace Logic
         private DoctorService doctorService = new DoctorService();
         private RoomService roomService = new RoomService();
         private FileDoctors fileDoctors = FileDoctors.Instance;
+        private FilePatients filePatients = FilePatients.Instance;
         public List<Appointment> Appointments { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
@@ -38,7 +39,7 @@ namespace Logic
             Appointments = fileAppointments.GetAppointments();
             Doctors = fileDoctors.GetDoctors();
             Rooms = FileRooms.LoadRoom();
-            Patients = FilePatients.LoadPatients();
+            Patients = filePatients.GetPatients();
         }
 
         public void ScheduleAppointment(Appointment appointment)
@@ -325,7 +326,7 @@ namespace Logic
             dateOfLastActivity = DateTime.Now;
             if (currentPenalty > Constants.MAX_ALLOWED_PENALTY) isPenaltyGreaterThanAllowed = true;
             patient.Penalty = new Tuple<int, DateTime, bool>(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
-            FilePatients.EnterPatient(Patients);
+            filePatients.Write();
         }
 
         private bool PenaltyIsGreaterThanAllowed(Patient patient)
