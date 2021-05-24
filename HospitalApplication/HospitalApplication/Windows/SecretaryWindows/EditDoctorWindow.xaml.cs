@@ -15,12 +15,8 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.SecretaryWindows
 {
-    /// <summary>
-    /// Interaction logic for EditDoctorWindow.xaml
-    /// </summary>
     public partial class EditDoctorWindow : Window
     {
-        private FileDoctors fileDoctors = FileDoctors.Instance;
         private DoctorService doctorService = DoctorService.Instance;
         private AllDoctorsWindow allDoctorsWindow = AllDoctorsWindow.Instance;
         private Doctor currentSelectedDoctor;
@@ -29,7 +25,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
             InitializeComponent();
             CenterWindow();
             currentSelectedDoctor = selectedDoctor;
-            SetValuesFields(selectedDoctor);
+            DisplayValuesFromSelectedDoctor(selectedDoctor);
         }
 
         private void CenterWindow()
@@ -42,22 +38,16 @@ namespace HospitalApplication.Windows.SecretaryWindows
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
-        private void SetValuesFields(Doctor selectedDoctor)
+        private void DisplayValuesFromSelectedDoctor(Doctor selectedDoctor)
         {
             ComboBox1.Text = selectedDoctor.DoctorType.ToString();
             textBoxFirstName.Text = selectedDoctor.Name;
             textBoxLastName.Text = selectedDoctor.LastName;
             textBoxJMBG.Text = selectedDoctor.Jmbg;
-
             if (selectedDoctor.SexType == SexType.male)
-            {
                 MSex.IsChecked = true;
-            }
             else
-            {
                 FSex.IsChecked = true;
-            }
-
             BoxDateTime.Text = selectedDoctor.DateOfBirth.ToString();
             textBoxPlaceOfResidance.Text = selectedDoctor.PlaceOfResidance;
             textBoxPhoneNumber.Text = selectedDoctor.PhoneNumber;
@@ -66,33 +56,14 @@ namespace HospitalApplication.Windows.SecretaryWindows
             textBoxPassword.Text = selectedDoctor.Password;
         }
 
-        private void SetValues()
+        private void SetNewValuesToSelectedDoctor()
         {
             currentSelectedDoctor.DoctorType = (DoctorType)Enum.Parse(typeof(DoctorType), ComboBox1.Text);
             currentSelectedDoctor.Name = textBoxFirstName.Text;
             currentSelectedDoctor.LastName = textBoxLastName.Text;
             currentSelectedDoctor.Jmbg = textBoxJMBG.Text;
-
-            SexType sex;
-            if (Convert.ToBoolean(MSex.IsChecked))
-            {
-                sex = SexType.male;
-                currentSelectedDoctor.SexType = sex;
-            }
-            else if (Convert.ToBoolean(FSex.IsChecked))
-            {
-                sex = SexType.female;
-                currentSelectedDoctor.SexType = sex;
-            }
-
-            string date = BoxDateTime.Text;
-            string[] entries = date.Split('/');
-            int year = Int32.Parse(entries[2]);
-            int month = Int32.Parse(entries[0]);
-            int day = Int32.Parse(entries[1]);
-            DateTime myDate = new DateTime(year, month, day);
-
-            currentSelectedDoctor.DateOfBirth = myDate;
+            currentSelectedDoctor.SexType = GetSelectedSexType();
+            currentSelectedDoctor.DateOfBirth = GetSelectedDate();
             currentSelectedDoctor.PlaceOfResidance = textBoxPlaceOfResidance.Text;
             currentSelectedDoctor.PhoneNumber = textBoxPhoneNumber.Text;
             currentSelectedDoctor.Email = textBoxEmail.Text;
@@ -100,9 +71,29 @@ namespace HospitalApplication.Windows.SecretaryWindows
             currentSelectedDoctor.Password = textBoxPassword.Text;
         }
 
+        private SexType GetSelectedSexType()
+        {
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked))
+                sex = SexType.male;
+            else if (Convert.ToBoolean(FSex.IsChecked))
+                sex = SexType.female;
+            return sex;
+        }
+
+        private DateTime GetSelectedDate()
+        {
+            string date = BoxDateTime.Text;
+            string[] entries = date.Split('/');
+            int year = Int32.Parse(entries[2]);
+            int month = Int32.Parse(entries[0]);
+            int day = Int32.Parse(entries[1]);
+            return new DateTime(year, month, day);
+        }
+
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            SetValues();
+            SetNewValuesToSelectedDoctor();
             doctorService.UpdateDoctor(currentSelectedDoctor);
             allDoctorsWindow.UpdateDoctors();
             Close();

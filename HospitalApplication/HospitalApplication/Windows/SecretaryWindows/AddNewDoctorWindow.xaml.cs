@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.SecretaryWindows
 {
-    /// <summary>
-    /// Interaction logic for AddNewDoctorWindow.xaml
-    /// </summary>
     public partial class AddNewDoctorWindow : Window
     {
 
@@ -43,42 +40,44 @@ namespace HospitalApplication.Windows.SecretaryWindows
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            DoctorType doctorType = (DoctorType)Enum.Parse(typeof(DoctorType), ComboBox1.Text);
+            Doctor newDoctor = new Doctor((DoctorType)Enum.Parse(typeof(DoctorType), ComboBox1.Text), new List<DateTime>(), textBoxFirstName.Text, textBoxLastName.Text, GenerateIdForNewDoctor(),
+                                          GetSelectedDate(), textBoxPhoneNumber.Text, textBoxEmail.Text, textBoxPlaceOfResidance.Text, 0, textBoxUsername.Text, textBoxPassword.Text, textBoxJMBG.Text,
+                                          GetSelectedSexType());
 
+            doctorService.CreateDoctor(newDoctor);
+            allDoctorsWindow.UpdateDoctors();
+            Close();
+        }
+
+        private string GenerateIdForNewDoctor()
+        {
+            int n = fileDoctors.GetDoctors().Count;
+            int idDoctor;
+            if (n > 0){
+                idDoctor = Int32.Parse(fileDoctors.GetDoctors()[n - 1].Id) + 1;
+            }
+            else idDoctor = 0;
+            return idDoctor.ToString();
+        }
+
+        private SexType GetSelectedSexType()
+        {
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked))
+                sex = SexType.male;
+            else if (Convert.ToBoolean(FSex.IsChecked))
+                sex = SexType.female;
+            return sex;
+        }
+
+        private DateTime GetSelectedDate()
+        {
             string date = BoxDateTime.Text;
             string[] entries = date.Split('/');
             int year = Int32.Parse(entries[2]);
             int month = Int32.Parse(entries[0]);
             int day = Int32.Parse(entries[1]);
-            DateTime myDate = new DateTime(year, month, day);
-
-            SexType sex = SexType.male;
-            if (Convert.ToBoolean(MSex.IsChecked))
-            {
-                sex = SexType.male;
-            }
-            else if (Convert.ToBoolean(FSex.IsChecked))
-            {
-                sex = SexType.female;
-            }
-
-            int n = fileDoctors.GetDoctors().Count;
-            int idDoctor;
-            
-            if (n > 0)
-            {
-                idDoctor = Int32.Parse(fileDoctors.GetDoctors()[n - 1].Id) + 1;
-            }
-            else idDoctor = 0;
-
-            //Doctor newDoctor = new Doctor(textBoxUsername.Text, textBoxPassword.Text, new List<DateTime>(), doctorType, idDoctor.ToString());
-            Doctor newDoctor = new Doctor(doctorType, new List<DateTime>(), textBoxFirstName.Text, textBoxLastName.Text, idDoctor.ToString(), myDate, textBoxPhoneNumber.Text, textBoxEmail.Text,
-                                         textBoxPlaceOfResidance.Text, 0, textBoxUsername.Text, textBoxPassword.Text, textBoxJMBG.Text, sex);
-
-            doctorService.CreateDoctor(newDoctor);
-            allDoctorsWindow.UpdateDoctors();
-
-            Close();
+            return new DateTime(year, month, day);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

@@ -15,14 +15,8 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.SecretaryWindows
 {
-    /// <summary>
-    /// Interaction logic for ViewDoctorWindow.xaml
-    /// </summary>
     public partial class ViewDoctorWindow : Window
     {
-        private FileDoctors fileDoctors = FileDoctors.Instance;
-        private DoctorService doctorService = DoctorService.Instance;
-        private AllDoctorsWindow allDoctorsWindow = AllDoctorsWindow.Instance;
         private Doctor currentSelectedDoctor;
 
         public ViewDoctorWindow(Doctor selectedDoctor)
@@ -30,10 +24,10 @@ namespace HospitalApplication.Windows.SecretaryWindows
             InitializeComponent();
             CenterWindow();
             currentSelectedDoctor = selectedDoctor;
-            SetValuesFields(selectedDoctor);
+            DisplayValuesFromSelectedDoctor(selectedDoctor);
         }
 
-        private void SetValuesFields(Doctor selectedDoctor)
+        private void DisplayValuesFromSelectedDoctor(Doctor selectedDoctor)
         {
             ComboBox1.Text = selectedDoctor.DoctorType.ToString();
             textBoxFirstName.Text = selectedDoctor.Name;

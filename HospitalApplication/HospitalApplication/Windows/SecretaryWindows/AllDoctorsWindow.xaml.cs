@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.SecretaryWindows
 {
-    /// <summary>
-    /// Interaction logic for AllDoctorsWindow.xaml
-    /// </summary>
     public partial class AllDoctorsWindow : Window
     {
         private FileDoctors fileDoctors = FileDoctors.Instance;
@@ -44,7 +41,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
             CenterWindow();
             instance = this;
             UpdateDoctors();
-
         }
 
         public void UpdateDoctors()

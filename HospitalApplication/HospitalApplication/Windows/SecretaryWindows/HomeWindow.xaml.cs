@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Secretary
 {
-    /// <summary>
-    /// Interaction logic for HomeWindow.xaml
-    /// </summary>
     public partial class HomeWindow : Window
     {
         public HomeWindow()

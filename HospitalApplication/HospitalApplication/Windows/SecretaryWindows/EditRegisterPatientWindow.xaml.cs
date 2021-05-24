@@ -65,7 +65,7 @@ namespace HospitalApplication.Windows.Secretary
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             SetNewValuesToSelectedPatient();
-            secretaryController.Update(selectedPatient); // promeniti ime update u updatePatient i staviti to u repozitorijum
+            secretaryController.Update(selectedPatient);
             allPatientWindow.UpdateView();
             Close();
         }
@@ -76,25 +76,23 @@ namespace HospitalApplication.Windows.Secretary
             selectedPatient.Name = textBoxFirstName.Text;
             selectedPatient.LastName = textBoxLastName.Text;
             selectedPatient.Jmbg = textBoxJMBG.Text;
-
-            SexType sex;
-            if (Convert.ToBoolean(MSex.IsChecked))
-            {
-                sex = SexType.male;
-                selectedPatient.SexType = sex;
-            }
-            else if (Convert.ToBoolean(FSex.IsChecked))
-            {
-                sex = SexType.female;
-                selectedPatient.SexType = sex;
-            }
-
+            selectedPatient.SexType = GetSelectedSexType();
             selectedPatient.DateOfBirth = GetNewSelectedDate();
             selectedPatient.PlaceOfResidance = textBoxPlaceOfResidance.Text;
             selectedPatient.Email = textBoxEmail.Text;
             selectedPatient.PhoneNumber = textBoxPhoneNumber.Text;
             selectedPatient.Username = textBoxUsername.Text;
             selectedPatient.Password = textBoxPassword.Text;
+        }
+
+        private SexType GetSelectedSexType()
+        {
+            SexType sex = SexType.male;
+            if (Convert.ToBoolean(MSex.IsChecked))
+                sex = SexType.male;
+            else if (Convert.ToBoolean(FSex.IsChecked))
+                sex = SexType.female;
+            return sex;
         }
 
         private DateTime GetNewSelectedDate()
