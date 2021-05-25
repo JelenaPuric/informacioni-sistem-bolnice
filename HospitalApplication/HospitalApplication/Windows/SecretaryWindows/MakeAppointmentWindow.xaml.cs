@@ -29,7 +29,7 @@ namespace HospitalApplication.Windows.Secretary
             InitializeComponent();
             CenterWindow();
             idPatient = id;
-            lvUsers.ItemsSource = fileAppointments.GetAppointments(secretaryController.getPatient(idPatient).Username);
+            lvUsers.ItemsSource = fileAppointments.GetAppointments(secretaryController.GetPatient(idPatient).Username);
         }
 
         private void CenterWindow()
@@ -44,7 +44,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void AddAppointment_Click(object sender, RoutedEventArgs e)
         {
-            AddAppointment window = new AddAppointment(secretaryController.getPatient(idPatient).Username);
+            AddAppointment window = new AddAppointment(secretaryController.GetPatient(idPatient).Username);
             window.Show();
         }
 
@@ -71,7 +71,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            List<Appointment> examinations = fileAppointments.GetAppointments(secretaryController.getPatient(idPatient).Username);
+            List<Appointment> examinations = fileAppointments.GetAppointments(secretaryController.GetPatient(idPatient).Username);
             lvUsers.ItemsSource = examinations;
         }
 

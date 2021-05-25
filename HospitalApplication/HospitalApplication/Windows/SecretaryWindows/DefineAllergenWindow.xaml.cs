@@ -11,12 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
     public partial class DefineAllergenWindow : Window
     {
         private AllergensService allergenService = new AllergensService();
+        private FileAllergens fileAllergens = FileAllergens.Instance;
 
         public DefineAllergenWindow()
         {
@@ -43,10 +45,10 @@ namespace HospitalApplication.Windows.Secretary
 
         private string GenerateIdForNewAllergen()
         {
-            int n = allergenService.GetAllAllergens().Count;
+            int n = fileAllergens.GetAllergens().Count;
             int idAllergen;
             if (n > 0){
-                idAllergen = Int32.Parse(allergenService.GetAllAllergens()[n - 1].Id) + 1;
+                idAllergen = Int32.Parse(fileAllergens.GetAllergens()[n - 1].Id) + 1;
             }
             else idAllergen = 0;
             return idAllergen.ToString();

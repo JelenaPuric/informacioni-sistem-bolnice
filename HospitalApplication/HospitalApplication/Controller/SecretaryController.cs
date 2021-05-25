@@ -3,43 +3,43 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WorkWithFiles;
 
 namespace HospitalApplication.Controller
 {
     public class SecretaryController
     {
-        public PatientService patientManagement = new PatientService();
+        public PatientService patientService = new PatientService();
+        private FilePatients filePatients = FilePatients.Instance;
 
         public void CreatePatient(Patient newPatient)
         {
-            patientManagement.CreatePatient(newPatient);
+            patientService.CreatePatient(newPatient);
         }
-
 
         public void DeletePatient(string iDPatient)
         {
-            patientManagement.DeletePatient(iDPatient);
+            patientService.DeletePatient(iDPatient);
         }
 
-        public void Update(Patient p)
+        public void UpdatePatient(Patient p)
         {
-            patientManagement.Update(p);
+            patientService.UpdatePatient(p);
         }
 
         public void UpdateMedicalRecord(Patient p)
         {
-            patientManagement.UpdateMedicalRecord(p);
+            patientService.UpdateMedicalRecord(p);
         }
 
-
-        public Patient getPatient(string iDPatient)
+        public Patient GetPatient(string idPatient)
         {
-            return patientManagement.getPatient(iDPatient);
+            return filePatients.GetPatient(idPatient);
         }
 
-        public List<Patient> GetAllPatients()
+        public List<Patient> GetPatients()
         {
-            return patientManagement.GetAllPatients();
+            return filePatients.GetPatients();
         }
     }
 }

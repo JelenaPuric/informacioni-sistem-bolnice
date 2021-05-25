@@ -8,16 +8,14 @@ namespace Logic
    public class AllergensService
    {
         private FileAllergens fileAllergens = FileAllergens.Instance;
+        private FilePatients filePatients = FilePatients.Instance;
         private List<Allergen> allergens;
+        private List<Patient> patients;
 
         public AllergensService()
         {
             allergens = fileAllergens.GetAllergens();
-        }
-
-        public List<Allergen> GetAllAllergens()
-        {
-            return allergens;
+            patients = filePatients.GetPatients();
         }
 
         public void CreateAllergen(Allergen newAllergen)
@@ -26,19 +24,14 @@ namespace Logic
             fileAllergens.Write();
         }
 
-        public string getID(string nameA)
+        public void UpdateAllergen(Patient p)
         {
-
-            string idA = new string("test");
-            for (int i = 0; i < allergens.Count; i++)
+            for (int i = 0; i < patients.Count; i++)
             {
-                if (allergens[i].Name.Equals(nameA))
-                {
-                    idA = allergens[i].Id;
-                    break;
-                }
+                if (patients[i].Id.Equals(p.Id))
+                    patients[i].ListAllergens = p.ListAllergens; break;
             }
-            return idA;
+            filePatients.Write();
         }
     }
 }

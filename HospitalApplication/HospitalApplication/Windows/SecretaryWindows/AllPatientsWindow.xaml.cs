@@ -36,7 +36,7 @@ namespace HospitalApplication.Windows.Secretary
             InitializeComponent();
             CenterWindow();
             _instance = this;
-            lvUsers.ItemsSource = secretaryController.GetAllPatients();
+            lvUsers.ItemsSource = secretaryController.GetPatients();
         }
 
         private void CenterWindow()
@@ -81,8 +81,8 @@ namespace HospitalApplication.Windows.Secretary
 
         public void UpdateView()
         {
-            List<Patient> patients = secretaryController.GetAllPatients();
-            lvUsers.ItemsSource = secretaryController.GetAllPatients();
+            List<Patient> patients = secretaryController.GetPatients();
+            lvUsers.ItemsSource = secretaryController.GetPatients();
         }
 
         private void MedicalRecord_Click(object sender, RoutedEventArgs e)

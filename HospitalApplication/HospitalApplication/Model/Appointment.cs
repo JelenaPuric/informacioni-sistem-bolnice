@@ -16,7 +16,6 @@ namespace Model
         public ExaminationType AppointmentType { get; set; }
 
         public Appointment() { }
-
         public Appointment(string patientsId, string doctorsId, string roomId, DateTime start, string examinationId, ExaminationType appointmentType, int postponeAppointment) {
             PatientsId = patientsId;
             DoctorsId = doctorsId;

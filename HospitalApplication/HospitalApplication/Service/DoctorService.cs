@@ -10,8 +10,6 @@ namespace HospitalApplication.Service
     {
         private List<Doctor> doctors;
         private FileDoctors fileDoctors = FileDoctors.Instance;
-
-
         private static DoctorService instance;
         public static DoctorService Instance
         {
@@ -30,7 +28,6 @@ namespace HospitalApplication.Service
             doctors = fileDoctors.GetDoctors();
         }
 
-
         public void CreateDoctor(Doctor newDoctor)
         {
             doctors.Add(newDoctor);
@@ -42,9 +39,7 @@ namespace HospitalApplication.Service
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].DoctorId == idDoctor)
-                {
                     doctors.RemoveAt(i); break;
-                }
             }
             fileDoctors.Write();
         }
@@ -54,11 +49,18 @@ namespace HospitalApplication.Service
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].Id.Equals(currentDoctor.Id))
-                {
                     doctors[i].DoctorType = currentDoctor.DoctorType;
+                    doctors[i].Name = currentDoctor.Name;
+                    doctors[i].LastName = currentDoctor.LastName;
+                    doctors[i].Jmbg = currentDoctor.Jmbg;
+                    doctors[i].SexType = currentDoctor.SexType;
+                    doctors[i].DateOfBirth = currentDoctor.DateOfBirth;
+                    doctors[i].PlaceOfResidance = currentDoctor.PlaceOfResidance;
+                    doctors[i].Email = currentDoctor.Email;
+                    doctors[i].PhoneNumber = currentDoctor.PhoneNumber;
                     doctors[i].Username = currentDoctor.Username;
                     doctors[i].Password = currentDoctor.Password;
-                }
+                    break;
             }
             fileDoctors.Write();
         }

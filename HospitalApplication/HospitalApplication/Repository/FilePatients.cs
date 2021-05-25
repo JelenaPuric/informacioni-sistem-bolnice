@@ -10,7 +10,6 @@ namespace WorkWithFiles
 {
    public class FilePatients : IFile
    {
-
         private static string path = "../../../Data/patients.json";
         private static List<Patient> patients;
         private static FilePatients instance;
@@ -44,6 +43,17 @@ namespace WorkWithFiles
         public List<Patient> GetPatients()
         {
             return patients;
+        }
+
+        public Patient GetPatient(string iDPatient)
+        {
+            Patient p = new Patient();
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].Id == iDPatient)
+                    p = patients[i]; break;
+            }
+            return p;
         }
     }
 }

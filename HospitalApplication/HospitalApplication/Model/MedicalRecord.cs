@@ -17,11 +17,8 @@ namespace Model
         private string placeOfResidance;
         private string phoneNumber;
         private SexType sexType;
-      
-
 
         public MedicalRecord() { }
-
         public MedicalRecord(string idd, AccountType typeAccc, MaritalStatus martialStatuss, string firstNamee, string lastNamee, string nameParentt, string jmbgg, DateTime dateOfBirthh,
                             string numberOfHealthCardd, string placeOfResidancee, string phoneNumberr, SexType sexTypee)
         {
@@ -38,7 +35,6 @@ namespace Model
             phoneNumber = phoneNumberr;
             sexType = sexTypee;
         }
-
 
         public string Id
         {
@@ -111,7 +107,5 @@ namespace Model
             get { return sexType; }
             set { sexType = value; }
         }
-
-
     }
 }

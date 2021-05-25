@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Secretary
 {
@@ -19,21 +20,21 @@ namespace HospitalApplication.Windows.Secretary
     {
         private Patient patient;
         private SecretaryController secretaryController = new SecretaryController();
-        private AllergensService allergenService = new AllergensService();
         private PatientService patientService = new PatientService();
-       
+        private AllergensService allergensService = new AllergensService();
+        private FileAllergens fileAllergens = FileAllergens.Instance;
 
         public AddAllergenWindow(string idPatient)
         {
             InitializeComponent();
             CenterWindow();
-            patient = secretaryController.getPatient(idPatient);
+            patient = secretaryController.GetPatient(idPatient);
             AddExistingTypeAllergensInComboBox();
         }
 
         private void AddExistingTypeAllergensInComboBox()
         {
-            foreach (var item in allergenService.GetAllAllergens()){
+            foreach (var item in fileAllergens.GetAllergens()){
                 ComboBox1.Items.Add(item.Name);
             }
         }
@@ -50,9 +51,9 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Allergen newAlergen = new Allergen(allergenService.getID(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
+            Allergen newAlergen = new Allergen(fileAllergens.GetId(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
             patient.ListAllergens.Add(newAlergen);
-            patientService.updateAllergen(patient);
+            allergensService.UpdateAllergen(patient);
             Close();
         }
 

@@ -78,6 +78,5 @@ namespace HospitalApplication.Controller
         {
             RenovationService.DeleteOldRenovations();
         }
-
     }
 }

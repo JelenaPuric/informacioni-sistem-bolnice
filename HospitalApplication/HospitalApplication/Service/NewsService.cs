@@ -26,12 +26,7 @@ namespace Logic
         public NewsService()
         {
             instance = this;
-            news = fileNews.GetNews();
-        }
-
-        public List<News> GetAllNews()
-        {
-            return news;
+            news = fileNews.GetAllNews();
         }
 
         public void CreateNews(News newNews)
@@ -44,10 +39,8 @@ namespace Logic
         {
             for (int i = 0; i < news.Count; i++)
             {
-                if (news[i].Id == iDNews)
-                {
+                if (news[i].Id.Equals(iDNews))
                     news.RemoveAt(i); break;
-                }
             }
             fileNews.Write();
         }
@@ -57,29 +50,12 @@ namespace Logic
             for (int i = 0; i < news.Count; i++)
             {
                 if (news[i].Id.Equals(currentNews.Id))
-                {
                     news[i].TypeNews = currentNews.TypeNews;
                     news[i].Title = currentNews.Title;
                     news[i].Description = currentNews.Description;
-                }
+                    break;
             }
             fileNews.Write();
-        }
-
-
-
-        public News getNews(string iDNews)
-        {
-            News n = new News();
-            for (int i = 0; i < news.Count; i++)
-            {
-                if (news[i].Id == iDNews)
-                {
-                    n = news[i];
-                    break;
-                }
-            }
-            return n;
         }
     }
 }

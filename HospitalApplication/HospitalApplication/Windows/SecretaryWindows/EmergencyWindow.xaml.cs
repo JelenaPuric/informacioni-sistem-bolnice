@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.Service;
 using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
@@ -23,7 +24,8 @@ namespace HospitalApplication.Windows.Secretary
         private SecretaryController secretaryController = new SecretaryController();
         private AppointmentController patientController = new AppointmentController();
         private WorkWithFiles.FileDoctors fileDoctors = FileDoctors.Instance;
-        private AppointmentService examinationService = AppointmentService.Instance;
+        private AppointmentService appointmentService = AppointmentService.Instance;
+        private DoctorService doctorService = new DoctorService();
         private List<Doctor> doctors = new List<Doctor>();
         private List<Doctor> filteredDoctors = new List<Doctor>();
         private List<Room> rooms = new List<Room>();
@@ -70,7 +72,6 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
-            // isFreeRoom = patientController.IsRoomFree(GetTheClosestAppointment());
             isFreeRoom = roomService.IsRoomFree(GetTheClosestAppointment());
             if (isFreeRoom.Item1 && FilterDoctors()) {
                 MessageBox("Imamo slobodan termin u najblizem roku!"); 
@@ -107,10 +108,10 @@ namespace HospitalApplication.Windows.Secretary
 
         private void LoadPatientsDoctorsRoomsAndExaminations(string idPatient)
         {
-            selectedPatient = secretaryController.getPatient(idPatient);
+            selectedPatient = secretaryController.GetPatient(idPatient);
             doctors = fileDoctors.GetDoctors();
             rooms = FileRooms.LoadRoom();
-            examinations = examinationService.Appointments;
+            examinations = appointmentService.Appointments;
         }
 
         private void CenterWindow()
@@ -127,7 +128,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             DateTime selectedSheduledDateTime = DateTime.Parse(ComboSheduledTerms.SelectedItem.ToString());
             MoveAppointment(GetExamination(selectedSheduledDateTime), selectedSheduledDateTime);
-            isFreeRoom = patientController.IsRoomFree(selectedSheduledDateTime);
+            isFreeRoom = roomService.IsRoomFree(selectedSheduledDateTime);
             ScheduleAppointment(selectedSheduledDateTime);
             Close();
         }
@@ -137,7 +138,7 @@ namespace HospitalApplication.Windows.Secretary
             AddDateTimeInSheduleDoctorAndRoom(selectedSheduledDateTime);
             Appointment examination = new Appointment(selectedPatient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
                                                       selectedSheduledDateTime, (GenerateExaminationId() + 1).ToString(), 0, defaultValueOfPostpone);
-            examinationService.ScheduleAppointment(examination);
+            appointmentService.ScheduleAppointment(examination);
         }
 
         private void AddDateTimeInSheduleDoctorAndRoom(DateTime selectedDateTime)
@@ -152,34 +153,31 @@ namespace HospitalApplication.Windows.Secretary
         {
             DateTime newDate = selectedDateTime.AddDays(examination.PostponeAppointment);
             examination.PostponeAppointment = defaultValueOfPostpone;
-            isFreeRoom = patientController.IsRoomFree(newDate);
+            isFreeRoom = roomService.IsRoomFree(newDate);
             if (IsFreeDoctorAndRoom(examination, newDate)){
-                AddAndDeleteExaminationFromDoctorAndRoom(examination, newDate);
-                patientController.MoveAppointment(examination.ExaminationId, newDate, isFreeRoom.Item2);
+                appointmentService.MoveAppointment(examination, newDate);
             }
         }
 
         private bool IsFreeDoctorAndRoom(Appointment examination, DateTime newDate)
         {
-            return (patientController.IsDoctorFree(examination.DoctorsId, newDate) == true && isFreeRoom.Item1 == true);
+            return (doctorService.IsDoctorFree(examination.DoctorsId, newDate) == true && isFreeRoom.Item1 == true);
         }
 
         private void AddAndDeleteExaminationFromDoctorAndRoom(Appointment examination, DateTime newDate)
         {
-            patientController.RemoveExaminationFromDoctor(examination.DoctorsId, examination.ExaminationStart);
-            patientController.AddExaminationToDoctor(examination.DoctorsId, newDate);
-            patientController.RemoveExaminationFromRoom(examination.RoomId, examination.ExaminationStart);
-            patientController.AddExaminationToRoom(isFreeRoom.Item2, newDate);
+            doctorService.RemoveAppointmentFromDoctor(examination.DoctorsId, examination.ExaminationStart);
+            doctorService.AddAppointmentToDoctor(examination.DoctorsId, newDate);
+            roomService.RemoveAppointmentFromRoom(examination.RoomId, examination.ExaminationStart);
+            roomService.AddAppointmentToRoom(isFreeRoom.Item2, newDate);
         }
 
         private void SheduleFreeAppointment()
         {
-           // AddDateTimeInSheduleDoctorAndRoom(GetTheClosestAppointment()); STAROOO
             Appointment examination = new Appointment(selectedPatient.Username, ComboAvailableDoctors.Text, rooms[isFreeRoom.Item2].RoomId.ToString(),
                                                       GetTheClosestAppointment(), (GenerateExaminationId() + 1).ToString(), 0, defaultValueOfPostpone);
 
-            patientController.ScheduleAppointment(examination); // NOVOOOO
-           // examinationService.ScheduleExamination(examination); STAROOO
+            patientController.ScheduleAppointment(examination); 
         }
 
         private System.Windows.MessageBoxResult MessageBox(string str)
@@ -202,7 +200,7 @@ namespace HospitalApplication.Windows.Secretary
             {
                 for (int i = 0; i < doctors.Count; i++)
                 {
-                    if (doctors[i].DoctorType.Equals(DoctorType.cardiology) && IsAvailableFiltredDoctors(doctors[i])) // Int32.Parse(doctors[i].DoctorId))
+                    if (doctors[i].DoctorType.Equals(DoctorType.cardiology) && IsAvailableFiltredDoctors(doctors[i])) 
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); 
@@ -215,7 +213,7 @@ namespace HospitalApplication.Windows.Secretary
             {
                 for (int i = 0; i < doctors.Count; i++)
                 {
-                    if (doctors[i].DoctorType.Equals(DoctorType.surgery) && IsAvailableFiltredDoctors(doctors[i]))//Int32.Parse(doctors[i].DoctorId))
+                    if (doctors[i].DoctorType.Equals(DoctorType.surgery) && IsAvailableFiltredDoctors(doctors[i]))
                     {
                         ComboAvailableDoctors.Items.Add(doctors[i].Username.ToString());
                         filteredDoctors.Add(doctors[i]); 
@@ -249,7 +247,7 @@ namespace HospitalApplication.Windows.Secretary
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].Username.Equals(doctorUsername)){
-                    return idDoctor = i.ToString(); //doctors[i].DoctorId;
+                    return idDoctor = i.ToString(); 
                 }
             }
             return idDoctor;

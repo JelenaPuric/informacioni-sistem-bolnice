@@ -26,7 +26,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             InitializeComponent();
             CenterWindow();
-            selectedPatient = secretaryController.getPatient(idPatient);
+            selectedPatient = secretaryController.GetPatient(idPatient);
             DisplayValuesFromSelectedPatient();
         }
 
@@ -65,7 +65,7 @@ namespace HospitalApplication.Windows.Secretary
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             SetNewValuesToSelectedPatient();
-            secretaryController.Update(selectedPatient);
+            secretaryController.UpdatePatient(selectedPatient);
             allPatientWindow.UpdateView();
             Close();
         }
