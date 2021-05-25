@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
     {
 
         private FileDoctors fileDoctors = FileDoctors.Instance;
-        private DoctorService doctorService = DoctorService.Instance;
+        private DoctorService doctorService = new DoctorService();
         private AllDoctorsWindow allDoctorsWindow = AllDoctorsWindow.Instance;
 
         public AddNewDoctorWindow()

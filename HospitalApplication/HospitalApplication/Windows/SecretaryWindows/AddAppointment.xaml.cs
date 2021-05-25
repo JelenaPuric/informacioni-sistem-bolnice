@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class AddAppointment : Window
     {
-        private AppointmentService examinationService = AppointmentService.Instance;
+        private AppointmentService examinationService = new AppointmentService();
         private AppointmentController patientController = new AppointmentController();
         private FileDoctors fileDoctors = FileDoctors.Instance;
         private List<Doctor> doctors = new List<Doctor>();
@@ -38,7 +38,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void LoadAppointments()
         {
-            appointments = examinationService.Appointments;
+            appointments = examinationService.appointments;
         }
 
         private void InsertDoctorsInComboBox()

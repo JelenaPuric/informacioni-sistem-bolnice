@@ -10,7 +10,7 @@ namespace HospitalApplication.Controller
 {
     class AppointmentController
     {
-        private AppointmentService appointmentService = AppointmentService.Instance;
+        private AppointmentService appointmentService = new AppointmentService();
 
         public void ScheduleAppointment(Appointment appointment) {
             appointmentService.ScheduleAppointment(appointment);
@@ -26,19 +26,9 @@ namespace HospitalApplication.Controller
             appointmentService.MoveAppointment(appointment, date);
         }
 
-        public void EditAppointment(Appointment appointment, string doctorsId   )
+        public void EditAppointment(Appointment appointment, string doctorsId)
         {
             appointmentService.EditAppointment(appointment, doctorsId);
-        }
-
-        public bool IsDoctorFree(String doctorsUsername, DateTime date)
-        {
-            return appointmentService.IsDoctorFree(doctorsUsername, date);
-        }
-
-        public Tuple<bool, int> IsRoomFree(DateTime date)
-        {
-            return appointmentService.IsRoomFree(date);
         }
     }
 }

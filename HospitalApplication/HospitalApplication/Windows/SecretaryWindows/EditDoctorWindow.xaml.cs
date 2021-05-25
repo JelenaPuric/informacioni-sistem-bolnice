@@ -17,7 +17,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
 {
     public partial class EditDoctorWindow : Window
     {
-        private DoctorService doctorService = DoctorService.Instance;
+        private DoctorService doctorService = new DoctorService();
         private AllDoctorsWindow allDoctorsWindow = AllDoctorsWindow.Instance;
         private Doctor currentSelectedDoctor;
         public EditDoctorWindow(Doctor selectedDoctor)

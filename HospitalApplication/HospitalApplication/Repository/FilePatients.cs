@@ -1,3 +1,4 @@
+using HospitalApplication.Model;
 using HospitalApplication.Repository;
 using Model;
 using Nancy.Json;
@@ -54,6 +55,25 @@ namespace WorkWithFiles
                     p = patients[i]; break;
             }
             return p;
+        }
+
+        public Patient GetPatientByUsername(string patientsUsername)
+        {
+            for (int i = 0; i < patients.Count; i++)
+                if (patients[i].Username == patientsUsername) return patients[i];
+            return null;
+        }
+
+        public void SetPatientsPenalty(Patient patient, int earnedPenalty)
+        {
+            int currentPenalty = patient.Penalty.Item1 + earnedPenalty;
+            DateTime dateOfLastActivity = patient.Penalty.Item2;
+            bool isPenaltyGreaterThanAllowed = patient.Penalty.Item3;
+            currentPenalty = Math.Max(0, currentPenalty - (int)(DateTime.Now - dateOfLastActivity).TotalDays * Constants.SUBSTRACT_PENALTY_EVERY_DAY);
+            dateOfLastActivity = DateTime.Now;
+            if (currentPenalty > Constants.MAX_ALLOWED_PENALTY) isPenaltyGreaterThanAllowed = true;
+            patient.Penalty = new Tuple<int, DateTime, bool>(currentPenalty, dateOfLastActivity, isPenaltyGreaterThanAllowed);
+            Write();
         }
     }
 }

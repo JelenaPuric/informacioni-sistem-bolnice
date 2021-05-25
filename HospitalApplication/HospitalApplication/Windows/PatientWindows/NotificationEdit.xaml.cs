@@ -12,23 +12,22 @@ using System.Windows.Shapes;
 using HospitalApplication.Controller;
 using HospitalApplication.Logic;
 using HospitalApplication.Model;
+using HospitalApplication.Service;
 using HospitalApplication.Windows;
 using HospitalApplication.Windows.PatientWindows;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowNotificationEdit.xaml
-    /// </summary>
     public partial class WindowNotificationEdit : Window
     {
-        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        private NotificationsPage notificationsPage = NotificationsPage.Instance;
         private NotificationController controller = new NotificationController();
+        private FormService formService = new FormService();
 
         public WindowNotificationEdit()
         {
             InitializeComponent();
-            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
+            Notification notification = (Notification)notificationsPage.lvUsers.SelectedItem;
             Date.SelectedDate = notification.Dates[0];
             Title.Text = notification.Title;
             Description.Text = notification.Description;
@@ -37,25 +36,11 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
-            DateTime date = Date.SelectedDate.Value.Date;
-            DateTime newDate = GetDateAndTimeFromForm(date);
+            Notification notification = (Notification)notificationsPage.lvUsers.SelectedItem;
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             controller.EditNotification(notification, Title.Text, Description.Text, Repeat.Text, newDate);
-            pageNotifications.UpdateView();
+            notificationsPage.UpdateView();
             Close();
-        }
-
-        private DateTime GetDateAndTimeFromForm(DateTime date)
-        {
-            List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 24; i++)
-            {
-                appointment.Add((i, 0, 0));
-                appointment.Add((i, 30, 0));
-            }
-            (int, int, int) a = appointment[Combo.SelectedIndex];
-            TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            return date + time;
         }
     }
 }

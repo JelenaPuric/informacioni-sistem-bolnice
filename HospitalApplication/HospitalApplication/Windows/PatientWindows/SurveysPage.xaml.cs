@@ -21,35 +21,26 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for SurveysPage.xaml
-    /// </summary>
     public partial class SurveysPage : Page
     {
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileSurveys filesSurvey = FileSurveys.Instance;
+        private FileSurveys fileSurveys = FileSurveys.Instance;
         private List<Appointment> appointments = new List<Appointment>();
         List<Survey> surveys = new List<Survey>();
-        private FileAppointments filesExamination = FileAppointments.Instance;
+        private FileAppointments fileAppointments = FileAppointments.Instance;
 
         public SurveysPage()
         {
             InitializeComponent();
-            appointments = filesExamination.GetAppointments();
-            surveys = filesSurvey.GetSurveys();
+            appointments = fileAppointments.GetAppointments();
         }
 
-        //provera da li pacijent moze da oceni doktora radi na ovaj nacin
-        //da bi se mogao oceniti doktor, pacijent mora da je u proslosti bio kod njega na pregledu
-        //takodje ako je pacijent ocenio doktora, ne moze da ga ponovo oceni sve dok ne ode kod njega na pregled
         private void RateDoctor_Click(object sender, RoutedEventArgs e)
         {
-            List<string> doctorUsernames = new List<String>();
-            surveys = filesSurvey.GetSurveys();
-            for (int i = 0; i < appointments.Count; i++)
-            {
-                if (appointments[i].PatientsId == mainWindow.PatientsUsername && appointments[i].ExaminationStart < DateTime.Now)
-                {
+            List<string> doctorUsernames = new List<string>();
+            surveys = fileSurveys.GetSurveys();
+            for (int i = 0; i < appointments.Count; i++){
+                if (appointments[i].PatientsId == mainWindow.PatientsUsername && appointments[i].ExaminationStart < DateTime.Now){
                     bool ok = true;
                     for (int j = 0; j < surveys.Count; j++)
                         if (surveys[j].PatientsUsername == mainWindow.PatientsUsername && surveys[j].SurveyIsAbout == appointments[i].DoctorsId && surveys[j].DateOfTheSurvey > appointments[i].ExaminationStart)
@@ -57,8 +48,7 @@ namespace HospitalApplication.Windows.PatientWindows
                     if (ok) doctorUsernames.Add(appointments[i].DoctorsId);
                 }
             }
-            if (doctorUsernames.Count < 1)
-            {
+            if (doctorUsernames.Count < 1){
                 MessageBox.Show("You must attend examination before rating doctor.");
                 return;
             }
@@ -68,10 +58,9 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < surveys.Count; i++)
-            {
-                if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30 && surveys[i].SurveyIsAbout == "Hospital")
-                {
+            surveys = fileSurveys.GetSurveys();
+            for (int i = 0; i < surveys.Count; i++){
+                if (surveys[i].PatientsUsername == mainWindow.PatientsUsername && (surveys[i].DateOfTheSurvey - DateTime.Now).Days < 30 && surveys[i].SurveyIsAbout == "Hospital"){
                     MessageBox.Show("You can rate hospital only once in 30 days.");
                     return;
                 }

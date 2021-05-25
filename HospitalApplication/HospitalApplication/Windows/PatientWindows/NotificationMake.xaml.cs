@@ -14,6 +14,7 @@ using HospitalApplication.Logic;
 using HospitalApplication.Controller;
 using HospitalApplication.WorkWithFiles;
 using HospitalApplication.Windows.PatientWindows;
+using HospitalApplication.Service;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -22,11 +23,12 @@ namespace HospitalApplication.Windows.Patient1
     /// </summary>
     public partial class WindowNotificationMake : Window
     {
-        private FileNotifications fileNotification = FileNotifications.Instance;
         private int notificationId = 100000;
-        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        private FileNotifications fileNotification = FileNotifications.Instance;
+        private NotificationsPage notificationsPage = NotificationsPage.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();
+        private FormService formService = new FormService();
 
         public WindowNotificationMake()
         {
@@ -35,8 +37,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            DateTime date = Date.SelectedDate.Value.Date;
-            DateTime newDate = GetDateAndTimeFromForm(date);
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             List<DateTime> dates = new List<DateTime>();
             dates.Add(newDate);
             for (int i = 0; i < Int32.Parse(Repeat.Text); i++){
@@ -46,21 +47,8 @@ namespace HospitalApplication.Windows.Patient1
             notificationId = fileNotification.GenerateNotificationId(notificationId);
             Notification notification = new Notification(dates, Title.Text, Description.Text, Repeat.Text, (notificationId + 1).ToString(), mainWindow.PatientsUsername);
             controller.ScheduleNotification(notification);
-            pageNotifications.UpdateView();
+            notificationsPage.UpdateView();
             Close();
-        }
-
-        private DateTime GetDateAndTimeFromForm(DateTime date)
-        {
-            List<(int, int, int)> appointment = new List<(int, int, int)>();
-            for (int i = 0; i < 24; i++)
-            {
-                appointment.Add((i, 0, 0));
-                appointment.Add((i, 30, 0));
-            }
-            (int, int, int) a = appointment[Combo.SelectedIndex];
-            TimeSpan time = new TimeSpan(a.Item1, a.Item2, a.Item3);
-            return date + time;
         }
     }
 }
