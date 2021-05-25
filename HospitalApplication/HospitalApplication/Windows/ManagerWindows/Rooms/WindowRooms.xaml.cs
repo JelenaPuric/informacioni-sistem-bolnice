@@ -29,11 +29,6 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             DataContext = new AllRooms();
         }
 
-        public void Delete_Clicked(object sender, RoutedEventArgs e)
-        {
-            DataContext = new DeleteRoom();
-        }
-
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new AddRoom();

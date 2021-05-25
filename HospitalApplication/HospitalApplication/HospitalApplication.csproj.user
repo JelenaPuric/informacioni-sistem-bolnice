@@ -25,6 +25,9 @@
     <Compile Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\ManagerWindows\Renovations\ChooseRenovation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -65,9 +68,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\ManagerWindows\Rooms\AllRooms.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\ManagerWindows\Rooms\DeleteRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\ManagerWindows\Rooms\EditR.xaml.cs">
@@ -237,6 +237,9 @@
     <Page Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\ManagerWindows\Renovations\ChooseRenovation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -277,9 +280,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Rooms\AllRooms.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\ManagerWindows\Rooms\DeleteRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Rooms\EditR.xaml">

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HospitalApplication.Windows.ManagerWindows.Renovations;
 
 namespace HospitalApplication.Windows.Manager.Renovationn
 {
@@ -43,8 +44,8 @@ namespace HospitalApplication.Windows.Manager.Renovationn
 
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
-            AddRenovation addWindow = new AddRenovation();
-            addWindow.Show();
+            ChooseRenovation newRenovation = new ChooseRenovation();
+            newRenovation.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)

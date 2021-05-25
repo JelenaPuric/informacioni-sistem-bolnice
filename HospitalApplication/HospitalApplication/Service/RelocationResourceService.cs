@@ -18,60 +18,49 @@ namespace HospitalApplication.Service
         {
             transfers = FileScheduledTransfers.LoadTransfers();
             rooms = FileRooms.LoadRoom();
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                if (rooms[i].Resource == null)
-                    rooms[i].Resource = new List<Resource>();
-                if (rooms[i].Scheduled == null)
-                    rooms[i].Scheduled = new List<DateTime>();
-                if (rooms[i].Renovation == null)
-                    rooms[i].Renovation = new List<Renovation>();
-            }
         }
 
-        public void DeleteTransfer(Transfer t)
+        public void DeleteTransfer(Transfer oldTransfer)
         {
             for(int i=0; i < transfers.Count; i++)
             {
-                if(transfers[i].idTransfer == t.idTransfer)
-                {
+                if(transfers[i].idTransfer == oldTransfer.idTransfer)
                     transfers.RemoveAt(i);
-                }
             }
             FileScheduledTransfers.EnterTransfer(transfers);
         }
 
-        public void TransStatic(Transfer te)
+        public void AddStaticTransfer(Transfer newTransfer)
         {
             int ok = 0;
-
             for(int i=0; i < transfers.Count; i++)
             {
-                if (transfers[i].idTransfer == te.idTransfer || transfers[i].dat == te.dat && transfers[i].idRoomTo == te.idRoomTo) {
-
+                if (transfers[i].idTransfer == newTransfer.idTransfer || transfers[i].date == newTransfer.date && transfers[i].idRoomTo == newTransfer.idRoomTo)
+                {
                     MessageBox.Show("That term for that room is already taken!", "Error");
                     ok++;
+                    break;
                 }
-               
             }
-            if(ok == 0)
-                transfers.Add(te);
+            if (newTransfer.idRoomFrom == newTransfer.idRoomTo)
+            {
+                MessageBox.Show("That resource is alredy in that room", "Error");
+                ok++;
+            }
+            if (ok == 0)
+                transfers.Add(newTransfer);
             FileScheduledTransfers.EnterTransfer(transfers);
         }
 
         public void CheckTransfers()
         {
             if (transfers == null)
-            {
                 transfers = new List<Transfer>();
-            }
-
             for (int i=0; i < transfers.Count; i++)
             {
-                if(transfers[i].dat <= DateTime.Now)
+                if(transfers[i].date <= DateTime.Now)
                 {
-                    
-                    for (int l = 0; l < transfers[i].Res.Count; l++)
+                    for (int l = 0; l < transfers[i].resource.Count; l++)
                     {
                         for (int j = 0; j < rooms.Count; j++)
                         {
@@ -81,9 +70,9 @@ namespace HospitalApplication.Service
                                 { 
                                     for (int k = 0; k < rooms[j].Resource.Count; k++)
                                     {
-                                        if (transfers[i].Res[l].idItem == rooms[j].Resource[k].idItem)
+                                        if (transfers[i].resource[l].idItem == rooms[j].Resource[k].idItem)
                                         {
-                                            rooms[j].Resource[k].quantity -= transfers[i].kolicina;
+                                            rooms[j].Resource[k].quantity -= transfers[i].quantity;
                                             // transfers.RemoveAt(i);
                                             break;
                                         }
@@ -103,25 +92,25 @@ namespace HospitalApplication.Service
                                     {
                                         for (int k = 0; k < rooms[z].Resource.Count; k++)
                                         {
-                                            if (rooms[z].Resource[k].idItem == transfers[i].Res[l].idItem)
+                                            if (rooms[z].Resource[k].idItem == transfers[i].resource[l].idItem)
                                             {
 
-                                                rooms[z].Resource[k].quantity += transfers[i].kolicina;
-                                                transfers[i].Res[k].quantity++;
+                                                rooms[z].Resource[k].quantity += transfers[i].quantity;
+                                                transfers[i].resource[k].quantity++;
                                                 break;
                                             }
                                             else
                                             {
-                                                rooms[z].Resource.Add(transfers[i].Res[l]);
-                                                transfers[i].Res[k].quantity++;
+                                                rooms[z].Resource.Add(transfers[i].resource[l]);
+                                                transfers[i].resource[k].quantity++;
                                                 break;
                                             }
                                         }
                                     }
                                     else
                                     {
-                                        rooms[z].Resource.Add(transfers[i].Res[l]);
-                                        transfers[i].kolicina++;
+                                        rooms[z].Resource.Add(transfers[i].resource[l]);
+                                        transfers[i].quantity++;
                                     }
                                 }
                                 else { rooms[z].Resource = new List<Resource>(); }
@@ -130,7 +119,6 @@ namespace HospitalApplication.Service
                             
                         }
                     }
-
                     transfers.RemoveAt(i);
                 }
             }
@@ -144,12 +132,12 @@ namespace HospitalApplication.Service
             return transfers;
         }
 
-        public bool CheckRoom(Transfer t)
+        public bool CheckDoesRoomExist(Transfer newTransfer)
         {
             int ok = 0;
             for (int i = 0; i < rooms.Count; i++)
             {
-                if (rooms[i].RoomId == t.idRoomTo)
+                if (rooms[i].RoomId == newTransfer.idRoomTo)
                     ok++;
             }
             if (ok != 0)

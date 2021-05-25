@@ -9,8 +9,8 @@ namespace HospitalApplication.Model
         public int idTransfer { get; set; }
         public int idRoomFrom { get; set; }
         public int idRoomTo { get; set; }
-        public List<Resource> Res { get; set; }
-        public DateTime dat { get; set; }
-        public int kolicina { get; set; }
+        public List<Resource> resource { get; set; }
+        public DateTime date { get; set; }
+        public int quantity { get; set; }
     }
 }

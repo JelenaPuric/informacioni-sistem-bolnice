@@ -38,7 +38,9 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 RoomId = Int32.Parse(textBoxRoomId.Text),
                 RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex,
-                //Scheduled = (DateTime)Scheduled.add(new DateTime()),
+                Renovation = new List<Renovation>(),
+                Resource = new List<Model.Resource>(),
+                Scheduled = new List<DateTime>()
             };
             RoomService mr = new RoomService();
             mr.CreateRoom(r);

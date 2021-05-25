@@ -41,30 +41,30 @@ namespace HospitalApplication.Windows.Manager.Resources
                 idTransfer = a.Next(),
                 idRoomFrom = re.roomId,
                 idRoomTo = int.Parse(textBoxRoomId.Text),
-                dat = DateTime.Parse(selectedDate.Text).AddHours(2),
-                kolicina = int.Parse(textBoxManufacturer.Text)
+                date = DateTime.Parse(selectedDate.Text).AddHours(2),
+                quantity = int.Parse(textBoxManufacturer.Text)
             };
 
             //t.dat.AddHours(4);
             
-            if(t.kolicina > re.quantity)
+            if(t.quantity > re.quantity)
             {
                 MessageBox.Show("That resource does not have that amount", "Error");
             }
             else
             {
                 re.roomId = t.idRoomTo;
-                re.quantity = t.kolicina;
-                if (t.Res == null)
+                re.quantity = t.quantity;
+                if (t.resource == null)
                 {
-                    t.Res = new List<Resource>();
-                    t.Res.Add(re);
+                    t.resource = new List<Resource>();
+                    t.resource.Add(re);
                 }
-                else { t.Res.Add(re); }
+                else { t.resource.Add(re); }
 
                 ManagerController mc = new ManagerController();
                 RelocationResourceService rr = new RelocationResourceService();
-                if (rr.CheckRoom(t) == true)
+                if (rr.CheckDoesRoomExist(t) == true)
                 {
                     mc.TransStatic(t);
                     Close();

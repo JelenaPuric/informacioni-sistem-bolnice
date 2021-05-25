@@ -50,7 +50,6 @@ namespace HospitalApplication.Windows.Manager.Rooms
 
             int s = rs.RoomId;
             //int s = Int32.Parse(textBoxRoomId.Text);
-            mr.RemoveById(s);
             mr.CreateRoom(r);
             Close();
         }

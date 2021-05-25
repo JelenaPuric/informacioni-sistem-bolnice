@@ -21,12 +21,12 @@ namespace HospitalApplication.Controller
 
         public void AddItem(Resource resource)
         {
-            RoomManagment.AddItem(resource);
+            RoomManagment.AddResource(resource);
         }
 
         public void TransferDynamicItem(Resource resource, int quantity)
         {
-            RoomManagment.TransferDynamicItem(resource, quantity);
+            RoomManagment.TransferDynamicResource(resource, quantity);
         }
 
         public void RemoveRoom(Room oldRoom)
@@ -34,14 +34,9 @@ namespace HospitalApplication.Controller
             RoomManagment.RemoveRoom(oldRoom);
         }
 
-        public void RemoveById(int roomid)
-        {
-            RoomManagment.RemoveById(roomid);
-        }
-
         public void RemoveItem(Resource resource)
         {
-            RoomManagment.RemoveItem(resource);
+            RoomManagment.RemoveResource(resource);
         }
 
         public void RemoveQuantity(Resource resource, int quantity)
@@ -56,7 +51,7 @@ namespace HospitalApplication.Controller
 
         public void TransStatic(Transfer transfer)
         {
-            RelocationResource.TransStatic(transfer);
+            RelocationResource.AddStaticTransfer(transfer);
         }
 
         public void CheckTransfers()

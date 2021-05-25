@@ -39,7 +39,7 @@
         <DockPanel Background="Gray" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5">
             <StackPanel>
                 <Button Name="All" Margin="0 0 0 0" Content="Show all rooms" Click="AllRooms_Clicked" />
-                <Button Name="Delete" Margin="0 10 0 0" Content="Delete room" Click="Delete_Clicked" />
+                <Button Name="Delete" Margin="0 10 0 0" Content="Delete room"  />
                 <Button Name="Add" Margin="0 10 0 0" Content="Add room" Click="Add_Clicked" />
                 <Button Name="Edit" Margin="0 10 0 0" Content="Edit room" Click="Edit_Clicked" />
                 <Button Name="Find" Margin="0 10 0 0" Content="Find room" Click="Show_Clicked" />

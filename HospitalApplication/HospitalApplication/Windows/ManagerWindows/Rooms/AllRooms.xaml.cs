@@ -62,10 +62,6 @@ namespace HospitalApplication.Windows.Manager.Prostorije
                 RoomService rm = new RoomService();
                 rm.RemoveRoom(selected);
             }
-            else {
-                DeleteRoom dr = new DeleteRoom();
-                dr.Show();
-            }
             RoomService rooms = new RoomService();
             List<Room> p = rooms.showAllRooms();
 

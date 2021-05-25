@@ -23,7 +23,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         {
             InitializeComponent();
             RoomService rm = new RoomService();
-            List<Resource> lista = rm.FindItem(s, i);
+            List<Resource> lista = rm.FindResource(s, i);
             lvDataBinding.ItemsSource = lista;
 
         }

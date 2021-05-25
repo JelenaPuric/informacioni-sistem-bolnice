@@ -33,7 +33,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             ro = rooms.showRoom(s);
 
             //p.Add(ro);
-            rooms.CheckIfZero(ro);
+            rooms.DeleteResourceIfZero(ro);
             lvDataBinding.ItemsSource = ro.Resource;
         }
 
@@ -42,7 +42,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             RoomService rooms = new RoomService();
             Room ro = new Room();
             ro = rooms.showRoom(ss);
-            rooms.CheckIfZero(ro);
+            rooms.DeleteResourceIfZero(ro);
             lvDataBinding.ItemsSource = ro.Resource;
         }
 
@@ -58,7 +58,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             Resource selected = (Resource)lvDataBinding.SelectedItem;
             if (selected != null)
             {
-                rm.RemoveItem(selected);
+                rm.RemoveResource(selected);
             }
             Room ro = new Room();
             ro = rm.showRoom(ss);

@@ -19,19 +19,16 @@ namespace HospitalApplication.Service
         public void CreateDrug (Drugs newDrug)
         {
             int ok = 0;
-            if(allMedicines.Count != 0)
-                for(int i=0; i<allMedicines.Count; i++)
+            for(int i=0; i < allMedicines.Count; i++)
+            {
+                if (newDrug.Name == allMedicines[i].Name && newDrug.Manufacturer == allMedicines[i].Manufacturer)
                 {
-                    if (newDrug.Name == allMedicines[i].Name && newDrug.Manufacturer == allMedicines[i].Manufacturer)
-                        ok++; 
+                    MessageBox.Show("That Medicines already exist", "Error");
+                    ok++;
                 }
-            else
-                allMedicines.Add(newDrug);
+            }
             if(ok == 0 )
                 allMedicines.Add(newDrug);
-            else
-                MessageBox.Show("That Medicines already exist", "Error");
-
             FileDrugs.EnterDrug(allMedicines);
         }
 
@@ -40,15 +37,14 @@ namespace HospitalApplication.Service
             return allMedicines;
         }
 
-        public void DeleteDrug (Drugs forDelete)
+        public void DeleteDrug (Drugs oldDrug)
         {
             for(int i=0; i<allMedicines.Count; i++)
             {
-                if (forDelete.ItemId == allMedicines[i].ItemId)
+                if (oldDrug.ItemId == allMedicines[i].ItemId)
                     allMedicines.RemoveAt(i);
             }
             FileDrugs.EnterDrug(allMedicines);
         }
-
     }
 }

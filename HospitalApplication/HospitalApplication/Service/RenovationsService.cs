@@ -19,33 +19,17 @@ namespace HospitalApplication.Service
         {
             rooms = FileRooms.LoadRoom();
             transfers = FileScheduledTransfers.LoadTransfers();
-            CheckIfNullList();
-        }
-
-        private void CheckIfNullList()
-        {
-            for (int i = 0; i < rooms.Count; i++)
-            {
-                if (rooms[i].Resource == null) rooms[i].Resource = new List<Resource>();
-                if (rooms[i].Scheduled == null) rooms[i].Scheduled = new List<DateTime>();
-                if (rooms[i].Renovation == null) rooms[i].Renovation = new List<Renovation>();
-                for (int j = 0; j < rooms[i].Renovation.Count; j++)
-                {
-                    if (rooms[i].Renovation[j].Days == null)
-                        rooms[i].Renovation[j].Days = new List<DateTime>();
-                }
-            }
         }
 
         public List<Renovation> GetList()
         {
-            List<Renovation> vrati = new List<Renovation>();
+            List<Renovation> renovations = new List<Renovation>();
             for (int  i=0; i<rooms.Count; i++)
             {
                 for(int j=0; j<rooms[i].Renovation.Count; j++)
-                    vrati.Add(rooms[i].Renovation[j]);
+                    renovations.Add(rooms[i].Renovation[j]);
             }
-            return vrati;
+            return renovations;
         }
 
         public void RemoveRenovation(Renovation renovation)
@@ -53,15 +37,18 @@ namespace HospitalApplication.Service
             for(int i=0; i < rooms.Count; i++)
             {
                 if(rooms[i].RoomId == renovation.RoomId)
-                {
-                    for(int j=0; j < rooms[i].Renovation.Count; j++)
-                    {
-                        if (rooms[i].Renovation[j].IdRenovation == renovation.IdRenovation)
-                            rooms[i].Renovation.RemoveAt(j);
-                    }
-                }
+                    DeleteRenovationInRoom(renovation, i);
             }
             FileRooms.EnterRoom(rooms);
+        }
+
+        private void DeleteRenovationInRoom(Renovation renovation, int i)
+        {
+            for (int j = 0; j < rooms[i].Renovation.Count; j++)
+            {
+                if (rooms[i].Renovation[j].IdRenovation == renovation.IdRenovation)
+                    rooms[i].Renovation.RemoveAt(j);
+            }
         }
 
         public void AddRenovation(Renovation newRenovation)
@@ -76,48 +63,47 @@ namespace HospitalApplication.Service
 
         public bool CheckRenovation(Renovation newRenovation)
         {
-            return (CheckDoesRoomExistAndIsFree(newRenovation) && DoesRoomHaveTransfers(newRenovation));
+            return (CheckDoesRoomExist(newRenovation) && CheckDoesRoomHaveTransfers(newRenovation) && CheckIsFree(newRenovation));
         }
 
-        private bool DoesRoomHaveTransfers(Renovation newRenovation)
+        private bool CheckDoesRoomHaveTransfers(Renovation newRenovation)
         {
             for (int i = 0; i < transfers.Count; i++)
             {
                 if (newRenovation.RoomId == transfers[i].idRoomFrom || newRenovation.RoomId == transfers[i].idRoomTo)
+                    return CheckIfSameDaysReserved(newRenovation, i);
+            }
+            return true;
+        }
+
+        private bool CheckIfSameDaysReserved(Renovation newRenovation, int i)
+        {
+            for (int j = 0; j < newRenovation.Days.Count; j++)
+            {
+                if (newRenovation.Days[j].Date == transfers[i].date.Date)
                 {
-                    for (int j = 0; j < newRenovation.Days.Count; j++)
-                    {
-                        if (newRenovation.Days[j].Date == transfers[i].dat.Date)
-                        {
-                            MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
-                            return false;
-                        }
-                    }
+                    MessageBox.Show("That room is already busy, relocation of static equipment is scheduled", "Error");
+                    return false;
                 }
             }
             return true;
         }
 
-        private bool CheckDoesRoomExistAndIsFree(Renovation newRenovation)
+        private bool CheckIsFree(Renovation newRenovation)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if(rooms[i].RoomId == newRenovation.RoomId)
+                    return CheckDoesNewRenovationExistForSameRoom(newRenovation, i);
+            }
+            return true;
+        }
+
+        private bool CheckDoesRoomExist(Renovation newRenovation)
         {
             int roomExist = 0;
             for (int i = 0; i < rooms.Count; i++)
             {
-                for (int j = 0; j < rooms[i].Renovation.Count; j++)
-                {
-                    if (rooms[i].Renovation[j].RoomId == newRenovation.RoomId)
-                        for (int d = 0; d < rooms[i].Renovation[j].Days.Count; d++)
-                        {
-                            for (int nd = 0; nd < newRenovation.Days.Count; nd++)
-                            {
-                                if (rooms[i].Renovation[j].Days[d].Date == newRenovation.Days[nd].Date)
-                                {
-                                    MessageBox.Show("That room is already busy", "Error");
-                                    return false;
-                                }
-                            }
-                        }
-                }
                 if (rooms[i].RoomId == newRenovation.RoomId)
                     roomExist++;
             }
@@ -129,17 +115,50 @@ namespace HospitalApplication.Service
             return true;
         }
 
+        private bool CheckDoesNewRenovationExistForSameRoom(Renovation newRenovation, int i)
+        {
+            for (int j = 0; j < rooms[i].Renovation.Count; j++)
+            {
+                if (rooms[i].Renovation[j].RoomId == newRenovation.RoomId)
+                    return CheckIsThatRoomBussy(newRenovation, i, j);
+            }
+            return true;
+        }
+
+        private bool CheckIsThatRoomBussy(Renovation newRenovation, int i, int j)
+        {
+            for (int d = 0; d < rooms[i].Renovation[j].Days.Count; d++)
+                return CheckWithDaysOfNewRenovation(newRenovation, i, j, d);
+            return true;
+        }
+
+        private bool CheckWithDaysOfNewRenovation(Renovation newRenovation, int i, int j, int d)
+        {
+            for (int nd = 0; nd < newRenovation.Days.Count; nd++)
+            {
+                if (rooms[i].Renovation[j].Days[d].Date == newRenovation.Days[nd].Date)
+                {
+                    MessageBox.Show("That room is already busy", "Error");
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void DeleteOldRenovations()
         {
             for(int i=0; i<rooms.Count; i++)
-            {
-                for(int j=0; j<rooms[i].Renovation.Count; j++)
-                {
-                    if (rooms[i].Renovation[j].EndDay <= DateTime.Now)
-                        rooms[i].Renovation.RemoveAt(j);
-                }
-            }
+                DeleteIfEndDayPass(i);
             FileRooms.EnterRoom(rooms);
+        }
+
+        private void DeleteIfEndDayPass(int i)
+        {
+            for (int j = 0; j < rooms[i].Renovation.Count; j++)
+            {
+                if (rooms[i].Renovation[j].EndDay <= DateTime.Now)
+                    rooms[i].Renovation.RemoveAt(j);
+            }
         }
     }
 }
