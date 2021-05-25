@@ -23,9 +23,9 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         public Renovations()
         {
             InitializeComponent();
-            RenovationsService logic = new RenovationsService();
-            logic.DeleteOldRenovations();
-            List<Renovation> renovations = logic.GetList();
+            RenovationsService service = new RenovationsService();
+            service.DeleteOldRenovations();
+            List<Renovation> renovations = service.GetList();
             lvDataBinding.ItemsSource = renovations;
         }
 
@@ -34,18 +34,15 @@ namespace HospitalApplication.Windows.Manager.Renovationn
             RenovationsService logic = new RenovationsService();
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
             if(selected != null)
-            {
                 logic.RemoveRenovation(selected);
-            }
-
             List<Renovation> renovations = logic.GetList();
             lvDataBinding.ItemsSource = renovations;
         }
 
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
-            ChooseRenovation newRenovation = new ChooseRenovation();
-            newRenovation.Show();
+            ChooseRenovation window = new ChooseRenovation();
+            window.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
@@ -61,8 +58,8 @@ namespace HospitalApplication.Windows.Manager.Renovationn
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
             if (selected != null)
             {
-                EditRenovation editWindow = new EditRenovation(selected);
-                editWindow.Show();
+                EditRenovation window = new EditRenovation(selected);
+                window.Show();
             }
         }
     }

@@ -13,9 +13,9 @@
                 <GridView>
                     <GridViewColumn Header="Id Transfer" Width="120" DisplayMemberBinding="{Binding idTransfer}" />
                     <GridViewColumn Header="Id Room From" Width="120" DisplayMemberBinding="{Binding idRoomFrom}" />
-                    <GridViewColumn Header="Num" Width="30" DisplayMemberBinding="{Binding kolicina}" />
+                    <GridViewColumn Header="Num" Width="30" DisplayMemberBinding="{Binding quantity}" />
                     <GridViewColumn Header="Id Room To" Width="120" DisplayMemberBinding="{Binding idRoomTo}" />
-                    <GridViewColumn Header="Date" Width="150" DisplayMemberBinding="{Binding dat}" />
+                    <GridViewColumn Header="Date" Width="150" DisplayMemberBinding="{Binding date}" />
 
                 </GridView>
             </ListView.View>

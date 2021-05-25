@@ -17,7 +17,7 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="183,20,0,0" Name="textBoxRoomId" VerticalAlignment="Top" Width="222" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="183,110,0,0" Name="textBoxManufacturer" VerticalAlignment="Top" Width="222" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="183,80,0,0" Name="selectedDate" VerticalAlignment="Top" Width="222"/>
-        <DatePicker  HorizontalAlignment="Left" Margin="183,50,0,0" Name="PickDate" VerticalAlignment="Top" Width="222" SelectedDateChanged="Kalendar"/>
+        <DatePicker  HorizontalAlignment="Left" Margin="183,50,0,0" Name="PickDate" VerticalAlignment="Top" Width="222" SelectedDateChanged="Calendar"/>
 
 
 

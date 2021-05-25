@@ -14,46 +14,41 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for MoveStaticResource.xaml
-    /// </summary>
     public partial class MoveStaticResource : Window
     {
-        private Resource re;
+        private Resource oldResourceAtributes;
 
-        public MoveStaticResource(Resource r)
+        public MoveStaticResource(Resource oldResource)
         {
             InitializeComponent();
-            RelocationResourceService rr = new RelocationResourceService();
-            
-            List<Transfer> tr = rr.showAllTransfers();
-            rr.CheckTransfers();
-            lvDataBinding.ItemsSource = tr;
-            re = r;
+            RelocationResourceService service = new RelocationResourceService();
+            List<Transfer> allTransfers = service.showAllTransfers();
+            service.CheckTransfers();
+            lvDataBinding.ItemsSource = allTransfers;
+            oldResourceAtributes = oldResource;
         }
 
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
-            AddMoveStaticResource amsr = new AddMoveStaticResource(re);
-            amsr.Show();
+            AddMoveStaticResource window = new AddMoveStaticResource(oldResourceAtributes);
+            window.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            RelocationResourceService rr = new RelocationResourceService();
-            List<Transfer> tr = rr.showAllTransfers();
-            rr.CheckTransfers();
-            lvDataBinding.ItemsSource = tr;
+            RelocationResourceService service = new RelocationResourceService();
+            List<Transfer> allTransfers = service.showAllTransfers();
+            service.CheckTransfers();
+            lvDataBinding.ItemsSource = allTransfers;
         }
 
         private void Delete_Clicked(object sender, RoutedEventArgs e)
         {
-            Transfer t = (Transfer)lvDataBinding.SelectedItem;
-            RelocationResourceService rr = new RelocationResourceService();
-            rr.DeleteTransfer(t);
-
-            List<Transfer> tr = rr.showAllTransfers();
-            lvDataBinding.ItemsSource = tr;
+            Transfer oldTransfer = (Transfer)lvDataBinding.SelectedItem;
+            RelocationResourceService service = new RelocationResourceService();
+            service.DeleteTransfer(oldTransfer);
+            List<Transfer> allTransfers = service.showAllTransfers();
+            lvDataBinding.ItemsSource = allTransfers;
         }
     }
 }

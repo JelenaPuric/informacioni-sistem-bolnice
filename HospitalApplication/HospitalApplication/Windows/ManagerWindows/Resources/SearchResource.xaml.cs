@@ -24,11 +24,10 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Search_Clicked(object sender, RoutedEventArgs e)
         {
-            string s = forSearch.Text;
-            int i = int.Parse(num.Text);
-            SearchedResource sr = new SearchedResource(s, i);
-            sr.Show();
-
+            string resourceName = forSearch.Text;
+            int quantity = int.Parse(num.Text);
+            SearchedResource window = new SearchedResource(resourceName, quantity);
+            window.Show();
             Close();
         }
     }

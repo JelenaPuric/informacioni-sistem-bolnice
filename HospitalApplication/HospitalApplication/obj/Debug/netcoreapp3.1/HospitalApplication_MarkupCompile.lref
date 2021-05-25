@@ -31,9 +31,6 @@ FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\AddRoom.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\AllRooms.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\EditR.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\EditRoom.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\ShowRoomi.xaml;;
-FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\WindowRooms.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\WindowsManager.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\AnamnesisInfo.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\PatientWindows\AnamnesisPage.xaml;;
@@ -78,4 +75,5 @@ FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\SecretaryWindows\ViewNewsWindow.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\SecretaryWindows\ViewPatientWindow.xaml;;
 FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Renovations\ChooseRenovation.xaml;;
+FD:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\Windows\ManagerWindows\Rooms\ShowRoom.xaml;;
 

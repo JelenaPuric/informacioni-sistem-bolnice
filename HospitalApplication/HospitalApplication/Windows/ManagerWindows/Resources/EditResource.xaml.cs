@@ -20,15 +20,15 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class EditResource : Window
     {
-        private Resource priv;
-        public EditResource(Resource re)
+        private Resource oldResourceAtributes;
+        public EditResource(Resource oldResource)
         {
             InitializeComponent();
-            textBoxName.Text = re.name;
-            textBoxQuantity.Text = re.quantity.ToString();
-            checkBoxIsStatic.IsChecked = (bool)re.isStatic;
-            textBoxManufacturer.Text = re.manufacturer;
-            priv = re;
+            textBoxName.Text = oldResource.name;
+            textBoxQuantity.Text = oldResource.quantity.ToString();
+            checkBoxIsStatic.IsChecked = (bool)oldResource.isStatic;
+            textBoxManufacturer.Text = oldResource.manufacturer;
+            oldResourceAtributes = oldResource;
         }
 
         private void Cancel_Clicked(object sender, RoutedEventArgs e)
@@ -38,17 +38,17 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Resource r = new Resource() {
-                idItem = priv.idItem,
+            Resource newResource = new Resource() {
+                idItem = oldResourceAtributes.idItem,
                 name = textBoxName.Text,
                 quantity = int.Parse(textBoxQuantity.Text),
                 isStatic = (bool)checkBoxIsStatic.IsChecked,
                 manufacturer = textBoxManufacturer.Text,
-                roomId = priv.roomId
+                roomId = oldResourceAtributes.roomId
             };
-            ManagerController mc = new ManagerController();
-            mc.RemoveItem(priv);
-            mc.AddItem(r);
+            ManagerController logic = new ManagerController();
+            logic.RemoveItem(oldResourceAtributes);
+            logic.AddItem(newResource);
             Close();
         }
     }

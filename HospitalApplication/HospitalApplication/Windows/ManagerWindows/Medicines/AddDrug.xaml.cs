@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Medicines
 {
-    /// <summary>
-    /// Interaction logic for AddDrug.xaml
-    /// </summary>
     public partial class AddDrug : Window
     {
         public AddDrug()
@@ -24,14 +21,14 @@ namespace HospitalApplication.Windows.Manager.Medicines
             InitializeComponent();
         }
 
-        private Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+        private Random randomIdDrug = new Random(DateTime.Now.Ticks.GetHashCode());
         private MedicinesService logic = new MedicinesService();
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
             Drugs newDrug = new Drugs()
             {
-                ItemId = a.Next(),
+                ItemId = randomIdDrug.Next(),
                 Name = textBoxName.Text,
                 Manufacturer = textBoxQuantity.Text,
                 Replacement = textBoxReplacement.Text,

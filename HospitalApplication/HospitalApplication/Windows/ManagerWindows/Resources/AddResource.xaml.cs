@@ -15,34 +15,30 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for AddResource.xaml
-    /// </summary>
     public partial class AddResource : Window
     {
-        private int j;
-        private Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+        private int idRoomTo;
+        private Random RandomIdItem = new Random(DateTime.Now.Ticks.GetHashCode());
 
-        public AddResource(int i)
+        public AddResource(int idRoom)
         {
             InitializeComponent();
-            j = i;
+            idRoomTo = idRoom;
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Resource r = new Resource()
+            Resource newResource = new Resource()
             {
-                idItem = a.Next(1, 999999),
+                idItem = RandomIdItem.Next(1, 999999),
                 name = textBoxName.Text,
                 quantity = int.Parse(textBoxQuantity.Text),
                 isStatic = (bool)checkBoxIsStatic.IsChecked,
                 manufacturer = textBoxManufacturer.Text,
-                roomId = j
+                roomId = idRoomTo
             };
-            ManagerController mc = new ManagerController();
-            //RoomManagment rm = new RoomManagment();
-            mc.AddItem(r);
+            ManagerController logic = new ManagerController();
+            logic.AddItem(newResource);
             Close();
         }
     }

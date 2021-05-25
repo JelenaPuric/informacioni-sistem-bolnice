@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,21 +22,21 @@ namespace HospitalApplication.Windows.Manager.Rooms
     public partial class EditR : Window
     {
         private Room rs;
-        public EditR(Room ro)
+        public EditR(Room oldRoom)
         {
             InitializeComponent();
-            rs = ro;
-            textBoxNumberOfFloors.Text = ro.NumberOfFloors.ToString();
-            textBoxRoomId.Text = ro.RoomId.ToString();
-            textBoxRoomNumber.Text = ro.RoomNumber.ToString();
-            textBoxCapacity.Text = ro.Capacity.ToString();
-            checkBoxOccupied.IsChecked = (bool)ro.Occupied;
-            comboBoxRoomType.SelectedItem = ro.RoomType;
+            rs = oldRoom;
+            textBoxNumberOfFloors.Text = oldRoom.NumberOfFloors.ToString();
+            textBoxRoomId.Text = oldRoom.RoomId.ToString();
+            textBoxRoomNumber.Text = oldRoom.RoomNumber.ToString();
+            textBoxCapacity.Text = oldRoom.Capacity.ToString();
+            checkBoxOccupied.IsChecked = (bool)oldRoom.Occupied;
+            comboBoxRoomType.SelectedItem = oldRoom.RoomType;
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Room r = new Room()
+            Room newRoom = new Room()
             {
                 Capacity = Int32.Parse(textBoxCapacity.Text),
                 NumberOfFloors = Int32.Parse(textBoxNumberOfFloors.Text),
@@ -46,11 +47,9 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 Resource = rs.Resource,
                 Scheduled = rs.Scheduled
             };
-            RoomService mr = new RoomService();
-
-            int s = rs.RoomId;
-            //int s = Int32.Parse(textBoxRoomId.Text);
-            mr.CreateRoom(r);
+            ManagerController logic = new ManagerController();
+            logic.CreateRoom(newRoom);
+            logic.RemoveRoom(rs);
             Close();
         }
 

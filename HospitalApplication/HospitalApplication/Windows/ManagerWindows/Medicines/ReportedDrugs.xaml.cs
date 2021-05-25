@@ -38,9 +38,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
             ReportService logic = new ReportService();
             Model.ReportedDrugs selected = (Model.ReportedDrugs)lvDataBinding.SelectedItem;
             if (selected != null)
-            {
                 logic.DeleteReport(selected);
-            }
             List<Model.ReportedDrugs> reported = logic.getAllReports();
             lvDataBinding.ItemsSource = reported;
         }

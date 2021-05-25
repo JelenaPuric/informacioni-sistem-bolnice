@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
     /// </summary>
     public partial class EditDrug : Window
     {
-        private Drugs Last;
+        private Drugs old;
 
         public EditDrug(Drugs forEdit)
         {
@@ -28,23 +28,22 @@ namespace HospitalApplication.Windows.Manager.Medicines
             textBoxQuantity.Text = forEdit.Manufacturer;
             textBoxMultiline.Text = forEdit.Ingredients;
             textBoxReplacement.Text = forEdit.Replacement;
-            Last = forEdit;
+            old = forEdit;
         }
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
             Drugs Edited = new Drugs
             {
-                ItemId = Last.ItemId,
+                ItemId = old.ItemId,
                 Name = textBoxName.Text,
                 Manufacturer = textBoxQuantity.Text,
                 Replacement = textBoxReplacement.Text,
                 Ingredients = textBoxMultiline.Text
             };
             MedicinesService logic = new MedicinesService();
-            logic.DeleteDrug(Last);
+            logic.DeleteDrug(old);
             logic.CreateDrug(Edited);
-            
             Close();
         }
     }

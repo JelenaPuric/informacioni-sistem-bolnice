@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using HospitalApplication.Controller;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,14 +24,14 @@ namespace HospitalApplication.Windows.Manager.Rooms
         public AddRoom()
         {
             InitializeComponent();
-            textBoxRoomId.Text = a.Next(1, 999999).ToString();
+            textBoxRoomId.Text = roomId.Next(1, 999999).ToString();
         }
 
-        public Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+        public Random roomId = new Random(DateTime.Now.Ticks.GetHashCode());
 
-            private void Submit_Clicked(object sender, RoutedEventArgs e)
+        private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Room r = new Room()
+            Room newRoom = new Room()
             {
                 Capacity = Int32.Parse(textBoxCapacity.Text),
                 NumberOfFloors = Int32.Parse(textBoxNumberOfFloors.Text),
@@ -42,13 +43,8 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 Resource = new List<Model.Resource>(),
                 Scheduled = new List<DateTime>()
             };
-            RoomService mr = new RoomService();
-            mr.CreateRoom(r);
-            textBoxCapacity.Text = String.Empty;
-            textBoxNumberOfFloors.Text = String.Empty;
-            textBoxRoomId.Text = String.Empty;
-            textBoxRoomNumber.Text = String.Empty;
-
+            ManagerController logic = new ManagerController();
+            logic.CreateRoom(newRoom);
             Close();
         }
     }

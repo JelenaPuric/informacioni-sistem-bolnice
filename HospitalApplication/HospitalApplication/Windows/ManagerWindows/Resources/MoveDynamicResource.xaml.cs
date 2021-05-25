@@ -20,13 +20,13 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class MoveDynamicResource : Window
     {
-        private Resource rebus;
-        public MoveDynamicResource(Resource r)
+        private Resource resourceForMove;
+        public MoveDynamicResource(Resource oldResource)
         {
             InitializeComponent();
-            textBoxName.Text = r.name;
-            textBoxQuantity.Text = r.quantity.ToString();
-            rebus = r;
+            textBoxName.Text = oldResource.name;
+            textBoxQuantity.Text = oldResource.quantity.ToString();
+            resourceForMove = oldResource;
         }
 
         private void Cancel_Clicked(object sender, RoutedEventArgs e)
@@ -36,27 +36,27 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Resource re = new Resource();
-            re.roomId = int.Parse(textBoxRoomId.Text);
-            re.name = rebus.name;
-            re.isStatic = rebus.isStatic;
-            re.manufacturer = rebus.manufacturer;
-            re.idItem = rebus.idItem;
+            Resource newResource = new Resource();
+            newResource.roomId = int.Parse(textBoxRoomId.Text);
+            newResource.name = resourceForMove.name;
+            newResource.isStatic = resourceForMove.isStatic;
+            newResource.manufacturer = resourceForMove.manufacturer;
+            newResource.idItem = resourceForMove.idItem;
 
             ManagerController mc = new ManagerController();
 
-            if (int.Parse(textBoxQuantity.Text) > int.Parse(textBoxKolicina.Text)) {
-                re.quantity = int.Parse(textBoxKolicina.Text);
-                mc.TransferDynamicItem(re, int.Parse(textBoxKolicina.Text));
-                mc.RemoveQuantity(rebus, int.Parse(textBoxKolicina.Text));
+            if (int.Parse(textBoxQuantity.Text) > int.Parse(textBoxKolicina.Text)) 
+            {
+                newResource.quantity = int.Parse(textBoxKolicina.Text);
+                mc.TransferDynamicItem(newResource, int.Parse(textBoxKolicina.Text));
+                mc.RemoveQuantity(resourceForMove, int.Parse(textBoxKolicina.Text));
 
-                if (rebus.quantity == 0)
-                    mc.RemoveItem(rebus);
+                if (resourceForMove.quantity == 0)
+                    mc.RemoveItem(resourceForMove);
                 Close();
             }
-            else {
+            else
                 MessageBox.Show(" You don't have that many resources " );
-            }
         }
     }
 }

@@ -25,47 +25,37 @@ namespace HospitalApplication.Windows.Manager.Prostorije
         {
             InitializeComponent();
             RoomService rooms = new RoomService();
-            List<Room> p = rooms.showAllRooms();
-
-            lvDataBinding.ItemsSource = p;
-           
+            List<Room> allRooms = rooms.showAllRooms();
+            lvDataBinding.ItemsSource = allRooms;
         }
 
         private void AddRoom_Clicked(object sender, RoutedEventArgs e)
         {
-            AddRoom ar = new AddRoom();
-            ar.Show();
-            RoomService rooms = new RoomService();
-            List<Room> p = rooms.showAllRooms();
-
-            lvDataBinding.ItemsSource = p;
+            AddRoom window = new AddRoom();
+            window.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
             RoomService rooms = new RoomService();
-            List<Room> p = rooms.showAllRooms();
-            lvDataBinding.ItemsSource = p;
+            List<Room> allRooms = rooms.showAllRooms();
+            lvDataBinding.ItemsSource = allRooms;
         }
 
         private void Search_Clicked(object sender, RoutedEventArgs e)
         {
-            ShowRoomi sr = new ShowRoomi();
-            sr.Show();
+            ShowRoomi window = new ShowRoomi();
+            window.Show();
         }
 
         private void Deleted_Clicked(object sender, RoutedEventArgs e)
         {
+            RoomService logic = new RoomService();
             Room selected = (Room)lvDataBinding.SelectedItem;
             if (selected != null)
-            {
-                RoomService rm = new RoomService();
-                rm.RemoveRoom(selected);
-            }
-            RoomService rooms = new RoomService();
-            List<Room> p = rooms.showAllRooms();
-
-            lvDataBinding.ItemsSource = p;
+                logic.RemoveRoom(selected);
+            List<Room> allRooms = logic.showAllRooms();
+            lvDataBinding.ItemsSource = allRooms;
         }
 
         private void Edit_Clicked(object sender, RoutedEventArgs e)
@@ -73,14 +63,9 @@ namespace HospitalApplication.Windows.Manager.Prostorije
             Room selected = (Room)lvDataBinding.SelectedItem;
             if (selected != null)
             {
-                EditR er = new EditR(selected);
-                er.Show();
-                //if (er.Submit.IsEnabled) {
-                //    RoomManagment rm = new RoomManagment();
-                //    rm.RemoveRoom(selected);
-                //}
+                EditR window = new EditR(selected);
+                window.Show();
             }
-
         }
     }
 }

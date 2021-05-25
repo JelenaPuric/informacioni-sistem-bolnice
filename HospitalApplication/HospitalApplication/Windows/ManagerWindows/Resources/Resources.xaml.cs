@@ -15,55 +15,42 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for Resources.xaml
-    /// </summary>
     public partial class Resources : Window
     {
-        private int ss;
-        private bool ddd;
-        public Resources(int s)
+        private int idRoomWithResource;
+        private bool isStatic;
+        public Resources(int idRoom)
         {
-            ss = s;
             InitializeComponent();
-            RoomService rooms = new RoomService();
-            //List<Room> p = new List<Room>();
-
-            Room ro = new Room();
-            ro = rooms.showRoom(s);
-
-            //p.Add(ro);
-            rooms.DeleteResourceIfZero(ro);
-            lvDataBinding.ItemsSource = ro.Resource;
+            idRoomWithResource = idRoom;
+            RoomService service = new RoomService();
+            Room selectedRoom = service.showRoom(idRoom);
+            service.DeleteResourceIfZero(selectedRoom);
+            lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService rooms = new RoomService();
-            Room ro = new Room();
-            ro = rooms.showRoom(ss);
-            rooms.DeleteResourceIfZero(ro);
-            lvDataBinding.ItemsSource = ro.Resource;
+            RoomService service = new RoomService();
+            Room selectedRoom = service.showRoom(idRoomWithResource);
+            service.DeleteResourceIfZero(selectedRoom);
+            lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
 
         private void AddItem_Clicked(object sender, RoutedEventArgs e)
         {
-            AddResource ad = new AddResource(ss);
-            ad.Show();
+            AddResource window = new AddResource(idRoomWithResource);
+            window.Show();
         }
 
         private void Delete_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService rm = new RoomService();
+            RoomService service = new RoomService();
             Resource selected = (Resource)lvDataBinding.SelectedItem;
             if (selected != null)
-            {
-                rm.RemoveResource(selected);
-            }
-            Room ro = new Room();
-            ro = rm.showRoom(ss);
-
-            lvDataBinding.ItemsSource = ro.Resource;
+                service.RemoveResource(selected);
+            Room selectedRoom = service.showRoom(idRoomWithResource);
+            lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
 
         private void EditResource_Clicked(object sender, RoutedEventArgs e)
@@ -71,44 +58,37 @@ namespace HospitalApplication.Windows.Manager.Resources
             Resource selected = (Resource)lvDataBinding.SelectedItem;
             if (selected != null)
             {
-                EditResource er = new EditResource(selected);
-                er.Show();
+                EditResource window = new EditResource(selected);
+                window.Show();
             }
-            
         }
 
         private void Static_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService rooms = new RoomService();
-            Room ro = new Room();
-            List<Resource> rs = new List<Resource>();
-            ro = rooms.showRoom(ss);
-            for(int i = 0; i < ro.Resource.Count; i++)
+            RoomService service = new RoomService();
+            Room selectedRoom = service.showRoom(idRoomWithResource);
+            List<Resource> allStaticResource = new List<Resource>();
+            for(int i = 0; i < selectedRoom.Resource.Count; i++)
             {
-                if(ro.Resource[i].isStatic == true)
-                {
-                    rs.Add(ro.Resource[i]);
-                }
+                if(selectedRoom.Resource[i].isStatic == true)
+                    allStaticResource.Add(selectedRoom.Resource[i]);
             }
-            lvDataBinding.ItemsSource = rs;
-            ddd = true;
+            lvDataBinding.ItemsSource = allStaticResource;
+            isStatic = true;
         }
 
         private void Dynamic_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService rooms = new RoomService();
-            Room ro = new Room();
-            List<Resource> rs = new List<Resource>();
-            ro = rooms.showRoom(ss);
-            for (int i = 0; i < ro.Resource.Count; i++)
+            RoomService service = new RoomService();
+            Room selectedRoom = service.showRoom(idRoomWithResource);
+            List<Resource> allDynamicResource = new List<Resource>();
+            for (int i = 0; i < selectedRoom.Resource.Count; i++)
             {
-                if (ro.Resource[i].isStatic != true)
-                {
-                    rs.Add(ro.Resource[i]);
-                }
+                if (selectedRoom.Resource[i].isStatic != true)
+                    allDynamicResource.Add(selectedRoom.Resource[i]);
             }
-            lvDataBinding.ItemsSource = rs;
-            ddd = false;
+            lvDataBinding.ItemsSource = allDynamicResource;
+            isStatic = false;
         }
 
         private void Switching_Clicked(object sender, RoutedEventArgs e)
@@ -116,16 +96,14 @@ namespace HospitalApplication.Windows.Manager.Resources
             Resource selected = (Resource)lvDataBinding.SelectedItem;
             if (selected.isStatic == true)
             {
-
-                    MoveStaticResource msr = new MoveStaticResource(selected);
-                    msr.Show();
+                MoveStaticResource window = new MoveStaticResource(selected);
+                window.Show();
             }
             else
-                {
-                    MoveDynamicResource mdr = new MoveDynamicResource(selected);
-                    mdr.Show();
-                }
-            
+            {
+                MoveDynamicResource window = new MoveDynamicResource(selected);
+                window.Show();
+            }
         }
     }
 }

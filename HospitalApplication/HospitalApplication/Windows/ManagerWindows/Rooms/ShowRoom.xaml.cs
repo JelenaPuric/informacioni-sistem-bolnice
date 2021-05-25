@@ -20,7 +20,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
     /// </summary>
     public partial class ShowRoomi : Window
     {
-        private int delete;
+        private int roomId;
         public ShowRoomi()
         {
             InitializeComponent();
@@ -28,13 +28,14 @@ namespace HospitalApplication.Windows.Manager.Rooms
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            delete = int.Parse(forShw.Text);
+            roomId = int.Parse(forShw.Text);
             RoomService mg = new RoomService();
-            Room roo = new Room();
-            roo = mg.showRoom(delete);
+            Room roomForShow = new Room();
+            roomForShow = mg.showRoom(roomId);
             forShw.Text = String.Empty;
 
-            string poruka = "     Room type: " + roo.RoomType + "        Capacity: " + roo.Capacity + "        Number of floors: " + roo.NumberOfFloors + "        Occupied: " + roo.Occupied + "        Room id: " + roo.RoomId + "        Room number: " + roo.RoomNumber  + "     ";
+            string poruka = "     Room type: " + roomForShow.RoomType + "        Capacity: " + roomForShow.Capacity + "        Number of floors: " +
+                roomForShow.NumberOfFloors + "        Occupied: " + roomForShow.Occupied + "        Room id: " + roomForShow.RoomId + "        Room number: " + roomForShow.RoomNumber  + "     ";
 
             fallback.Text = poruka;
         }

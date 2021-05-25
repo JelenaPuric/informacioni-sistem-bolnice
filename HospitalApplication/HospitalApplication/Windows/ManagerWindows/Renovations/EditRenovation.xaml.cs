@@ -37,18 +37,15 @@ namespace HospitalApplication.Windows.Manager.Renovationn
                 EndDay = (DateTime)PickEndDate.SelectedDate,
                 Days = editedRenovation.Days
             };
-            RenovationsService logic = new RenovationsService();
-            logic.RemoveRenovation(editedRenovation);
-            if (logic.CheckRenovation(newRenovatioin))
+            RenovationsService service = new RenovationsService();
+            service.RemoveRenovation(editedRenovation);
+            if (service.CheckRenovation(newRenovatioin))
             {
-                logic.AddRenovation(newRenovatioin);
+                service.AddRenovation(newRenovatioin);
                 Close();
             }
             else
-            {
-                logic.AddRenovation(editedRenovation);
-            }
-
+                service.AddRenovation(editedRenovation);
         }
     }
 }

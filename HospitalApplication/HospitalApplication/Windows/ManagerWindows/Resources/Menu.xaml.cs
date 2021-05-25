@@ -24,15 +24,15 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Search_Clicked(object sender, RoutedEventArgs e)
         {
-            SearchResource sr = new SearchResource();
-            sr.Show();
+            SearchResource window = new SearchResource();
+            window.Show();
             Close();
         }
 
         private void Room_Clicked(object sender, RoutedEventArgs e)
         {
-            SearchRoom sr = new SearchRoom();
-            sr.Show();
+            SearchRoom window = new SearchRoom();
+            window.Show();
             Close();
         }
     }

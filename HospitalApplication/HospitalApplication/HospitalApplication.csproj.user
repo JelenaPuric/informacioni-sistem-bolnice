@@ -31,6 +31,9 @@
     <Compile Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\ManagerWindows\Renovations\RenovateTwoRoomInOne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Renovations\Renovations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,13 +76,7 @@
     <Compile Update="Windows\ManagerWindows\Rooms\EditR.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\ManagerWindows\Rooms\EditRoom.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\ManagerWindows\Rooms\ShowRoomi.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\ManagerWindows\Rooms\WindowRooms.xaml.cs">
+    <Compile Update="Windows\ManagerWindows\Rooms\ShowRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\DoctorWindows\CancelExaminationWindow.xaml.cs">
@@ -243,6 +240,9 @@
     <Page Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\ManagerWindows\Renovations\RenovateTwoRoomInOne.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ManagerWindows\Renovations\Renovations.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -285,13 +285,7 @@
     <Page Update="Windows\ManagerWindows\Rooms\EditR.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\ManagerWindows\Rooms\EditRoom.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\ManagerWindows\Rooms\ShowRoomi.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\ManagerWindows\Rooms\WindowRooms.xaml">
+    <Page Update="Windows\ManagerWindows\Rooms\ShowRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\DoctorWindows\CancelExaminationWindow.xaml">

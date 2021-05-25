@@ -21,55 +21,53 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class AddMoveStaticResource : Window
     {
-        private Resource re; 
+        private Resource newResource; 
 
-        public AddMoveStaticResource( Resource r)
+        public AddMoveStaticResource(Resource forTransfer)
         {
             InitializeComponent();
-            re = r;
+            newResource = forTransfer;
         }
 
-        private void Kalendar(object sender, SelectionChangedEventArgs e)
+        private void Calendar(object sender, SelectionChangedEventArgs e)
         {
             selectedDate.Text = PickDate.SelectedDate.ToString();
         }
 
-        public Random a = new Random(DateTime.Now.Ticks.GetHashCode());
+        public Random randomTransferId = new Random(DateTime.Now.Ticks.GetHashCode());
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {
-            Transfer t = new Transfer() {
-                idTransfer = a.Next(),
-                idRoomFrom = re.roomId,
+            Transfer newTransfer = new Transfer() {
+                idTransfer = randomTransferId.Next(),
+                idRoomFrom = newResource.roomId,
                 idRoomTo = int.Parse(textBoxRoomId.Text),
                 date = DateTime.Parse(selectedDate.Text).AddHours(2),
                 quantity = int.Parse(textBoxManufacturer.Text)
             };
 
-            //t.dat.AddHours(4);
-            
-            if(t.quantity > re.quantity)
-            {
+            if(newTransfer.quantity > newResource.quantity)
                 MessageBox.Show("That resource does not have that amount", "Error");
-            }
             else
             {
-                re.roomId = t.idRoomTo;
-                re.quantity = t.quantity;
-                if (t.resource == null)
+                newResource.roomId = newTransfer.idRoomTo;
+                newResource.quantity = newTransfer.quantity;
+                if (newTransfer.resource == null)
                 {
-                    t.resource = new List<Resource>();
-                    t.resource.Add(re);
+                    newTransfer.resource = new List<Resource>();
+                    newTransfer.resource.Add(newResource);
                 }
-                else { t.resource.Add(re); }
+                else
+                    newTransfer.resource.Add(newResource); 
 
-                ManagerController mc = new ManagerController();
-                RelocationResourceService rr = new RelocationResourceService();
-                if (rr.CheckDoesRoomExist(t) == true)
+                ManagerController logic = new ManagerController();
+                RelocationResourceService service = new RelocationResourceService();
+                if (service.CheckDoesRoomExist(newTransfer) == true)
                 {
-                    mc.TransStatic(t);
+                    logic.TransStatic(newTransfer);
                     Close();
                 }
-                else { MessageBox.Show("Room id does not exist", "Error"); }
+                else 
+                    MessageBox.Show("Room id does not exist", "Error");
             }
 
         }

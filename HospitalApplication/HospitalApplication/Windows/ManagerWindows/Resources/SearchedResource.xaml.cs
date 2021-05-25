@@ -19,13 +19,12 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class SearchedResource : Window
     {
-        public SearchedResource(string s, int i)
+        public SearchedResource(string resourceName, int quantity)
         {
             InitializeComponent();
-            RoomService rm = new RoomService();
-            List<Resource> lista = rm.FindResource(s, i);
-            lvDataBinding.ItemsSource = lista;
-
+            RoomService service = new RoomService();
+            List<Resource> satisfactory = service.FindResource(resourceName, quantity);
+            lvDataBinding.ItemsSource = satisfactory;
         }
     }
 }

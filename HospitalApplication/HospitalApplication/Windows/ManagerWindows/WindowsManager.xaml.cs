@@ -27,26 +27,26 @@ namespace HospitalApplication.Windows.Manager
 
         private void Rooms_Clicked(object sender, RoutedEventArgs e)
         {
-            AllRooms wr = new AllRooms();
-            wr.Show();
+            AllRooms window = new AllRooms();
+            window.Show();
         }
 
         private void Resources_Clicked(object sender, RoutedEventArgs e)
         {
-            Resources.Menu m = new Resources.Menu();
-            m.Show();
+            Resources.Menu window = new Resources.Menu();
+            window.Show();
         }
 
         private void Renovation_Clicked(object sender, RoutedEventArgs e)
         {
-            Renovationn.Renovations r = new Renovationn.Renovations();
-            r.Show();
+            Renovationn.Renovations window = new Renovationn.Renovations();
+            window.Show();
         }
 
         private void Medicines_Clicked(object sender, RoutedEventArgs e)
         {
-            Medicines.main m = new main();
-            m.Show();
+            Medicines.main window = new main();
+            window.Show();
         }
     }
 }

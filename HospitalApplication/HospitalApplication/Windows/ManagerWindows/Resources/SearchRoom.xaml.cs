@@ -17,7 +17,7 @@ namespace HospitalApplication.Windows.Manager.Resources
     /// </summary>
     public partial class SearchRoom : Window
     {
-        private int s;
+        private int idRoomToFind;
         public SearchRoom()
         {
             InitializeComponent();
@@ -25,9 +25,9 @@ namespace HospitalApplication.Windows.Manager.Resources
 
         private void Search_Clicked(object sender, RoutedEventArgs e)
         {
-            s = int.Parse(forSearch.Text);
-            Resources r = new Resources(s);
-            r.Show();
+            idRoomToFind = int.Parse(forSearch.Text);
+            Resources window = new Resources(idRoomToFind);
+            window.Show();
             Close();
         }
     }

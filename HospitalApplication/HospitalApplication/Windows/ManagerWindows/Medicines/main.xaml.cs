@@ -14,30 +14,27 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Medicines
 {
-    /// <summary>
-    /// Interaction logic for main.xaml
-    /// </summary>
     public partial class main : Window
     {
         public main()
         {
             InitializeComponent();
             MedicinesService logic = new MedicinesService();
-            List<Drugs> list = logic.GetList();
-            lvDataBinding.ItemsSource = list;
+            List<Drugs> allDrugs = logic.GetList();
+            lvDataBinding.ItemsSource = allDrugs;
         }
 
         private void Add_Clicked(object sender, RoutedEventArgs e)
         {
-            AddDrug add = new AddDrug();
-            add.Show();
+            AddDrug window = new AddDrug();
+            window.Show();
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
             MedicinesService logic = new MedicinesService();
-            List<Drugs> list = logic.GetList();
-            lvDataBinding.ItemsSource = list;
+            List<Drugs> allDrugs = logic.GetList();
+            lvDataBinding.ItemsSource = allDrugs;
         }
 
         private void Delete_Clicked(object sender, RoutedEventArgs e)
@@ -45,11 +42,9 @@ namespace HospitalApplication.Windows.Manager.Medicines
             MedicinesService logic = new MedicinesService();
             Drugs selected = (Drugs)lvDataBinding.SelectedItem;
             if(selected != null)
-            {
                 logic.DeleteDrug(selected);
-            }
-            List<Drugs> list = logic.GetList();
-            lvDataBinding.ItemsSource = list;
+            List<Drugs> allDrugs = logic.GetList();
+            lvDataBinding.ItemsSource = allDrugs;
         }
 
         private void Edit_Clicked(object sender, RoutedEventArgs e)
@@ -61,8 +56,8 @@ namespace HospitalApplication.Windows.Manager.Medicines
                 edit.Show();
             }
             MedicinesService logic = new MedicinesService();
-            List<Drugs> list = logic.GetList();
-            lvDataBinding.ItemsSource = list;
+            List<Drugs> allDrugs = logic.GetList();
+            lvDataBinding.ItemsSource = allDrugs;
         }
 
         private void Info_Clicked(object sender, RoutedEventArgs e)
@@ -77,8 +72,8 @@ namespace HospitalApplication.Windows.Manager.Medicines
 
         private void Problems_Clicked(object sender, RoutedEventArgs e)
         {
-            ReportedDrugs allReports = new ReportedDrugs();
-            allReports.Show();
+            ReportedDrugs window = new ReportedDrugs();
+            window.Show();
         }
     }
 }

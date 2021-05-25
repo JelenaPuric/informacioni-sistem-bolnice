@@ -1,5 +1,4 @@
-﻿using HospitalApplication.Windows.Manager.Renovationn;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,20 +13,13 @@ using System.Windows.Shapes;
 namespace HospitalApplication.Windows.ManagerWindows.Renovations
 {
     /// <summary>
-    /// Interaction logic for ChooseRenovation.xaml
+    /// Interaction logic for RenovateTwoRoomInOne.xaml
     /// </summary>
-    public partial class ChooseRenovation : Window
+    public partial class RenovateTwoRoomInOne : Window
     {
-        public ChooseRenovation()
+        public RenovateTwoRoomInOne()
         {
             InitializeComponent();
-        }
-
-        private void One_Clicked(object sender, RoutedEventArgs e)
-        {
-            AddRenovation window = new AddRenovation();
-            window.Show();
-            Close();
         }
     }
 }
