@@ -17,14 +17,11 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for NotificationsPage.xaml
-    /// </summary>
     public partial class NotificationsPage : Page
     {
-        private NotificationController notificationController = new NotificationController();
+        private NotificationController controller = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileNotifications fileNotification = FileNotifications.Instance;
+        private FileNotifications fileNotifications = FileNotifications.Instance;
 
         private static NotificationsPage instance;
         public static NotificationsPage Instance
@@ -43,13 +40,13 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             InitializeComponent();
             instance = this;
-            List<Notification> notifications = fileNotification.GetNotifications(mainWindow.PatientsUsername);
+            List<Notification> notifications = fileNotifications.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = notifications;
         }
 
         public void UpdateView()
         {
-            List<Notification> notifications = fileNotification.GetNotifications(mainWindow.PatientsUsername);
+            List<Notification> notifications = fileNotifications.GetNotifications(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = notifications;
         }
@@ -79,10 +76,9 @@ namespace HospitalApplication.Windows.PatientWindows
             if (!(lvUsers.SelectedIndex > -1)) return;
             Notification notification = (Notification)lvUsers.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Do you want to delete notification?", "Confirmation", MessageBoxButton.YesNo);
-            switch (result)
-            {
+            switch (result){
                 case MessageBoxResult.Yes:
-                    notificationController.CancelNotification(notification);
+                    controller.CancelNotification(notification);
                     UpdateView();
                     break;
                 case MessageBoxResult.No:

@@ -16,13 +16,10 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for DoctorSurvey.xaml
-    /// </summary>
     public partial class DoctorSurvey : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FileSurveys fileSurvey = FileSurveys.Instance;
+        private FileSurveys fileSurveys = FileSurveys.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private int[] numericalAnswers = new int[100];
 
@@ -32,7 +29,7 @@ namespace HospitalApplication.Windows.PatientWindows
             setQuestions();
             for (int i = 0; i < doctorsUsernames.Count; i++)
                 ComboDoctors.Items.Add(doctorsUsernames[i]);
-            surveys = fileSurvey.GetSurveys();
+            surveys = fileSurveys.GetSurveys();
         }
 
         private void RadioButtonChecked(object sender, RoutedEventArgs e)
@@ -47,7 +44,7 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, ComboDoctors.SelectedItem.ToString());
             surveys.Add(survey);
-            fileSurvey.Write();
+            fileSurveys.Write();
             Close();
         }
 

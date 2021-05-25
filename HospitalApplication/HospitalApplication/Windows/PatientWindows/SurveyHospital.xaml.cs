@@ -15,13 +15,10 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowRateHospital.xaml
-    /// </summary>
     public partial class WindowRateHospital : Window
     {
         private List<Survey> surveys;
-        private FileSurveys fileSurvey = FileSurveys.Instance;
+        private FileSurveys fileSurveys = FileSurveys.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         int[] numericalAnswers = new int[100];
 
@@ -29,7 +26,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             InitializeComponent();
             setQuestions();
-            surveys = fileSurvey.GetSurveys();
+            surveys = fileSurveys.GetSurveys();
         }
 
         private void RadioButtonChecked(object sender, RoutedEventArgs e)
@@ -44,7 +41,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, "Hospital");
             surveys.Add(survey);
-            fileSurvey.Write();
+            fileSurveys.Write();
             Close();
         }
 

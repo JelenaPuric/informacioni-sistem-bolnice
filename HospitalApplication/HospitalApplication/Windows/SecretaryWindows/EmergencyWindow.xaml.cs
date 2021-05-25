@@ -24,7 +24,7 @@ namespace HospitalApplication.Windows.Secretary
         private SecretaryController secretaryController = new SecretaryController();
         private AppointmentController patientController = new AppointmentController();
         private WorkWithFiles.FileDoctors fileDoctors = FileDoctors.Instance;
-        private AppointmentService appointmentService = AppointmentService.Instance;
+        private AppointmentService appointmentService = new AppointmentService();
         private DoctorService doctorService = new DoctorService();
         private List<Doctor> doctors = new List<Doctor>();
         private List<Doctor> filteredDoctors = new List<Doctor>();
@@ -111,7 +111,7 @@ namespace HospitalApplication.Windows.Secretary
             selectedPatient = secretaryController.GetPatient(idPatient);
             doctors = fileDoctors.GetDoctors();
             rooms = FileRooms.LoadRoom();
-            examinations = appointmentService.Appointments;
+            examinations = appointmentService.appointments;
         }
 
         private void CenterWindow()

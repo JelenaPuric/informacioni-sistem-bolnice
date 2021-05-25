@@ -18,10 +18,10 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="New" x:Name="ScheduleExamination" Click="ScheduleExamination_Click" Height="25" />
-                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Cancel" x:Name="CancelExamination" Click="CancelExamination_Click"/>
-                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="2" Content="Postpone" x:Name="MoveExamination" Click="MoveExamination_Click"/>
-                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="3" Content="Edit" x:Name="EditExamination" Click="EditExamination_Click"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="0" Content="New" x:Name="ScheduleExamination" Click="ScheduleAppointment_Click" Height="25" />
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="1" Content="Cancel" x:Name="CancelExamination" Click="CancelAppointment_Click"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="2" Content="Postpone" x:Name="MoveExamination" Click="MoveAppointment_Click"/>
+                <Button Background="#014546" Foreground="White" Margin="0 0 10 0" Grid.Column="3" Content="Edit" x:Name="EditExamination" Click="EditAppointment_Click"/>
             </Grid>
             <ListView Margin="0 10" Name="lvUsers" ScrollViewer.CanContentScroll="True" Height="150" Background="#A9A9A9" HorizontalAlignment="Center">
                 <ListView.ItemContainerStyle>

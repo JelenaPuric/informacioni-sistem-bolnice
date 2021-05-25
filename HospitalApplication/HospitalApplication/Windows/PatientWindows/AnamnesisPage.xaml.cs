@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for AnamnesisPage.xaml
-    /// </summary>
     public partial class AnamnesisPage : Page
     {
         private FileAnamnesis fileAnamnesis = FileAnamnesis.Instance;

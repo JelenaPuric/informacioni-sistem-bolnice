@@ -27,13 +27,9 @@ namespace HospitalApplication.Windows.PatientWindows
     /// </summary>
     public partial class PatientsPage : Page
     {
-        private AppointmentService examinationManagement = AppointmentService.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FileSurveys filesSurvey = FileSurveys.Instance;
-        private List<Appointment> allExaminations = new List<Appointment>();
         private FileAppointments fileAppointments = FileAppointments.Instance;
-        List<Survey> surveys = new List<Survey>();
 
         private static PatientsPage instance;
         public static PatientsPage Instance
@@ -57,8 +53,6 @@ namespace HospitalApplication.Windows.PatientWindows
             lvUsers.ItemsSource = appointments;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
-            allExaminations = fileAppointments.GetAppointments();
-            surveys = filesSurvey.GetSurveys();
         }
 
         public void UpdateView()
@@ -69,16 +63,15 @@ namespace HospitalApplication.Windows.PatientWindows
             lvUsers.ItemsSource = examinations;
         }
 
-        private void ScheduleExamination_Click(object sender, RoutedEventArgs e)
+        private void ScheduleAppointment_Click(object sender, RoutedEventArgs e)
         {
             WindowExaminationSchedule window = new WindowExaminationSchedule();
             window.Show();
         }
 
-        private void CancelExamination_Click(object sender, RoutedEventArgs e)
+        private void CancelAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             Appointment appointment = (Appointment)lvUsers.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
             switch (result)
@@ -92,18 +85,16 @@ namespace HospitalApplication.Windows.PatientWindows
             }
         }
 
-        private void MoveExamination_Click(object sender, RoutedEventArgs e)
+        private void MoveAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationMove window = new WindowExaminationMove();
             window.Show();
         }
 
-        private void EditExamination_Click(object sender, RoutedEventArgs e)
+        private void EditAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (!(lvUsers.SelectedIndex > -1))
-                return;
+            if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationEdit window = new WindowExaminationEdit();
             window.Show();
         }

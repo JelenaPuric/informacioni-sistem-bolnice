@@ -58,5 +58,13 @@ namespace WorkWithFiles
                     patientsAppointments.Add(appointments[i]);
             return patientsAppointments;
         }
+
+        public int GenerateAppointmentsId(int appointmentId)
+        {
+            if (appointmentId == 100000)
+                for (int i = 0; i < appointments.Count; i++)
+                    appointmentId = Math.Max(appointmentId, Int32.Parse(appointments[i].ExaminationId));
+            return appointmentId;
+        }
     }
 }

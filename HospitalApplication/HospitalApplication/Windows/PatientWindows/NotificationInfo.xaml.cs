@@ -14,19 +14,15 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowNotificationInfo.xaml
-    /// </summary>
     public partial class WindowNotificationInfo : Window
     {
-        private NotificationsPage pageNotifications = NotificationsPage.Instance;
+        private NotificationsPage notificationsPage = NotificationsPage.Instance;
 
         public WindowNotificationInfo()
         {
             InitializeComponent();
-            Notification notification = (Notification)pageNotifications.lvUsers.SelectedItem;
-            DateTime date = notification.Dates[0];
-            Date.Text = date.ToString();
+            Notification notification = (Notification)notificationsPage.lvUsers.SelectedItem;
+            Date.Text = notification.Dates[0].ToString();
             DrugName.Text = notification.Title;
             Description.Text = notification.Description;
             Days.Text = notification.Repeat;

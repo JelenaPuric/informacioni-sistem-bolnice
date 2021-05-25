@@ -10,21 +10,8 @@ namespace HospitalApplication.Service
     {
         private List<Doctor> doctors;
         private FileDoctors fileDoctors = FileDoctors.Instance;
-        private static DoctorService instance;
-        public static DoctorService Instance
-        {
-            get
-            {
-                if (null == instance)
-                {
-                    instance = new DoctorService();
-                }
-                return instance;
-            }
-        }
 
         public DoctorService() {
-            instance = this;
             doctors = fileDoctors.GetDoctors();
         }
 

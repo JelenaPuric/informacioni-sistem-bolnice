@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
+using HospitalApplication.Service;
 using HospitalApplication.Windows.PatientWindows;
 using Logic;
 using Model;
@@ -17,13 +18,11 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowExaminationMove.xaml
-    /// </summary>
     public partial class WindowExaminationMove : Window
     {
-        private PatientsPage pagePatients = PatientsPage.Instance;
+        private PatientsPage patientsPage = PatientsPage.Instance;
         private AppointmentController controller = new AppointmentController();
+        private FormService formService = new FormService();
 
         public WindowExaminationMove()
         {
@@ -32,12 +31,12 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment examination = (Appointment)pagePatients.lvUsers.SelectedItem;
-            DateTime oldDate = examination.ExaminationStart;
-            DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            Appointment appointment = (Appointment)patientsPage.lvUsers.SelectedItem;
+            DateTime oldDate = appointment.ExaminationStart;
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
             if (!IsNewDateValid(oldDate, newDate)) return;
-            controller.MoveAppointment(examination, newDate);
-            pagePatients.UpdateView();
+            controller.MoveAppointment(appointment, newDate);
+            patientsPage.UpdateView();
             Close();
         }
 
@@ -48,18 +47,6 @@ namespace HospitalApplication.Windows.Patient1
             else if (Math.Abs((oldDate - newDate).TotalDays) > 2) MessageBox.Show("You can not move examination start more than 2 days.", "Info", MessageBoxButton.OK);
             else return true;
             return false;
-        }
-
-        private DateTime GetDateAndTimeFromForm(DateTime date, ComboBox Combo)
-        {
-            List<(int, int, int)> times = new List<(int, int, int)>();
-            for (int i = 0; i < 13; i++){
-                times.Add((7 + i, 0, 0));
-                times.Add((7 + i, 30, 0));
-            }
-            (int, int, int) time = times[Combo.SelectedIndex];
-            TimeSpan timeSpan = new TimeSpan(time.Item1, time.Item2, time.Item3);
-            return date + timeSpan;
         }
     }
 }

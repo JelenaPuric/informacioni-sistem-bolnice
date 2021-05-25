@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows
 {
-    /// <summary>
-    /// Interaction logic for AnamnesisInfo.xaml
-    /// </summary>
     public partial class AnamnesisInfo : Window
     {
         public AnamnesisInfo()

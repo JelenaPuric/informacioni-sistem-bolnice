@@ -19,14 +19,11 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowExaminationEdit.xaml
-    /// </summary>
     public partial class WindowExaminationEdit : Window
     {
         private FileDoctors fileDoctors = FileDoctors.Instance;
         private List<Doctor> doctors;
-        private PatientsPage pagePatients = PatientsPage.Instance;
+        private PatientsPage patientsPage = PatientsPage.Instance;
         private AppointmentController controller = new AppointmentController();
 
         public WindowExaminationEdit()
@@ -39,9 +36,9 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            Appointment appointment = (Appointment)pagePatients.lvUsers.SelectedItem;
+            Appointment appointment = (Appointment)patientsPage.lvUsers.SelectedItem;
             controller.EditAppointment(appointment, Combo.SelectedItem.ToString());
-            pagePatients.UpdateView();
+            patientsPage.UpdateView();
             Close();
         }
     }

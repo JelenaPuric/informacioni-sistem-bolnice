@@ -14,9 +14,6 @@ using System.Windows.Threading;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
     public partial class Home : Window
     {
         private double panelWidth;
@@ -46,20 +43,16 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (hidden)
-            {
+            if (hidden){
                 sidePanel.Width += 3;
-                if (sidePanel.Width >= panelWidth)
-                {
+                if (sidePanel.Width >= panelWidth){
                     timer.Stop();
                     hidden = false;
                 }
             }
-            else
-            {
+            else{
                 sidePanel.Width -= 3;
-                if (sidePanel.Width <= 57)
-                {
+                if (sidePanel.Width <= 57){
                     timer.Stop();
                     hidden = true;
                 }
