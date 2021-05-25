@@ -4,35 +4,32 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WorkWithFiles;
 
 namespace HospitalApplication.Controller
 {
     public class NewsController
     {
-        private NewsService newsManagement = NewsService.Instance;
+        private NewsService newsService = NewsService.Instance;
+        private FileNews fileNews = FileNews.Instance;
 
         public void CreateNews(News newNews)
         {
-            newsManagement.CreateNews(newNews);
+            newsService.CreateNews(newNews);
         }
 
         public void DeleteNews(string iDNews)
         {
-            newsManagement.DeleteNews(iDNews);
+            newsService.DeleteNews(iDNews);
         }
 
         public List<News> GetAllNews()
         {
-            return newsManagement.GetAllNews();
+            return fileNews.GetAllNews();
         }
         public void UpdateNews(News currentNews)
         {
-            newsManagement.UpdateNews(currentNews);
-        }
-
-        public News getNews(string iDNews)
-        {
-            return newsManagement.getNews(iDNews);
+            newsService.UpdateNews(currentNews);
         }
     }
 }

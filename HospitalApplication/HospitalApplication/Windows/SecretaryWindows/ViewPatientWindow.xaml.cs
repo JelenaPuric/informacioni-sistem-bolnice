@@ -25,7 +25,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             InitializeComponent();
             CenterWindow();
-            selectedPatient = secretaryController.getPatient(idPatient);
+            selectedPatient = secretaryController.GetPatient(idPatient);
             DisplayValuesFromSelectedPatient();
         }
 

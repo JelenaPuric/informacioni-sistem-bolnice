@@ -45,5 +45,17 @@ namespace WorkWithFiles
         {
             return allergens;
         }
+
+        public string GetId(string nameAllergen)
+        {
+            string idAllergen = new string("test");
+            for (int i = 0; i < allergens.Count; i++)
+            {
+                if (allergens[i].Name.Equals(nameAllergen)){
+                    idAllergen = allergens[i].Id; break;
+                }
+            }
+            return idAllergen;
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            List<Patient> patients = sc.GetAllPatients();
+            List<Patient> patients = sc.GetPatients();
             for (int i = 0; i < patients.Count; i++)
             {
                 if (patients[i].Id == IdPatient.Text)

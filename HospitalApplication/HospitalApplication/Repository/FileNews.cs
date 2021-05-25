@@ -41,7 +41,7 @@ namespace WorkWithFiles
             File.WriteAllText(path, json);
         }
 
-        public List<News> GetNews()
+        public List<News> GetAllNews()
         {
             return news;
         }

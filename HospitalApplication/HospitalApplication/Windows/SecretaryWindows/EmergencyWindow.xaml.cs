@@ -107,7 +107,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void LoadPatientsDoctorsRoomsAndExaminations(string idPatient)
         {
-            selectedPatient = secretaryController.getPatient(idPatient);
+            selectedPatient = secretaryController.GetPatient(idPatient);
             doctors = fileDoctors.GetDoctors();
             rooms = FileRooms.LoadRoom();
             examinations = examinationService.Appointments;

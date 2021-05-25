@@ -52,11 +52,11 @@ namespace HospitalApplication.Windows.Secretary
 
         private string GenerateIdForNewPatient()
         {
-            int n = secretaryController.GetAllPatients().Count;
+            int n = secretaryController.GetPatients().Count;
             int idPatient;
             if (n > 0)
             {
-                idPatient = Int32.Parse(secretaryController.GetAllPatients()[n - 1].Id) + 1;
+                idPatient = Int32.Parse(secretaryController.GetPatients()[n - 1].Id) + 1;
             }
             else idPatient = 0;
             return idPatient.ToString();

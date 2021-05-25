@@ -38,7 +38,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            List<Patient> patients = secretaryController.GetAllPatients();
+            List<Patient> patients = secretaryController.GetPatients();
 
             for (int i = 0; i < patients.Count; i++)
             {

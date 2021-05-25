@@ -25,7 +25,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             InitializeComponent();
             CenterWindow();
-            selectedPatient = secretaryController.getPatient(idPatient);
+            selectedPatient = secretaryController.GetPatient(idPatient);
             lvUsers.ItemsSource = selectedPatient.ListAllergens;
             DisplayValuesFromSelectedPatient();
         }
@@ -122,7 +122,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Refresh_Click_1(object sender, RoutedEventArgs e)
         {
-            selectedPatient = secretaryController.getPatient(selectedPatient.Id);
+            selectedPatient = secretaryController.GetPatient(selectedPatient.Id);
             lvUsers.ItemsSource = selectedPatient.ListAllergens;
         }
     }
