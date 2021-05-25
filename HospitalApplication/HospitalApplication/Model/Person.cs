@@ -21,7 +21,6 @@ namespace Model
         private SexType sexType;
         string jmbg;
 
-
         public Person() { }
         public Person(string namee, string lastnamee, string idd, DateTime dateOfBirthh, string phoneNumberr, string emaill, string placeOfResidancee,
             TypeOfPerson typeOfPersonn, string usernameee, string passworddd, string jmbgg, SexType sexTypee ) : base(usernameee, passworddd)
@@ -37,8 +36,6 @@ namespace Model
             jmbg = jmbgg;
             sexType = sexTypee;
         }
-
-
 
         public SexType SexType
         {
@@ -99,6 +96,5 @@ namespace Model
             get { return typeOfPerson; }
             set { typeOfPerson = value; }
         }
-
     }
 }

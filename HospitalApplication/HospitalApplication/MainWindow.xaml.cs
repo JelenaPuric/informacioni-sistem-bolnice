@@ -46,6 +46,11 @@ namespace HospitalApplication
         {
             InitializeComponent();
             instance = this;
+            CenterWindow();
+        }
+
+        private void CenterWindow()
+        {
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
@@ -58,7 +63,6 @@ namespace HospitalApplication
         {
             if (Username.Text.Equals("sekretar") && Password.Password.Equals("123"))
             {
-                //AllPatientsWindow window = new AllPatientsWindow();
                 HomeWindow window = new HomeWindow();
                 Close();
                 window.Show();
@@ -86,10 +90,8 @@ namespace HospitalApplication
                 {
                     username = patients[i].Username;
                     password = patients[i].Password;
-                    if (PatientsUsername == username && enteredPassword == password)
-                    {
+                    if (PatientsUsername == username && enteredPassword == password){
                         Home window = new Home();
-                        //WindowPatient window = new WindowPatient();
                         Close();
                         window.Show();
                     }

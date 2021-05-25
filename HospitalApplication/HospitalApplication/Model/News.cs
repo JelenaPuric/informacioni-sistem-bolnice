@@ -11,7 +11,6 @@ namespace Model
         private DateTime publicationDate;
 
       public News() { }
-
       public News(string argId, string argTypeNews, string argTitle, string argDescription, DateTime argPublicationDate)
       {
             id = argId;

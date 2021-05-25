@@ -16,14 +16,12 @@ namespace Model
             name = namee;
         }
 
-
         public Allergen(string idd, string namee, string specNamee)
         {
             id = idd;
             name = namee;
             specName = specNamee;
         }
-
 
         public string Id
         {
@@ -36,15 +34,6 @@ namespace Model
             get { return name; }
             set { name = value; }
         }
-
-        public string SpecName
-        {
-            get { return specName; }
-            set { specName = value; }
-        }
-
-
-
 
     }
 }

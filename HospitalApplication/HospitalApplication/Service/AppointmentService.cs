@@ -20,7 +20,6 @@ namespace Logic
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         public List<Patient> Patients { get; set; }
-        public int RoomIndx { get; set; }
         private static AppointmentService instance;
         public static AppointmentService Instance
         {
@@ -97,7 +96,7 @@ namespace Logic
         public void MoveAppointment(Appointment appointment, DateTime newDate)
         {
             Tuple<bool, int> roomIsFree = roomService.IsRoomFree(appointment.ExaminationStart);
-            Patient patient = GetPatient(appointment.PatientsId);
+            Patient patient = GetPatient(appointment.PatientsId); 
             if (PenaltyIsGreaterThanAllowed(patient)){
                 MessageBox.Show("You can not move examinations anymore. For more information contact us at zdravo@hospital.rs or call 095-5155-622.", "Info");
                 return;
@@ -116,155 +115,7 @@ namespace Logic
             fileAppointments.Write();
         }
 
-        public bool MakeEmergencyAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, 
-                                             int roomId, string idExaminatin, ExaminationType typeExam, string postponeAppointment)
-        {
-            bool isFree = DoctorIsFree(docIndex, date);
-
-
-
-            return false;
-        }
-
-        public bool MakeAppointment(int docIndex, DateTime date, string usernamePatient, string usernameDoctor, int roomId, string idExaminatin, ExaminationType typeExam, int postponeAppointment)
-        {
-
-            bool isFree = DoctorIsFree(docIndex, date);
-
-            if ( isFree == false)
-            {
-                return false;
-            }
-            else
-            {
-              bool roomIsFree = RoomIsFree(date);
-
-                if( roomIsFree == false)
-                {
-                    return false;
-                }
-                else
-                {
-                    roomId = RoomIndx;
-                    Doctors[docIndex].Scheduled.Add(date);
-                    fileDoctors.Write();
-
-                    if (Rooms[roomId].Scheduled == null)
-                    {
-                        Rooms[roomId].Scheduled = new List<DateTime>();
-                    }
-
-                    Rooms[roomId].Scheduled.Add(date);
-                    FileRooms.EnterRoom(Rooms);
-
-                    //Napraviti jos jedan parametar za odlaganje termina
-                    Appointment examination = new Appointment(usernamePatient, usernameDoctor, Rooms[roomId].RoomId.ToString(), date, idExaminatin, typeExam, postponeAppointment);
-                    ScheduleAppointment(examination);
-
-                    return true;
-                }
-
-            }
-
-        }
-
-        public bool DoctorIsFree(int docIndex, DateTime date)
-        {
-            List<Doctor> listDoctor = fileDoctors.GetDoctors();
-            for (int j = 0; j < listDoctor[docIndex].Scheduled.Count; j++)
-            {
-                if (listDoctor[docIndex].Scheduled[j] == date)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        public bool RoomIsFree(DateTime d)
-        {
-            bool roomIsFree = false;
-
-            for (int i = 0; i < Rooms.Count; i++)
-            {
-                
-                //ako je null znaci da je slobodna i izadji iz petlje
-                if (Rooms[i].Scheduled == null)
-                {
-                    roomIsFree = true;
-                    RoomIndx = i;
-                    break;
-                }
-
-                bool ok = true;
-                for (int j = 0; j < Rooms[i].Scheduled.Count; j++)
-                {
-                    if (Rooms[i].Scheduled[j] == d)
-                    {
-                        ok = false;
-                    }
-                }
-                if (ok == true)
-                {
-                    roomIsFree = true;
-                    RoomIndx = i;
-                    break;
-                }
-            }
-            return roomIsFree;
-        }
-
-        public void MoveAppointment(string id, DateTime date, int roomIndex)
-        {
-            Appointment e = new Appointment();
-            for (int i = 0; i < Appointments.Count; i++)
-            {
-                if (Appointments[i].ExaminationId == id)
-                {
-                    e = Appointments[i];
-                    Appointments.RemoveAt(i);
-                }
-            }
-            e.ExaminationStart = date;
-            e.RoomId = Rooms[roomIndex].RoomId.ToString();
-            Appointments.Add(e);
-            fileAppointments.Write();
-        }
-
-        public void AddAppointmentToDoctor(String doctorUsername, DateTime date)
-        {
-            for (int i = 0; i < Doctors.Count; i++)
-            {
-                if (Doctors[i].Username == doctorUsername)
-                {
-                    Doctors[i].Scheduled.Add(date);
-                    fileDoctors.Write();
-                    break;
-                }
-            }
-        }
-
-        public void RemoveAppointmentFromDoctor(String doctorUsername, DateTime date)
-        {
-            for (int i = 0; i < Doctors.Count; i++)
-            {
-                if (Doctors[i].Username == doctorUsername)
-                {
-                    for (int j = 0; j < Doctors[i].Scheduled.Count; j++)
-                    {
-                        if (Doctors[i].Scheduled[j] == date)
-                        {
-                            Doctors[i].Scheduled.RemoveAt(j);
-                            break;
-                        }
-                    }
-                    fileDoctors.Write();
-                    break;
-                }
-            }
-        }
-
-        public bool IsDoctorFree(String doctorUsername, DateTime date)
+        public bool IsDoctorFree(String doctorUsername, DateTime date) 
         {
             for (int i = 0; i < Doctors.Count; i++)
                 if (Doctors[i].Username == doctorUsername)
@@ -274,7 +125,7 @@ namespace Logic
             return true;
         }
 
-        public Tuple<bool, int> IsRoomFree(DateTime date)
+        public Tuple<bool, int> IsRoomFree(DateTime date) 
         {
             for (int i = 0; i < Rooms.Count; i++)
             {
@@ -290,32 +141,6 @@ namespace Logic
                     return new Tuple<bool, int>(true, i);
             }
             return new Tuple<bool, int>(false, -1);
-        }
-
-        public void RemoveAppointmentFromRoom(String roomId, DateTime date)
-        {
-            for (int i = 0; i < Rooms.Count; i++)
-            {
-                if (Rooms[i].RoomId.ToString() == roomId)
-                {
-                    for (int j = 0; j < Rooms[i].Scheduled.Count; j++)
-                    {
-                        if (Rooms[i].Scheduled[j] == date)
-                        {
-                            Rooms[i].Scheduled.RemoveAt(j);
-                            FileRooms.EnterRoom(Rooms);
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
-        }
-
-        public void AddAppointmentToRoom(int roomIndex, DateTime date)
-        {
-            Rooms[roomIndex].Scheduled.Add(date);
-            FileRooms.EnterRoom(Rooms);
         }
 
         private void SetPatientsPenalty(Patient patient, int earnedPenalty) {

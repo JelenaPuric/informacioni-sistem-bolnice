@@ -7,15 +7,12 @@ namespace Model
         private string username;
         private string password;
 
-
         public User() { }
-
         public User(string usernamee, string passwordd)
         {
             username = usernamee;
             password = passwordd;
         }
-
 
         public String Username
         {
@@ -28,6 +25,5 @@ namespace Model
             get { return password; }
             set { password = value; }
         }
-
     }
 }
