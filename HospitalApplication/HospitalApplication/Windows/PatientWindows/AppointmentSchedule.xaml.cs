@@ -63,7 +63,7 @@ namespace HospitalApplication
             string[] tokens = dateAndDoctor.Split(",");
             if (tokens.Length == 2) doctorsUsername = tokens[1];
             DateTime newDate = DateTime.Parse(tokens[0]);
-            fileAppointments.GenerateAppointmentsId(appointmentsId);
+            appointmentsId = fileAppointments.GenerateAppointmentsId(appointmentsId);
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctorsUsername, FileRooms.GetRoomId(roomIndex), newDate, (appointmentsId + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleAppointment(appointment);
             pagePatients.UpdateView();
@@ -73,7 +73,7 @@ namespace HospitalApplication
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
-            fileAppointments.GenerateAppointmentsId(appointmentsId);
+            appointmentsId = fileAppointments.GenerateAppointmentsId(appointmentsId);
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctors[Combo3.SelectedIndex].Username, "0", newDate, (appointmentsId + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleAppointment(appointment);
             pagePatients.UpdateView();
