@@ -174,7 +174,7 @@ namespace HospitalApplication.Service
         private void EditOneToTwoRenovation(int roomId)
         {
             RoomService service = new RoomService();
-            Room oldRoom = service.showRoom(roomId);
+            Room oldRoom = service.OneRoom(roomId);
             service.RemoveRoom(oldRoom);
             Room newRoomOne = new Room()
             {
@@ -205,8 +205,8 @@ namespace HospitalApplication.Service
         private void EditTwoRoomsRenovation(int firstRoomId, int secondRoomId)
         {
             RoomService service = new RoomService();
-            Room First = service.showRoom(firstRoomId);
-            Room Second = service.showRoom(secondRoomId);
+            Room First = service.OneRoom(firstRoomId);
+            Room Second = service.OneRoom(secondRoomId);
             Room newRoom = new Room()
             {
                 Capacity = 0,

@@ -24,7 +24,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             InitializeComponent();
             idRoomWithResource = idRoom;
             RoomService service = new RoomService();
-            Room selectedRoom = service.showRoom(idRoom);
+            Room selectedRoom = service.OneRoom(idRoom);
             service.DeleteResourceIfZero(selectedRoom);
             lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
@@ -32,7 +32,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
             RoomService service = new RoomService();
-            Room selectedRoom = service.showRoom(idRoomWithResource);
+            Room selectedRoom = service.OneRoom(idRoomWithResource);
             service.DeleteResourceIfZero(selectedRoom);
             lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
@@ -49,7 +49,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             Resource selected = (Resource)lvDataBinding.SelectedItem;
             if (selected != null)
                 service.RemoveResource(selected);
-            Room selectedRoom = service.showRoom(idRoomWithResource);
+            Room selectedRoom = service.OneRoom(idRoomWithResource);
             lvDataBinding.ItemsSource = selectedRoom.Resource;
         }
 
@@ -66,7 +66,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         private void Static_Clicked(object sender, RoutedEventArgs e)
         {
             RoomService service = new RoomService();
-            Room selectedRoom = service.showRoom(idRoomWithResource);
+            Room selectedRoom = service.OneRoom(idRoomWithResource);
             List<Resource> allStaticResource = new List<Resource>();
             for(int i = 0; i < selectedRoom.Resource.Count; i++)
             {
@@ -80,7 +80,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         private void Dynamic_Clicked(object sender, RoutedEventArgs e)
         {
             RoomService service = new RoomService();
-            Room selectedRoom = service.showRoom(idRoomWithResource);
+            Room selectedRoom = service.OneRoom(idRoomWithResource);
             List<Resource> allDynamicResource = new List<Resource>();
             for (int i = 0; i < selectedRoom.Resource.Count; i++)
             {

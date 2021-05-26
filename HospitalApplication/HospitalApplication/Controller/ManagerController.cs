@@ -14,19 +14,19 @@ namespace HospitalApplication.Controller
         private RelocationResourceService RelocationResource = new RelocationResourceService();
         private RenovationsService RenovationService = new RenovationsService();
 
-        public void CreateRoom(Room room)
+        public void CreateRoom(Room newRoom)
         {
-            RoomManagment.CreateRoom(room);
+            RoomManagment.CreateRoom(newRoom);
         }
 
-        public void AddItem(Resource resource)
+        public void AddItem(Resource newResource)
         {
-            RoomManagment.AddResource(resource);
+            RoomManagment.AddResource(newResource);
         }
 
-        public void TransferDynamicItem(Resource resource, int quantity)
+        public void TransferDynamicItem(Resource oldResource, int quantity)
         {
-            RoomManagment.TransferDynamicResource(resource, quantity);
+            RoomManagment.TransferDynamicResource(oldResource, quantity);
         }
 
         public void RemoveRoom(Room oldRoom)
@@ -34,24 +34,24 @@ namespace HospitalApplication.Controller
             RoomManagment.RemoveRoom(oldRoom);
         }
 
-        public void RemoveItem(Resource resource)
+        public void RemoveItem(Resource oldResource)
         {
-            RoomManagment.RemoveResource(resource);
+            RoomManagment.RemoveResource(oldResource);
         }
 
-        public void RemoveQuantity(Resource resource, int quantity)
+        public void RemoveQuantity(Resource resourceForReduce, int quantity)
         {
-            RoomManagment.RemoveQuantity(resource, quantity);
+            RoomManagment.RemoveQuantity(resourceForReduce, quantity);
         }
 
-        public void DeleteTransfer(Transfer transfer)
+        public void DeleteTransfer(Transfer oldTransfer)
         {
-            RelocationResource.DeleteTransfer(transfer);
+            RelocationResource.DeleteTransfer(oldTransfer);
         }
 
-        public void TransStatic(Transfer transfer)
+        public void TransferDynamicResource(Transfer forTransfer)
         {
-            RelocationResource.AddStaticTransfer(transfer);
+            RelocationResource.AddStaticTransfer(forTransfer);
         }
 
         public void CheckTransfers()
@@ -59,19 +59,19 @@ namespace HospitalApplication.Controller
             RelocationResource.CheckTransfers();
         }
 
-        public void RemoveRenovation(Renovation renovation)
+        public void RemoveRenovation(Renovation oldRenovation)
         {
-            RenovationService.RemoveRenovation(renovation);
+            RenovationService.RemoveRenovation(oldRenovation);
         }
 
-        public void AddRenovation(Renovation renovation)
+        public void AddRenovation(Renovation newRenovation)
         {
-            RenovationService.AddRenovation(renovation);
+            RenovationService.AddRenovation(newRenovation);
         }
 
-        public void CheckRenovation(Renovation renovation)
+        public void CheckRenovation(Renovation renovationForCheck)
         {
-            RenovationService.CheckRenovation(renovation);
+            RenovationService.CheckRenovation(renovationForCheck);
         }
 
         public void IsFinishRenovation()

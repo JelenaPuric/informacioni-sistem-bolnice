@@ -60,7 +60,7 @@ namespace HospitalApplication.Windows.Manager.Resources
                 RelocationResourceService service = new RelocationResourceService();
                 if (service.CheckDoesRoomExist(newTransfer) == true)
                 {
-                    logic.TransStatic(newTransfer);
+                    logic.TransferDynamicResource(newTransfer);
                     Close();
                 }
                 else 

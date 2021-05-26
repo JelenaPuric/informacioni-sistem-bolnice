@@ -44,7 +44,7 @@ namespace Logic
             }
         }
 
-        public List<Resource> FindResource(string resourceName, int quantity)
+        public List<Resource> AddResourceToSatisfiesList(string resourceName, int quantity)
         {
             List<Resource> fulfills = new List<Resource>();
             for (int i=0; i < rooms.Count; i++)
@@ -127,12 +127,12 @@ namespace Logic
             for(int i = 0; i < rooms.Count; i++)
             {
                 if(rooms[i].RoomId == oldResource.roomId)
-                    FindAndDelete(oldResource, i);
+                    ThenDelete(oldResource, i);
             }
             fileRooms.Write();
         }
 
-        private void FindAndDelete(Resource oldResource, int i)
+        private void ThenDelete(Resource oldResource, int i)
         {
             for (int j = 0; j < rooms[i].Resource.Count; j++)
             {
@@ -146,12 +146,12 @@ namespace Logic
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].RoomId == moved.roomId)
-                    FindAndReduce(moved, quantity, i);
+                    ThenReduce(moved, quantity, i);
             }
             fileRooms.Write();
         }
 
-        private void FindAndReduce(Resource moved, int quantity, int i)
+        private void ThenReduce(Resource moved, int quantity, int i)
         {
             for (int j = 0; j < rooms[i].Resource.Count; j++)
             {
@@ -160,7 +160,7 @@ namespace Logic
             }
         }
       
-        public Room showRoom(int roomIdToFind)
+        public Room OneRoom(int roomIdToFind)
         {
             Room showThatRoom = new Room();
             for(int i=0; i<rooms.Count; i++)

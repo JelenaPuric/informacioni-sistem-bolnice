@@ -27,7 +27,7 @@ namespace HospitalApplication.Windows.Manager.Rooms
         {
             roomId = int.Parse(forShw.Text);
             RoomService mg = new RoomService();
-            Room roomForShow = mg.showRoom(roomId);
+            Room roomForShow = mg.OneRoom(roomId);
             forShw.Text = String.Empty;
 
             string message = "     Room type: " + roomForShow.RoomType + "        Capacity: " + roomForShow.Capacity + "        Number of floors: " +
