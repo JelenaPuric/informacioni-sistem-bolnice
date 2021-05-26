@@ -18,12 +18,6 @@ namespace Model
             scheduled = scheduledd;
         }
 
-        public string DoctorId
-        {
-            get { return doctorId; }
-            set { doctorId = value; }
-        }
-
         public DoctorType DoctorType
         {
             get { return doctorType; }

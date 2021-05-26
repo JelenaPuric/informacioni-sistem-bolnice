@@ -25,7 +25,7 @@ namespace HospitalApplication.Service
         {
             for (int i = 0; i < doctors.Count; i++)
             {
-                if (doctors[i].DoctorId == idDoctor)
+                if (doctors[i].Id == idDoctor)
                     doctors.RemoveAt(i); break;
             }
             fileDoctors.Write();

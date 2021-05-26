@@ -74,7 +74,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
         {
             if (!(lvUsers.SelectedIndex > -1)) { return; }
             Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
-            doctorService.DeleteDoctor(selectedDoctor.DoctorId);
+            doctorService.DeleteDoctor(selectedDoctor.Id);
             UpdateDoctors();
         }
 

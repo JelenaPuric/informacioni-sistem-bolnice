@@ -46,7 +46,7 @@ namespace WorkWithFiles
             return allergens;
         }
 
-        public string GetId(string nameAllergen)
+        public string GetIdAllergen(string nameAllergen)
         {
             string idAllergen = new string("test");
             for (int i = 0; i < allergens.Count; i++)

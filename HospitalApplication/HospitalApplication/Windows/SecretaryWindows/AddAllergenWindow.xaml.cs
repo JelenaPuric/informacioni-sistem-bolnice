@@ -51,7 +51,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Allergen newAlergen = new Allergen(fileAllergens.GetId(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
+            Allergen newAlergen = new Allergen(fileAllergens.GetIdAllergen(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
             patient.ListAllergens.Add(newAlergen);
             allergensService.UpdateAllergen(patient);
             Close();
