@@ -30,9 +30,10 @@ namespace Logic
             string patientsUsername = "";
             for (int i = 0; i < patients.Count; i++)
             {
-                if (patients[i].Id.Equals(iDPatient))
+                if (patients[i].Id.Equals(iDPatient)){
                     patientsUsername = patients[i].Username;
                     patients.RemoveAt(i); break;
+                }
             }
             DeleteAppointmentsFromPatient(patientsUsername);
             fileAppointments.Write();
