@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Medicines
 {
-    /// <summary>
-    /// Interaction logic for EditDrug.xaml
-    /// </summary>
     public partial class EditDrug : Window
     {
         private Drugs old;

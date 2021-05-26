@@ -12,20 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Windows.ManagerWindows.Renovations;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Manager.Renovationn
 {
-    /// <summary>
-    /// Interaction logic for Renovations.xaml
-    /// </summary>
     public partial class Renovations : Window
     {
+        private FileRooms fileRooms = FileRooms.Instance;
         public Renovations()
         {
             InitializeComponent();
             RenovationsService service = new RenovationsService();
             service.DeleteOldRenovations();
-            List<Renovation> renovations = service.GetList();
+            List<Renovation> renovations = fileRooms.ShowAllRenovations();
             lvDataBinding.ItemsSource = renovations;
         }
 
@@ -35,7 +34,7 @@ namespace HospitalApplication.Windows.Manager.Renovationn
             Renovation selected = (Renovation)lvDataBinding.SelectedItem;
             if(selected != null)
                 logic.RemoveRenovation(selected);
-            List<Renovation> renovations = logic.GetList();
+            List<Renovation> renovations = fileRooms.ShowAllRenovations();
             lvDataBinding.ItemsSource = renovations;
         }
 
@@ -48,7 +47,7 @@ namespace HospitalApplication.Windows.Manager.Renovationn
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
             RenovationsService logic = new RenovationsService();
-            List<Renovation> renovations = logic.GetList();
+            List<Renovation> renovations = fileRooms.ShowAllRenovations();
             logic.DeleteOldRenovations();
             lvDataBinding.ItemsSource = renovations;
         }

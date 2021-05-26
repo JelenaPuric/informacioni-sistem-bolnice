@@ -12,9 +12,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for SearchResource.xaml
-    /// </summary>
     public partial class SearchResource : Window
     {
         public SearchResource()

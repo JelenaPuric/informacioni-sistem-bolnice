@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for EditResource.xaml
-    /// </summary>
     public partial class EditResource : Window
     {
         private Resource oldResourceAtributes;

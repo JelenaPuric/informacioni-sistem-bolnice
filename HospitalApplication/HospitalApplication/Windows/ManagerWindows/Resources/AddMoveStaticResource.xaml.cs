@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for AddMoveStaticResource.xaml
-    /// </summary>
     public partial class AddMoveStaticResource : Window
     {
         private Resource newResource; 

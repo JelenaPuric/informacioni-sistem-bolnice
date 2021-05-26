@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for MoveDynamicResource.xaml
-    /// </summary>
     public partial class MoveDynamicResource : Window
     {
         private Resource resourceForMove;

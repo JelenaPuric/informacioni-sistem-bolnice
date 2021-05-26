@@ -10,10 +10,11 @@ namespace HospitalApplication.Service
     public class MedicinesService
     {
         private List<Drugs> allMedicines;
+        private FileDrugs fileDrugs = FileDrugs.Instance;
 
         public MedicinesService()
         {
-            allMedicines = FileDrugs.LoadDrugs();
+            allMedicines = fileDrugs.AllDrugs();
         }
 
         public void CreateDrug (Drugs newDrug)
@@ -29,14 +30,8 @@ namespace HospitalApplication.Service
             }
             if(ok == 0 )
                 allMedicines.Add(newDrug);
-            FileDrugs.EnterDrug(allMedicines);
+            fileDrugs.Write();
         }
-
-        public List<Drugs> GetList()
-        {
-            return allMedicines;
-        }
-
         public void DeleteDrug (Drugs oldDrug)
         {
             for(int i=0; i<allMedicines.Count; i++)
@@ -44,7 +39,7 @@ namespace HospitalApplication.Service
                 if (oldDrug.ItemId == allMedicines[i].ItemId)
                     allMedicines.RemoveAt(i);
             }
-            FileDrugs.EnterDrug(allMedicines);
+            fileDrugs.Write();
         }
     }
 }

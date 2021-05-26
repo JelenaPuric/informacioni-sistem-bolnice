@@ -12,9 +12,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Resources
 {
-    /// <summary>
-    /// Interaction logic for SearchRoom.xaml
-    /// </summary>
     public partial class SearchRoom : Window
     {
         private int idRoomToFind;

@@ -13,11 +13,13 @@ namespace HospitalApplication.Service
     {
         private List<Transfer> transfers;
         private List<Room> rooms;
+        private FileRooms fileRooms = FileRooms.Instance;
+        private FileScheduledTransfers fileTransfers = FileScheduledTransfers.Instance;
 
         public RelocationResourceService()
         {
-            transfers = FileScheduledTransfers.LoadTransfers();
-            rooms = FileRooms.LoadRoom();
+            transfers = fileTransfers.ShowAllTransfers();
+            rooms = fileRooms.ShowAllRooms();
         }
 
         public void DeleteTransfer(Transfer oldTransfer)
@@ -27,7 +29,7 @@ namespace HospitalApplication.Service
                 if(transfers[i].idTransfer == oldTransfer.idTransfer)
                     transfers.RemoveAt(i);
             }
-            FileScheduledTransfers.EnterTransfer(transfers);
+            fileTransfers.Write();
         }
 
         public void AddStaticTransfer(Transfer newTransfer)
@@ -49,7 +51,7 @@ namespace HospitalApplication.Service
             }
             if (ok == 0)
                 transfers.Add(newTransfer);
-            FileScheduledTransfers.EnterTransfer(transfers);
+            fileTransfers.Write();
         }
 
         public void CheckTransfers()
@@ -122,14 +124,8 @@ namespace HospitalApplication.Service
                     transfers.RemoveAt(i);
                 }
             }
-            
-            FileScheduledTransfers.EnterTransfer(transfers);
-            FileRooms.EnterRoom(rooms);
-        }
-
-        public List<Transfer> showAllTransfers()
-        {
-            return transfers;
+            fileTransfers.Write();
+            fileRooms.Write();
         }
 
         public bool CheckDoesRoomExist(Transfer newTransfer)
@@ -144,6 +140,5 @@ namespace HospitalApplication.Service
                 return true;
             return false;
         }
-
     }
 }

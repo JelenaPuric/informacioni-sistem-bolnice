@@ -29,6 +29,7 @@ namespace HospitalApplication.Windows.Secretary
         private List<Doctor> doctors = new List<Doctor>();
         private List<Doctor> filteredDoctors = new List<Doctor>();
         private List<Room> rooms = new List<Room>();
+        private FileRooms fileRooms = FileRooms.Instance;
         private List<Appointment> examinations = new List<Appointment>();
         private Patient selectedPatient;
         private int idExamination = 100000;
@@ -110,7 +111,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             selectedPatient = secretaryController.GetPatient(idPatient);
             doctors = fileDoctors.GetDoctors();
-            rooms = FileRooms.LoadRoom();
+            rooms = fileRooms.ShowAllRooms();
             examinations = appointmentService.appointments;
         }
 
@@ -146,7 +147,7 @@ namespace HospitalApplication.Windows.Secretary
             doctors[Int32.Parse(GetDoctorID(ComboAvailableDoctors.Text))].Scheduled.Add(selectedDateTime);
             fileDoctors.Write();
             rooms[isFreeRoom.Item2].Scheduled.Add(selectedDateTime);
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private void MoveAppointment(Appointment examination, DateTime selectedDateTime)

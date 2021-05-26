@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Windows.Manager.Rooms;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Windows.Manager.Rooms;
 using Logic;
 using Model;
 using System;
@@ -13,20 +14,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorkWithFiles;
 
 namespace HospitalApplication.Windows.Manager.Prostorije
 {
-    /// <summary>
-    /// Interaction logic for AllRooms.xaml
-    /// </summary>
     public partial class AllRooms : Window
     {
+        private FileRooms fileRooms = FileRooms.Instance;
+
         public AllRooms()
         {
             InitializeComponent();
-            RoomService rooms = new RoomService();
-            List<Room> allRooms = rooms.showAllRooms();
-            lvDataBinding.ItemsSource = allRooms;
+            lvDataBinding.ItemsSource = fileRooms.ShowAllRooms();
         }
 
         private void AddRoom_Clicked(object sender, RoutedEventArgs e)
@@ -37,8 +36,7 @@ namespace HospitalApplication.Windows.Manager.Prostorije
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService rooms = new RoomService();
-            List<Room> allRooms = rooms.showAllRooms();
+            List<Room> allRooms = fileRooms.ShowAllRooms();
             lvDataBinding.ItemsSource = allRooms;
         }
 
@@ -50,11 +48,11 @@ namespace HospitalApplication.Windows.Manager.Prostorije
 
         private void Deleted_Clicked(object sender, RoutedEventArgs e)
         {
-            RoomService logic = new RoomService();
+            ManagerController logic = new ManagerController();
             Room selected = (Room)lvDataBinding.SelectedItem;
             if (selected != null)
                 logic.RemoveRoom(selected);
-            List<Room> allRooms = logic.showAllRooms();
+            List<Room> allRooms = fileRooms.ShowAllRooms();
             lvDataBinding.ItemsSource = allRooms;
         }
 

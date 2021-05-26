@@ -1,3 +1,4 @@
+using HospitalApplication.Repository;
 using Model;
 using Nancy.Json;
 using System;
@@ -7,31 +8,59 @@ using System.Web;
 
 namespace WorkWithFiles
 {
-   public class FileRooms
-   {
-        public static string FileRoom = "../../../Data/rooms.json";
+    public class FileRooms : IFile
+    {
+        private static string path = "../../../Data/rooms.json";
+        private static List<Room> rooms;
+        private static FileRooms instance;
 
-        public static List<Room> LoadRoom()
+        public static FileRooms Instance
         {
-            //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(FileRoom))
-                return new List<Room>();
+            get
+            {
+                if (null == instance)
+                    instance = new FileRooms();
+                return instance;
+            }
+        }
 
-            string json = File.ReadAllText(FileRoom);
-            List<Room> rooms = new JavaScriptSerializer().Deserialize<List<Room>>(json);
+        private FileRooms()
+        {
+            Read();
+        }
 
+        public static string GetRoomId(int roomIndex)
+        {
+            //List<Room> rooms = LoadRoom();
+            return rooms[roomIndex].RoomId.ToString();
+        }
+
+        public void Read()
+        {
+            string json = File.ReadAllText(path);
+            rooms = new JavaScriptSerializer().Deserialize<List<Room>>(json);
+        }
+
+        public void Write()
+        {
+            string json = new JavaScriptSerializer().Serialize(rooms);
+            File.WriteAllText(path, json);
+        }
+
+        public List<Room> ShowAllRooms()
+        {
             return rooms;
         }
-      
-        public static void EnterRoom(List<Room> input)
-        {
-            string json = new JavaScriptSerializer().Serialize(input);
-            File.WriteAllText(FileRoom, json);
-        }
 
-        public static string GetRoomId(int roomIndex) {
-            List<Room> rooms = LoadRoom();
-            return rooms[roomIndex].RoomId.ToString();
+        public List<Renovation> ShowAllRenovations()
+        {
+            List<Renovation> renovations = new List<Renovation>();
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                for (int j = 0; j < rooms[i].Renovation.Count; j++)
+                    renovations.Add(rooms[i].Renovation[j]);
+            }
+            return renovations;
         }
     }
 }

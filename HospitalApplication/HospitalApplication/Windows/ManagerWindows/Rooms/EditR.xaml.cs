@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Rooms
 {
-    /// <summary>
-    /// Interaction logic for EditR.xaml
-    /// </summary>
     public partial class EditR : Window
     {
-        private Room rs;
+        private Room oldRoomAtributes;
         public EditR(Room oldRoom)
         {
             InitializeComponent();
-            rs = oldRoom;
+            oldRoomAtributes = oldRoom;
             textBoxNumberOfFloors.Text = oldRoom.NumberOfFloors.ToString();
             textBoxRoomId.Text = oldRoom.RoomId.ToString();
             textBoxRoomNumber.Text = oldRoom.RoomNumber.ToString();
@@ -44,12 +41,12 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 RoomId = Int32.Parse(textBoxRoomId.Text),
                 RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex,
-                Resource = rs.Resource,
-                Scheduled = rs.Scheduled
+                Resource = oldRoomAtributes.Resource,
+                Scheduled = oldRoomAtributes.Scheduled
             };
             ManagerController logic = new ManagerController();
             logic.CreateRoom(newRoom);
-            logic.RemoveRoom(rs);
+            logic.RemoveRoom(oldRoomAtributes);
             Close();
         }
 

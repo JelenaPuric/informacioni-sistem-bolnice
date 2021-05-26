@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Rooms
 {
-    /// <summary>
-    /// Interaction logic for ShowRoomi.xaml
-    /// </summary>
     public partial class ShowRoomi : Window
     {
         private int roomId;
@@ -30,14 +27,14 @@ namespace HospitalApplication.Windows.Manager.Rooms
         {
             roomId = int.Parse(forShw.Text);
             RoomService mg = new RoomService();
-            Room roomForShow = new Room();
-            roomForShow = mg.showRoom(roomId);
+            Room roomForShow = mg.showRoom(roomId);
             forShw.Text = String.Empty;
 
-            string poruka = "     Room type: " + roomForShow.RoomType + "        Capacity: " + roomForShow.Capacity + "        Number of floors: " +
-                roomForShow.NumberOfFloors + "        Occupied: " + roomForShow.Occupied + "        Room id: " + roomForShow.RoomId + "        Room number: " + roomForShow.RoomNumber  + "     ";
+            string message = "     Room type: " + roomForShow.RoomType + "        Capacity: " + roomForShow.Capacity + "        Number of floors: " +
+                roomForShow.NumberOfFloors + "        Occupied: " + roomForShow.Occupied + "        Room id: " + roomForShow.RoomId +
+                "        Room number: " + roomForShow.RoomNumber  + "     ";
 
-            fallback.Text = poruka;
+            fallback.Text = message;
         }
     }
 }

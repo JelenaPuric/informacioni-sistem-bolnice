@@ -7,27 +7,38 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    class FileDrugs
+    class FileDrugs : IFile
     {
         public static string path = "../../../Data/drugs.json";
-
-        public static List<Drugs> LoadDrugs()
+        private static List<Drugs> drugs;
+        private static FileDrugs instance;
+        public static FileDrugs Instance
         {
-            //ako ne postoji fajl (jos uvek nista nije sacuvano pri prvom pokretanju aplikacije vrati praznu listu)
-            if (!File.Exists(path))
-                return new List<Drugs>();
-
-            string json = File.ReadAllText(path);
-            List<Drugs> drugs = new JavaScriptSerializer().Deserialize<List<Drugs>>(json);
-
-            return drugs;
+            get
+            {
+                if (null == instance)
+                    instance = new FileDrugs();
+                return instance;
+            }
         }
 
-        public static void EnterDrug(List<Drugs> input)
+        private FileDrugs()
         {
-            string json = new JavaScriptSerializer().Serialize(input);
+            Read();
+        }
+        public void Read()
+        {
+            string json = File.ReadAllText(path);
+            drugs = new JavaScriptSerializer().Deserialize<List<Drugs>>(json);
+        }
+        public void Write()
+        {
+            string json = new JavaScriptSerializer().Serialize(drugs);
             File.WriteAllText(path, json);
         }
-
+        public List<Drugs> AllDrugs()
+        {
+            return drugs;
+        }
     }
 }

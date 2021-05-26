@@ -15,22 +15,13 @@ namespace HospitalApplication.Service
     {
         private List<Room> rooms;
         private List<Transfer> transfers;
-        
+        private FileRooms fileRooms = FileRooms.Instance;
+        private FileScheduledTransfers fileTransfers = FileScheduledTransfers.Instance;
+
         public RenovationsService()
         {
-            rooms = FileRooms.LoadRoom();
-            transfers = FileScheduledTransfers.LoadTransfers();
-        }
-
-        public List<Renovation> GetList()
-        {
-            List<Renovation> renovations = new List<Renovation>();
-            for (int  i=0; i<rooms.Count; i++)
-            {
-                for(int j=0; j<rooms[i].Renovation.Count; j++)
-                    renovations.Add(rooms[i].Renovation[j]);
-            }
-            return renovations;
+            rooms = fileRooms.ShowAllRooms();
+            transfers = fileTransfers.ShowAllTransfers();
         }
 
         public void RemoveRenovation(Renovation renovation)
@@ -40,7 +31,7 @@ namespace HospitalApplication.Service
                 if(rooms[i].RoomId == renovation.RoomId)
                     DeleteRenovationInRoom(renovation, i);
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private void DeleteRenovationInRoom(Renovation renovation, int i)
@@ -59,7 +50,7 @@ namespace HospitalApplication.Service
                 if(rooms[i].RoomId == newRenovation.RoomId)
                     rooms[i].Renovation.Add(newRenovation);
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         public bool CheckRenovation(Renovation newRenovation)
@@ -104,6 +95,22 @@ namespace HospitalApplication.Service
         {
             int roomExist = 0;
             int roomTwoExist = 0;
+            IterateIfExist(newRenovation, ref roomExist, ref roomTwoExist);
+            if (roomExist == 0)
+            {
+                MessageBox.Show("Room one does not exist", "Error");
+                return false;
+            }
+            if (roomTwoExist == 0 && newRenovation.SecondRoomId != 0)
+            {
+                MessageBox.Show("Room two does not exist", "Error");
+                return false;
+            }
+            return true;
+        }
+
+        private void IterateIfExist(Renovation newRenovation, ref int roomExist, ref int roomTwoExist)
+        {
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].RoomId == newRenovation.RoomId)
@@ -111,17 +118,6 @@ namespace HospitalApplication.Service
                 if (rooms[i].RoomId == newRenovation.SecondRoomId)
                     roomTwoExist++;
             }
-            if (roomExist == 0)
-            {
-                MessageBox.Show("Room one does not exist", "Error");
-                return false;
-            }
-            if(roomTwoExist == 0 && newRenovation.SecondRoomId!=0)
-            {
-                MessageBox.Show("Room two does not exist", "Error");
-                return false;
-            }
-            return true;
         }
 
         private bool CheckDoesNewRenovationExistForSameRoom(Renovation newRenovation, int i)
@@ -182,9 +178,7 @@ namespace HospitalApplication.Service
             service.RemoveRoom(oldRoom);
             Room newRoomOne = new Room()
             {
-                Capacity = 0,
-                NumberOfFloors = 0,
-                Occupied = false,
+                Capacity = 0, NumberOfFloors = 0, Occupied = false,
                 RoomId = 0000,
                 RoomNumber = 0,
                 RoomType = RoomType.Warehouse,

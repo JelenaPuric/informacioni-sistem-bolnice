@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Medicines
 {
-    /// <summary>
-    /// Interaction logic for InfoDrug.xaml
-    /// </summary>
     public partial class InfoDrug : Window
     {
         public InfoDrug(Drugs selectedInfo)

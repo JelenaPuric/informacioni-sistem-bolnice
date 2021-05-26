@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager
 {
-    /// <summary>
-    /// Interaction logic for WindowsManager.xaml
-    /// </summary>
     public partial class WindowsManager : Window
     {
         public WindowsManager()

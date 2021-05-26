@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Model;
+using HospitalApplication.Repository;
 using HospitalApplication.Service;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,13 @@ namespace HospitalApplication.Windows.Manager.Resources
     public partial class MoveStaticResource : Window
     {
         private Resource oldResourceAtributes;
+        private FileScheduledTransfers fileTransfers = FileScheduledTransfers.Instance;
 
         public MoveStaticResource(Resource oldResource)
         {
             InitializeComponent();
             RelocationResourceService service = new RelocationResourceService();
-            List<Transfer> allTransfers = service.showAllTransfers();
+            List<Transfer> allTransfers = fileTransfers.ShowAllTransfers();
             service.CheckTransfers();
             lvDataBinding.ItemsSource = allTransfers;
             oldResourceAtributes = oldResource;
@@ -37,7 +39,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
             RelocationResourceService service = new RelocationResourceService();
-            List<Transfer> allTransfers = service.showAllTransfers();
+            List<Transfer> allTransfers = fileTransfers.ShowAllTransfers();
             service.CheckTransfers();
             lvDataBinding.ItemsSource = allTransfers;
         }
@@ -47,7 +49,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             Transfer oldTransfer = (Transfer)lvDataBinding.SelectedItem;
             RelocationResourceService service = new RelocationResourceService();
             service.DeleteTransfer(oldTransfer);
-            List<Transfer> allTransfers = service.showAllTransfers();
+            List<Transfer> allTransfers = fileTransfers.ShowAllTransfers();
             lvDataBinding.ItemsSource = allTransfers;
         }
     }

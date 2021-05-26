@@ -7,26 +7,41 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    public class FileScheduledTransfers
+    public class FileScheduledTransfers : IFile
     {
-        public static string FileTransfers = "../../../Data/transfers.json";
+        private static string path = "../../../Data/transfers.json";
+        private static List<Transfer> transfers;
+        private static FileScheduledTransfers instance;
 
-        public static List<Transfer> LoadTransfers()
+        public static FileScheduledTransfers Instance
         {
-            if (!File.Exists(FileTransfers))
-                return new List<Transfer>();
-
-            string json = File.ReadAllText(FileTransfers);
-            List<Transfer> transfer = new JavaScriptSerializer().Deserialize<List<Transfer>>(json);
-
-            return transfer;
+            get
+            {
+                if (null == instance)
+                    instance = new FileScheduledTransfers();
+                return instance;
+            }
         }
-    
 
-        public static void EnterTransfer(List<Transfer> input)
+        private FileScheduledTransfers()
         {
-            string json = new JavaScriptSerializer().Serialize(input);
-            File.WriteAllText(FileTransfers, json);
+            Read();
+        }
+
+        public void Read()
+        {
+            string json = File.ReadAllText(path);
+            transfers = new JavaScriptSerializer().Deserialize<List<Transfer>>(json);
+        }
+
+        public void Write()
+        {
+            string json = new JavaScriptSerializer().Serialize(transfers);
+            File.WriteAllText(path, json);
+        }
+        public List<Transfer> ShowAllTransfers()
+        {
+            return transfers;
         }
     }
 }

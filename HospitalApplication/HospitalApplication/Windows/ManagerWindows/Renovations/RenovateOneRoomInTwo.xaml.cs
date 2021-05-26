@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.ManagerWindows.Renovations
 {
-    /// <summary>
-    /// Interaction logic for RenovateOneRoomInTwo.xaml
-    /// </summary>
     public partial class RenovateOneRoomInTwo : Window
     {
         private bool IsRenovateToTwo;

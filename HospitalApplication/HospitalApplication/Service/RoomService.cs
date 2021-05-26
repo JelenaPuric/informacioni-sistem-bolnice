@@ -12,16 +12,17 @@ namespace Logic
         private List<Room> rooms;
         private List<Appointment> appointments;
         private FileAppointments filesAppointments = FileAppointments.Instance;
+        private FileRooms fileRooms = FileRooms.Instance;
 
         public RoomService()
         {
-            rooms = FileRooms.LoadRoom();
+            rooms = fileRooms.ShowAllRooms();
             appointments = filesAppointments.GetAppointments();
         }
         public void CreateRoom(Room newRoom)
         {
             rooms.Add(newRoom);
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         public void DeleteResourceIfZero(Room roomWithResource)
@@ -31,7 +32,7 @@ namespace Logic
                 if(rooms[i].RoomId == roomWithResource.RoomId)
                     FindZeroResourceOfRoom(i);
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private void FindZeroResourceOfRoom(int i)
@@ -74,7 +75,7 @@ namespace Logic
                     rooms[i].Resource.Add(newResourse);
                 }
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         public void TransferDynamicResource(Resource resourceForTransfer, int quantity)
@@ -89,7 +90,7 @@ namespace Logic
                         rooms[i].Resource.Add(resourceForTransfer);
                 }
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private int Transfer(Resource resourceForTransfer, int quantity, int roomWithThatResource, int i)
@@ -118,7 +119,7 @@ namespace Logic
             for (int i = 0; i < appointments.Count; i++)
                 if (appointments[i].RoomId == oldRoom.RoomId.ToString()) appointments.RemoveAt(i);
             filesAppointments.Write();
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         public void RemoveResource(Resource oldResource)
@@ -128,7 +129,7 @@ namespace Logic
                 if(rooms[i].RoomId == oldResource.roomId)
                     FindAndDelete(oldResource, i);
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private void FindAndDelete(Resource oldResource, int i)
@@ -147,7 +148,7 @@ namespace Logic
                 if (rooms[i].RoomId == moved.roomId)
                     FindAndReduce(moved, quantity, i);
             }
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         private void FindAndReduce(Resource moved, int quantity, int i)
@@ -157,11 +158,6 @@ namespace Logic
                 if (rooms[i].Resource[j].idItem == moved.idItem)
                     rooms[i].Resource[j].quantity -= quantity;
             }
-        }
-
-        public List<Room> showAllRooms()
-        {
-            return rooms;
         }
       
         public Room showRoom(int roomIdToFind)
@@ -195,7 +191,7 @@ namespace Logic
         public void AddAppointmentToRoom(int roomIndex, DateTime date)
         {
             rooms[roomIndex].Scheduled.Add(date);
-            FileRooms.EnterRoom(rooms);
+            fileRooms.Write();
         }
 
         public void RemoveAppointmentFromRoom(string roomId, DateTime date)
@@ -205,7 +201,7 @@ namespace Logic
                     for (int j = 0; j < rooms[i].Scheduled.Count; j++){
                         if (rooms[i].Scheduled[j] == date){
                             rooms[i].Scheduled.RemoveAt(j);
-                            FileRooms.EnterRoom(rooms);
+                            fileRooms.Write();
                             break;
                         }
                     }

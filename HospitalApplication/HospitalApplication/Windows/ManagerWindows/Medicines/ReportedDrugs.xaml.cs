@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Service;
+﻿using HospitalApplication.Repository;
+using HospitalApplication.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,16 +14,14 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Medicines
 {
-    /// <summary>
-    /// Interaction logic for ReportedDrugs.xaml
-    /// </summary>
     public partial class ReportedDrugs : Window
     {
+        private FileReportedDrugs fileReportedDrugs = FileReportedDrugs.Instance;
         public ReportedDrugs()
         {
             InitializeComponent();
             ReportService logic = new ReportService();
-            List<Model.ReportedDrugs> reported = logic.getAllReports();
+            List<Model.ReportedDrugs> reported = fileReportedDrugs.GetAllReports();
             lvDataBinding.ItemsSource = reported;
             Model.ReportedDrugs newReport = new Model.ReportedDrugs(){
                 IdReportedItem = 123,
@@ -39,14 +38,13 @@ namespace HospitalApplication.Windows.Manager.Medicines
             Model.ReportedDrugs selected = (Model.ReportedDrugs)lvDataBinding.SelectedItem;
             if (selected != null)
                 logic.DeleteReport(selected);
-            List<Model.ReportedDrugs> reported = logic.getAllReports();
+            List<Model.ReportedDrugs> reported = fileReportedDrugs.GetAllReports();
             lvDataBinding.ItemsSource = reported;
         }
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            ReportService logic = new ReportService();
-            List<Model.ReportedDrugs> reported = logic.getAllReports();
+            List<Model.ReportedDrugs> reported = fileReportedDrugs.GetAllReports();
             lvDataBinding.ItemsSource = reported;
         }
     }

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Rooms
 {
-    /// <summary>
-    /// Interaction logic for AddRoom.xaml
-    /// </summary>
     public partial class AddRoom : Window
     {
         public AddRoom()

@@ -9,10 +9,10 @@ namespace HospitalApplication.Service
     public class ReportService
     {
         private List<ReportedDrugs> reports;
-
+        private FileReportedDrugs fileReportedDrugs = FileReportedDrugs.Instance;
         public ReportService()
         {
-            reports = FileReportedDrugs.LoadReports();
+            reports = fileReportedDrugs.GetAllReports();
         }
 
         public void DeleteReport(ReportedDrugs forDelete)
@@ -22,18 +22,13 @@ namespace HospitalApplication.Service
                 if (forDelete.IdReportedItem == reports[i].IdReportedItem)
                     reports.RemoveAt(i);
             }
-            FileReportedDrugs.EnterReport(reports);
+            fileReportedDrugs.Write();
         }
         
         public void AddReport(ReportedDrugs newReport)
         {
             reports.Add(newReport);
-            FileReportedDrugs.EnterReport(reports);
-        }
-
-        public List<ReportedDrugs> getAllReports()
-        {
-            return reports;
+            fileReportedDrugs.Write();
         }
     }
 }

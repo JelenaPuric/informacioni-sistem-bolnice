@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Model;
+using HospitalApplication.Repository;
 using HospitalApplication.Service;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,11 @@ namespace HospitalApplication.Windows.Manager.Medicines
 {
     public partial class main : Window
     {
+        private FileDrugs fileDrugs = FileDrugs.Instance;
         public main()
         {
             InitializeComponent();
-            MedicinesService logic = new MedicinesService();
-            List<Drugs> allDrugs = logic.GetList();
+            List<Drugs> allDrugs = fileDrugs.AllDrugs();
             lvDataBinding.ItemsSource = allDrugs;
         }
 
@@ -32,8 +33,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
 
         private void Refresh_Clicked(object sender, RoutedEventArgs e)
         {
-            MedicinesService logic = new MedicinesService();
-            List<Drugs> allDrugs = logic.GetList();
+            List<Drugs> allDrugs = fileDrugs.AllDrugs();
             lvDataBinding.ItemsSource = allDrugs;
         }
 
@@ -43,7 +43,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
             Drugs selected = (Drugs)lvDataBinding.SelectedItem;
             if(selected != null)
                 logic.DeleteDrug(selected);
-            List<Drugs> allDrugs = logic.GetList();
+            List<Drugs> allDrugs = fileDrugs.AllDrugs();
             lvDataBinding.ItemsSource = allDrugs;
         }
 
@@ -55,8 +55,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
                 EditDrug edit = new EditDrug(selected);
                 edit.Show();
             }
-            MedicinesService logic = new MedicinesService();
-            List<Drugs> allDrugs = logic.GetList();
+            List<Drugs> allDrugs = fileDrugs.AllDrugs();
             lvDataBinding.ItemsSource = allDrugs;
         }
 
