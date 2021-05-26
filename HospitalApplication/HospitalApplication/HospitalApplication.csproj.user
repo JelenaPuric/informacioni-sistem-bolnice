@@ -31,6 +31,9 @@
     <Compile Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\ManagerWindows\Renovations\RenovateOneRoomInTwo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Renovations\RenovateTwoRoomInOne.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -238,6 +241,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Renovations\EditRenovation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ManagerWindows\Renovations\RenovateOneRoomInTwo.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Renovations\RenovateTwoRoomInOne.xaml">

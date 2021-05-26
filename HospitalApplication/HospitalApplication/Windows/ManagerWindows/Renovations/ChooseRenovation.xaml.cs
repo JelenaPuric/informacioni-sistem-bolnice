@@ -29,5 +29,19 @@ namespace HospitalApplication.Windows.ManagerWindows.Renovations
             window.Show();
             Close();
         }
+
+        private void TwoToOne_Clicked(object sender, RoutedEventArgs e)
+        {
+            RenovateTwoRoomInOne window = new RenovateTwoRoomInOne();
+            window.Show();
+            Close();
+        }
+
+        private void OneToTwo_Clicked(object sender, RoutedEventArgs e)
+        {
+            RenovateOneRoomInTwo window = new RenovateOneRoomInTwo(true);
+            window.Show();
+            Close();
+        }
     }
 }

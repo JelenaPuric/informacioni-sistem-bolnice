@@ -8,7 +8,7 @@
         Title="ChooseRenovation" Height="225" Width="800">
     <Grid Height="225" VerticalAlignment="Top" HorizontalAlignment="Left" Width="818">
         <Button Content="One room" Height="40" Width="120"  Margin="140,93,558,92" Click="One_Clicked"  />
-        <Button Content="Two rooms to one" Height="40" Width="120"  Margin="555,93,143,92"  />
-        <Button Content="One to two rooms" Height="40" Width="120"  Margin="349,93,349,92"  />
+        <Button Content="Two rooms to one" Height="40" Width="120"  Margin="555,93,143,92" Click="TwoToOne_Clicked"  />
+        <Button Content="One to two rooms" Height="40" Width="120"  Margin="349,93,349,92" Click="OneToTwo_Clicked"  />
     </Grid>
 </Window>

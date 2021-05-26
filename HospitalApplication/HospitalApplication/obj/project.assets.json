@@ -5743,19 +5743,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\orz\\.nuget\\packages\\": {}
+    "C:\\Users\\KORISNIK\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj30\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectUniqueName": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
-      "projectPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj30\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
-      "packagesPath": "C:\\Users\\orz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj30\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+      "projectPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "packagesPath": "C:\\Users\\KORISNIK\\.nuget\\packages\\",
+      "outputPath": "D:\\FTN\\3\\II Semestar\\Specifikacija i modeliranje softvera\\Bolnica\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KORISNIK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5808,7 +5808,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

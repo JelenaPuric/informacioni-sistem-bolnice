@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace HospitalApplication.Windows.Manager.Renovationn
 {
-    /// <summary>
-    /// Interaction logic for AddRenovation.xaml
-    /// </summary>
     public partial class AddRenovation : Window
     {
         public AddRenovation()

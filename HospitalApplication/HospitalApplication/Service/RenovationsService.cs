@@ -1,5 +1,6 @@
 ﻿using HospitalApplication.Model;
 using HospitalApplication.Repository;
+using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -102,14 +103,22 @@ namespace HospitalApplication.Service
         private bool CheckDoesRoomExist(Renovation newRenovation)
         {
             int roomExist = 0;
+            int roomTwoExist = 0;
             for (int i = 0; i < rooms.Count; i++)
             {
                 if (rooms[i].RoomId == newRenovation.RoomId)
                     roomExist++;
+                if (rooms[i].RoomId == newRenovation.SecondRoomId)
+                    roomTwoExist++;
             }
             if (roomExist == 0)
             {
-                MessageBox.Show("That room does not exist", "Error");
+                MessageBox.Show("Room one does not exist", "Error");
+                return false;
+            }
+            if(roomTwoExist == 0 && newRenovation.SecondRoomId!=0)
+            {
+                MessageBox.Show("Room two does not exist", "Error");
                 return false;
             }
             return true;
@@ -149,7 +158,6 @@ namespace HospitalApplication.Service
         {
             for(int i=0; i<rooms.Count; i++)
                 DeleteIfEndDayPass(i);
-            FileRooms.EnterRoom(rooms);
         }
 
         private void DeleteIfEndDayPass(int i)
@@ -157,8 +165,69 @@ namespace HospitalApplication.Service
             for (int j = 0; j < rooms[i].Renovation.Count; j++)
             {
                 if (rooms[i].Renovation[j].EndDay <= DateTime.Now)
+                {
+                    if (rooms[i].Renovation[j].SecondRoomId != 0)
+                        EditTwoRoomsRenovation(rooms[i].Renovation[j].RoomId, rooms[i].Renovation[j].SecondRoomId);
+                    if (rooms[i].Renovation[j].OneToTwo == true)
+                        EditOneToTwoRenovation(rooms[i].Renovation[j].RoomId);
                     rooms[i].Renovation.RemoveAt(j);
+                }
             }
+        }
+
+        private void EditOneToTwoRenovation(int roomId)
+        {
+            RoomService service = new RoomService();
+            Room oldRoom = service.showRoom(roomId);
+            service.RemoveRoom(oldRoom);
+            Room newRoomOne = new Room()
+            {
+                Capacity = 0,
+                NumberOfFloors = 0,
+                Occupied = false,
+                RoomId = 0000,
+                RoomNumber = 0,
+                RoomType = RoomType.Warehouse,
+                Renovation = new List<Renovation>(),
+                Resource = new List<Model.Resource>(),
+                Scheduled = new List<DateTime>()
+            };
+            Room newRoomTwo = new Room()
+            {
+                Capacity = 0,
+                NumberOfFloors = 0,
+                Occupied = false,
+                RoomId = 1111,
+                RoomNumber = 0,
+                RoomType = RoomType.Warehouse,
+                Renovation = new List<Renovation>(),
+                Resource = new List<Model.Resource>(),
+                Scheduled = new List<DateTime>()
+            };
+            service.CreateRoom(newRoomOne);
+            service.CreateRoom(newRoomTwo);
+        }
+
+        private void EditTwoRoomsRenovation(int firstRoomId, int secondRoomId)
+        {
+            RoomService service = new RoomService();
+            Room First = service.showRoom(firstRoomId);
+            Room Second = service.showRoom(secondRoomId);
+            Room newRoom = new Room()
+            {
+                Capacity = 0,
+                NumberOfFloors = 0,
+                Occupied = false,
+                RoomId = 0000,
+                RoomNumber = 0,
+                RoomType = RoomType.Warehouse,
+                Renovation = new List<Renovation>(),
+                Resource = new List<Model.Resource>(),
+                Scheduled = new List<DateTime>()
+            };
+            service.RemoveRoom(First);
+            service.RemoveRoom(Second);
+            service.CreateRoom(newRoom);
         }
     }
 }
