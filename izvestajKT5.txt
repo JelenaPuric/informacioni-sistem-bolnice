@@ -1,0 +1,31 @@
+SEKRETAR
+
+Funkcionalnosti:
+1) CRUD Lekara --> URADJENO
+2) Clean Code --> URADJENO
+
+ISPRAVKA SA KT4:
+1) DOdati pinovi na dijagram aktivnosti--> URADJENO
+2) Dodat datum kada je neka vest objavljena --> URADJENO
+3) Class dijagram je konzistentan sa imenima--> URADJENO
+
+PACIJENT
+
+Funkcionalnosti:
+1) Beleska na anamneze --> URADJENO
+2) Custom notifikacije --> URADJENO
+3) Clean Code --> URADJENO
+
+ISPRAVKA SA KT4:
+1) Class dijagram je konzistentan sa imenima--> URADJENO
+
+UPRAVNIK
+
+Funkcionalnosti:
+a)Pregled prijava lekova od doktora i brisanje istih --> URADJENO
+b)Renoviranje jedne prostorije u dve i dve u jednu --> URADJENO
+c)Clean Code --> URADJENO
+
+ISPRAVKA SA KT4:
+1) Uradjen cleancode za prethodnu funckionalnost --> URADJENO
+2) Class dijagram prepravljen, sad je konzistentan --> URADJENO

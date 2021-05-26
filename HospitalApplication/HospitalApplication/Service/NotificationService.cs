@@ -51,7 +51,7 @@ namespace HospitalApplication.Logic
             patientsNotifications = fileNotifications.GetNotifications(patientsUsername);
             //test notifikacija
             /*List<DateTime> dates = new List<DateTime>();
-            DateTime date = new DateTime(2021, 5, 16, 15, 14, 0);
+            DateTime date = new DateTime(2021, 5, 26, 15, 14, 0);
             dates.Add(date);
             Notification nt = new Notification(dates, "hello", "world", "1", "100050", "m");
             patientsNotifications.Add(nt);*/
