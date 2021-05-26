@@ -36,6 +36,7 @@ namespace HospitalApplication.Service
             for (int i = 0; i < doctors.Count; i++)
             {
                 if (doctors[i].Id.Equals(currentDoctor.Id))
+                {
                     doctors[i].DoctorType = currentDoctor.DoctorType;
                     doctors[i].Name = currentDoctor.Name;
                     doctors[i].LastName = currentDoctor.LastName;
@@ -48,6 +49,7 @@ namespace HospitalApplication.Service
                     doctors[i].Username = currentDoctor.Username;
                     doctors[i].Password = currentDoctor.Password;
                     break;
+                }
             }
             fileDoctors.Write();
         }

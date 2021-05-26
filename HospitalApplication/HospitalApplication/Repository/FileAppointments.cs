@@ -43,6 +43,15 @@ namespace WorkWithFiles
             return appointments;
         }
 
+        public Appointment GetAppointment(DateTime dateTime) 
+        {
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (appointments[i].ExaminationStart.Equals(dateTime)) return appointments[i];
+            }
+            return null;
+        }
+
         public int GetAppointmentsIndex(Appointment appointment)
         {
             for (int i = 0; i < appointments.Count; i++)

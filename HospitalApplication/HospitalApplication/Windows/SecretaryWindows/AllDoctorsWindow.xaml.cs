@@ -20,7 +20,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
     {
         private FileDoctors fileDoctors = FileDoctors.Instance;
         private DoctorService doctorService = new DoctorService();
-
         private static AllDoctorsWindow instance;
         public static AllDoctorsWindow Instance
         {
@@ -33,7 +32,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
                 return instance;
             }
         }
-
 
         public AllDoctorsWindow()
         {
@@ -48,7 +46,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
             lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = fileDoctors.GetDoctors();
         }
-
 
         private void CenterWindow()
         {

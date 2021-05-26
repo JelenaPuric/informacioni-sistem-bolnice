@@ -16,7 +16,7 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class IDEmergencyWindow : Window
     {
-        private SecretaryController sc = new SecretaryController();
+        private SecretaryController secretaryController = new SecretaryController();
 
         public IDEmergencyWindow()
         {
@@ -26,11 +26,10 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            List<Patient> patients = sc.GetPatients();
+            List<Patient> patients = secretaryController.GetPatients();
             for (int i = 0; i < patients.Count; i++)
             {
-                if (patients[i].Id == IdPatient.Text)
-                {
+                if (patients[i].Id == IdPatient.Text){
                     EmergencyWindow window = new EmergencyWindow(IdPatient.Text) { };
                     window.Show();
                 }

@@ -49,5 +49,14 @@ namespace HospitalApplication.WorkWithFiles
                 if (doctorsUsername == doctors[i].Username) return doctors[i];
             return null;
         }
+        
+        public Doctor GetDoctorById(string idDoctor)
+        {
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].Username.Equals(idDoctor)) return doctors[i];
+            }
+            return null;
+        }
     }
 }
