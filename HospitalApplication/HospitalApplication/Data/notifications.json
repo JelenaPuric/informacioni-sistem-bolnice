@@ -1,1 +1,109 @@
-[{"dates":["2021-05-16T00:00:00.0000000Z","2021-05-17T00:00:00.0000000Z","2021-05-18T00:00:00.0000000Z"],"title":"1234","description":"asdf","repeat":"2","notificationsId":"100001","patientsId":"MarkoMarkovic"},{"dates":["2021-05-19T00:30:00.0000000Z","2021-05-20T00:30:00.0000000Z","2021-05-21T00:30:00.0000000Z","2021-05-22T00:30:00.0000000Z"],"title":"s","description":"s","repeat":"3","notificationsId":"100003","patientsId":"MarkoMarkovic"},{"dates":["2021-05-19T23:00:00.0000000Z","2021-05-20T23:00:00.0000000Z"],"title":"d","description":"dd","repeat":"1","notificationsId":"100004","patientsId":"MarkoMarkovic"},{"dates":["2021-05-24T22:00:00.0000000Z","2021-05-25T22:00:00.0000000Z","2021-05-25T22:00:00.0000000Z"],"title":"titleee","description":"des","repeat":"2","notificationsId":"100005","patientsId":"MarkoMarkovic"},{"dates":["2021-05-26T17:30:00.0000000Z","2021-05-27T17:30:00.0000000Z"],"title":"title111","description":" asffsa fsa fasf asas ","repeat":"1","notificationsId":"100006","patientsId":"JovanJovanovic"},{"dates":["2021-05-27T08:00:00.0000000+02:00","2021-05-28T08:00:00.0000000+02:00","2021-05-29T08:00:00.0000000+02:00"],"title":"a","description":"a","repeat":"2","notificationsId":"100007","patientsId":"MarkoMarkovic"}]
+[
+  {
+    "Dates": [
+      "2021-05-16T00:00:00Z",
+      "2021-05-17T00:00:00Z",
+      "2021-05-18T00:00:00Z"
+    ],
+    "Title": "1234",
+    "Description": "asdf",
+    "Repeat": "2",
+    "NotificationsId": "100001",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-19T00:30:00Z",
+      "2021-05-20T00:30:00Z",
+      "2021-05-21T00:30:00Z",
+      "2021-05-22T00:30:00Z"
+    ],
+    "Title": "s",
+    "Description": "s",
+    "Repeat": "3",
+    "NotificationsId": "100003",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-19T23:00:00Z",
+      "2021-05-20T23:00:00Z"
+    ],
+    "Title": "d",
+    "Description": "dd",
+    "Repeat": "1",
+    "NotificationsId": "100004",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-24T22:00:00Z",
+      "2021-05-25T22:00:00Z",
+      "2021-05-25T22:00:00Z"
+    ],
+    "Title": "titleee",
+    "Description": "des",
+    "Repeat": "2",
+    "NotificationsId": "100005",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-26T17:30:00Z",
+      "2021-05-27T17:30:00Z"
+    ],
+    "Title": "title111",
+    "Description": " asffsa fsa fasf asas ",
+    "Repeat": "1",
+    "NotificationsId": "100006",
+    "PatientsId": "JovanJovanovic"
+  },
+  {
+    "Dates": [
+      "2021-05-27T06:00:00Z",
+      "2021-05-28T06:00:00Z",
+      "2021-05-29T06:00:00Z"
+    ],
+    "Title": "a",
+    "Description": "a",
+    "Repeat": "2",
+    "NotificationsId": "100007",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-31T05:00:00Z",
+      "2021-06-01T05:00:00Z",
+      "2021-06-02T05:00:00Z"
+    ],
+    "Title": "s",
+    "Description": "s",
+    "Repeat": "2",
+    "NotificationsId": "100008",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-05-31T22:30:00+02:00",
+      "2021-06-01T22:30:00+02:00",
+      "2021-06-02T22:30:00+02:00"
+    ],
+    "Title": "a",
+    "Description": "a",
+    "Repeat": "2",
+    "NotificationsId": "100009",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-06-01T17:30:00",
+      "2021-06-02T17:30:00",
+      "2021-06-03T17:30:00"
+    ],
+    "Title": "r",
+    "Description": "r",
+    "Repeat": "2",
+    "NotificationsId": "100010",
+    "PatientsId": "MarkoMarkovic"
+  }
+]

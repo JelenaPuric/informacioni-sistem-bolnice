@@ -913,3 +913,5 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\SurveyApplication.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\SurveyApplication.baml

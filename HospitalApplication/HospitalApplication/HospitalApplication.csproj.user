@@ -115,6 +115,9 @@
     <Compile Update="Windows\PatientWindows\PatientsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\PatientWindows\SurveyApplication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\PatientWindows\SurveyDoctor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -334,6 +337,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\PatientsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\SurveyApplication.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\SurveyDoctor.xaml">

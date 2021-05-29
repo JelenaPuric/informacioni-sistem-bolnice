@@ -54,41 +54,5 @@ namespace HospitalApplication.Service
             }
             fileDoctors.Write();
         }
-
-        public bool IsDoctorFree(string doctorsUsername, DateTime date)
-        {
-            for (int i = 0; i < doctors.Count; i++)
-                if (doctors[i].Username == doctorsUsername)
-                    for (int j = 0; j < doctors[i].Scheduled.Count; j++)
-                        if (doctors[i].Scheduled[j] == date) return false;
-            return true;
-        }
-
-        public void AddAppointmentToDoctor(string doctorsUsername, DateTime date)
-        {
-            for (int i = 0; i < doctors.Count; i++){
-                if (doctors[i].Username == doctorsUsername){
-                    doctors[i].Scheduled.Add(date);
-                    fileDoctors.Write();
-                    break;
-                }
-            }
-        }
-
-        public void RemoveAppointmentFromDoctor(string doctorsUsername, DateTime date)
-        {
-            for (int i = 0; i < doctors.Count; i++){
-                if (doctors[i].Username == doctorsUsername){
-                    for (int j = 0; j < doctors[i].Scheduled.Count; j++){
-                        if (doctors[i].Scheduled[j] == date){
-                            doctors[i].Scheduled.RemoveAt(j);
-                            break;
-                        }
-                    }
-                    fileDoctors.Write();
-                    break;
-                }
-            }
-        }
     }
 }

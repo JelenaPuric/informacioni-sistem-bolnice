@@ -1,1 +1,27 @@
-[{"doctorType":0,"scheduled":["2021-05-29T05:00:00.0000000Z","2021-05-28T13:30:00.0000000+02:00","2021-06-04T18:00:00.0000000+02:00"],"sexType":0,"jmbg":"412124","name":"aaaa","lastName":"aaaa","id":"0","dateOfBirth":"2021-05-04T22:00:00.0000000Z","phoneNumber":"421421","email":"afsfas","placeOfResidance":"fasafs","typeOfPerson":0,"username":"aaaa","password":"123"}]
+[
+  {
+    "DoctorType": 0,
+    "Scheduled": [
+      "2021-05-29T05:00:00Z",
+      "2021-05-28T11:30:00Z",
+      "2021-06-04T16:00:00Z",
+      "2021-05-30T07:00:00Z",
+      "2021-06-03T05:00:00Z",
+      "2021-05-31T08:00:00Z",
+      "2021-05-30T09:30:00+02:00",
+      "2021-06-03T10:30:00"
+    ],
+    "SexType": 0,
+    "Jmbg": "412124",
+    "Name": "aaaa",
+    "LastName": "aaaa",
+    "Id": "0",
+    "DateOfBirth": "2021-05-04T22:00:00Z",
+    "PhoneNumber": "421421",
+    "Email": "afsfas",
+    "PlaceOfResidance": "fasafs",
+    "TypeOfPerson": 0,
+    "Username": "aaaa",
+    "Password": "123"
+  }
+]

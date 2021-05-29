@@ -1,6 +1,7 @@
 ﻿using HospitalApplication.Model;
 using Model;
 using Nancy.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,12 +32,12 @@ namespace HospitalApplication.Repository
         public void Read()
         {
             string json = File.ReadAllText(path);
-            anamnesis = new JavaScriptSerializer().Deserialize<List<Anamnesis>>(json);
+            anamnesis = JsonConvert.DeserializeObject<List<Anamnesis>>(json);
         }
 
         public void Write()
         {
-            string json = new JavaScriptSerializer().Serialize(anamnesis);
+            string json = JsonConvert.SerializeObject(anamnesis, Formatting.Indented);
             File.WriteAllText(path, json);
         }
 

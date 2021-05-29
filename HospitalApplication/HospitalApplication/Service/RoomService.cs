@@ -173,41 +173,5 @@ namespace Logic
             }
             return showThatRoom;
         }
-
-        public Tuple<bool, int> IsRoomFree(DateTime date)
-        {
-            for (int i = 0; i < rooms.Count; i++){
-                bool roomIsFree = true;
-                for (int j = 0; j < rooms[i].Scheduled.Count; j++)
-                    if (rooms[i].Scheduled[j] == date) roomIsFree = false;
-                for (int j = 0; j < rooms[i].Renovation.Count; j++)
-                    for (int k = 0; k < rooms[i].Renovation[j].Days.Count; k++)
-                        if (rooms[i].Renovation[j].Days[k] == date) roomIsFree = false;
-                if (roomIsFree) return new Tuple<bool, int>(true, i);
-            }
-            return new Tuple<bool, int>(false, -1);
-        }
-
-        public void AddAppointmentToRoom(int roomIndex, DateTime date)
-        {
-            rooms[roomIndex].Scheduled.Add(date);
-            fileRooms.Write();
-        }
-
-        public void RemoveAppointmentFromRoom(string roomId, DateTime date)
-        {
-            for (int i = 0; i < rooms.Count; i++){
-                if (rooms[i].RoomId.ToString() == roomId){
-                    for (int j = 0; j < rooms[i].Scheduled.Count; j++){
-                        if (rooms[i].Scheduled[j] == date){
-                            rooms[i].Scheduled.RemoveAt(j);
-                            fileRooms.Write();
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
-        }
     }
 }

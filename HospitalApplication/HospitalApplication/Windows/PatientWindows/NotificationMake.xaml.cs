@@ -37,7 +37,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 0, 24);
             List<DateTime> dates = new List<DateTime>();
             dates.Add(newDate);
             for (int i = 0; i < Int32.Parse(Repeat.Text); i++){

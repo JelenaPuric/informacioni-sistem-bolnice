@@ -37,7 +37,7 @@ namespace HospitalApplication.Windows.Patient1
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             Notification notification = (Notification)notificationsPage.lvUsers.SelectedItem;
-            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 0, 24);
             controller.EditNotification(notification, Title.Text, Description.Text, Repeat.Text, newDate);
             notificationsPage.UpdateView();
             Close();

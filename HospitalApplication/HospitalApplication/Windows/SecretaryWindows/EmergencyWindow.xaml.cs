@@ -73,7 +73,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonFilter_Click(object sender, RoutedEventArgs e)
         {
-            isFreeRoom = roomService.IsRoomFree(GetTheClosestAppointment());
+            isFreeRoom = fileRooms.IsRoomFree(GetTheClosestAppointment());
             if (isFreeRoom.Item1 && FilterDoctors()) {
                 MessageBox("Imamo slobodan termin u najblizem roku!"); 
             }
@@ -129,7 +129,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             DateTime selectedSheduledDateTime = DateTime.Parse(ComboSheduledTerms.SelectedItem.ToString());
             MoveAppointment(fileAppointments.GetAppointment(selectedSheduledDateTime), selectedSheduledDateTime);
-            isFreeRoom = roomService.IsRoomFree(selectedSheduledDateTime);
+            isFreeRoom = fileRooms.IsRoomFree(selectedSheduledDateTime);
             ScheduleAppointment(selectedSheduledDateTime);
             Close();
         }
@@ -145,7 +145,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             DateTime newDate = selectedDateTime.AddDays(appointment.PostponeAppointment);
             appointment.PostponeAppointment = defaultValueOfPostpone;
-            isFreeRoom = roomService.IsRoomFree(newDate);
+            isFreeRoom = fileRooms  .IsRoomFree(newDate);
             if (IsFreeDoctorAndRoom(appointment, newDate)){
                 appointmentService.MoveAppointment(appointment, newDate);
             }
@@ -153,7 +153,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private bool IsFreeDoctorAndRoom(Appointment appointment, DateTime newDate)
         {
-            return (doctorService.IsDoctorFree(appointment.DoctorsId, newDate) == true && isFreeRoom.Item1 == true);
+            return (fileDoctors.IsDoctorFree(appointment.DoctorsId, newDate) == true && isFreeRoom.Item1 == true);
         }
 
         private void SheduleFreeAppointment()

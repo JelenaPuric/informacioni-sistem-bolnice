@@ -34,6 +34,7 @@ namespace HospitalApplication
         private DoctorService doctorService = new DoctorService();
         private FormService formService = new FormService();
         private FileAppointments fileAppointments = FileAppointments.Instance;
+        private FileRooms fileRooms = FileRooms.Instance;
 
         public WindowExaminationSchedule()
         {
@@ -47,8 +48,8 @@ namespace HospitalApplication
         private void ButtonOkFilters_Click(object sender, RoutedEventArgs e)
         {
             Combo4.Items.Clear();
-            DateTime firstDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
-            DateTime secondDate = formService.GetDateAndTimeFromForm(Date2.SelectedDate.Value.Date, Combo2);
+            DateTime firstDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 7, 13);
+            DateTime secondDate = formService.GetDateAndTimeFromForm(Date2.SelectedDate.Value.Date, Combo2, 7, 13);
             GetFreeAppointments(firstDate, secondDate, term);
             if (newDates.Count > 0) return;
             if (priorityDoctor.IsChecked == true) GetAlternativeAppointmentsForDoctorPriority(firstDate, secondDate, term);
@@ -72,7 +73,7 @@ namespace HospitalApplication
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 7, 13);
             appointmentsId = fileAppointments.GenerateAppointmentsId(appointmentsId);
             Appointment appointment = new Appointment(mainWindow.PatientsUsername, doctors[Combo3.SelectedIndex].Username, "0", newDate, (appointmentsId + 1).ToString(), 0, Int32.Parse(textBox111.Text));
             controller.ScheduleAppointment(appointment);
@@ -86,9 +87,9 @@ namespace HospitalApplication
             for (int i = 0; i < (secondDate - firstDate).TotalDays + 1; i++){
                 for (int j = 0; j < term.Count; j++){
                     newDate = firstDate.Date.AddDays(i) + new TimeSpan(term[j].Item1, term[j].Item2, term[j].Item3);
-                    Tuple<bool, int> roomIsFree = roomService.IsRoomFree(newDate);
+                    Tuple<bool, int> roomIsFree = fileRooms.IsRoomFree(newDate);
                     roomIndex = roomIsFree.Item2;
-                    if (doctorService.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= secondDate && newDate >= firstDate){
+                    if (fileDoctors.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= secondDate && newDate >= firstDate){
                         newDates.Add(newDate);
                         Combo4.Items.Add(newDates[i].ToString());
                     }
@@ -102,18 +103,18 @@ namespace HospitalApplication
             for (int j = 0; j < 3; j++){
                 for (int i = 0; i < term.Count; i++){
                     newDate = secondDate.Date.AddDays(j) + new TimeSpan(term[i].Item1, term[i].Item2, term[i].Item3);
-                    Tuple<bool, int> roomIsFree = roomService.IsRoomFree(newDate);
+                    Tuple<bool, int> roomIsFree = fileRooms.IsRoomFree(newDate);
                     roomIndex = roomIsFree.Item2;
-                    if (doctorService.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate > secondDate)
+                    if (fileDoctors.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate > secondDate)
                         newDates.Add(newDate);
                 }
             }
             for (int j = 0; j < 3; j++){
                 for (int i = 0; i < term.Count; i++){
                     newDate = secondDate.Date.AddDays(-j) + new TimeSpan(term[i].Item1, term[i].Item2, term[i].Item3);
-                    Tuple<bool, int> roomIsFree = roomService.IsRoomFree(newDate);
+                    Tuple<bool, int> roomIsFree = fileRooms.IsRoomFree(newDate);
                     roomIndex = roomIsFree.Item2;
-                    if (doctorService.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate < firstDate && newDate > DateTime.Now)
+                    if (fileDoctors.IsDoctorFree(selectedDoctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate < firstDate && newDate > DateTime.Now)
                         newDates.Add(newDate);
                 }
             }
@@ -130,9 +131,9 @@ namespace HospitalApplication
                 for (int j = 0; j < (secondDate - firstDate).TotalDays + 1; j++){
                     for (int i = 0; i < time.Count; i++){
                         newDate = firstDate.Date.AddDays(j) + new TimeSpan(time[i].Item1, time[i].Item2, time[i].Item3);
-                        Tuple<bool, int> roomIsFree = roomService.IsRoomFree(newDate);
+                        Tuple<bool, int> roomIsFree = fileRooms.IsRoomFree(newDate);
                         roomIndex = roomIsFree.Item2;
-                        if (doctorService.IsDoctorFree(doctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= secondDate && newDate >= firstDate){
+                        if (fileDoctors.IsDoctorFree(doctor.Username, newDate) == true && roomIsFree.Item1 == true && newDate <= secondDate && newDate >= firstDate){
                             newDates.Add(newDate);
                             Combo4.Items.Add(newDate.ToString() + "," + doctor.Username);
                         }

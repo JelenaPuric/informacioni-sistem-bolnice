@@ -33,7 +33,7 @@ namespace HospitalApplication.Windows.Patient1
         {
             Appointment appointment = (Appointment)patientsPage.lvUsers.SelectedItem;
             DateTime oldDate = appointment.ExaminationStart;
-            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
+            DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 7, 13);
             if (!IsNewDateValid(oldDate, newDate)) return;
             controller.MoveAppointment(appointment, newDate);
             patientsPage.UpdateView();

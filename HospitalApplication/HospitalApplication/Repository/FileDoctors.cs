@@ -6,6 +6,7 @@ using Model;
 using Logic;
 using Nancy.Json;
 using HospitalApplication.Repository;
+using Newtonsoft.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
@@ -31,12 +32,12 @@ namespace HospitalApplication.WorkWithFiles
         public void Read()
         {
             string json = File.ReadAllText(path);
-            doctors = new JavaScriptSerializer().Deserialize<List<Doctor>>(json);
+            doctors = JsonConvert.DeserializeObject<List<Doctor>>(json);
         }
 
         public void Write()
         {
-            string json = new JavaScriptSerializer().Serialize(doctors);
+            string json = JsonConvert.SerializeObject(doctors, Formatting.Indented);
             File.WriteAllText(path, json);
         }
 
@@ -57,6 +58,44 @@ namespace HospitalApplication.WorkWithFiles
                 if (doctors[i].Username.Equals(idDoctor)) return doctors[i];
             }
             return null;
+        }
+
+        public bool IsDoctorFree(string doctorsUsername, DateTime date)
+        {
+            for (int i = 0; i < doctors.Count; i++)
+                if (doctors[i].Username == doctorsUsername)
+                    for (int j = 0; j < doctors[i].Scheduled.Count; j++)
+                        if (doctors[i].Scheduled[j] == date) return false;
+            return true;
+        }
+
+        public void AddAppointmentToDoctor(string doctorsUsername, DateTime date)
+        {
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].Username == doctorsUsername)
+                {
+                    doctors[i].Scheduled.Add(date);
+                    Write();
+                    break;
+                }
+            }
+        }
+
+        public void RemoveAppointmentFromDoctor(string doctorsUsername, DateTime date)
+        {
+            for (int i = 0; i < doctors.Count; i++){
+                if (doctors[i].Username == doctorsUsername){
+                    for (int j = 0; j < doctors[i].Scheduled.Count; j++){
+                        if (doctors[i].Scheduled[j] == date){
+                            doctors[i].Scheduled.RemoveAt(j);
+                            break;
+                        }
+                    }
+                    Write();
+                    break;
+                }
+            }
         }
     }
 }
