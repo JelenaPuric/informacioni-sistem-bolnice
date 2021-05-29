@@ -14,11 +14,11 @@
     "room": null,
     "pacient": null,
     "ExaminationId": "100003",
-    "ExaminationStart": "2021-06-04T16:00:00Z",
+    "ExaminationStart": "2021-06-05T16:00:00",
     "PatientsId": "MarkoMarkovic",
     "DoctorsId": "aaaa",
-    "RoomId": "1955",
-    "PostponeAppointment": 1,
+    "RoomId": "33",
+    "PostponeAppointment": 1000,
     "AppointmentType": 0
   },
   {
@@ -92,6 +92,28 @@
     "pacient": null,
     "ExaminationId": "100009",
     "ExaminationStart": "2021-05-29T20:00:00+02:00",
+    "PatientsId": "JovanJovanovic",
+    "DoctorsId": "aaaa",
+    "RoomId": "1955",
+    "PostponeAppointment": 1000,
+    "AppointmentType": 0
+  },
+  {
+    "room": null,
+    "pacient": null,
+    "ExaminationId": "100011",
+    "ExaminationStart": "2021-05-29T20:30:00+02:00",
+    "PatientsId": "JovanJovanovic",
+    "DoctorsId": "aaaa",
+    "RoomId": "1955",
+    "PostponeAppointment": 1000,
+    "AppointmentType": 0
+  },
+  {
+    "room": null,
+    "pacient": null,
+    "ExaminationId": "100012",
+    "ExaminationStart": "2021-06-04T16:00:00",
     "PatientsId": "JovanJovanovic",
     "DoctorsId": "aaaa",
     "RoomId": "1955",

@@ -57,25 +57,25 @@ namespace HospitalApplication.Windows.Secretary
 
         private void DeletePatient_Click_1(object sender, RoutedEventArgs e)
         {
-            DeletePatientWindow window = new DeletePatientWindow();
-            window.Show();
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            secretaryController.DeletePatient(selectedPatient.Id);
+            UpdateView();
         }
 
         private void EditPatient_Click(object sender, RoutedEventArgs e)
         {
-            EditPatientWindow window = new EditPatientWindow();
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            EditRegisterPatientWindow window = new EditRegisterPatientWindow(selectedPatient.Id);
             window.Show();
         }
 
         private void ViewPatient_Click(object sender, RoutedEventArgs e)
         {
-            IDViewPatientWindow window = new IDViewPatientWindow();
-            window.Show();
-        }
-
-        private void MakeAppointment_Click(object sender, RoutedEventArgs e)
-        {
-            IDMakeAppointment window = new IDMakeAppointment();
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            ViewPatientWindow window = new ViewPatientWindow(selectedPatient.Id);
             window.Show();
         }
 
@@ -87,15 +87,11 @@ namespace HospitalApplication.Windows.Secretary
 
         private void MedicalRecord_Click(object sender, RoutedEventArgs e)
         {
-            IDMedicalRecord window = new IDMedicalRecord();
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            MedicalRecordWindow window = new MedicalRecordWindow(selectedPatient.Id);
             window.Show();
 
-        }
-
-        private void EmergencyButton_Click(object sender, RoutedEventArgs e)
-        {
-            IDEmergencyWindow window = new IDEmergencyWindow();
-            window.Show();
         }
 
         private void BackHome_Click(object sender, RoutedEventArgs e)
