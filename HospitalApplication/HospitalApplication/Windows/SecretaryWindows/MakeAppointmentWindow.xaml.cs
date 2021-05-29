@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.Windows.SecretaryWindows;
 using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
@@ -77,7 +78,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void BackHome_Click(object sender, RoutedEventArgs e)
         {
-            HomeWindow window = new HomeWindow();
+            PatientAndAppointmentWindow window = new PatientAndAppointmentWindow();
             this.Close();
             window.Show();
         }

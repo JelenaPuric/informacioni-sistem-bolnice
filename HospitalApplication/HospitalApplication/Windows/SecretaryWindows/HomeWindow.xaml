@@ -35,10 +35,10 @@
             </ListView>
 
 
-            <Button Content="Create News"  Click="CreateNews_Click"  HorizontalAlignment="Left" Margin="8,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
-            <Button Content="View News"  Click="ViewButton_Click"  HorizontalAlignment="Left" Margin="188,477,0,0" VerticalAlignment="Top" Width="165" Height="55" RenderTransformOrigin="0.737,-1.969"/>
-            <Button Content="Edit News"  Click="EditButton_Click" HorizontalAlignment="Left" Margin="368,477,0,0" VerticalAlignment="Top" Width="166" Height="55"/>
-            <Button Content="Delete News" Click="DeleteButton_Click" HorizontalAlignment="Left" Margin="547,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
+            <Button Background="#e1e1e1" BorderBrush="#00cc66" Content="Create News"  Click="CreateNews_Click"  HorizontalAlignment="Left" Margin="8,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
+            <Button Background="#e1e1e1" BorderBrush="#00cc66" Content="View News"  Click="ViewButton_Click"  HorizontalAlignment="Left" Margin="188,477,0,0" VerticalAlignment="Top" Width="165" Height="55" RenderTransformOrigin="0.737,-1.969"/>
+            <Button Background="#e1e1e1" BorderBrush="#00cc66" Content="Edit News"  Click="EditButton_Click" HorizontalAlignment="Left" Margin="368,477,0,0" VerticalAlignment="Top" Width="166" Height="55"/>
+            <Button Background="#e1e1e1" BorderBrush="#00cc66" Content="Delete News" Click="DeleteButton_Click" HorizontalAlignment="Left" Margin="547,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
 
         </Grid>
 
