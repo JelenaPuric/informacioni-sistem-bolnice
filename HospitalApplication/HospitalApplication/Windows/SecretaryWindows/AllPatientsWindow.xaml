@@ -101,8 +101,7 @@
             <Button Content="Emergency" Click="EmergencyButton_Click" HorizontalAlignment="Center"  Margin="0,409,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
             <Button Content="Medical Record" Click="MedicalRecord_Click"  HorizontalAlignment="Left" Margin="569,410,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
             -->
-
-            <Button Content="News" HorizontalAlignment="Left" Click="News_Click" Margin="772,403,0,0" VerticalAlignment="Top" Width="120" Height="46"/>
+        
 
         </Grid>
     </DockPanel>

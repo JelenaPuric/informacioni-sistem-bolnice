@@ -193,9 +193,6 @@
     <Compile Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\SecretaryWindows\NewsWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -415,9 +412,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\SecretaryWindows\NewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml">

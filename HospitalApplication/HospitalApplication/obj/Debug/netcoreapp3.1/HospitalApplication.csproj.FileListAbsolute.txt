@@ -264,7 +264,6 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MakeAppointmentWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MedicalRecordWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MoveAppointment.g.cs
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\NewsWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterGuestPatient.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterOptionWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterPatientWindow.g.cs
@@ -341,7 +340,6 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MakeAppointmentWindow.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MedicalRecordWindow.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\MoveAppointment.baml
-C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\NewsWindow.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterGuestPatient.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterOptionWindow.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\RegisterPatientWindow.baml

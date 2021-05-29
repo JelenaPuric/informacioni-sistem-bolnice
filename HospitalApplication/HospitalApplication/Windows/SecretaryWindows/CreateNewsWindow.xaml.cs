@@ -19,7 +19,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class CreateNewsWindow : Window
     {
         private NewsController newsController = new NewsController();
-        private NewsWindow newsWindow = NewsWindow.Instance;
+        private HomeWindow homeWindow = HomeWindow.Instance;
 
         public CreateNewsWindow()
         {
@@ -31,7 +31,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now);
             newsController.CreateNews(newNews);
-            newsWindow.UpdateNews();
+            homeWindow.UpdateNews();
             Close();
         }
 

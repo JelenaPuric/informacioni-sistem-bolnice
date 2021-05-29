@@ -17,7 +17,7 @@ namespace HospitalApplication.Windows.Secretary
     public partial class EditNewsWindow : Window
     {
         private NewsController newsController = new NewsController();
-        private NewsWindow newsWindow = NewsWindow.Instance;
+        private HomeWindow homeWindow = HomeWindow.Instance;
         private News currentSelectedNews;
 
         public EditNewsWindow(News selectedNews)
@@ -39,7 +39,7 @@ namespace HospitalApplication.Windows.Secretary
         {
             SetValues();
             newsController.UpdateNews(currentSelectedNews);
-            newsWindow.UpdateNews();
+            homeWindow.UpdateNews();
             Close();
         }
 
