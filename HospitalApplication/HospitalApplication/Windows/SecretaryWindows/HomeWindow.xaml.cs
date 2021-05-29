@@ -1,4 +1,6 @@
-﻿using HospitalApplication.Windows.SecretaryWindows;
+﻿using HospitalApplication.Controller;
+using HospitalApplication.Windows.SecretaryWindows;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,10 +17,32 @@ namespace HospitalApplication.Windows.Secretary
 {
     public partial class HomeWindow : Window
     {
+        private NewsController newsController = new NewsController();
+        private static HomeWindow instance;
+        public static HomeWindow Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new HomeWindow();
+                }
+                return instance;
+            }
+        }
+
         public HomeWindow()
         {
             InitializeComponent();
             CenterWindow();
+            instance = this;
+            UpdateNews();
+        }
+
+        public void UpdateNews()
+        {
+            lvUsers.ItemsSource = null;
+            lvUsers.ItemsSource = newsController.GetAllNews();
         }
 
         private void CenterWindow()
@@ -29,6 +53,36 @@ namespace HospitalApplication.Windows.Secretary
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+
+        private void CreateNews_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewsWindow window = new CreateNewsWindow();
+            window.Show();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            newsController.DeleteNews(selectedNews.Id);
+            UpdateNews();
+        }
+
+        private void ViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            ViewNewsWindow window = new ViewNewsWindow(selectedNews);
+            window.Show();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            News selectedNews = (News)lvUsers.SelectedItem;
+            EditNewsWindow window = new EditNewsWindow(selectedNews);
+            window.Show();
         }
 
         private void SignOut_Click(object sender, RoutedEventArgs e)

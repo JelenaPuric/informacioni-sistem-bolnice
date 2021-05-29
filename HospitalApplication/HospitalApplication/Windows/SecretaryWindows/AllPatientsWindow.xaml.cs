@@ -92,12 +92,6 @@ namespace HospitalApplication.Windows.Secretary
 
         }
 
-        private void News_Click(object sender, RoutedEventArgs e)
-        {
-            NewsWindow window = new NewsWindow();
-            window.Show();
-        }
-
         private void EmergencyButton_Click(object sender, RoutedEventArgs e)
         {
             IDEmergencyWindow window = new IDEmergencyWindow();

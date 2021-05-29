@@ -10,8 +10,6 @@
 
     <Window.Resources>
         <ResourceDictionary>
-
-
         </ResourceDictionary>
     </Window.Resources>
 
@@ -23,6 +21,26 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Grid Grid.Column="1">
+            <ListView Margin="8,10,12,78" Name="lvUsers" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200" Header="Publication Date" DisplayMemberBinding="{Binding PublicationDate}" />
+                        <GridViewColumn Width="120" Header="ID" DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Width="200" Header="Type News" DisplayMemberBinding="{Binding TypeNews}" />
+                        <GridViewColumn Width="180" Header="Title" DisplayMemberBinding="{Binding Title}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+            <Button Content="Create News"  Click="CreateNews_Click"  HorizontalAlignment="Left" Margin="8,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
+            <Button Content="View News"  Click="ViewButton_Click"  HorizontalAlignment="Left" Margin="188,477,0,0" VerticalAlignment="Top" Width="165" Height="55" RenderTransformOrigin="0.737,-1.969"/>
+            <Button Content="Edit News"  Click="EditButton_Click" HorizontalAlignment="Left" Margin="368,477,0,0" VerticalAlignment="Top" Width="166" Height="55"/>
+            <Button Content="Delete News" Click="DeleteButton_Click" HorizontalAlignment="Left" Margin="547,477,0,0" VerticalAlignment="Top" Width="165" Height="55"/>
+
+        </Grid>
 
 
         <Grid Grid.Row="1">
