@@ -68,17 +68,6 @@
   {
     "room": null,
     "pacient": null,
-    "ExaminationId": "100006",
-    "ExaminationStart": "2021-05-31T10:00:00+02:00",
-    "PatientsId": "MarkoMarkovic",
-    "DoctorsId": "aaaa",
-    "RoomId": "1955",
-    "PostponeAppointment": 2,
-    "AppointmentType": 0
-  },
-  {
-    "room": null,
-    "pacient": null,
     "ExaminationId": "100010",
     "ExaminationStart": "2021-07-30T10:00:00",
     "PatientsId": "JovanJovanovic",

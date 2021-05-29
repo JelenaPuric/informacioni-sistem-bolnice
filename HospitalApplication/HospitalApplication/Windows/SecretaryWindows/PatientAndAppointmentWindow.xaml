@@ -9,6 +9,31 @@
         Title="PatientAndAppointmentWindow" Height="574" Width="940">
     <DockPanel>
 
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="menuNew" Header="_New appointment" InputGestureText="Ctrl+N" Click="menuNew_Click">
+
+                </MenuItem>
+
+                <MenuItem x:Name="menuEmergency" Header="_New emergency" InputGestureText="Ctrl+E" Click="menuEmergency_Click">
+
+                </MenuItem>
+
+                <Separator />
+
+                <MenuItem x:Name="menuExit" Header="Exit" InputGestureText="Ctrl+F4" Click="menuExit_Click"/>
+            </MenuItem>
+
+
+            <MenuItem Header="_Edit">
+                <MenuItem x:Name="menuView" Header="_View appointments from patient" InputGestureText="Ctrl+A" Click="menuView_Click">
+
+                </MenuItem>
+
+            </MenuItem>
+
+        </Menu>
+
         <Grid Height="70" DockPanel.Dock="Top">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

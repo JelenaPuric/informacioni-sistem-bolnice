@@ -12,6 +12,31 @@
 
     <DockPanel>
 
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="menuNew" Header="_New appointment" InputGestureText="Ctrl+N" Click="menuNew_Click">
+
+                </MenuItem>
+
+                <MenuItem x:Name="menuMove" Header="_Move appointment" InputGestureText="Ctrl+M" Click="menuMove_Click">
+
+                </MenuItem>
+
+                <Separator />
+
+                <MenuItem x:Name="menuExit" Header="Exit" InputGestureText="Ctrl+F4" Click="menuExit_Click"/>
+            </MenuItem>
+
+
+            <MenuItem Header="_Edit">
+                <MenuItem x:Name="menuDelete" Header="_Delete appointment" InputGestureText="Ctrl+D" Click="menuDelete_Click">
+
+                </MenuItem>
+
+            </MenuItem>
+
+        </Menu>
+
         <Grid Height="70" DockPanel.Dock="Top">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

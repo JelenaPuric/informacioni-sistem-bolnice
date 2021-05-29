@@ -100,5 +100,49 @@ namespace HospitalApplication.Windows.Secretary
             this.Close();
             window.Show();
         }
+
+
+        private void menuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuNew_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterOptionWindow window = new RegisterOptionWindow();
+            window.Show();
+        }
+
+        private void menuOpenMR_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            MedicalRecordWindow window = new MedicalRecordWindow(selectedPatient.Id);
+            window.Show();
+        }
+
+        private void menuDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            secretaryController.DeletePatient(selectedPatient.Id);
+            UpdateView();
+        }
+
+        private void menuEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            EditRegisterPatientWindow window = new EditRegisterPatientWindow(selectedPatient.Id);
+            window.Show();
+        }
+
+        private void menuView_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            ViewPatientWindow window = new ViewPatientWindow(selectedPatient.Id);
+            window.Show();
+        }
     }
 }

@@ -66,5 +66,35 @@ namespace HospitalApplication.Windows.SecretaryWindows
             this.Close();
             window.Show();
         }
+
+        private void menuNew_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            AddAppointment window = new AddAppointment(selectedPatient.Username);
+            window.Show();
+        }
+
+        private void menuEmergency_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            EmergencyWindow window = new EmergencyWindow(selectedPatient.Id);
+            window.Show();
+        }
+
+        private void menuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuView_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Patient selectedPatient = (Patient)lvUsers.SelectedItem;
+            MakeAppointmentWindow window = new MakeAppointmentWindow(selectedPatient.Id);
+            this.Close();
+            window.Show();
+        }
     }
 }
