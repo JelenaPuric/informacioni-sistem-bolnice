@@ -160,6 +160,9 @@
     <Compile Update="Windows\SecretaryWindows\CreateNewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SecretaryWindows\DateReportForAppointmentsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\SecretaryWindows\DefineAllergenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +202,9 @@
     <Compile Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SecretaryWindows\PatientAndAppointmentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -206,6 +212,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SecretaryWindows\ReportWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\ViewDoctorWindow.xaml.cs">
@@ -387,6 +396,9 @@
     <Page Update="Windows\SecretaryWindows\CreateNewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\SecretaryWindows\DateReportForAppointmentsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\SecretaryWindows\DefineAllergenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -426,6 +438,9 @@
     <Page Update="Windows\SecretaryWindows\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\SecretaryWindows\PatientAndAppointmentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\SecretaryWindows\RegisterGuestPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -433,6 +448,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\RegisterPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SecretaryWindows\ReportWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\ViewDoctorWindow.xaml">

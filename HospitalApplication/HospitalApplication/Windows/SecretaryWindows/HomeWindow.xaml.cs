@@ -101,16 +101,15 @@ namespace HospitalApplication.Windows.Secretary
 
         private void EmergencyButton_Click(object sender, RoutedEventArgs e)
         {
-            IDEmergencyWindow window = new IDEmergencyWindow();
-            AllPatientsWindow window1 = new AllPatientsWindow();
+            PatientAndAppointmentWindow window = new PatientAndAppointmentWindow();
             this.Close();
-            window1.Show();
             window.Show();
         }
 
         private void MakeAppointment_Click(object sender, RoutedEventArgs e)
         {
-            IDMakeAppointment window = new IDMakeAppointment();
+            PatientAndAppointmentWindow window = new PatientAndAppointmentWindow();
+            this.Close();
             window.Show();
         }
 

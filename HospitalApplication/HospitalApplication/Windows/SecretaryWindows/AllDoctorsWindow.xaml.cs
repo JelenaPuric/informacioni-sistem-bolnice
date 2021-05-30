@@ -93,5 +93,40 @@ namespace HospitalApplication.Windows.SecretaryWindows
             ViewDoctorWindow window = new ViewDoctorWindow(selectedDoctor);
             window.Show();
         }
+
+        private void menuNew_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewDoctorWindow window = new AddNewDoctorWindow();
+            window.Show();
+        }
+
+        private void menuDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+            doctorService.DeleteDoctor(selectedDoctor.Id);
+            UpdateDoctors();
+        }
+
+        private void menuEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+            EditDoctorWindow window = new EditDoctorWindow(selectedDoctor);
+            window.Show();
+        }
+
+        private void menuView_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+            ViewDoctorWindow window = new ViewDoctorWindow(selectedDoctor);
+            window.Show();
+        }
+
+        private void menuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

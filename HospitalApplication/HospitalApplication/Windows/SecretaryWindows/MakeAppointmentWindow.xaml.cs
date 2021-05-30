@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.Windows.SecretaryWindows;
 using HospitalApplication.WorkWithFiles;
 using Logic;
 using Model;
@@ -59,7 +60,7 @@ namespace HospitalApplication.Windows.Secretary
             if (!(lvUsers.SelectedIndex > -1))
                 return;
             Appointment appointment = (Appointment)lvUsers.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Do you want to cancel examination?", "Confirmation", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Do you want to delete appointment?", "Confirmation", MessageBoxButton.YesNo);
             switch (result){
                 case MessageBoxResult.Yes:
                     appointmentController.CancelAppointment(appointment);
@@ -77,9 +78,42 @@ namespace HospitalApplication.Windows.Secretary
 
         private void BackHome_Click(object sender, RoutedEventArgs e)
         {
-            HomeWindow window = new HomeWindow();
+            PatientAndAppointmentWindow window = new PatientAndAppointmentWindow();
             this.Close();
             window.Show();
+        }
+
+        private void menuNew_Click(object sender, RoutedEventArgs e)
+        {
+            AddAppointment window = new AddAppointment(secretaryController.GetPatient(idPatient).Username);
+            window.Show();
+        }
+
+        private void menuMove_Click(object sender, RoutedEventArgs e)
+        {
+            MoveAppointment window = new MoveAppointment();
+            window.Show();
+        }
+
+        private void menuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1))
+                return;
+            Appointment appointment = (Appointment)lvUsers.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Do you want to delete appointment?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    appointmentController.CancelAppointment(appointment);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
     }
 }
