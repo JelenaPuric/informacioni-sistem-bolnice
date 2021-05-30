@@ -112,7 +112,10 @@
     <Compile Update="Windows\PatientWindows\NotificationsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\PatientWindows\PatientsPage.xaml.cs">
+    <Compile Update="Windows\PatientWindows\AppointmentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\PatientWindows\Report.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\PatientWindows\SurveyApplication.xaml.cs">
@@ -333,7 +336,10 @@
     <Page Update="Windows\PatientWindows\NotificationsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\PatientWindows\PatientsPage.xaml">
+    <Page Update="Windows\PatientWindows\AppointmentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\Report.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\SurveyApplication.xaml">

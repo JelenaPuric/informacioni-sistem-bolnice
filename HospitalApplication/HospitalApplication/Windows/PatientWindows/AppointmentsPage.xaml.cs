@@ -98,5 +98,11 @@ namespace HospitalApplication.Windows.PatientWindows
             WindowExaminationEdit window = new WindowExaminationEdit();
             window.Show();
         }
+
+        private void GenerateReport_Click(object sender, RoutedEventArgs e)
+        {
+            Report window = new Report();
+            window.Show();
+        }
     }
 }
