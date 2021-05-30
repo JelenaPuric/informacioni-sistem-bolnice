@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
-        Title="SurveyApplication" Height="500" Width="650">
+        Title="SurveyApplication" Height="500" Width="650"
+        Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <StackPanel>
             <Label Content="Hospital Survey" HorizontalAlignment="Center" Foreground="green" FontSize="30" Margin="0 10 0 10"/>

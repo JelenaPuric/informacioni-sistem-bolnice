@@ -79,6 +79,11 @@ namespace HospitalApplication.Windows.PatientWindows
             Main.Content = new AnamnesisPage();
         }
 
+        private void MenuSettings_Selected(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SettingsPage();
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             NotificationService.FlagIsMarked = true;

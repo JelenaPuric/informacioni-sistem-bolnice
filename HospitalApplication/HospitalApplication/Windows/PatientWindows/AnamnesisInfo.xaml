@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows"
         mc:Ignorable="d"
-        Title="AnamnesisInfo" Height="500" Width="800">
+        Title="AnamnesisInfo" Height="500" Width="800"
+        Style="{StaticResource WindowStyle}">
     <Grid>
         <StackPanel>
             <Grid Margin="50 10 50 0">

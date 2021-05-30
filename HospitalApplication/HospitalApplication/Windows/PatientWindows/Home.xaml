@@ -9,7 +9,8 @@
         Height="600"
         Width="900"
         WindowStartupLocation="CenterScreen"
-        Closed="Window_Closed">
+        Closed="Window_Closed"
+        Style="{StaticResource WindowStyle}">
     <Grid>
         <Grid x:Name="panelHeader" MouseDown="panelHeader_MouseDown" VerticalAlignment="Top" Height="50" Background="#014546">
             <TextBlock Text="Zdravo Hospital" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
@@ -44,6 +45,12 @@
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/anamnesis.png" Margin="0 0 10 0"/>
                             <TextBlock Text="Anamnesis" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuSettings" Selected="MenuSettings_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/settings.png" Margin="0 0 10 0"/>
+                            <TextBlock Text="Settings" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

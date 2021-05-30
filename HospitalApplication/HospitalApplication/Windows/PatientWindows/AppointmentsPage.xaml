@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="PatientsPage">
+      Title="PatientsPage"
+      Style="{StaticResource PageStyle}">
 
     <Grid Background="white">
         <StackPanel Margin="10">
