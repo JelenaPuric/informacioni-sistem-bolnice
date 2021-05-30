@@ -79,6 +79,19 @@ namespace WorkWithFiles
             return patientsAppointments;
         }
 
+        public List<Appointment> GetAppointmentsForSpecificDoctor(string doctorUsername)
+        {
+            List<Appointment> doctorsAppointments = new List<Appointment>();
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if( appointments[i].DoctorsId == doctorUsername)
+                {
+                    doctorsAppointments.Add(appointments[i]);
+                }
+            }
+            return doctorsAppointments;
+        }
+
         public int GenerateAppointmentsId(int appointmentId)
         {
             if (appointmentId == 100000)

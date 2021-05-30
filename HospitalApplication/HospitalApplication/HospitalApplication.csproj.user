@@ -163,6 +163,9 @@
     <Compile Update="Windows\SecretaryWindows\CreateNewsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SecretaryWindows\DataReportForDoctorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\SecretaryWindows\DateReportForAppointmentsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -170,6 +173,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\DeletePatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SecretaryWindows\DoctorReportWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\SecretaryWindows\EditDoctorWindow.xaml.cs">
@@ -402,6 +408,9 @@
     <Page Update="Windows\SecretaryWindows\CreateNewsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\SecretaryWindows\DataReportForDoctorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\SecretaryWindows\DateReportForAppointmentsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -409,6 +418,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\DeletePatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SecretaryWindows\DoctorReportWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SecretaryWindows\EditDoctorWindow.xaml">

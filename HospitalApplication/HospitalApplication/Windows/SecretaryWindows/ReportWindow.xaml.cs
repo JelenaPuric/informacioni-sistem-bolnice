@@ -25,8 +25,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
         {
             InitializeComponent();
             CenterWindow();
-            //lvUsers.ItemsSource = fileAppointments.GetAppointments();
-
             oldAppointments = fileAppointments.GetAppointments();
             FilterAppointments(fromDate, toDate);
         }

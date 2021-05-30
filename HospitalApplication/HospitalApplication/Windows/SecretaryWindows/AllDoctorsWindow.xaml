@@ -51,10 +51,16 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
 
+            <Button Click="PrintReport_Click" Grid.Column="4" Margin="10,10,10,10" Background="#FFE6E6E6" BorderBrush="#FFF">
+                <Grid Width="83" Height="48">
+                    <materialDesign:PackIcon Kind="Printer" Height="48" Width="84" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
 
             <Button Click="BackHome_Click" Grid.Column="6" Margin="10,10,10,10" Background="#FFE6E6E6" BorderBrush="#FFF">
                 <Grid Width="83" Height="48">

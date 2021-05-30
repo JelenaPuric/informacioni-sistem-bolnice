@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.SecretaryWindows"
         mc:Ignorable="d"
         Title="DateReportForAppointmentsWindow" Height="529" Width="898">
-    <Grid Margin="0,0,10,7">
+    <Grid >
         <TextBlock FontSize="20" Height="30" HorizontalAlignment="Left" Margin="235,127,0,0" Name="textBlockFromDate" Text="From:" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.5,-1.866" />
         <TextBlock FontSize="20" Height="30" HorizontalAlignment="Left" Margin="235,168,0,0" x:Name="textBlockToDate" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.5,-1.866" ><Run Text="To:"/><LineBreak/><Run/><LineBreak/><Run Text=":"/></TextBlock>
 

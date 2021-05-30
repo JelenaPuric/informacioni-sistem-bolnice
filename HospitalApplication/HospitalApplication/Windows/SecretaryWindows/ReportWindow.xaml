@@ -49,9 +49,9 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="140" Header="Type Appointment" DisplayMemberBinding="{Binding AppointmentType}" />
-                                <GridViewColumn Width="140" Header="Doctor ID" DisplayMemberBinding="{Binding DoctorsId}" />
-                                <GridViewColumn Width="140" Header="Patient ID" DisplayMemberBinding="{Binding PatientsId}" />
-                                <GridViewColumn Width="140" Header="Examination start" DisplayMemberBinding="{Binding ExaminationStart}" />
+                                <GridViewColumn Width="140" Header="Doctor" DisplayMemberBinding="{Binding DoctorsId}" />
+                                <GridViewColumn Width="140" Header="Patient" DisplayMemberBinding="{Binding PatientsId}" />
+                                <GridViewColumn Width="140" Header="Appointment start" DisplayMemberBinding="{Binding ExaminationStart}" />
                             </GridView>
                         </ListView.View>
                     </ListView>

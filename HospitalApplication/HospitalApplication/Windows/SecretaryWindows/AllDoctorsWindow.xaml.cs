@@ -128,5 +128,13 @@ namespace HospitalApplication.Windows.SecretaryWindows
         {
             this.Close();
         }
+
+        private void PrintReport_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(lvUsers.SelectedIndex > -1)) { return; }
+            Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+            DataReportForDoctorWindow window = new DataReportForDoctorWindow(selectedDoctor);
+            window.Show();
+        }
     }
 }
