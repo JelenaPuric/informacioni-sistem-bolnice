@@ -96,5 +96,11 @@ namespace HospitalApplication.Windows.SecretaryWindows
             this.Close();
             window.Show();
         }
+
+        private void PrintReport_Click(object sender, RoutedEventArgs e)
+        {
+            DateReportForAppointmentsWindow window = new DateReportForAppointmentsWindow();
+            window.Show();
+        }
     }
 }

@@ -183,3 +183,7 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\PatientAndAppointmentWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\PatientAndAppointmentWindow.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\ReportWindow.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\ReportWindow.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DateReportForAppointmentsWindow.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DateReportForAppointmentsWindow.baml
