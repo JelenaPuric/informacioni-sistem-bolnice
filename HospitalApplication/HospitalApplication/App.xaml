@@ -23,6 +23,17 @@
         </Style>
         
         <Style TargetType="{x:Type Button}">
+            <!--ovo je dodato da bi promena boje pri hoveru radila-->
+            <!--<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>-->
+            <!-- _______________________________________________ -->
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                     <Setter Property="Height" Value="23"/>
@@ -36,6 +47,10 @@
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="NoTheme">
                 </DataTrigger>
+                <!--stoji zakomentarisano jer smeta kolegama, otkomentarisi kad bude bilo potrebe-->
+                <!--<Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#01796F"/>
+                </Trigger>-->
             </Style.Triggers>
         </Style>
 
@@ -49,6 +64,7 @@
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                     <Setter Property="Background" Value="#A9A9A9"/>
+                    <Setter Property="Foreground" Value="White"/>
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                     <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
                 </DataTrigger>
@@ -90,9 +106,21 @@
                 <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType=ComboBox}}" Value="True">
                     <Setter Property="Foreground" Value="Black"/>
                 </DataTrigger>
+                <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType=DatePicker}}" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </DataTrigger>
             </Style.Triggers>
         </Style>
 
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="#014546"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
 
         <!--ne radi stiliziranje combo boxa-->
         <Style TargetType="{x:Type ComboBox}">

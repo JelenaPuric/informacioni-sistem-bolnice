@@ -39,22 +39,14 @@ namespace HospitalApplication.Windows.PatientWindows
                 return;
             }
             DoctorSurvey window = new DoctorSurvey(doctorUsernames.Distinct().ToList());
-            window.Show();
+            window.ShowDialog();
         }
 
         private void RateHospital_Click(object sender, RoutedEventArgs e)
         {
             if (fileSurveys.IsHospitalSurveyAllowed(mainWindow.PatientsUsername)) {
                 WindowRateHospital window = new WindowRateHospital();
-                window.Show();
-            }
-        }
-     
-        private void RateApplication_Click(object sender, RoutedEventArgs e)
-        {
-            if (fileSurveys.IsApplicationSurveyAllowed(mainWindow.PatientsUsername)){
-                SurveyApplication window = new SurveyApplication();
-                window.Show();
+                window.ShowDialog();
             }
         }
     }

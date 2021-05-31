@@ -54,21 +54,21 @@ namespace HospitalApplication.Windows.PatientWindows
         private void MakeNotification_Click(object sender, RoutedEventArgs e)
         {
             WindowNotificationMake window = new WindowNotificationMake();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void Information_Click(object sender, RoutedEventArgs e)
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             WindowNotificationInfo window = new WindowNotificationInfo();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void EditNotification_Click(object sender, RoutedEventArgs e)
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             WindowNotificationEdit window = new WindowNotificationEdit();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void CancelNotification_Click(object sender, RoutedEventArgs e)
