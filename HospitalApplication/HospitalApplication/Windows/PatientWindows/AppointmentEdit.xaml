@@ -6,15 +6,20 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WindowExaminationEdit" Height="800" Width="500"
+        Title="WindowExaminationEdit" Height="150" Width="400"
         Style="{StaticResource WindowStyle}">
     
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Choose new doctor for examination."/>
-            <ComboBox Margin="0 10" Name="Combo" SelectedIndex="0">
-            </ComboBox>
-            <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="New doctor:" Grid.Column="0"/>
+                <ComboBox Name="Combo" Grid.Column="1"/>
+            </Grid>
+            <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="150" Margin="0 30 0 0"/>
             <Label Content="" Name="oldDoctor"></Label>
             <Label Content="" Name="newDoctor"></Label>
         </StackPanel>

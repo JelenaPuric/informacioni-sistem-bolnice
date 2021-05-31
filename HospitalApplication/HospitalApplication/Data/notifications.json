@@ -105,5 +105,17 @@
     "Repeat": "2",
     "NotificationsId": "100010",
     "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-06-02T00:00:00",
+      "2021-06-03T00:00:00",
+      "2021-06-04T00:00:00"
+    ],
+    "Title": "1",
+    "Description": "as",
+    "Repeat": "2",
+    "NotificationsId": "100011",
+    "PatientsId": "MarkoMarkovic"
   }
 ]
