@@ -20,12 +20,14 @@ namespace HospitalApplication.Windows.PatientWindows
             InitializeComponent();
             if(Properties.Settings.Default.ColorMode == "Light") ComboTheme.SelectedIndex = 0;
             if(Properties.Settings.Default.ColorMode == "Dark") ComboTheme.SelectedIndex = 1;
+            if (Properties.Settings.Default.ColorMode == "NoTheme") ComboTheme.SelectedIndex = 2;
         }
 
         private void ComboTheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(ComboTheme.SelectedIndex == 0) Properties.Settings.Default.ColorMode = "Light";
             if(ComboTheme.SelectedIndex == 1) Properties.Settings.Default.ColorMode = "Dark";
+            if(ComboTheme.SelectedIndex == 2) Properties.Settings.Default.ColorMode = "NoTheme";
             Properties.Settings.Default.Save();
         }
     }

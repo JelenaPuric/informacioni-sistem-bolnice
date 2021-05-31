@@ -16,6 +16,7 @@
             <ComboBox Name="ComboTheme" SelectionChanged="ComboTheme_SelectionChanged" Width="200">
                 <ComboBoxItem Content="Light"/>
                 <ComboBoxItem Content="Dark"/>
+                <ComboBoxItem Content="No Theme"/>
             </ComboBox>
         </StackPanel>
     </Grid>

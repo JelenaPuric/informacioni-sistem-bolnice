@@ -5,15 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
-        Title="DoctorSurvey" Height="800" Width="500"
+        Title="DoctorSurvey" Height="700" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
+        <Grid.Resources>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="#014546"/>
+                <Setter Property="Height" Value="4"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="0 0 0 10"/>
+            </Style>
+        </Grid.Resources>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <Label Content="Doctor Survey" HorizontalAlignment="Center" Foreground="green" FontSize="30" Margin="0 10 0 10"/>
+                <Label Content="Doctor Survey" HorizontalAlignment="Center" FontSize="30" Margin="0 10 0 10"/>
                 <ComboBox Name="ComboDoctors" Margin="0 0 0 20"/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question1" Text=""/>
-                <Grid Margin="0 20 0 20">
+                <Grid Margin="0 20 0 10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -27,7 +37,7 @@
                     <RadioButton GroupName="Group1" x:Name="RadioButton4" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group1" x:Name="RadioButton5" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question2" Text=""/>
                 <Grid Margin="0 20 0 20">
                     <Grid.ColumnDefinitions>
@@ -43,7 +53,7 @@
                     <RadioButton GroupName="Group2" x:Name="RadioButton9" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group2" x:Name="RadioButton10" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question3" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid3">
                     <Grid.ColumnDefinitions>
@@ -59,7 +69,7 @@
                     <RadioButton GroupName="Group3" x:Name="RadioButton14" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group3" x:Name="RadioButton15" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question4" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid4">
                     <Grid.ColumnDefinitions>
@@ -75,7 +85,7 @@
                     <RadioButton GroupName="Group4" x:Name="RadioButton19" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group4" x:Name="RadioButton20" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question5" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid5">
                     <Grid.ColumnDefinitions>
@@ -91,7 +101,7 @@
                     <RadioButton GroupName="Group5" x:Name="RadioButton24" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group5" x:Name="RadioButton25" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question6" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid6">
                     <Grid.ColumnDefinitions>
@@ -107,7 +117,7 @@
                     <RadioButton GroupName="Group6" x:Name="RadioButton29" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group6" x:Name="RadioButton30" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question7" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid7">
                     <Grid.ColumnDefinitions>
@@ -123,7 +133,7 @@
                     <RadioButton GroupName="Group7" x:Name="RadioButton34" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group7" x:Name="RadioButton35" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question8" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid8">
                     <Grid.ColumnDefinitions>
@@ -139,7 +149,7 @@
                     <RadioButton GroupName="Group8" x:Name="RadioButton39" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group8" x:Name="RadioButton40" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question9" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid9">
                     <Grid.ColumnDefinitions>
@@ -155,7 +165,7 @@
                     <RadioButton GroupName="Group9" x:Name="RadioButton44" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group9" x:Name="RadioButton45" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
+                <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question10" Text=""/>
                 <Grid Margin="0 20 0 20" x:Name="Grid10">
                     <Grid.ColumnDefinitions>
@@ -171,11 +181,10 @@
                     <RadioButton GroupName="Group10" x:Name="RadioButton49" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                     <RadioButton GroupName="Group10" x:Name="RadioButton50" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButtonChecked"/>
                 </Grid>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Green" Height="4" Margin="0 0 0 20"/>
-                <TextBlock TextWrapping="WrapWithOverflow" Name="Question11" Text="" Margin="0 0 0 20"/>
-                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="130"/>
-                <Button Background="green" Foreground="white" Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 50"></Button>
-                <Label Name="TestLabel" Content=""/>
+                <Rectangle/>
+                <TextBlock TextWrapping="WrapWithOverflow"  Name="Question11" Text="" Margin="0 0 0 20"/>
+                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 20"></Button>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:HospitalApplication.Properties"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
         Title="Home"
@@ -12,7 +13,30 @@
         Closed="Window_Closed"
         Style="{StaticResource WindowStyle}">
     <Grid>
+        <!--ne koristim ga, samo je ovde kao primer kako namestati stil lokalno na stranici-->
+        <!--
+        <Grid.Style>
+            <Style>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                        <Setter Property="Grid.Background" Value="#121212"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        -->
         <Grid x:Name="panelHeader" MouseDown="panelHeader_MouseDown" VerticalAlignment="Top" Height="50" Background="#014546">
+            <Grid.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                            <Setter Property="Grid.Background" Value="#014546"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
             <TextBlock Text="Zdravo Hospital" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
         </Grid>
         <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="200" Background="#014546" Panel.ZIndex="10">
@@ -22,7 +46,7 @@
                         <Image Source="Images/hamburger.png"/>
                     </Button>
                 </Grid>
-                <ListView Margin="0 40 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent" Background="Transparent" FontSize="20" Foreground="white">
+                <ListView Margin="0 40 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent" Background="Transparent" FontSize="15" Foreground="white" HorizontalAlignment="Left">
                     <ListViewItem Height="45" Margin="0 0 0 20" x:Name="MenuHome" Selected="MenuHome_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/home.png" Margin="0 0 10 0"/>

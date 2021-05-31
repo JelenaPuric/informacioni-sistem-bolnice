@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
         Title="WindowRateHospital" Height="800" Width="500"
+        ResizeMode="NoResize"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <ScrollViewer VerticalScrollBarVisibility="Auto">

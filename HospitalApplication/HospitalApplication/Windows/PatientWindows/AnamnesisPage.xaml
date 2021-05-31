@@ -12,8 +12,8 @@
     <Grid>
         <StackPanel Margin="10">
             <Label Content="Anamnesis" HorizontalAlignment="Center" FontSize="30"/>
-            <Button Content="Info" Width="100" Foreground="white" x:Name="AnamneseInformation" Click="AnamneseInformation_Click" Background="#014546" Height="25"/>
-            <ListView Margin="0 10" Name="lvUsers" ScrollViewer.CanContentScroll="True" Height="150" Background="#A9A9A9" HorizontalAlignment="Center">
+            <Button Content="Info" Width="100" x:Name="AnamneseInformation" Click="AnamneseInformation_Click"/>
+            <ListView Margin="0 10" Name="lvUsers" Height="150">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -35,8 +35,8 @@
                 <Label Content="Anamnese comment:" Grid.Column="0"/>
                 <TextBox VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="AnamnesisComment" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
             </Grid>
-            <Button Content="Submit Comment" Width="170" Margin="20" x:Name="SubmitComment" Click="SubmitComment_Click" Background="#014546" Foreground="white" Height="25"/>
-            <Button Content="Create Custom Notification" Width="170" x:Name="CustomNotification" Click="CustomNotification_Click" Background="#014546" Foreground="white" Height="25"/>
+            <Button Content="Submit Comment" Width="170" Margin="20" x:Name="SubmitComment" Click="SubmitComment_Click"/>
+            <Button Content="Create Custom Notification" Width="170" x:Name="CustomNotification" Click="CustomNotification_Click"/>
         </StackPanel>
     </Grid>
 </Page>

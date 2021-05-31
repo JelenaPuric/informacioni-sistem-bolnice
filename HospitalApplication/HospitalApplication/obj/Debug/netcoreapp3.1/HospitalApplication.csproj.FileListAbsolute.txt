@@ -394,3 +394,7 @@ C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\H
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DoctorReportWindow.g.cs
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DataReportForDoctorWindow.baml
 C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DoctorReportWindow.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DataReportForDoctorWindow.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DoctorReportWindow.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DataReportForDoctorWindow.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\SecretaryWindows\DoctorReportWindow.baml

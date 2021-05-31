@@ -6,19 +6,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <Style TargetType="{x:Type Button}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-
         <Style TargetType="{x:Type Page}" x:Key="PageStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="#15202B"/>
+                    <Setter Property="Background" Value="#121212"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -26,10 +17,82 @@
         <Style TargetType="{x:Type Window}" x:Key="WindowStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="#15202B"/>
+                    <Setter Property="Background" Value="#121212"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Height" Value="23"/>
+                    <Setter Property="Background" Value="#014546"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Height" Value="23"/>
+                    <Setter Property="Background" Value="#014546"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="NoTheme">
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type ListView}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="#3a3b3c"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Background" Value="#A9A9A9"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="NoTheme">
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type RadioButton}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type DatePicker}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="Black"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+                <!--text combo boxa se menja odavde jer je on zapravo TextBlock element-->
+                <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType=ComboBox}}" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
 
         <!--ne radi stiliziranje combo boxa-->
         <Style TargetType="{x:Type ComboBox}">
