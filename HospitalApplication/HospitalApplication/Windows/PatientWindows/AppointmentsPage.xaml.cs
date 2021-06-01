@@ -66,7 +66,7 @@ namespace HospitalApplication.Windows.PatientWindows
         private void ScheduleAppointment_Click(object sender, RoutedEventArgs e)
         {
             WindowExaminationSchedule window = new WindowExaminationSchedule();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void CancelAppointment_Click(object sender, RoutedEventArgs e)
@@ -89,20 +89,20 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationMove window = new WindowExaminationMove();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void EditAppointment_Click(object sender, RoutedEventArgs e)
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             WindowExaminationEdit window = new WindowExaminationEdit();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void GenerateReport_Click(object sender, RoutedEventArgs e)
         {
             Report window = new Report();
-            window.Show();
+            window.ShowDialog();
         }
     }
 }

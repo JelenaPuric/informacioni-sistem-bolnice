@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows"
         mc:Ignorable="d"
         Title="AnamnesisInfo" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen"
         Style="{StaticResource WindowStyle}">
     <Grid>
         <StackPanel>

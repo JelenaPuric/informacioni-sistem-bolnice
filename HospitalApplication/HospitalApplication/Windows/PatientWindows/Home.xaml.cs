@@ -19,10 +19,23 @@ namespace HospitalApplication.Windows.PatientWindows
         private double panelWidth;
         private bool hidden = true;
         private DispatcherTimer timer;
+        private static Home instance;
+        public static Home Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new Home();
+                }
+                return instance;
+            }
+        }
 
         public Home()
         {
             InitializeComponent();
+            instance = this;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             timer.Tick += Timer_Tick;
@@ -87,6 +100,12 @@ namespace HospitalApplication.Windows.PatientWindows
         private void Window_Closed(object sender, EventArgs e)
         {
             NotificationService.FlagIsMarked = true;
+        }
+
+        public void Logout() {
+            MainWindow window = new MainWindow();
+            window.Show();
+            Close();
         }
     }
 }

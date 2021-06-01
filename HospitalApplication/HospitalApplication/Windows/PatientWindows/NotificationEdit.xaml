@@ -6,6 +6,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="WindowNotificationEdit" Height="800" Width="500"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">

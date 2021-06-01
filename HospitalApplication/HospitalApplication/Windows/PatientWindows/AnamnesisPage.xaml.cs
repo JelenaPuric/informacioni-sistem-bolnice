@@ -56,13 +56,13 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             if (!(lvUsers.SelectedIndex > -1)) return;
             AnamnesisInfo window = new AnamnesisInfo();
-            window.Show();
+            window.ShowDialog();
         }
 
         private void CustomNotification_Click(object sender, RoutedEventArgs e)
         {
             WindowNotificationMake window = new WindowNotificationMake();
-            window.Show();
+            window.ShowDialog();
         }
     }
 }

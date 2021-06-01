@@ -6,55 +6,69 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
-        Title="WindowExaminationMove" Height="800" Width="500"
+        WindowStartupLocation="CenterScreen"
+        Title="WindowExaminationMove" Height="200" Width="400"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Examination date:"></Label>
-            <DatePicker Margin="0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date">
-                <!--ne dozvoli da se izabere danasnji datum-->
-                <DatePicker.BlackoutDates>
-                    <CalendarDateRange End="{x:Static sys:DateTime.Today}" Start="{x:Static sys:DateTime.MinValue}" />
-                </DatePicker.BlackoutDates>
-                <!--ne dozvoli user input-->
-                <DatePicker.Resources>
-                    <Style TargetType="DatePickerTextBox">
-                        <Setter Property="IsReadOnly" Value="True"/>
-                    </Style>
-                </DatePicker.Resources>
-            </DatePicker>
-            <Label Content="Start time:"></Label>
-            <ComboBox Margin="0 10" Name="Combo" SelectedIndex="0">
-                <ComboBoxItem Content="7:00"/>
-                <ComboBoxItem Content="7:30"/>
-                <ComboBoxItem Content="8:00"/>
-                <ComboBoxItem Content="8:30"/>
-                <ComboBoxItem Content="9:00"/>
-                <ComboBoxItem Content="9:30"/>
-                <ComboBoxItem Content="10:00"/>
-                <ComboBoxItem Content="10:30"/>
-                <ComboBoxItem Content="11:00"/>
-                <ComboBoxItem Content="11:30"/>
-                <ComboBoxItem Content="12:00"/>
-                <ComboBoxItem Content="12:30"/>
-                <ComboBoxItem Content="13:00"/>
-                <ComboBoxItem Content="13:30"/>
-                <ComboBoxItem Content="14:00"/>
-                <ComboBoxItem Content="14:30"/>
-                <ComboBoxItem Content="15:00"/>
-                <ComboBoxItem Content="15:30"/>
-                <ComboBoxItem Content="16:00"/>
-                <ComboBoxItem Content="16:30"/>
-                <ComboBoxItem Content="17:00"/>
-                <ComboBoxItem Content="17:30"/>
-                <ComboBoxItem Content="18:00"/>
-                <ComboBoxItem Content="18:30"/>
-                <ComboBoxItem Content="19:00"/>
-                <ComboBoxItem Content="19:30"/>
-            </ComboBox>
-            <Button Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 50"></Button>
-            <Label Content="" Name="oldDateLabel"/>
-            <Label Content="" Name="newDateLabel"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="New date:" Grid.Column="0"/>
+                <DatePicker DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date" Grid.Column="1">
+                    <!--ne dozvoli da se izabere danasnji datum-->
+                    <DatePicker.BlackoutDates>
+                        <CalendarDateRange End="{x:Static sys:DateTime.Today}" Start="{x:Static sys:DateTime.MinValue}" />
+                    </DatePicker.BlackoutDates>
+                    <!--ne dozvoli user input-->
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="IsReadOnly" Value="True"/>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+            </Grid>
+
+            <Grid Margin="0 20 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Start time:" Grid.Column="0"/>
+                <ComboBox Name="Combo" SelectedIndex="0" Grid.Column="1">
+                    <ComboBoxItem Content="7:00"/>
+                    <ComboBoxItem Content="7:30"/>
+                    <ComboBoxItem Content="8:00"/>
+                    <ComboBoxItem Content="8:30"/>
+                    <ComboBoxItem Content="9:00"/>
+                    <ComboBoxItem Content="9:30"/>
+                    <ComboBoxItem Content="10:00"/>
+                    <ComboBoxItem Content="10:30"/>
+                    <ComboBoxItem Content="11:00"/>
+                    <ComboBoxItem Content="11:30"/>
+                    <ComboBoxItem Content="12:00"/>
+                    <ComboBoxItem Content="12:30"/>
+                    <ComboBoxItem Content="13:00"/>
+                    <ComboBoxItem Content="13:30"/>
+                    <ComboBoxItem Content="14:00"/>
+                    <ComboBoxItem Content="14:30"/>
+                    <ComboBoxItem Content="15:00"/>
+                    <ComboBoxItem Content="15:30"/>
+                    <ComboBoxItem Content="16:00"/>
+                    <ComboBoxItem Content="16:30"/>
+                    <ComboBoxItem Content="17:00"/>
+                    <ComboBoxItem Content="17:30"/>
+                    <ComboBoxItem Content="18:00"/>
+                    <ComboBoxItem Content="18:30"/>
+                    <ComboBoxItem Content="19:00"/>
+                    <ComboBoxItem Content="19:30"/>
+                </ComboBox>
+            </Grid>
+
+            
+            <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="100" Margin="0 30"></Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -11,13 +11,14 @@
 
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Pick theme"/>
             <!--<ComboBox Name="ComboTheme" SelectionChanged="ComboTheme_SelectionChanged" Width="200" Background="Black" Foreground="White" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}">-->
             <ComboBox Name="ComboTheme" SelectionChanged="ComboTheme_SelectionChanged" Width="200">
                 <ComboBoxItem Content="Light"/>
                 <ComboBoxItem Content="Dark"/>
                 <ComboBoxItem Content="No Theme"/>
             </ComboBox>
+            <Button Margin="0 20 10 0" Content="Rate Application" x:Name="RateApplication" Click="RateApplication_Click" Width="150"/>
+            <Button Margin="0 20 10 0" Content="Logout" x:Name="Logout" Click="Logout_Click" Width="150"/>
         </StackPanel>
     </Grid>
 </Page>

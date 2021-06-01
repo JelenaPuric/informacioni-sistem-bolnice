@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalApplication.Repository;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,6 +16,9 @@ namespace HospitalApplication.Windows.PatientWindows
 {
     public partial class SettingsPage : Page
     {
+        private MainWindow mainWindow = MainWindow.Instance;
+        private FileSurveys fileSurveys = FileSurveys.Instance;
+
         public SettingsPage()
         {
             InitializeComponent();
@@ -29,6 +33,20 @@ namespace HospitalApplication.Windows.PatientWindows
             if(ComboTheme.SelectedIndex == 1) Properties.Settings.Default.ColorMode = "Dark";
             if(ComboTheme.SelectedIndex == 2) Properties.Settings.Default.ColorMode = "NoTheme";
             Properties.Settings.Default.Save();
+        }
+
+        private void RateApplication_Click(object sender, RoutedEventArgs e)
+        {
+            if (fileSurveys.IsApplicationSurveyAllowed(mainWindow.PatientsUsername)){
+                SurveyApplication window = new SurveyApplication();
+                window.ShowDialog();
+            }
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            Home window = Home.Instance;
+            window.Logout();
         }
     }
 }
