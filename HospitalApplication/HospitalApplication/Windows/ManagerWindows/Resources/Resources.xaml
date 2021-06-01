@@ -8,7 +8,6 @@
         Title="Resources" Height="530" Width="765">
     <Grid>
         <ListView Margin="51,10,0,0" Name="lvDataBinding" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
-
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding name}" />

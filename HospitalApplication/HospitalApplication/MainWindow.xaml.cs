@@ -21,6 +21,7 @@ using Model;
 using Logic;
 using HospitalApplication.Controller;
 using HospitalApplication.Windows.PatientWindows;
+using HospitalApplication.Windows.ManagerWindows;
 
 namespace HospitalApplication
 {
@@ -69,7 +70,7 @@ namespace HospitalApplication
             }
             else if (Username.Text.Equals("upravnik") && Password.Password.Equals("123"))
             {
-                WindowsManager window = new WindowsManager();
+                ManagerHome window = new ManagerHome();
                 Close();
                 window.Show();
             }
