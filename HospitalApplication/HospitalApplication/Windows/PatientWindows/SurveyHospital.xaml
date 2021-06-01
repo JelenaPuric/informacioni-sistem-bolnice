@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
+        xmlns:properties="clr-namespace:HospitalApplication.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="WindowRateHospital" Height="750" Width="500"
@@ -12,10 +13,20 @@
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="Rectangle">
-                <Setter Property="Fill" Value="#014546"/>
-                <Setter Property="Height" Value="4"/>
-                <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                <Setter Property="Margin" Value="0 0 0 10"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                        <Setter Property="Fill" Value="#014546"/>
+                        <Setter Property="Height" Value="4"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0 0 0 10"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="Height" Value="4"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0 0 0 10"/>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
         </Grid.Resources>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -182,7 +193,7 @@
                 </Grid>
                 <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question11" Text="" Margin="0 0 0 20"/>
-                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="80" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="80" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                 <Button Content="Submit" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 20"></Button>
                 <Label Name="TestLabel" Content=""/>
             </StackPanel>

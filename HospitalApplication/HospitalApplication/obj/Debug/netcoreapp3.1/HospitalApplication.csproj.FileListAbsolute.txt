@@ -606,3 +606,11 @@ D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-s
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.baml
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.g.cs
 D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\ManagerHome.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\HomePage.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.g.cs
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\ManagerHome.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\HomePage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.baml

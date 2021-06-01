@@ -6,6 +6,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HospitalApplication"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="WindowExaminationSchedule" Height="480" Width="400"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource WindowStyle}">

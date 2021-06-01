@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WindowExaminationEdit" Height="150" Width="400"
+        ResizeMode="NoResize"
+        Title="WindowExaminationEdit" Height="150" Width="350"
         Style="{StaticResource WindowStyle}">
     
     <Grid Margin="10">
@@ -19,7 +20,7 @@
                 <Label Content="New doctor:" Grid.Column="0"/>
                 <ComboBox Name="Combo" Grid.Column="1"/>
             </Grid>
-            <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="150" Margin="0 30 0 0"/>
+            <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="100" Margin="0 30 0 0"/>
             <Label Content="" Name="oldDoctor"></Label>
             <Label Content="" Name="newDoctor"></Label>
         </StackPanel>

@@ -7,19 +7,19 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WindowNotificationEdit" Height="800" Width="500"
+        ResizeMode="NoResize"
+        Title="WindowNotificationEdit" Height="400" Width="350"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Edit Notification" HorizontalAlignment="Center" Foreground="green" FontSize="30" Margin="0 10 0 10"/>
-            <Grid>
+            <Label Content="Edit Notification" HorizontalAlignment="Center" FontSize="30" Margin="0 10 0 10"/>
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Date:" Grid.Column="0" VerticalAlignment="Center"/>
-                <DatePicker Grid.Column="1" Margin="0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date">
-                    <!--ne dozvoli user input-->
+                <DatePicker Grid.Column="1" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="IsReadOnly" Value="True"/>
@@ -28,13 +28,13 @@
                 </DatePicker>
             </Grid>
 
-            <Grid>
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Time:" Grid.Column="0" VerticalAlignment="Center"/>
-                <ComboBox Grid.Column="1" Margin="0 10" Name="Combo" SelectedIndex="0">
+                <Label Content="Time:" Grid.Column="0"/>
+                <ComboBox Grid.Column="1" Name="Combo" SelectedIndex="0">
                     <ComboBoxItem Content="0:00"/>
                     <ComboBoxItem Content="0:30"/>
                     <ComboBoxItem Content="1:00"/>
@@ -86,30 +86,34 @@
                 </ComboBox>
             </Grid>
 
-            <Grid Margin="0 10 0 0">
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Drug name:" Grid.Column="0" VerticalAlignment="Center"/>
-                <TextBox TextAlignment="Justify" x:Name="Title" Grid.Column="1" VerticalAlignment="Center"/>
+                <Label Content="Title:" Grid.Column="0"/>
+                <TextBox x:Name="Title" Grid.Column="1"/>
             </Grid>
 
-            <Grid Margin="0 20 0 0">
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Description:" Grid.Column="0"/>
-                <TextBox VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="Description" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
+                <TextBox VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" x:Name="Description" Height="60"/>
             </Grid>
 
-            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                <Label Content="Repeat next  "/>
-                <TextBox x:Name="Repeat" Width="40" ToolTip="number of days"/>
-                <Label Content="  days."/>
-            </StackPanel>
-            <Button Background="green" Foreground="white" Content="OK" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 50"></Button>
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Repeat days:" Grid.Column="0"/>
+                <TextBox x:Name="Repeat" Width="40" ToolTip="number of days" Grid.Column="1"/>
+            </Grid>
+            
+            <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="100" Margin="0 20"></Button>
         </StackPanel>
     </Grid>
 </Window>

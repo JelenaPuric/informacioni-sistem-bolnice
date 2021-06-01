@@ -109,13 +109,16 @@
                 <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType=DatePicker}}" Value="True">
                     <Setter Property="Foreground" Value="Black"/>
                 </DataTrigger>
+                <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType=ToolTip}}" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </DataTrigger>
             </Style.Triggers>
         </Style>
 
         <Style TargetType="{x:Type TextBox}">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="#d3d3d3"/>
+                    <Setter Property="Background" Value="#BEBEBE"/>
                     <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="BorderBrush" Value="#014546"/>
                 </DataTrigger>

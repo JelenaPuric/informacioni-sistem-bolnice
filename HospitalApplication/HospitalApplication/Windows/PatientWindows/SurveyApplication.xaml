@@ -4,21 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
+        xmlns:properties="clr-namespace:HospitalApplication.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="SurveyApplication" Height="400" Width="500"
+        ResizeMode="NoResize"
+        Title="SurveyApplication" Height="400" Width="300"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="Rectangle">
-                <Setter Property="Fill" Value="#014546"/>
-                <Setter Property="Height" Value="4"/>
-                <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                <Setter Property="Margin" Value="0 0 0 10"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                        <Setter Property="Fill" Value="#014546"/>
+                        <Setter Property="Height" Value="4"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0 0 0 10"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="Height" Value="4"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0 0 0 10"/>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
         </Grid.Resources>
         <StackPanel>
-            <Label Content="Hospital Survey" HorizontalAlignment="Center" FontSize="30" Margin="0 10 0 10"/>
+            <Label Content="Rate Application" HorizontalAlignment="Center" FontSize="30" Margin="0 10 0 10"/>
             <Grid Margin="0 20 0 20" x:Name="Grid9">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -26,18 +38,16 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock TextWrapping="WrapWithOverflow" Text="Rate Hospital:" Grid.Column="0"/>
-                <RadioButton GroupName="Group1" x:Name="RadioButton1" Grid.Column="1" Content="1" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
-                <RadioButton GroupName="Group1" x:Name="RadioButton2" Grid.Column="2" Content="2" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
-                <RadioButton GroupName="Group1" x:Name="RadioButton3" Grid.Column="3" Content="3" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
-                <RadioButton GroupName="Group1" x:Name="RadioButton4" Grid.Column="4" Content="4" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
-                <RadioButton GroupName="Group1" x:Name="RadioButton5" Grid.Column="5" Content="5" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton1" Grid.Column="0" Content="1" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton2" Grid.Column="1" Content="2" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton3" Grid.Column="2" Content="3" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton4" Grid.Column="3" Content="4" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
+                <RadioButton GroupName="Group1" x:Name="RadioButton5" Grid.Column="4" Content="5" HorizontalAlignment="Center" Checked="RadioButton_Checked"/>
             </Grid>
             <Rectangle/>
             <TextBlock TextWrapping="WrapWithOverflow" Text="What are your thoughts about our application?" Grid.Column="0" HorizontalAlignment="Center" Margin="0 0 0 10"/>
-            <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="120" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
             <Button Content="Submit" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 20"></Button>
         </StackPanel>        
     </Grid>

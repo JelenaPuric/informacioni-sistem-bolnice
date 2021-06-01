@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows"
         mc:Ignorable="d"
-        Title="AnamnesisInfo" Height="500" Width="800"
+        Title="AnamnesisInfo" Height="480" Width="700"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Style="{StaticResource WindowStyle}">
     <Grid>
         <StackPanel>
@@ -23,7 +24,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Examination:" Grid.Column="0"/>
+                <TextBlock Text="Appointment ID:" Grid.Column="0"/>
                 <TextBlock Name="ExaminationId" Grid.Column="1"/>
             </Grid>
             <Grid Margin="50 10 50 0">

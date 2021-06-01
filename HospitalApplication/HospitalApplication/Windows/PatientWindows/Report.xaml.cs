@@ -81,6 +81,7 @@ namespace HospitalApplication.Windows.PatientWindows
             catch (Exception ex) {
                 MessageBox.Show("" + ex);
             }
+            Close();
         }
 
         private void StyleCell(PdfPCell cell, bool isOdd) {

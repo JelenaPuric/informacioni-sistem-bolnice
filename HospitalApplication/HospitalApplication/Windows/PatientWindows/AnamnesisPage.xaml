@@ -34,9 +34,9 @@
                                 <Setter Property="Foreground" Value="White" />
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}" Width="120" />
-                        <GridViewColumn Header="Examination" DisplayMemberBinding="{Binding ExaminationId}" Width="120" />
-                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="150" />
+                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}"/>
+                        <GridViewColumn Header="Appointment" DisplayMemberBinding="{Binding ExaminationId}"/>
+                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

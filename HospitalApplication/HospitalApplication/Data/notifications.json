@@ -72,50 +72,60 @@
   },
   {
     "Dates": [
-      "2021-05-31T05:00:00Z",
-      "2021-06-01T05:00:00Z",
-      "2021-06-02T05:00:00Z"
+      "2021-05-31T00:00:00",
+      "2021-06-01T00:00:00",
+      "2021-06-01T00:00:00"
     ],
     "Title": "s",
-    "Description": "s",
+    "Description": "saaa",
     "Repeat": "2",
     "NotificationsId": "100008",
     "PatientsId": "MarkoMarkovic"
   },
   {
     "Dates": [
-      "2021-05-31T22:30:00+02:00",
-      "2021-06-01T22:30:00+02:00",
-      "2021-06-02T22:30:00+02:00"
+      "2021-06-02T00:00:00",
+      "2021-06-03T00:00:00",
+      "2021-06-03T00:00:00"
     ],
-    "Title": "a",
-    "Description": "a",
+    "Title": "sdaadddd",
+    "Description": "ffa",
     "Repeat": "2",
     "NotificationsId": "100009",
     "PatientsId": "MarkoMarkovic"
   },
   {
     "Dates": [
-      "2021-06-01T17:30:00",
-      "2021-06-02T17:30:00",
-      "2021-06-03T17:30:00"
+      "2021-06-01T00:00:00",
+      "2021-06-02T00:00:00"
     ],
     "Title": "r",
     "Description": "r",
-    "Repeat": "2",
+    "Repeat": "1",
     "NotificationsId": "100010",
     "PatientsId": "MarkoMarkovic"
   },
   {
     "Dates": [
-      "2021-06-02T00:00:00",
-      "2021-06-03T00:00:00",
-      "2021-06-04T00:00:00"
+      "2021-06-03T23:30:00",
+      "2021-06-04T23:30:00",
+      "2021-06-05T23:30:00"
     ],
-    "Title": "1",
-    "Description": "as",
+    "Title": "title",
+    "Description": "desc",
     "Repeat": "2",
-    "NotificationsId": "100011",
+    "NotificationsId": "100012",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-06-23T00:00:00",
+      "2021-06-24T00:00:00"
+    ],
+    "Title": "a",
+    "Description": "a",
+    "Repeat": "1",
+    "NotificationsId": "100013",
     "PatientsId": "MarkoMarkovic"
   }
 ]

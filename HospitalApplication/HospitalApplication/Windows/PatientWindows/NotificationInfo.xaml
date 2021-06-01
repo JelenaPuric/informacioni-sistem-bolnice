@@ -7,44 +7,48 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.Patient1"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WindowNotificationInfo" Height="800" Width="500"
+        ResizeMode="NoResize"
+        Title="WindowNotificationInfo" Height="300" Width="350"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Notification Information" HorizontalAlignment="Center" Foreground="green" FontSize="30" Margin="0 10 0 10"/>
-            <Grid>
+            <Label Content="Notification Info" HorizontalAlignment="Center" FontSize="30" Margin="0 10 0 10"/>
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Date and time:" Grid.Column="0" VerticalAlignment="Center"/>
-                <TextBox IsReadOnly="True" x:Name="Date" Grid.Column="1"/>
+                <TextBox IsReadOnly="True" TextAlignment="Justify" x:Name="Date" Grid.Column="1"/>
             </Grid>
 
-            <Grid Margin="0 10 0 0">
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Drug name:" Grid.Column="0" VerticalAlignment="Center"/>
-                <TextBox IsReadOnly="True" TextAlignment="Justify" x:Name="DrugName" Grid.Column="1" VerticalAlignment="Center"/>
+                <Label Content="Title:" Grid.Column="0"/>
+                <TextBox IsReadOnly="True" TextAlignment="Justify" x:Name="DrugName" Grid.Column="1"/>
             </Grid>
 
-            <Grid Margin="0 20 0 0">
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Description:" Grid.Column="0"/>
-                <TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" x:Name="Description" VerticalAlignment="Center" MinLines="5" MaxLines="5" MinHeight="50" MaxHeight="80"/>
+                <TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" Grid.Column="1" TextWrapping="Wrap" x:Name="Description" Height="60"/>
             </Grid>
 
-            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                <Label Content="Repeat next  "/>
-                <TextBox x:Name="Days" Width="40" ToolTip="number of days" IsReadOnly="True"/>
-                <Label Content="  days."/>
-            </StackPanel>
-            <Button Background="green" Foreground="white" Content="Close" x:Name="ButtonClose" Click="ButtonClose_Click" Width="80" Margin="0 50"></Button>
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Repeat days:" Grid.Column="0"/>
+                <TextBox x:Name="Days" Width="40" ToolTip="number of days" Grid.Column="1" IsReadOnly="True"/>
+            </Grid>
+
         </StackPanel>
     </Grid>
 </Window>

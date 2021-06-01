@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
-        Title="Report" Height="450" Width="500"
+        Title="Report" Height="230" Width="300"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Select range of dates."/>
+            <Label Content="Select range of dates for your appointments." HorizontalAlignment="Center"/>
             <DatePicker Margin="0 10"  Name="FirstDate"/>
             <DatePicker Margin="0 10"  Name="SecondDate"/>
-            <Button Margin="0 0 10 0" Content="Generate Report" x:Name="GenerateReport" Click="GenerateReport_Click" Width="150"/>
+            <Button Margin="0 10 0 0" Content="Generate Report" x:Name="GenerateReport" Click="GenerateReport_Click" Width="120"/>
         </StackPanel>
     </Grid>
 </Window>

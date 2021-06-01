@@ -27,10 +27,5 @@ namespace HospitalApplication.Windows.Patient1
             Description.Text = notification.Description;
             Days.Text = notification.Repeat;
         }
-
-        private void ButtonClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
     }
 }

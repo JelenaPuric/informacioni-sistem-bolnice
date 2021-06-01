@@ -48,10 +48,10 @@
                         </GridView.ColumnHeaderContainerStyle>
                         <GridViewColumn Header="Doctor" DisplayMemberBinding="{Binding DoctorsId}"/>
                         <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}"/>
-                        <GridViewColumn Header="Start time" DisplayMemberBinding="{Binding ExaminationStart}"/>
+                        <GridViewColumn Header="Start" DisplayMemberBinding="{Binding ExaminationStart}"/>
                         <GridViewColumn Header="Room" DisplayMemberBinding="{Binding RoomId}"/>
-                        <GridViewColumn Header="Appointment" DisplayMemberBinding="{Binding ExaminationId}"/>
-                        <GridViewColumn Header="Appointment type" DisplayMemberBinding="{Binding AppointmentType}"/>
+                        <GridViewColumn Header="Type" DisplayMemberBinding="{Binding AppointmentType}"/>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ExaminationId}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
