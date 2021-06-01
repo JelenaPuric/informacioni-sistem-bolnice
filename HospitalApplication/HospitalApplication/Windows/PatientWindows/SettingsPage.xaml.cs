@@ -24,7 +24,9 @@ namespace HospitalApplication.Windows.PatientWindows
             InitializeComponent();
             if(Properties.Settings.Default.ColorMode == "Light") ComboTheme.SelectedIndex = 0;
             if(Properties.Settings.Default.ColorMode == "Dark") ComboTheme.SelectedIndex = 1;
-            if (Properties.Settings.Default.ColorMode == "NoTheme") ComboTheme.SelectedIndex = 2;
+            if(Properties.Settings.Default.ColorMode == "NoTheme") ComboTheme.SelectedIndex = 2;
+            if(Properties.Settings.Default.Language == "English") ComboLanguage.SelectedIndex = 0;
+            if(Properties.Settings.Default.Language == "Serbian") ComboLanguage.SelectedIndex = 1;
         }
 
         private void ComboTheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,6 +49,20 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             Home window = Home.Instance;
             window.Logout();
+        }
+
+        //funkciju pozivam u app.xaml.cs jer se ovo ne moze uraditi iz app.xaml.cs, ne znam zasto to tamo ne radi
+        public string FindCulture() {
+            if (Properties.Settings.Default.Language == "English") return "English";
+            else if (Properties.Settings.Default.Language == "Serbian") return "Serbian";
+            else return "";
+        }
+
+        private void ComboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboLanguage.SelectedIndex == 0) Properties.Settings.Default.Language = "English";
+            if (ComboLanguage.SelectedIndex == 1) Properties.Settings.Default.Language = "Serbian";
+            Properties.Settings.Default.Save();
         }
     }
 }

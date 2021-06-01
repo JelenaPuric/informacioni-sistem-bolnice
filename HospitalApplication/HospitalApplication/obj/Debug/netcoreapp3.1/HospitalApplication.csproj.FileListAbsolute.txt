@@ -614,3 +614,11 @@ C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\Hosp
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\HomePage.baml
 C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.baml
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\en-US\HospitalApplication.resources.dll
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\sr-Cyrl-RS\HospitalApplication.resources.dll
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.resources
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.en-US.resources
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.sr-Cyrl-RS.resources
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.GenerateResource.cache
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\en-US\HospitalApplication.resources.dll
+C:\Users\orz\Desktop\sve\simsProject\simsProj31\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\sr-Cyrl-RS\HospitalApplication.resources.dll

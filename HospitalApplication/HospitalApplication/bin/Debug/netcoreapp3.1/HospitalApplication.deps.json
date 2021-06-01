@@ -14,6 +14,14 @@
         },
         "runtime": {
           "HospitalApplication.dll": {}
+        },
+        "resources": {
+          "en-US/HospitalApplication.resources.dll": {
+            "locale": "en-US"
+          },
+          "sr-Cyrl-RS/HospitalApplication.resources.dll": {
+            "locale": "sr-Cyrl-RS"
+          }
         }
       },
       "BouncyCastle/1.8.6.1": {

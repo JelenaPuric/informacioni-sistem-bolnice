@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:HospitalApplication.Properties"
+        xmlns:p="clr-namespace:HospitalApplication.Properties"
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
         Title="Home"
@@ -37,7 +38,7 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <TextBlock Text="Zdravo Hospital" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
+            <TextBlock Text="{x:Static p:Resources.HomeTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
         </Grid>
         <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="200" Background="#014546" Panel.ZIndex="10">
             <StackPanel>
@@ -50,31 +51,31 @@
                     <ListViewItem Height="45" Margin="0 0 0 20" x:Name="MenuHome" Selected="MenuHome_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/home.png" Margin="0 0 10 0"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.HomeHome}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuNotification" Selected="MenuNotification_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/notification.png" Margin="0 0 10 0"/>
-                            <TextBlock Text="Notifications" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.HomeNotifications}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuSurvey" Selected="MenuSurvey_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/survey.jpg" Margin="0 0 10 0"/>
-                            <TextBlock Text="Surveys" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.HomeSurveys}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuAnamnesis" Selected="MenuAnamnesis_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/anamnesis.png" Margin="0 0 10 0"/>
-                            <TextBlock Text="Anamnesis" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.HomeAnamnesis}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuSettings" Selected="MenuSettings_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/settings.png" Margin="0 0 10 0"/>
-                            <TextBlock Text="Settings" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.HomeSettings}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

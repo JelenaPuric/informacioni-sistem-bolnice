@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:p="clr-namespace:HospitalApplication.Properties"
       xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -16,6 +17,10 @@
                 <ComboBoxItem Content="Light"/>
                 <ComboBoxItem Content="Dark"/>
                 <ComboBoxItem Content="No Theme"/>
+            </ComboBox>
+            <ComboBox Name="ComboLanguage" SelectionChanged="ComboLanguage_SelectionChanged" Width="200" Margin="0 10 0 0">
+                <ComboBoxItem Content="{x:Static p:Resources.SettingsEnglish}"/>
+                <ComboBoxItem Content="{x:Static p:Resources.SettingsSerbian}"/>
             </ComboBox>
             <Button Margin="0 20 10 0" Content="Rate Application" x:Name="RateApplication" Click="RateApplication_Click" Width="150"/>
             <Button Margin="0 20 10 0" Content="Logout" x:Name="Logout" Click="Logout_Click" Width="150"/>
