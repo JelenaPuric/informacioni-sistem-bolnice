@@ -1,12 +1,15 @@
 ﻿using HospitalApplication.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -60,9 +63,29 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void ComboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ComboLanguage.SelectedIndex == 0) Properties.Settings.Default.Language = "English";
-            if (ComboLanguage.SelectedIndex == 1) Properties.Settings.Default.Language = "Serbian";
+            if (ComboLanguage.SelectedIndex == 0){
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                /*Thread workerThread = new Thread(new ThreadStart(WaitThread));
+                workerThread.SetApartmentState(ApartmentState.STA);
+                workerThread.Start();
+                workerThread.Join();*/
+                Properties.Settings.Default.Language = "English";
+            }
+            if (ComboLanguage.SelectedIndex == 1){
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("sr-Cyrl-RS");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sr-Cyrl-RS");
+                /*Thread workerThread = new Thread(new ThreadStart(WaitThread));
+                workerThread.SetApartmentState(ApartmentState.STA);
+                workerThread.Start();
+                workerThread.Join();*/
+                Properties.Settings.Default.Language = "Serbian";
+            }
             Properties.Settings.Default.Save();
+        }
+
+        private void WaitThread() {
+            Thread.Sleep(500);
         }
     }
 }

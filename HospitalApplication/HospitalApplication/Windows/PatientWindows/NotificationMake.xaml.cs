@@ -15,12 +15,11 @@ using HospitalApplication.Controller;
 using HospitalApplication.WorkWithFiles;
 using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.Service;
+using HospitalApplication.Service.PatientValidation;
+using HospitalApplication.Service.PatientValidation.ValidateDatePicker;
 
 namespace HospitalApplication.Windows.Patient1
 {
-    /// <summary>
-    /// Interaction logic for WindowNotificationMake.xaml
-    /// </summary>
     public partial class WindowNotificationMake : Window
     {
         private int notificationId = 100000;
@@ -37,6 +36,11 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            TxtNotificationTitle validateText = new TxtNotificationTitle();
+            if (!Validate()){
+                ExceptionLabel.Content = "Wrong input";
+                return;
+            }
             DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 0, 24);
             List<DateTime> dates = new List<DateTime>();
             dates.Add(newDate);
@@ -49,6 +53,20 @@ namespace HospitalApplication.Windows.Patient1
             controller.ScheduleNotification(notification);
             notificationsPage.UpdateView();
             Close();
+        }
+
+        private bool Validate() {
+            TxtNotificationTitle validateNotificationTitle = new TxtNotificationTitle();
+            TxtOnlyNumbers onlyNumbers = new TxtOnlyNumbers();
+            TxtNotEmpty txtNotEmpty = new TxtNotEmpty();
+            DpNotEmpty dpNotEmpty = new DpNotEmpty();
+            if(validateNotificationTitle.Validate(Title.Text) == false) return false;
+            if(txtNotEmpty.Validate(Title.Text) == false) return false;
+            if(txtNotEmpty.Validate(Description.Text) == false) return false;
+            if(onlyNumbers.Validate(Repeat.Text) == false) return false;
+            if(txtNotEmpty.Validate(Repeat.Text) == false) return false;
+            if(dpNotEmpty.Validate(Date) == false) return false;
+            return true;
         }
     }
 }

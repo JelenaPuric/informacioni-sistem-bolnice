@@ -51,7 +51,25 @@
                     <ListViewItem Height="45" Margin="0 0 0 20" x:Name="MenuHome" Selected="MenuHome_Selected">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Images/home.png" Margin="0 0 10 0"/>
-                            <TextBlock Text="{x:Static p:Resources.HomeHome}" VerticalAlignment="Center"/>
+                            <TextBlock VerticalAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=Language}" Value="Serbian">
+                                                <Setter Property="Text" Value="{x:Static p:Resources.HomeHome}"/>
+                                                <Setter Property="Foreground" Value="Yellow" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=Language}" Value="English">
+                                                <Setter Property="Text" Value="{x:Static p:Resources.HomeHome}"/>
+                                                <Setter Property="Foreground" Value="Green" />
+                                            </DataTrigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Margin="0 0 0 20" Name="MenuNotification" Selected="MenuNotification_Selected">

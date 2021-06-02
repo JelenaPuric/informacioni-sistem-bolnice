@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppointmentsCancel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppointmentsEdit" xml:space="preserve">
+    <value />
+  </data>
   <data name="AppointmentsHeader" xml:space="preserve">
     <value>test</value>
+  </data>
+  <data name="AppointmentsNew" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppointmentsPostopone" xml:space="preserve">
+    <value />
   </data>
   <data name="HomeAnamnesis" xml:space="preserve">
     <value />

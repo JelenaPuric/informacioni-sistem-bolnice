@@ -61,11 +61,47 @@ namespace HospitalApplication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AppointmentsCancel {
+            get {
+                return ResourceManager.GetString("AppointmentsCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AppointmentsEdit {
+            get {
+                return ResourceManager.GetString("AppointmentsEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to test.
         /// </summary>
         public static string AppointmentsHeader {
             get {
                 return ResourceManager.GetString("AppointmentsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AppointmentsNew {
+            get {
+                return ResourceManager.GetString("AppointmentsNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AppointmentsPostopone {
+            get {
+                return ResourceManager.GetString("AppointmentsPostopone", resourceCulture);
             }
         }
         
