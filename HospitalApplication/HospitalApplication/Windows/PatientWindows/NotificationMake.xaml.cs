@@ -28,6 +28,7 @@ namespace HospitalApplication.Windows.Patient1
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();
         private FormService formService = new FormService();
+        private PatientValidationService validationService = new PatientValidationService();
 
         public WindowNotificationMake()
         {
@@ -36,8 +37,7 @@ namespace HospitalApplication.Windows.Patient1
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            TxtNotificationTitle validateText = new TxtNotificationTitle();
-            if (!Validate()){
+            if (Validate() == false){
                 ExceptionLabel.Content = "Wrong input";
                 return;
             }
@@ -56,16 +56,16 @@ namespace HospitalApplication.Windows.Patient1
         }
 
         private bool Validate() {
-            TxtNotificationTitle validateNotificationTitle = new TxtNotificationTitle();
-            TxtOnlyNumbers onlyNumbers = new TxtOnlyNumbers();
-            TxtNotEmpty txtNotEmpty = new TxtNotEmpty();
-            DpNotEmpty dpNotEmpty = new DpNotEmpty();
-            if(validateNotificationTitle.Validate(Title.Text) == false) return false;
-            if(txtNotEmpty.Validate(Title.Text) == false) return false;
-            if(txtNotEmpty.Validate(Description.Text) == false) return false;
-            if(onlyNumbers.Validate(Repeat.Text) == false) return false;
-            if(txtNotEmpty.Validate(Repeat.Text) == false) return false;
-            if(dpNotEmpty.Validate(Date) == false) return false;
+            validationService.SetValidateTextStrategy(new TxtOnlyNumbers());
+            if (validationService.ValidateTextOnlyNumbers(Repeat.Text) == false) return false;
+            validationService.SetValidateTextStrategy(new TxtNotEmpty());
+            if (validationService.ValidateTxtNotEmpty(Description.Text) == false) return false;
+            if (validationService.ValidateTxtNotEmpty(Title.Text) == false) return false;
+            if (validationService.ValidateTxtNotEmpty(Repeat.Text) == false) return false;
+            validationService.SetValidateTextStrategy(new TxtNotificationTitle());
+            if (validationService.ValidateNotificationTitle(Title.Text) == false) return false;
+            validationService.SetValidateDatePickerStrategy(new DpNotEmpty());
+            if (validationService.ValidateDpNotEmpty(Date) == false) return false;  
             return true;
         }
     }

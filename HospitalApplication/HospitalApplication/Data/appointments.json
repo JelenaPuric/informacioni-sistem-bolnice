@@ -174,5 +174,27 @@
     "RoomId": "1955",
     "PostponeAppointment": 2,
     "AppointmentType": 0
+  },
+  {
+    "room": null,
+    "pacient": null,
+    "ExaminationId": "100019",
+    "ExaminationStart": "2021-06-03T07:00:00",
+    "PatientsId": "MarkoMarkovic",
+    "DoctorsId": "aaaa",
+    "RoomId": "1955",
+    "PostponeAppointment": 1,
+    "AppointmentType": 0
+  },
+  {
+    "room": null,
+    "pacient": null,
+    "ExaminationId": "100020",
+    "ExaminationStart": "2021-06-04T09:00:00",
+    "PatientsId": "MarkoMarkovic",
+    "DoctorsId": "aaaa",
+    "RoomId": "1955",
+    "PostponeAppointment": 1,
+    "AppointmentType": 0
   }
 ]

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace HospitalApplication.Service.PatientValidation
 {
-    interface IValidateText
+    public interface IValidateDatePicker
     {
-        public bool Validate(string input);
+        public bool Validate(DatePicker datePicker);
     }
 }
