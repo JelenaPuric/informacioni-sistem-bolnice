@@ -13,17 +13,19 @@
     <Grid>
         <StackPanel Margin="10">
             <Label Content="{x:Static p:Resources.AppointmentsHeader}" HorizontalAlignment="Center" FontSize="30"/>
-            <Grid Margin="50 10 50 0">
+            <Grid HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
                 </Grid.ColumnDefinitions>
                 <Button Margin="0 0 10 0" Grid.Column="0" Content="{x:Static p:Resources.AppointmentsNew}" x:Name="ScheduleExamination" Click="ScheduleAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="1" Content="{x:Static p:Resources.AppointmentsCancel}" x:Name="CancelExamination" Click="CancelAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="2" Content="{x:Static p:Resources.AppointmentsPostopone}" x:Name="MoveExamination" Click="MoveAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="3" Content="{x:Static p:Resources.AppointmentsEdit}" x:Name="EditExamination" Click="EditAppointment_Click"/>
+                <Button Margin="0 0 10 0" Grid.Column="4" Content="{x:Static p:Resources.GenerateReport}" x:Name="GenerateReport" Click="GenerateReport_Click" Width="150"/>
             </Grid>
             <ListView Margin="0 10" Name="lvUsers" Height="150">
                 <ListView.ItemContainerStyle>
@@ -45,19 +47,65 @@
                             <Style TargetType="{x:Type GridViewColumnHeader}">
                                 <Setter Property="Background" Value="#014546" />
                                 <Setter Property="Foreground" Value="White" />
+                                <!--ne radi promena pozadine na hover-->
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="Green"/>
+                                    </Trigger>
+                                </Style.Triggers>
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Doctor" DisplayMemberBinding="{Binding DoctorsId}"/>
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}"/>
-                        <GridViewColumn Header="Start" DisplayMemberBinding="{Binding ExaminationStart}"/>
-                        <GridViewColumn Header="Room" DisplayMemberBinding="{Binding RoomId}"/>
-                        <GridViewColumn Header="Type" DisplayMemberBinding="{Binding AppointmentType}"/>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ExaminationId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THDoctor}" DisplayMemberBinding="{Binding DoctorsId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THStart}" DisplayMemberBinding="{Binding ExaminationStart}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THRoom}" DisplayMemberBinding="{Binding RoomId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THType}" DisplayMemberBinding="{Binding AppointmentType}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THID}" DisplayMemberBinding="{Binding ExaminationId}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Margin="0 0 10 0" Content="Generate Report" x:Name="GenerateReport" Click="GenerateReport_Click" Width="150"/>
-            <Label Content="" Name="TestLabela"></Label>
+
+            <Label Content="Past appointments" HorizontalAlignment="Center" FontSize="20"/>
+            <ListView Margin="0 0" Name="lvUsersPast" Height="150">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF717371" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#FF717371" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.View>
+                    <GridView>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="Background" Value="#014546" />
+                                <Setter Property="Foreground" Value="White" />
+                                <!--ne radi promena pozadine na hover-->
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="Green"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        <GridViewColumn Header="{x:Static p:Resources.THDoctor}" DisplayMemberBinding="{Binding DoctorsId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THStart}" DisplayMemberBinding="{Binding ExaminationStart}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THRoom}" DisplayMemberBinding="{Binding RoomId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THType}" DisplayMemberBinding="{Binding AppointmentType}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THID}" DisplayMemberBinding="{Binding ExaminationId}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                <Label Content="Search by date"/>
+                <TextBox TextChanged="Search_TextChanged" Width="100" Name="Search"/>
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </Page>

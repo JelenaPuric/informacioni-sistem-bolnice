@@ -63,6 +63,42 @@ namespace HospitalApplication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string AnamnesisComment {
+            get {
+                return ResourceManager.GetString("AnamnesisComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AnamnesisCreateNotification {
+            get {
+                return ResourceManager.GetString("AnamnesisCreateNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AnamnesisInfo {
+            get {
+                return ResourceManager.GetString("AnamnesisInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string AnamnesisSubmitComment {
+            get {
+                return ResourceManager.GetString("AnamnesisSubmitComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string AppointmentsCancel {
             get {
                 return ResourceManager.GetString("AppointmentsCancel", resourceCulture);
@@ -102,6 +138,24 @@ namespace HospitalApplication.Properties {
         public static string AppointmentsPostopone {
             get {
                 return ResourceManager.GetString("AppointmentsPostopone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Dark {
+            get {
+                return ResourceManager.GetString("Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string GenerateReport {
+            get {
+                return ResourceManager.GetString("GenerateReport", resourceCulture);
             }
         }
         
@@ -162,6 +216,87 @@ namespace HospitalApplication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string Light {
+            get {
+                return ResourceManager.GetString("Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NoTheme {
+            get {
+                return ResourceManager.GetString("NoTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotificationsCancel {
+            get {
+                return ResourceManager.GetString("NotificationsCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotificationsEdit {
+            get {
+                return ResourceManager.GetString("NotificationsEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotificationsHeader {
+            get {
+                return ResourceManager.GetString("NotificationsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotificationsInfo {
+            get {
+                return ResourceManager.GetString("NotificationsInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotificationsNew {
+            get {
+                return ResourceManager.GetString("NotificationsNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RateApplication {
+            get {
+                return ResourceManager.GetString("RateApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string SettingsEnglish {
             get {
                 return ResourceManager.GetString("SettingsEnglish", resourceCulture);
@@ -174,6 +309,114 @@ namespace HospitalApplication.Properties {
         public static string SettingsSerbian {
             get {
                 return ResourceManager.GetString("SettingsSerbian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SurveyDoctor {
+            get {
+                return ResourceManager.GetString("SurveyDoctor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SurveyHospital {
+            get {
+                return ResourceManager.GetString("SurveyHospital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THAppointment {
+            get {
+                return ResourceManager.GetString("THAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THDate {
+            get {
+                return ResourceManager.GetString("THDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THDoctor {
+            get {
+                return ResourceManager.GetString("THDoctor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THID {
+            get {
+                return ResourceManager.GetString("THID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THPatient {
+            get {
+                return ResourceManager.GetString("THPatient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THRepeat {
+            get {
+                return ResourceManager.GetString("THRepeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THRoom {
+            get {
+                return ResourceManager.GetString("THRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THStart {
+            get {
+                return ResourceManager.GetString("THStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THTitile {
+            get {
+                return ResourceManager.GetString("THTitile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string THType {
+            get {
+                return ResourceManager.GetString("THType", resourceCulture);
             }
         }
     }

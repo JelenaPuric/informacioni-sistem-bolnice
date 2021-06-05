@@ -69,10 +69,19 @@ namespace WorkWithFiles
             return patientsAppointments;
         }
 
+        public List<Appointment> GetPastAppointments(string patientsId)
+        {
+            List<Appointment> pastAppointments = new List<Appointment>();
+            for (int i = 0; i < appointments.Count; i++)
+                if (appointments[i].PatientsId == patientsId && appointments[i].ExaminationStart < DateTime.Now)
+                    pastAppointments.Add(appointments[i]);
+            return pastAppointments;
+        }
+
         public List<Appointment> GetAppointments(DateTime firstDate, DateTime secondDate, string patientsId) {
             List<Appointment> patientsAppointments = new List<Appointment>();
             for (int i = 0; i < appointments.Count; i++) {
-                if (appointments[i].PatientsId == patientsId && appointments[i].ExaminationStart >= firstDate && appointments[i].ExaminationStart <= secondDate)
+                if (appointments[i].PatientsId == patientsId && appointments[i].ExaminationStart >= firstDate && appointments[i].ExaminationStart <= secondDate && appointments[i].ExaminationStart > DateTime.Now)
                     patientsAppointments.Add(appointments[i]);
             }
             patientsAppointments.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));

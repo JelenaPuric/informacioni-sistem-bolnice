@@ -14,16 +14,16 @@
         <StackPanel>
             <!--<ComboBox Name="ComboTheme" SelectionChanged="ComboTheme_SelectionChanged" Width="200" Background="Black" Foreground="White" Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}">-->
             <ComboBox Name="ComboTheme" SelectionChanged="ComboTheme_SelectionChanged" Width="200">
-                <ComboBoxItem Content="Light"/>
-                <ComboBoxItem Content="Dark"/>
-                <ComboBoxItem Content="No Theme"/>
+                <ComboBoxItem Content="{x:Static p:Resources.Light}"/>
+                <ComboBoxItem Content="{x:Static p:Resources.Dark}"/>
+                <ComboBoxItem Content="{x:Static p:Resources.NoTheme}"/>
             </ComboBox>
             <ComboBox Name="ComboLanguage" SelectionChanged="ComboLanguage_SelectionChanged" Width="200" Margin="0 10 0 0">
                 <ComboBoxItem Content="{x:Static p:Resources.SettingsEnglish}"/>
                 <ComboBoxItem Content="{x:Static p:Resources.SettingsSerbian}"/>
             </ComboBox>
-            <Button Margin="0 20 10 0" Content="Rate Application" x:Name="RateApplication" Click="RateApplication_Click" Width="150"/>
-            <Button Margin="0 20 10 0" Content="Logout" x:Name="Logout" Click="Logout_Click" Width="150"/>
+            <Button Margin="0 20 10 0" Content="{x:Static p:Resources.RateApplication}" x:Name="RateApplication" Click="RateApplication_Click" Width="150"/>
+            <Button Margin="0 20 10 0" Content="{x:Static p:Resources.Logout}" x:Name="Logout" Click="Logout_Click" Width="150"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnamnesisComment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AnamnesisCreateNotification" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AnamnesisInfo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AnamnesisSubmitComment" xml:space="preserve">
+    <value />
+  </data>
   <data name="AppointmentsCancel" xml:space="preserve">
     <value />
   </data>
@@ -130,6 +142,12 @@
     <value />
   </data>
   <data name="AppointmentsPostopone" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenerateReport" xml:space="preserve">
     <value />
   </data>
   <data name="HomeAnamnesis" xml:space="preserve">
@@ -150,10 +168,73 @@
   <data name="HomeTitle" xml:space="preserve">
     <value />
   </data>
+  <data name="Light" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NoTheme" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationsCancel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationsEdit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationsHeader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationsInfo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationsNew" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RateApplication" xml:space="preserve">
+    <value />
+  </data>
   <data name="SettingsEnglish" xml:space="preserve">
     <value />
   </data>
   <data name="SettingsSerbian" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SurveyDoctor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SurveyHospital" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THAppointment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THDoctor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THPatient" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THRepeat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THRoom" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THStart" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THTitile" xml:space="preserve">
+    <value />
+  </data>
+  <data name="THType" xml:space="preserve">
     <value />
   </data>
 </root>

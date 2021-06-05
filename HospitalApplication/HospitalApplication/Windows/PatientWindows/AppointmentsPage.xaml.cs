@@ -7,6 +7,7 @@ using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -22,14 +23,14 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Windows.PatientWindows
 {
-    /// <summary>
-    /// Interaction logic for PatientsPage.xaml
-    /// </summary>
     public partial class PatientsPage : Page
     {
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
         private FileAppointments fileAppointments = FileAppointments.Instance;
+        private List<Appointment> appointments = new List<Appointment>();
+        private List<Appointment> pastAppointments = new List<Appointment>();
+        private ObservableCollection<Appointment> pastAppointmentsObservable;
 
         private static PatientsPage instance;
         public static PatientsPage Instance
@@ -48,9 +49,13 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             InitializeComponent();
             instance = this;
-            List<Appointment> appointments = fileAppointments.GetAppointments(mainWindow.PatientsUsername);
+            appointments = fileAppointments.GetAppointments(mainWindow.PatientsUsername);
             appointments.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
             lvUsers.ItemsSource = appointments;
+            pastAppointments = fileAppointments.GetPastAppointments(mainWindow.PatientsUsername);
+            pastAppointments.Sort((x, y) => DateTime.Compare(x.ExaminationStart, y.ExaminationStart));
+            pastAppointmentsObservable = new ObservableCollection<Appointment>(pastAppointments);
+            lvUsersPast.ItemsSource = pastAppointmentsObservable;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
         }
@@ -103,6 +108,13 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             Report window = new Report();
             window.ShowDialog();
+        }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            pastAppointmentsObservable.Clear();
+            for (int i = 0; i < pastAppointments.Count; i++)
+                if (pastAppointments[i].ExaminationStart.ToString().Contains(Search.Text)) pastAppointmentsObservable.Add(pastAppointments[i]);
         }
     }
 }

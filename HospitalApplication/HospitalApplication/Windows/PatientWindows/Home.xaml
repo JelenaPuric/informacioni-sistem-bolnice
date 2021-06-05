@@ -38,9 +38,9 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <TextBlock Text="{x:Static p:Resources.HomeTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="30"/>
+            <TextBlock Margin="57 0 0 0" Text="{x:Static p:Resources.HomeTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="38"/>
         </Grid>
-        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="200" Background="#014546" Panel.ZIndex="10">
+        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="150" Background="#014546" Panel.ZIndex="2">
             <StackPanel>
                 <Grid Height="50">
                     <Button HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Height="50" Width="57" BorderBrush="Transparent" x:Name="HamburgerButton" Click="HamburgerButton_Click">
@@ -57,14 +57,14 @@
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=Language}" Value="Serbian">
                                                 <Setter Property="Text" Value="{x:Static p:Resources.HomeHome}"/>
-                                                <Setter Property="Foreground" Value="Yellow" />
+                                                <!--<Setter Property="Foreground" Value="Yellow" />-->
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=Language}" Value="English">
                                                 <Setter Property="Text" Value="{x:Static p:Resources.HomeHome}"/>
-                                                <Setter Property="Foreground" Value="Green" />
+                                                <!--<Setter Property="Foreground" Value="Green" />-->
                                             </DataTrigger>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Foreground" Value="Red" />
+                                                <!--<Setter Property="Foreground" Value="Red" />-->
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>

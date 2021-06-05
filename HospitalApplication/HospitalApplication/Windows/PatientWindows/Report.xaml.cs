@@ -79,7 +79,7 @@ namespace HospitalApplication.Windows.PatientWindows
                 pdfDoc.Close();
             }
             catch (Exception ex) {
-                MessageBox.Show("" + ex);
+                MessageBox.Show("Generating document error.");
             }
             Close();
         }

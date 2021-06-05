@@ -64,28 +64,32 @@ namespace HospitalApplication.Windows.PatientWindows
         private void ComboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ComboLanguage.SelectedIndex == 0){
-                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+                //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                 /*Thread workerThread = new Thread(new ThreadStart(WaitThread));
                 workerThread.SetApartmentState(ApartmentState.STA);
                 workerThread.Start();
                 workerThread.Join();*/
+                if (Properties.Settings.Default.Language == "English") return;
                 Properties.Settings.Default.Language = "English";
+                MessageBox.Show("Молим Вас да рестартујете апликацију да бисте променили језик.");
             }
             if (ComboLanguage.SelectedIndex == 1){
-                Thread.CurrentThread.CurrentCulture = new CultureInfo("sr-Cyrl-RS");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sr-Cyrl-RS");
+                //Thread.CurrentThread.CurrentCulture = new CultureInfo("sr-Cyrl-RS");
+                //Thread.CurrentThread.CurrentUICulture = new CultureInfo("sr-Cyrl-RS");
                 /*Thread workerThread = new Thread(new ThreadStart(WaitThread));
                 workerThread.SetApartmentState(ApartmentState.STA);
                 workerThread.Start();
                 workerThread.Join();*/
+                if (Properties.Settings.Default.Language == "Serbian") return;
                 Properties.Settings.Default.Language = "Serbian";
+                MessageBox.Show("Please restart application in order to change language.");
             }
             Properties.Settings.Default.Save();
         }
 
-        private void WaitThread() {
+        /*private void WaitThread() {
             Thread.Sleep(500);
-        }
+        }*/
     }
 }

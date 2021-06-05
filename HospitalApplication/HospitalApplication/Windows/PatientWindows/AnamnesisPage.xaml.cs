@@ -20,6 +20,7 @@ namespace HospitalApplication.Windows.PatientWindows
     {
         private FileAnamnesis fileAnamnesis = FileAnamnesis.Instance;
         private List<Anamnesis> anamnesis;
+        private List<Anamnesis> filteredAnamnesis = new List<Anamnesis>();
         private MainWindow mainWindow = MainWindow.Instance;
 
         private static AnamnesisPage instance;
@@ -63,6 +64,15 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             WindowNotificationMake window = new WindowNotificationMake();
             window.ShowDialog();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filteredAnamnesis.Clear();
+            for (int i = 0; i < anamnesis.Count; i++)
+                if (anamnesis[i].ExaminationId.Contains(Search.Text)) filteredAnamnesis.Add(anamnesis[i]);
+            lvUsers.ItemsSource = null;
+            lvUsers.ItemsSource = filteredAnamnesis;
         }
     }
 }

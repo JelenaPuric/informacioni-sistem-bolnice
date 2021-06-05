@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:p="clr-namespace:HospitalApplication.Properties"
       xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
@@ -11,18 +12,18 @@
 
     <Grid Margin="10">
         <StackPanel>
-            <Label Content="Notifications" HorizontalAlignment="Center" FontSize="30"/>
-            <Grid Margin="50 10 50 0">
+            <Label Content="{x:Static p:Resources.NotificationsHeader}" HorizontalAlignment="Center" FontSize="30"/>
+            <Grid Margin="50 10 50 0" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="170" />
                 </Grid.ColumnDefinitions>
-                <Button Margin="0 0 10 0" Content="New" x:Name="MakeNotification" Click="MakeNotification_Click" Grid.Column="0"/>
-                <Button Margin="0 0 10 0" Content="Info" x:Name="Information" Click="Information_Click" Grid.Column="1"/>
-                <Button Margin="0 0 10 0" Content="Edit" x:Name="EditNotification" Click="EditNotification_Click" Grid.Column="2"/>
-                <Button Margin="0 0 10 0" Content="Cancel" x:Name="CancelNotification" Click="CancelNotification_Click" Grid.Column="3"/>
+                <Button Margin="0 0 10 0" Content="{x:Static p:Resources.NotificationsNew}" x:Name="MakeNotification" Click="MakeNotification_Click" Grid.Column="0"/>
+                <Button Margin="0 0 10 0" Content="{x:Static p:Resources.NotificationsInfo}" x:Name="Information" Click="Information_Click" Grid.Column="1"/>
+                <Button Margin="0 0 10 0" Content="{x:Static p:Resources.NotificationsEdit}" x:Name="EditNotification" Click="EditNotification_Click" Grid.Column="2"/>
+                <Button Margin="0 0 10 0" Content="{x:Static p:Resources.NotificationsCancel}" x:Name="CancelNotification" Click="CancelNotification_Click" Grid.Column="3"/>
             </Grid>
             <ListView Margin="0 10" Name="lvUsers" Height="200">
                 <ListView.ItemContainerStyle>
@@ -45,11 +46,10 @@
                                 <Setter Property="Foreground" Value="White" />
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
-                        <GridViewColumn Header="Repeat" DisplayMemberBinding="{Binding Repeat}"/>
-                        <GridViewColumn Header="Patient" DisplayMemberBinding="{Binding PatientsId}"/>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding NotificationsId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THTitile}" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THRepeat}" DisplayMemberBinding="{Binding Repeat}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THPatient}" DisplayMemberBinding="{Binding PatientsId}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.THID}" DisplayMemberBinding="{Binding NotificationsId}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
