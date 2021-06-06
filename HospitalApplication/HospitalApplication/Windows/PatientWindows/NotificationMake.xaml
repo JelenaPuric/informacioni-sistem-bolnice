@@ -20,11 +20,11 @@
                 </Grid.ColumnDefinitions>
                 <Label Content="Date:" Grid.Column="0"/>
                 <DatePicker Grid.Column="1" DisplayDateStart="{x:Static sys:DateTime.Today}" Name="Date">
-                    <DatePicker.Resources>
+                    <!--<DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="IsReadOnly" Value="True"/>
                         </Style>
-                    </DatePicker.Resources>
+                    </DatePicker.Resources>-->
                 </DatePicker>
             </Grid>
 
@@ -112,7 +112,9 @@
                 <Label Content="Repeat days:" Grid.Column="0"/>
                 <TextBox x:Name="Repeat" Width="40" ToolTip="number of days" Grid.Column="1"/>
             </Grid>
-            <Label Content="" Name="ExceptionLabel" Foreground="Red"/>
+            <Label Name="ExceptionLabel" Foreground="Red" Content=""/>
+            <!--<Label Content="asd" Foreground="red"/>-->
+            <!--<TextBlock Text="adsf" Foreground="red"/>-->
             <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="100" Margin="0 20"></Button>
         </StackPanel>
     </Grid>

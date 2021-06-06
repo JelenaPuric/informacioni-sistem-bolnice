@@ -5799,11 +5799,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectUniqueName": "C:\\Users\\orz\\Desktop\\sve\\projects\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "projectName": "HospitalApplication",
-      "projectPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+      "projectPath": "C:\\Users\\orz\\Desktop\\sve\\projects\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
       "packagesPath": "C:\\Users\\orz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orz\\Desktop\\sve\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
+      "outputPath": "C:\\Users\\orz\\Desktop\\sve\\projects\\simsProject\\simsProj33\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\orz\\AppData\\Roaming\\NuGet\\NuGet.Config",

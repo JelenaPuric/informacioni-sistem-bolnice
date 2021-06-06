@@ -182,5 +182,28 @@
     "Repeat": "1",
     "NotificationsId": "100018",
     "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-06-07T00:00:00",
+      "2021-06-08T00:00:00",
+      "2021-06-09T00:00:00"
+    ],
+    "Title": "asfd",
+    "Description": "fsda",
+    "Repeat": "2",
+    "NotificationsId": "100019",
+    "PatientsId": "MarkoMarkovic"
+  },
+  {
+    "Dates": [
+      "2021-12-12T00:00:00",
+      "2021-12-13T00:00:00"
+    ],
+    "Title": "afd",
+    "Description": "asdf",
+    "Repeat": "1",
+    "NotificationsId": "100020",
+    "PatientsId": "MarkoMarkovic"
   }
 ]

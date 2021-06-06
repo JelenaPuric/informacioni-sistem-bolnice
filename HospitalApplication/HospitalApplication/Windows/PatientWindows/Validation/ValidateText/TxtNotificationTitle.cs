@@ -8,8 +8,7 @@ namespace HospitalApplication.Service.PatientValidation
     {
         public bool Validate(string input)
         {
-            if (input.Length > 20) return false;
-            return true;
+            return input.Length <= 20;
         }
     }
 }

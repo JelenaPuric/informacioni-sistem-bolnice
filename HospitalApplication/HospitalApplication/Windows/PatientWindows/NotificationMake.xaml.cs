@@ -29,16 +29,29 @@ namespace HospitalApplication.Windows.Patient1
         private NotificationController controller = new NotificationController();
         private FormService formService = new FormService();
         private PatientValidationService validationService = new PatientValidationService();
+        private bool isRepeatValid = true;
+        private bool isDescriptionValid = true;
+        private bool isTitleValid = true;
+        private bool isDateValid = true;
+        private Brush defaultBorderBrush;
 
         public WindowNotificationMake()
         {
             InitializeComponent();
+            defaultBorderBrush = Title.BorderBrush;
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             if (Validate() == false){
-                ExceptionLabel.Content = "Wrong input";
+                if (!isRepeatValid) Repeat.BorderBrush = Brushes.Red;
+                else Repeat.BorderBrush = defaultBorderBrush;
+                if (!isTitleValid) Title.BorderBrush = Brushes.Red;
+                else Title.BorderBrush = defaultBorderBrush;
+                if (!isDescriptionValid) Description.BorderBrush = Brushes.Red;
+                else Description.BorderBrush = defaultBorderBrush;
+                //Repeat.BorderBrush = defaultBorderBrush;
+                ExceptionLabel.Content = "*wrong input";
                 return;
             }
             DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 0, 24);
@@ -56,17 +69,26 @@ namespace HospitalApplication.Windows.Patient1
         }
 
         private bool Validate() {
+            bool repeatValidation = true;
+            bool titleValidation = true;
+            bool descriptionValidation = true;
+            bool dateValidation = true;
             validationService.SetValidateTextStrategy(new TxtOnlyNumbers());
-            if (validationService.ValidateTextOnlyNumbers(Repeat.Text) == false) return false;
+            if (validationService.ValidateTextOnlyNumbers(Repeat.Text) == false) repeatValidation = false;
             validationService.SetValidateTextStrategy(new TxtNotEmpty());
-            if (validationService.ValidateTxtNotEmpty(Description.Text) == false) return false;
-            if (validationService.ValidateTxtNotEmpty(Title.Text) == false) return false;
-            if (validationService.ValidateTxtNotEmpty(Repeat.Text) == false) return false;
+            if (validationService.ValidateTxtNotEmpty(Description.Text) == false) descriptionValidation = false;
+            if (validationService.ValidateTxtNotEmpty(Title.Text) == false) titleValidation = false;
+            if (validationService.ValidateTxtNotEmpty(Repeat.Text) == false) repeatValidation = false;
             validationService.SetValidateTextStrategy(new TxtNotificationTitle());
-            if (validationService.ValidateNotificationTitle(Title.Text) == false) return false;
+            //bug, proveri ovo
+            //if (validationService.ValidateNotificationTitle(Title.Text) == false) titleValidation = false;
             validationService.SetValidateDatePickerStrategy(new DpNotEmpty());
-            if (validationService.ValidateDpNotEmpty(Date) == false) return false;  
-            return true;
+            if (validationService.ValidateDpNotEmpty(Date) == false) dateValidation = false;
+            isRepeatValid = repeatValidation;
+            isTitleValid = titleValidation;
+            isDescriptionValid = descriptionValidation;
+            isDateValid = dateValidation;
+            return (isDateValid && isRepeatValid && isDescriptionValid && isTitleValid);
         }
     }
 }
