@@ -70,7 +70,7 @@ namespace HospitalApplication
             }
             else if (Username.Text.Equals("upravnik") && Password.Password.Equals("123"))
             {
-                ManagerHome window = new ManagerHome();
+                WindowsManager window = new WindowsManager();
                 Close();
                 window.Show();
             }

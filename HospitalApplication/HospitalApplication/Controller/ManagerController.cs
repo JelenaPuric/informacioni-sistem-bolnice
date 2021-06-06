@@ -56,7 +56,7 @@ namespace HospitalApplication.Controller
 
         public void CheckTransfers()
         {
-            RelocationResource.CheckTransfers();
+            RelocationResource.DeleteTransferIfPass();
         }
 
         public void RemoveRenovation(Renovation oldRenovation)

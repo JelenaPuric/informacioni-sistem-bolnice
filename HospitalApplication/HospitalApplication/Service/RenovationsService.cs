@@ -164,9 +164,10 @@ namespace HospitalApplication.Service
                 {
                     if (rooms[i].Renovation[j].SecondRoomId != 0)
                         EditTwoRoomsRenovation(rooms[i].Renovation[j].RoomId, rooms[i].Renovation[j].SecondRoomId);
-                    if (rooms[i].Renovation[j].OneToTwo == true)
+                    else if (rooms[i].Renovation[j].OneToTwo == true)
                         EditOneToTwoRenovation(rooms[i].Renovation[j].RoomId);
-                    rooms[i].Renovation.RemoveAt(j);
+                    else
+                        rooms[i].Renovation.RemoveAt(j);
                 }
             }
         }

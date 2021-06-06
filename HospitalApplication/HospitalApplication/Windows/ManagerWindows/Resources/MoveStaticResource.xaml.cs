@@ -25,7 +25,7 @@ namespace HospitalApplication.Windows.Manager.Resources
             InitializeComponent();
             RelocationResourceService service = new RelocationResourceService();
             List<Transfer> allTransfers = fileTransfers.ShowAllTransfers();
-            service.CheckTransfers();
+            service.DeleteTransferIfPass();
             lvDataBinding.ItemsSource = allTransfers;
             oldResourceAtributes = oldResource;
         }
@@ -40,7 +40,7 @@ namespace HospitalApplication.Windows.Manager.Resources
         {
             RelocationResourceService service = new RelocationResourceService();
             List<Transfer> allTransfers = fileTransfers.ShowAllTransfers();
-            service.CheckTransfers();
+            service.DeleteTransferIfPass();
             lvDataBinding.ItemsSource = allTransfers;
         }
 

@@ -1,20 +1,6 @@
 [
   {
-    "Renovation": [
-      {
-        "RoomId": 1955,
-        "SecondRoomId": 0,
-        "OneToTwo": false,
-        "StartDay": "2021-05-27T22:00:00Z",
-        "EndDay": "2021-05-29T22:00:00Z",
-        "Days": [
-          "2021-05-27T22:00:00Z",
-          "2021-05-28T22:00:00Z",
-          "2021-05-29T22:00:00Z"
-        ],
-        "IdRenovation": 2110578779
-      }
-    ],
+    "Renovation": [],
     "RoomId": 1955,
     "NumberOfFloors": 32,
     "RoomNumber": 21,
@@ -82,6 +68,14 @@
         "manufacturer": "Galenika",
         "isStatic": false,
         "roomId": 1955
+      },
+      {
+        "idItem": 950186,
+        "name": "Sto",
+        "quantity": 1,
+        "manufacturer": "3132",
+        "isStatic": true,
+        "roomId": 1905
       }
     ]
   },
@@ -116,9 +110,17 @@
     ],
     "Resource": [
       {
+        "idItem": 950186,
+        "name": "Sto",
+        "quantity": 5,
+        "manufacturer": "3132",
+        "isStatic": true,
+        "roomId": 1955
+      },
+      {
         "idItem": 675784,
         "name": "Probiotik",
-        "quantity": 5,
+        "quantity": 3,
         "manufacturer": "Galenika",
         "isStatic": false,
         "roomId": 1905
@@ -138,27 +140,13 @@
     "Resource": []
   },
   {
-    "Renovation": [
-      {
-        "RoomId": 9,
-        "SecondRoomId": 0,
-        "OneToTwo": true,
-        "StartDay": "2021-05-27T22:00:00Z",
-        "EndDay": "2021-05-29T22:00:00Z",
-        "Days": [
-          "2021-05-27T22:00:00Z",
-          "2021-05-28T22:00:00Z",
-          "2021-05-29T22:00:00Z"
-        ],
-        "IdRenovation": 1640041349
-      }
-    ],
-    "RoomId": 9,
-    "NumberOfFloors": 9,
-    "RoomNumber": 9,
-    "Capacity": 9,
+    "Renovation": [],
+    "RoomId": 1111,
+    "NumberOfFloors": 0,
+    "RoomNumber": 0,
+    "Capacity": 0,
     "OperationRoomType": 0,
-    "RoomType": 1,
+    "RoomType": 3,
     "Occupied": false,
     "Scheduled": [],
     "Resource": []

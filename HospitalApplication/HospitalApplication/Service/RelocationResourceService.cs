@@ -54,7 +54,7 @@ namespace HospitalApplication.Service
             fileTransfers.Write();
         }
 
-        public void CheckTransfers()
+        public void DeleteTransferIfPass()
         {
             if (transfers == null)
                 transfers = new List<Transfer>();
@@ -62,70 +62,81 @@ namespace HospitalApplication.Service
             {
                 if(transfers[i].date <= DateTime.Now)
                 {
-                    for (int l = 0; l < transfers[i].resource.Count; l++)
-                    {
-                        for (int j = 0; j < rooms.Count; j++)
-                        {
-                            if (transfers[i].idRoomFrom == rooms[j].RoomId)
-                            {
-                                if(rooms[j].Resource != null) 
-                                { 
-                                    for (int k = 0; k < rooms[j].Resource.Count; k++)
-                                    {
-                                        if (transfers[i].resource[l].idItem == rooms[j].Resource[k].idItem)
-                                        {
-                                            rooms[j].Resource[k].quantity -= transfers[i].quantity;
-                                            // transfers.RemoveAt(i);
-                                            break;
-                                        }
-                                    
-                                    }
-                                }
-                                else { rooms[j].Resource = new List<Resource>(); }
-                            }
-                        }
-                        for(int z=0; z<rooms.Count; z++) 
-                        {
-                            if (transfers[i].idRoomTo == rooms[z].RoomId)
-                            {
-                                if(rooms[z].Resource != null) 
-                                { 
-                                    if (rooms[z].Resource.Count != 0)
-                                    {
-                                        for (int k = 0; k < rooms[z].Resource.Count; k++)
-                                        {
-                                            if (rooms[z].Resource[k].idItem == transfers[i].resource[l].idItem)
-                                            {
-
-                                                rooms[z].Resource[k].quantity += transfers[i].quantity;
-                                                transfers[i].resource[k].quantity++;
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                rooms[z].Resource.Add(transfers[i].resource[l]);
-                                                transfers[i].resource[k].quantity++;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        rooms[z].Resource.Add(transfers[i].resource[l]);
-                                        transfers[i].quantity++;
-                                    }
-                                }
-                                else { rooms[z].Resource = new List<Resource>(); }
-
-                            }   
-                            
-                        }
-                    }
+                    PassToResources(i);
                     transfers.RemoveAt(i);
                 }
             }
             fileTransfers.Write();
             fileRooms.Write();
+        }
+
+        private void PassToResources(int i)
+        {
+            for (int l = 0; l < transfers[i].resource.Count; l++)
+            {
+                DeleteResourceIdRoomFrom(i, l);
+                AddResourceIdRoomTo(i, l);
+            }
+        }
+
+        private void AddResourceIdRoomTo(int i, int l)
+        {
+            for (int z = 0; z < rooms.Count; z++)
+            {
+                if (transfers[i].idRoomTo == rooms[z].RoomId)
+                {
+                    if (rooms[z].Resource.Count != 0)
+                        FindThatResourceAndAddOnIt(i, l, z);
+                    else
+                    {
+                        rooms[z].Resource.Add(transfers[i].resource[l]);
+                        transfers[i].quantity++;
+                    }
+                }
+
+            }
+        }
+
+        private void FindThatResourceAndAddOnIt(int i, int l, int z)
+        {
+            for (int k = 0; k < rooms[z].Resource.Count; k++)
+            {
+                if (rooms[z].Resource[k].idItem == transfers[i].resource[l].idItem)
+                {
+                    rooms[z].Resource[k].quantity += transfers[i].quantity;
+                    transfers[i].resource[k].quantity++;
+                    break;
+                }
+                else
+                {
+                    rooms[z].Resource.Add(transfers[i].resource[l]);
+                    transfers[i].resource[k].quantity++;
+                    break;
+                }
+            }
+        }
+
+        private void DeleteResourceIdRoomFrom(int i, int l)
+        {
+            for (int j = 0; j < rooms.Count; j++)
+            {
+                if (transfers[i].idRoomFrom == rooms[j].RoomId)
+                {
+                    FindThatResourceAndDecrease(i, l, j);
+                }
+            }
+        }
+
+        private void FindThatResourceAndDecrease(int i, int l, int j)
+        {
+            for (int k = 0; k < rooms[j].Resource.Count; k++)
+            {
+                if (transfers[i].resource[l].idItem == rooms[j].Resource[k].idItem)
+                {
+                    rooms[j].Resource[k].quantity -= transfers[i].quantity;
+                    break;
+                }
+            }
         }
 
         public bool CheckDoesRoomExist(Transfer newTransfer)
