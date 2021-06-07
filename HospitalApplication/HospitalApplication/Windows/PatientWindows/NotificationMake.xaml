@@ -112,7 +112,8 @@
                 <Label Content="Repeat days:" Grid.Column="0"/>
                 <TextBox x:Name="Repeat" Width="40" ToolTip="number of days" Grid.Column="1"/>
             </Grid>
-            <Label Name="ExceptionLabel" Foreground="Red" Content=""/>
+            <TextBlock Text="" Foreground="Red" HorizontalAlignment="Right" Name="Error"/>
+            <!--<Label Name="ExceptionLabel" Foreground="Red" Content=""/>-->
             <!--<Label Content="asd" Foreground="red"/>-->
             <!--<TextBlock Text="adsf" Foreground="red"/>-->
             <Button Content="Confirm" x:Name="ButtonOk" Click="ButtonOk_Click" Width="100" Margin="0 20"></Button>

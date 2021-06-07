@@ -17,6 +17,7 @@ using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.Service;
 using HospitalApplication.Service.PatientValidation;
 using HospitalApplication.Service.PatientValidation.ValidateDatePicker;
+using HospitalApplication.Windows.PatientWindows.Validation.ValidateText;
 
 namespace HospitalApplication.Windows.Patient1
 {
@@ -50,8 +51,9 @@ namespace HospitalApplication.Windows.Patient1
                 else Title.BorderBrush = defaultBorderBrush;
                 if (!isDescriptionValid) Description.BorderBrush = Brushes.Red;
                 else Description.BorderBrush = defaultBorderBrush;
-                //Repeat.BorderBrush = defaultBorderBrush;
-                ExceptionLabel.Content = "*wrong input";
+                if (!isDateValid) Date.BorderBrush = Brushes.Red;
+                else Date.BorderBrush = defaultBorderBrush;
+                Error.Text = "*wrong input";
                 return;
             }
             DateTime newDate = formService.GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo, 0, 24);
@@ -74,16 +76,19 @@ namespace HospitalApplication.Windows.Patient1
             bool descriptionValidation = true;
             bool dateValidation = true;
             validationService.SetValidateTextStrategy(new TxtOnlyNumbers());
-            if (validationService.ValidateTextOnlyNumbers(Repeat.Text) == false) repeatValidation = false;
+            if (!validationService.ValidateText(Repeat.Text)) repeatValidation = false;
             validationService.SetValidateTextStrategy(new TxtNotEmpty());
-            if (validationService.ValidateTxtNotEmpty(Description.Text) == false) descriptionValidation = false;
-            if (validationService.ValidateTxtNotEmpty(Title.Text) == false) titleValidation = false;
-            if (validationService.ValidateTxtNotEmpty(Repeat.Text) == false) repeatValidation = false;
+            if (!validationService.ValidateText(Description.Text)) descriptionValidation = false;
+            if (!validationService.ValidateText(Title.Text)) titleValidation = false;
+            if (!validationService.ValidateText(Repeat.Text)) repeatValidation = false;
             validationService.SetValidateTextStrategy(new TxtNotificationTitle());
-            //bug, proveri ovo
-            //if (validationService.ValidateNotificationTitle(Title.Text) == false) titleValidation = false;
+            if (!validationService.ValidateText(Title.Text)) titleValidation = false;
+            validationService.SetValidateTextStrategy(new TxtNotificationDescription());
+            if (!validationService.ValidateText(Description.Text)) descriptionValidation = false;
+            validationService.SetValidateTextStrategy(new TxtRepeatNotification());
+            if (!validationService.ValidateText(Repeat.Text)) repeatValidation = false;
             validationService.SetValidateDatePickerStrategy(new DpNotEmpty());
-            if (validationService.ValidateDpNotEmpty(Date) == false) dateValidation = false;
+            if (!validationService.ValidateDatePicker(Date)) dateValidation = false;
             isRepeatValid = repeatValidation;
             isTitleValid = titleValidation;
             isDescriptionValid = descriptionValidation;

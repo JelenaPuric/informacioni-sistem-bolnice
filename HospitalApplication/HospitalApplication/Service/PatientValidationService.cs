@@ -12,47 +12,20 @@ namespace HospitalApplication.Service
         private IValidateText validateTextStrategy;
         private IValidateDatePicker validateDatePickerStrategy;
 
-        public bool ValidateNotificationMake() {
-            //windowNotificationMake = notificationMakeContext.GetWindowNotificationMakeInstance();
-
-            
-            /*windowNotificationMake.SetStrategyTxtNotEmpty();
-            if(windowNotificationMake.ValidateTxtNotEmpty() == false) return false;
-            windowNotificationMake.SetStrategyTxtNotificationTitle();
-            if (windowNotificationMake.ValidateNotificationTitle() == false) return false;*/
-            return true;
-        }
-
-        public void SetValidateTextStrategy(IValidateText strategy)
-        {
+        public void SetValidateTextStrategy(IValidateText strategy){
             validateTextStrategy = strategy;
         }
 
-        public void SetValidateDatePickerStrategy(IValidateDatePicker strategy)
-        {
+        public void SetValidateDatePickerStrategy(IValidateDatePicker strategy){
             validateDatePickerStrategy = strategy;
         }
 
-        public bool ValidateTextOnlyNumbers(string inputText)
-        {
-            if (validateTextStrategy.Validate(inputText) == false) return false;
-            return true;
+        public bool ValidateText(string input){
+            return validateTextStrategy.Validate(input);
         }
 
-        public bool ValidateDpNotEmpty(DatePicker date) {
-            if (validateDatePickerStrategy.Validate(date) == false) return false;
-            return true;
-        }
-
-        public bool ValidateTxtNotEmpty(string inputText)
-        {
-            if (validateTextStrategy.Validate(inputText) == false) return false;
-            return true;
-        }
-
-        public bool ValidateNotificationTitle(string inputText)
-        {
-            return (validateTextStrategy.Validate(inputText) == false);
+        public bool ValidateDatePicker(DatePicker date){
+            return validateDatePickerStrategy.Validate(date);
         }
     }
 }
