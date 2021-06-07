@@ -49,7 +49,7 @@ namespace HospitalApplication.Controller
             RelocationResource.DeleteTransfer(oldTransfer);
         }
 
-        public void TransferDynamicResource(Transfer forTransfer)
+        public void MakeScheduled(Transfer forTransfer)
         {
             RelocationResource.AddStaticTransfer(forTransfer);
         }

@@ -30,12 +30,12 @@ namespace Logic
             for(int i=0; i<rooms.Count; i++)
             {
                 if(rooms[i].RoomId == roomWithResource.RoomId)
-                    FindZeroResourceOfRoom(i);
+                    FindZeroResourceOfRoomAndDeleteIt(i);
             }
             fileRooms.Write();
         }
 
-        private void FindZeroResourceOfRoom(int i)
+        private void FindZeroResourceOfRoomAndDeleteIt(int i)
         {
             for (int j = 0; j < rooms[i].Resource.Count; j++)
             {
@@ -158,20 +158,6 @@ namespace Logic
                 if (rooms[i].Resource[j].idItem == moved.idItem)
                     rooms[i].Resource[j].quantity -= quantity;
             }
-        }
-      
-        public Room OneRoom(int roomIdToFind)
-        {
-            Room showThatRoom = new Room();
-            for(int i=0; i<rooms.Count; i++)
-            {
-                if (rooms[i].RoomId == roomIdToFind)
-                { 
-                    showThatRoom = rooms[i];
-                    break;
-                }
-            }
-            return showThatRoom;
         }
     }
 }

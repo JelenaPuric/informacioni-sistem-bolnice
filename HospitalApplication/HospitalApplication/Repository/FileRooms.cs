@@ -65,6 +65,20 @@ namespace WorkWithFiles
             return renovations;
         }
 
+        public Room GetRoom(int roomIdToFind)
+        {
+            Room showThatRoom = new Room();
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if (rooms[i].RoomId == roomIdToFind)
+                {
+                    showThatRoom = rooms[i];
+                    break;
+                }
+            }
+            return showThatRoom;
+        }
+
         public Tuple<bool, int> IsRoomFree(DateTime date)
         {
             for (int i = 0; i < rooms.Count; i++)
