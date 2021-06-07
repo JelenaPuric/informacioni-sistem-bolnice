@@ -218,5 +218,16 @@
     "RoomId": "1955",
     "PostponeAppointment": 1,
     "AppointmentType": 0
+  },
+  {
+    "room": null,
+    "pacient": null,
+    "ExaminationId": "100023",
+    "ExaminationStart": "2021-06-09T07:00:00",
+    "PatientsId": "MarkoMarkovic",
+    "DoctorsId": "drNebojsaStefanovic",
+    "RoomId": "1955",
+    "PostponeAppointment": 1,
+    "AppointmentType": 0
   }
 ]

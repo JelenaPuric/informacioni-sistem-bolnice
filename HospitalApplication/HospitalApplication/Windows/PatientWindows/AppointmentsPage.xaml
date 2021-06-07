@@ -15,17 +15,17 @@
             <Label Content="{x:Static p:Resources.AppointmentsHeader}" HorizontalAlignment="Center" FontSize="30"/>
             <Grid HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="160" />
-                    <ColumnDefinition Width="160" />
-                    <ColumnDefinition Width="160" />
-                    <ColumnDefinition Width="160" />
-                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="140" />
                 </Grid.ColumnDefinitions>
                 <Button Margin="0 0 10 0" Grid.Column="0" Content="{x:Static p:Resources.AppointmentsNew}" x:Name="ScheduleExamination" Click="ScheduleAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="1" Content="{x:Static p:Resources.AppointmentsCancel}" x:Name="CancelExamination" Click="CancelAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="2" Content="{x:Static p:Resources.AppointmentsPostopone}" x:Name="MoveExamination" Click="MoveAppointment_Click"/>
                 <Button Margin="0 0 10 0" Grid.Column="3" Content="{x:Static p:Resources.AppointmentsEdit}" x:Name="EditExamination" Click="EditAppointment_Click"/>
-                <Button Margin="0 0 10 0" Grid.Column="4" Content="{x:Static p:Resources.GenerateReport}" x:Name="GenerateReport" Click="GenerateReport_Click" Width="150"/>
+                <Button Margin="0 0 10 0" Grid.Column="4" Content="{x:Static p:Resources.GenerateReport}" x:Name="GenerateReport" Click="GenerateReport_Click"/>
             </Grid>
             <ListView Margin="0 10" Name="lvUsers" Height="150">
                 <ListView.ItemContainerStyle>
@@ -105,7 +105,6 @@
                 <Label Content="Search by date"/>
                 <TextBox TextChanged="Search_TextChanged" Width="100" Name="Search"/>
             </StackPanel>
-
         </StackPanel>
     </Grid>
 </Page>

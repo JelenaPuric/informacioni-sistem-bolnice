@@ -37,6 +37,13 @@ namespace HospitalApplication.Windows.PatientWindows
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            bool isValid = true;
+            if (numericalAnswers[1] == 0) isValid = false;
+            if (WrittenAnswer.Text.Length == 0) isValid = false;
+            if (!isValid){
+                Error.Text = "*please answer to all questions";
+                return;
+            }
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, "Application");
             surveys.Add(survey);
             fileSurveys.Write();

@@ -4,6 +4,7 @@ using HospitalApplication.Windows.Patient1;
 using HospitalApplication.WorkWithFiles;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,8 @@ namespace HospitalApplication.Windows.PatientWindows
         private NotificationController controller = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
         private FileNotifications fileNotifications = FileNotifications.Instance;
+        private ObservableCollection<Notification> notificationsObservable;
+        private List<Notification> notifications;
 
         private static NotificationsPage instance;
         public static NotificationsPage Instance
@@ -40,8 +43,10 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             InitializeComponent();
             instance = this;
-            List<Notification> notifications = fileNotifications.GetNotifications(mainWindow.PatientsUsername);
-            lvUsers.ItemsSource = notifications;
+            notifications = fileNotifications.GetNotifications(mainWindow.PatientsUsername);
+            notificationsObservable = new ObservableCollection<Notification>(notifications);
+            lvUsers.ItemsSource = notificationsObservable;
+            //lvUsers.ItemsSource = notifications;
         }
 
         public void UpdateView()
@@ -84,6 +89,13 @@ namespace HospitalApplication.Windows.PatientWindows
                 case MessageBoxResult.No:
                     break;
             }
+        }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            notificationsObservable.Clear();
+            for (int i = 0; i < notifications.Count; i++)
+                if (notifications[i].Dates[0].ToString().Contains(Search.Text)) notificationsObservable.Add(notifications[i]);
         }
     }
 }

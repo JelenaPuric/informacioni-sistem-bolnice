@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="SurveyApplication" Height="400" Width="300"
+        Title="SurveyApplication" Height="420" Width="300"
         Style="{StaticResource WindowStyle}">
     <Grid Margin="10">
         <Grid.Resources>
@@ -48,6 +48,7 @@
             <Rectangle/>
             <TextBlock TextWrapping="WrapWithOverflow" Text="What are your thoughts about our application?" Grid.Column="0" HorizontalAlignment="Center" Margin="0 0 0 10"/>
             <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <TextBlock Text="" Foreground="Red" HorizontalAlignment="Right" Name="Error"/>
             <Button Content="Submit" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 20"></Button>
         </StackPanel>        
     </Grid>

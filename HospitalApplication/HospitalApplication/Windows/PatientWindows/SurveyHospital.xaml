@@ -194,8 +194,8 @@
                 <Rectangle/>
                 <TextBlock TextWrapping="WrapWithOverflow" Name="Question11" Text="" Margin="0 0 0 20"/>
                 <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="WrittenAnswer" Height="80" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                <TextBlock Text="" Foreground="Red" HorizontalAlignment="Right" Name="Error"/>
                 <Button Content="Submit" x:Name="ButtonOk" Click="ButtonOk_Click" Width="80" Margin="0 20"></Button>
-                <Label Name="TestLabel" Content=""/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

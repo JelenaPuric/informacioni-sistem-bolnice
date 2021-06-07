@@ -1,4 +1,6 @@
 ﻿using HospitalApplication.Service;
+using HospitalApplication.Service.PatientValidation;
+using HospitalApplication.Service.PatientValidation.ValidateDatePicker;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Microsoft.Win32;
@@ -25,14 +27,27 @@ namespace HospitalApplication.Windows.PatientWindows
     {
         private MainWindow mainWindow = MainWindow.Instance;
         private FileAppointments fileAppointments = FileAppointments.Instance;
+        private PatientValidationService validationService = new PatientValidationService();
+        private bool isFirstDateValid = true;
+        private bool isSecondDateValid = true;
+        private Brush defaultBorderBrush;
 
         public Report()
         {
             InitializeComponent();
+            defaultBorderBrush = FirstDate.BorderBrush;
         }
 
         private void GenerateReport_Click(object sender, RoutedEventArgs e)
         {
+            if (Validate() == false){
+                if (!isFirstDateValid) FirstDate.BorderBrush = Brushes.Red;
+                else FirstDate.BorderBrush = defaultBorderBrush;
+                if (!isSecondDateValid) SecondDate.BorderBrush = Brushes.Red;
+                else SecondDate.BorderBrush = defaultBorderBrush;
+                Error.Text = "*please select both dates";
+                return;
+            }
             DateTime firstDate = FirstDate.SelectedDate.Value.Date;
             DateTime secondDate = SecondDate.SelectedDate.Value.Date;
             List<Appointment> appointments = fileAppointments.GetAppointments(firstDate, secondDate, mainWindow.PatientsUsername);
@@ -159,6 +174,18 @@ namespace HospitalApplication.Windows.PatientWindows
                 contentTable.AddCell(cell3);
                 contentTable.AddCell(cell4);
             }
+        }
+
+        private bool Validate()
+        {
+            bool firstDateValidation = true;
+            bool secondDateValidation = true;
+            validationService.SetValidateDatePickerStrategy(new DpNotEmpty());
+            if (!validationService.ValidateDatePicker(FirstDate)) firstDateValidation = false;
+            if (!validationService.ValidateDatePicker(SecondDate)) secondDateValidation = false;
+            isFirstDateValid = firstDateValidation;
+            isSecondDateValid = secondDateValidation;
+            return (isFirstDateValid && isSecondDateValid);
         }
     }
 }
