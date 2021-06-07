@@ -288,9 +288,36 @@ namespace HospitalApplication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string PastAppointments {
+            get {
+                return ResourceManager.GetString("PastAppointments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string RateApplication {
             get {
                 return ResourceManager.GetString("RateApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SearchByDate {
+            get {
+                return ResourceManager.GetString("SearchByDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SearchById {
+            get {
+                return ResourceManager.GetString("SearchById", resourceCulture);
             }
         }
         

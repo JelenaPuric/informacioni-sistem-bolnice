@@ -42,7 +42,7 @@
                 </ListView.View>
             </ListView>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Search by ID"/>
+                <Label Content="{x:Static p:Resources.SearchById}"/>
                 <TextBox TextChanged="TextBox_TextChanged" Width="100" Name="Search"/>
             </StackPanel>
             

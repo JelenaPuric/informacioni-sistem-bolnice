@@ -192,8 +192,17 @@
   <data name="NotificationsNew" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="PastAppointments" xml:space="preserve">
+    <value>Past Appointments</value>
+  </data>
   <data name="RateApplication" xml:space="preserve">
     <value>Rate Application</value>
+  </data>
+  <data name="SearchByDate" xml:space="preserve">
+    <value>Search by date</value>
+  </data>
+  <data name="SearchById" xml:space="preserve">
+    <value>Search by time</value>
   </data>
   <data name="SettingsEnglish" xml:space="preserve">
     <value>English</value>

@@ -41,7 +41,7 @@ namespace HospitalApplication.Windows.PatientWindows
             if (numericalAnswers[1] == 0) isValid = false;
             if (WrittenAnswer.Text.Length == 0) isValid = false;
             if (!isValid){
-                Error.Text = "*please answer to all questions";
+                Error.Text = "*please fill all fields";
                 return;
             }
             Survey survey = new Survey(numericalAnswers, WrittenAnswer.Text, mainWindow.PatientsUsername, DateTime.Now, "Application");

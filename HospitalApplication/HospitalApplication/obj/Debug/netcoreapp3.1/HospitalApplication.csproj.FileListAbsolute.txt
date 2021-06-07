@@ -1278,3 +1278,5 @@ C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bol
 C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.dll
 C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.pdb
 C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
+C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.g.cs
+C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.baml

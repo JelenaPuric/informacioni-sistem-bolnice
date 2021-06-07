@@ -127,6 +127,9 @@
     <Compile Update="Windows\PatientWindows\AppointmentsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\PatientWindows\PatientLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\PatientWindows\Report.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -379,6 +382,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\AppointmentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PatientWindows\PatientLogin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PatientWindows\Report.xaml">

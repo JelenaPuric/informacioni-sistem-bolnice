@@ -192,8 +192,17 @@
   <data name="NotificationsNew" xml:space="preserve">
     <value>Ново</value>
   </data>
+  <data name="PastAppointments" xml:space="preserve">
+    <value>Прошли Прегледи</value>
+  </data>
   <data name="RateApplication" xml:space="preserve">
     <value>Оцени Апликацију</value>
+  </data>
+  <data name="SearchByDate" xml:space="preserve">
+    <value>Претрага по датуму</value>
+  </data>
+  <data name="SearchById" xml:space="preserve">
+    <value>Претрага по ид</value>
   </data>
   <data name="SettingsEnglish" xml:space="preserve">
     <value>Енглески</value>

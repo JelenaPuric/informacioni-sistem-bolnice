@@ -31,6 +31,7 @@ namespace HospitalApplication.Windows.PatientWindows
         private List<Appointment> appointments = new List<Appointment>();
         private List<Appointment> pastAppointments = new List<Appointment>();
         private ObservableCollection<Appointment> pastAppointmentsObservable;
+        //public static RoutedCommand MyCommand = new RoutedCommand();
 
         private static PatientsPage instance;
         public static PatientsPage Instance
@@ -58,6 +59,8 @@ namespace HospitalApplication.Windows.PatientWindows
             lvUsersPast.ItemsSource = pastAppointmentsObservable;
             NotificationService notificationService = new NotificationService();
             notificationService.StartNotificationThread(mainWindow.Username.Text);
+            //MyCommand.InputGestures.Add(new KeyGesture(Key.N, ModifierKeys.Control));
+            //CommandBindings.Add(new CommandBinding(MyCommand, ScheduleAppointment_Click));
         }
 
         public void UpdateView()

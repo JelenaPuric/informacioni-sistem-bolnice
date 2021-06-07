@@ -27,7 +27,7 @@ namespace HospitalApplication
 {
     public partial class MainWindow : Window
     {
-        public String PatientsUsername { get; set; }
+        public string PatientsUsername { get; set; }
         private FilePatients filePatients = FilePatients.Instance;
 
         private static MainWindow instance;
@@ -99,6 +99,13 @@ namespace HospitalApplication
                 }
                 InvalidInfoLabel.Content = "* invalid username or password";
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PatientLogin window = new PatientLogin();
+            window.Show();
+            Close();
         }
     }
 }
