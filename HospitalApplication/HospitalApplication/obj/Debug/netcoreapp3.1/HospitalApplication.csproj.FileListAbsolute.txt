@@ -1500,3 +1500,11 @@ D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplica
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Medicines\PrintView.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Medicines\PrintView.baml
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Medicines\Window111.g.cs
+D:\FTN\3\II Semestar\Specifikacija i modeliranje softvera\Bolnica\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Medicines\Window111.baml

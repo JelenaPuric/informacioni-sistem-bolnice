@@ -1,6 +1,7 @@
 ﻿using HospitalApplication.Model;
 using HospitalApplication.Repository;
 using HospitalApplication.Service;
+using HospitalApplication.Windows.ManagerWindows.Medicines;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -72,6 +73,12 @@ namespace HospitalApplication.Windows.Manager.Medicines
         private void Problems_Clicked(object sender, RoutedEventArgs e)
         {
             ReportedDrugs window = new ReportedDrugs();
+            window.Show();
+        }
+
+        private void Print_Clicked(object sender, RoutedEventArgs e)
+        {
+            PrintView window = new PrintView();
             window.Show();
         }
     }

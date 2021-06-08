@@ -21,6 +21,7 @@
         <Button Content="Complaint "  HorizontalAlignment="Left" Margin="570,50,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Problems_Clicked"  />
         <Button Content="Info "  HorizontalAlignment="Left" Margin="570,105,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Info_Clicked"  />
         <Button Content="Edit"  HorizontalAlignment="Left" Margin="310,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Edit_Clicked"  />
+        <Button Content="Print drugs "  HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Print_Clicked"  />
 
         <Button Content="Refresh List" HorizontalAlignment="Left" Margin="570,419,0,0" VerticalAlignment="Top" Width="120" Height="45" Click="Refresh_Clicked"  />
     </Grid>

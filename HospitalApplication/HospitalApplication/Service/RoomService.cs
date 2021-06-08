@@ -30,12 +30,12 @@ namespace Logic
             for(int i=0; i<rooms.Count; i++)
             {
                 if(rooms[i].RoomId == roomWithResource.RoomId)
-                    FindZeroResourceOfRoomAndDeleteIt(i);
+                    DeleteIt(i);
             }
             fileRooms.Write();
         }
 
-        private void FindZeroResourceOfRoomAndDeleteIt(int i)
+        private void DeleteIt(int i)
         {
             for (int j = 0; j < rooms[i].Resource.Count; j++)
             {
