@@ -46,8 +46,8 @@ namespace HospitalApplication.Windows.Manager.Resources
                 MessageBox.Show("That resource does not have that amount", "Error");
             else
             {
-                newResource.roomId = newTransfer.idRoomTo;
-                newResource.quantity = newTransfer.quantity;
+                //newResource.roomId = newTransfer.idRoomTo;
+                //newResource.quantity = newTransfer.quantity;
                 if (newTransfer.resource == null)
                 {
                     newTransfer.resource = new List<Resource>();

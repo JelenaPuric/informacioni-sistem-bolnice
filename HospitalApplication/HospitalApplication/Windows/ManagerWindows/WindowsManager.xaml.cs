@@ -1,6 +1,7 @@
 ﻿using HospitalApplication.Windows.Manager.Medicines;
 using HospitalApplication.Windows.Manager.Prostorije;
 using HospitalApplication.Windows.Manager.Resources;
+using HospitalApplication.Windows.ManagerWindows;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,6 +44,12 @@ namespace HospitalApplication.Windows.Manager
         private void Medicines_Clicked(object sender, RoutedEventArgs e)
         {
             Medicines.main window = new main();
+            window.Show();
+        }
+
+        private void RateApp_Clicked(object sender, RoutedEventArgs e)
+        {
+            RateApp window = new RateApp();
             window.Show();
         }
     }

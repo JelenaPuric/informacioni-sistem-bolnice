@@ -42,7 +42,8 @@ namespace HospitalApplication.Windows.Manager.Rooms
                 RoomNumber = Int32.Parse(textBoxRoomNumber.Text),
                 RoomType = (RoomType)comboBoxRoomType.SelectedIndex,
                 Resource = oldRoomAtributes.Resource,
-                Scheduled = oldRoomAtributes.Scheduled
+                Scheduled = oldRoomAtributes.Scheduled,
+                Renovation = oldRoomAtributes.Renovation
             };
             ManagerController logic = new ManagerController();
             logic.CreateRoom(newRoom);

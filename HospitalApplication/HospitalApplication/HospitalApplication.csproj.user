@@ -25,6 +25,9 @@
     <Compile Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\ManagerWindows\RateApp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -271,6 +274,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ManagerWindows\RateApp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\Renovations\AddRenovation.xaml">

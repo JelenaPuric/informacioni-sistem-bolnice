@@ -15,6 +15,7 @@ namespace HospitalApplication.Service
         private List<Room> rooms;
         private FileRooms fileRooms = FileRooms.Instance;
         private FileScheduledTransfers fileTransfers = FileScheduledTransfers.Instance;
+        private Resource temp = new Resource();
 
         public RelocationResourceService()
         {
@@ -86,11 +87,17 @@ namespace HospitalApplication.Service
                 if (transfers[i].idRoomTo == rooms[z].RoomId)
                 {
                     if (rooms[z].Resource.Count != 0)
+                    {
                         FindThatResourceAndAddOnIt(i, l, z);
+                        break;
+                    }
                     else
                     {
-                        rooms[z].Resource.Add(transfers[i].resource[l]);
+                        temp = transfers[i].resource[l];
+                        temp.roomId = transfers[i].idRoomTo;
+                        rooms[z].Resource.Add(temp);
                         transfers[i].quantity++;
+                        break;
                     }
                 }
 
@@ -99,20 +106,22 @@ namespace HospitalApplication.Service
 
         private void FindThatResourceAndAddOnIt(int i, int l, int z)
         {
+            int greska = 0;
             for (int k = 0; k < rooms[z].Resource.Count; k++)
             {
                 if (rooms[z].Resource[k].idItem == transfers[i].resource[l].idItem)
                 {
                     rooms[z].Resource[k].quantity += transfers[i].quantity;
-                    transfers[i].resource[k].quantity++;
+                    greska++;
                     break;
                 }
-                else
-                {
-                    rooms[z].Resource.Add(transfers[i].resource[l]);
-                    transfers[i].resource[k].quantity++;
-                    break;
-                }
+            }
+            if(greska == 0)
+            {
+                temp = transfers[i].resource[l];
+                temp.roomId = transfers[i].idRoomTo;
+                temp.quantity = transfers[i].quantity;
+                rooms[z].Resource.Add(temp);
             }
         }
 
@@ -123,6 +132,7 @@ namespace HospitalApplication.Service
                 if (transfers[i].idRoomFrom == rooms[j].RoomId)
                 {
                     FindThatResourceAndDecrease(i, l, j);
+                    break;
                 }
             }
         }

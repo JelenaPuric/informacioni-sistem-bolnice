@@ -55,14 +55,6 @@
     ],
     "Resource": [
       {
-        "idItem": 715497,
-        "name": "das",
-        "quantity": 2,
-        "manufacturer": "das",
-        "isStatic": true,
-        "roomId": 1955
-      },
-      {
         "idItem": 675784,
         "name": "Probiotik",
         "quantity": 1,
@@ -73,10 +65,18 @@
       {
         "idItem": 950186,
         "name": "Sto",
+        "quantity": 3,
+        "manufacturer": "3132",
+        "isStatic": true,
+        "roomId": 1955
+      },
+      {
+        "idItem": 96,
+        "name": "Stolice",
         "quantity": 1,
         "manufacturer": "3132",
         "isStatic": true,
-        "roomId": 1905
+        "roomId": 1955
       }
     ]
   },
@@ -113,10 +113,10 @@
       {
         "idItem": 950186,
         "name": "Sto",
-        "quantity": 5,
+        "quantity": 3,
         "manufacturer": "3132",
         "isStatic": true,
-        "roomId": 1955
+        "roomId": 1905
       },
       {
         "idItem": 675784,
@@ -125,12 +125,20 @@
         "manufacturer": "Galenika",
         "isStatic": false,
         "roomId": 1905
+      },
+      {
+        "idItem": 96,
+        "name": "Stolice",
+        "quantity": 1,
+        "manufacturer": "3132",
+        "isStatic": true,
+        "roomId": 1905
       }
     ]
   },
   {
     "Renovation": [],
-    "RoomId": 0,
+    "RoomId": 1111,
     "NumberOfFloors": 0,
     "RoomNumber": 0,
     "Capacity": 0,
@@ -142,12 +150,12 @@
   },
   {
     "Renovation": [],
-    "RoomId": 1111,
+    "RoomId": 3232,
     "NumberOfFloors": 0,
     "RoomNumber": 0,
-    "Capacity": 0,
+    "Capacity": 323,
     "OperationRoomType": 0,
-    "RoomType": 3,
+    "RoomType": 1,
     "Occupied": false,
     "Scheduled": [],
     "Resource": []
