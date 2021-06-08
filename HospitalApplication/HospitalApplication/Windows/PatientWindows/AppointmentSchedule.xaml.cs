@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
+using HospitalApplication.Repository;
 using HospitalApplication.Service;
 using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.WorkWithFiles;
@@ -30,10 +31,9 @@ namespace HospitalApplication
         private List<DateTime> newDates = new List<DateTime>();
         private List<(int, int, int)> term = new List<(int, int, int)>();
         private FileDoctors fileDoctors = FileDoctors.Instance;
-        private RoomService roomService = new RoomService();
-        private DoctorService doctorService = new DoctorService();
         private FormService formService = new FormService();
-        private FileAppointments fileAppointments = FileAppointments.Instance;
+        private IFileAppointments fileAppointments = FileAppointments.Instance;
+        //private FileAppointments fileAppointments = FileAppointments.Instance;
         private FileRooms fileRooms = FileRooms.Instance;
 
         public WindowExaminationSchedule()

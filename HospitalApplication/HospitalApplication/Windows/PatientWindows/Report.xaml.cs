@@ -1,4 +1,5 @@
-﻿using HospitalApplication.Service;
+﻿using HospitalApplication.Repository;
+using HospitalApplication.Service;
 using HospitalApplication.Service.PatientValidation;
 using HospitalApplication.Service.PatientValidation.ValidateDatePicker;
 using iTextSharp.text;
@@ -26,7 +27,8 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class Report : Window
     {
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileAppointments fileAppointments = FileAppointments.Instance;
+        private IFileAppointments fileAppointments = FileAppointments.Instance;
+        //private FileAppointments fileAppointments = FileAppointments.Instance;
         private PatientValidationService validationService = new PatientValidationService();
         private bool isFirstDateValid = true;
         private bool isSecondDateValid = true;
