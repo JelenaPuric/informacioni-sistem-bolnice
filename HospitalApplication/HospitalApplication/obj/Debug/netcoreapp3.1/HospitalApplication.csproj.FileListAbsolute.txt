@@ -1500,3 +1500,5 @@ D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplica
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.genruntimeconfig.cache
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
+C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
+C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml

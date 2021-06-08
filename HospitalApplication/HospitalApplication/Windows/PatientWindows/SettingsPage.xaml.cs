@@ -20,7 +20,8 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class SettingsPage : Page
     {
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileSurveys fileSurveys = FileSurveys.Instance;
+        private IFileSurveys fileSurveys = FileSurveys.Instance;
+        //private FileSurveys fileSurveys = FileSurveys.Instance;
 
         public SettingsPage()
         {

@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:HospitalApplication.Windows.PatientWindows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="PatientLogin" Height="300" Width="450">
+        Title="PatientLogin" Height="300" Width="450"
+        ResizeMode="NoResize"
+        Style="{StaticResource WindowStyle}">
     <Grid Margin="50">
         <StackPanel>
             <Grid>
@@ -14,7 +16,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Username:" Grid.Column="0" Foreground="Black"/>
+                <TextBlock Text="Username:" Grid.Column="0"/>
                 <TextBox x:Name="Username" Grid.Column="1" Background="white"/>
             </Grid>
             <Grid Margin="0 20 0 0">
@@ -22,7 +24,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Password:" Grid.Column="0" Foreground="Black"/>
+                <TextBlock Text="Password:" Grid.Column="0"/>
                 <PasswordBox x:Name="Password" Grid.Column="1"/>
             </Grid>
 

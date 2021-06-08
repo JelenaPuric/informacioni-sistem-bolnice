@@ -9,7 +9,7 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    class FileAnamnesis : IFile
+    class FileAnamnesis : IFileAnamnesis
     {
         private static string path = "../../../Data/anamnesis.json";
         public List<Anamnesis> anamnesis;

@@ -1,4 +1,5 @@
-﻿using HospitalApplication.WorkWithFiles;
+﻿using HospitalApplication.Repository;
+using HospitalApplication.WorkWithFiles;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ namespace HospitalApplication.Service
     public class DoctorService
     {
         private List<Doctor> doctors;
-        private FileDoctors fileDoctors = FileDoctors.Instance;
+        private IFileDoctors fileDoctors = FileDoctors.Instance;
+        //private FileDoctors fileDoctors = FileDoctors.Instance;
 
         public DoctorService() {
             doctors = fileDoctors.GetDoctors();

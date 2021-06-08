@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using HospitalApplication.Repository;
 using Model;
 using WorkWithFiles;
 
@@ -10,7 +11,8 @@ namespace Logic
    {
         private List<Patient> patients;
         private List<Appointment> appointments;
-        private FileAppointments fileAppointments = FileAppointments.Instance;
+        private IFileAppointments fileAppointments = FileAppointments.Instance;
+        //private FileAppointments fileAppointments = FileAppointments.Instance;
         private FilePatients filePatients = FilePatients.Instance;
 
         public PatientService()

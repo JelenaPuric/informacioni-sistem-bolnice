@@ -19,7 +19,8 @@ namespace HospitalApplication.Windows.PatientWindows
     public partial class DoctorSurvey : Window
     {
         private List<Survey> surveys = new List<Survey>();
-        private FileSurveys fileSurveys = FileSurveys.Instance;
+        private IFileSurveys fileSurveys = FileSurveys.Instance;
+        //private FileSurveys fileSurveys = FileSurveys.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private int[] numericalAnswers = new int[100];
 
