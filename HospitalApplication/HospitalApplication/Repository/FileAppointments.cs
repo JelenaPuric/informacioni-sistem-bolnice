@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace WorkWithFiles
 {
-   public class FileAppointments : IFile
+   public class FileAppointments : IFileAppointments
    {
         private string path = "../../../Data/appointments.json";
         private List<Appointment> appointments;

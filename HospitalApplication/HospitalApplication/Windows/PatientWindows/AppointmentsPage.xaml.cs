@@ -27,7 +27,8 @@ namespace HospitalApplication.Windows.PatientWindows
     {
         private MainWindow mainWindow = MainWindow.Instance;
         private AppointmentController controller = new AppointmentController();
-        private FileAppointments fileAppointments = FileAppointments.Instance;
+        private IFileAppointments fileAppointments = FileAppointments.Instance;
+        //private FileAppointments fileAppointments = FileAppointments.Instance;
         private List<Appointment> appointments = new List<Appointment>();
         private List<Appointment> pastAppointments = new List<Appointment>();
         private ObservableCollection<Appointment> pastAppointmentsObservable;
