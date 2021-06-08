@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HospitalApplication.Controller;
 using HospitalApplication.Logic;
+using HospitalApplication.Repository;
 using HospitalApplication.Windows.PatientWindows;
 using HospitalApplication.WorkWithFiles;
 using Logic;
@@ -21,7 +22,8 @@ namespace HospitalApplication.Windows.Patient1
 {
     public partial class WindowExaminationEdit : Window
     {
-        private FileDoctors fileDoctors = FileDoctors.Instance;
+        private IFileDoctors fileDoctors = FileDoctors.Instance;
+        //private FileDoctors fileDoctors = FileDoctors.Instance;
         private List<Doctor> doctors;
         private PatientsPage patientsPage = PatientsPage.Instance;
         private AppointmentController controller = new AppointmentController();

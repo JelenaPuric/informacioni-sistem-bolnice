@@ -30,7 +30,8 @@ namespace HospitalApplication
         private int roomIndex = 0;
         private List<DateTime> newDates = new List<DateTime>();
         private List<(int, int, int)> term = new List<(int, int, int)>();
-        private FileDoctors fileDoctors = FileDoctors.Instance;
+        private IFileDoctors fileDoctors = FileDoctors.Instance;
+        //private FileDoctors fileDoctors = FileDoctors.Instance;
         private FormService formService = new FormService();
         private IFileAppointments fileAppointments = FileAppointments.Instance;
         //private FileAppointments fileAppointments = FileAppointments.Instance;

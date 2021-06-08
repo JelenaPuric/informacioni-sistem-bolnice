@@ -103,6 +103,7 @@ namespace HospitalApplication.Windows.PatientWindows
         }
 
         public void Logout() {
+            //PatientLogin window = new PatientLogin();
             MainWindow window = new MainWindow();
             window.Show();
             Close();

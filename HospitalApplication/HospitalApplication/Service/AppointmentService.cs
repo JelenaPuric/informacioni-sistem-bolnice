@@ -17,7 +17,8 @@ namespace Logic
         private FilePatients filePatients = FilePatients.Instance;
         public List<Appointment> appointments;
         private FileRooms fileRooms = FileRooms.Instance;
-        private FileDoctors fileDoctors = FileDoctors.Instance;
+        private IFileDoctors fileDoctors = FileDoctors.Instance;
+        //private FileDoctors fileDoctors = FileDoctors.Instance;
 
         public AppointmentService()
         {

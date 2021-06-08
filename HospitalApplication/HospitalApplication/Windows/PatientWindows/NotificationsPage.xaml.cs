@@ -1,5 +1,6 @@
 ﻿using HospitalApplication.Controller;
 using HospitalApplication.Model;
+using HospitalApplication.Repository;
 using HospitalApplication.Windows.Patient1;
 using HospitalApplication.WorkWithFiles;
 using System;
@@ -22,7 +23,8 @@ namespace HospitalApplication.Windows.PatientWindows
     {
         private NotificationController controller = new NotificationController();
         private MainWindow mainWindow = MainWindow.Instance;
-        private FileNotifications fileNotifications = FileNotifications.Instance;
+        private IFileNotifications fileNotifications = FileNotifications.Instance;
+        //private FileNotifications fileNotifications = FileNotifications.Instance;
         private ObservableCollection<Notification> notificationsObservable;
         private List<Notification> notifications;
 

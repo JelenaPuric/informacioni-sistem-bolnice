@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
-    class FileNotifications : IFile
+    class FileNotifications : IFileNotifications
     {
         private string path = "../../../Data/notifications.json";
         private List<Notification> notifications;

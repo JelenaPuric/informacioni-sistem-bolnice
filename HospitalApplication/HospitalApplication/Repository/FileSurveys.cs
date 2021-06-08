@@ -11,7 +11,7 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Repository
 {
-    class FileSurveys : IFile
+    class FileSurveys : IFileSurveys
     {
         private string path = "../../../Data/surveys.json";
         private List<Survey> surveys;

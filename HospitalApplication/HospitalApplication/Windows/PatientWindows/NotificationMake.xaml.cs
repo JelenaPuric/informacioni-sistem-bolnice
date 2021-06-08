@@ -18,13 +18,15 @@ using HospitalApplication.Service;
 using HospitalApplication.Service.PatientValidation;
 using HospitalApplication.Service.PatientValidation.ValidateDatePicker;
 using HospitalApplication.Windows.PatientWindows.Validation.ValidateText;
+using HospitalApplication.Repository;
 
 namespace HospitalApplication.Windows.Patient1
 {
     public partial class WindowNotificationMake : Window
     {
         private int notificationId = 100000;
-        private FileNotifications fileNotification = FileNotifications.Instance;
+        private IFileNotifications fileNotification = FileNotifications.Instance;
+        //private FileNotifications fileNotification = FileNotifications.Instance;
         private NotificationsPage notificationsPage = NotificationsPage.Instance;
         private MainWindow mainWindow = MainWindow.Instance;
         private NotificationController controller = new NotificationController();

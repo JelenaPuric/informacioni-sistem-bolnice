@@ -72,7 +72,8 @@ namespace HospitalApplication.Windows.SecretaryWindows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/secretarywindows/doctorreportwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/secretarywindows/doctorreportwind" +
+                    "ow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\SecretaryWindows\DoctorReportWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace HospitalApplication.WorkWithFiles
 {
-    class FileDoctors : IFile
+    class FileDoctors : IFileDoctors
     {
         private static string path = "../../../Data/doctors.json";
         private static List<Doctor> doctors;

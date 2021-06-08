@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Model;
+using HospitalApplication.Repository;
 using HospitalApplication.WorkWithFiles;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ namespace HospitalApplication.Logic
 {
     class NotificationService
     {
-        private FileNotifications fileNotifications = FileNotifications.Instance;
+        private IFileNotifications fileNotifications = FileNotifications.Instance;
+        //private FileNotifications fileNotifications = FileNotifications.Instance;
         private List<Notification> notifications;
         private List<Notification> patientsNotifications;
         public static bool FlagIsMarked { get; set; } = false;

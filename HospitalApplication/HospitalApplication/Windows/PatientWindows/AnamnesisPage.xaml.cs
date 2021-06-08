@@ -18,7 +18,8 @@ namespace HospitalApplication.Windows.PatientWindows
 {
     public partial class AnamnesisPage : Page
     {
-        private FileAnamnesis fileAnamnesis = FileAnamnesis.Instance;
+        private IFileAnamnesis fileAnamnesis = FileAnamnesis.Instance;
+        //private FileAnamnesis fileAnamnesis = FileAnamnesis.Instance;
         private List<Anamnesis> anamnesis;
         private List<Anamnesis> filteredAnamnesis = new List<Anamnesis>();
         private MainWindow mainWindow = MainWindow.Instance;
@@ -40,7 +41,7 @@ namespace HospitalApplication.Windows.PatientWindows
         {
             InitializeComponent();
             instance = this;
-            anamnesis = fileAnamnesis.GetAnamnesis(mainWindow.Username.Text.ToString());
+            anamnesis = fileAnamnesis.GetAnamnesis(mainWindow.PatientsUsername);
             lvUsers.ItemsSource = anamnesis;
         }
 

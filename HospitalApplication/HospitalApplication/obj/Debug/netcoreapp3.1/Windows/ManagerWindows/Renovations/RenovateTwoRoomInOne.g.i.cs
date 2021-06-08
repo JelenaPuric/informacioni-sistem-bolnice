@@ -125,8 +125,8 @@ namespace HospitalApplication.Windows.ManagerWindows.Renovations {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/managerwindows/renovations/renovatetworoom" +
-                    "inone.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/managerwindows/renovations/renova" +
+                    "tetworoominone.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\ManagerWindows\Renovations\RenovateTwoRoomInOne.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

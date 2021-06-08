@@ -109,8 +109,8 @@ namespace HospitalApplication.Windows.Manager.Renovationn {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/managerwindows/renovations/editrenovation." +
-                    "xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/managerwindows/renovations/editre" +
+                    "novation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\ManagerWindows\Renovations\EditRenovation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

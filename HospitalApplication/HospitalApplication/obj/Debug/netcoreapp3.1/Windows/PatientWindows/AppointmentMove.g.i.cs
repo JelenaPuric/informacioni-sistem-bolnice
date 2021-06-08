@@ -77,7 +77,8 @@ namespace HospitalApplication.Windows.Patient1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/patientwindows/appointmentmove.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/patientwindows/appointmentmove.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\PatientWindows\AppointmentMove.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
