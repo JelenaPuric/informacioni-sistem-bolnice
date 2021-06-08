@@ -1,3 +1,4 @@
+using HospitalApplication.Model;
 using HospitalApplication.Repository;
 using Model;
 using Nancy.Json;
@@ -9,10 +10,11 @@ using System.Linq;
 
 namespace WorkWithFiles
 {
-   public class FileNews : IFile
+    class FileNews : IFile
    {
         private static string path = "../../../Data/news.json";
         private static List<News> news;
+
         private static FileNews instance;
 
         public static FileNews Instance

@@ -1502,3 +1502,23 @@ D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplica
 D:\SIMS projekat\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
 C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
 C:\Users\orz\Desktop\sve\projects\simsProject\simsProj34\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\en-US\HospitalApplication.resources.dll
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\bin\Debug\netcoreapp3.1\sr-Cyrl-RS\HospitalApplication.resources.dll
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\ManagerHome.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\HomePage.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.g.cs
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\ManagerHome.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\RateApp.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\AllRoomsPage.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\HomePage.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\ManagerWindows\Views\ResourcesPage.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\Windows\PatientWindows\PatientLogin.baml
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.resources
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.en-US.resources
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.Properties.Resources.sr-Cyrl-RS.resources
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\HospitalApplication.csproj.GenerateResource.cache
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\en-US\HospitalApplication.resources.dll
+C:\Users\ranin\Desktop\NN_SIMS\informacioni-sistem-bolnice\HospitalApplication\HospitalApplication\obj\Debug\netcoreapp3.1\sr-Cyrl-RS\HospitalApplication.resources.dll

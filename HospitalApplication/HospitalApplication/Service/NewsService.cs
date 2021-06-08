@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using HospitalApplication.Model;
 using Model;
 using WorkWithFiles;
 
 namespace Logic
 {
-   public class NewsService
+    class NewsService
    {
         private List<News> news;
         private FileNews fileNews = FileNews.Instance;
@@ -35,6 +36,7 @@ namespace Logic
             fileNews.Write();
         }
 
+        
         public void DeleteNews(string iDNews)
         {
             for (int i = 0; i < news.Count; i++)
@@ -53,9 +55,11 @@ namespace Logic
                     news[i].TypeNews = currentNews.TypeNews;
                     news[i].Title = currentNews.Title;
                     news[i].Description = currentNews.Description;
+                    news[i].DurationNews = currentNews.DurationNews;
                     break;
             }
             fileNews.Write();
         }
+        
     }
 }

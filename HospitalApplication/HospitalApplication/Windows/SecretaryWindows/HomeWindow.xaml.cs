@@ -1,4 +1,5 @@
 ﻿using HospitalApplication.Controller;
+using HospitalApplication.Model;
 using HospitalApplication.Windows.SecretaryWindows;
 using Model;
 using System;
