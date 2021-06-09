@@ -9,7 +9,7 @@ namespace HospitalApplication.Repository
     {
         public List<Doctor> GetDoctors();
         public Doctor GetDoctor(string doctorsUsername);
-        public Doctor GetDoctorById(string doctorsId);
+        public Doctor GetDoctorById(string idDoctor);
         public bool IsDoctorFree(string doctorsUsername, DateTime date);
         public void AddAppointmentToDoctor(string doctorsUsername, DateTime date);
         public void RemoveAppointmentFromDoctor(string doctorsUsername, DateTime date);

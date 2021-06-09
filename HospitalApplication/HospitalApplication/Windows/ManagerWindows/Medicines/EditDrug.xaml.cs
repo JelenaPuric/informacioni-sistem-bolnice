@@ -17,7 +17,6 @@ namespace HospitalApplication.Windows.Manager.Medicines
     public partial class EditDrug : Window
     {
         private Drugs old;
-        private MedicinesService logic;
 
         public EditDrug(Drugs forEdit)
         {
@@ -39,7 +38,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
                 Replacement = textBoxReplacement.Text,
                 Ingredients = textBoxMultiline.Text
             };
-            //MedicinesService logic = new MedicinesService();
+            MedicinesService logic = new MedicinesService();
             logic.DeleteDrug(old);
             logic.CreateDrug(Edited);
             Close();

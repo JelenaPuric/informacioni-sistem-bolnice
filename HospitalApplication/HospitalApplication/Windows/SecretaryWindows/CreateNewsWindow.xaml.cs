@@ -1,5 +1,4 @@
 ﻿using HospitalApplication.Controller;
-using HospitalApplication.Model;
 using Logic;
 using Model;
 using System;
@@ -30,31 +29,10 @@ namespace HospitalApplication.Windows.Secretary
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            NewsFactory newsFactory = GetTypeOfNews();
-            newsController.CreateNews(newsFactory.GetNews());
+            News newNews = new News(IdGenerator(), textBoxTypeNews.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now);
+            newsController.CreateNews(newNews);
             homeWindow.UpdateNews();
             Close();
-        }
-
-        private NewsFactory GetTypeOfNews()
-        {
-            NewsFactory newsFactory = null;
-            switch (ComboBox1.Text)
-            {
-                case "General":
-                    newsFactory = new GeneralFactory(IdGenerator(), ComboBox1.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now, textBoxDuration.Text);
-                    break;
-                case "Discount":
-                    newsFactory = new DiscountFactory(IdGenerator(), ComboBox1.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now, textBoxDuration.Text);
-                    break;
-                case "Important":
-                    newsFactory = new ImportantFactory(IdGenerator(), ComboBox1.Text, textBoxTitle.Text, textBoxDescription.Text, DateTime.Now, textBoxDuration.Text);
-                    break;
-                default:
-                    break;
-            }
-
-            return newsFactory;
         }
 
         private string IdGenerator()

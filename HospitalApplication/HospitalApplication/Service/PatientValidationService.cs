@@ -24,8 +24,8 @@ namespace HospitalApplication.Service
             return validateTextStrategy.Validate(input);
         }
 
-        public bool ValidateDatePicker(DatePicker datePicker){
-            return validateDatePickerStrategy.Validate(datePicker);
+        public bool ValidateDatePicker(DatePicker date){
+            return validateDatePickerStrategy.Validate(date);
         }
     }
 }

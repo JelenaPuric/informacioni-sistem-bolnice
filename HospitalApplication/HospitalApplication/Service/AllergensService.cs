@@ -26,8 +26,11 @@ namespace Logic
 
         public void UpdateAllergen(Patient p)
         {
-            Patient selectedPatient = filePatients.GetPatient(p.Id);
-            selectedPatient.ListAllergens = p.ListAllergens;
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].Id.Equals(p.Id))
+                    patients[i].ListAllergens = p.ListAllergens; break;
+            }
             filePatients.Write();
         }
     }

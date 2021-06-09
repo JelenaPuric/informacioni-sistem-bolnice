@@ -1,5 +1,4 @@
 ﻿
-using HospitalApplication.Model;
 using Logic;
 using Model;
 using System;
@@ -9,7 +8,7 @@ using WorkWithFiles;
 
 namespace HospitalApplication.Controller
 {
-     class NewsController
+    public class NewsController
     {
         private NewsService newsService = NewsService.Instance;
         private FileNews fileNews = FileNews.Instance;
@@ -28,7 +27,6 @@ namespace HospitalApplication.Controller
         {
             return fileNews.GetAllNews();
         }
-
         public void UpdateNews(News currentNews)
         {
             newsService.UpdateNews(currentNews);

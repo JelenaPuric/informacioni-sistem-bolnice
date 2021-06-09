@@ -22,7 +22,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
         }
 
         private Random randomIdDrug = new Random(DateTime.Now.Ticks.GetHashCode());
-        private MedicinesService logic;
+        private MedicinesService logic = new MedicinesService();
 
         private void Submit_Clicked(object sender, RoutedEventArgs e)
         {

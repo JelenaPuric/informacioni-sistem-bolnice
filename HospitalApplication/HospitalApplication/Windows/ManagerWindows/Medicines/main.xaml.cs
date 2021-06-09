@@ -19,7 +19,6 @@ namespace HospitalApplication.Windows.Manager.Medicines
     public partial class main : Window
     {
         private FileDrugs fileDrugs = FileDrugs.Instance;
-        private MedicinesService logic;
         public main()
         {
             InitializeComponent();
@@ -41,6 +40,7 @@ namespace HospitalApplication.Windows.Manager.Medicines
 
         private void Delete_Clicked(object sender, RoutedEventArgs e)
         {
+            MedicinesService logic = new MedicinesService();
             Drugs selected = (Drugs)lvDataBinding.SelectedItem;
             if(selected != null)
                 logic.DeleteDrug(selected);

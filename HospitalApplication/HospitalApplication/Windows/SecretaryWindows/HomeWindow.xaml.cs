@@ -1,11 +1,10 @@
 ﻿using HospitalApplication.Controller;
-using HospitalApplication.Model;
-using HospitalApplication.Windows.ManagerWindows;
 using HospitalApplication.Windows.SecretaryWindows;
 using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -122,10 +121,258 @@ namespace HospitalApplication.Windows.Secretary
             window.Show();
         }
 
-        private void RateApp_Click(object sender, RoutedEventArgs e)
+        private void Demo_Click(object sender, RoutedEventArgs e)
         {
-            RateApp window = new RateApp();
-            window.Show();
+            AllPatientsWindow allPatientWindow = new AllPatientsWindow();
+            RegisterOptionWindow registerOptionWindow = new RegisterOptionWindow();
+            RegisterPatientWindow registerPatientWindow = new RegisterPatientWindow();
+
+            MessageBox.Show("Demo is started.", "Info", MessageBoxButton.OK);
+
+            var delay = Task.Delay(1000).ContinueWith(_ =>
+            {
+                Application.Current.Dispatcher.Invoke(
+                    System.Windows.Threading.DispatcherPriority.Normal,
+                    new Action(
+                        delegate
+                        {
+                            //allPatientWindow = new AllPatientsWindow();
+                            this.Close();
+                            allPatientWindow.Show();
+
+                            Task.Delay(2000).ContinueWith(_ =>
+                            {
+                                Application.Current.Dispatcher.Invoke(
+                                System.Windows.Threading.DispatcherPriority.Normal,
+                                new Action(
+                                    delegate ()
+                                    {
+                                        //registerOptionWindow = new RegisterOptionWindow();
+                                        registerOptionWindow.Show();
+
+                                        Task.Delay(1500).ContinueWith(_ =>
+                                        {
+                                            Application.Current.Dispatcher.Invoke(
+                                            System.Windows.Threading.DispatcherPriority.Normal,
+                                            new Action(
+                                                delegate ()
+                                                {
+                                                    registerOptionWindow.Close();
+                                                    //registerPatientWindow = new RegisterPatientWindow();
+                                                    registerPatientWindow.Show();
+
+                                                    Task.Delay(1500).ContinueWith(_ =>
+                                                    {
+                                                        Application.Current.Dispatcher.Invoke(
+                                                        System.Windows.Threading.DispatcherPriority.Normal,
+                                                        new Action(
+                                                            delegate ()
+                                                            {
+                                                                registerPatientWindow.textBoxFirstName.Text = "Ime";
+
+                                                                Task.Delay(1500).ContinueWith(_ =>
+                                                                {
+                                                                    Application.Current.Dispatcher.Invoke(
+                                                                    System.Windows.Threading.DispatcherPriority.Normal,
+                                                                    new Action(
+                                                                        delegate ()
+                                                                        {
+                                                                            registerPatientWindow.textBoxLastName.Text = "Prezime";
+
+                                                                            Task.Delay(1500).ContinueWith(_ =>
+                                                                            {
+                                                                                Application.Current.Dispatcher.Invoke(
+                                                                                System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                new Action(
+                                                                                    delegate ()
+                                                                                    {
+                                                                                        registerPatientWindow.textBoxJMBG.Text = "1234567891011";
+
+                                                                                        Task.Delay(1500).ContinueWith(_ =>
+                                                                                        {
+                                                                                            Application.Current.Dispatcher.Invoke(
+                                                                                            System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                            new Action(
+                                                                                                delegate ()
+                                                                                                {
+                                                                                                    registerPatientWindow.BoxDateTime.Text = "1/1/1999";
+
+                                                                                                    Task.Delay(1500).ContinueWith(_ =>
+                                                                                                    {
+                                                                                                        Application.Current.Dispatcher.Invoke(
+                                                                                                        System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                        new Action(
+                                                                                                            delegate ()
+                                                                                                            {
+                                                                                                                registerPatientWindow.MSex.IsChecked = true;
+
+                                                                                                                Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                {
+                                                                                                                    Application.Current.Dispatcher.Invoke(
+                                                                                                                    System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                    new Action(
+                                                                                                                        delegate ()
+                                                                                                                        {
+                                                                                                                            registerPatientWindow.textBoxPlaceOfResidance.Text = "Place Of Residance";
+
+
+                                                                                                                            Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                            {
+                                                                                                                                Application.Current.Dispatcher.Invoke(
+                                                                                                                                System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                new Action(
+                                                                                                                                    delegate ()
+                                                                                                                                    {
+                                                                                                                                        registerPatientWindow.textBoxEmail.Text = "example@gmail.com";
+
+                                                                                                                                        Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                                        {
+                                                                                                                                            Application.Current.Dispatcher.Invoke(
+                                                                                                                                            System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                            new Action(
+                                                                                                                                                delegate ()
+                                                                                                                                                {
+                                                                                                                                                    registerPatientWindow.textBoxPhoneNumber.Text = "065123456";
+
+                                                                                                                                                    Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                                                    {
+                                                                                                                                                        Application.Current.Dispatcher.Invoke(
+                                                                                                                                                        System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                                        new Action(
+                                                                                                                                                            delegate ()
+                                                                                                                                                            {
+                                                                                                                                                                registerPatientWindow.textBoxUsername.Text = "exampleUsername";
+
+                                                                                                                                                                Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                                                                {
+                                                                                                                                                                    Application.Current.Dispatcher.Invoke(
+                                                                                                                                                                    System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                                                    new Action(
+                                                                                                                                                                        delegate ()
+                                                                                                                                                                        {
+                                                                                                                                                                            registerPatientWindow.textBoxPassword.Text = "examplePassword";
+
+                                                                                                                                                                            Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                                                                            {
+                                                                                                                                                                                Application.Current.Dispatcher.Invoke(
+                                                                                                                                                                                System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                                                                new Action(
+                                                                                                                                                                                    delegate ()
+                                                                                                                                                                                    {
+                                                                                                                                                                                        
+                                                                                                                                                                                       // MedicalRecord newMedicalRecord = new MedicalRecord();
+
+                                                                                                                                                                                       // Patient newPatient = new Patient();
+
+                                                                                                                                                                                       // secretaryController.CreatePatient(newPatient);
+
+
+                                                                                                                                                                                        
+
+                                                                                                                                                                                    }
+                                                                                                                                                                                    ));
+
+                                                                                                                                                                            }
+                                                                                                                                                                            );
+
+
+                                                                                                                                                                        }
+                                                                                                                                                                        ));
+
+                                                                                                                                                                }
+                                                                                                                                                                );
+
+
+                                                                                                                                                            }
+                                                                                                                                                            ));
+
+                                                                                                                                                    }
+                                                                                                                                                    );
+
+
+                                                                                                                                                }
+                                                                                                                                                ));
+
+                                                                                                                                        }
+                                                                                                                                        );
+
+
+                                                                                                                                    }
+                                                                                                                                    ));
+
+                                                                                                                            }
+                                                                                                                            );
+
+
+                                                                                                                        }
+                                                                                                                        ));
+
+                                                                                                                }
+                                                                                                                );
+
+
+                                                                                                            }
+                                                                                                            ));
+
+                                                                                                    }
+                                                                                                    );
+
+
+                                                                                                }
+                                                                                                ));
+
+                                                                                        }
+                                                                                        );
+
+
+                                                                                    }
+                                                                                    ));
+
+                                                                            }
+                                                                            );
+
+
+                                                                        }
+                                                                        ));
+
+                                                                }
+                                                                );
+
+                                                            }
+                                                            ));
+
+                                                    }
+                                                    );
+
+
+                                                }
+                                                ));
+                                        }
+                                        );
+
+                                    }
+                                    ));
+
+                            }
+                            );
+
+
+
+
+
+                        }
+                        ));
+
+                //  sw.Stop();
+                // return sw.ElapsedMilliseconds;
+            });
+
+
+
+
+
+
         }
+
     }
 }

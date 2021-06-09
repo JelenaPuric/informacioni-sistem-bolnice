@@ -1,5 +1,4 @@
 ﻿using HospitalApplication.Controller;
-using HospitalApplication.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -31,10 +30,9 @@ namespace HospitalApplication.Windows.Secretary
 
         private void SetValuesFields(News selectedNews)
         {
-            ComboBox1.Text = selectedNews.TypeNews;
+            textBoxTypeNews.Text = selectedNews.TypeNews;
             textBoxTitle.Text = selectedNews.Title;
             textBoxDescription.Text = selectedNews.Description;
-            textBoxDuration.Text = selectedNews.DurationNews;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
@@ -47,7 +45,7 @@ namespace HospitalApplication.Windows.Secretary
 
         private void SetValues()
         {
-            currentSelectedNews.TypeNews = ComboBox1.Text;
+            currentSelectedNews.TypeNews = textBoxTypeNews.Text;
             currentSelectedNews.Title = textBoxTitle.Text;
             currentSelectedNews.Description = textBoxDescription.Text;
         }

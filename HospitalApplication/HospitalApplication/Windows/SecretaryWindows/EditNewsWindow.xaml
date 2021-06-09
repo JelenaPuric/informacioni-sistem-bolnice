@@ -7,26 +7,17 @@
         mc:Ignorable="d"
         Title="EditNewsWindow" Height="450" Width="800">
     <Grid Margin="0,0,10,11">
-        <ComboBox Margin="0,55,0,0" Name="ComboBox1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="246" Height="23">
-            <ComboBoxItem Content="General"></ComboBoxItem>
-            <ComboBoxItem Content="Discount"></ComboBoxItem>
-            <ComboBoxItem Content="Important"></ComboBoxItem>
-        </ComboBox>
+        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,59,0,0" Name="textBoxTypeNews" VerticalAlignment="Top" Width="246" />
+        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,87,0,0" Name="textBoxTitle" VerticalAlignment="Top" Width="246" />
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Height="182" HorizontalAlignment="Center" Name="textBoxDescription" VerticalAlignment="Top" Width="246" Margin="0,115,0,0" />
 
 
-
-        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,86,0,0" Name="textBoxTitle" VerticalAlignment="Top" Width="246" />
-        <TextBox Height="23" HorizontalAlignment="Center" Margin="0,115,0,0" Name="textBoxDuration" VerticalAlignment="Top" Width="246" />
-        <TextBox AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Height="182" HorizontalAlignment="Center" Name="textBoxDescription" VerticalAlignment="Top" Width="246" Margin="0,156,0,0" />
-
-
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="168,55,0,0" Name="textBlockTypeNews" Text="Type of News:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="1.054,0.562" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="168,59,0,0" Name="textBlockTypeNews" Text="Type of News:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="1.054,0.562" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="168,87,0,0" Name="textBlockTitleNews" Text="Title" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="22" HorizontalAlignment="Left" Margin="168,116,0,0" Name="textBlockDuration" Text="Duration(days):" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="168,156,0,0" Name="textBlockDescription" Text="Description:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.992,0.656" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="168,115,0,0" Name="textBlockDescription" Text="Description:" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.992,0.656" />
 
-        <Button Content="Ok" Click="OkButton_Click" HorizontalAlignment="Left" Margin="262,365,0,0" VerticalAlignment="Top" Height="43" Width="100"/>
-        <Button Content="Cancel" Click="CancelButton_Click" HorizontalAlignment="Left" Margin="410,365,0,0" VerticalAlignment="Top" Height="43" Width="98"/>
+        <Button Content="Ok" Click="OkButton_Click" HorizontalAlignment="Left" Margin="262,357,0,0" VerticalAlignment="Top" Height="43" Width="100"/>
+        <Button Content="Cancel" Click="CancelButton_Click" HorizontalAlignment="Left" Margin="410,357,0,0" VerticalAlignment="Top" Height="43" Width="98"/>
 
     </Grid>
 </Window>

@@ -8,7 +8,7 @@ namespace HospitalApplication.Repository
     interface IFileAppointments : IFile
     {
         public List<Appointment> GetAppointments();
-        public Appointment GetAppointment(DateTime date);
+        public Appointment GetAppointment(DateTime dateTime);
         public int GetAppointmentsIndex(Appointment appointment);
         public List<Appointment> GetAppointments(string patientsId);
         public List<Appointment> GetPastAppointments(string patientsId);

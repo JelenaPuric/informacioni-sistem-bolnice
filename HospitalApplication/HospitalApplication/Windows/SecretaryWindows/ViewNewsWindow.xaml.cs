@@ -1,5 +1,4 @@
 ﻿using HospitalApplication.Controller;
-using HospitalApplication.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -32,7 +31,6 @@ namespace HospitalApplication.Windows.Secretary
             textBoxTypeNews.Text = currentSelectedNews.TypeNews;
             textBoxTitle.Text = currentSelectedNews.Title;
             textBoxDescription.Text = currentSelectedNews.Description;
-            textBoxDuration.Text = currentSelectedNews.DurationNews;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
