@@ -22,7 +22,13 @@
     <Compile Update="Windows\ManagerWindows\Medicines\main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\ManagerWindows\Medicines\PrintView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\ManagerWindows\Medicines\Window111.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\ManagerWindows\RateApp.xaml.cs">
@@ -273,7 +279,13 @@
     <Page Update="Windows\ManagerWindows\Medicines\main.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\ManagerWindows\Medicines\PrintView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ManagerWindows\Medicines\ReportedDrugs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ManagerWindows\Medicines\Window111.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ManagerWindows\RateApp.xaml">
