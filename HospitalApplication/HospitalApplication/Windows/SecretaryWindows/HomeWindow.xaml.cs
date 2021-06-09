@@ -1,5 +1,6 @@
 ﻿using HospitalApplication.Controller;
 using HospitalApplication.Model;
+using HospitalApplication.Windows.ManagerWindows;
 using HospitalApplication.Windows.SecretaryWindows;
 using Model;
 using System;
@@ -118,6 +119,12 @@ namespace HospitalApplication.Windows.Secretary
         {
             AllDoctorsWindow window = new AllDoctorsWindow();
             this.Close();
+            window.Show();
+        }
+
+        private void RateApp_Click(object sender, RoutedEventArgs e)
+        {
+            RateApp window = new RateApp();
             window.Show();
         }
     }
