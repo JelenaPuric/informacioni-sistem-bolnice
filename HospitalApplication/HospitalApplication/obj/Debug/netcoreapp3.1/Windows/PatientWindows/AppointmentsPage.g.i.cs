@@ -118,8 +118,7 @@ namespace HospitalApplication.Windows.PatientWindows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/patientwindows/appointmentspage.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/patientwindows/appointmentspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\PatientWindows\AppointmentsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -53,8 +53,8 @@ namespace HospitalApplication.Windows.ManagerWindows.Renovations {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/managerwindows/renovations/choose" +
-                    "renovation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/managerwindows/renovations/chooserenovatio" +
+                    "n.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Windows\ManagerWindows\Renovations\ChooseRenovation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
