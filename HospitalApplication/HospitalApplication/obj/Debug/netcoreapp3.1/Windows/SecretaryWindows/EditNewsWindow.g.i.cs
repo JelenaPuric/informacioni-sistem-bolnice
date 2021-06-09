@@ -117,7 +117,8 @@ namespace HospitalApplication.Windows.Secretary {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/secretarywindows/editnewswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/secretarywindows/editnewswindow.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\SecretaryWindows\EditNewsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

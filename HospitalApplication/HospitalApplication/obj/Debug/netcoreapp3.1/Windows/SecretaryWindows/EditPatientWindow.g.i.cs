@@ -69,7 +69,8 @@ namespace HospitalApplication.Windows.Secretary {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalApplication;component/windows/secretarywindows/editpatientwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalApplication;V1.0.0.0;component/windows/secretarywindows/editpatientwindo" +
+                    "w.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\SecretaryWindows\EditPatientWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

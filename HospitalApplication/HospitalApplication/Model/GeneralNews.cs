@@ -58,43 +58,5 @@ namespace Model
             get { return durationNews; }
             set { durationNews = value; }
         }
-
-        /*
-        public string DurationNews
-        {
-            get { return durationNews; }
-            set { durationNews = value; }
-        }
-
-        public DateTime PublicationDate
-        {
-            get { return publicationDate; }
-            set { publicationDate = value; }
-        }
-
-        public string Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string TypeNews
-        {
-            get { return typeNews; }
-            set { typeNews = value; }
-        }
-
-        public string Title
-        {
-            get { return title; }
-            set { title = value; }
-        }
-
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }
-        */
     }
 }
