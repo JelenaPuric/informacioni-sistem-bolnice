@@ -9,7 +9,7 @@ namespace HospitalApplication.Repository
     {
         public List<Survey> GetSurveys();
         public bool IsHospitalSurveyAllowed(string patientsUsername);
-        public bool IsApplicationSurveyAllowed(string username);
+        public bool IsApplicationSurveyAllowed(string patientsUsername);
         public List<string> GetAllowedDoctorsForSurvey(string patientsUsername);
     }
 }
