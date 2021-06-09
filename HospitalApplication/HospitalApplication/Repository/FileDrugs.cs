@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HospitalApplication.Repository
 {
-    class FileDrugs : IFile
+    class FileDrugs : IFile, IDrugs
     {
         public static string path = "../../../Data/drugs.json";
         private static List<Drugs> drugs;

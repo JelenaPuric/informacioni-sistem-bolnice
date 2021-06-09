@@ -9,12 +9,13 @@ namespace HospitalApplication.Service
 {
     public class MedicinesService
     {
+        private readonly IDrugs _drugsFile;
         private List<Drugs> allMedicines;
-        private FileDrugs fileDrugs = FileDrugs.Instance;
 
-        public MedicinesService()
+        public MedicinesService(IDrugs drugsFile)
         {
-            allMedicines = fileDrugs.AllDrugs();
+            _drugsFile = drugsFile;
+            allMedicines = _drugsFile.AllDrugs();
         }
 
         public void CreateDrug (Drugs newDrug)
@@ -30,7 +31,7 @@ namespace HospitalApplication.Service
             }
             if(ok == 0 )
                 allMedicines.Add(newDrug);
-            fileDrugs.Write();
+            _drugsFile.Write();
         }
         public void DeleteDrug (Drugs oldDrug)
         {
@@ -39,7 +40,7 @@ namespace HospitalApplication.Service
                 if (oldDrug.ItemId == allMedicines[i].ItemId)
                     allMedicines.RemoveAt(i);
             }
-            fileDrugs.Write();
+            _drugsFile.Write();
         }
     }
 }
