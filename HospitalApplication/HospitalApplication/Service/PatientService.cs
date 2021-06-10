@@ -15,6 +15,22 @@ namespace Logic
         //private FileAppointments fileAppointments = FileAppointments.Instance;
         private FilePatients filePatients = FilePatients.Instance;
 
+        private static PatientService instance;
+
+        public static PatientService Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new PatientService();
+                }
+                return instance;
+            }
+        }
+
+
+
         public PatientService()
         {
             patients = filePatients.GetPatients();

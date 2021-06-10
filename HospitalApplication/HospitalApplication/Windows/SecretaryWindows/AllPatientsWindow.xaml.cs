@@ -81,7 +81,7 @@ namespace HospitalApplication.Windows.Secretary
 
         public void UpdateView()
         {
-            List<Patient> patients = secretaryController.GetPatients();
+            lvUsers.ItemsSource = null;
             lvUsers.ItemsSource = secretaryController.GetPatients();
         }
 

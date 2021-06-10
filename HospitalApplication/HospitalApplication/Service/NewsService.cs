@@ -40,7 +40,9 @@ namespace Logic
             for (int i = 0; i < news.Count; i++)
             {
                 if (news[i].Id.Equals(iDNews))
+                {
                     news.RemoveAt(i); break;
+                }
             }
             fileNews.Write();
         }
