@@ -126,6 +126,8 @@ namespace HospitalApplication.Windows.Secretary
             AllPatientsWindow allPatientWindow = new AllPatientsWindow();
             RegisterOptionWindow registerOptionWindow = new RegisterOptionWindow();
             RegisterPatientWindow registerPatientWindow = new RegisterPatientWindow();
+            HomeWindow homeWindow = new HomeWindow();
+            
 
             MessageBox.Show("Demo is started.", "Info", MessageBoxButton.OK);
 
@@ -252,22 +254,56 @@ namespace HospitalApplication.Windows.Secretary
                                                                                                                                                                         {
                                                                                                                                                                             registerPatientWindow.textBoxPassword.Text = "examplePassword";
 
-                                                                                                                                                                            Task.Delay(1500).ContinueWith(_ =>
+                                                                                                                                                                            Task.Delay(2000).ContinueWith(_ =>
                                                                                                                                                                             {
                                                                                                                                                                                 Application.Current.Dispatcher.Invoke(
                                                                                                                                                                                 System.Windows.Threading.DispatcherPriority.Normal,
                                                                                                                                                                                 new Action(
                                                                                                                                                                                     delegate ()
                                                                                                                                                                                     {
-                                                                                                                                                                                        
-                                                                                                                                                                                       // MedicalRecord newMedicalRecord = new MedicalRecord();
 
-                                                                                                                                                                                       // Patient newPatient = new Patient();
+                                                                                                                                                                                        registerPatientWindow.Close();
 
-                                                                                                                                                                                       // secretaryController.CreatePatient(newPatient);
+                                                                                                                                                                                        Task.Delay(1000).ContinueWith(_ =>
+                                                                                                                                                                                        {
+                                                                                                                                                                                            Application.Current.Dispatcher.Invoke(
+                                                                                                                                                                                            System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                                                                            new Action(
+                                                                                                                                                                                                delegate ()
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    MessageBox.Show("Patient successfully created!", "Info", MessageBoxButton.OK);
+
+                                                                                                                                                                                                    Task.Delay(3000).ContinueWith(_ =>
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        Application.Current.Dispatcher.Invoke(
+                                                                                                                                                                                                        System.Windows.Threading.DispatcherPriority.Normal,
+                                                                                                                                                                                                        new Action(
+                                                                                                                                                                                                            delegate ()
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                allPatientWindow.Close();
+                                                                                                                                                                                                                homeWindow.Show();
+                                                                                                                                                                                                                MessageBox.Show("Demo is over!", "Info", MessageBoxButton.OK);
 
 
-                                                                                                                                                                                        
+
+
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            ));
+
+                                                                                                                                                                                                    }
+                                                                                              );
+
+
+
+
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ));
+
+                                                                                                                                                                                        }
+                                                                                                                                                                                        );
+
+
 
                                                                                                                                                                                     }
                                                                                                                                                                                     ));

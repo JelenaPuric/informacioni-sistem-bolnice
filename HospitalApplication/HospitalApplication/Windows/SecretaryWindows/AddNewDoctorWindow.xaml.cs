@@ -47,7 +47,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
             if(ComboBox1.Text.Equals("") && textBoxFirstName.Text.Equals("") && textBoxLastName.Text.Equals("") && textBoxPhoneNumber.Text.Equals("") && textBoxEmail.Text.Equals("") &&
                 textBoxPlaceOfResidance.Text.Equals("") && textBoxUsername.Text.Equals("") && textBoxPassword.Text.Equals("") && textBoxJMBG.Text.Equals(""))
             {
-                MessageBox.Show("All fields are required", "Info", MessageBoxButton.OK);
+                MessageBox.Show("All fields are required", "Info", MessageBoxButton.OK); 
                 return;
             }
             if (ComboBox1.Text.Equals(""))
