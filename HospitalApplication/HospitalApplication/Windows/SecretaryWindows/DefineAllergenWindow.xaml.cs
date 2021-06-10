@@ -38,6 +38,14 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (textBoxTypeAllergen.Text.Equals(""))
+            {
+                MessageBox.Show("Type of allergen field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+
             Allergen newAllergen = new Allergen(GenerateIdForNewAllergen(), textBoxTypeAllergen.Text);
             allergenService.CreateAllergen(newAllergen);
             Close();

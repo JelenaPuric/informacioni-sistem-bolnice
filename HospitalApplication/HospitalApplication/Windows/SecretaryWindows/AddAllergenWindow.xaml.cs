@@ -51,6 +51,24 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (ComboBox1.Text.Equals("") && textBoxTypeAllergen.Text.Equals(""))
+            {
+                MessageBox.Show("All fields are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (ComboBox1.Text.Equals(""))
+            {
+                MessageBox.Show("Type allergen field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBoxTypeAllergen.Text.Equals(""))
+            {
+                MessageBox.Show("Specific name field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+
             Allergen newAlergen = new Allergen(fileAllergens.GetIdAllergen(ComboBox1.Text), ComboBox1.Text, textBoxTypeAllergen.Text);
             patient.ListAllergens.Add(newAlergen);
             allergensService.UpdateAllergen(patient);

@@ -3,6 +3,7 @@ using Logic;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,6 +39,58 @@ namespace HospitalApplication.Windows.Secretary
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (textBoxFirstName.Text.Equals("") && textBoxLastName.Text.Equals("") && BoxDateTime.Text.Equals("") && textBoxJMBG.Text.Equals(""))
+            {
+                MessageBox.Show("All fields are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+            if (textBoxFirstName.Text.Equals(""))
+            {
+                MessageBox.Show("First name field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBoxLastName.Text.Equals(""))
+            {
+                MessageBox.Show("Last name field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBoxJMBG.Text.Equals(""))
+            {
+                MessageBox.Show("JMBG field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (BoxDateTime.Text.Equals(""))
+            {
+                MessageBox.Show("Date field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            // VALIDACIJA First Name i Last name -- VELIKO POCETNO SLOVO
+            if (textBoxFirstName.Text[0].ToString() != textBoxFirstName.Text[0].ToString().ToUpper())
+            {
+                MessageBox.Show("First capital letter of first name are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBoxLastName.Text[0].ToString() != textBoxLastName.Text[0].ToString().ToUpper())
+            {
+                MessageBox.Show("First capital letter of last name are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            // VALIDACIJA JMBG DA SU DOZVOLJENI BROJEVI SAMO I DA IMA 13 brojeva
+            if (!textBoxJMBG.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("In JMBG field only numbers are allowed", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBoxJMBG.Text.Length != 13)
+            {
+                MessageBox.Show("JMBG field must contain 13 numbers", "Info", MessageBoxButton.OK);
+                return;
+            }
+            //-------------------------------------------------------
+
+
             MedicalRecord newMedicalRecord = new MedicalRecord(GenerateIdForNewPatient(), (AccountType)Enum.Parse(typeof(AccountType), "guestAccount"), 0, textBoxFirstName.Text, textBoxLastName.Text, 
                                                                "empty", textBoxJMBG.Text, GetSelectedDate(), "empty", "empty", "empty", 0);
 
