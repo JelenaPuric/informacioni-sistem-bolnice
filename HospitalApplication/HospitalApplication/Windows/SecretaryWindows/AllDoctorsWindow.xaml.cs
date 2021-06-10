@@ -74,8 +74,36 @@ namespace HospitalApplication.Windows.SecretaryWindows
         {
             if (!(lvUsers.SelectedIndex > -1)) { return; }
             Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
-            doctorService.DeleteDoctor(selectedDoctor.Id);
+            MessageBoxResult result = MessageBox.Show("Do you want to delete doctor?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    doctorService.DeleteDoctor(selectedDoctor.Id);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+
+                    //doctorService.DeleteDoctor(selectedDoctor.Id);
             UpdateDoctors();
+
+
+             /*
+            if (!(lvUsers.SelectedIndex > -1))
+                return;
+            Appointment appointment = (Appointment)lvUsers.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Do you want to delete appointment?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    appointmentController.CancelAppointment(appointment);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            */
+
+
+
         }
 
         private void EditDoctor_Click(object sender, RoutedEventArgs e)

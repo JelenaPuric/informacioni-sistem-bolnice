@@ -59,7 +59,34 @@ namespace HospitalApplication.Windows.Secretary
         {
             if (!(lvUsers.SelectedIndex > -1)) { return; }
             Patient selectedPatient = (Patient)lvUsers.SelectedItem;
-            secretaryController.DeletePatient(selectedPatient.Id);
+            MessageBoxResult result = MessageBox.Show("Do you want to delete patient?", "Confirmation", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    secretaryController.DeletePatient(selectedPatient.Id);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+
+                    // secretaryController.DeletePatient(selectedPatient.Id);
+                   // UpdateView();
+
+
+                    /*
+                    if (!(lvUsers.SelectedIndex > -1))
+                        return;
+                    Appointment appointment = (Appointment)lvUsers.SelectedItem;
+                    MessageBoxResult result = MessageBox.Show("Do you want to delete appointment?", "Confirmation", MessageBoxButton.YesNo);
+                    switch (result)
+                    {
+                        case MessageBoxResult.Yes:
+                            appointmentController.CancelAppointment(appointment);
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    */
+
+            }
             UpdateView();
         }
 
