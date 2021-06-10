@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pld/PdWGvYN7xm0dZ0oMCW8dMUKH0xYBjwvc3zOcsSQHOIJ/s1RPH37WrINAOFDhCm2M01/jeaUnH/IRY/bM9g==",
+  "dgSpecHash": "lT88IJ6K+yttsBj3JbupKqGh0byjEDEvVa8xEWeaz4EMNMlbsz4cEruN0ZJwKqj9DDJiWkcMIlG803qyL4eVUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ranin\\Desktop\\SIMS-ZA-HCI\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
+  "projectFilePath": "C:\\Users\\ranin\\Desktop\\HCI-ODBRANA\\informacioni-sistem-bolnice\\HospitalApplication\\HospitalApplication\\HospitalApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ranin\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
     "C:\\Users\\ranin\\.nuget\\packages\\itextsharp\\5.5.13.2\\itextsharp.5.5.13.2.nupkg.sha512",
