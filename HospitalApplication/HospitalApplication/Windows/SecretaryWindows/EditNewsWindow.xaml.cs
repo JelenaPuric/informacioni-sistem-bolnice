@@ -37,6 +37,32 @@ namespace HospitalApplication.Windows.Secretary
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (textBoxTypeNews.Text.Equals("") && textBoxTypeNews.Text.Equals("") && textBoxTitle.Text.Equals("") && textBoxDescription.Text.Equals(""))
+            {
+                MessageBox.Show("All fields are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+            if (textBoxTypeNews.Text.Equals(""))
+            {
+                MessageBox.Show("Type news field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+            if (textBoxTitle.Text.Equals(""))
+            {
+                MessageBox.Show("Title field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
+            if (textBoxDescription.Text.Equals(""))
+            {
+                MessageBox.Show("Description field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            //--------------------------------
+
             SetValues();
             newsController.UpdateNews(currentSelectedNews);
             homeWindow.UpdateNews();

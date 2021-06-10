@@ -47,6 +47,20 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (ComboTypeDoctor.Text.Equals(""))
+            {
+                MessageBox("Type Doctor field are required");
+                return;
+            }
+            //Provera da li je korisnik klikno na dugme FILTER 
+            if (ComboFreeTerms.Text.Equals("") && ComboSheduledTerms.Text.Equals(""))
+            {
+                MessageBox("Press FILTER button!");
+                return;
+            }
+            //---------------------------
+
             if (ComboFreeTerms.SelectedIndex == -1){
                 ScheduleAndMoveAppointment();
                 Close();

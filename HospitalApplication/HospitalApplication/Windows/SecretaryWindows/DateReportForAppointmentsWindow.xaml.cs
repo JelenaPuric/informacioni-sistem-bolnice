@@ -33,6 +33,20 @@ namespace HospitalApplication.Windows.SecretaryWindows
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (BoxDateTimeFrom.Text.Equals(""))
+            {
+                MessageBox.Show("From field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (BoxDateTimeTo.Text.Equals(""))
+            {
+                MessageBox.Show("To date field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            //--------------------------------
+
+
             ReportWindow window = new ReportWindow(BoxDateTimeFrom.Text, BoxDateTimeTo.Text);
             window.Show();
             this.Close();

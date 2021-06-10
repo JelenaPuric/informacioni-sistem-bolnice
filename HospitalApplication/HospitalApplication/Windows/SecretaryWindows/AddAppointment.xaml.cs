@@ -61,6 +61,18 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (Date.Text.Equals(""))
+            {
+                MessageBox.Show("Date field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            if (textBox111.Text.Equals(""))
+            {
+                MessageBox.Show("Postpone appointment field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+
             Appointment newAppointment = new Appointment(patientUsername, doctors[Combo3.SelectedIndex].Username, "0", GetSelectedDateAndTime(), GenerateIdForAppointment(),
                                                         (ExaminationType)Enum.Parse(typeof(ExaminationType), ComboTypeApppointment.Text), Int32.Parse(textBox111.Text));
 

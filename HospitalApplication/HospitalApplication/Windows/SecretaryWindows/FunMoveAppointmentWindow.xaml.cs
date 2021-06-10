@@ -39,6 +39,14 @@ namespace HospitalApplication.Windows.Secretary
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
+            //VALIDACIJA PRAZNIH POLJA
+            if (Date.Text.Equals(""))
+            {
+                MessageBox.Show("Examination date field are required", "Info", MessageBoxButton.OK);
+                return;
+            }
+            //--------------------------------
+
             Appointment examination = (Appointment)moveAppointmentWindow.lvUsers.SelectedItem;
             DateTime oldDate = examination.ExaminationStart;
             DateTime newDate = GetDateAndTimeFromForm(Date.SelectedDate.Value.Date, Combo);
