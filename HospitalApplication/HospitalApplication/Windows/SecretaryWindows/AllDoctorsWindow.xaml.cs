@@ -157,6 +157,7 @@ namespace HospitalApplication.Windows.SecretaryWindows
             this.Close();
         }
 
+        /*
         private void PrintReport_Click(object sender, RoutedEventArgs e)
         {
             if (!(lvUsers.SelectedIndex > -1)) { return; }
@@ -164,5 +165,6 @@ namespace HospitalApplication.Windows.SecretaryWindows
             DataReportForDoctorWindow window = new DataReportForDoctorWindow(selectedDoctor);
             window.Show();
         }
+        */
     }
 }
